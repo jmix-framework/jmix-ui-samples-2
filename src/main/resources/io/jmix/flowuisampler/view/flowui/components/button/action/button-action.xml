@@ -1,0 +1,9 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <actions>
+        <action id="someAction"
+                text="Click me!"/>
+    </actions>
+    <layout>
+        <button action="someAction"/>
+    </layout>
+</view>

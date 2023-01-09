@@ -1,0 +1,17 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <instance id="customerDc"
+                  class="io.jmix.flowuisampler.entity.Customer"
+                  fetchPlan="_local"/>
+    </data>
+    <layout>
+        <checkbox id="activeCheckbox"
+                  label="CheckBox connected to a container"
+                  dataContainer="customerDc"
+                  property="active"/>
+        <hbox>
+            <label text="Value in the container:"/>
+            <label id="labelValue"/>
+        </hbox>
+    </layout>
+</view>

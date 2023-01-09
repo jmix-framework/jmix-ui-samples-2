@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JmixDataStoreSettingsManager">
+    <moduleSettings>
+      <entry key="com.company.jmix-flowui-samples.main">
+        <ModuleSettings>
+          <option name="dataStoreOptions">
+            <map>
+              <entry key="main">
+                <value>
+                  <DataStoreSettings />
+                </value>
+              </entry>
+            </map>
+          </option>
+        </ModuleSettings>
+      </entry>
+      <entry key="io.jmix.flowui-sampler.jmix-flowui-samples.main">
+        <ModuleSettings>
+          <option name="dataStoreOptions">
+            <map>
+              <entry key="main">
+                <value>
+                  <DataStoreSettings />
+                </value>
+              </entry>
+            </map>
+          </option>
+        </ModuleSettings>
+      </entry>
+      <entry key="jmix-flowui-sampler.main">
+        <ModuleSettings>
+          <option name="dataStoreOptions">
+            <map>
+              <entry key="main">
+                <value>
+                  <DataStoreSettings />
+                </value>
+              </entry>
+            </map>
+          </option>
+        </ModuleSettings>
+      </entry>
+    </moduleSettings>
+  </component>
+</project>

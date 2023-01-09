@@ -1,0 +1,10 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox alignItems="CENTER">
+            <label text="Label"/>
+            <textField placeholder="TextField"/>
+            <button text="Button"/>
+            <button text="Button"/>
+        </hbox>
+    </layout>
+</view>

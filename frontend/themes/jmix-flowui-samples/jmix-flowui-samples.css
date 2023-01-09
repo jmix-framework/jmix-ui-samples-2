@@ -1,0 +1,13 @@
+/* Define your styles here */
+
+.jmix-search-field {
+    margin: var(--lumo-space-s);
+}
+
+.jmix-menu-tools {
+    margin: var(--lumo-space-wide-m);
+}
+
+.jmix-menu-tools-button {
+    margin-inline-start: auto;
+}

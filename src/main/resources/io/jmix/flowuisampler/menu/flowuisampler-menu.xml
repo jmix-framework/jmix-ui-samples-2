@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  ~ Copyright 2022 Haulmont.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<menu-config xmlns="io/jmix/flowuisampler/menu/flowuisampler-menu.xsd">
+
+    <menu id="components" image="mainmenu/components.svg" url="flow-ui/vc/components">
+        <menu id="button">
+            <item id="button-simple" page="button" image="components/button/button-simple.png"/>
+            <item id="button-action" page="button" image="components/button/button-action.png"/>
+        </menu>
+        <menu id="checkbox">
+            <item id="checkbox-simple" page="check-box" image="components/checkbox/checkbox-simple.png"/>
+            <item id="checkbox-dataaware" page="check-box"
+                  image="components/checkbox/checkbox-dataaware.png">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+    </menu>
+
+    <menu id="containers" image="mainmenu/containers.svg" url="flow-ui/vc/containers">
+        <menu id="boxlayout">
+            <item id="hbox-simple" page="box-layout" image="containers/boxlayout/hbox-simple.svg"/>
+            <item id="vbox-simple" page="box-layout" image="containers/boxlayout/vbox-simple.svg"/>
+        </menu>
+    </menu>
+
+
+</menu-config>

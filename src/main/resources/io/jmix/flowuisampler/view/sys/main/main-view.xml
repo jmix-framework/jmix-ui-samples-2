@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<mainView xmlns="http://jmix.io/schema/flowui/main-view"
+          title="msg://MainView.title">
+    <actions>
+        <action id="logout" type="logout"/>
+    </actions>
+    <appLayout>
+        <navigationBar>
+            <header id="header" classNames="jmix-main-view-header">
+                <drawerToggle id="drawerToggle"
+                              classNames="jmix-main-view-drawer-toggle"
+                              themeNames="contrast"
+                              ariaLabel="msg://drawerToggle.ariaLabel"/>
+                <h1 id="viewTitle" classNames="jmix-main-view-title"/>
+            </header>
+        </navigationBar>
+        <drawerLayout>
+            <section id="section" classNames="jmix-main-view-section">
+                <h2 id="applicationTitle"
+                    text="msg://applicationTitle.text"
+                    classNames="jmix-main-view-application-title"/>
+                <hbox>
+                    <textField id="searchField"
+                               placeholder="msg://menu.search"
+                               width="100%"
+                               classNames="jmix-search-field"/>
+                </hbox>
+                <hbox classNames="jmix-menu-tools" spacing="false">
+                    <label id="menuLabel" text="msg://menu.label"/>
+                    <button id="collapseAllBtn"
+                            title="msg://menu.collapseAll"
+                            icon="COMPRESS"
+                            themeNames="icon small tertiary"
+                            classNames="jmix-menu-tools-button"/>
+                    <button id="expandAllBtn"
+                            title="msg://menu.expandAll"
+                            icon="EXPAND"
+                            themeNames="icon small tertiary"/>
+                </hbox>
+                <nav id="navigation"
+                     classNames="jmix-main-view-navigation"
+                     ariaLabel="msg://navigation.ariaLabel">
+                    <listMenu id="menu"/>
+                </nav>
+            </section>
+        </drawerLayout>
+    </appLayout>
+</mainView>
