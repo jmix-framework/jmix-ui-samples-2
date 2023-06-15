@@ -16,9 +16,8 @@
 
 package io.jmix.flowuisampler.entity;
 
-import io.jmix.core.metamodel.datatype.impl.EnumClass;
-
-import javax.annotation.Nullable;
+import io.jmix.core.metamodel.datatype.EnumClass;
+import org.springframework.lang.Nullable;
 
 public enum CustomerGrade implements EnumClass<Integer> {
 
@@ -26,7 +25,7 @@ public enum CustomerGrade implements EnumClass<Integer> {
     HIGH(20),
     STANDARD(30);
 
-    private Integer id;
+    private final Integer id;
 
     CustomerGrade(Integer id) {
         this.id = id;

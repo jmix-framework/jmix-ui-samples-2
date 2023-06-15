@@ -16,7 +16,8 @@
 
 package io.jmix.flowuisampler.config;
 
-import javax.annotation.Nullable;
+import org.springframework.lang.Nullable;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -26,15 +27,15 @@ public class SamplerMenuItem {
 
     protected final SamplerMenuItem parent;
     protected final List<SamplerMenuItem> children = new ArrayList<>();
-
     protected final String id;
+
     protected String url;
     protected String page;
     protected String anchor;
     protected String image;
     protected boolean splitEnabled;
     protected List<String> otherFiles;
-    protected Map<String, Object> screenParams;
+    protected Map<String, Object> viewParams;
 
     protected boolean isMenu = false;
 
@@ -119,14 +120,14 @@ public class SamplerMenuItem {
         children.add(item);
     }
 
-    public Map<String, Object> getScreenParams() {
-        return screenParams != null
-                ? Collections.unmodifiableMap(screenParams)
+    public Map<String, Object> getViewParams() {
+        return viewParams != null
+                ? Collections.unmodifiableMap(viewParams)
                 : Collections.emptyMap();
     }
 
-    public void setScreenParams(Map<String, Object> screenParams) {
-        this.screenParams = screenParams;
+    public void setViewParams(Map<String, Object> viewParams) {
+        this.viewParams = viewParams;
     }
 
     public String getImage() {

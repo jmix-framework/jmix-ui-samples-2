@@ -3,11 +3,12 @@ package io.jmix.flowuisampler.entity;
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
 import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import org.springframework.lang.Nullable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import java.util.UUID;
 
 @Table(name = "SAMPLER_CUSTOMER")
@@ -52,10 +53,11 @@ public class Customer {
         this.id = id;
     }
 
-    public void setGrade(CustomerGrade grade) {
+    public void setGrade(@Nullable CustomerGrade grade) {
         this.grade = grade == null ? null : grade.getId();
     }
 
+    @Nullable
     public CustomerGrade getGrade() {
         return grade == null ? null : CustomerGrade.fromId(grade);
     }

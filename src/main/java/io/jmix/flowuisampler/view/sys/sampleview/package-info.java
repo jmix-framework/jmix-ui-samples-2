@@ -15,6 +15,6 @@
  */
 
 @NonNullApi
-package io.jmix.flowuisampler.view.sys.browser;
+package io.jmix.flowuisampler.view.sys.sampleview;
 
 import org.springframework.lang.NonNullApi;

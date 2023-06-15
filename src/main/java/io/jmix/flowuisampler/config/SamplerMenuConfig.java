@@ -26,12 +26,11 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.commons.text.StringTokenizer;
 import org.dom4j.Element;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.Resource;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Nullable;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
@@ -46,21 +45,25 @@ public class SamplerMenuConfig {
 
     private static final Log log = LogFactory.getLog(SamplerMenuConfig.class);
 
+    protected final Dom4jTools dom4JTools;
+    protected final Environment environment;
+    protected final Resources resources;
+    protected final Messages messages;
+    protected final LoaderSupport loaderSupport;
+
     protected List<SamplerMenuItem> rootItems = new ArrayList<>();
 
-    protected volatile boolean initialized;
     protected final ReadWriteLock lock = new ReentrantReadWriteLock();
+    protected volatile boolean initialized;
 
-    @Autowired
-    protected Dom4jTools dom4JTools;
-    @Autowired
-    protected Environment environment;
-    @Autowired
-    protected Resources resources;
-    @Autowired
-    protected Messages messages;
-    @Autowired
-    protected LoaderSupport loaderSupport;
+    public SamplerMenuConfig(Dom4jTools dom4JTools, Environment environment, Resources resources,
+                             Messages messages, LoaderSupport loaderSupport) {
+        this.dom4JTools = dom4JTools;
+        this.environment = environment;
+        this.resources = resources;
+        this.messages = messages;
+        this.loaderSupport = loaderSupport;
+    }
 
     public String getMenuItemTitle(String id) {
         try {
@@ -191,7 +194,7 @@ public class SamplerMenuConfig {
                     params.put(paramName, value);
                 }
             }
-            menuItem.setScreenParams(params);
+            menuItem.setViewParams(params);
         }
 
         return menuItem;

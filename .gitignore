@@ -26,3 +26,4 @@ vite.generated.ts
 webpack.generated.js
 
 .DS_Store
+/src/main/dev-bundle/

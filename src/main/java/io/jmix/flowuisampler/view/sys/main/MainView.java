@@ -37,11 +37,11 @@ import io.jmix.flowui.view.ViewController;
 import io.jmix.flowui.view.ViewDescriptor;
 import io.jmix.flowuisampler.config.SamplerMenuConfig;
 import io.jmix.flowuisampler.config.SamplerMenuItem;
-import io.jmix.flowuisampler.view.sys.browser.SampleBrowser;
+import io.jmix.flowuisampler.view.sys.sampleview.SampleView;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 
-import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -109,7 +109,7 @@ public class MainView extends StandardMainView {
 
                 JmixListMenu.ViewMenuItem child = new JmixListMenu.ViewMenuItem(id)
                         .withTitle(menuConfig.getMenuItemTitle(currentItem.getId()))
-                        .withControllerClass(SampleBrowser.class)
+                        .withControllerClass(SampleView.class)
                         .withRouteParameters(Collections.singletonList(sampleIdParam));
 
                 parentSideMenuItem.addChildItem(child);
@@ -152,11 +152,11 @@ public class MainView extends StandardMainView {
             findItemsRecursively(menu.getMenuItems(), searchValue);
 
             for (JmixListMenu.MenuItem item : foundItems) {
-                    ListMenu.MenuItem menuItem = menu.getMenuItem(item.getId());
-                    if (menuItem != null) {
-                        UnorderedList content = menuItem.getMenuComponent().getContent();
-                        expand(menuItem, content, true);
-                    }
+                ListMenu.MenuItem menuItem = menu.getMenuItem(item.getId());
+                if (menuItem != null) {
+                    UnorderedList content = menuItem.getMenuComponent().getContent();
+                    expand(menuItem, content, true);
+                }
             }
 
             removeNotRequestedItems(menu.getMenuItems(), null, null, searchValue);
@@ -240,7 +240,7 @@ public class MainView extends StandardMainView {
     protected void findDetailAndExpand(UnorderedList content, boolean isExpand) {
         content.getChildren()
                 .forEach(component -> component.getChildren().findAny()
-                        .ifPresent(component1 -> ((Details)component1).setOpened(isExpand))
+                        .ifPresent(component1 -> ((Details) component1).setOpened(isExpand))
                 );
     }
 

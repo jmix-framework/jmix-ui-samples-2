@@ -19,10 +19,9 @@ package io.jmix.flowuisampler.util;
 import io.jmix.core.CoreProperties;
 import io.jmix.core.Resources;
 import io.jmix.flowui.view.ViewInfo;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
-import javax.annotation.Nullable;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Locale;
@@ -30,10 +29,13 @@ import java.util.Locale;
 @Component("sampler_SamplerHelper")
 public class SamplerHelper {
 
-    @Autowired
-    protected Resources resources;
-    @Autowired
-    protected CoreProperties coreProperties;
+    protected final Resources resources;
+    protected final CoreProperties coreProperties;
+
+    public SamplerHelper(Resources resources, CoreProperties coreProperties) {
+        this.resources = resources;
+        this.coreProperties = coreProperties;
+    }
 
     @Nullable
     public String getFileContent(String src) {

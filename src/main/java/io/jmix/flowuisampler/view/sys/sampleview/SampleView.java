@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.jmix.flowuisampler.view.sys.browser;
+package io.jmix.flowuisampler.view.sys.sampleview;
 
 import com.google.common.base.Strings;
 import com.vaadin.flow.component.Component;
@@ -36,11 +36,12 @@ import io.jmix.core.CoreProperties;
 import io.jmix.core.Messages;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.Views;
+import io.jmix.flowui.component.codeeditor.CodeEditor;
 import io.jmix.flowui.component.layout.ViewLayout;
 import io.jmix.flowui.component.scroller.JmixScroller;
 import io.jmix.flowui.component.splitlayout.JmixSplitLayout;
 import io.jmix.flowui.component.tabsheet.JmixTabSheet;
-import io.jmix.flowui.component.textarea.JmixTextArea;
+import io.jmix.flowui.kit.component.codeeditor.CodeEditorMode;
 import io.jmix.flowui.view.*;
 import io.jmix.flowuisampler.config.SamplerMenuConfig;
 import io.jmix.flowuisampler.config.SamplerMenuItem;
@@ -49,17 +50,17 @@ import io.jmix.flowuisampler.view.sys.main.MainView;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 
-import javax.annotation.Nullable;
 import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
 
 @Route(value = "sample/:sampleId?", layout = MainView.class)
-@ViewController("sample-browser")
-@ViewDescriptor("sample-browser.xml")
+@ViewController("SampleView")
+@ViewDescriptor("sample-view.xml")
 @AnonymousAllowed
-public class SampleBrowser extends StandardView implements LocaleChangeObserver {
+public class SampleView extends StandardView implements LocaleChangeObserver {
 
     protected static final String DOC_URL_MESSAGES_KEY = "docUrl";
 
@@ -198,16 +199,17 @@ public class SampleBrowser extends StandardView implements LocaleChangeObserver 
     protected void addSourceTab(String src) {
         String fileContent = samplerHelper.getFileContent(src);
         if (!Strings.isNullOrEmpty(src) && !Strings.isNullOrEmpty(fileContent)) {
-            // TODO: 23.12.2022 replace to aceCodeEditor afterImplement
-            JmixTextArea codeEditor = createSourceCodeEditor();
+            CodeEditor codeEditor = createSourceCodeEditor(getCodeEditorMode(src));
             codeEditor.setValue(fileContent);
             addTab(samplerHelper.getFileName(src), codeEditor, VaadinIcon.CODE.create());
         }
     }
 
-    protected JmixTextArea createSourceCodeEditor() {
-        JmixTextArea editor = uiComponents.create(JmixTextArea.class);
+    protected CodeEditor createSourceCodeEditor(CodeEditorMode mode) {
+        CodeEditor editor = uiComponents.create(CodeEditor.class);
 
+        editor.setShowPrintMargin(false);
+        editor.setMode(mode);
         editor.setReadOnly(true);
         editor.setWidthFull();
         editor.setHeightFull();
@@ -307,7 +309,7 @@ public class SampleBrowser extends StandardView implements LocaleChangeObserver 
             String content = samplerHelper.getFileContent(src);
 
             if (StringUtils.isNotBlank(content)) {
-                JmixTextArea sourceCodeEditor = createSourceCodeEditor();
+                CodeEditor sourceCodeEditor = createSourceCodeEditor(getCodeEditorMode(src));
                 sourceCodeEditor.setValue(content);
                 addTab(tabTitle, sourceCodeEditor, VaadinIcon.GLOBE.create());
             }
@@ -319,38 +321,23 @@ public class SampleBrowser extends StandardView implements LocaleChangeObserver 
         // TODO: 22.12.2022 implement kremnevda
     }
 
-    // TODO: 22.12.2022 implement after aceCodeEditor
-    /*
-    protected SourceCodeEditor.Mode getAceMode(String src) {
+    protected CodeEditorMode getCodeEditorMode(String src) {
         String fileExtension = samplerHelper.getFileExtension(src);
 
-        SourceCodeEditor.Mode mode = SourceCodeEditor.Mode.Text;
+        CodeEditorMode mode = CodeEditorMode.TEXT;
         if (fileExtension != null) {
             switch (fileExtension) {
-                case "xsd":
-                case "xml":
-                    mode = SourceCodeEditor.Mode.XML;
-                    break;
-                case "java":
-                    mode = SourceCodeEditor.Mode.Java;
-                    break;
-                case "js":
-                    mode = SourceCodeEditor.Mode.JavaScript;
-                    break;
-                case "properties":
-                    mode = SourceCodeEditor.Mode.Properties;
-                    break;
-                case "css":
-                    mode = SourceCodeEditor.Mode.CSS;
-                    break;
-                case "scss":
-                    mode = SourceCodeEditor.Mode.SCSS;
-                    break;
+                case "xsd", "xml" -> mode = CodeEditorMode.XML;
+                case "java" -> mode = CodeEditorMode.JAVA;
+                case "js" -> mode = CodeEditorMode.JAVASCRIPT;
+                case "properties" -> mode = CodeEditorMode.PROPERTIES;
+                case "css" -> mode = CodeEditorMode.CSS;
+                case "scss" -> mode = CodeEditorMode.SCSS;
             }
         }
 
         return mode;
-    }*/
+    }
 
     protected Locale getCurrentLocale() {
         return UI.getCurrent().getLocale();
