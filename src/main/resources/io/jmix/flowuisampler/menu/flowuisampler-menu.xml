@@ -23,8 +23,8 @@
             <item id="button-action" page="button" image="components/button/button-action.png"/>
         </menu>
         <menu id="checkbox">
-            <item id="checkbox-simple" page="check-box" image="components/checkbox/checkbox-simple.png"/>
-            <item id="checkbox-dataaware" page="check-box"
+            <item id="checkbox-simple" page="checkBox" image="components/checkbox/checkbox-simple.png"/>
+            <item id="checkbox-dataaware" page="checkBox"
                   image="components/checkbox/checkbox-dataaware.png">
                 <otherFiles>
                     <file name="io/jmix/flowuisampler/entity/Customer.java"/>
@@ -33,10 +33,10 @@
         </menu>
     </menu>
 
-    <menu id="containers" image="mainmenu/containers.svg" url="flow-ui/vc/containers">
+    <menu id="containers" image="mainmenu/containers.svg" url="flow-ui/vc/layouts">
         <menu id="boxlayout">
-            <item id="hbox-simple" page="box-layout" image="containers/boxlayout/hbox-simple.svg"/>
-            <item id="vbox-simple" page="box-layout" image="containers/boxlayout/vbox-simple.svg"/>
+            <item id="hbox-simple" page="hbox" image="containers/boxlayout/hbox-simple.svg"/>
+            <item id="vbox-simple" page="vbox" image="containers/boxlayout/vbox-simple.svg"/>
         </menu>
     </menu>
 

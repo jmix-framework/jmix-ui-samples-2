@@ -18,6 +18,10 @@ package io.jmix.flowuisampler;
 
 import com.google.common.base.Strings;
 import io.jmix.core.security.CoreSecurityConfiguration;
+import io.jmix.flowui.sys.registration.ComponentRegistration;
+import io.jmix.flowui.sys.registration.ComponentRegistrationBuilder;
+import io.jmix.flowuisampler.component.themeswitcher.ThemeToggle;
+import io.jmix.flowuisampler.component.themeswitcher.ThemeToggleLoader;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
@@ -64,5 +68,12 @@ public class FlowuiSamplerConfiguration {
                 + "http://localhost:"
                 + environment.getProperty("local.server.port")
                 + Strings.nullToEmpty(environment.getProperty("server.servlet.context-path")));
+    }
+
+    @Bean
+    public ComponentRegistration themeToggle() {
+        return ComponentRegistrationBuilder.create(ThemeToggle.class)
+                .withComponentLoader("themeToggle", ThemeToggleLoader.class)
+                .build();
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <mainView xmlns="http://jmix.io/schema/flowui/main-view"
+          xmlns:app="http://schemas.company.com/ui.ex1/0.1/app-ui-components.xsd"
           title="msg://MainView.title">
     <actions>
         <action id="logout" type="logout"/>
@@ -12,6 +13,8 @@
                               themeNames="contrast"
                               ariaLabel="msg://drawerToggle.ariaLabel"/>
                 <h1 id="viewTitle" classNames="jmix-main-view-title"/>
+
+                <app:themeToggle id="themeToggle" classNames="theme-toggle"/>
             </header>
         </navigationBar>
         <drawerLayout>
@@ -26,7 +29,7 @@
                                classNames="jmix-search-field"/>
                 </hbox>
                 <hbox classNames="jmix-menu-tools" spacing="false">
-                    <label id="menuLabel" text="msg://menu.label"/>
+                    <h4 id="menuLabel" text="msg://menu.label"/>
                     <button id="collapseAllBtn"
                             title="msg://menu.collapseAll"
                             icon="COMPRESS"

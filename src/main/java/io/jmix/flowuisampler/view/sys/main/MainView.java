@@ -16,11 +16,12 @@
 
 package io.jmix.flowuisampler.view.sys.main;
 
-import com.vaadin.flow.component.*;
+import com.vaadin.flow.component.ClickEvent;
+import com.vaadin.flow.component.Key;
+import com.vaadin.flow.component.KeyPressEvent;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
-import com.vaadin.flow.component.details.Details;
-import com.vaadin.flow.component.html.UnorderedList;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
@@ -35,6 +36,8 @@ import io.jmix.flowui.view.Subscribe;
 import io.jmix.flowui.view.ViewComponent;
 import io.jmix.flowui.view.ViewController;
 import io.jmix.flowui.view.ViewDescriptor;
+import io.jmix.flowuisampler.bean.ThemeToggleBinder;
+import io.jmix.flowuisampler.component.themeswitcher.ThemeToggle;
 import io.jmix.flowuisampler.config.SamplerMenuConfig;
 import io.jmix.flowuisampler.config.SamplerMenuItem;
 import io.jmix.flowuisampler.view.sys.sampleview.SampleView;
@@ -45,7 +48,6 @@ import org.springframework.lang.Nullable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
 
 @Route("")
 @ViewController("MainView")
@@ -57,17 +59,22 @@ public class MainView extends StandardMainView {
     protected JmixListMenu menu;
     @ViewComponent
     protected TypedTextField<String> searchField;
+    @ViewComponent
+    protected ThemeToggle themeToggle;
 
     @Autowired
     protected SamplerMenuConfig menuConfig;
     @Autowired
     protected UiComponents uiComponents;
+    @Autowired
+    protected ThemeToggleBinder themeToggleBinder;
 
     protected List<JmixListMenu.MenuItem> foundItems = new ArrayList<>();
     protected List<String> parentListIdsToExpand = new ArrayList<>();
 
     @Subscribe
     public void onInit(InitEvent event) {
+        themeToggleBinder.setThemeToggle(themeToggle);
         initSideMenu();
     }
 
@@ -127,7 +134,7 @@ public class MainView extends StandardMainView {
     protected JmixButton createSearchButton() {
         JmixButton searchButton = uiComponents.create(JmixButton.class);
         searchButton.setIcon(VaadinIcon.SEARCH.create());
-        searchButton.addThemeVariants(ButtonVariant.LUMO_ICON);
+        searchButton.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_TERTIARY_INLINE);
 
         searchButton.addClickListener(this::searchButtonClickListener);
 
@@ -152,14 +159,19 @@ public class MainView extends StandardMainView {
             findItemsRecursively(menu.getMenuItems(), searchValue);
 
             for (JmixListMenu.MenuItem item : foundItems) {
+                if (menuConfig.getItemById(item.getId()).getParent() != null) {
+                    expandAllParentRecursively(item.getId());
+                }
+
                 ListMenu.MenuItem menuItem = menu.getMenuItem(item.getId());
-                if (menuItem != null) {
-                    UnorderedList content = menuItem.getMenuComponent().getContent();
-                    expand(menuItem, content, true);
+                if (menuItem.isMenu()
+                        && menuItem instanceof ListMenu.MenuBarItem menuBarItem
+                        && !menuBarItem.getChildren().isEmpty()) {
+                    expand(menuItem, true);
                 }
             }
 
-            removeNotRequestedItems(menu.getMenuItems(), null, null, searchValue);
+            removeNotRequestedItems(List.copyOf(menu.getMenuItems()), null, searchValue);
         }
     }
 
@@ -177,41 +189,26 @@ public class MainView extends StandardMainView {
     @SuppressWarnings("ConstantConditions")
     protected void removeNotRequestedItems(List<JmixListMenu.MenuItem> list,
                                            @Nullable ListMenu.MenuBarItem parentItem,
-                                           @Nullable UnorderedList content,
                                            String searchValue) {
         for (JmixListMenu.MenuItem item : list) {
-            content = content == null
-                    ? item.getMenuComponent().getContent()
-                    : (UnorderedList) getChildContent(content).orElse(null);
-
-            if (item.isMenu()) {
-                Optional<Component> childDetail = getChildDetail(content);
-
-                if (childDetail.isPresent() && !((Details) childDetail.get()).isOpened()) {
-                    if (parentItem != null) {
-                        parentItem.removeChildItem(item);
-                    }
+            if (item.isMenu() && item instanceof ListMenu.MenuBarItem menuItem && menuItem.hasChildren()) {
+                if (!menuItem.isOpened()) {
                     menu.removeMenuItem(item);
                 } else if (!StringUtils.containsIgnoreCase(item.getTitle(), searchValue)) {
                     ListMenu.MenuBarItem menuBarItem = (ListMenu.MenuBarItem) item;
-                    removeNotRequestedItems(menuBarItem.getChildren(), menuBarItem, content, searchValue);
+                    removeNotRequestedItems(menuBarItem.getChildren(), menuBarItem, searchValue);
                 }
             } else if (!StringUtils.containsIgnoreCase(item.getTitle(), searchValue)) {
-                if (parentItem != null) {
-                    parentItem.removeChildItem(item);
-                }
                 menu.removeMenuItem(item);
             }
         }
     }
 
-
     @SuppressWarnings("ConstantConditions")
     @Subscribe("collapseAllBtn")
     public void onCollapseAllBtnClick(ClickEvent<Button> event) {
         for (JmixListMenu.MenuItem item : menu.getMenuItems()) {
-            UnorderedList content = item.getMenuComponent().getContent();
-            expand(item, content, false);
+            expand(item, false);
         }
     }
 
@@ -219,39 +216,40 @@ public class MainView extends StandardMainView {
     @Subscribe("expandAllBtn")
     public void onExpandAllBtnClick(ClickEvent<Button> event) {
         for (JmixListMenu.MenuItem item : menu.getMenuItems()) {
-            UnorderedList content = item.getMenuComponent().getContent();
-            expand(item, content, true);
+            expand(item, true);
         }
     }
 
-    protected void expand(JmixListMenu.MenuItem item, UnorderedList content, boolean isExpand) {
+    protected void expand(JmixListMenu.MenuItem item, boolean isExpand) {
         if (item.isMenu()) {
-            findDetailAndExpand(content, isExpand);
+            ((ListMenu.MenuBarItem) item).setOpened(isExpand);
 
             for (JmixListMenu.MenuItem menuItem : ((ListMenu.MenuBarItem) item).getChildren()) {
-                Optional<Component> childContent = getChildContent(content);
-                if (menuItem.isMenu() && childContent.isPresent()) {
-                    expand(menuItem, ((UnorderedList) childContent.get()), isExpand);
+                if (menuItem.isMenu()) {
+                    expand(menuItem, isExpand);
                 }
             }
         }
     }
 
-    protected void findDetailAndExpand(UnorderedList content, boolean isExpand) {
-        content.getChildren()
-                .forEach(component -> component.getChildren().findAny()
-                        .ifPresent(component1 -> ((Details) component1).setOpened(isExpand))
-                );
+    protected void expandAllParentRecursively(String id) {
+        parentListIdsToExpand.clear();
+        fillParentListToExpand(id);
+
+        for (String parentId : parentListIdsToExpand) {
+            ListMenu.MenuItem menuItem = menu.getMenuItem(parentId);
+
+            if (menuItem instanceof ListMenu.MenuBarItem menuBarItem) {
+                menuBarItem.setOpened(true);
+            }
+        }
     }
 
-    protected Optional<Component> getChildContent(UnorderedList content) {
-        return getChildDetail(content)
-                .flatMap(component -> ((Details) component).getContent().findAny());
-    }
-
-    protected Optional<Component> getChildDetail(UnorderedList content) {
-        return content.getChildren()
-                .findAny()
-                .flatMap(component -> component.getChildren().findAny());
+    protected void fillParentListToExpand(String id) {
+        SamplerMenuItem itemToExpand = menuConfig.getItemById(id);
+        if (itemToExpand.getParent() != null) {
+            parentListIdsToExpand.add(itemToExpand.getParent().getId());
+            fillParentListToExpand(itemToExpand.getParent().getId());
+        }
     }
 }

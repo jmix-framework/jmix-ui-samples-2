@@ -32,6 +32,7 @@ import com.vaadin.flow.i18n.LocaleChangeObserver;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
+import com.vaadin.flow.shared.Registration;
 import io.jmix.core.CoreProperties;
 import io.jmix.core.Messages;
 import io.jmix.flowui.UiComponents;
@@ -42,7 +43,10 @@ import io.jmix.flowui.component.scroller.JmixScroller;
 import io.jmix.flowui.component.splitlayout.JmixSplitLayout;
 import io.jmix.flowui.component.tabsheet.JmixTabSheet;
 import io.jmix.flowui.kit.component.codeeditor.CodeEditorMode;
+import io.jmix.flowui.kit.component.codeeditor.CodeEditorTheme;
 import io.jmix.flowui.view.*;
+import io.jmix.flowuisampler.bean.ThemeToggleBinder;
+import io.jmix.flowuisampler.component.themeswitcher.ThemeToggle;
 import io.jmix.flowuisampler.config.SamplerMenuConfig;
 import io.jmix.flowuisampler.config.SamplerMenuItem;
 import io.jmix.flowuisampler.util.SamplerHelper;
@@ -80,10 +84,18 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     protected CoreProperties coreProperties;
     @Autowired
     protected Views views;
+    @Autowired
+    protected ThemeToggleBinder themeToggleBinder;
 
     protected JmixTabSheet tabSheet;
     protected String sampleId;
     protected SamplerMenuItem menuItem;
+    protected ThemeToggle themeToggle;
+
+    @Subscribe
+    public void onInit(InitEvent event) {
+        themeToggle = themeToggleBinder.getThemeToggle();
+    }
 
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
@@ -199,22 +211,41 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     protected void addSourceTab(String src) {
         String fileContent = samplerHelper.getFileContent(src);
         if (!Strings.isNullOrEmpty(src) && !Strings.isNullOrEmpty(fileContent)) {
-            CodeEditor codeEditor = createSourceCodeEditor(getCodeEditorMode(src));
+            CodeEditor codeEditor = createCodeEditor(getCodeEditorMode(src));
             codeEditor.setValue(fileContent);
             addTab(samplerHelper.getFileName(src), codeEditor, VaadinIcon.CODE.create());
         }
     }
 
-    protected CodeEditor createSourceCodeEditor(CodeEditorMode mode) {
+    protected CodeEditor createCodeEditor(CodeEditorMode mode) {
         CodeEditor editor = uiComponents.create(CodeEditor.class);
 
+        initCodeEditorTheme(editor);
         editor.setShowPrintMargin(false);
         editor.setMode(mode);
         editor.setReadOnly(true);
         editor.setWidthFull();
-        editor.setHeightFull();
+        editor.setHeight("97%");
 
         return editor;
+    }
+
+    protected void initCodeEditorTheme(CodeEditor editor) {
+        Registration registration = themeToggle.addClickListener(event -> updateCodeEditorTheme(editor));
+        editor.addDetachListener(event -> registration.remove());
+
+        updateCodeEditorTheme(editor);
+    }
+
+    protected void updateCodeEditorTheme(CodeEditor editor) {
+        themeToggle.getElement().executeJs("return this.getCurrentTheme();")
+                .then(String.class, currentTheme -> {
+                    if ("dark".equalsIgnoreCase(currentTheme)) {
+                        editor.setTheme(CodeEditorTheme.NORD_DARK);
+                    } else {
+                        editor.setTheme(CodeEditorTheme.TEXTMATE);
+                    }
+                });
     }
 
     protected Component createComponentDescription(Component content) {
@@ -309,7 +340,7 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
             String content = samplerHelper.getFileContent(src);
 
             if (StringUtils.isNotBlank(content)) {
-                CodeEditor sourceCodeEditor = createSourceCodeEditor(getCodeEditorMode(src));
+                CodeEditor sourceCodeEditor = createCodeEditor(getCodeEditorMode(src));
                 sourceCodeEditor.setValue(content);
                 addTab(tabTitle, sourceCodeEditor, VaadinIcon.GLOBE.create());
             }
