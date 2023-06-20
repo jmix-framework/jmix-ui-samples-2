@@ -18,6 +18,7 @@
 <menu-config xmlns="io/jmix/flowuisampler/menu/flowuisampler-menu.xsd">
 
     <menu id="components" image="mainmenu/components.svg" url="flow-ui/vc/components">
+        <item id="avatar" page="avatar"/>
         <menu id="button">
             <item id="button-simple" page="button" image="components/button/button-simple.png"/>
             <item id="button-action" page="button" image="components/button/button-action.png"/>

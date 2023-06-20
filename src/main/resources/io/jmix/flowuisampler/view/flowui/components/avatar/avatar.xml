@@ -1,0 +1,20 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <details summaryText="Simple avatar" opened="true">
+            <hbox padding="false">
+                <avatar name="Homer Jay Simpson"/>
+                <avatar name="Homer Jay Simpson" abbreviation="HS"/>
+                <avatar id="avatarWithImage" name="Jmix Developer"/>
+            </hbox>
+        </details>
+        <details summaryText="Theme variants" opened="true">
+            <hbox padding="false">
+                <avatar abbreviation="XL" themeNames="xlarge"/>
+                <avatar abbreviation="L" themeNames="large"/>
+                <avatar abbreviation="M"/>
+                <avatar abbreviation="S" themeNames="small"/>
+                <avatar abbreviation="XS" themeNames="xsmall"/>
+            </hbox>
+        </details>
+    </layout>
+</view>
