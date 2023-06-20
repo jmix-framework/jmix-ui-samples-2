@@ -1,0 +1,15 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox padding="false">
+            <checkboxGroup id="checkboxGroupWithList"
+                           label="Items List"
+                           themeNames="vertical"/>
+            <checkboxGroup id="checkboxGroupWithMap"
+                           label="Items Map"
+                           themeNames="vertical"/>
+            <checkboxGroup id="checkboxGroupWithEnum"
+                           label="Items Enum"
+                           themeNames="vertical"/>
+        </hbox>
+    </layout>
+</view>

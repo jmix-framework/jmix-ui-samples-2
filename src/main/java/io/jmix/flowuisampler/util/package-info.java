@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 Haulmont.
+ * Copyright 2023 Haulmont.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,23 +14,7 @@
  * limitations under the License.
  */
 
-package io.jmix.flowuisampler.bean;
+@NonNullApi
+package io.jmix.flowuisampler.util;
 
-import com.vaadin.flow.spring.annotation.UIScope;
-import io.jmix.flowuisampler.component.themeswitcher.ThemeToggle;
-import org.springframework.stereotype.Component;
-
-@UIScope
-@Component("sampler_ThemeToggleBinder")
-public class ThemeToggleBinder {
-
-    protected ThemeToggle themeToggle;
-
-    public ThemeToggle getThemeToggle() {
-        return this.themeToggle;
-    }
-
-    public void setThemeToggle(ThemeToggle themeToggle) {
-        this.themeToggle = themeToggle;
-    }
-}
+import org.springframework.lang.NonNullApi;

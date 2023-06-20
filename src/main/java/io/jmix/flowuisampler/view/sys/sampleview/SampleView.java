@@ -18,6 +18,7 @@ package io.jmix.flowuisampler.view.sys.sampleview;
 
 import com.google.common.base.Strings;
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.html.Label;
@@ -32,9 +33,9 @@ import com.vaadin.flow.i18n.LocaleChangeObserver;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
-import com.vaadin.flow.shared.Registration;
 import io.jmix.core.CoreProperties;
 import io.jmix.core.Messages;
+import io.jmix.core.session.SessionData;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.Views;
 import io.jmix.flowui.component.codeeditor.CodeEditor;
@@ -45,20 +46,18 @@ import io.jmix.flowui.component.tabsheet.JmixTabSheet;
 import io.jmix.flowui.kit.component.codeeditor.CodeEditorMode;
 import io.jmix.flowui.kit.component.codeeditor.CodeEditorTheme;
 import io.jmix.flowui.view.*;
-import io.jmix.flowuisampler.bean.ThemeToggleBinder;
-import io.jmix.flowuisampler.component.themeswitcher.ThemeToggle;
+import io.jmix.flowuisampler.util.CodeEditorThemeHelper;
 import io.jmix.flowuisampler.config.SamplerMenuConfig;
 import io.jmix.flowuisampler.config.SamplerMenuItem;
 import io.jmix.flowuisampler.util.SamplerHelper;
 import io.jmix.flowuisampler.view.sys.main.MainView;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 @Route(value = "sample/:sampleId?", layout = MainView.class)
 @ViewController("SampleView")
@@ -85,22 +84,29 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     @Autowired
     protected Views views;
     @Autowired
-    protected ThemeToggleBinder themeToggleBinder;
+    protected ObjectProvider<SessionData> sessionDataProvider;
+    @Autowired
+    protected CodeEditorThemeHelper codeEditorThemeHelper;
+
+    protected String sampleId;
+    protected StandardView samplerView;
 
     protected JmixTabSheet tabSheet;
-    protected String sampleId;
     protected SamplerMenuItem menuItem;
-    protected ThemeToggle themeToggle;
-
-    @Subscribe
-    public void onInit(InitEvent event) {
-        themeToggle = themeToggleBinder.getThemeToggle();
-    }
+    protected Set<CodeEditor> codeEditors = new HashSet<>();
 
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
         event.getRouteParameters().get("sampleId")
                 .ifPresent(this::updateSample);
+        codeEditorThemeHelper.setCodeEditors(codeEditors);
+
+        super.beforeEnter(event);
+    }
+
+    @Subscribe
+    public void onBeforeShow(BeforeShowEvent event) {
+        ComponentUtil.fireEvent(samplerView, new BeforeShowEvent(samplerView));
     }
 
     protected void updateSample(String sampleId) {
@@ -108,6 +114,7 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
         this.menuItem = menuConfig.getItemById(sampleId);
 
         StandardView sampleView = ((StandardView) views.create(sampleId));
+        this.samplerView = sampleView;
 
         updateLayout(sampleView);
         updateTabs();
@@ -220,32 +227,16 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     protected CodeEditor createCodeEditor(CodeEditorMode mode) {
         CodeEditor editor = uiComponents.create(CodeEditor.class);
 
-        initCodeEditorTheme(editor);
+        editor.setTheme(getSessionTheme());
         editor.setShowPrintMargin(false);
         editor.setMode(mode);
         editor.setReadOnly(true);
         editor.setWidthFull();
-        editor.setHeight("97%");
+        editor.setMinHeight("20em");
+        editor.setHeight("95%");
 
+        codeEditors.add(editor);
         return editor;
-    }
-
-    protected void initCodeEditorTheme(CodeEditor editor) {
-        Registration registration = themeToggle.addClickListener(event -> updateCodeEditorTheme(editor));
-        editor.addDetachListener(event -> registration.remove());
-
-        updateCodeEditorTheme(editor);
-    }
-
-    protected void updateCodeEditorTheme(CodeEditor editor) {
-        themeToggle.getElement().executeJs("return this.getCurrentTheme();")
-                .then(String.class, currentTheme -> {
-                    if ("dark".equalsIgnoreCase(currentTheme)) {
-                        editor.setTheme(CodeEditorTheme.NORD_DARK);
-                    } else {
-                        editor.setTheme(CodeEditorTheme.TEXTMATE);
-                    }
-                });
     }
 
     protected Component createComponentDescription(Component content) {
@@ -340,9 +331,9 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
             String content = samplerHelper.getFileContent(src);
 
             if (StringUtils.isNotBlank(content)) {
-                CodeEditor sourceCodeEditor = createCodeEditor(getCodeEditorMode(src));
-                sourceCodeEditor.setValue(content);
-                addTab(tabTitle, sourceCodeEditor, VaadinIcon.GLOBE.create());
+                CodeEditor codeEditor = createCodeEditor(getCodeEditorMode(src));
+                codeEditor.setValue(content);
+                addTab(tabTitle, codeEditor, VaadinIcon.GLOBE.create());
             }
         }
     }
@@ -372,5 +363,18 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
 
     protected Locale getCurrentLocale() {
         return UI.getCurrent().getLocale();
+    }
+
+    protected CodeEditorTheme getSessionTheme() {
+        SessionData sessionData = sessionDataProvider.getIfAvailable();
+
+        if (sessionData != null) {
+            String currentTheme = (String) sessionData.getAttribute(MainView.CURRENT_THEME_SESSION_ATTRIBUTE);
+            return "dark".equalsIgnoreCase(currentTheme)
+                    ? CodeEditorTheme.NORD_DARK
+                    : CodeEditorTheme.TEXTMATE;
+        }
+
+        return CodeEditorTheme.TEXTMATE;
     }
 }

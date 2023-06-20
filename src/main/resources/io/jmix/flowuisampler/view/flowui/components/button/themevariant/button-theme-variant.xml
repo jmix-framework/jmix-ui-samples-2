@@ -1,0 +1,38 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox padding="false" width="100%">
+            <vbox width="65%" padding="false">
+                <details summaryText="Style variant" opened="true">
+                    <hbox>
+                        <button id="primaryButton" text="Primary button" themeNames="primary"/>
+                        <button id="successButton" text="Success button" themeNames="success"/>
+                        <button id="errorButton" text="Error button" themeNames="error"/>
+                        <button id="contrastButton" text="Contrast button" themeNames="contrast"/>
+                    </hbox>
+                </details>
+
+                <details summaryText="Size variant" opened="true">
+                    <hbox>
+                        <button id="largeButton" text="Large button" themeNames="large"/>
+                        <button id="medium" text="Medium button"/>
+                        <button id="smallButton" text="Small button" themeNames="small"/>
+                    </hbox>
+                </details>
+
+                <details summaryText="Visual variant" opened="true">
+                    <hbox>
+                        <button id="iconButton" themeNames="icon" icon="SMILEY_O"/>
+                        <button id="tertiaryButton" text="Tertiary button" themeNames="tertiary"/>
+                        <button id="tertiaryInlineButton" text="Tertiary-inline button" themeNames="tertiary-inline"/>
+                    </hbox>
+                </details>
+            </vbox>
+            <details summaryText="Test button" opened="true" width="35%">
+                <vbox>
+                    <button id="testButton"/>
+                    <checkboxGroup id="settingsCheckboxGroup" label="TestButton Themes" themeNames="vertical"/>
+                </vbox>
+            </details>
+        </hbox>
+    </layout>
+</view>

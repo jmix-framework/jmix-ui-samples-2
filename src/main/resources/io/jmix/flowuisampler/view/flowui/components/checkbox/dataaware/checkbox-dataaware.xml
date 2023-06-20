@@ -6,7 +6,7 @@
     </data>
     <layout>
         <checkbox id="activeCheckbox"
-                  label="CheckBox connected to a container"
+                  label="Checkbox connected to a container"
                   dataContainer="customerDc"
                   property="active"/>
         <hbox>

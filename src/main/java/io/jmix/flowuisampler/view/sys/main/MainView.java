@@ -16,15 +16,13 @@
 
 package io.jmix.flowuisampler.view.sys.main;
 
-import com.vaadin.flow.component.ClickEvent;
-import com.vaadin.flow.component.Key;
-import com.vaadin.flow.component.KeyPressEvent;
-import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.*;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
+import io.jmix.core.session.SessionData;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.app.main.StandardMainView;
 import io.jmix.flowui.component.main.JmixListMenu;
@@ -36,13 +34,14 @@ import io.jmix.flowui.view.Subscribe;
 import io.jmix.flowui.view.ViewComponent;
 import io.jmix.flowui.view.ViewController;
 import io.jmix.flowui.view.ViewDescriptor;
-import io.jmix.flowuisampler.bean.ThemeToggleBinder;
 import io.jmix.flowuisampler.component.themeswitcher.ThemeToggle;
 import io.jmix.flowuisampler.config.SamplerMenuConfig;
 import io.jmix.flowuisampler.config.SamplerMenuItem;
 import io.jmix.flowuisampler.view.sys.sampleview.SampleView;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEvent;
 import org.springframework.lang.Nullable;
 
 import java.util.ArrayList;
@@ -54,6 +53,8 @@ import java.util.List;
 @ViewDescriptor("main-view.xml")
 @AnonymousAllowed
 public class MainView extends StandardMainView {
+
+    public static final String CURRENT_THEME_SESSION_ATTRIBUTE = "currentTheme";
 
     @ViewComponent
     protected JmixListMenu menu;
@@ -67,15 +68,36 @@ public class MainView extends StandardMainView {
     @Autowired
     protected UiComponents uiComponents;
     @Autowired
-    protected ThemeToggleBinder themeToggleBinder;
+    protected ObjectProvider<SessionData> sessionDataProvider;
 
     protected List<JmixListMenu.MenuItem> foundItems = new ArrayList<>();
     protected List<String> parentListIdsToExpand = new ArrayList<>();
 
     @Subscribe
     public void onInit(InitEvent event) {
-        themeToggleBinder.setThemeToggle(themeToggle);
         initSideMenu();
+        initThemeSessionAttribute();
+    }
+
+    protected void initThemeSessionAttribute() {
+        SessionData sessionData = sessionDataProvider.getIfAvailable();
+
+        if (sessionData != null) {
+            themeToggle.getElement().executeJs("return this.getCurrentTheme();")
+                    .then(String.class, currentTheme ->
+                            sessionData.setAttribute(CURRENT_THEME_SESSION_ATTRIBUTE, currentTheme));
+        }
+
+        ComponentUtil.addListener(themeToggle, ThemeToggle.ThemeToggleThemeChangedEvent.class, event -> {
+            String currentTheme = event.getValue();
+
+            if (sessionData != null) {
+                sessionData.setAttribute(CURRENT_THEME_SESSION_ATTRIBUTE, currentTheme);
+            }
+
+            ThemeChangedEvent themeChangedEvent = new ThemeChangedEvent(this, currentTheme);
+            getApplicationContext().publishEvent(themeChangedEvent);
+        });
     }
 
     protected void initSideMenu() {
@@ -250,6 +272,19 @@ public class MainView extends StandardMainView {
         if (itemToExpand.getParent() != null) {
             parentListIdsToExpand.add(itemToExpand.getParent().getId());
             fillParentListToExpand(itemToExpand.getParent().getId());
+        }
+    }
+
+    public static class ThemeChangedEvent extends ApplicationEvent {
+        protected final String theme;
+
+        public ThemeChangedEvent(MainView source, String theme) {
+            super(source);
+            this.theme = theme;
+        }
+
+        public String getTheme() {
+            return theme;
         }
     }
 }

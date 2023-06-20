@@ -59,6 +59,10 @@ class ThemeToggle extends Button {
         super();
 
         this.addEventListener('click', () => this.toggleTheme());
+        this.addEventListener('click', () => {
+            const customEvent = new CustomEvent('theme-changed', {detail: {value: this.getCurrentTheme()}});
+            this.dispatchEvent(customEvent);
+        });
     }
 
     /** @protected */

@@ -6,10 +6,10 @@
                     title="Click me!"/>
             <button id="saveButton1"
                     text="Save"
-                    icon="CHECK"/>
+                    icon="ARCHIVE"/>
             <button id="saveButton2"
                     title="Save"
-                    icon="CHECK"/>
+                    icon="ARCHIVE"/>
         </hbox>
     </layout>
 </view>

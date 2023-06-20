@@ -21,13 +21,31 @@
         <menu id="button">
             <item id="button-simple" page="button" image="components/button/button-simple.png"/>
             <item id="button-action" page="button" image="components/button/button-action.png"/>
+            <item id="button-programmatic-action" page="button" image="components/button/button-action.png"/>
+            <item id="button-theme-variant" page="button"/>
         </menu>
         <menu id="checkbox">
             <item id="checkbox-simple" page="checkBox" image="components/checkbox/checkbox-simple.png"/>
-            <item id="checkbox-dataaware" page="checkBox"
-                  image="components/checkbox/checkbox-dataaware.png">
+            <item id="checkbox-dataaware" page="checkBox" image="components/checkbox/checkbox-dataaware.png">
                 <otherFiles>
                     <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="checkbox-group">
+            <item id="checkbox-group-simple" page="checkBoxGroup">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="checkbox-group-custom-items" page="checkBoxGroup">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="checkbox-group-dataaware" page="checkBoxGroup">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Product.java"/>
                 </otherFiles>
             </item>
         </menu>

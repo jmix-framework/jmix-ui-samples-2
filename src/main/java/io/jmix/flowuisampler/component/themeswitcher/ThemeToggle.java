@@ -22,6 +22,7 @@ public class ThemeToggle extends Component implements ClickNotifier<ThemeToggle>
         Focusable<ThemeToggle>, HasTheme, HasEnabled, HasSize, HasStyle, HasText, HasTooltip, HasTitle {
 
     public static final String STORAGE_KEY_PROPERTY = "storageKey";
+    public static final String THEME_CHANGED_EVENT = "theme-changed";
     private Component iconComponent;
 
     public ThemeToggle() {
@@ -209,6 +210,22 @@ public class ThemeToggle extends Component implements ClickNotifier<ThemeToggle>
             getThemeNames().add("icon");
         } else {
             getThemeNames().remove("icon");
+        }
+    }
+
+    @DomEvent(THEME_CHANGED_EVENT)
+    public static class ThemeToggleThemeChangedEvent extends ComponentEvent<ThemeToggle> {
+
+        protected String value;
+
+        public ThemeToggleThemeChangedEvent(ThemeToggle source, boolean fromClient,
+                                               @EventData("event.detail.value") String value) {
+            super(source, fromClient);
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
         }
     }
 }
