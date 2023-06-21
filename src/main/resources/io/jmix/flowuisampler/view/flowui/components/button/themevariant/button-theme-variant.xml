@@ -28,9 +28,9 @@
                 </details>
             </vbox>
             <details summaryText="Test button" opened="true" width="35%">
-                <vbox>
+                <vbox padding="false">
                     <button id="testButton"/>
-                    <checkboxGroup id="settingsCheckboxGroup" label="TestButton Themes" themeNames="vertical"/>
+                    <checkboxGroup id="settingsCheckboxGroup" label="TestButton settings" themeNames="vertical"/>
                 </vbox>
             </details>
         </hbox>

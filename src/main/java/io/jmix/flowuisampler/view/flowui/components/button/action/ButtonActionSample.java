@@ -17,7 +17,6 @@ public class ButtonActionSample extends StandardView {
 
     @Subscribe("someAction")
     protected void onSomeActionButtonClick(ActionPerformedEvent event) {
-        notifications.create("Action performed")
-                .show();
+        notifications.show("Action performed");
     }
 }

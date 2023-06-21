@@ -21,9 +21,7 @@ public class ButtonProgrammaticActionSample extends StandardView {
         buttonAction.setAction(
                 new BaseAction("theAction")
                         .withText("Click me!")
-                        .withHandler(actionPerformedEvent ->
-                                notifications.create("Action performed")
-                                        .show())
+                        .withHandler(actionPerformedEvent -> notifications.show("Action performed"))
         );
     }
 }

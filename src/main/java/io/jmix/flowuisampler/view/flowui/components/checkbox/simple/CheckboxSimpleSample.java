@@ -24,9 +24,8 @@ public class CheckboxSimpleSample extends StandardView {
     }
 
     protected void carFieldValueChangeListener(ComponentValueChangeEvent<Checkbox, Boolean> changeEvent) {
-        notifications.create(Boolean.TRUE.equals(changeEvent.getValue())
+        notifications.show(Boolean.TRUE.equals(changeEvent.getValue())
                         ? "I have a car"
-                        : "I don't have a car")
-                .show();
+                        : "I don't have a car");
     }
 }

@@ -1,0 +1,8 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <comboBox id="comboBox"
+                  label="Magic Box"
+                  allowCustomValue="true"
+                  helperText="Entered value will be added to the items"/>
+    </layout>
+</view>

@@ -4,7 +4,7 @@
             <hbox padding="false">
                 <avatar name="Homer Jay Simpson"/>
                 <avatar name="Homer Jay Simpson" abbreviation="HS"/>
-                <avatar id="avatarWithImage" name="Jmix Developer"/>
+                <avatar id="avatarWithImage"/>
             </hbox>
         </details>
         <details summaryText="Theme variants" opened="true">

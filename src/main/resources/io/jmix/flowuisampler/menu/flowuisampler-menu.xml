@@ -50,6 +50,29 @@
                 </otherFiles>
             </item>
         </menu>
+        <menu id="combobox">
+            <item id="combobox-simple" page="comboBox">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                    <file name="io/jmix/flowuisampler/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="combobox-custom-items" page="comboBox">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                    <file name="io/jmix/flowuisampler/entity/CustomerGrade.java"/>
+                    <file name="io/jmix/flowuisampler/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="combobox-custom-filtering" page="comboBox"/>
+            <item id="combobox-user-input" page="comboBox"/>
+            <item id="combobox-custom-renderer" page="comboBox"/>
+            <item id="combobox-theme-variant" page="comboBox">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+        </menu>
     </menu>
 
     <menu id="containers" image="mainmenu/containers.svg" url="flow-ui/vc/layouts">

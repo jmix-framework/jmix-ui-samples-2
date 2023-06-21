@@ -18,8 +18,7 @@ public class ButtonSimpleSample extends StandardView {
 
     @Subscribe("helloButton")
     protected void onHelloButtonClick(ClickEvent<Button> event) {
-        notifications.create("Hello, world!")
-                .show();
+        notifications.show("Hello, world!");
     }
 
     @Subscribe("saveButton1")
@@ -35,7 +34,6 @@ public class ButtonSimpleSample extends StandardView {
     }
 
     public void save(String id) {
-        notifications.create("Save called from " + id)
-                .show();
+        notifications.show("Save called from " + id);
     }
 }

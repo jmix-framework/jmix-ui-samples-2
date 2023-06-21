@@ -1,0 +1,10 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <instance id="customerDc"
+                  class="io.jmix.flowuisampler.entity.Customer"
+                  fetchPlan="_local"/>
+    </data>
+    <layout>
+        <comboBox dataContainer="customerDc" property="grade"/>
+    </layout>
+</view>
