@@ -11,7 +11,7 @@ import java.util.List;
 
 @ViewController("combobox-theme-variant")
 @ViewDescriptor("combobox-theme-variant.xml")
-public class ComboBoxThemeVariant extends StandardView {
+public class ComboBoxThemeVariantSample extends StandardView {
 
     @ViewComponent
     protected JmixComboBox<CustomerGrade> alignLeftComboBox;

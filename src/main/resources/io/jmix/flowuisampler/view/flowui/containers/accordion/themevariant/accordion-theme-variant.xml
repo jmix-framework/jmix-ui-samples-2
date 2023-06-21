@@ -1,0 +1,12 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <accordion id="mainAccordion" height="100%" width="100%">
+            <accordionPanel id="firstPanel" summaryText="Panel 1">
+                <checkboxGroup id="firstPanelSettingsCheckboxGroup" label="Panel themes"/>
+            </accordionPanel>
+            <accordionPanel id="secondPanel" summaryText="Panel 2">
+                <checkboxGroup id="secondPanelSettingsCheckboxGroup" label="Panel themes"/>
+            </accordionPanel>
+        </accordion>
+    </layout>
+</view>

@@ -76,11 +76,17 @@
     </menu>
 
     <menu id="containers" image="mainmenu/containers.svg" url="flow-ui/vc/layouts">
+        <menu id="accordion">
+            <item id="accordion-simple" page="accordion" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="accordion-theme-variant" page="accordion"/>
+        </menu>
         <menu id="boxlayout">
             <item id="hbox-simple" page="hbox" image="containers/boxlayout/hbox-simple.svg"/>
             <item id="vbox-simple" page="vbox" image="containers/boxlayout/vbox-simple.svg"/>
         </menu>
     </menu>
-
-
 </menu-config>
