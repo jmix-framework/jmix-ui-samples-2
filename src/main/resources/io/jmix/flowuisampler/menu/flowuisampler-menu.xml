@@ -109,5 +109,6 @@
             <item id="hbox-simple" page="hbox" image="containers/boxlayout/hbox-simple.svg"/>
             <item id="vbox-simple" page="vbox" image="containers/boxlayout/vbox-simple.svg"/>
         </menu>
+        <item id="scroller" page="scroller"/>
     </menu>
 </menu-config>
