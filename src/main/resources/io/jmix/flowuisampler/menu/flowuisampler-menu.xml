@@ -19,6 +19,15 @@
 
     <menu id="components" image="mainmenu/components.svg" url="flow-ui/vc/components">
         <item id="avatar" page="avatar"/>
+        <menu id="badge">
+            <item id="badge-simple" page="badge"/>
+            <item id="badge-icons" page="badge">
+                <otherFiles>
+                    <file name="frontend/themes/jmix-flowui-samples/badge-icons.css"/>
+                </otherFiles>
+            </item>
+            <item id="badge-theme-variant" page="badge"/>
+        </menu>
         <menu id="button">
             <item id="button-simple" page="button" image="components/button/button-simple.png"/>
             <item id="button-action" page="button" image="components/button/button-action.png"/>

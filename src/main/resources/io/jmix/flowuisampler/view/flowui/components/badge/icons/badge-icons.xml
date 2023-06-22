@@ -1,0 +1,50 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <details summaryText="Simple icon" opened="true">
+            <vbox padding="false">
+                <hbox>
+                    <span themeNames="normal">
+                        <icon icon="CLOCK" classNames="badged-icon"/>
+                        <span text="Pending"/>
+                    </span>
+                    <span themeNames="success">
+                        <icon icon="CHECK" classNames="badged-icon"/>
+                        <span text="Confirmed"/>
+                    </span>
+                    <span themeNames="error">
+                        <icon icon="EXCLAMATION_CIRCLE_O" classNames="badged-icon"/>
+                        <span text="Denied"/>
+                    </span>
+                    <span themeNames="contrast">
+                        <icon icon="HAND" classNames="badged-icon"/>
+                        <span text="On hold"/>
+                    </span>
+                </hbox>
+                <hbox>
+                    <span themeNames="normal">
+                        <span text="Pending"/>
+                        <icon icon="CLOCK" classNames="badged-icon"/>
+                    </span>
+                    <span themeNames="success">
+                        <span text="Confirmed"/>
+                        <icon icon="CHECK" classNames="badged-icon"/>
+                    </span>
+                    <span themeNames="error">
+                        <span text="Denied"/>
+                        <icon icon="EXCLAMATION_CIRCLE_O" classNames="badged-icon"/>
+                    </span>
+                    <span themeNames="contrast">
+                        <span text="On hold"/>
+                        <icon icon="HAND" classNames="badged-icon"/>
+                    </span>
+                </hbox>
+            </vbox>
+        </details>
+        <details summaryText="Icon-Only" opened="true">
+            <hbox>
+                <icon id="checkIcon" icon="CHECK"/>
+                <icon id="closeIcon" icon="CLOSE_SMALL"/>
+            </hbox>
+        </details>
+    </layout>
+</view>

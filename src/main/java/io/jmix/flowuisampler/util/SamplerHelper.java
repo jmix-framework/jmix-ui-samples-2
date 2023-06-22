@@ -19,9 +19,14 @@ package io.jmix.flowuisampler.util;
 import io.jmix.core.CoreProperties;
 import io.jmix.core.Resources;
 import io.jmix.flowui.view.ViewInfo;
+import org.apache.commons.io.FileUtils;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
+import org.springframework.util.ResourceUtils;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Locale;
@@ -39,7 +44,18 @@ public class SamplerHelper {
 
     @Nullable
     public String getFileContent(String src) {
-        return resources.getResourceAsString(src);
+        String resourceCandidate = resources.getResourceAsString(src);
+
+        if (resourceCandidate == null) {
+            try {
+                File file = ResourceUtils.getFile(src);
+                resourceCandidate = FileUtils.readFileToString(file, StandardCharsets.UTF_8);
+            } catch (IOException e) {
+                return null;
+            }
+        }
+
+        return resourceCandidate;
     }
 
     public String packageToPath(String pkg) {

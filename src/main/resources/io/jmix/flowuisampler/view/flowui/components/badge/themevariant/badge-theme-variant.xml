@@ -1,0 +1,34 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox padding="false" width="100%">
+            <vbox width="65%" padding="false">
+                <details summaryText="Style variant" opened="true">
+                    <hbox>
+                        <span text="Pending" themeNames="normal"/>
+                        <span text="Confirmed" themeNames="success"/>
+                        <span text="Denied" themeNames="error"/>
+                        <span text="On hold" themeNames="contrast"/>
+                    </hbox>
+                </details>
+                <details summaryText="Size variant" opened="true">
+                    <hbox>
+                        <span text="Medium badge" themeNames="normal"/>
+                        <span text="Small badge" themeNames="small"/>
+                    </hbox>
+                </details>
+                <details summaryText="Visual variant" opened="true">
+                    <hbox>
+                        <span text="Parimary badge" themeNames="normal primary"/>
+                        <span text="Pill badge" themeNames="normal pill"/>
+                    </hbox>
+                </details>
+            </vbox>
+            <details summaryText="Test badge" opened="true" width="35%">
+                <vbox padding="false">
+                    <span id="testBadge" themeNames="normal"/>
+                    <checkboxGroup id="settingsCheckboxGroup" label="TestBadge settings" themeNames="vertical"/>
+                </vbox>
+            </details>
+        </hbox>
+    </layout>
+</view>
