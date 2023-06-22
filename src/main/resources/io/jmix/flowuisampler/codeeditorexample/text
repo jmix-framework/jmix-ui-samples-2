@@ -1,0 +1,13 @@
+Jmix is a high-level framework for enterprise web applications. It comes with advanced tooling and a rich set
+of functional modules.
+
+Jmix is best suited for creating data-centric applications with a complex data model and rich user interface. It is
+a full-stack framework in the sense that it provides support for creating both the backend and UI of your application.
+
+Jmix is based on Spring Boot, which is a de-facto standard for creating enterprise Java web applications. It means that
+you can use a lot of third-party libraries and frameworks with minimal configuration, in addition to the functionality
+provided by Jmix.
+
+Jmix Studio is a plugin for IntelliJ IDEA that helps you at all stages of the application development: creating
+and configuring a project, defining data model, generating database migration scripts, developing UI screens
+in a visual editor. It provides advanced navigation, code completion and inspections specific to Jmix projects.

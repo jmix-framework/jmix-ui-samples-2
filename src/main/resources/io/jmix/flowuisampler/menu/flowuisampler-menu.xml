@@ -59,6 +59,10 @@
                 </otherFiles>
             </item>
         </menu>
+        <menu id="code-editor">
+            <item id="code-editor-simple" page="codeEditor"/>
+            <item id="code-editor-mode-theme" page="codeEditor"/>
+        </menu>
         <menu id="combobox">
             <item id="combobox-simple" page="comboBox">
                 <otherFiles>

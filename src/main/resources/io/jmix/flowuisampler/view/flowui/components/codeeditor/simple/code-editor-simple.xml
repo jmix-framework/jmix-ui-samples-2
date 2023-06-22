@@ -1,0 +1,11 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox classNames="buttons-panel">
+            <checkbox id="highlightCheckbox" label="Highlight active line" value="true"/>
+            <checkbox id="gutterCheckbox" label="Show Gutter" value="true"/>
+            <checkbox id="lineNumbersCheckbox" label="Line numbers" value="true"/>
+            <checkbox id="printMarginCheckbox" label="Print margin" value="true"/>
+        </hbox>
+        <codeEditor id="codeEditor" width="100%"/>
+    </layout>
+</view>

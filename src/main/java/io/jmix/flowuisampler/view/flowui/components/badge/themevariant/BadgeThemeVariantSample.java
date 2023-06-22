@@ -12,7 +12,7 @@ import java.util.List;
 
 @ViewController("badge-theme-variant")
 @ViewDescriptor("badge-theme-variant.xml")
-public class BadgeThemeVariant extends StandardView {
+public class BadgeThemeVariantSample extends StandardView {
 
     @ViewComponent
     protected Span testBadge;

@@ -1,0 +1,9 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox classNames="buttons-panel">
+            <select id="modeComboBox" label="Mode"/>
+            <select id="themeComboBox" label="Theme"/>
+        </hbox>
+        <codeEditor id="codeEditor" width="100%"/>
+    </layout>
+</view>
