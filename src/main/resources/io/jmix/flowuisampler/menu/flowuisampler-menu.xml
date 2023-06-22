@@ -97,6 +97,14 @@
             </item>
             <item id="accordion-theme-variant" page="accordion"/>
         </menu>
+        <menu id="details">
+            <item id="details-simple" page="details">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="details-theme-variant" page="details"/>
+        </menu>
         <menu id="boxlayout">
             <item id="hbox-simple" page="hbox" image="containers/boxlayout/hbox-simple.svg"/>
             <item id="vbox-simple" page="vbox" image="containers/boxlayout/vbox-simple.svg"/>
