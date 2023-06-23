@@ -109,6 +109,16 @@
             <item id="hbox-simple" page="hbox"/>
             <item id="vbox-simple" page="vbox"/>
         </menu>
+        <menu id="form-layout">
+            <item id="form-layout-simple" page="formLayout"/>
+            <item id="form-layout-dataaware" page="formLayout">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                    <file name="io/jmix/flowuisampler/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="form-layout-responsive-steps" page="formLayout"/>
+        </menu>
         <item id="scroller" page="scroller"/>
     </menu>
 </menu-config>

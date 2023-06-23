@@ -1,0 +1,24 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <h4 text="Default label position"/>
+        <formLayout>
+            <textField label="TextField"/>
+            <dateTimePicker label="DateTimePicker"/>
+            <textArea label="TextArea"/>
+            <checkbox label="Checkbox"/>
+            <textArea label="TextArea with column span" colspan="2"/>
+            <passwordField label="PasswordField"/>
+            <emailField label="EmailField"/>
+        </formLayout>
+        <h4 text="Aside label position"/>
+        <formLayout labelsPosition="ASIDE">
+            <textField label="TextField" width="100%"/>
+            <dateTimePicker label="DateTimePicker" width="100%"/>
+            <textArea label="TextArea" width="100%"/>
+            <checkbox label="Checkbox" width="100%"/>
+            <textArea label="TextArea with column span" width="100%" colspan="2"/>
+            <passwordField label="PasswordField" width="100%"/>
+            <emailField label="EmailField" width="100%"/>
+        </formLayout>
+    </layout>
+</view>
