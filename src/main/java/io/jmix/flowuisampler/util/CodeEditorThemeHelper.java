@@ -38,7 +38,9 @@ public class CodeEditorThemeHelper {
                 ? CodeEditorTheme.NORD_DARK
                 : CodeEditorTheme.TEXTMATE;
 
-        codeEditors.forEach(editor -> editor.setTheme(codeEditorTheme));
+        if (codeEditors != null) {
+            codeEditors.forEach(editor -> editor.setTheme(codeEditorTheme));
+        }
     }
 
     public void setCodeEditors(Set<CodeEditor> codeEditors) {

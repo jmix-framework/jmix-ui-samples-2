@@ -71,6 +71,6 @@ public class CodeEditorModeThemeSample extends StandardView {
 
     protected Map<CodeEditorTheme, String> getThemeItemsMap() {
         return Arrays.stream(CodeEditorTheme.values())
-                .collect(Collectors.toMap(mode -> mode, CodeEditorTheme::name));
+                .collect(Collectors.toMap(mode -> mode, mode -> mode.name().replace('_', ' ')));
     }
 }
