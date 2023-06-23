@@ -1,0 +1,10 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <split id="split" width="100%" height="100%" themeNames="splitter-spacing" splitterPosition="70">
+            <vbox padding="false">
+                <textArea label="TextArea1" width="100%" height="100%"/>
+            </vbox>
+            <checkboxGroup id="settingsCheckboxGroup" label="Splitter themes" themeNames="vertical"/>
+        </split>
+    </layout>
+</view>

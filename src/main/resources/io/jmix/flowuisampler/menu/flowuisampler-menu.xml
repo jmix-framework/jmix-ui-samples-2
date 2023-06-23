@@ -120,5 +120,9 @@
             <item id="form-layout-responsive-steps" page="formLayout"/>
         </menu>
         <item id="scroller" page="scroller"/>
+        <menu id="split">
+            <item id="split-simple" page="split"/>
+            <item id="split-theme-variant" page="split"/>
+        </menu>
     </menu>
 </menu-config>

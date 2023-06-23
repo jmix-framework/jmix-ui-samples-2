@@ -1,0 +1,11 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <split width="100%" themeNames="splitter-spacing" splitterPosition="45">
+            <textArea label="TextArea1" width="100%" height="100%"/>
+            <split orientation="VERTICAL">
+                <textArea label="TextArea2" width="100%" height="100%"/>
+                <textArea label="TextArea3" width="100%" height="100%"/>
+            </split>
+        </split>
+    </layout>
+</view>
