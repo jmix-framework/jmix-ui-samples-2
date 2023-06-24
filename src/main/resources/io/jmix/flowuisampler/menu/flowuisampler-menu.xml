@@ -134,4 +134,15 @@
             <item id="tabsheet-theme-variant" page="tabSheet"/>
         </menu>
     </menu>
+
+    <menu id="dialogs-and-notifications" url="flow-ui">
+        <menu id="dialogs">
+
+        </menu>
+        <menu id="notifications">
+            <item id="notification-simple" page="notifications"/>
+            <item id="notification-position" page="notifications"/>
+            <item id="notification-theme-variant" page="notifications"/>
+        </menu>
+    </menu>
 </menu-config>

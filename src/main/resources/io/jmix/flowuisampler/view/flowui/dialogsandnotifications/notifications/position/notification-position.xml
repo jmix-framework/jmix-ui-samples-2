@@ -1,0 +1,21 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <button id="standardNotificationButton" text="Standard"/>
+        <button id="clickAllButton" text="Click all" icon="BOMB"/>
+        <formLayout id="buttonsLayout">
+            <responsiveSteps>
+                <responsiveStep minWidth="0" columns="3"/>
+            </responsiveSteps>
+
+            <button id="topStretchNotificationButton" text="Top Stretch" colspan="3"/>
+            <button id="topStartNotificationButton" text="Top Start"/>
+            <button id="topCenterNotificationButton" text="Top Center"/>
+            <button id="topEndNotificationButton" text="Top End"/>
+            <button id="middleNotificationButton" text="Middle" colspan="3"/>
+            <button id="bottomStartNotificationButton" text="Bottom Start"/>
+            <button id="bottomCenterNotificationButton" text="Bottom Center"/>
+            <button id="bottomEndNotificationButton" text="Bottom End"/>
+            <button id="bottomStretchNotificationButton" text="Bottom Stretch" colspan="3"/>
+        </formLayout>
+    </layout>
+</view>

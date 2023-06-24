@@ -1,0 +1,9 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox>
+            <button id="standardNotificationButton" text="Standard"/>
+            <button id="messageNotificationButton" text="With message"/>
+            <button id="componentNotificationButton" text="With component"/>
+        </hbox>
+    </layout>
+</view>
