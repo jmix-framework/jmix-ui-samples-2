@@ -124,5 +124,14 @@
             <item id="split-simple" page="split"/>
             <item id="split-theme-variant" page="split"/>
         </menu>
+        <menu id="tabsheet">
+            <item id="tabsheet-simple" page="tabSheet"/>
+            <item id="tabsheet-lazy-tab" page="tabSheet">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/component/lazycomponent/LazyComponent.java"/>
+                </otherFiles>
+            </item>
+            <item id="tabsheet-theme-variant" page="tabSheet"/>
+        </menu>
     </menu>
 </menu-config>

@@ -1,0 +1,38 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <checkboxGroup id="tabSheetSettingsCheckboxGroup" label="TabSheet themes"/>
+        <tabSheet id="tabSheet" width="100%">
+            <tab id="tab1" label="Tab 1">
+                <div/>
+            </tab>
+            <tab id="tab2" label="Tab 2">
+                <div/>
+            </tab>
+            <tab id="tab3" label="Tab 3">
+                <div/>
+            </tab>
+            <tab id="tab4" label="Tab 4">
+                <div/>
+            </tab>
+            <tab id="tab5" label="Tab 5">
+                <div/>
+            </tab>
+            <tab id="tab6" label="Tab 6">
+                <div/>
+            </tab>
+            <tab id="tab7" label="Tab 7">
+                <div/>
+            </tab>
+            <tab id="tab8" label="Tab 8">
+                <div/>
+            </tab>
+            <tab id="tab9" label="Tab 9">
+                <div/>
+            </tab>
+            <tab id="tab10" label="Tab 10">
+                <div/>
+            </tab>
+        </tabSheet>
+        <label text="To make the scroll button appear, add or remove tabs using the corresponding buttons."/>
+    </layout>
+</view>
