@@ -19,7 +19,7 @@ import java.util.Map;
 
 @ViewController("notification-theme-variant")
 @ViewDescriptor("notification-theme-variant.xml")
-public class NotificationThemeVariant extends StandardView {
+public class NotificationThemeVariantSample extends StandardView {
 
     @ViewComponent
     protected TypedTextField<String> titleField;
