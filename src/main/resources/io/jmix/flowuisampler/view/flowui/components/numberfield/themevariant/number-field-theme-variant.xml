@@ -1,0 +1,21 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <vbox padding="false">
+            <details summaryText="Theme Variant" opened="true">
+                <hbox>
+                    <numberField label="Standard NumberField"/>
+                    <numberField label="Small NumberField" themeNames="small"/>
+                    <numberField label="Helper-above-field Field" themeNames="helper-above-field"
+                                helperText="Helper text"/>
+                </hbox>
+            </details>
+            <details summaryText="Align Variant" opened="true">
+                <hbox>
+                    <numberField label="Standard align NumberField" placeholder="Placeholder"/>
+                    <numberField label="Align-center NumberField" themeNames="align-center" placeholder="Placeholder"/>
+                    <numberField label="Align-right NumberField" themeNames="align-right" placeholder="Placeholder"/>
+                </hbox>
+            </details>
+        </vbox>
+    </layout>
+</view>

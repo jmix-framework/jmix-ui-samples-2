@@ -1,0 +1,7 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <integerField id="integerField" label="IntegerField"/>
+        <integerField id="maxMinIntegerField" label="With max/min" max="100" min="10"
+                      helperText="Max value is 100, min value is 10"/>
+    </layout>
+</view>

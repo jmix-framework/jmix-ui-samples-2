@@ -7,6 +7,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
 import org.springframework.lang.Nullable;
 
 import java.util.UUID;
@@ -26,6 +27,10 @@ public class Customer {
 
     @Column(name = "LAST_NAME", length = 100, nullable = false)
     protected String lastName;
+
+    @Email
+    @Column(name = "EMAIL", nullable = false)
+    protected String email;
 
     @Column(name = "AGE")
     protected Integer age;
@@ -84,6 +89,14 @@ public class Customer {
 
     public String getLastName() {
         return lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public void setAge(Integer age) {

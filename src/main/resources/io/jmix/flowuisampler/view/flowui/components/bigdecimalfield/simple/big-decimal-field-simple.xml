@@ -1,0 +1,5 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <bigDecimalField id="bigDecimalField" label="BigDecimalField" width="15em"/>
+    </layout>
+</view>

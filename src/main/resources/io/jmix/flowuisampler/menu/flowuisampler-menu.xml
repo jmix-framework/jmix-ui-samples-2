@@ -28,6 +28,15 @@
             </item>
             <item id="badge-theme-variant"/>
         </menu>
+        <menu id="big-decimal-field">
+            <item id="big-decimal-field-simple"/>
+            <item id="big-decimal-field-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Product.java"/>
+                </otherFiles>
+            </item>
+            <item id="big-decimal-field-theme-variant"/>
+        </menu>
         <menu id="button">
             <item id="button-simple" page="button"/>
             <item id="button-action" page="button"/>
@@ -85,6 +94,42 @@
                     <file name="io/jmix/flowuisampler/entity/CustomerGrade.java"/>
                 </otherFiles>
             </item>
+        </menu>
+        <menu id="email-field">
+            <item id="email-field-simple"/>
+            <item id="email-field-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="email-field-theme-variant"/>
+        </menu>
+        <menu id="integer-field">
+            <item id="integer-field-simple"/>
+            <item id="integer-field-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="integer-field-theme-variant"/>
+        </menu>
+        <menu id="number-field">
+            <item id="number-field-simple"/>
+            <item id="number-field-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Point.java"/>
+                </otherFiles>
+            </item>
+            <item id="number-field-theme-variant"/>
+        </menu>
+        <menu id="password-field">
+            <item id="password-field-simple" page="passwordField"/>
+            <item id="password-field-dataaware" page="passwordField">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/ProductTag.java"/>
+                </otherFiles>
+            </item>
+            <item id="password-field-theme-variant" page="passwordField"/>
         </menu>
     </menu>
 

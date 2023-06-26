@@ -1,0 +1,21 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <vbox padding="false">
+            <details summaryText="Theme Variant" opened="true">
+                <hbox>
+                    <integerField label="Standard IntegerField"/>
+                    <integerField label="Small IntegerField" themeNames="small"/>
+                    <integerField label="Helper-above-field Field" themeNames="helper-above-field"
+                                helperText="Helper text"/>
+                </hbox>
+            </details>
+            <details summaryText="Align Variant" opened="true">
+                <hbox>
+                    <integerField label="Standard align IntegerField" placeholder="Placeholder"/>
+                    <integerField label="Align-center IntegerField" themeNames="align-center" placeholder="Placeholder"/>
+                    <integerField label="Align-right IntegerField" themeNames="align-right" placeholder="Placeholder"/>
+                </hbox>
+            </details>
+        </vbox>
+    </layout>
+</view>

@@ -1,0 +1,15 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <instance id="customerDc"
+                  class="io.jmix.flowuisampler.entity.Customer"
+                  fetchPlan="_local"/>
+    </data>
+    <layout>
+        <emailField id="emailField" label="Field connected to a container" width="15em"
+                         dataContainer="customerDc" property="email"/>
+        <hbox>
+            <label text="Value in the container:"/>
+            <label id="labelValue"/>
+        </hbox>
+    </layout>
+</view>

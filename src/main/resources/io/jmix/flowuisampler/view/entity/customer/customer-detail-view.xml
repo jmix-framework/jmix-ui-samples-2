@@ -20,6 +20,7 @@
         <formLayout id="form" dataContainer="customerDc">
             <textField id="nameField" property="name"/>
             <textField id="lastNameField" property="lastName"/>
+            <emailField id="emailField" property="email"/>
             <textField id="ageField" property="age"/>
             <checkbox id="activeField" property="active"/>
             <comboBox id="gradeField" property="grade"/>

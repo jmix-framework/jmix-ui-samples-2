@@ -47,6 +47,7 @@
             <columns>
                 <column property="name"/>
                 <column property="lastName"/>
+                <column property="email"/>
                 <column property="age"/>
                 <column property="active"/>
                 <column property="grade"/>
