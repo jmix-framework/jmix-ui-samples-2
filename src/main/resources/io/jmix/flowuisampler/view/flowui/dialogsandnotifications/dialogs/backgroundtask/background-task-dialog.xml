@@ -1,0 +1,8 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox padding="false">
+            <button id="standardBackgroundTaskDialogButton" text="Standard background task dialog"/>
+            <button id="customBackgroundTaskDialogButton" text="Custom background task dialog"/>
+        </hbox>
+    </layout>
+</view>

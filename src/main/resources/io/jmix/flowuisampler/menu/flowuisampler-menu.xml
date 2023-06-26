@@ -145,6 +145,7 @@
                     <file name="io/jmix/flowuisampler/entity/CustomerGrade.java"/>
                 </otherFiles>
             </item>
+            <item id="background-task-dialog" page="background-tasks"/>
         </menu>
         <menu id="notifications">
             <item id="notification-simple" page="notifications"/>
