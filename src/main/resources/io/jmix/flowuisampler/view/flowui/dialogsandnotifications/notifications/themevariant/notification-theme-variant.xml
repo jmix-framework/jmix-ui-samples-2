@@ -8,7 +8,7 @@
                         <button id="primaryNotificationButton" text="Primary" themeNames="primary"/>
                         <button id="successNotificationButton" text="Success" themeNames="success"/>
                         <button id="errorNotificationButton" text="Error" themeNames="error"/>
-                        <button id="contrastNotificationButton" text="Contrast" themeNames="Contrast"/>
+                        <button id="contrastNotificationButton" text="Contrast" themeNames="contrast"/>
                     </hbox>
                 </details>
 
