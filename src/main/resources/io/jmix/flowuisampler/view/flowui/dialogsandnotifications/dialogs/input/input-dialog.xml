@@ -1,0 +1,10 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox padding="false">
+            <button id="standardDialogButton" text="Standard dialog"/>
+            <button id="customParameterDialogButton" text="Custom parameter"/>
+            <button id="customActionsDialogButton" text="Custom Actions"/>
+            <button id="validationDialogButton" text="Validation"/>
+        </hbox>
+    </layout>
+</view>
