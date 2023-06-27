@@ -1,7 +1,9 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
-        <button id="standardNotificationButton" text="Standard"/>
-        <button id="clickAllButton" text="Click all" icon="BOMB"/>
+        <hbox padding="false">
+            <button id="standardNotificationButton" text="Standard"/>
+            <button id="clickAllButton" text="Click all" icon="BOMB"/>
+        </hbox>
         <formLayout id="buttonsLayout">
             <responsiveSteps>
                 <responsiveStep minWidth="0" columns="3"/>

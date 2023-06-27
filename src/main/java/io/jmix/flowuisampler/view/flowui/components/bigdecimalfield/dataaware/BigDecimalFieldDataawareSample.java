@@ -1,7 +1,7 @@
 package io.jmix.flowuisampler.view.flowui.components.bigdecimalfield.dataaware;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
-import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.html.Paragraph;
 import io.jmix.core.Metadata;
 import io.jmix.flowui.component.textfield.JmixBigDecimalField;
 import io.jmix.flowui.model.InstanceContainer;
@@ -18,7 +18,7 @@ public class BigDecimalFieldDataawareSample extends StandardView {
     @ViewComponent
     protected InstanceContainer<Product> productDc;
     @ViewComponent
-    protected Label labelValue;
+    protected Paragraph pValue;
 
     @Autowired
     protected Metadata metadata;
@@ -31,8 +31,8 @@ public class BigDecimalFieldDataawareSample extends StandardView {
     }
 
     @Subscribe("bigDecimalField")
-    protected void onBigDecimalFieldValueChange(ComponentValueChangeEvent<JmixBigDecimalField, Boolean> changeEvent) {
+    protected void onBigDecimalFieldValueChange(ComponentValueChangeEvent<JmixBigDecimalField, BigDecimal> changeEvent) {
         BigDecimal price = productDc.getItem().getPrice();
-        labelValue.setText(price == null ? "null" : price.toString());
+        pValue.setText(price == null ? "null" : price.toString());
     }
 }

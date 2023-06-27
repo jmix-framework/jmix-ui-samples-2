@@ -5,11 +5,11 @@
                   fetchPlan="_local"/>
     </data>
     <layout>
-        <textArea id="textArea" label="TextArea connected to a container"
+        <textArea id="textArea" label="Order description"
                   dataContainer="orderDc" property="description"/>
         <hbox>
-            <label text="Value in the container:"/>
-            <label id="labelValue"/>
+            <p text="Value in the container:"/>
+            <p id="pValue"/>
         </hbox>
     </layout>
 </view>

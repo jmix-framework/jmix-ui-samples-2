@@ -1,0 +1,26 @@
+<p>The <code>ValueChangeEvent</code> defines the way the changes are transmitted to the server to cause a server-side
+    event. There are 4 predefined event modes:</p>
+<ul>
+    <li>
+        <p><code>EAGER</code> - an event is triggered immediately for every change in the text content, typically caused
+            by a key press. The requests are separate and are processed sequentially one after another. Change events
+            are nevertheless communicated asynchronously to the server, so further input can be typed while event
+            requests are being processed.</p>
+    </li>
+    <li>
+        <p><code>LAZY</code> - an event is triggered when there is a pause in editing the text. The length of
+            the pause can be modified with <code>setValueChangeTimeout()</code>. A text change event is forced before a
+            possible <code>ComponentValueChangeEvent</code>, even if the user did not keep a pause while entering the text.</p>
+    </li>
+    <li>
+        <p><code>ON_BLUR</code> - an event is triggered when the text field loses focus.</p>
+    </li>
+    <li>
+        <p><code>TIMEOUT</code> - an event is triggered after a timeout period. If more changes are made during this
+            period, the event sent to the server-side includes the changes made up to the last change. The length of the
+            timeout can be set with <code>setValueChangeTimeout()</code>.</p>
+    </li>
+    <li>
+        <p><code>ON_CHANGE</code> (default) - an event is triggered when fired client-side <code>changeEvent</code>.</p>
+    </li>
+</ul>

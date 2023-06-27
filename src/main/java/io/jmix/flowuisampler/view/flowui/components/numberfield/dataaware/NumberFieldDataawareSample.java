@@ -1,7 +1,7 @@
 package io.jmix.flowuisampler.view.flowui.components.numberfield.dataaware;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
-import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.textfield.NumberField;
 import io.jmix.core.Metadata;
 import io.jmix.flowui.model.InstanceContainer;
@@ -16,7 +16,7 @@ public class NumberFieldDataawareSample extends StandardView {
     @ViewComponent
     protected InstanceContainer<Point> pointDc;
     @ViewComponent
-    protected Label labelValue;
+    protected Paragraph pValue;
 
     @Autowired
     protected Metadata metadata;
@@ -29,7 +29,7 @@ public class NumberFieldDataawareSample extends StandardView {
     }
 
     @Subscribe("numberField")
-    protected void onNumberFieldValueChange(ComponentValueChangeEvent<NumberField, Boolean> changeEvent) {
-        labelValue.setText(String.valueOf(pointDc.getItem().getX()));
+    protected void onNumberFieldValueChange(ComponentValueChangeEvent<NumberField, Number> changeEvent) {
+        pValue.setText(String.valueOf(pointDc.getItem().getX()));
     }
 }

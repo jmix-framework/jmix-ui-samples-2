@@ -1,4 +1,4 @@
-package io.jmix.flowuisampler.view.flowui.components.badge.icons;
+package io.jmix.flowuisampler.view.flowui.cookbook.badgeicons;
 
 import com.vaadin.flow.component.icon.Icon;
 import io.jmix.flowui.view.*;

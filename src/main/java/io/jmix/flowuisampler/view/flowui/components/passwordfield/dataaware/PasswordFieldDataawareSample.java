@@ -1,7 +1,7 @@
 package io.jmix.flowuisampler.view.flowui.components.passwordfield.dataaware;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
-import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.html.Paragraph;
 import com.vaadin.flow.component.textfield.PasswordField;
 import io.jmix.core.Metadata;
 import io.jmix.flowui.model.InstanceContainer;
@@ -16,7 +16,7 @@ public class PasswordFieldDataawareSample extends StandardView {
     @ViewComponent
     protected InstanceContainer<ProductTag> productTagDc;
     @ViewComponent
-    protected Label labelValue;
+    protected Paragraph pValue;
 
     @Autowired
     protected Metadata metadata;
@@ -29,7 +29,7 @@ public class PasswordFieldDataawareSample extends StandardView {
     }
 
     @Subscribe("passwordField")
-    protected void onPasswordFieldValueChange(ComponentValueChangeEvent<PasswordField, Boolean> changeEvent) {
-        labelValue.setText(productTagDc.getItem().getName());
+    protected void onPasswordFieldValueChange(ComponentValueChangeEvent<PasswordField, String> changeEvent) {
+        pValue.setText(productTagDc.getItem().getName());
     }
 }

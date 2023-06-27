@@ -21,12 +21,7 @@
         <item id="avatar"/>
         <menu id="badge">
             <item id="badge-simple"/>
-            <item id="badge-icons">
-                <otherFiles>
-                    <file name="frontend/themes/jmix-flowui-samples/badge-icons.css"/>
-                </otherFiles>
-            </item>
-            <item id="badge-theme-variant"/>
+            <item id="badge-theme-variant" splitEnabled="true"/>
         </menu>
         <menu id="big-decimal-field">
             <item id="big-decimal-field-simple"/>
@@ -41,7 +36,7 @@
             <item id="button-simple" page="button"/>
             <item id="button-action" page="button"/>
             <item id="button-programmatic-action" page="button"/>
-            <item id="button-theme-variant" page="button"/>
+            <item id="button-theme-variant" page="button" splitEnabled="true"/>
         </menu>
         <menu id="checkbox">
             <item id="checkbox-simple" page="checkBox"/>
@@ -89,7 +84,7 @@
             <item id="combobox-custom-filtering" page="comboBox"/>
             <item id="combobox-user-input" page="comboBox"/>
             <item id="combobox-custom-renderer" page="comboBox"/>
-            <item id="combobox-theme-variant" page="comboBox">
+            <item id="combobox-theme-variant" page="comboBox" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/flowuisampler/entity/CustomerGrade.java"/>
                 </otherFiles>
@@ -133,9 +128,27 @@
         </menu>
         <menu id="text-area">
             <item id="text-area-simple"/>
-            <item id="text-area-dataaware"/>
-            <item id="text-area-resizable"/>
-            <item id="text-area-theme-variant"/>
+            <item id="text-area-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="text-area-theme-variant" splitEnabled="true"/>
+        </menu>
+        <menu id="text-field">
+            <item id="text-field-simple" page="textField"/>
+            <item id="text-field-dataaware" page="textField">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="text-field-datatype" page="textField"/>
+            <item id="text-field-validator" page="textField">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/bean/PositiveIntegerValidator.java"/>
+                </otherFiles>
+            </item>
+            <item id="text-field-value-change" page="textField" splitEnabled="true"/>
         </menu>
     </menu>
 
@@ -149,7 +162,7 @@
             <item id="accordion-theme-variant" page="accordion"/>
         </menu>
         <menu id="details">
-            <item id="details-simple" page="details">
+            <item id="details-simple" page="details" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/flowuisampler/entity/Customer.java"/>
                 </otherFiles>
@@ -161,27 +174,22 @@
             <item id="vbox-simple" page="vbox"/>
         </menu>
         <menu id="form-layout">
-            <item id="form-layout-simple" page="formLayout"/>
+            <item id="form-layout-simple" page="formLayout" splitEnabled="true"/>
             <item id="form-layout-dataaware" page="formLayout">
                 <otherFiles>
                     <file name="io/jmix/flowuisampler/entity/Customer.java"/>
                     <file name="io/jmix/flowuisampler/entity/CustomerGrade.java"/>
                 </otherFiles>
             </item>
-            <item id="form-layout-responsive-steps" page="formLayout"/>
+            <item id="form-layout-responsive-steps" page="formLayout" splitEnabled="true"/>
         </menu>
-        <item id="scroller" page="scroller"/>
+        <item id="scroller" page="scroller" splitEnabled="true"/>
         <menu id="split">
             <item id="split-simple" page="split"/>
             <item id="split-theme-variant" page="split"/>
         </menu>
         <menu id="tabsheet">
             <item id="tabsheet-simple" page="tabSheet"/>
-            <item id="tabsheet-lazy-tab" page="tabSheet">
-                <otherFiles>
-                    <file name="io/jmix/flowuisampler/component/lazycomponent/LazyComponent.java"/>
-                </otherFiles>
-            </item>
             <item id="tabsheet-theme-variant" page="tabSheet"/>
         </menu>
     </menu>
@@ -200,8 +208,22 @@
         </menu>
         <menu id="notifications">
             <item id="notification-simple" page="notifications"/>
-            <item id="notification-position" page="notifications"/>
-            <item id="notification-theme-variant" page="notifications"/>
+            <item id="notification-position" page="notifications" splitEnabled="true"/>
+            <item id="notification-theme-variant" page="notifications" splitEnabled="true"/>
         </menu>
+    </menu>
+
+    <menu id="cookbook" url="flow-ui">
+        <item id="tabsheet-lazy-tab" page="vc/layouts/tabSheet" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/flowuisampler/component/lazycomponent/LazyComponent.java"/>
+            </otherFiles>
+        </item>
+        <item id="text-area-resizable"/>
+        <item id="badge-icons">
+            <otherFiles>
+                <file name="frontend/themes/jmix-flowui-samples/badge-icons.css"/>
+            </otherFiles>
+        </item>
     </menu>
 </menu-config>

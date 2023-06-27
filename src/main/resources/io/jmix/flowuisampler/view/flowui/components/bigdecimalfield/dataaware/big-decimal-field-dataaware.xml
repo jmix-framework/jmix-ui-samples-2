@@ -8,8 +8,8 @@
         <bigDecimalField id="bigDecimalField" label="Field connected to a container" width="15em"
                          dataContainer="productDc" property="price"/>
         <hbox>
-            <label text="Value in the container:"/>
-            <label id="labelValue"/>
+            <p text="Value in the container:"/>
+            <p id="pValue"/>
         </hbox>
     </layout>
 </view>

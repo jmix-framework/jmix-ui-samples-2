@@ -33,6 +33,6 @@
                 <div/>
             </tab>
         </tabSheet>
-        <label text="To make the scroll button appear, add or remove tabs using the corresponding buttons."/>
+        <p text="To make the scroll button appear, add or remove tabs using the corresponding buttons."/>
     </layout>
 </view>
