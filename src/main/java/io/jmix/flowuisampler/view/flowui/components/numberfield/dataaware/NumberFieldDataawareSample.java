@@ -29,7 +29,7 @@ public class NumberFieldDataawareSample extends StandardView {
     }
 
     @Subscribe("numberField")
-    public void onNumberFieldFieldValueChange(ComponentValueChangeEvent<NumberField, Boolean> changeEvent) {
+    protected void onNumberFieldValueChange(ComponentValueChangeEvent<NumberField, Boolean> changeEvent) {
         labelValue.setText(String.valueOf(pointDc.getItem().getX()));
     }
 }

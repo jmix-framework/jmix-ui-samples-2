@@ -131,6 +131,12 @@
             </item>
             <item id="password-field-theme-variant" page="passwordField"/>
         </menu>
+        <menu id="text-area">
+            <item id="text-area-simple"/>
+            <item id="text-area-dataaware"/>
+            <item id="text-area-resizable"/>
+            <item id="text-area-theme-variant"/>
+        </menu>
     </menu>
 
     <menu id="containers" url="flow-ui/vc/layouts">

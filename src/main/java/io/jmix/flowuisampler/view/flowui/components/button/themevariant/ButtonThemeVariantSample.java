@@ -19,7 +19,7 @@ public class ButtonThemeVariantSample extends StandardView {
     protected JmixCheckboxGroup<String> settingsCheckboxGroup;
 
     @Subscribe
-    public void onInit(InitEvent event) {
+    protected void onInit(InitEvent event) {
         settingsCheckboxGroup.setItems(getSettingsCheckboxGroupItems());
     }
 

@@ -31,7 +31,7 @@ public class BigDecimalFieldDataawareSample extends StandardView {
     }
 
     @Subscribe("bigDecimalField")
-    public void onBigDecimalFieldValueChange(ComponentValueChangeEvent<JmixBigDecimalField, Boolean> changeEvent) {
+    protected void onBigDecimalFieldValueChange(ComponentValueChangeEvent<JmixBigDecimalField, Boolean> changeEvent) {
         BigDecimal price = productDc.getItem().getPrice();
         labelValue.setText(price == null ? "null" : price.toString());
     }

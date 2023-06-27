@@ -29,7 +29,7 @@ public class PasswordFieldDataawareSample extends StandardView {
     }
 
     @Subscribe("passwordField")
-    public void onPasswordFieldFieldValueChange(ComponentValueChangeEvent<PasswordField, Boolean> changeEvent) {
+    protected void onPasswordFieldValueChange(ComponentValueChangeEvent<PasswordField, Boolean> changeEvent) {
         labelValue.setText(productTagDc.getItem().getName());
     }
 }

@@ -29,7 +29,7 @@ public class IntegerFieldDataawareSample extends StandardView {
     }
 
     @Subscribe("integerField")
-    public void onIntegerFieldValueChange(ComponentValueChangeEvent<IntegerField, Boolean> changeEvent) {
+    protected void onIntegerFieldValueChange(ComponentValueChangeEvent<IntegerField, Boolean> changeEvent) {
         labelValue.setText(String.valueOf(customerDc.getItem().getAge()));
     }
 }

@@ -29,7 +29,7 @@ public class EmailFieldDataawareSample extends StandardView {
     }
 
     @Subscribe("emailField")
-    public void onEmailFieldValueChange(ComponentValueChangeEvent<EmailField, Boolean> changeEvent) {
+    protected void onEmailFieldValueChange(ComponentValueChangeEvent<EmailField, Boolean> changeEvent) {
         labelValue.setText(customerDc.getItem().getEmail());
     }
 }

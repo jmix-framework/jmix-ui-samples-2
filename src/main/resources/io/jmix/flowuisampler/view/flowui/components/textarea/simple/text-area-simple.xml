@@ -1,0 +1,8 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox padding="false">
+            <textArea id="textArea" label="Comment" valueChangeMode="EAGER"/>
+            <textArea id="textArea2" value="Everything you do works great!" label="Additional comment"/>
+        </hbox>
+    </layout>
+</view>
