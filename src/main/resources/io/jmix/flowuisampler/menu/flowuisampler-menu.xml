@@ -126,6 +126,15 @@
             </item>
             <item id="password-field-theme-variant" page="passwordField"/>
         </menu>
+        <menu id="select">
+            <item id="select-simple"/>
+            <item id="select-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                    <file name="io/jmix/flowuisampler/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+        </menu>
         <menu id="text-area">
             <item id="text-area-simple"/>
             <item id="text-area-dataaware">
