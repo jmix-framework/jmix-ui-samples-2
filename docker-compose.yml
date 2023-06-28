@@ -1,0 +1,8 @@
+version: '3.1'
+
+services:
+  app:
+    container_name: jmix-flowui-sampler
+    image: jmix-flowui-sampler
+    ports:
+      - "8080:8080"
