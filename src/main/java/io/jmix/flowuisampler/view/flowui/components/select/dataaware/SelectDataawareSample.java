@@ -1,7 +1,7 @@
 package io.jmix.flowuisampler.view.flowui.components.select.dataaware;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
-import com.vaadin.flow.component.html.Paragraph;
+import com.vaadin.flow.component.html.Span;
 import io.jmix.core.Metadata;
 import io.jmix.flowui.component.select.JmixSelect;
 import io.jmix.flowui.model.InstanceContainer;
@@ -17,7 +17,7 @@ public class SelectDataawareSample extends StandardView {
     @ViewComponent
     protected InstanceContainer<Customer> customerDc;
     @ViewComponent
-    protected Paragraph pValue;
+    protected Span spanValue;
 
     @Autowired
     protected Metadata metadata;
@@ -32,6 +32,6 @@ public class SelectDataawareSample extends StandardView {
     @Subscribe("select")
     protected void onSelectValueChange(
             ComponentValueChangeEvent<JmixSelect<CustomerGrade>, CustomerGrade> changeEvent) {
-        pValue.setText(customerDc.getItem().getGrade().name());
+        spanValue.setText(customerDc.getItem().getGrade().name());
     }
 }

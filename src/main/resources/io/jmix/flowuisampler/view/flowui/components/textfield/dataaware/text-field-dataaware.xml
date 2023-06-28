@@ -8,8 +8,8 @@
         <textField id="textField" label="Name"
                    dataContainer="customerDc" property="name"/>
         <hbox>
-            <p text="Value in the container:"/>
-            <p id="pValue"/>
+            <span text="Value in the container:"/>
+            <span id="spanValue"/>
         </hbox>
     </layout>
 </view>

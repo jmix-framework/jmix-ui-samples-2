@@ -2,7 +2,7 @@ package io.jmix.flowuisampler.view.flowui.components.checkbox.dataaware;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
 import com.vaadin.flow.component.checkbox.Checkbox;
-import com.vaadin.flow.component.html.Paragraph;
+import com.vaadin.flow.component.html.Span;
 import io.jmix.core.Metadata;
 import io.jmix.flowui.model.InstanceContainer;
 import io.jmix.flowui.view.*;
@@ -16,7 +16,7 @@ public class CheckboxDataawareSample extends StandardView {
     @ViewComponent
     protected InstanceContainer<Customer> customerDc;
     @ViewComponent
-    protected Paragraph pValue;
+    protected Span spanValue;
 
     @Autowired
     protected Metadata metadata;
@@ -30,6 +30,6 @@ public class CheckboxDataawareSample extends StandardView {
 
     @Subscribe("activeCheckbox")
     public void onActiveCheckboxValueChange(ComponentValueChangeEvent<Checkbox, Boolean> changeEvent) {
-        pValue.setText(customerDc.getItem().isActive().toString());
+        spanValue.setText(customerDc.getItem().isActive().toString());
     }
 }

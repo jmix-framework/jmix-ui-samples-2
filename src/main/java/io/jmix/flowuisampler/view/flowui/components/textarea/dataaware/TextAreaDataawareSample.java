@@ -1,7 +1,7 @@
 package io.jmix.flowuisampler.view.flowui.components.textarea.dataaware;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
-import com.vaadin.flow.component.html.Paragraph;
+import com.vaadin.flow.component.html.Span;
 import io.jmix.core.Metadata;
 import io.jmix.flowui.component.textarea.JmixTextArea;
 import io.jmix.flowui.model.InstanceContainer;
@@ -16,7 +16,7 @@ public class TextAreaDataawareSample extends StandardView {
     @ViewComponent
     protected InstanceContainer<Order> orderDc;
     @ViewComponent
-    protected Paragraph pValue;
+    protected Span spanValue;
 
     @Autowired
     protected Metadata metadata;
@@ -30,6 +30,6 @@ public class TextAreaDataawareSample extends StandardView {
 
     @Subscribe("textArea")
     protected void onTextAreaValueChange(ComponentValueChangeEvent<JmixTextArea, String> changeEvent) {
-        pValue.setText(orderDc.getItem().getDescription());
+        spanValue.setText(orderDc.getItem().getDescription());
     }
 }

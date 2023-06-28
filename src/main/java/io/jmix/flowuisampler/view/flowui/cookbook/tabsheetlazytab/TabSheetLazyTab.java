@@ -1,7 +1,7 @@
 package io.jmix.flowuisampler.view.flowui.cookbook.tabsheetlazytab;
 
 import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.html.Paragraph;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.component.tabsheet.JmixTabSheet;
@@ -20,7 +20,7 @@ public class TabSheetLazyTab extends StandardView {
     @ViewComponent
     protected JmixTabSheet tabSheet;
     @ViewComponent
-    protected Paragraph pInfo;
+    protected Span spanInfo;
 
     @Autowired
     protected UiComponents uiComponents;
@@ -37,8 +37,8 @@ public class TabSheetLazyTab extends StandardView {
     protected Component getLazyTabContent() {
         VerticalLayout content = uiComponents.create(VerticalLayout.class);
 
-        Paragraph info = uiComponents.create(Paragraph.class);
-        info.setText("Lazy Paragraph");
+        Span info = uiComponents.create(Span.class);
+        info.setText("Lazy Span");
 
         TypedTextField<String> textField = uiComponents.create(TypedTextField.class);
         textField.setLabel("Lazy textField");
@@ -63,6 +63,6 @@ public class TabSheetLazyTab extends StandardView {
         List<Component> tab3Content = tabSheet.getContentByTab(tabSheet.getTabAt(2)).getChildren().toList();
         sb.append(tab3Content.isEmpty() ? "null" : "true");
 
-        pInfo.setText(sb.toString());
+        spanInfo.setText(sb.toString());
     }
 }

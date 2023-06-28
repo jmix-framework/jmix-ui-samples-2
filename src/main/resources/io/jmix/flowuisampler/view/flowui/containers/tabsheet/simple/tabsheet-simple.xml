@@ -3,14 +3,14 @@
         <tabSheet width="100%">
             <tab id="tab1" label="Tab 1">
                 <vbox>
-                    <p text="Paragraph 1"/>
+                    <span text="Span 1"/>
                     <textField label="TextField 1"/>
                     <button text="Button 1"/>
                 </vbox>
             </tab>
             <tab id="tab2" label="Tab 2">
                 <vbox>
-                    <p text="Paragraph 2"/>
+                    <span text="Span 2"/>
                     <textField label="TextField 2"/>
                     <button text="Button 2"/>
                 </vbox>

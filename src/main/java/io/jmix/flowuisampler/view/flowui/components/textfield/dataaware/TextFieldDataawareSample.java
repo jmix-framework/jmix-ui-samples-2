@@ -1,6 +1,6 @@
 package io.jmix.flowuisampler.view.flowui.components.textfield.dataaware;
 
-import com.vaadin.flow.component.html.Paragraph;
+import com.vaadin.flow.component.html.Span;
 import io.jmix.core.Metadata;
 import io.jmix.flowui.component.SupportsTypedValue.TypedValueChangeEvent;
 import io.jmix.flowui.component.textfield.TypedTextField;
@@ -16,7 +16,7 @@ public class TextFieldDataawareSample extends StandardView {
     @ViewComponent
     protected InstanceContainer<Customer> customerDc;
     @ViewComponent
-    protected Paragraph pValue;
+    protected Span spanValue;
 
     @Autowired
     protected Metadata metadata;
@@ -30,6 +30,6 @@ public class TextFieldDataawareSample extends StandardView {
 
     @Subscribe("textField")
     protected void onTextFieldValueChange(TypedValueChangeEvent<TypedTextField<String>, String> changeEvent) {
-        pValue.setText(customerDc.getItem().getName());
+        spanValue.setText(customerDc.getItem().getName());
     }
 }

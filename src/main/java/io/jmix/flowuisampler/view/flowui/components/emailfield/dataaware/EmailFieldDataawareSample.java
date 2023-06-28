@@ -1,7 +1,7 @@
 package io.jmix.flowuisampler.view.flowui.components.emailfield.dataaware;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
-import com.vaadin.flow.component.html.Paragraph;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.textfield.EmailField;
 import io.jmix.core.Metadata;
 import io.jmix.flowui.model.InstanceContainer;
@@ -16,7 +16,7 @@ public class EmailFieldDataawareSample extends StandardView {
     @ViewComponent
     protected InstanceContainer<Customer> customerDc;
     @ViewComponent
-    protected Paragraph pValue;
+    protected Span spanValue;
 
     @Autowired
     protected Metadata metadata;
@@ -30,6 +30,6 @@ public class EmailFieldDataawareSample extends StandardView {
 
     @Subscribe("emailField")
     protected void onEmailFieldValueChange(ComponentValueChangeEvent<EmailField, String> changeEvent) {
-        pValue.setText(customerDc.getItem().getEmail());
+        spanValue.setText(customerDc.getItem().getEmail());
     }
 }

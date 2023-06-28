@@ -1,7 +1,7 @@
 package io.jmix.flowuisampler.view.flowui.components.integerfield.dataaware;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
-import com.vaadin.flow.component.html.Paragraph;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.textfield.IntegerField;
 import io.jmix.core.Metadata;
 import io.jmix.flowui.model.InstanceContainer;
@@ -16,7 +16,7 @@ public class IntegerFieldDataawareSample extends StandardView {
     @ViewComponent
     protected InstanceContainer<Customer> customerDc;
     @ViewComponent
-    protected Paragraph pValue;
+    protected Span spanValue;
 
     @Autowired
     protected Metadata metadata;
@@ -30,6 +30,6 @@ public class IntegerFieldDataawareSample extends StandardView {
 
     @Subscribe("integerField")
     protected void onIntegerFieldValueChange(ComponentValueChangeEvent<IntegerField, Integer> changeEvent) {
-        pValue.setText(String.valueOf(customerDc.getItem().getAge()));
+        spanValue.setText(String.valueOf(customerDc.getItem().getAge()));
     }
 }

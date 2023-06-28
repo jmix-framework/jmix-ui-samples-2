@@ -1,7 +1,7 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
         <hbox alignItems="CENTER">
-            <p text="Paragraph"/>
+            <span text="Span"/>
             <textField placeholder="TextField"/>
             <button text="Button"/>
             <button text="Button"/>

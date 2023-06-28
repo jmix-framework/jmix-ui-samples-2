@@ -3,13 +3,13 @@
         <tabSheet id="tabSheet" width="100%" themeNames="bordered">
             <tab id="tab1" label="Tab 1">
                 <vbox>
-                    <p text="Paragraph 1"/>
+                    <span text="Span 1"/>
                     <textField label="TextField 1"/>
                     <button text="Button 1"/>
                 </vbox>
             </tab>
         </tabSheet>
-        <p text="Created content:"/>
-        <p id="pInfo"/>
+        <span text="Created content:"/>
+        <span id="spanInfo"/>
     </layout>
 </view>

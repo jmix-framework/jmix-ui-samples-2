@@ -7,8 +7,8 @@
     <layout>
         <select id="select" label="Grade" dataContainer="customerDc" property="grade"/>
         <hbox>
-            <p text="Value in the container:"/>
-            <p id="pValue"/>
+            <span text="Value in the container:"/>
+            <span id="spanValue"/>
         </hbox>
     </layout>
 </view>
