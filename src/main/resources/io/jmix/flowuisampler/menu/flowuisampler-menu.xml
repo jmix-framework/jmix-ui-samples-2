@@ -90,6 +90,11 @@
                 </otherFiles>
             </item>
         </menu>
+        <menu id="dropdown-button">
+            <item id="dropdown-button-simple"/>
+            <item id="combo-button"/>
+            <item id="dropdown-button-theme-variant" splitEnabled="true"/>
+        </menu>
         <menu id="email-field">
             <item id="email-field-simple"/>
             <item id="email-field-dataaware">

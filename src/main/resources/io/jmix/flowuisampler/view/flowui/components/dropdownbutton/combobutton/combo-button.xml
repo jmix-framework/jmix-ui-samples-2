@@ -1,0 +1,14 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <actions>
+        <action id="save" text="Save" icon="ARCHIVE"/>
+    </actions>
+    <layout>
+        <comboButton id="saveButton" action="save">
+            <items>
+                <textItem id="saveDraftItem" text="Save as draft"/>
+                <textItem id="saveCopyItem" text="Save as copy"/>
+                <textItem id="savePublishItem" text="Save and publish"/>
+            </items>
+        </comboButton>
+    </layout>
+</view>
