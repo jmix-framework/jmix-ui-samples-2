@@ -90,6 +90,10 @@
                 </otherFiles>
             </item>
         </menu>
+        <menu id="context-help">
+            <item id="context-help-simple"/>
+            <item id="context-help-tooltip" page="tooltip" splitEnabled="true"/>
+        </menu>
         <menu id="dropdown-button">
             <item id="dropdown-button-simple"/>
             <item id="combo-button"/>
