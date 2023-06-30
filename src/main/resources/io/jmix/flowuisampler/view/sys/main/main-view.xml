@@ -21,7 +21,7 @@
             <section id="section" classNames="jmix-main-view-section">
                 <h2 id="applicationTitle"
                     text="msg://applicationTitle.text"
-                    classNames="jmix-main-view-application-title"/>
+                    classNames="jmix-main-view-title"/>
                 <hbox>
                     <textField id="searchField"
                                placeholder="msg://menu.search"

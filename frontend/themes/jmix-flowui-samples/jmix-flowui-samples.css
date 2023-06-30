@@ -12,6 +12,16 @@
     margin-inline-start: auto;
 }
 
+.jmix-main-view-title {
+    display: flex;
+    align-items: center;
+    min-height: var(--lumo-size-xl);
+    margin: 0;
+    padding-left: var(--lumo-space-m);
+    padding-right: var(--lumo-space-m);
+    font-size: var(--lumo-font-size-m);
+}
+
 .jmix-main-view-header .theme-toggle {
     margin-inline-start: auto;
     margin-inline-end: var(--lumo-space-s);
