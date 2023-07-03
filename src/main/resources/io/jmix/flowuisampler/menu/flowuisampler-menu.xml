@@ -108,6 +108,10 @@
             </item>
             <item id="email-field-theme-variant"/>
         </menu>
+        <menu id="icon">
+            <item id="icon-all" splitEnabled="true"/>
+            <item id="icon-simple"/>
+        </menu>
         <menu id="integer-field">
             <item id="integer-field-simple"/>
             <item id="integer-field-dataaware">

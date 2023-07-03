@@ -1,0 +1,9 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox id="content" padding="false" classNames="items-center">
+            <button icon="CHECK" themeNames="icon"/>
+            <icon icon="vaadin:smiley-o"/>
+            <textField id="field" placeholder="Field"/>
+        </hbox>
+    </layout>
+</view>

@@ -136,6 +136,7 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
             splitLayout.setHeightFull();
 
             VerticalLayout contentHolder = uiComponents.create(VerticalLayout.class);
+            contentHolder.setPadding(false);
             contentHolder.add(sampleViewContent);
 
             splitLayout.addToPrimary(contentHolder);
