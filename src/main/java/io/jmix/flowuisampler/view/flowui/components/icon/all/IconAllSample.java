@@ -46,7 +46,6 @@ public class IconAllSample extends StandardView {
     protected UiComponents uiComponents;
 
     protected Scroller scroller;
-    protected String searchedValue;
 
     @Subscribe
     protected void onInit(InitEvent event) {
@@ -154,9 +153,6 @@ public class IconAllSample extends StandardView {
     }
 
     protected void doSearch() {
-        if (!searchedValue.equalsIgnoreCase(searchField.getValue())) {
-            searchedValue = searchField.getValue();
-            initLayout(searchedValue);
-        }
+        initLayout(searchField.getValue());
     }
 }
