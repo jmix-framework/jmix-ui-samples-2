@@ -1,0 +1,52 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <collection id="customersDc"
+                    class="io.jmix.flowuisampler.entity.Customer"
+                    fetchPlan="_local">
+            <loader id="customersDl">
+                <query>
+                    <![CDATA[select e from sampler_Customer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <hbox id="buttonsPanel" classNames="buttons-panel">
+            <button id="createBtn" action="customersDataGrid.create"/>
+            <button id="editBtn" action="customersDataGrid.edit"/>
+            <button id="removeBtn" action="customersDataGrid.remove"/>
+            <button id="greetingBtn" action="customersDataGrid.greeting"/>
+            <simplePagination id="pagination" dataLoader="customersDl"/>
+        </hbox>
+        <dataGrid id="customersDataGrid"
+                  width="100%"
+                  minHeight="20em"
+                  dataContainer="customersDc">
+            <actions>
+                <action id="create" type="list_create">
+                    <properties>
+                        <property name="openMode" value="DIALOG"/>
+                    </properties>
+                </action>
+                <action id="edit" type="list_edit">
+                    <properties>
+                        <property name="openMode" value="DIALOG"/>
+                    </properties>
+                </action>
+                <action id="remove" type="list_remove"/>
+                <action id="greeting" type="list_itemTracking" icon="COMMENT" text="Greeting"/>
+            </actions>
+            <columns>
+                <column property="name"/>
+                <column property="lastName"/>
+                <column property="email"/>
+                <column property="age"/>
+                <column property="active"/>
+                <column property="grade"/>
+            </columns>
+        </dataGrid>
+    </layout>
+</view>
