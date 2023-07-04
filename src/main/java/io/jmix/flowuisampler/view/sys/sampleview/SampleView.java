@@ -106,7 +106,9 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
 
     @Subscribe
     public void onBeforeShow(BeforeShowEvent event) {
-        ComponentUtil.fireEvent(samplerView, new BeforeShowEvent(samplerView));
+        if (samplerView != null) {
+            ComponentUtil.fireEvent(samplerView, new BeforeShowEvent(samplerView));
+        }
     }
 
     protected void updateSample(String sampleId) {
@@ -162,7 +164,7 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     @Override
     public String getPageTitle() {
         String title = menuConfig.getMenuItemTitle(sampleId);
-        if (Strings.isNullOrEmpty(title)) {
+        if (Strings.isNullOrEmpty(title) || sampleId == null) {
             title = super.getPageTitle();
         }
 

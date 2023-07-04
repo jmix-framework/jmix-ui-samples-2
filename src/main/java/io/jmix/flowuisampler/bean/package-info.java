@@ -15,6 +15,6 @@
  */
 
 @NonNullApi
-package io.jmix.flowuisampler.component.themeswitcher;
+package io.jmix.flowuisampler.bean;
 
 import org.springframework.lang.NonNullApi;
