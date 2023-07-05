@@ -19,7 +19,6 @@
             <button id="editBtn" action="customersDataGrid.edit"/>
             <button id="removeBtn" action="customersDataGrid.remove"/>
             <button id="greetingBtn" action="customersDataGrid.greeting"/>
-            <simplePagination id="pagination" dataLoader="customersDl"/>
         </hbox>
         <dataGrid id="customersDataGrid"
                   width="100%"

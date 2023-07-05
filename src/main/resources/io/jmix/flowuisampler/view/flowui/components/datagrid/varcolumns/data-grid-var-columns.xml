@@ -1,0 +1,14 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox>
+            <integerField id="columnCountField" placeholder="Number of columns" value="3">
+                <validators>
+                    <max value="10"/>
+                    <min value="1"/>
+                </validators>
+            </integerField>
+            <button id="createDataGridBtn" text="Create DataGrid"/>
+        </hbox>
+        <vbox id="box" padding="false"/>
+    </layout>
+</view>

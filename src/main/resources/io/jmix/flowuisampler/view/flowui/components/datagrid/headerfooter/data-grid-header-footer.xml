@@ -1,0 +1,27 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data readOnly="true">
+        <collection id="countryGrowthDc"
+                    class="io.jmix.flowuisampler.entity.CountryGrowth"
+                    fetchPlan="_local">
+            <loader id="countryGrowthDl">
+                <query>
+                    <![CDATA[select e from sampler_CountryGrowth e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <dataGrid id="dataGrid"
+                  width="100%"
+                  minHeight="20em"
+                  dataContainer="countryGrowthDc"
+                  themeNames="column-borders row-stripes">
+            <columns>
+                <column property="country"/>
+            </columns>
+        </dataGrid>
+    </layout>
+</view>

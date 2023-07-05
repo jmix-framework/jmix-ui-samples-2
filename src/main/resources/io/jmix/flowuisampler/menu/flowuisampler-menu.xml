@@ -116,12 +116,40 @@
                     <file name="io/jmix/flowuisampler/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-class-name-generator" page="dataGrid" splitEnabled="true">
+            <item id="data-grid-custom-renderer" page="dataGrid" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/flowuisampler/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-custom-renderer" page="dataGrid" splitEnabled="true">
+            <item id="data-grid-part-name-generator" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                    <file name="frontend/themes/jmix-flowui-samples/data-grid-part-name-generator.css"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-tooltip-generator" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-large-dataset" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-header-footer" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-key-value" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                    <file name="io/jmix/flowuisampler/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-var-columns" page="dataGrid" splitEnabled="true"/>
+            <item id="data-grid-inline-editor" page="dataGrid" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/flowuisampler/entity/Customer.java"/>
                 </otherFiles>

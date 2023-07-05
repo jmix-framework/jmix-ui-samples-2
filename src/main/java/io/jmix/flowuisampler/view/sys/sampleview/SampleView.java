@@ -129,8 +129,6 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
 
         ViewLayout sampleViewContent = sampleView.getContent();
 
-        sampleViewContent.setHeight(null);
-
         if (menuItem.isSplitEnabled()) {
             JmixSplitLayout splitLayout = uiComponents.create(JmixSplitLayout.class);
             splitLayout.setOrientation(SplitLayout.Orientation.VERTICAL);
@@ -139,6 +137,7 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
 
             VerticalLayout contentHolder = uiComponents.create(VerticalLayout.class);
             contentHolder.setPadding(false);
+            sampleViewContent.setHeightFull();
             contentHolder.add(sampleViewContent);
 
             splitLayout.addToPrimary(contentHolder);
@@ -146,6 +145,7 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
 
             getContent().add(splitLayout);
         } else {
+            sampleViewContent.setHeight(null);
             getContent().add(sampleViewContent);
             getContent().add(tabSheet);
 

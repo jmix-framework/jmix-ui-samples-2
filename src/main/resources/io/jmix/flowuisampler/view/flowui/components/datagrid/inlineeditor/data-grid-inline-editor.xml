@@ -14,26 +14,27 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
-        <select id="selectionModeSelect" label="Selection mode"/>
-        <hbox id="buttonsPanel" classNames="buttons-panel">
-            <button id="greetAllBtn" action="customersDataGrid.greetAll"/>
-            <button id="greetOneBtn" action="customersDataGrid.greetOne"/>
-        </hbox>
+        <checkbox id="editorBufferedCheckbox" label="Editor buffered"/>
         <dataGrid id="customersDataGrid"
                   width="100%"
                   minHeight="20em"
                   dataContainer="customersDc">
-            <actions>
-                <action id="greetAll" type="list_itemTracking" icon="COMMENTS" text="Greet all"/>
-                <action id="greetOne" type="list_itemTracking" icon="COMMENT" text="Greet single selected"/>
-            </actions>
             <columns>
-                <column property="name"/>
-                <column property="lastName"/>
+                <column property="name" editable="true"/>
+                <column property="lastName" editable="true"/>
                 <column property="email"/>
                 <column property="age"/>
                 <column property="active"/>
-                <column property="grade"/>
+                <column property="grade" editable="true"/>
+                <editorActionsColumn key="bufferedEditorColumn" visible="false">
+                    <editButton text="Edit" icon="PENCIL"/>
+                    <saveButton icon="CHECK" themeNames="success"/>
+                    <cancelButton icon="CLOSE" themeNames="error"/>
+                </editorActionsColumn>
+                <editorActionsColumn key="nonBufferedEditorColumn" visible="true">
+                    <editButton text="Edit" icon="PENCIL"/>
+                    <closeButton text="Close" icon="CLOSE"/>
+                </editorActionsColumn>
             </columns>
         </dataGrid>
     </layout>
