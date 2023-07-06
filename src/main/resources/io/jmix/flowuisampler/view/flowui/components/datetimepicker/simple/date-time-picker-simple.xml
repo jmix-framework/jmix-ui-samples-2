@@ -1,0 +1,6 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <dateTimePicker id="dateTimePicker" label="DateTimePicker" datatype="localDateTime"/>
+        <button id="button" text="Show value" icon="CALENDAR_CLOCK"/>
+    </layout>
+</view>

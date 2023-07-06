@@ -1,0 +1,5 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <timePicker id="timePicker" label="TimePicker" datatype="localTime"/>
+    </layout>
+</view>

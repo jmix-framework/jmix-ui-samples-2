@@ -1,0 +1,21 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <vbox padding="false">
+            <details summaryText="Theme Variant" opened="true">
+                <hbox>
+                    <datePicker label="Standard DatePicker"/>
+                    <datePicker label="Small DatePicker" themeNames="small"/>
+                    <datePicker label="Helper-above-field Field" themeNames="helper-above-field"
+                                helperText="Helper text"/>
+                </hbox>
+            </details>
+            <details summaryText="Align Variant" opened="true">
+                <hbox>
+                    <datePicker label="Standard align DatePicker" placeholder="Placeholder"/>
+                    <datePicker label="Align-center DatePicker" themeNames="align-center" placeholder="Placeholder"/>
+                    <datePicker label="Align-right DatePicker" themeNames="align-right" placeholder="Placeholder"/>
+                </hbox>
+            </details>
+        </vbox>
+    </layout>
+</view>

@@ -188,6 +188,26 @@
                 </otherFiles>
             </item>
         </menu>
+        <menu id="date-picker">
+            <item id="date-picker-simple" page="datePicker"/>
+            <item id="date-picker-dataaware" page="datePicker">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="date-picker-custom-range" page="datePicker"/>
+            <item id="date-picker-theme-variant" page="datePicker"/>
+        </menu>
+        <menu id="date-time-picker">
+            <item id="date-time-picker-simple" page="dateTimePicker"/>
+            <item id="date-time-picker-dataaware" page="dateTimePicker">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Task.java"/>
+                </otherFiles>
+            </item>
+            <item id="date-time-picker-custom-range" page="dateTimePicker"/>
+            <item id="date-time-picker-theme-variant" page="dateTimePicker"/>
+        </menu>
         <menu id="dropdown-button">
             <item id="dropdown-button-simple"/>
             <item id="combo-button"/>
@@ -265,6 +285,16 @@
                 </otherFiles>
             </item>
             <item id="text-field-value-change" page="textField" splitEnabled="true"/>
+        </menu>
+        <menu id="time-picker">
+            <item id="time-picker-simple" page="timePicker"/>
+            <item id="time-picker-dataaware" page="timePicker">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Task.java"/>
+                </otherFiles>
+            </item>
+            <item id="time-picker-custom-range" page="timePicker"/>
+            <item id="time-picker-theme-variant" page="timePicker"/>
         </menu>
     </menu>
 
