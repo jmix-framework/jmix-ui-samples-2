@@ -50,10 +50,11 @@ public class DataGridSelectionModeSample extends StandardView {
         if (customers.isEmpty()) {
             notifications.show("No selection");
         } else {
-            StringBuilder sb = new StringBuilder("Hello");
-            customers.forEach(customer -> sb.append(", ").append(metadataTools.getInstanceName(customer)));
+            String greetString = customers.stream()
+                    .map(metadataTools::getInstanceName)
+                    .collect(Collectors.joining(", "));
 
-            notifications.show(sb.toString());
+            notifications.show("Hello, " + greetString);
         }
     }
 

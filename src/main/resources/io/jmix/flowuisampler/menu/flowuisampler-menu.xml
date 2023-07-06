@@ -154,6 +154,34 @@
                     <file name="io/jmix/flowuisampler/entity/Customer.java"/>
                 </otherFiles>
             </item>
+            <item id="data-grid-editor-actions" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-editor-events" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-item-details" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                    <file name="io/jmix/flowuisampler/bean/CustomerDetailsGenerator.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-item-details-editor" page="dataGRid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                    <file name="io/jmix/flowuisampler/bean/CustomerDetailsGenerator.java"/>
+                    <file name="io/jmix/flowuisampler/bean/CustomerDetailsEditorGenerator.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-tree" page="treeDataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Task.java"/>
+                </otherFiles>
+            </item>
             <item id="data-grid-theme-variant" page="dataGrid" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/flowuisampler/entity/Customer.java"/>
