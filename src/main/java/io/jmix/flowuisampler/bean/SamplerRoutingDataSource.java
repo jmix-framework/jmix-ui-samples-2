@@ -84,7 +84,7 @@ public class SamplerRoutingDataSource extends AbstractDataSource implements Appl
         return determineSessionDataSource().getConnection(username, password);
     }
 
-    @Scheduled(fixedRate = 120000)
+    @Scheduled(fixedRate = 60000)
     public void shutdown() {
         log.debug("Cleaning up session datasources ({})", dataSources.size());
         Iterator<Map.Entry<String, DataSource>> iterator = dataSources.entrySet().iterator();
@@ -124,7 +124,6 @@ public class SamplerRoutingDataSource extends AbstractDataSource implements Appl
     protected void onSessionInit(SessionInitEvent event) {
         WrappedSession session = event.getSession().getSession();
         String sessionId = session.getId();
-        session.setMaxInactiveInterval(120);
 
         CurrentAuthentication currentAuthentication = applicationContext.getBean(CurrentAuthentication.class);
         Object principal = currentAuthentication.getAuthentication().getPrincipal();
