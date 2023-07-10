@@ -34,6 +34,7 @@ import io.jmix.flowui.view.Subscribe;
 import io.jmix.flowui.view.ViewComponent;
 import io.jmix.flowui.view.ViewController;
 import io.jmix.flowui.view.ViewDescriptor;
+import io.jmix.flowuisampler.bean.MenuNavigationExpander;
 import io.jmix.flowuisampler.component.themeswitcher.ThemeToggle;
 import io.jmix.flowuisampler.config.SamplerMenuConfig;
 import io.jmix.flowuisampler.config.SamplerMenuItem;
@@ -69,6 +70,8 @@ public class MainView extends StandardMainView {
     protected UiComponents uiComponents;
     @Autowired
     protected ObjectProvider<SessionData> sessionDataProvider;
+    @Autowired
+    protected MenuNavigationExpander menuNavigationExpander;
 
     protected List<JmixListMenu.MenuItem> foundItems = new ArrayList<>();
     protected List<String> parentListIdsToExpand = new ArrayList<>();
@@ -77,6 +80,7 @@ public class MainView extends StandardMainView {
     public void onInit(InitEvent event) {
         initSideMenu();
         initThemeSessionAttribute();
+        menuNavigationExpander.setExpandCallback(this::expandAllParentRecursively);
     }
 
     protected void initThemeSessionAttribute() {

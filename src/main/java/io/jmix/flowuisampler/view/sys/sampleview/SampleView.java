@@ -30,6 +30,7 @@ import com.vaadin.flow.component.splitlayout.SplitLayout;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.i18n.LocaleChangeEvent;
 import com.vaadin.flow.i18n.LocaleChangeObserver;
+import com.vaadin.flow.router.AfterNavigationEvent;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
@@ -46,6 +47,7 @@ import io.jmix.flowui.component.tabsheet.JmixTabSheet;
 import io.jmix.flowui.kit.component.codeeditor.CodeEditorMode;
 import io.jmix.flowui.kit.component.codeeditor.CodeEditorTheme;
 import io.jmix.flowui.view.*;
+import io.jmix.flowuisampler.bean.MenuNavigationExpander;
 import io.jmix.flowuisampler.config.SamplerMenuConfig;
 import io.jmix.flowuisampler.config.SamplerMenuItem;
 import io.jmix.flowuisampler.util.CodeEditorThemeHelper;
@@ -87,6 +89,8 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     protected ObjectProvider<SessionData> sessionDataProvider;
     @Autowired
     protected CodeEditorThemeHelper codeEditorThemeHelper;
+    @Autowired
+    protected MenuNavigationExpander menuNavigationExpander;
 
     protected String sampleId;
     protected StandardView samplerView;
@@ -100,8 +104,16 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
         event.getRouteParameters().get("sampleId")
                 .ifPresent(this::updateSample);
         codeEditorThemeHelper.setCodeEditors(codeEditors);
-
         super.beforeEnter(event);
+    }
+
+    @Override
+    public void afterNavigation(AfterNavigationEvent event) {
+        if (sampleId != null) {
+            menuNavigationExpander.expand(sampleId);
+        }
+
+        super.afterNavigation(event);
     }
 
     @Subscribe
@@ -223,7 +235,7 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
         if (!Strings.isNullOrEmpty(src) && !Strings.isNullOrEmpty(fileContent)) {
             CodeEditor codeEditor = createCodeEditor(getCodeEditorMode(src));
             codeEditor.setValue(fileContent);
-            addTab(samplerHelper.getFileName(src), codeEditor, VaadinIcon.CODE.create());
+            addTab(samplerHelper.getFileName(src), codeEditor, getCodeEditorIcon(src));
         }
     }
 
@@ -362,6 +374,22 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
         }
 
         return mode;
+    }
+
+    protected Icon getCodeEditorIcon(String src) {
+        String fileExtension = samplerHelper.getFileExtension(src);
+
+        VaadinIcon icon = VaadinIcon.CODE;
+        if (fileExtension != null) {
+            switch (fileExtension) {
+                case "java" -> icon = VaadinIcon.COFFEE;
+                case "js" -> icon = VaadinIcon.CURLY_BRACKETS;
+                case "properties" -> icon = VaadinIcon.LIST_UL;
+                case "css", "scss" -> icon = VaadinIcon.CSS;
+            }
+        }
+
+        return icon.create();
     }
 
     protected Locale getCurrentLocale() {
