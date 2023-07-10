@@ -6,5 +6,5 @@ import io.jmix.flowui.view.ViewDescriptor;
 
 @ViewController("time-picker-theme-variant")
 @ViewDescriptor("time-picker-theme-variant.xml")
-public class TimePickerThemeVariant extends StandardView {
+public class TimePickerThemeVariantSample extends StandardView {
 }

@@ -6,5 +6,5 @@ import io.jmix.flowui.view.ViewDescriptor;
 
 @ViewController("date-picker-theme-variant")
 @ViewDescriptor("date-picker-theme-variant.xml")
-public class DatePickerThemeVariant extends StandardView {
+public class DatePickerThemeVariantSample extends StandardView {
 }

@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 
 @ViewController("date-time-picker-theme-variant")
 @ViewDescriptor("date-time-picker-theme-variant.xml")
-public class DateTimePickerThemeVariant extends StandardView {
+public class DateTimePickerThemeVariantSample extends StandardView {
 
     @ViewComponent
     protected TypedDateTimePicker<LocalDateTime> dateTimePicker;
