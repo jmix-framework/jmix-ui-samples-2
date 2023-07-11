@@ -228,6 +228,25 @@
                 <file name="io/jmix/flowuisampler/entity/Order.java"/>
             </otherFiles>
         </item>
+        <menu id="entity-picker">
+            <item id="entity-picker-simple" page="entityPicker">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                    <file name="io/jmix/flowuisampler/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="entity-picker-actions" page="entityPicker">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                    <file name="io/jmix/flowuisampler/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="entity-picker-meta-class" page="entityPicker">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
         <menu id="icon">
             <item id="icon-all" splitEnabled="true"/>
             <item id="icon-simple"/>
