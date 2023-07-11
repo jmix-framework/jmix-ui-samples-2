@@ -2,7 +2,7 @@
     <layout>
         <vbox padding="false">
             <details summaryText="Theme Variant" opened="true">
-                <hbox>
+                <hbox classNames="flex-wrap">
                     <dateTimePicker label="Standard DateTimePicker"/>
                     <dateTimePicker label="Small DateTimePicker" themeNames="small"/>
                     <dateTimePicker label="Helper-above-field Field" themeNames="helper-above-field"
@@ -10,10 +10,13 @@
                 </hbox>
             </details>
             <details summaryText="Align Variant" opened="true">
-                <hbox>
-                    <dateTimePicker id="dateTimePicker" label="Standard align DateTimePicker"/>
-                    <dateTimePicker id="dateTimePicker2" label="Align-center DateTimePicker" themeNames="align-center"/>
-                    <dateTimePicker id="dateTimePicker3" label="Align-right DateTimePicker" themeNames="align-right"/>
+                <hbox classNames="flex-wrap">
+                    <dateTimePicker id="dateTimePicker" label="Standard align DateTimePicker"
+                                    datePlaceholder="Placeholder" timePlaceholder="Placeholder"/>
+                    <dateTimePicker id="dateTimePicker2" label="Align-center DateTimePicker" themeNames="align-center"
+                                    datePlaceholder="Placeholder" timePlaceholder="Placeholder"/>
+                    <dateTimePicker id="dateTimePicker3" label="Align-right DateTimePicker" themeNames="align-right"
+                                    datePlaceholder="Placeholder" timePlaceholder="Placeholder"/>
                 </hbox>
             </details>
         </vbox>
