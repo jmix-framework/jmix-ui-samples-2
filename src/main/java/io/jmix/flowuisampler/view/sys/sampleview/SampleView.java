@@ -17,15 +17,21 @@
 package io.jmix.flowuisampler.view.sys.sampleview;
 
 import com.google.common.base.Strings;
+import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.html.Label;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.page.Page;
 import com.vaadin.flow.component.splitlayout.SplitLayout;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.i18n.LocaleChangeEvent;
@@ -37,6 +43,7 @@ import com.vaadin.flow.server.auth.AnonymousAllowed;
 import io.jmix.core.CoreProperties;
 import io.jmix.core.Messages;
 import io.jmix.core.session.SessionData;
+import io.jmix.flowui.Notifications;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.Views;
 import io.jmix.flowui.component.codeeditor.CodeEditor;
@@ -44,6 +51,7 @@ import io.jmix.flowui.component.layout.ViewLayout;
 import io.jmix.flowui.component.scroller.JmixScroller;
 import io.jmix.flowui.component.splitlayout.JmixSplitLayout;
 import io.jmix.flowui.component.tabsheet.JmixTabSheet;
+import io.jmix.flowui.kit.component.button.JmixButton;
 import io.jmix.flowui.kit.component.codeeditor.CodeEditorMode;
 import io.jmix.flowui.kit.component.codeeditor.CodeEditorTheme;
 import io.jmix.flowui.view.*;
@@ -87,6 +95,8 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     protected Views views;
     @Autowired
     protected ObjectProvider<SessionData> sessionDataProvider;
+    @Autowired
+    protected Notifications notifications;
     @Autowired
     protected CodeEditorThemeHelper codeEditorThemeHelper;
     @Autowired
@@ -282,6 +292,8 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
             docLinkFooter.add(docLink);
         }
 
+        docLinkFooter.add(permalink());
+
         scrollerContainer.add(docLinkFooter);
         return scrollerContainer;
     }
@@ -328,10 +340,50 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
         }
 
         Anchor docLink = uiComponents.create(Anchor.class);
-        docLink.setText(messages.getMessage(getClass(), "documentation"));
+        docLink.setText(messageBundle.getMessage("documentation"));
         docLink.setHref(docUrl.toString());
         docLink.setTarget("_blank");
         return docLink;
+    }
+
+    protected Component permalink() {
+        JmixButton permalinkButton = uiComponents.create(JmixButton.class);
+
+        permalinkButton.setIcon(VaadinIcon.COPY.create());
+        permalinkButton.setTitle(messageBundle.getMessage("permalink.title"));
+        permalinkButton.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_TERTIARY_INLINE);
+        permalinkButton.addClassNames("me-s", "ms-auto");
+
+        permalinkButton.addClickListener(this::copyToClipboard);
+
+        return permalinkButton;
+    }
+
+    protected void copyToClipboard(ClickEvent<Button> event) {
+        Page page = UI.getCurrent().getPage();
+
+        page.fetchCurrentURL(url ->
+                page.executeJs(getCopyToClipboardScript(), url.toString())
+                        .then(jsonValue -> notifications.create(messageBundle.getMessage("successCopyNotification"))
+                                        .withPosition(Notification.Position.BOTTOM_END)
+                                        .withThemeVariant(NotificationVariant.LUMO_SUCCESS)
+                                        .show(),
+                                s -> notifications.create(messageBundle.getMessage("errorCopyNotification"))
+                                        .withPosition(Notification.Position.BOTTOM_END)
+                                        .withThemeVariant(NotificationVariant.LUMO_ERROR)
+                                        .show())
+        );
+    }
+
+    protected String getCopyToClipboardScript() {
+        return "const textarea = document.createElement(\"textarea\");\n" +
+                "  textarea.value = $0;\n" +
+                "  textarea.style.position = \"absolute\";\n" +
+                "  textarea.style.opacity = \"0\";\n" +
+                "  document.body.appendChild(textarea);\n" +
+                "  textarea.select();\n" +
+                "  document.execCommand(\"copy\");\n" +
+                "  document.body.removeChild(textarea);\n";
     }
 
     protected String getControllerFileName(String controllerName) {

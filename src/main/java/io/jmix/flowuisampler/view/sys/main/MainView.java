@@ -19,6 +19,7 @@ package io.jmix.flowuisampler.view.sys.main;
 import com.vaadin.flow.component.*;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
+import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
@@ -80,6 +81,7 @@ public class MainView extends StandardMainView {
     public void onInit(InitEvent event) {
         initSideMenu();
         initThemeSessionAttribute();
+
         menuNavigationExpander.setExpandCallback(this::expandAllParentRecursively);
     }
 
@@ -244,6 +246,11 @@ public class MainView extends StandardMainView {
         for (JmixListMenu.MenuItem item : menu.getMenuItems()) {
             expand(item, true);
         }
+    }
+
+    @Subscribe("applicationTitle")
+    protected void onApplicationTitleClick(ClickEvent<H2> event) {
+        UI.getCurrent().navigate(getClass());
     }
 
     protected void expand(JmixListMenu.MenuItem item, boolean isExpand) {
