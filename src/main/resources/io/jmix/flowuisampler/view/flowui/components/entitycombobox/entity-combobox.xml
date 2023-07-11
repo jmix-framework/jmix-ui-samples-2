@@ -1,0 +1,39 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <instance id="orderDc"
+                  class="io.jmix.flowuisampler.entity.Order">
+            <fetchPlan extends="_local">
+                <property name="customer" fetchPlan="_local"/>
+            </fetchPlan>
+        </instance>
+        <collection id="customersDc"
+                    class="io.jmix.flowuisampler.entity.Customer"
+                    fetchPlan="_local">
+            <loader id="customersDl">
+                <query>
+                    <![CDATA[select e from sampler_Customer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <entityComboBox dataContainer="orderDc"
+                        itemsContainer="customersDc"
+                        property="customer"
+                        width="15em"
+                        label="With actions">
+            <actions>
+                <action id="lookup" type="entity_lookup"/>
+                <action id="clear" type="entity_clear"/>
+            </actions>
+        </entityComboBox>
+        <entityComboBox dataContainer="orderDc"
+                        itemsContainer="customersDc"
+                        property="customer"
+                        width="15em"
+                        label="Without actions"/>
+    </layout>
+</view>

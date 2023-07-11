@@ -222,6 +222,12 @@
             </item>
             <item id="email-field-theme-variant"/>
         </menu>
+        <item id="entity-combobox" page="entityComboBox">
+            <otherFiles>
+                <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                <file name="io/jmix/flowuisampler/entity/Order.java"/>
+            </otherFiles>
+        </item>
         <menu id="icon">
             <item id="icon-all" splitEnabled="true"/>
             <item id="icon-simple"/>
