@@ -247,6 +247,40 @@
                 </otherFiles>
             </item>
         </menu>
+        <menu id="generic-filter">
+            <item id="generic-filter-multiple-conditions" page="genericFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="generic-filter-property-condition" page="genericFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                    <file name="io/jmix/flowuisampler/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="generic-filter-jpql-condition" page="genericFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Order.java"/>
+                    <file name="io/jmix/flowuisampler/entity/Product.java"/>
+                </otherFiles>
+            </item>
+            <item id="generic-filter-group-condition" page="genericFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="generic-filter-add-condition" page="genericFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="generic-filter-programmatically-defined" page="genericFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
         <menu id="icon">
             <item id="icon-all" splitEnabled="true"/>
             <item id="icon-simple"/>

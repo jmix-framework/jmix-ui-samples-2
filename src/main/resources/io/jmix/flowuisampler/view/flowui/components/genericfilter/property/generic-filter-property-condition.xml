@@ -1,0 +1,42 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <collection id="ordersDc"
+                    class="io.jmix.flowuisampler.entity.Order">
+            <fetchPlan extends="_local">
+                <property name="customer" fetchPlan="_local"/>
+            </fetchPlan>
+            <loader id="ordersDl">
+                <query>
+                    <![CDATA[select e from sampler_Order e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <genericFilter id="genericFilter" dataLoader="ordersDl">
+            <properties include=".*"/>
+            <configurations>
+                <configuration id="defaultConfiguration" name="Configuration with property conditions" default="true">
+                    <propertyFilter property="customer" operation="EQUAL"
+                                    operationEditable="true"/>
+                    <propertyFilter property="customer.grade" operation="EQUAL"
+                                    operationEditable="true"/>
+                </configuration>
+            </configurations>
+        </genericFilter>
+        <dataGrid id="ordersDataGrid"
+                  dataContainer="ordersDc"
+                  width="100%"
+                  minHeight="20em">
+            <columns>
+                <column property="customer"/>
+                <column property="date"/>
+                <column property="amount"/>
+                <column property="description"/>
+            </columns>
+        </dataGrid>
+    </layout>
+</view>
