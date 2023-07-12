@@ -316,6 +316,30 @@
             <item id="progress-bar-simple" page="progressBar"/>
             <item id="progress-bar-theme-variant" page="progressBar" splitEnabled="true"/>
         </menu>
+        <menu id="property-filter">
+            <item id="property-filter-simple" page="propertyFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="property-filter-editable-operation" page="propertyFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="property-filter-key-value" page="propertyFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Order.java"/>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="property-filter-custom-field" page="propertyFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Order.java"/>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
         <menu id="radio-button-group">
             <item id="radio-button-group-simple" page="radioButtonGroup">
                 <otherFiles>
