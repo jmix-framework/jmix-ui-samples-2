@@ -1,0 +1,11 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <radioButtonGroup id="verticalRadioButtonGroup"
+                       label="Vertical"
+                       themeNames="vertical"
+                       itemsEnum="io.jmix.flowuisampler.entity.CustomerGrade"/>
+        <radioButtonGroup id="horizontalRadioButtonGroup"
+                       label="Horizontal"
+                       itemsEnum="io.jmix.flowuisampler.entity.CustomerGrade"/>
+    </layout>
+</view>

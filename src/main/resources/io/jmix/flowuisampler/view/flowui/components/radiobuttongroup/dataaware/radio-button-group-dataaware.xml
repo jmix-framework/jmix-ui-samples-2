@@ -1,0 +1,21 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <collection id="productsDc"
+                    class="io.jmix.flowuisampler.entity.Product"
+                    fetchPlan="_local">
+            <loader id="productsLoader">
+                <query>
+                    <![CDATA[select e from sampler_Product e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <radioButtonGroup id="radioButtonGroup"
+                       itemsContainer="productsDc"
+                       themeNames="vertical"/>
+    </layout>
+</view>

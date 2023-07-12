@@ -282,6 +282,23 @@
             <item id="progress-bar-simple" page="progressBar"/>
             <item id="progress-bar-theme-variant" page="progressBar" splitEnabled="true"/>
         </menu>
+        <menu id="radio-button-group">
+            <item id="radio-button-group-simple" page="radioButtonGroup">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="radio-button-group-custom-items" page="radioButtonGroup">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="radio-button-group-dataaware" page="radioButtonGroup">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Product.java"/>
+                </otherFiles>
+            </item>
+        </menu>
         <menu id="select">
             <item id="select-simple"/>
             <item id="select-dataaware">
