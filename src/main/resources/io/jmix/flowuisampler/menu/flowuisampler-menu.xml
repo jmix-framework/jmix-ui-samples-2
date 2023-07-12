@@ -278,6 +278,10 @@
             </item>
             <item id="password-field-theme-variant" page="passwordField"/>
         </menu>
+        <menu id="progress-bar">
+            <item id="progress-bar-simple" page="progressBar"/>
+            <item id="progress-bar-theme-variant" page="progressBar" splitEnabled="true"/>
+        </menu>
         <menu id="select">
             <item id="select-simple"/>
             <item id="select-dataaware">

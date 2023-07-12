@@ -1,0 +1,12 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox padding="false">
+            <h4 text="Simple ProgressBar"/>
+            <button id="restartButton" title="Restart process"
+                    icon="REFRESH" themeNames="icon tertiary-inline"/>
+        </hbox>
+        <progressBar id="progressBar" width="100%"/>
+        <h4 text="Indeterminate ProgressBar"/>
+        <progressBar indeterminate="true" width="100%"/>
+    </layout>
+</view>
