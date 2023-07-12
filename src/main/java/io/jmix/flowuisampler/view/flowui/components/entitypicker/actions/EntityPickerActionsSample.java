@@ -17,7 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @ViewController("entity-picker-actions")
 @ViewDescriptor("entity-picker-actions.xml")
-public class EntityPickerActions extends StandardView {
+public class EntityPickerActionsSample extends StandardView {
 
     @ViewComponent
     protected EntityPicker<Customer> entityPicker;

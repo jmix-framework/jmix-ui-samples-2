@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @ViewController("entity-picker-meta-class")
 @ViewDescriptor("entity-picker-meta-class.xml")
-public class EntityPickerMetaClass extends StandardView {
+public class EntityPickerMetaClassSample extends StandardView {
 
     @Autowired
     protected MetadataTools metadataTools;
