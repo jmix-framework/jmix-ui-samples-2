@@ -282,8 +282,8 @@
             </item>
         </menu>
         <menu id="icon">
-            <item id="icon-all" splitEnabled="true"/>
-            <item id="icon-simple"/>
+            <item id="icon-all" page="icon" splitEnabled="true"/>
+            <item id="icon-simple" page="icon"/>
         </menu>
         <menu id="integer-field">
             <item id="integer-field-simple"/>
