@@ -1,0 +1,10 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox id="content" padding="false" width="100%">
+            <vbox classNames="items-center" padding="false">
+                <h4 text="Declaratively defined source"/>
+                <image resource="icons/icon.png" height="10em" width="10em"/>
+            </vbox>
+        </hbox>
+    </layout>
+</view>

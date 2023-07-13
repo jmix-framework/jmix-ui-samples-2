@@ -294,6 +294,17 @@
             </item>
             <item id="integer-field-theme-variant"/>
         </menu>
+        <menu id="image" url="flow-ui/vc/html-components">
+            <item id="image-simple" page="image"/>
+            <item id="image-dataaware" page="image">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Picture.java"/>
+                </otherFiles>
+            </item>
+            <item id="image-resources" page="image"/>
+            <item id="image-click" page="image"/>
+            <item id="image-theme-variant" page="image" splitEnabled="true"/>
+        </menu>
         <menu id="number-field">
             <item id="number-field-simple"/>
             <item id="number-field-dataaware">

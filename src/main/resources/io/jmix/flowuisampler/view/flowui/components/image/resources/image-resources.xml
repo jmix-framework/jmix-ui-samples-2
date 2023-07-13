@@ -1,0 +1,21 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox padding="false" classNames="flex-wrap" width="100%">
+            <vbox padding="false" width="32%" classNames="items-center">
+                <h4 text="Static resource"/>
+                <image resource="icons/image-sample.svg"
+                       height="15em" width="15em"/>
+            </vbox>
+            <vbox padding="false" width="32%" classNames="items-center">
+                <h4 text="URL resource"/>
+                <image resource="https://www.jmix.io/uploads/framework_image_9efadbc372.svg"
+                       height="15em" width="15em"/>
+            </vbox>
+            <vbox padding="false" width="32%" classNames="items-center">
+                <h4 text="Stream resource"/>
+                <image id="imageStreamResource"
+                       height="15em" width="15em"/>
+            </vbox>
+        </hbox>
+    </layout>
+</view>
