@@ -1,6 +1,8 @@
 package io.jmix.flowuisampler.view.flowui.components.progressbar.simple;
 
 import com.vaadin.flow.component.ClickEvent;
+import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.progressbar.ProgressBar;
 import io.jmix.flowui.backgroundtask.BackgroundTask;
 import io.jmix.flowui.backgroundtask.BackgroundTaskHandler;
@@ -21,16 +23,17 @@ public class ProgressBarSimpleSample extends StandardView {
 
     @ViewComponent
     protected ProgressBar progressBar;
+    @ViewComponent
+    protected Span labelSpan;
+    @ViewComponent
+    protected Span percentSpan;
+    @ViewComponent
+    protected JmixButton controlButton;
 
     @Autowired
     protected BackgroundWorker backgroundWorker;
 
     protected BackgroundTaskHandler<Void> taskHandler;
-
-    @Subscribe
-    protected void onInit(InitEvent event) {
-        runNewTask();
-    }
 
     protected void runNewTask() {
         taskHandler = backgroundWorker.handle(createBackgroundTask());
@@ -53,15 +56,32 @@ public class ProgressBarSimpleSample extends StandardView {
             @Override
             public void progress(List<Integer> changes) {
                 double lastValue = changes.get(changes.size() - 1);
-                progressBar.setValue(lastValue / ITERATIONS);
+                double value = lastValue / ITERATIONS;
+
+                if (value < 1) {
+                    labelSpan.setText("In progress");
+                } else {
+                    labelSpan.setText("Done");
+                    controlButton.setIcon(VaadinIcon.REFRESH.create());
+                }
+
+                progressBar.setValue(value);
+                percentSpan.setText(Double.valueOf(value * 100).intValue() + "%");
             }
         };
     }
 
-    @Subscribe("restartButton")
-    protected void onRestartButtonClick(ClickEvent<JmixButton> event) {
-        if (taskHandler != null && !taskHandler.isAlive() && taskHandler.isDone()) {
+    @Subscribe("controlButton")
+    protected void onControlButtonClick(ClickEvent<JmixButton> event) {
+        if (taskHandler == null || taskHandler.isDone() || taskHandler.isCancelled()) {
             runNewTask();
+
+            event.getSource().setIcon(VaadinIcon.STOP.create());
+        } else if (taskHandler != null && taskHandler.isAlive()) {
+            taskHandler.cancel();
+
+            labelSpan.setText("Canceled");
+            event.getSource().setIcon(VaadinIcon.REFRESH.create());
         }
     }
 }
