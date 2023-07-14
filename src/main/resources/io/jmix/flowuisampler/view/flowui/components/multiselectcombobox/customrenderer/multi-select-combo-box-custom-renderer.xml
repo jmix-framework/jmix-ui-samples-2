@@ -1,0 +1,7 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <multiSelectComboBox id="iconsMultiSelectComboBox" clearButtonVisible="true"
+                  label="Icons"
+                  width="20em"/>
+    </layout>
+</view>

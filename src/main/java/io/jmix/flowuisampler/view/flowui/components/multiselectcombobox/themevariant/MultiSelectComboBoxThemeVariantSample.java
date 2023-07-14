@@ -1,20 +1,20 @@
-package io.jmix.flowuisampler.view.flowui.components.combobox.themevariant;
+package io.jmix.flowuisampler.view.flowui.components.multiselectcombobox.themevariant;
 
 import io.jmix.flowui.component.SupportsTypedValue.TypedValueChangeEvent;
 import io.jmix.flowui.component.checkboxgroup.JmixCheckboxGroup;
-import io.jmix.flowui.component.combobox.JmixComboBox;
+import io.jmix.flowui.component.multiselectcombobox.JmixMultiSelectComboBox;
 import io.jmix.flowui.view.*;
-import io.jmix.flowuisampler.entity.CustomerGrade;
+import io.jmix.flowuisampler.entity.Day;
 
 import java.util.Collection;
 import java.util.List;
 
-@ViewController("combobox-theme-variant")
-@ViewDescriptor("combobox-theme-variant.xml")
-public class ComboBoxThemeVariantSample extends StandardView {
+@ViewController("multi-select-combo-box-theme-variant")
+@ViewDescriptor("multi-select-combo-box-theme-variant.xml")
+public class MultiSelectComboBoxThemeVariantSample extends StandardView {
 
     @ViewComponent
-    protected JmixComboBox<CustomerGrade> testComboBox;
+    protected JmixMultiSelectComboBox<Day> testMultiSelectComboBox;
     @ViewComponent
     protected JmixCheckboxGroup<String> settingsCheckboxGroup;
 
@@ -30,11 +30,11 @@ public class ComboBoxThemeVariantSample extends StandardView {
         }
 
         //clear
-        testComboBox.setLabel("");
-        testComboBox.setPlaceholder("");
-        testComboBox.setHelperText("");
-        testComboBox.setThemeName("");
-        testComboBox.setReadOnly(false);
+        testMultiSelectComboBox.setLabel("");
+        testMultiSelectComboBox.setPlaceholder("");
+        testMultiSelectComboBox.setHelperText("");
+        testMultiSelectComboBox.setThemeName("");
+        testMultiSelectComboBox.setReadOnly(false);
 
         event.getValue().stream()
                 .map(String::toLowerCase)
@@ -43,11 +43,11 @@ public class ComboBoxThemeVariantSample extends StandardView {
 
     protected void applyTestComboBoxTheme(String command) {
         switch (command) {
-            case "label" -> testComboBox.setLabel("Label");
-            case "placeholder" -> testComboBox.setPlaceholder("Placeholder");
-            case "helper-text" -> testComboBox.setHelperText("Helper text");
-            case "readonly" -> testComboBox.setReadOnly(true);
-            default -> testComboBox.addThemeName(command);
+            case "label" -> testMultiSelectComboBox.setLabel("Label");
+            case "placeholder" -> testMultiSelectComboBox.setPlaceholder("Placeholder");
+            case "helper-text" -> testMultiSelectComboBox.setHelperText("Helper text");
+            case "readonly" -> testMultiSelectComboBox.setReadOnly(true);
+            default -> testMultiSelectComboBox.addThemeName(command);
         }
     }
 

@@ -1,0 +1,19 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <collection id="productTagsDc"
+                    class="io.jmix.flowuisampler.entity.ProductTag"
+                    fetchPlan="_local">
+            <loader id="productTagsDl">
+                <query>
+                    <![CDATA[select e from sampler_ProductTag e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <multiSelectComboBox id="multiSelectComboBox" itemsContainer="productTagsDc"/>
+    </layout>
+</view>

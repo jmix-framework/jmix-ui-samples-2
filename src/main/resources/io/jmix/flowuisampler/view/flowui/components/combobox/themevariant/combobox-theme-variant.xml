@@ -15,12 +15,15 @@
                     <hbox>
                         <comboBox id="alignLeftComboBox" label="Align left"
                                   themeNames="align-left"
+                                  placeholder="Placeholder"
                                   itemsEnum="io.jmix.flowuisampler.entity.CustomerGrade"/>
                         <comboBox id="alignCenterComboBox" label="Align center"
                                   themeNames="align-center"
+                                  placeholder="Placeholder"
                                   itemsEnum="io.jmix.flowuisampler.entity.CustomerGrade"/>
                         <comboBox id="alignRightComboBox" label="Align right"
                                   themeNames="align-right"
+                                  placeholder="Placeholder"
                                   itemsEnum="io.jmix.flowuisampler.entity.CustomerGrade"/>
                     </hbox>
                 </details>
