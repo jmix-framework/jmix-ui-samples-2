@@ -1,0 +1,12 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout classNames="flex-row">
+        <vbox width="AUTO">
+            <h4 text="Simple ListBox"/>
+            <listBox id="listBox"/>
+        </vbox>
+        <vbox width="AUTO">
+            <h4 text="ListBox with separator"/>
+            <listBox id="listBox2"/>
+        </vbox>
+    </layout>
+</view>

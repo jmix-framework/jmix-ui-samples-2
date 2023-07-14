@@ -1,0 +1,12 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout classNames="flex-row">
+        <vbox width="AUTO">
+            <h4 text="Single-select ListBox"/>
+            <listBox id="listBox"/>
+        </vbox>
+        <vbox width="AUTO">
+            <h4 text="Multi-select ListBox"/>
+            <multiSelectListBox id="multiSelectListBox"/>
+        </vbox>
+    </layout>
+</view>

@@ -305,6 +305,25 @@
             <item id="image-click" page="image"/>
             <item id="image-theme-variant" page="image" splitEnabled="true"/>
         </menu>
+        <menu id="list-box">
+            <item id="list-box-simple"/>
+            <item id="list-box-multi-select" page="multiSelectListBox" splitEnabled="true"/>
+            <item id="list-box-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Product.java"/>
+                </otherFiles>
+            </item>
+            <item id="list-box-custom-disabled">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/record/Product.java"/>
+                </otherFiles>
+            </item>
+            <item id="list-box-custom-renderer">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/record/Simpson.java"/>
+                </otherFiles>
+            </item>
+        </menu>
         <menu id="number-field">
             <item id="number-field-simple"/>
             <item id="number-field-dataaware">
