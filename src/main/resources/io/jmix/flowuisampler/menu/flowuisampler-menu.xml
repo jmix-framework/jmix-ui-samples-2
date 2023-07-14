@@ -396,6 +396,28 @@
                 </otherFiles>
             </item>
         </menu>
+        <menu id="simple-pagination">
+            <item id="simple-pagination-simple" page="simplePagination" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="simple-pagination-items-per-page" page="simplePagination" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="simple-pagination-before-refresh" page="simplePagination" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="simple-pagination-after-refresh" page="simplePagination" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
         <menu id="text-area">
             <item id="text-area-simple"/>
             <item id="text-area-dataaware">
