@@ -484,6 +484,13 @@
             <item id="time-picker-custom-range" page="timePicker"/>
             <item id="time-picker-theme-variant" page="timePicker"/>
         </menu>
+        <menu id="value-picker">
+            <item id="value-picker-simple" page="valuePicker"/>
+            <item id="value-picker-dataaware" page="valuePicker"/>
+            <item id="value-picker-multi"/>
+            <item id="value-picker-multi-enum"/>
+            <item id="value-picker-multi-entity"/>
+        </menu>
     </menu>
 
     <menu id="containers" url="flow-ui/vc/layouts">

@@ -1,0 +1,17 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout classNames="flex-row">
+        <valuePicker id="valuePicker1" label="Random string">
+            <actions>
+                <action id="generate" icon="REFRESH" description="Generate value"/>
+                <action id="value_clear" type="value_clear"/>
+            </actions>
+        </valuePicker>
+        <valuePicker id="valuePicker2" label="Random string" helperText="With custom value"
+                     allowCustomValue="true">
+            <actions>
+                <action id="generate" icon="REFRESH" description="Generate value"/>
+                <action id="value_clear" type="value_clear"/>
+            </actions>
+        </valuePicker>
+    </layout>
+</view>

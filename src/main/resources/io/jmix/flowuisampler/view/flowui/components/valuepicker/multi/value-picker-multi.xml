@@ -1,0 +1,24 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout classNames="flex-row">
+        <multiValuePicker id="stringsValuePicker" label="Strings">
+            <actions>
+                <action id="select" type="multi_value_select">
+                    <properties>
+                        <property name="javaClass" value="java.lang.String"/>
+                    </properties>
+                </action>
+                <action id="value_clear" type="value_clear"/>
+            </actions>
+        </multiValuePicker>
+        <multiValuePicker id="integersValuePicker" label="Integers">
+            <actions>
+                <action id="select" type="multi_value_select">
+                    <properties>
+                        <property name="javaClass" value="java.lang.Integer"/>
+                    </properties>
+                </action>
+                <action id="value_clear" type="value_clear"/>
+            </actions>
+        </multiValuePicker>
+    </layout>
+</view>
