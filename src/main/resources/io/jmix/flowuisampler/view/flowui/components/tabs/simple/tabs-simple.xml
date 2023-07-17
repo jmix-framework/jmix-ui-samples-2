@@ -1,0 +1,9 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <tabs width="100%">
+            <tab id="issueTab" label="Issues"/>
+            <tab id="featureTab" label="Features"/>
+            <tab id="bugTab" label="Bugs"/>
+        </tabs>
+    </layout>
+</view>

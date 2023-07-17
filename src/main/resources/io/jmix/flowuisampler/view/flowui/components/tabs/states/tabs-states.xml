@@ -1,0 +1,9 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <tabs id="tabs" width="100%">
+            <tab id="tab1" label="Selected"/>
+            <tab id="tab2" label="Unselected"/>
+            <tab id="tab3" label="Disabled" enabled="false"/>
+        </tabs>
+    </layout>
+</view>

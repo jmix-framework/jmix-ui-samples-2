@@ -1,0 +1,25 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox padding="false">
+            <checkboxGroup id="tabsSettingsCheckboxGroup" label="Tabs themes"/>
+            <vbox padding="false" width="AUTO" classNames="gap-s justify-end">
+                <label text="Tabs count" classNames="text-secondary text-s font-medium"
+                       setFor="controlButtonPlaceholder"/>
+                <hbox id="controlButtonPlaceholder" padding="false"/>
+            </vbox>
+        </hbox>
+        <tabs id="tabs" width="100%">
+            <tab id="tab1" label="Tab 1"/>
+            <tab id="tab2" label="Tab 2"/>
+            <tab id="tab3" label="Tab 3"/>
+            <tab id="tab4" label="Tab 4"/>
+            <tab id="tab5" label="Tab 5"/>
+            <tab id="tab6" label="Tab 6"/>
+            <tab id="tab7" label="Tab 7"/>
+            <tab id="tab8" label="Tab 8"/>
+            <tab id="tab9" label="Tab 9"/>
+            <tab id="tab10" label="Tab 10"/>
+        </tabs>
+        <span text="To make the scroll button appear, add or remove tabs using the corresponding buttons."/>
+    </layout>
+</view>

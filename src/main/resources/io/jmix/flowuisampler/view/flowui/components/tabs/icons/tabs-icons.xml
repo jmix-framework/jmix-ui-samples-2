@@ -1,0 +1,19 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <checkbox id="iconControlCheckbox" label="Icon on top"/>
+        <tabs id="tabs" width="100%">
+            <tab id="profileTab">
+                <icon icon="USER"/>
+                <span text="Profile"/>
+            </tab>
+            <tab id="notificationsTab">
+                <icon icon="BELL"/>
+                <span text="Notifications"/>
+            </tab>
+            <tab id="settingsTab">
+                <icon icon="COG"/>
+                <span text="Settings"/>
+            </tab>
+        </tabs>
+    </layout>
+</view>

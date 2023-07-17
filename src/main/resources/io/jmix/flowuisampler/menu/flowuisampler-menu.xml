@@ -443,6 +443,13 @@
                 </otherFiles>
             </item>
         </menu>
+        <menu id="tabs">
+            <item id="tabs-simple" page="tabs"/>
+            <item id="tabs-states" page="tabs"/>
+            <item id="tabs-icons" page="tabs"/>
+            <item id="tabs-orientation" page="tabs"/>
+            <item id="tabs-theme-variant" page="tabs"/>
+        </menu>
         <menu id="text-area">
             <item id="text-area-simple"/>
             <item id="text-area-dataaware">
