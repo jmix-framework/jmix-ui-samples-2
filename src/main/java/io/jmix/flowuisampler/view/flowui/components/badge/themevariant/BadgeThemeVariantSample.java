@@ -3,6 +3,7 @@ package io.jmix.flowuisampler.view.flowui.components.badge.themevariant;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.theme.lumo.LumoUtility;
 import io.jmix.flowui.component.SupportsTypedValue.TypedValueChangeEvent;
 import io.jmix.flowui.component.checkboxgroup.JmixCheckboxGroup;
 import io.jmix.flowui.view.*;
@@ -45,7 +46,7 @@ public class BadgeThemeVariantSample extends StandardView {
             testBadge.add(new Span("Badge text"));
         } else if ("icon".equalsIgnoreCase(command)) {
             Icon icon = VaadinIcon.SMILEY_O.create();
-            icon.getStyle().set("padding", "var(--lumo-space-xs)");
+            icon.addClassName(LumoUtility.Padding.XSMALL);
             testBadge.addComponentAsFirst(icon);
         } else {
             testBadge.getElement().getThemeList().add(command);
