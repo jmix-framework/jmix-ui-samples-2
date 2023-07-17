@@ -1,0 +1,6 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <checkbox id="iconControlCheckbox" label="Icon on top"/>
+        <tabSheet id="tabSheet" width="100%"/>
+    </layout>
+</view>

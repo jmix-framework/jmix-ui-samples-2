@@ -517,6 +517,8 @@
         </menu>
         <menu id="tabsheet">
             <item id="tabsheet-simple" page="tabSheet"/>
+            <item id="tabsheet-icons" page="tabSheet"/>
+            <item id="tabsheet-badges" page="tabSheet"/>
             <item id="tabsheet-theme-variant" page="tabSheet"/>
         </menu>
     </menu>

@@ -1,0 +1,5 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <tabSheet id="tabSheet" width="100%"/>
+    </layout>
+</view>
