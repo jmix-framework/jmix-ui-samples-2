@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @ViewController("code-editor-mode-theme")
@@ -71,6 +72,6 @@ public class CodeEditorModeThemeSample extends StandardView {
 
     protected Map<CodeEditorTheme, String> getThemeItemsMap() {
         return Arrays.stream(CodeEditorTheme.values())
-                .collect(Collectors.toMap(mode -> mode, mode -> mode.name().replace('_', ' ')));
+                .collect(Collectors.toMap(Function.identity(), mode -> mode.name().replace('_', ' ')));
     }
 }

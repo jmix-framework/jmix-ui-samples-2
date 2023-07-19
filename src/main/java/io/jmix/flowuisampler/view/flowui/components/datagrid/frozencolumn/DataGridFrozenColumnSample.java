@@ -13,6 +13,7 @@ import io.jmix.flowuisampler.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @ViewController("data-grid-frozen-column")
@@ -45,7 +46,7 @@ public class DataGridFrozenColumnSample extends StandardView {
 
     protected Map<Grid.Column<Customer>, String> getColumnItemsMap() {
         return customersDataGrid.getAllColumns().stream()
-                .collect(Collectors.toMap(col -> col, col -> col.getHeaderText()));
+                .collect(Collectors.toMap(Function.identity(),Grid.Column::getHeaderText));
     }
 
     protected JmixCheckbox createFrozenCheckbox(Grid.Column<Customer> column) {

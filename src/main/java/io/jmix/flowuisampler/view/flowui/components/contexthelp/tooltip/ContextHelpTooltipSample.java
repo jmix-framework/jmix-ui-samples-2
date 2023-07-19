@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Arrays;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @ViewController("context-help-tooltip")
@@ -121,6 +122,6 @@ public class ContextHelpTooltipSample extends StandardView {
 
     protected Map<Tooltip.TooltipPosition, String> getPositionItemsMap() {
         return Arrays.stream(Tooltip.TooltipPosition.values())
-                .collect(Collectors.toMap(mode -> mode, mode -> mode.name().replace('_', ' ')));
+                .collect(Collectors.toMap(Function.identity(),mode -> mode.name().replace('_', ' ')));
     }
 }

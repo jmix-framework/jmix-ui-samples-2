@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @ViewController("data-grid-selection-mode")
@@ -68,6 +69,6 @@ public class DataGridSelectionModeSample extends StandardView {
 
     protected Map<Grid.SelectionMode, String> getSelectionModeItemsMap() {
         return Arrays.stream(Grid.SelectionMode.values())
-                .collect(Collectors.toMap(mode -> mode, mode -> mode.name().replace('_', ' ')));
+                .collect(Collectors.toMap(Function.identity(), mode -> mode.name().replace('_', ' ')));
     }
 }

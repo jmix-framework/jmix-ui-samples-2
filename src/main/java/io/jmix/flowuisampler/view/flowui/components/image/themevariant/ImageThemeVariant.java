@@ -10,6 +10,7 @@ import io.jmix.flowui.view.*;
 
 import java.util.Arrays;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @ViewController("image-theme-variant")
@@ -37,6 +38,6 @@ public class ImageThemeVariant extends StandardView {
 
     protected Map<JmixImageVariant, String> getThemeSelectItemsMap() {
         return Arrays.stream(JmixImageVariant.values())
-                .collect(Collectors.toMap(variant -> variant, variant -> variant.name().replace('_', ' ')));
+                .collect(Collectors.toMap(Function.identity(), variant -> variant.name().replace('_', ' ')));
     }
 }

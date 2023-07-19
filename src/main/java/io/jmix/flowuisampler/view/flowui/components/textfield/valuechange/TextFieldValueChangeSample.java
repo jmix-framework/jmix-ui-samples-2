@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Arrays;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @ViewController("text-field-value-change")
@@ -52,6 +53,6 @@ public class TextFieldValueChangeSample extends StandardView {
 
     protected Map<ValueChangeMode, String> getValueChangeModeItemsMap() {
         return Arrays.stream(ValueChangeMode.values())
-                .collect(Collectors.toMap(mode -> mode, mode -> mode.name().replace('_', ' ')));
+                .collect(Collectors.toMap(Function.identity(), mode -> mode.name().replace('_', ' ')));
     }
 }
