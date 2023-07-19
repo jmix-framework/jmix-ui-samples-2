@@ -124,7 +124,7 @@
             <item id="data-grid-part-name-generator" page="dataGrid" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/flowuisampler/entity/Customer.java"/>
-                    <file name="frontend/themes/jmix-flowui-samples/data-grid-part-name-generator.css"/>
+                    <file name="META-INF/resources/themes/data-grid-part-name-generator.css"/>
                 </otherFiles>
             </item>
             <item id="data-grid-tooltip-generator" page="dataGrid" splitEnabled="true">
@@ -592,7 +592,7 @@
         <item id="text-area-resizable"/>
         <item id="badge-icons">
             <otherFiles>
-                <file name="frontend/themes/jmix-flowui-samples/badge-icons.css"/>
+                <file name="META-INF/resources/themes/badge-icons.css"/>
             </otherFiles>
         </item>
     </menu>
