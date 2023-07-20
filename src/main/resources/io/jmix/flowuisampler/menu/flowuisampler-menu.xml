@@ -281,6 +281,24 @@
                 </otherFiles>
             </item>
         </menu>
+        <menu id="html" url="flow-ui/vc">
+            <item id="html-component" page="html" splitEnabled="true">
+                <otherFiles>
+                    <file name="META-INF/resources/html/html-component.html"/>
+                    <file name="META-INF/resources/themes/html-component.css"/>
+                </otherFiles>
+            </item>
+            <item id="html-declaratively" page="html" splitEnabled="true">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/html-component.css"/>
+                </otherFiles>
+            </item>
+            <item id="html-programmatically" page="html" splitEnabled="true">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/html-component.css"/>
+                </otherFiles>
+            </item>
+        </menu>
         <menu id="icon">
             <item id="icon-all" page="icon" splitEnabled="true"/>
             <item id="icon-simple" page="icon"/>

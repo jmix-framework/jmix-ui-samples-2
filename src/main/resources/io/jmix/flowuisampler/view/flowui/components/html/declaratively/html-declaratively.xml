@@ -1,0 +1,49 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <div>
+            <h1 text="HTML Tags Sample"/>
+            <p text="This is a sample text that showcases the usage of different HTML tags."/>
+            <h2 text="Formatting Tags:"/>
+            <p text="Here are some formatting tags:"/>
+            <unorderedList>
+                <listItem>
+                    <span classNames="font-semibold" text="Bold text: "/>
+                    <span text="Use the &lt;b&gt; tag to make text "/>
+                    <span classNames="font-semibold" text="bold."/>
+                </listItem>
+                <listItem>
+                    <span classNames="font-italic" text="Italic text: "/>
+                    <span text="Use the &lt;i&gt; tag to make text "/>
+                    <span classNames="font-italic" text="italic."/>
+                </listItem>
+
+                <listItem>
+                    <span classNames="highlight" text="Highlighted text: "/>
+                    <span text="Use the &lt;span&gt; tag to add a "/>
+                    <span classNames="highlight" text="highlighted effect"/>
+                    <span text=" to text."/>
+                </listItem>
+            </unorderedList>
+
+            <h2 text="Lists:"/>
+            <p text="Here are some examples of lists:"/>
+            <h3 text="Ordered List:"/>
+            <orderedList>
+                <listItem text="First item"/>
+                <listItem text="Second item"/>
+                <listItem text="Third item"/>
+            </orderedList>
+
+            <h3 text="Unordered List:"/>
+            <unorderedList>
+                <listItem text="Apples"/>
+                <listItem text="Oranges"/>
+                <listItem text="Bananas"/>
+            </unorderedList>
+
+            <h2 text="Hyperlinks:"/>
+            <p text="Hyperlinks can be added using the &lt;a&gt; tag:"/>
+            <anchor href="https://www.jmix.io" text="Visit jmix.io" target="BLANK"/>
+        </div>
+    </layout>
+</view>
