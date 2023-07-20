@@ -1,15 +1,13 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
-    <layout>
-        <hbox padding="false">
-            <radioButtonGroup id="radioButtonGroupWithList"
-                           label="Items List"
-                           themeNames="vertical"/>
-            <radioButtonGroup id="radioButtonGroupWithMap"
-                           label="Items Map"
-                           themeNames="vertical"/>
-            <radioButtonGroup id="radioButtonGroupWithEnum"
-                           label="Items Enum"
-                           themeNames="vertical"/>
-        </hbox>
+    <layout classNames="flex-row flex-wrap">
+        <radioButtonGroup id="radioButtonGroupWithList"
+                          label="Items List"
+                          themeNames="vertical"/>
+        <radioButtonGroup id="radioButtonGroupWithMap"
+                          label="Items Map"
+                          themeNames="vertical"/>
+        <radioButtonGroup id="radioButtonGroupWithEnum"
+                          label="Items Enum"
+                          themeNames="vertical"/>
     </layout>
 </view>

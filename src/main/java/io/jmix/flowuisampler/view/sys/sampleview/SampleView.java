@@ -76,6 +76,7 @@ import java.util.*;
 public class SampleView extends StandardView implements LocaleChangeObserver {
 
     protected static final String DOC_URL_MESSAGES_KEY = "docUrl";
+    protected static final String CODE_EDITOR_HEIGHT = "-webkit-fill-available";
 
     @Autowired
     protected SamplerMenuConfig menuConfig;
@@ -257,8 +258,13 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
         editor.setMode(mode);
         editor.setReadOnly(true);
         editor.setWidthFull();
-        editor.setMinHeight("20em");
-        editor.setHeight("95%");
+
+        if (UI.getCurrent().getSession().getBrowser().isFirefox()) {
+            editor.setMinHeight("20em");
+            editor.setHeight("95%");
+        } else {
+            editor.setHeight(CODE_EDITOR_HEIGHT);
+        }
 
         codeEditors.add(editor);
         return editor;

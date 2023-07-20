@@ -1,29 +1,27 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
-    <layout>
-        <hbox padding="false">
-            <dropdownButton id="dropdownButton1" text="Save">
-                <items>
-                    <textItem id="docSaveItem" text="Save as DOC"/>
-                    <textItem id="pdfSaveItem" text="Save as PDF"/>
-                </items>
-            </dropdownButton>
-            <dropdownButton id="dropdownButton2" text="Save" icon="ARCHIVE" themeNames="icon">
-                <items>
-                    <componentItem id="docSaveItem">
-                        <hbox padding="false">
-                            <icon icon="FILE"/>
-                            <span text="Save as DOC"/>
-                        </hbox>
-                    </componentItem>
-                    <componentItem id="pdfSaveItem">
-                        <hbox padding="false">
-                            <icon icon="FILE"/>
-                            <span text="Save as PDF"/>
-                        </hbox>
-                    </componentItem>
-                </items>
-            </dropdownButton>
-            <dropdownButton id="dropdownButton3" icon="ARCHIVE" themeNames="icon"/>
-        </hbox>
+    <layout classNames="flex-row flex-wrap">
+        <dropdownButton id="dropdownButton1" text="Save">
+            <items>
+                <textItem id="docSaveItem" text="Save as DOC"/>
+                <textItem id="pdfSaveItem" text="Save as PDF"/>
+            </items>
+        </dropdownButton>
+        <dropdownButton id="dropdownButton2" text="Save" icon="ARCHIVE" themeNames="icon">
+            <items>
+                <componentItem id="docSaveItem">
+                    <hbox padding="false">
+                        <icon icon="FILE"/>
+                        <span text="Save as DOC"/>
+                    </hbox>
+                </componentItem>
+                <componentItem id="pdfSaveItem">
+                    <hbox padding="false">
+                        <icon icon="FILE"/>
+                        <span text="Save as PDF"/>
+                    </hbox>
+                </componentItem>
+            </items>
+        </dropdownButton>
+        <dropdownButton id="dropdownButton3" icon="ARCHIVE" themeNames="icon"/>
     </layout>
 </view>

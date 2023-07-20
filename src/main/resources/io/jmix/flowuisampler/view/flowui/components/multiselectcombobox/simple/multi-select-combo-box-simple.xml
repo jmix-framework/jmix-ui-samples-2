@@ -1,5 +1,5 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
-    <layout classNames="flex-row">
+    <layout classNames="flex-row flex-wrap">
         <multiSelectComboBox id="multiSelectComboBox"/>
         <multiSelectComboBox itemsEnum="io.jmix.flowuisampler.entity.Day" clearButtonVisible="true" width="17em"/>
     </layout>

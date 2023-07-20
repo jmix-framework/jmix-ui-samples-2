@@ -1,9 +1,7 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
-    <layout>
-        <hbox padding="false">
-            <button id="textButton" text="Plain text" icon="COMMENT"/>
-            <button id="htmlButton" text="HTML content" icon="FILE_CODE"/>
-            <button id="customSettingsButton" text="Custom settings" icon="COGS"/>
-        </hbox>
+    <layout classNames="flex-row flex-wrap">
+        <button id="textButton" text="Plain text" icon="COMMENT"/>
+        <button id="htmlButton" text="HTML content" icon="FILE_CODE"/>
+        <button id="customSettingsButton" text="Custom settings" icon="COGS"/>
     </layout>
 </view>

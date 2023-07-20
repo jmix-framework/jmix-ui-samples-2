@@ -1,62 +1,60 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
-    <layout>
-        <hbox padding="false" width="100%">
-            <vbox width="55%" padding="false">
-                <details summaryText="Theme Variant" opened="true">
-                    <hbox>
-                        <button id="standardNotificationButton" text="Standard"/>
-                        <button id="primaryNotificationButton" text="Primary" themeNames="primary"/>
-                        <button id="successNotificationButton" text="Success" themeNames="success"/>
-                        <button id="errorNotificationButton" text="Error" themeNames="error"/>
-                        <button id="contrastNotificationButton" text="Contrast" themeNames="contrast"/>
-                    </hbox>
-                </details>
-
-                <details summaryText="Type" opened="true">
-                    <hbox>
-                        <button id="defaultTypeNotificationButton" text="Default" icon="COMMENT"/>
-                        <button id="successTypeNotificationButton" text="Success" icon="CHECK"/>
-                        <button id="warningTypeNotificationButton" text="Warning" icon="WARNING"/>
-                        <button id="errorTypeNotificationButton" text="Error" icon="EXCLAMATION_CIRCLE"/>
-                        <button id="systemTypeNotificationButton" text="System" icon="SERVER"/>
-                    </hbox>
-                </details>
-
-                <details summaryText="Duration and cloesable" opened="true">
-                    <hbox>
-                        <button id="durationNotificationButton" text="With duration" icon="CLOCK"/>
-                        <button id="closeableNotificationButton" text="Closeable" icon="CLOSE"/>
-                    </hbox>
-                </details>
-            </vbox>
-            <details summaryText="Test notification" opened="true" width="45%">
-                <vbox padding="false">
-                    <button id="testButton" icon="COMMENTS"
-                            text="Show notification" themeNames="primary"/>
-                    <formLayout>
-                        <responsiveSteps>
-                            <responsiveStep minWidth="0" columns="1"/>
-                            <responsiveStep minWidth="20em" columns="2"/>
-                        </responsiveSteps>
-
-                        <textField id="titleField" label="Title"/>
-                        <textField id="messageField" label="Message"/>
-                        <checkbox id="closeableField" label="Closeable"/>
-                        <integerField id="durationField" label="Duration"
-                                      placeholder="Duration in milliseconds"
-                                      helperText="Duration greater than 10 seconds will be ignored">
-                            <validators>
-                                <max value="10000"/>
-                                <min value="0"/>
-                            </validators>
-                        </integerField>
-                        <comboBox id="positionField" label="Position" clearButtonVisible="true"/>
-                        <comboBox id="themeVariantField" label="ThemeVariant" clearButtonVisible="true"/>
-                        <comboBox id="typeField" label="Type" clearButtonVisible="true"/>
-                    </formLayout>
-                    <span text="Be attentive. Some of the settings overlap each other."/>
-                </vbox>
+    <layout justifyContent="BETWEEN" classNames="flex-row flex-wrap">
+        <vbox width="AUTO" padding="false">
+            <details summaryText="Theme Variant" opened="true">
+                <hbox classNames="flex-wrap">
+                    <button id="standardNotificationButton" text="Standard"/>
+                    <button id="primaryNotificationButton" text="Primary" themeNames="primary"/>
+                    <button id="successNotificationButton" text="Success" themeNames="success"/>
+                    <button id="errorNotificationButton" text="Error" themeNames="error"/>
+                    <button id="contrastNotificationButton" text="Contrast" themeNames="contrast"/>
+                </hbox>
             </details>
-        </hbox>
+
+            <details summaryText="Type" opened="true">
+                <hbox classNames="flex-wrap">
+                    <button id="defaultTypeNotificationButton" text="Default" icon="COMMENT"/>
+                    <button id="successTypeNotificationButton" text="Success" icon="CHECK"/>
+                    <button id="warningTypeNotificationButton" text="Warning" icon="WARNING"/>
+                    <button id="errorTypeNotificationButton" text="Error" icon="EXCLAMATION_CIRCLE"/>
+                    <button id="systemTypeNotificationButton" text="System" icon="SERVER"/>
+                </hbox>
+            </details>
+
+            <details summaryText="Duration and cloesable" opened="true">
+                <hbox classNames="flex-wrap">
+                    <button id="durationNotificationButton" text="With duration" icon="CLOCK"/>
+                    <button id="closeableNotificationButton" text="Closeable" icon="CLOSE"/>
+                </hbox>
+            </details>
+        </vbox>
+        <details summaryText="Test notification" opened="true" width="45%">
+            <vbox padding="false">
+                <button id="testButton" icon="COMMENTS"
+                        text="Show notification" themeNames="primary"/>
+                <formLayout>
+                    <responsiveSteps>
+                        <responsiveStep minWidth="0" columns="1"/>
+                        <responsiveStep minWidth="25em" columns="2"/>
+                    </responsiveSteps>
+
+                    <textField id="titleField" label="Title"/>
+                    <textField id="messageField" label="Message"/>
+                    <checkbox id="closeableField" label="Closeable"/>
+                    <integerField id="durationField" label="Duration"
+                                  placeholder="Duration in milliseconds"
+                                  helperText="Duration greater than 10 seconds will be ignored">
+                        <validators>
+                            <max value="10000"/>
+                            <min value="0"/>
+                        </validators>
+                    </integerField>
+                    <comboBox id="positionField" label="Position" clearButtonVisible="true"/>
+                    <comboBox id="themeVariantField" label="ThemeVariant" clearButtonVisible="true"/>
+                    <comboBox id="typeField" label="Type" clearButtonVisible="true"/>
+                </formLayout>
+                <span text="Be attentive. Some of the settings overlap each other."/>
+            </vbox>
+        </details>
     </layout>
 </view>

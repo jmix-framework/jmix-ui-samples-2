@@ -1,15 +1,13 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
-    <layout>
-        <hbox padding="false">
-            <comboBox id="noFilterComboBox"
-                      label="No filter"
-                      placeholder="Start typing"/>
-            <comboBox id="startsWithFilterComboBox"
-                      label="'Starts with' filter"
-                      placeholder="Start typing"/>
-            <comboBox id="containsFilterComboBox"
-                      label="'Contains' filter"
-                      placeholder="Start typing"/>
-        </hbox>
+    <layout classNames="flex-row flex-wrap">
+        <comboBox id="noFilterComboBox"
+                  label="No filter"
+                  placeholder="Start typing"/>
+        <comboBox id="startsWithFilterComboBox"
+                  label="'Starts with' filter"
+                  placeholder="Start typing"/>
+        <comboBox id="containsFilterComboBox"
+                  label="'Contains' filter"
+                  placeholder="Start typing"/>
     </layout>
 </view>

@@ -18,7 +18,7 @@
                        dataLoader="customersDl">
             <properties include=".*"/>
         </genericFilter>
-        <hbox alignItems="END">
+        <hbox alignItems="END" classNames="flex-wrap">
             <textField id="nameFilterField" label="Custom filter" placeholder="First or last name" width="15em"/>
             <button id="customersDataGridRefreshBtn" action="customersDataGrid.refresh"/>
         </hbox>

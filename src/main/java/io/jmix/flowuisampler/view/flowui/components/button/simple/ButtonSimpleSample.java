@@ -33,7 +33,7 @@ public class ButtonSimpleSample extends StandardView {
                 .ifPresent(this::save);
     }
 
-    public void save(String id) {
+    protected void save(String id) {
         notifications.show("Save called from " + id);
     }
 }

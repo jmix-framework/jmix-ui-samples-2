@@ -14,7 +14,7 @@ public class CascadingDropdownsSample extends StandardView {
     protected EntityComboBox<Moon> moonsComboBox;
 
     @Subscribe("planetsComboBox")
-    public void onPlanetsComboBoxValueChange(ComponentValueChangeEvent<EntityComboBox<Planet>, Planet> event) {
+    protected void onPlanetsComboBoxValueChange(ComponentValueChangeEvent<EntityComboBox<Planet>, Planet> event) {
         moonsComboBox.clear();
     }
 }

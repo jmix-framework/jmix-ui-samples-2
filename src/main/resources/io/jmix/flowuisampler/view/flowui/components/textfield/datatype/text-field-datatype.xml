@@ -1,12 +1,10 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
-    <layout>
-        <hbox padding="false">
-            <textField id="stringTextField" label="String"
-                       datatype="string"/>
-            <textField id="integerTextField" label="Integer"
-                       datatype="int"/>
-            <textField id="doubleTextField" label="Double"
-                       datatype="double"/>
-        </hbox>
+    <layout classNames="flex-row flex-wrap">
+        <textField id="stringTextField" label="String"
+                   datatype="string"/>
+        <textField id="integerTextField" label="Integer"
+                   datatype="int"/>
+        <textField id="doubleTextField" label="Double"
+                   datatype="double"/>
     </layout>
 </view>

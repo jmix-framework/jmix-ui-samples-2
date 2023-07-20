@@ -1,24 +1,22 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
-        <vbox padding="false">
-            <details summaryText="Theme Variant" opened="true">
-                <hbox classNames="flex-wrap">
-                    <dateTimePicker label="Standard DateTimePicker"/>
-                    <dateTimePicker label="Small DateTimePicker" themeNames="small"/>
-                    <dateTimePicker label="Helper-above-field Field" themeNames="helper-above-field"
-                                    helperText="Helper text"/>
-                </hbox>
-            </details>
-            <details summaryText="Align Variant" opened="true">
-                <hbox classNames="flex-wrap">
-                    <dateTimePicker id="dateTimePicker" label="Standard align DateTimePicker"
-                                    datePlaceholder="Placeholder" timePlaceholder="Placeholder"/>
-                    <dateTimePicker id="dateTimePicker2" label="Align-center DateTimePicker" themeNames="align-center"
-                                    datePlaceholder="Placeholder" timePlaceholder="Placeholder"/>
-                    <dateTimePicker id="dateTimePicker3" label="Align-right DateTimePicker" themeNames="align-right"
-                                    datePlaceholder="Placeholder" timePlaceholder="Placeholder"/>
-                </hbox>
-            </details>
-        </vbox>
+        <details summaryText="Theme Variant" opened="true">
+            <hbox classNames="flex-wrap">
+                <dateTimePicker label="Standard DateTimePicker"/>
+                <dateTimePicker label="Small DateTimePicker" themeNames="small"/>
+                <dateTimePicker label="Helper-above-field Field" themeNames="helper-above-field"
+                                helperText="Helper text"/>
+            </hbox>
+        </details>
+        <details summaryText="Align Variant" opened="true">
+            <hbox classNames="flex-wrap">
+                <dateTimePicker id="dateTimePicker" label="Standard align DateTimePicker"
+                                datePlaceholder="Placeholder" timePlaceholder="Placeholder"/>
+                <dateTimePicker id="dateTimePicker2" label="Align-center DateTimePicker" themeNames="align-center"
+                                datePlaceholder="Placeholder" timePlaceholder="Placeholder"/>
+                <dateTimePicker id="dateTimePicker3" label="Align-right DateTimePicker" themeNames="align-right"
+                                datePlaceholder="Placeholder" timePlaceholder="Placeholder"/>
+            </hbox>
+        </details>
     </layout>
 </view>

@@ -1,15 +1,13 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
-    <layout>
-        <hbox padding="false" width="100%">
+    <layout justifyContent="BETWEEN" classNames="flex-row flex-wrap">
+        <details summaryText="Default value change" opened="true" width="AUTO">
+            <textField id="textField" placeholder="Start typing"/>
+        </details>
+        <details summaryText="Custom value change" opened="true" width="50%">
             <vbox padding="false">
-                <h4 text="Default value change"/>
-                <textField id="textField" placeholder="Start typing"/>
-            </vbox>
-            <vbox padding="false">
-                <h4 text="Custom value change"/>
                 <textField id="valueChangeModeTextField" maxLength="140" helperText="0/140"/>
                 <radioButtonGroup id="valueChangeModeRadioButtonGroup" label="ValueChangeMode"/>
             </vbox>
-        </hbox>
+        </details>
     </layout>
 </view>

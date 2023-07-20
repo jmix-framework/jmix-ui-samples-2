@@ -1,24 +1,24 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
-        <hbox padding="false" width="100%">
-            <vbox padding="false">
-                <h4 text="Default tooltip"/>
+        <details summaryText="Default tooltip" opened="true" width="AUTO">
+            <hbox classNames="flex-wrap">
                 <textField label="Field with tooltip">
                     <tooltip text="Tooltip text"/>
                 </textField>
                 <textField id="manualTooltipField" label="Manual tooltip">
                     <tooltip text="Tooltip text" manual="true" position="END_BOTTOM"/>
                 </textField>
-            </vbox>
+            </hbox>
+        </details>
+        <details summaryText="Custom tooltip" opened="true" width="AUTO">
             <vbox padding="false">
-                <h4 text="Custom tooltip"/>
                 <textField id="customTooltipField" placeholder="Field for a tooltip">
                     <tooltip text="Tooltip text"/>
                 </textField>
                 <formLayout>
                     <responsiveSteps>
                         <responsiveStep minWidth="0" columns="1"/>
-                        <responsiveStep minWidth="15em" columns="2"/>
+                        <responsiveStep minWidth="25em" columns="2"/>
                     </responsiveSteps>
                     <integerField id="focusDelay" label="FocusDelay">
                         <validators>
@@ -43,6 +43,6 @@
                     <textField id="text" value="Tooltip text" label="Text"/>
                 </formLayout>
             </vbox>
-        </hbox>
+        </details>
     </layout>
 </view>

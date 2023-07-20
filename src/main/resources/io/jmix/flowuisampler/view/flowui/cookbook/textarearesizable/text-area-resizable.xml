@@ -1,16 +1,14 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
-    <layout>
-        <hbox padding="false">
-            <textArea id="textArea" label="Standard TextArea"/>
-            <textArea id="resizableBothTextArea" label="Resizeable TextArea"
-                      themeNames="helper-above-field"
-                      helperText="Both direction"/>
-            <textArea id="resizableVerticalTextArea" label="Resizeable TextArea"
-                      themeNames="helper-above-field"
-                      helperText="Vertical direction"/>
-            <textArea id="resizableHorizontalTextArea" label="Resizeable TextArea"
-                      themeNames="helper-above-field"
-                      helperText="Horizontal direction"/>
-        </hbox>
+    <layout classNames="flex-row flex-wrap">
+        <textArea id="textArea" label="Standard TextArea"/>
+        <textArea id="resizableBothTextArea" label="Resizeable TextArea"
+                  themeNames="helper-above-field"
+                  helperText="Both direction"/>
+        <textArea id="resizableVerticalTextArea" label="Resizeable TextArea"
+                  themeNames="helper-above-field"
+                  helperText="Vertical direction"/>
+        <textArea id="resizableHorizontalTextArea" label="Resizeable TextArea"
+                  themeNames="helper-above-field"
+                  helperText="Horizontal direction"/>
     </layout>
 </view>

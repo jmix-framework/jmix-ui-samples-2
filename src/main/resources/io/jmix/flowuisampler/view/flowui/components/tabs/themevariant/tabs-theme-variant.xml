@@ -1,6 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
-        <hbox padding="false">
+        <hbox padding="false" classNames="flex-wrap">
             <checkboxGroup id="tabsSettingsCheckboxGroup" label="Tabs themes"/>
             <vbox padding="false" width="AUTO" classNames="gap-s justify-end">
                 <label text="Tabs count" classNames="text-secondary text-s font-medium"

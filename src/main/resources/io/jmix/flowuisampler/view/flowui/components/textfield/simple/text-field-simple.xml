@@ -1,8 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
-    <layout>
-        <hbox padding="false">
-            <textField id="textField" label="TextField"/>
-            <textField id="textLengthField" label="MaxLength = 10" maxLength="10"/>
-        </hbox>
+    <layout classNames="flex-row flex-wrap">
+        <textField id="textField" label="TextField"/>
+        <textField id="textLengthField" label="MaxLength = 10" maxLength="10"/>
     </layout>
 </view>

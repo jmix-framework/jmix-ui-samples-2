@@ -7,22 +7,20 @@
                   class="io.jmix.flowuisampler.entity.Customer"
                   fetchPlan="_local"/>
     </data>
-    <layout>
-        <hbox padding="false">
-            <comboBox id="amountComboBox"
-                      label="Items List"
-                      dataContainer="orderDc"
-                      property="amount"/>
-            <comboBox id="ageComboBox"
-                      label="Items Map"
-                      dataContainer="customerDc"
-                      property="age"/>
-            <comboBox id="gradeComboBox"
-                      label="Items Enum"
-                      dataContainer="customerDc"
-                      itemsEnum="io.jmix.flowuisampler.entity.CustomerGrade"
-                      property="grade"
-                      placeholder="Select grade"/>
-        </hbox>
+    <layout classNames="flex-row flex-wrap">
+        <comboBox id="amountComboBox"
+                  label="Items List"
+                  dataContainer="orderDc"
+                  property="amount"/>
+        <comboBox id="ageComboBox"
+                  label="Items Map"
+                  dataContainer="customerDc"
+                  property="age"/>
+        <comboBox id="gradeComboBox"
+                  label="Items Enum"
+                  dataContainer="customerDc"
+                  itemsEnum="io.jmix.flowuisampler.entity.CustomerGrade"
+                  property="grade"
+                  placeholder="Select grade"/>
     </layout>
 </view>

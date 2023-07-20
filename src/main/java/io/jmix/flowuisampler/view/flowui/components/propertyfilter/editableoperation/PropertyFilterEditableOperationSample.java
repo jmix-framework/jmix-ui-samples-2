@@ -18,7 +18,7 @@ public class PropertyFilterEditableOperationSample extends StandardView {
     protected Notifications notifications;
 
     @Subscribe("propertyFilter")
-    public void onPropertyFilterOperationChange(PropertyFilter.OperationChangeEvent<Customer> event) {
+    protected void onPropertyFilterOperationChange(PropertyFilter.OperationChangeEvent<Customer> event) {
         notifications.create("Prev: " + event.getPreviousOperation().name() + ", New: " + event.getNewOperation().name())
                 .withPosition(Notification.Position.BOTTOM_END)
                 .show();

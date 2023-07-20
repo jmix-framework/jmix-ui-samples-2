@@ -64,8 +64,8 @@
             </item>
         </menu>
         <menu id="code-editor">
-            <item id="code-editor-simple"/>
-            <item id="code-editor-mode-theme"/>
+            <item id="code-editor-simple" splitEnabled="true"/>
+            <item id="code-editor-mode-theme" splitEnabled="true"/>
         </menu>
         <menu id="combobox">
             <item id="combobox-simple" page="comboBox">
@@ -206,7 +206,7 @@
                 </otherFiles>
             </item>
             <item id="date-time-picker-custom-range" page="dateTimePicker"/>
-            <item id="date-time-picker-theme-variant" page="dateTimePicker"/>
+            <item id="date-time-picker-theme-variant" page="dateTimePicker" splitEnabled="true"/>
         </menu>
         <menu id="dropdown-button">
             <item id="dropdown-button-simple"/>
@@ -303,15 +303,6 @@
             <item id="icon-all" page="icon" splitEnabled="true"/>
             <item id="icon-simple" page="icon"/>
         </menu>
-        <menu id="integer-field">
-            <item id="integer-field-simple"/>
-            <item id="integer-field-dataaware">
-                <otherFiles>
-                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
-                </otherFiles>
-            </item>
-            <item id="integer-field-theme-variant"/>
-        </menu>
         <menu id="image" url="flow-ui/vc/html-components">
             <item id="image-simple" page="image"/>
             <item id="image-dataaware" page="image">
@@ -322,6 +313,15 @@
             <item id="image-resources" page="image"/>
             <item id="image-click" page="image"/>
             <item id="image-theme-variant" page="image" splitEnabled="true"/>
+        </menu>
+        <menu id="integer-field">
+            <item id="integer-field-simple"/>
+            <item id="integer-field-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="integer-field-theme-variant"/>
         </menu>
         <menu id="list-box">
             <item id="list-box-simple"/>
@@ -365,7 +365,7 @@
                     <file name="io/jmix/flowuisampler/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="multi-select-combo-box-theme-variant"/>
+            <item id="multi-select-combo-box-theme-variant" splitEnabled="true"/>
         </menu>
         <menu id="number-field">
             <item id="number-field-simple"/>

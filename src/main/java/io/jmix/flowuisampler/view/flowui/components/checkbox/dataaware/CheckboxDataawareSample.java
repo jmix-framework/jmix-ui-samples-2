@@ -29,7 +29,7 @@ public class CheckboxDataawareSample extends StandardView {
     }
 
     @Subscribe("activeCheckbox")
-    public void onActiveCheckboxValueChange(ComponentValueChangeEvent<Checkbox, Boolean> changeEvent) {
+    protected void onActiveCheckboxValueChange(ComponentValueChangeEvent<Checkbox, Boolean> changeEvent) {
         spanValue.setText(customerDc.getItem().isActive().toString());
     }
 }

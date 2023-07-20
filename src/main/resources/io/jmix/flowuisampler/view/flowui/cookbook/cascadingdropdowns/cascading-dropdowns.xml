@@ -24,7 +24,7 @@
     <facets>
         <dataLoadCoordinator auto="true"/>
     </facets>
-    <layout classNames="flex-row">
+    <layout classNames="flex-row flex-wrap">
         <entityComboBox id="planetsComboBox" label="Planets" metaClass="sampler_Planet" itemsContainer="planetsDc"/>
         <entityComboBox id="moonsComboBox" label="Moons" metaClass="sampler_Moon" itemsContainer="moonsDc"/>
     </layout>

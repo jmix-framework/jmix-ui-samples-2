@@ -1,37 +1,36 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
-    <layout>
-        <hbox padding="false" width="100%">
-            <vbox width="65%" padding="false">
-                <details summaryText="Style variant" opened="true">
-                    <hbox>
-                        <dropdownButton id="primaryButton" text="Primary button" themeNames="primary"/>
-                        <dropdownButton id="successButton" text="Success button" themeNames="success"/>
-                        <dropdownButton id="errorButton" text="Error button" themeNames="error"/>
-                        <dropdownButton id="contrastButton" text="Contrast button" themeNames="contrast"/>
-                    </hbox>
-                </details>
-
-                <details summaryText="Size variant" opened="true">
-                    <hbox>
-                        <dropdownButton id="largeButton" text="Large button" themeNames="large"/>
-                        <dropdownButton id="medium" text="Medium button"/>
-                        <dropdownButton id="smallButton" text="Small button" themeNames="small"/>
-                    </hbox>
-                </details>
-
-                <details summaryText="Visual variant" opened="true">
-                    <hbox>
-                        <dropdownButton id="iconButton" themeNames="icon" icon="SMILEY_O"/>
-                        <dropdownButton id="tertiaryButton" text="Tertiary button" themeNames="tertiary"/>
-                        <dropdownButton id="tertiaryInlineButton" text="Tertiary-inline button" themeNames="tertiary-inline"/>
-                    </hbox>
-                </details>
-            </vbox>
-            <details summaryText="Test button" opened="true" width="35%">
-                <vbox id="testButtonPlaceholder" padding="false">
-                    <checkboxGroup id="settingsCheckboxGroup" label="TestButton settings" themeNames="vertical"/>
-                </vbox>
+    <layout justifyContent="BETWEEN" classNames="flex-row flex-wrap">
+        <vbox width="AUTO" padding="false">
+            <details summaryText="Style variant" opened="true">
+                <hbox classNames="flex-wrap">
+                    <dropdownButton id="primaryButton" text="Primary button" themeNames="primary"/>
+                    <dropdownButton id="successButton" text="Success button" themeNames="success"/>
+                    <dropdownButton id="errorButton" text="Error button" themeNames="error"/>
+                    <dropdownButton id="contrastButton" text="Contrast button" themeNames="contrast"/>
+                </hbox>
             </details>
-        </hbox>
+
+            <details summaryText="Size variant" opened="true">
+                <hbox classNames="flex-wrap">
+                    <dropdownButton id="largeButton" text="Large button" themeNames="large"/>
+                    <dropdownButton id="medium" text="Medium button"/>
+                    <dropdownButton id="smallButton" text="Small button" themeNames="small"/>
+                </hbox>
+            </details>
+
+            <details summaryText="Visual variant" opened="true">
+                <hbox classNames="flex-wrap">
+                    <dropdownButton id="iconButton" themeNames="icon" icon="SMILEY_O"/>
+                    <dropdownButton id="tertiaryButton" text="Tertiary button" themeNames="tertiary"/>
+                    <dropdownButton id="tertiaryInlineButton" text="Tertiary-inline button"
+                                    themeNames="tertiary-inline"/>
+                </hbox>
+            </details>
+        </vbox>
+        <details summaryText="Test button" opened="true" width="35%">
+            <vbox id="testButtonPlaceholder" padding="false">
+                <checkboxGroup id="settingsCheckboxGroup" label="TestButton settings" themeNames="vertical"/>
+            </vbox>
+        </details>
     </layout>
 </view>

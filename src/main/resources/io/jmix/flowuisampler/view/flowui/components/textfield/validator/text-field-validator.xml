@@ -1,21 +1,19 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
-    <layout>
-        <hbox padding="false">
-            <textField id="integerTextField" label="Positive TextField"
-                       helperText="Value must be positive"
-                       datatype="int">
-                <validators>
-                    <custom bean="sampler_PositiveIntegerValidator"/>
-                </validators>
-            </textField>
-            <textField id="doubleTextField" label="Double range validator"
-                       helperText="Value must be between 1.0 and 100.0"
-                       datatype="double">
-                <validators>
-                    <doubleMin value="1.0" inclusive="true"/>
-                    <doubleMax value="100.0" inclusive="true"/>
-                </validators>
-            </textField>
-        </hbox>
+    <layout classNames="flex-row flex-wrap">
+        <textField id="integerTextField" label="Positive TextField"
+                   helperText="Value must be positive"
+                   datatype="int">
+            <validators>
+                <custom bean="sampler_PositiveIntegerValidator"/>
+            </validators>
+        </textField>
+        <textField id="doubleTextField" label="Double range validator"
+                   helperText="Value must be between 1.0 and 100.0"
+                   datatype="double">
+            <validators>
+                <doubleMin value="1.0" inclusive="true"/>
+                <doubleMax value="100.0" inclusive="true"/>
+            </validators>
+        </textField>
     </layout>
 </view>

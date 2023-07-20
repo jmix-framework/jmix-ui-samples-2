@@ -1,12 +1,14 @@
 package io.jmix.flowuisampler.view.flowui.components.image.simple;
 
 import com.vaadin.flow.component.html.H4;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.component.image.JmixImage;
-import io.jmix.flowui.view.*;
+import io.jmix.flowui.view.StandardView;
+import io.jmix.flowui.view.Subscribe;
+import io.jmix.flowui.view.ViewController;
+import io.jmix.flowui.view.ViewDescriptor;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @ViewController("image-simple")
@@ -14,9 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class ImageSimpleSample extends StandardView {
 
     protected static final String SRC_PATH = "icons/icon.png";
-
-    @ViewComponent
-    protected HorizontalLayout content;
 
     @Autowired
     protected UiComponents uiComponents;
@@ -29,7 +28,9 @@ public class ImageSimpleSample extends StandardView {
     protected void initImage() {
         VerticalLayout verticalLayout = uiComponents.create(VerticalLayout.class);
         verticalLayout.setPadding(false);
+        verticalLayout.setWidth("AUTO");
         verticalLayout.addClassName(LumoUtility.AlignItems.CENTER);
+        verticalLayout.addClassName(LumoUtility.JustifyContent.CENTER);
 
         H4 h4 = uiComponents.create(H4.class);
         h4.setText("Programmatically defined source");
@@ -41,6 +42,6 @@ public class ImageSimpleSample extends StandardView {
 
         verticalLayout.add(h4, image);
 
-        content.add(verticalLayout);
+        getContent().add(verticalLayout);
     }
 }
