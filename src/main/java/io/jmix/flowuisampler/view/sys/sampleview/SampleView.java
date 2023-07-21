@@ -423,7 +423,9 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
         if (fileExtension != null) {
             switch (fileExtension) {
                 case "xsd", "xml" -> mode = CodeEditorMode.XML;
+                case "html" -> mode = CodeEditorMode.HTML;
                 case "java" -> mode = CodeEditorMode.JAVA;
+                case "kt" -> mode = CodeEditorMode.KOTLIN;
                 case "js" -> mode = CodeEditorMode.JAVASCRIPT;
                 case "properties" -> mode = CodeEditorMode.PROPERTIES;
                 case "css" -> mode = CodeEditorMode.CSS;
