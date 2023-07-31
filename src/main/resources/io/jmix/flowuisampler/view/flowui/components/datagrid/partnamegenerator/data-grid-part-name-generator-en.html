@@ -1,1 +1,3 @@
-<p>It is possible to customize the style of column. You can use the <code>setPartNameGenerator()</code> method for it.</p>
+<p>
+    You can customize the style of the column by using the <code>@Install</code> annotation. Set the value of the <code>to</code> parameter according to the pattern: <code>{data-grid-id}.{column-name}</code>. In this example, the <code>id</code> is <code>customersDataGrid</code> and the column name is <code>grade</code>. For the <code>subject</code> parameter, assign the <code>partNameGenerator</code> as its value. The method should receive the entity connected to the corresponding data container as an argument. In our case, it is <code>Customer</code>. Finally, implement the required logic within the method body. The corresponding styles for the return values are described in the <code>.css</code> file.
+</p>
