@@ -2,7 +2,7 @@
     <layout classNames="flex-row flex-wrap">
         <vbox classNames="items-center justify-center" padding="false" width="AUTO">
             <h4 text="Declaratively defined source"/>
-            <image resource="icons/icon.png" height="10em" width="10em"/>
+            <image resource="icons/jmix-icon.png" height="10em" width="10em"/>
         </vbox>
     </layout>
 </view>
