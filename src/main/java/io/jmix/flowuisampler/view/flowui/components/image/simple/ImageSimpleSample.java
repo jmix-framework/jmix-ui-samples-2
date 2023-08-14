@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("image-simple.xml")
 public class ImageSimpleSample extends StandardView {
 
-    protected static final String SRC_PATH = "icons/icon.png";
+    protected static final String SRC_PATH = "icons/jmix-icon.png";
 
     @Autowired
     protected UiComponents uiComponents;

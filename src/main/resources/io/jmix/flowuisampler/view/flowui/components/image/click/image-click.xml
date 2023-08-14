@@ -1,6 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout classNames="items-center">
         <h4 text="Image to click"/>
-        <image id="image" resource="icons/icon.png" height="15em" width="15em"/>
+        <image id="image" resource="icons/jmix-icon.png" height="15em" width="15em"/>
     </layout>
 </view>

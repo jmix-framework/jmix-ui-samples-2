@@ -13,7 +13,7 @@ import java.io.IOException;
 @ViewDescriptor("image-dataaware.xml")
 public class ImageDataawareSample extends StandardView {
 
-    protected static final String SRC_PATH = "META-INF/resources/icons/icon.png";
+    protected static final String SRC_PATH = "META-INF/resources/icons/jmix-icon.png";
 
     @ViewComponent
     protected InstanceContainer<Picture> pictureDc;
