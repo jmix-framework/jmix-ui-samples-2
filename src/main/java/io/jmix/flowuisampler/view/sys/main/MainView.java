@@ -19,7 +19,7 @@ package io.jmix.flowuisampler.view.sys.main;
 import com.vaadin.flow.component.*;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
-import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
@@ -248,8 +248,8 @@ public class MainView extends StandardMainView {
         }
     }
 
-    @Subscribe("applicationTitle")
-    protected void onApplicationTitleClick(ClickEvent<H2> event) {
+    @Subscribe("applicationTitlePlaceholder")
+    protected void onApplicationTitleClick(ClickEvent<Div> event) {
         UI.getCurrent().navigate(getClass());
     }
 
