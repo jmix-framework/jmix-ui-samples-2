@@ -21,8 +21,8 @@ import io.jmix.core.security.CoreSecurityConfiguration;
 import io.jmix.flowui.sys.registration.ComponentRegistration;
 import io.jmix.flowui.sys.registration.ComponentRegistrationBuilder;
 import io.jmix.flowuisampler.bean.SamplerRoutingDataSource;
-import io.jmix.flowuisampler.component.customer.CustomComponent;
-import io.jmix.flowuisampler.component.customer.CustomComponentLoader;
+import io.jmix.flowuisampler.component.address.AddressComponent;
+import io.jmix.flowuisampler.component.address.AddressComponentLoader;
 import io.jmix.flowuisampler.component.themeswitcher.ThemeToggle;
 import io.jmix.flowuisampler.component.themeswitcher.ThemeToggleLoader;
 import org.apache.commons.dbcp2.BasicDataSource;
@@ -83,9 +83,9 @@ public class FlowuiSamplerConfiguration {
     }
 
     @Bean
-    public ComponentRegistration customComponent() {
-        return ComponentRegistrationBuilder.create(CustomComponent.class)
-                .withComponentLoader("customComponent", CustomComponentLoader.class)
+    public ComponentRegistration addressComponent() {
+        return ComponentRegistrationBuilder.create(AddressComponent.class)
+                .withComponentLoader("addressComponent", AddressComponentLoader.class)
                 .build();
     }
 }

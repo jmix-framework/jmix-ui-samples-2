@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="1"
+               author="sampler">
+        <createTable tableName="SAMPLER_ADDRESS">
+            <column name="ID"
+                    type="UUID">
+                <constraints nullable="false"
+                             primaryKey="true"
+                             primaryKeyName="pk_sampler_address"/>
+            </column>
+            <column name="ZIP"
+                    type="VARCHAR(255)"/>
+            <column name="COUNTRY_ID"
+                    type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="2"
+               author="sampler">
+        <createTable tableName="SAMPLER_COUNTRY">
+            <column name="ID"
+                    type="UUID">
+                <constraints nullable="false"
+                             primaryKey="true"
+                             primaryKeyName="pk_sampler_country"/>
+            </column>
+            <column name="NAME"
+                    type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="3"
+               author="sampler">
+        <addForeignKeyConstraint baseColumnNames="COUNTRY_ID"
+                                 baseTableName="SAMPLER_ADDRESS"
+                                 constraintName="FK_SAMPLER_ADDRESS_ON_COUNTRY"
+                                 referencedColumnNames="ID"
+                                 referencedTableName="SAMPLER_COUNTRY"/>
+    </changeSet>
+    <changeSet id="4" author="sampler">
+        <insert tableName="SAMPLER_COUNTRY">
+            <column name="ID" value="17bc9b95-b562-0dd2-f904-db6df80b9c71"/>
+            <column name="NAME" value="Russia"/>
+        </insert>
+        <insert tableName="SAMPLER_COUNTRY">
+            <column name="ID" value="17bc9b95-b562-0dd2-f904-db6df80b9c72"/>
+            <column name="NAME" value="USA"/>
+        </insert>
+        <insert tableName="SAMPLER_COUNTRY">
+            <column name="ID" value="17bc9b95-b562-0dd2-f904-db6df80b9c73"/>
+            <column name="NAME" value="China"/>
+        </insert>
+    </changeSet>
+    <changeSet id="5" author="sampler">
+        <insert tableName="SAMPLER_ADDRESS">
+            <column name="ID" value="17bc9b95-b562-0dd2-f904-db6df80b9c71"/>
+            <column name="ZIP" value="0892183"/>
+            <column name="COUNTRY_ID" value="17bc9b95-b562-0dd2-f904-db6df80b9c71"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

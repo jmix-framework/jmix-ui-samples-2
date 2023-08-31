@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://sampler-menu-config.address-screen">
+    <data>
+        <instance class="io.jmix.flowuisampler.entity.Address" id="addressDc">
+            <fetchPlan extends="_base"/>
+            <loader id="addressDl" entityId="17bc9b95-b562-0dd2-f904-db6df80b9c71"/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <addressComponent dataContainer="addressDc"/>
+    </layout>
+</view>
