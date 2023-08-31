@@ -613,5 +613,6 @@
                 <file name="META-INF/resources/themes/badge-icons.css"/>
             </otherFiles>
         </item>
+        <item id="custom-screen"/>
     </menu>
 </menu-config>
