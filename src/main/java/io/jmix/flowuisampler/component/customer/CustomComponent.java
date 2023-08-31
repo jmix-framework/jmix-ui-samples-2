@@ -7,11 +7,16 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.component.UiComponentUtils;
 import io.jmix.flowui.component.textfield.TypedTextField;
+import io.jmix.flowui.data.SupportsValueSource;
+import io.jmix.flowui.data.ValueSource;
 import io.jmix.flowui.data.value.ContainerValueSource;
+import io.jmix.flowui.kit.component.button.JmixButton;
 import io.jmix.flowui.model.InstanceContainer;
 import io.jmix.flowuisampler.entity.Customer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+
+import java.util.stream.Collectors;
 
 public class CustomComponent extends Composite<VerticalLayout> implements ApplicationContextAware {
     protected InstanceContainer<Customer> customerDc;
@@ -32,7 +37,11 @@ public class CustomComponent extends Composite<VerticalLayout> implements Applic
         TypedTextField<String> nameField = uiComponents.create(TypedTextField.class);
         nameField.setId("nameField");
 
+        JmixButton jmixButton = uiComponents.create(JmixButton.class);
+        jmixButton.setText("Save");
+
         formLayout.add(nameField);
+        formLayout.add(jmixButton);
         content.add(formLayout);
 
         return content;

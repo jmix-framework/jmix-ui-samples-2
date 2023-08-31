@@ -12,5 +12,6 @@
         </collection>
     </data>
     <layout>
+        <customComponent id="customComponent" showSaveButton="false"/>
     </layout>
 </view>

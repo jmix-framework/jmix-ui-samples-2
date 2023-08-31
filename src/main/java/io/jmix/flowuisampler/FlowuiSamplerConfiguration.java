@@ -21,6 +21,8 @@ import io.jmix.core.security.CoreSecurityConfiguration;
 import io.jmix.flowui.sys.registration.ComponentRegistration;
 import io.jmix.flowui.sys.registration.ComponentRegistrationBuilder;
 import io.jmix.flowuisampler.bean.SamplerRoutingDataSource;
+import io.jmix.flowuisampler.component.customer.CustomComponent;
+import io.jmix.flowuisampler.component.customer.CustomComponentLoader;
 import io.jmix.flowuisampler.component.themeswitcher.ThemeToggle;
 import io.jmix.flowuisampler.component.themeswitcher.ThemeToggleLoader;
 import org.apache.commons.dbcp2.BasicDataSource;
@@ -77,6 +79,13 @@ public class FlowuiSamplerConfiguration {
     public ComponentRegistration themeToggle() {
         return ComponentRegistrationBuilder.create(ThemeToggle.class)
                 .withComponentLoader("themeToggle", ThemeToggleLoader.class)
+                .build();
+    }
+
+    @Bean
+    public ComponentRegistration customComponent() {
+        return ComponentRegistrationBuilder.create(CustomComponent.class)
+                .withComponentLoader("customComponent", CustomComponentLoader.class)
                 .build();
     }
 }
