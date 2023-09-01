@@ -17,7 +17,7 @@ public class Address {
     @JmixGeneratedValue
     @Column(name = "ID", nullable = false)
     @Id
-    private UUID id;
+    private Integer id;
 
     @Column(name = "ZIP")
     private String zip;
@@ -43,11 +43,11 @@ public class Address {
         this.zip = zip;
     }
 
-    public UUID getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
