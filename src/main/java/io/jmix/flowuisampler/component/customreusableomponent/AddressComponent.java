@@ -15,41 +15,48 @@ import io.jmix.flowui.model.CollectionLoader;
 import io.jmix.flowui.model.DataComponents;
 import io.jmix.flowui.model.InstanceContainer;
 import io.jmix.flowuisampler.entity.Address;
+import io.jmix.flowuisampler.entity.City;
 import io.jmix.flowuisampler.entity.Country;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class AddressComponent extends Composite<VerticalLayout> implements ApplicationContextAware {
-    @Autowired
+    protected UiComponents uiComponents;
     protected DataComponents dataComponents;
-    @Autowired
-    protected FetchPlans fetchPlans;
 
     protected InstanceContainer<Address> addressInstanceContainer;
-    protected UiComponents uiComponents;
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) {
         uiComponents = applicationContext.getBean(UiComponents.class);
+        dataComponents = applicationContext.getBean(DataComponents.class);
     }
 
-    public VerticalLayout initContent() {
+    protected VerticalLayout initContent() {
         VerticalLayout content = super.initContent();
 
         VerticalLayout verticalLayout = uiComponents.create(VerticalLayout.class);
         verticalLayout.setId("verticalLayout");
 
-        //noinspection unchecked
         TypedTextField<String> zipField = uiComponents.create(TypedTextField.class);
         zipField.setId("zipField");
+        zipField.setPattern("^[A-Z]{1,2}[0-9R][0-9A-Z]? [0-9][ABD-HJLNP-UW-Z]{2}$"); //United Kingdom
 
-        //noinspection unchecked
         EntityComboBox<Country> countryEntityComboBox = uiComponents.create(EntityComboBox.class);
         countryEntityComboBox.setId("countryEntityComboBox");
 
+        EntityComboBox<Country> cityEntityComboBox = uiComponents.create(EntityComboBox.class);
+        cityEntityComboBox.setId("cityEntityComboBox");
+
+        TypedTextField<String> addressLine = uiComponents.create(TypedTextField.class);
+        addressLine.setId("addressLine");
+
         verticalLayout.add(zipField);
         verticalLayout.add(countryEntityComboBox);
+        verticalLayout.add(cityEntityComboBox);
+        verticalLayout.add(addressLine);
         content.add(verticalLayout);
 
         return content;
@@ -57,44 +64,44 @@ public class AddressComponent extends Composite<VerticalLayout> implements Appli
 
     public void setConfigurationDc(InstanceContainer<Address> instanceContainer) {
         this.addressInstanceContainer = instanceContainer;
-        assignInstanceContainerToZipField();
-        assignInstanceContainerToCountryEntityComboBox();
+        assignInstanceContainerToTextFields();
+        assignInstanceContainerToEntityComboBoxes();
     }
 
-    @SuppressWarnings({"unchecked"})
-    private void assignInstanceContainerToCountryEntityComboBox() {
-        Component component = getComponent("countryEntityComboBox");
-        if (component instanceof EntityComboBox<?> entityComboBox) {
-            entityComboBox.setItems(loadCountries());
-            entityComboBox.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "country"));
+    private void assignInstanceContainerToTextFields() {
+        Component zipField = getComponent("zipField");
+        if (zipField instanceof TypedTextField<?> textField) {
+            textField.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "zip"));
+        }
+        Component addressLine = getComponent("addressLine");
+        if (addressLine instanceof TypedTextField<?> textField) {
+            textField.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "addressLine"));
         }
     }
 
-    @SuppressWarnings({"rawtypes", "unchecked"})
-    private CollectionContainer loadCountries() {
-        FetchPlan fetchPlan = fetchPlans.builder(Country.class)
-                .addFetchPlan(FetchPlan.LOCAL)
-                .build();
+    private void assignInstanceContainerToEntityComboBoxes() {
+        Component countryEntityComboBox = getComponent("countryEntityComboBox");
+        if (countryEntityComboBox instanceof EntityComboBox<?> entityComboBox) {
+            entityComboBox.setItems(loadEntities(Country.class));
+            entityComboBox.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "country"));
+        }
+        Component cityEntityComboBox = getComponent("cityEntityComboBox");
+        if (cityEntityComboBox instanceof EntityComboBox<?> entityComboBox) {
+            entityComboBox.setItems(loadEntities(City.class));
+            entityComboBox.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "city"));
+        }
+    }
 
-        String query = "select e from sampler_Country e";
-
-        CollectionContainer<?> collectionContainer = dataComponents.createCollectionContainer(Country.class);
-        collectionContainer.setFetchPlan(fetchPlan);
+    private CollectionContainer loadEntities(Class clazz) {
+        CollectionContainer<?> collectionContainer = dataComponents.createCollectionContainer(clazz);
 
         CollectionLoader loader = dataComponents.createCollectionLoader();
 
-        loader.setQuery(query);
+        loader.setQuery("select e from %s e".formatted(clazz.getSimpleName()));
         loader.setContainer(collectionContainer);
         loader.load();
 
         return collectionContainer;
-    }
-
-    private void assignInstanceContainerToZipField() {
-        Component component = getComponent("zipField");
-        if (component instanceof TypedTextField<?> nameField) {
-            nameField.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "zip"));
-        }
     }
 
     private Component getComponent(String componentId) {

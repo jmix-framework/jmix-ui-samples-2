@@ -42,16 +42,14 @@ public class Customer {
     @EmbeddedParameters(nullAllowed = false)
     @Embedded
     @AssociationOverrides({
-            @AssociationOverride(name = "country", joinColumns = @JoinColumn(name = "ADDRESS_COUNTRY_ID"))
+            @AssociationOverride(name = "country", joinColumns = @JoinColumn(name = "ADDRESS_COUNTRY_ID")),
+            @AssociationOverride(name = "city", joinColumns = @JoinColumn(name = "ADDRESS_CITY_ID"))
     })
     @AttributeOverrides({
-            @AttributeOverride(name = "zip", column = @Column(name = "ADDRESS_ZIP"))
+            @AttributeOverride(name = "zip", column = @Column(name = "ADDRESS_ZIP")),
+            @AttributeOverride(name = "addressLine", column = @Column(name = "ADDRESS_ADDRESS_LINE"))
     })
     private Address address;
-
-    public Boolean getActive() {
-        return active;
-    }
 
     public Address getAddress() {
         return address;
@@ -59,6 +57,10 @@ public class Customer {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public Boolean getActive() {
+        return active;
     }
 
     public Customer() {
