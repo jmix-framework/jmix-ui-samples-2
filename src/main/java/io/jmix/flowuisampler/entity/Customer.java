@@ -1,12 +1,10 @@
 package io.jmix.flowuisampler.entity;
 
+import io.jmix.core.entity.annotation.EmbeddedParameters;
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
 import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import org.springframework.lang.Nullable;
 
@@ -40,6 +38,28 @@ public class Customer {
 
     @Column(name = "GRADE")
     protected Integer grade;
+
+    @EmbeddedParameters(nullAllowed = false)
+    @Embedded
+    @AssociationOverrides({
+            @AssociationOverride(name = "country", joinColumns = @JoinColumn(name = "ADDRESS_COUNTRY_ID"))
+    })
+    @AttributeOverrides({
+            @AttributeOverride(name = "zip", column = @Column(name = "ADDRESS_ZIP"))
+    })
+    private Address address;
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
     public Customer() {
         this.id = UUID.randomUUID();

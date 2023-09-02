@@ -2,7 +2,6 @@ package io.jmix.flowuisampler.component.address;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Composite;
-import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import io.jmix.core.FetchPlan;
 import io.jmix.core.FetchPlans;
@@ -22,6 +21,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 public class AddressComponent extends Composite<VerticalLayout> implements ApplicationContextAware {
+    @Autowired
+    protected DataComponents dataComponents;
+    @Autowired
+    protected FetchPlans fetchPlans;
+
     protected InstanceContainer<Address> addressInstanceContainer;
     protected UiComponents uiComponents;
 
@@ -33,8 +37,8 @@ public class AddressComponent extends Composite<VerticalLayout> implements Appli
     public VerticalLayout initContent() {
         VerticalLayout content = super.initContent();
 
-        FormLayout formLayout = uiComponents.create(FormLayout.class);
-        formLayout.setId("formLayout");
+        VerticalLayout verticalLayout = uiComponents.create(VerticalLayout.class);
+        verticalLayout.setId("verticalLayout");
 
         //noinspection unchecked
         TypedTextField<String> zipField = uiComponents.create(TypedTextField.class);
@@ -44,9 +48,9 @@ public class AddressComponent extends Composite<VerticalLayout> implements Appli
         EntityComboBox<Country> countryEntityComboBox = uiComponents.create(EntityComboBox.class);
         countryEntityComboBox.setId("countryEntityComboBox");
 
-        formLayout.add(zipField);
-        formLayout.add(countryEntityComboBox);
-        content.add(formLayout);
+        verticalLayout.add(zipField);
+        verticalLayout.add(countryEntityComboBox);
+        content.add(verticalLayout);
 
         return content;
     }
@@ -57,25 +61,22 @@ public class AddressComponent extends Composite<VerticalLayout> implements Appli
         assignInstanceContainerToCountryEntityComboBox();
     }
 
+    @SuppressWarnings({"unchecked"})
     private void assignInstanceContainerToCountryEntityComboBox() {
         Component component = getComponent("countryEntityComboBox");
         if (component instanceof EntityComboBox<?> entityComboBox) {
-            entityComboBox.setItems(getCollectionContainer());
+            entityComboBox.setItems(loadCountries());
             entityComboBox.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "country"));
         }
     }
 
-    @Autowired
-    protected DataComponents dataComponents;
-    @Autowired
-    protected FetchPlans fetchPlans;
-
-    protected CollectionContainer getCollectionContainer() {
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    private CollectionContainer loadCountries() {
         FetchPlan fetchPlan = fetchPlans.builder(Country.class)
                 .addFetchPlan(FetchPlan.LOCAL)
                 .build();
 
-        String query = String.format("select e from %s e", "sampler_Country");
+        String query = "select e from sampler_Country e";
 
         CollectionContainer<?> collectionContainer = dataComponents.createCollectionContainer(Country.class);
         collectionContainer.setFetchPlan(fetchPlan);
@@ -96,8 +97,8 @@ public class AddressComponent extends Composite<VerticalLayout> implements Appli
         }
     }
 
-    public Component getComponent(String componentId) {
-        Component formLayout = UiComponentUtils.findComponent(getContent(), "formLayout").orElseThrow();
+    private Component getComponent(String componentId) {
+        Component formLayout = UiComponentUtils.findComponent(getContent(), "verticalLayout").orElseThrow();
         return formLayout.getChildren()
                 .filter(c -> c.getId().orElseThrow().equals(componentId))
                 .findFirst()

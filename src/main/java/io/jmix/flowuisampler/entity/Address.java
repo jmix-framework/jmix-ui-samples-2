@@ -1,24 +1,12 @@
 package io.jmix.flowuisampler.entity;
 
-import io.jmix.core.MetadataTools;
-import io.jmix.core.entity.annotation.JmixGeneratedValue;
-import io.jmix.core.metamodel.annotation.DependsOnProperties;
-import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 
-import java.util.UUID;
-
 @JmixEntity
-@Table(name = "SAMPLER_ADDRESS")
-@Entity(name = "sampler_Address")
+@Embeddable
 public class Address {
-    @JmixGeneratedValue
-    @Column(name = "ID", nullable = false)
-    @Id
-    private Integer id;
-
     @Column(name = "ZIP")
     private String zip;
 
@@ -41,21 +29,5 @@ public class Address {
 
     public void setZip(String zip) {
         this.zip = zip;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    @InstanceName
-    @DependsOnProperties({"zip", "country"})
-    public String getInstanceName(MetadataTools metadataTools) {
-        return String.format("%s %s",
-                metadataTools.format(zip),
-                metadataTools.format(country));
     }
 }

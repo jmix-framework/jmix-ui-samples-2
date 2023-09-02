@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+    <changeSet id="1" author="sampler">
+        <insert tableName="SAMPLER_CUSTOMER">
+            <column name="ID" value="d10674cf-a918-b74f-5eeb-c100631320fd"/>
+            <column name="NAME" value="John"/>
+            <column name="LAST_NAME" value="Doe"/>
+            <column name="EMAIL" value="john@doe.com"/>
+            <column name="ACTIVE" value="true"/>
+            <column name="ADDRESS_COUNTRY_ID" value="1"/>
+            <column name="ADDRESS_ZIP" value="0829283"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
