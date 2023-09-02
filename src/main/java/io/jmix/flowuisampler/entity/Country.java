@@ -8,8 +8,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-import java.util.UUID;
-
 @JmixEntity
 @Table(name = "SAMPLER_COUNTRY")
 @Entity

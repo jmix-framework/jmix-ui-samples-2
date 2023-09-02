@@ -1,10 +1,8 @@
-package io.jmix.flowuisampler.component.customreusableomponent;
+package io.jmix.flowuisampler.component.customcomponent;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import io.jmix.core.FetchPlan;
-import io.jmix.core.FetchPlans;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.component.UiComponentUtils;
 import io.jmix.flowui.component.combobox.EntityComboBox;
@@ -17,7 +15,6 @@ import io.jmix.flowui.model.InstanceContainer;
 import io.jmix.flowuisampler.entity.Address;
 import io.jmix.flowuisampler.entity.City;
 import io.jmix.flowuisampler.entity.Country;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
@@ -34,6 +31,7 @@ public class AddressComponent extends Composite<VerticalLayout> implements Appli
         dataComponents = applicationContext.getBean(DataComponents.class);
     }
 
+    @Override
     protected VerticalLayout initContent() {
         VerticalLayout content = super.initContent();
 
@@ -62,7 +60,7 @@ public class AddressComponent extends Composite<VerticalLayout> implements Appli
         return content;
     }
 
-    public void setConfigurationDc(InstanceContainer<Address> instanceContainer) {
+    public void setDataContainer(InstanceContainer<Address> instanceContainer) {
         this.addressInstanceContainer = instanceContainer;
         assignInstanceContainerToTextFields();
         assignInstanceContainerToEntityComboBoxes();

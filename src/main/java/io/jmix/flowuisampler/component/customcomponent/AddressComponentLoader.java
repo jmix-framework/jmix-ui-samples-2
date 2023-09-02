@@ -1,4 +1,4 @@
-package io.jmix.flowuisampler.component.customreusableomponent;
+package io.jmix.flowuisampler.component.customcomponent;
 
 import io.jmix.flowui.exception.GuiDevelopmentException;
 import io.jmix.flowui.model.InstanceContainer;
@@ -23,7 +23,7 @@ public class AddressComponentLoader extends AbstractComponentLoader<AddressCompo
             throwGuiDevelopmentException("%s have improper data binding. The value for the dataContainer " +
                     "attribute should be associated with the Address embeddable entity.");
         }
-        resultComponent.setConfigurationDc(container);
+        resultComponent.setDataContainer(container);
     }
 
     private void throwGuiDevelopmentException(String description) {
