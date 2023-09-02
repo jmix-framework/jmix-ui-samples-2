@@ -1,4 +1,4 @@
-package io.jmix.flowuisampler.component.address;
+package io.jmix.flowuisampler.component.customreusableomponent;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Composite;
