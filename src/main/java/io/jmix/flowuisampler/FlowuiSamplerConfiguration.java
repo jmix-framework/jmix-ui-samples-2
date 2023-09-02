@@ -83,9 +83,9 @@ public class FlowuiSamplerConfiguration {
     }
 
     @Bean
-    public ComponentRegistration addressComponent() {
+    public ComponentRegistration address() {
         return ComponentRegistrationBuilder.create(AddressComponent.class)
-                .withComponentLoader("addressComponent", AddressComponentLoader.class)
+                .withComponentLoader("address", AddressComponentLoader.class)
                 .build();
     }
 }

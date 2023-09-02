@@ -42,7 +42,7 @@ public class AddressComponent extends Composite<VerticalLayout> implements Appli
 
         TypedTextField<String> zipField = uiComponents.create(TypedTextField.class);
         zipField.setId("zipField");
-        zipField.setPattern("^[A-Z]{1,2}[0-9R][0-9A-Z]? [0-9][ABD-HJLNP-UW-Z]{2}$"); //United Kingdom
+        zipField.setMaxLength(32);
 
         EntityComboBox<Country> countryEntityComboBox = uiComponents.create(EntityComboBox.class);
         countryEntityComboBox.setId("countryEntityComboBox");

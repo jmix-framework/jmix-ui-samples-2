@@ -4,10 +4,9 @@
            targetNamespace="http://schemas.company.com/ui.ex1/0.1/app-ui-components.xsd"
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-    <xs:element name="addressComponent">
+    <xs:element name="address">
         <xs:complexType>
             <xs:attribute name="dataContainer" type="xs:string"/>
-            <xs:attribute name="showSaveButton" type="xs:boolean"/>
         </xs:complexType>
     </xs:element>
 </xs:schema>

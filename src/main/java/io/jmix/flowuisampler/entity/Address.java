@@ -11,8 +11,6 @@ import jakarta.validation.constraints.Pattern;
 @JmixEntity
 @Embeddable
 public class Address {
-    @Pattern(message = "Provided zip code doesn't belong to the United Kingdom",
-            regexp = "^[A-Z]{1,2}[0-9R][0-9A-Z]? [0-9][ABD-HJLNP-UW-Z]{2}$")
     @Column(name = "ZIP")
     private String zip;
 
