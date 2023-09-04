@@ -12,6 +12,7 @@ import jakarta.persistence.Table;
 @Table(name = "SAMPLER_COUNTRY")
 @Entity
 public class Country {
+
     @JmixGeneratedValue
     @Column(name = "ID", nullable = false)
     @Id

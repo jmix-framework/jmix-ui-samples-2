@@ -10,6 +10,7 @@ import jakarta.validation.constraints.NotNull;
 @JmixEntity
 @Embeddable
 public class Address {
+
     @Column(name = "ZIP")
     private String zip;
 

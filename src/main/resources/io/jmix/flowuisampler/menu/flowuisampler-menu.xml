@@ -616,9 +616,13 @@
         <item id="custom-component" page="custom-component" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/flowuisampler/component/customcomponent/AddressComponent.java"/>
-                <file name="io/jmix/flowuisampler/component/customcomponent/AddressComponentLoader.java"/>
                 <file name="io/jmix/flowuisampler/view/flowui/cookbook/customcomponent/address-component.xsd"/>
+                <file name="io/jmix/flowuisampler/component/customcomponent/AddressComponentLoader.java"/>
                 <file name="io/jmix/flowuisampler/view/flowui/cookbook/customcomponent/CustomComponentConfiguration.java"/>
+                <file name="io/jmix/flowuisampler/entity/Employee.java"/>
+                <file name="io/jmix/flowuisampler/entity/Address.java"/>
+                <file name="io/jmix/flowuisampler/entity/City.java"/>
+                <file name="io/jmix/flowuisampler/entity/Country.java"/>
             </otherFiles>
         </item>
     </menu>

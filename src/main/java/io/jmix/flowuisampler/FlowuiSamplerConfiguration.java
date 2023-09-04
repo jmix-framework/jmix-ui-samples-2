@@ -21,8 +21,6 @@ import io.jmix.core.security.CoreSecurityConfiguration;
 import io.jmix.flowui.sys.registration.ComponentRegistration;
 import io.jmix.flowui.sys.registration.ComponentRegistrationBuilder;
 import io.jmix.flowuisampler.bean.SamplerRoutingDataSource;
-import io.jmix.flowuisampler.component.customcomponent.AddressComponent;
-import io.jmix.flowuisampler.component.customcomponent.AddressComponentLoader;
 import io.jmix.flowuisampler.component.themeswitcher.ThemeToggle;
 import io.jmix.flowuisampler.component.themeswitcher.ThemeToggleLoader;
 import org.apache.commons.dbcp2.BasicDataSource;

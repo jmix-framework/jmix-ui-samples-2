@@ -6,6 +6,7 @@ import io.jmix.flowui.xml.layout.loader.AbstractComponentLoader;
 import io.jmix.flowuisampler.entity.Address;
 
 public class AddressComponentLoader extends AbstractComponentLoader<AddressComponent> {
+
     @Override
     protected AddressComponent createComponent() {
         return factory.create(AddressComponent.class);
@@ -14,20 +15,23 @@ public class AddressComponentLoader extends AbstractComponentLoader<AddressCompo
     @SuppressWarnings({"rawtypes", "unchecked"})
     @Override
     public void loadComponent() {
-        String containerId = loadString(element, "dataContainer").orElse(null);
-        if (containerId == null) {
-            throwGuiDevelopmentException("%s doesn't have data binding. Set dataContainer attribute.");
-        }
-        InstanceContainer container = getComponentContext().getViewData().getContainer(containerId);
-        if (!container.getEntityMetaClass().getJavaClass().equals(Address.class)) {
-            throwGuiDevelopmentException("%s have improper data binding. The value for the dataContainer " +
-                    "attribute should be associated with the Address embeddable entity.");
-        }
-        resultComponent.setDataContainer(container);
-    }
+        String dataContainerIsNullErrorDescription = String.format(
+                "%s doesn't have data binding. Set dataContainer attribute.",
+                resultComponent.getClass().getSimpleName()
+        );
+        String containerId = loadString(element, "dataContainer")
+                .orElseThrow(() -> new GuiDevelopmentException(dataContainerIsNullErrorDescription, context));
 
-    private void throwGuiDevelopmentException(String description) {
-        throw new GuiDevelopmentException(String.format(description, resultComponent.getClass().getSimpleName()), context);
+        InstanceContainer container = getComponentContext().getViewData().getContainer(containerId);
+        if (!Address.class.isAssignableFrom(container.getEntityMetaClass().getJavaClass())) {
+            String improperDataBindingDescription = String.format(
+                    "%s have improper data binding. The value for the " +
+                            "dataContainer attribute should be associated with the Address embeddable entity.",
+                    resultComponent.getClass().getSimpleName());
+            throw new GuiDevelopmentException(improperDataBindingDescription, context);
+        }
+
+        resultComponent.setDataContainer(container);
     }
 
 }

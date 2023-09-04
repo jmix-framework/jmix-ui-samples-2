@@ -18,8 +18,8 @@ import io.jmix.flowuisampler.entity.Country;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-@SuppressWarnings({"rawtypes", "unchecked"})
 public class AddressComponent extends Composite<VerticalLayout> implements ApplicationContextAware {
+
     protected UiComponents uiComponents;
     protected DataComponents dataComponents;
 
@@ -32,30 +32,28 @@ public class AddressComponent extends Composite<VerticalLayout> implements Appli
     }
 
     @Override
+    @SuppressWarnings({"unchecked"})
     protected VerticalLayout initContent() {
         VerticalLayout content = super.initContent();
-
-        VerticalLayout verticalLayout = uiComponents.create(VerticalLayout.class);
-        verticalLayout.setId("verticalLayout");
 
         TypedTextField<String> zipField = uiComponents.create(TypedTextField.class);
         zipField.setId("zipField");
         zipField.setMaxLength(32);
+        zipField.setLabel("Zip");
 
         EntityComboBox<Country> countryEntityComboBox = uiComponents.create(EntityComboBox.class);
         countryEntityComboBox.setId("countryEntityComboBox");
+        countryEntityComboBox.setLabel("Country");
 
         EntityComboBox<Country> cityEntityComboBox = uiComponents.create(EntityComboBox.class);
         cityEntityComboBox.setId("cityEntityComboBox");
+        cityEntityComboBox.setLabel("City");
 
         TypedTextField<String> addressLine = uiComponents.create(TypedTextField.class);
         addressLine.setId("addressLine");
+        addressLine.setLabel("Address Line");
 
-        verticalLayout.add(zipField);
-        verticalLayout.add(countryEntityComboBox);
-        verticalLayout.add(cityEntityComboBox);
-        verticalLayout.add(addressLine);
-        content.add(verticalLayout);
+        content.add(zipField, countryEntityComboBox, cityEntityComboBox, addressLine);
 
         return content;
     }
@@ -67,29 +65,33 @@ public class AddressComponent extends Composite<VerticalLayout> implements Appli
     }
 
     private void assignInstanceContainerToTextFields() {
-        Component zipField = getComponent("zipField");
+        Component zipField = UiComponentUtils.findComponent(getContent(), "zipField").orElseThrow();
         if (zipField instanceof TypedTextField<?> textField) {
             textField.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "zip"));
         }
-        Component addressLine = getComponent("addressLine");
+
+        Component addressLine = UiComponentUtils.findComponent(getContent(), "addressLine").orElseThrow();
         if (addressLine instanceof TypedTextField<?> textField) {
             textField.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "addressLine"));
         }
     }
 
+    @SuppressWarnings({"unchecked"})
     private void assignInstanceContainerToEntityComboBoxes() {
-        Component countryEntityComboBox = getComponent("countryEntityComboBox");
+        Component countryEntityComboBox = UiComponentUtils.findComponent(getContent(), "countryEntityComboBox").orElseThrow();
         if (countryEntityComboBox instanceof EntityComboBox<?> entityComboBox) {
             entityComboBox.setItems(loadEntities(Country.class));
             entityComboBox.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "country"));
         }
-        Component cityEntityComboBox = getComponent("cityEntityComboBox");
+
+        Component cityEntityComboBox = UiComponentUtils.findComponent(getContent(), "cityEntityComboBox").orElseThrow();
         if (cityEntityComboBox instanceof EntityComboBox<?> entityComboBox) {
             entityComboBox.setItems(loadEntities(City.class));
             entityComboBox.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "city"));
         }
     }
 
+    @SuppressWarnings({"rawtypes", "unchecked"})
     private CollectionContainer loadEntities(Class clazz) {
         CollectionContainer<?> collectionContainer = dataComponents.createCollectionContainer(clazz);
 
@@ -100,13 +102,5 @@ public class AddressComponent extends Composite<VerticalLayout> implements Appli
         loader.load();
 
         return collectionContainer;
-    }
-
-    private Component getComponent(String componentId) {
-        Component formLayout = UiComponentUtils.findComponent(getContent(), "verticalLayout").orElseThrow();
-        return formLayout.getChildren()
-                .filter(c -> c.getId().orElseThrow().equals(componentId))
-                .findFirst()
-                .orElseThrow();
     }
 }

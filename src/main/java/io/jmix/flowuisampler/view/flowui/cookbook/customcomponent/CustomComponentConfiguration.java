@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class CustomComponentConfiguration {
+
     @Bean
     public ComponentRegistration address() {
         return ComponentRegistrationBuilder.create(AddressComponent.class)
