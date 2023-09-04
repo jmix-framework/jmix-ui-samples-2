@@ -81,11 +81,4 @@ public class FlowuiSamplerConfiguration {
                 .withComponentLoader("themeToggle", ThemeToggleLoader.class)
                 .build();
     }
-
-    @Bean
-    public ComponentRegistration address() {
-        return ComponentRegistrationBuilder.create(AddressComponent.class)
-                .withComponentLoader("address", AddressComponentLoader.class)
-                .build();
-    }
 }
