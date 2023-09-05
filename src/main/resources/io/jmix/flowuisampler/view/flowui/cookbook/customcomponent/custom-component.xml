@@ -19,14 +19,10 @@
     <facets>
         <dataLoadCoordinator auto="true"/>
     </facets>
-    <layout  classNames="flex-row flex-wrap">
+    <layout>
         <select id="employeeSelect" label="Employee" itemsContainer="employeesDc"
                 helperText="Select an employee to display"/>
-        <hbox>
-            <vbox classNames="items-center justify-center" padding="false" width="AUTO">
-                <h4 text="Declaratively defined component"/>
-                <address dataContainer="addressDc"/>
-            </vbox>
-        </hbox>
+        <h4 text="Declaratively defined component"/>
+        <address dataContainer="addressDc"/>
     </layout>
 </view>

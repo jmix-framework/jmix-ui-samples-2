@@ -2,7 +2,7 @@ package io.jmix.flowuisampler.component.customcomponent;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Composite;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.formlayout.FormLayout;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.component.UiComponentUtils;
 import io.jmix.flowui.component.combobox.EntityComboBox;
@@ -18,7 +18,7 @@ import io.jmix.flowuisampler.entity.Country;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class AddressComponent extends Composite<VerticalLayout> implements ApplicationContextAware {
+public class AddressComponent extends Composite<FormLayout> implements ApplicationContextAware {
 
     protected UiComponents uiComponents;
     protected DataComponents dataComponents;
@@ -31,10 +31,10 @@ public class AddressComponent extends Composite<VerticalLayout> implements Appli
         dataComponents = applicationContext.getBean(DataComponents.class);
     }
 
-    @Override
     @SuppressWarnings({"unchecked"})
-    protected VerticalLayout initContent() {
-        VerticalLayout content = super.initContent();
+    @Override
+    protected FormLayout initContent() {
+        FormLayout content = super.initContent();
 
         TypedTextField<String> zipField = uiComponents.create(TypedTextField.class);
         zipField.setId("zipField");
