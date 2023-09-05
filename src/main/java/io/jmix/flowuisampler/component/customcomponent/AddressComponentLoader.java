@@ -20,23 +20,22 @@ public class AddressComponentLoader extends AbstractComponentLoader<AddressCompo
 
     @SuppressWarnings({"rawtypes", "unchecked"})
     private void loadDataContainer(AddressComponent resultComponent, Element element) {
-        String dataContainerIsNullErrorDescription = String.format(
+        String dataContainerIsNullErrorMessage = String.format(
                 "%s doesn't have data binding. Set dataContainer attribute.",
                 resultComponent.getClass().getSimpleName()
         );
         String containerId = loadString(element, "dataContainer")
-                .orElseThrow(() -> new GuiDevelopmentException(dataContainerIsNullErrorDescription, context));
+                .orElseThrow(() -> new GuiDevelopmentException(dataContainerIsNullErrorMessage, context));
 
         InstanceContainer container = getComponentContext().getViewData().getContainer(containerId);
         if (!Address.class.isAssignableFrom(container.getEntityMetaClass().getJavaClass())) {
-            String improperDataBindingDescription = String.format(
+            String improperDataBindingMessage = String.format(
                     "%s have improper data binding. The value for the " +
                             "dataContainer attribute should be associated with the Address embeddable entity.",
                     resultComponent.getClass().getSimpleName());
-            throw new GuiDevelopmentException(improperDataBindingDescription, context);
+            throw new GuiDevelopmentException(improperDataBindingMessage, context);
         }
 
         resultComponent.setDataContainer(container);
     }
-
 }

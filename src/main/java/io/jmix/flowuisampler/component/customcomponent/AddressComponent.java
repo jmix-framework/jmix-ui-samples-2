@@ -3,13 +3,13 @@ package io.jmix.flowuisampler.component.customcomponent;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.formlayout.FormLayout;
+import io.jmix.core.DataManager;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.component.UiComponentUtils;
 import io.jmix.flowui.component.combobox.EntityComboBox;
 import io.jmix.flowui.component.textfield.TypedTextField;
 import io.jmix.flowui.data.value.ContainerValueSource;
 import io.jmix.flowui.model.CollectionContainer;
-import io.jmix.flowui.model.CollectionLoader;
 import io.jmix.flowui.model.DataComponents;
 import io.jmix.flowui.model.InstanceContainer;
 import io.jmix.flowuisampler.entity.Address;
@@ -18,10 +18,13 @@ import io.jmix.flowuisampler.entity.Country;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
+import java.util.List;
+
 public class AddressComponent extends Composite<FormLayout> implements ApplicationContextAware {
 
     protected UiComponents uiComponents;
     protected DataComponents dataComponents;
+    protected DataManager dataManager;
 
     protected InstanceContainer<Address> addressInstanceContainer;
 
@@ -29,6 +32,7 @@ public class AddressComponent extends Composite<FormLayout> implements Applicati
     public void setApplicationContext(ApplicationContext applicationContext) {
         uiComponents = applicationContext.getBean(UiComponents.class);
         dataComponents = applicationContext.getBean(DataComponents.class);
+        dataManager = applicationContext.getBean(DataManager.class);
     }
 
     @SuppressWarnings({"unchecked"})
@@ -60,24 +64,27 @@ public class AddressComponent extends Composite<FormLayout> implements Applicati
 
     public void setDataContainer(InstanceContainer<Address> instanceContainer) {
         this.addressInstanceContainer = instanceContainer;
+
         assignInstanceContainerToTextFields();
         assignInstanceContainerToEntityComboBoxes();
     }
 
-    private void assignInstanceContainerToTextFields() {
-        Component zipField = UiComponentUtils.findComponent(getContent(), "zipField").orElseThrow();
+    protected void assignInstanceContainerToTextFields() {
+        Component zipField = UiComponentUtils.findComponent(getContent(), "zipField")
+                .orElseThrow();
         if (zipField instanceof TypedTextField<?> textField) {
             textField.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "zip"));
         }
 
-        Component addressLine = UiComponentUtils.findComponent(getContent(), "addressLine").orElseThrow();
+        Component addressLine = UiComponentUtils.findComponent(getContent(), "addressLine")
+                .orElseThrow();
         if (addressLine instanceof TypedTextField<?> textField) {
             textField.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "addressLine"));
         }
     }
 
     @SuppressWarnings({"unchecked"})
-    private void assignInstanceContainerToEntityComboBoxes() {
+    protected void assignInstanceContainerToEntityComboBoxes() {
         Component countryEntityComboBox = UiComponentUtils.findComponent(getContent(), "countryEntityComboBox")
                 .orElseThrow();
         if (countryEntityComboBox instanceof EntityComboBox<?> entityComboBox) {
@@ -94,14 +101,11 @@ public class AddressComponent extends Composite<FormLayout> implements Applicati
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})
-    private CollectionContainer loadEntities(Class clazz) {
-        CollectionContainer<?> collectionContainer = dataComponents.createCollectionContainer(clazz);
+    protected CollectionContainer loadEntities(Class clazz) {
+        CollectionContainer collectionContainer = dataComponents.createCollectionContainer(clazz);
 
-        CollectionLoader loader = dataComponents.createCollectionLoader();
-
-        loader.setQuery("select e from %s e".formatted(clazz.getSimpleName()));
-        loader.setContainer(collectionContainer);
-        loader.load();
+        List items = dataManager.load(clazz).all().list();
+        collectionContainer.setItems(items);
 
         return collectionContainer;
     }

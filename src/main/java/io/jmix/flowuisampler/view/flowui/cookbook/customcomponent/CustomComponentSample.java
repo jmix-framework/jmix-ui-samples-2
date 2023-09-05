@@ -20,9 +20,6 @@ public class CustomComponentSample extends StandardView {
     @ViewComponent
     protected InstanceContainer<Employee> employeeDc;
 
-    @ViewComponent
-    protected AddressComponent address1;
-
     @Autowired
     protected UiComponents uiComponents;
 
@@ -44,10 +41,5 @@ public class CustomComponentSample extends StandardView {
     @Subscribe("employeeSelect")
     protected void onEmployeeSelectValueChange(ComponentValueChangeEvent<JmixSelect<Employee>, Employee> event) {
         employeeDc.setItem(event.getValue());
-    }
-
-    @Subscribe
-    protected void onReady(ReadyEvent event) {
-        address1.setVisible(true);
     }
 }
