@@ -78,13 +78,15 @@ public class AddressComponent extends Composite<FormLayout> implements Applicati
 
     @SuppressWarnings({"unchecked"})
     private void assignInstanceContainerToEntityComboBoxes() {
-        Component countryEntityComboBox = UiComponentUtils.findComponent(getContent(), "countryEntityComboBox").orElseThrow();
+        Component countryEntityComboBox = UiComponentUtils.findComponent(getContent(), "countryEntityComboBox")
+                .orElseThrow();
         if (countryEntityComboBox instanceof EntityComboBox<?> entityComboBox) {
             entityComboBox.setItems(loadEntities(Country.class));
             entityComboBox.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "country"));
         }
 
-        Component cityEntityComboBox = UiComponentUtils.findComponent(getContent(), "cityEntityComboBox").orElseThrow();
+        Component cityEntityComboBox = UiComponentUtils.findComponent(getContent(), "cityEntityComboBox")
+                .orElseThrow();
         if (cityEntityComboBox instanceof EntityComboBox<?> entityComboBox) {
             entityComboBox.setItems(loadEntities(City.class));
             entityComboBox.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "city"));
