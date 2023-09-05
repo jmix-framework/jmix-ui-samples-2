@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns="http://schemas.company.com/ui.ex1/0.1/app-ui-components.xsd"
+<xs:schema xmlns="http://io.jmix.flowuisampler.address-component.xsd"
            elementFormDefault="qualified"
-           targetNamespace="http://schemas.company.com/ui.ex1/0.1/app-ui-components.xsd"
-           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+           targetNamespace="http://io.jmix.flowuisampler.address-component.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:layout="http://jmix.io/schema/flowui/layout">
 
     <xs:element name="address">
         <xs:complexType>
-            <xs:attribute name="dataContainer" type="xs:string"/>
+            <xs:complexContent>
+                <xs:extension base="layout:baseComponent">
+                    <xs:attribute name="dataContainer" type="xs:string"/>
+                </xs:extension>
+            </xs:complexContent>
         </xs:complexType>
     </xs:element>
 </xs:schema>

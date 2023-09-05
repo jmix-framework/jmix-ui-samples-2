@@ -45,7 +45,7 @@ public class AddressComponent extends Composite<FormLayout> implements Applicati
         countryEntityComboBox.setId("countryEntityComboBox");
         countryEntityComboBox.setLabel("Country");
 
-        EntityComboBox<Country> cityEntityComboBox = uiComponents.create(EntityComboBox.class);
+        EntityComboBox<City> cityEntityComboBox = uiComponents.create(EntityComboBox.class);
         cityEntityComboBox.setId("cityEntityComboBox");
         cityEntityComboBox.setLabel("City");
 

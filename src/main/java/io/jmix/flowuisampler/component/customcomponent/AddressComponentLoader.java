@@ -4,6 +4,7 @@ import io.jmix.flowui.exception.GuiDevelopmentException;
 import io.jmix.flowui.model.InstanceContainer;
 import io.jmix.flowui.xml.layout.loader.AbstractComponentLoader;
 import io.jmix.flowuisampler.entity.Address;
+import org.dom4j.Element;
 
 public class AddressComponentLoader extends AbstractComponentLoader<AddressComponent> {
 
@@ -12,9 +13,13 @@ public class AddressComponentLoader extends AbstractComponentLoader<AddressCompo
         return factory.create(AddressComponent.class);
     }
 
-    @SuppressWarnings({"rawtypes", "unchecked"})
     @Override
     public void loadComponent() {
+        loadDataContainer(resultComponent, element);
+    }
+
+    @SuppressWarnings({"rawtypes", "unchecked"})
+    private void loadDataContainer(AddressComponent resultComponent, Element element) {
         String dataContainerIsNullErrorDescription = String.format(
                 "%s doesn't have data binding. Set dataContainer attribute.",
                 resultComponent.getClass().getSimpleName()

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<view xmlns="http://jmix.io/schema/flowui/view">
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:custom="http://io.jmix.flowuisampler.address-component.xsd"
+>
     <data>
         <collection id="employeesDc"
                     class="io.jmix.flowuisampler.entity.Employee">
@@ -23,6 +25,6 @@
         <select id="employeeSelect" label="Employee" itemsContainer="employeesDc"
                 helperText="Select an employee to display"/>
         <h4 text="Declaratively defined component"/>
-        <address dataContainer="addressDc"/>
+        <custom:address dataContainer="addressDc" visible="false" id="address1"/>
     </layout>
 </view>
