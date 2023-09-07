@@ -23,7 +23,10 @@
     <layout>
         <select id="employeeSelect" label="Employee" itemsContainer="employeesDc"
                 helperText="Select an employee to display"/>
-        <h4 text="Declaratively defined component"/>
-        <custom:address id="addressComponent" dataContainer="addressDc"/>
+        <tabSheet id="tabSheet">
+            <tab id="declarative" label="msg://io.jmix.flowuisampler.view.flowui.cookbook.customcomponent/declarativelyAddedComponent">
+                <custom:address id="addressComponent" dataContainer="addressDc"/>
+            </tab>
+        </tabSheet>
     </layout>
 </view>

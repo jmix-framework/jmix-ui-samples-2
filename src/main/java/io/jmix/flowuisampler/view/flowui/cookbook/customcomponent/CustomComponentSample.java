@@ -1,9 +1,9 @@
 package io.jmix.flowuisampler.view.flowui.cookbook.customcomponent;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
-import com.vaadin.flow.component.html.H4;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.component.select.JmixSelect;
+import io.jmix.flowui.component.tabsheet.JmixTabSheet;
 import io.jmix.flowui.model.InstanceContainer;
 import io.jmix.flowui.view.*;
 import io.jmix.flowuisampler.component.customcomponent.AddressComponent;
@@ -19,6 +19,8 @@ public class CustomComponentSample extends StandardView {
     protected InstanceContainer<Address> addressDc;
     @ViewComponent
     protected InstanceContainer<Employee> employeeDc;
+    @ViewComponent
+    protected JmixTabSheet tabSheet;
 
     @Autowired
     protected UiComponents uiComponents;
@@ -29,13 +31,10 @@ public class CustomComponentSample extends StandardView {
     }
 
     protected void initAddress() {
-        H4 h4 = uiComponents.create(H4.class);
-        h4.setText("Programmatically defined component");
-
         AddressComponent addressComponent = uiComponents.create(AddressComponent.class);
         addressComponent.setDataContainer(addressDc);
 
-        getContent().add(h4, addressComponent);
+        tabSheet.add("Programmatically added component", addressComponent);
     }
 
     @Subscribe("employeeSelect")
