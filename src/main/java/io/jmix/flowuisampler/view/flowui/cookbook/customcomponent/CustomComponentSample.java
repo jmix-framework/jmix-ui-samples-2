@@ -24,6 +24,8 @@ public class CustomComponentSample extends StandardView {
 
     @Autowired
     protected UiComponents uiComponents;
+    @Autowired
+    private MessageBundle messageBundle;
 
     @Subscribe
     protected void onInit(InitEvent event) {
@@ -34,7 +36,7 @@ public class CustomComponentSample extends StandardView {
         AddressComponent addressComponent = uiComponents.create(AddressComponent.class);
         addressComponent.setDataContainer(addressDc);
 
-        tabSheet.add("Programmatically added component", addressComponent);
+        tabSheet.add(messageBundle.getMessage("programmaticTab.label"), addressComponent);
     }
 
     @Subscribe("employeeSelect")
