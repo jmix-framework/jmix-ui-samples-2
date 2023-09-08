@@ -19,7 +19,7 @@ public class AddressComponentLoader extends AbstractComponentLoader<AddressCompo
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})
-    private void loadDataContainer(AddressComponent resultComponent, Element element) {
+    protected void loadDataContainer(AddressComponent resultComponent, Element element) {
         String dataContainerIsNullErrorMessage = String.format(
                 "%s doesn't have data binding. Set dataContainer attribute.",
                 resultComponent.getClass().getSimpleName()

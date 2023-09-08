@@ -25,7 +25,7 @@ public class CustomComponentSample extends StandardView {
     @Autowired
     protected UiComponents uiComponents;
     @Autowired
-    private MessageBundle messageBundle;
+    protected MessageBundle messageBundle;
 
     @Subscribe
     protected void onInit(InitEvent event) {
