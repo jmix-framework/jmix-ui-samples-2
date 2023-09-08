@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <view xmlns="http://jmix.io/schema/flowui/view"
-      xmlns:custom="http://io.jmix.flowuisampler/address-component.xsd">
+      xmlns:addressComponent="http://io.jmix.flowuisampler/address-component.xsd">
     <data>
         <collection id="employeesDc"
                     class="io.jmix.flowuisampler.entity.Employee">
@@ -25,7 +25,7 @@
                 helperText="Select an employee to display"/>
         <tabSheet id="tabSheet" width="100%">
             <tab id="declarative" label="msg://declarativeTab.label">
-                <custom:address id="addressComponent" dataContainer="addressDc"/>
+                <addressComponent:address id="addressComponent" dataContainer="addressDc"/>
             </tab>
         </tabSheet>
     </layout>
