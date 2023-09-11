@@ -1,14 +1,14 @@
-package io.jmix.flowuisampler.view.flowui.cookbook.customcomponent;
+package io.jmix.flowuisampler.view.flowui.cookbook.compositecomponent;
 
 import io.jmix.flowui.sys.registration.ComponentRegistration;
 import io.jmix.flowui.sys.registration.ComponentRegistrationBuilder;
-import io.jmix.flowuisampler.component.customcomponent.AddressComponent;
-import io.jmix.flowuisampler.component.customcomponent.AddressComponentLoader;
+import io.jmix.flowuisampler.component.compositecomponent.AddressComponent;
+import io.jmix.flowuisampler.component.compositecomponent.AddressComponentLoader;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class CustomComponentConfiguration {
+public class CompositeComponentConfiguration {
 
     @Bean
     public ComponentRegistration address() {

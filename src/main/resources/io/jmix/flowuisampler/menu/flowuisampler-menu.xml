@@ -613,12 +613,12 @@
                 <file name="META-INF/resources/themes/badge-icons.css"/>
             </otherFiles>
         </item>
-        <item id="custom-component" page="custom-component" splitEnabled="true">
+        <item id="composite-component" page="composite-component" splitEnabled="true">
             <otherFiles>
-                <file name="io/jmix/flowuisampler/component/customcomponent/AddressComponent.java"/>
-                <file name="io/jmix/flowuisampler/view/flowui/cookbook/customcomponent/address-component.xsd"/>
-                <file name="io/jmix/flowuisampler/component/customcomponent/AddressComponentLoader.java"/>
-                <file name="io/jmix/flowuisampler/view/flowui/cookbook/customcomponent/CustomComponentConfiguration.java"/>
+                <file name="io/jmix/flowuisampler/component/compositecomponent/AddressComponent.java"/>
+                <file name="io/jmix/flowuisampler/view/flowui/cookbook/compositecomponent/address-component.xsd"/>
+                <file name="io/jmix/flowuisampler/component/compositecomponent/AddressComponentLoader.java"/>
+                <file name="io/jmix/flowuisampler/view/flowui/cookbook/compositecomponent/CustomComponentConfiguration.java"/>
                 <file name="io/jmix/flowuisampler/entity/Employee.java"/>
                 <file name="io/jmix/flowuisampler/entity/Address.java"/>
                 <file name="io/jmix/flowuisampler/entity/City.java"/>

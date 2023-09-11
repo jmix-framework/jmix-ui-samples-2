@@ -15,6 +15,6 @@
  */
 
 @NonNullApi
-package io.jmix.flowuisampler.component.customcomponent;
+package io.jmix.flowuisampler.component.compositecomponent;
 
 import org.springframework.lang.NonNullApi;

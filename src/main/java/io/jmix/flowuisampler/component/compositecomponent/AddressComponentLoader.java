@@ -1,4 +1,4 @@
-package io.jmix.flowuisampler.component.customcomponent;
+package io.jmix.flowuisampler.component.compositecomponent;
 
 import io.jmix.flowui.exception.GuiDevelopmentException;
 import io.jmix.flowui.model.InstanceContainer;
