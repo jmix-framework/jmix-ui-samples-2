@@ -19,7 +19,7 @@
         </navigationBar>
         <drawerLayout>
             <section id="section" classNames="jmix-main-view-section">
-                <div classNames="jmix-main-view-title-holder">
+                <div id="applicationTitlePlaceholder" classNames="jmix-main-view-title-holder">
                     <image resource="icons/icon.png" height="1.5em" width="1.5em"/>
                     <h2 id="applicationTitle"
                         text="msg://applicationTitle.text"
