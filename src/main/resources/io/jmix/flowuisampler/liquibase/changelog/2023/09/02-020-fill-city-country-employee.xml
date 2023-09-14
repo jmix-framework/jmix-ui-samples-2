@@ -14,123 +14,87 @@
             <column name="ID" value="2"/>
             <column name="NAME" value="USA"/>
         </insert>
-        <insert tableName="SAMPLER_COUNTRY">
-            <column name="ID" value="3"/>
-            <column name="NAME" value="China"/>
-        </insert>
     </changeSet>
     <changeSet id="2" author="sampler">
         <insert tableName="SAMPLER_CITY">
             <column name="ID" value="1"/>
+            <column name="COUNTRY_ID" value="1"/>
             <column name="NAME" value="London"/>
         </insert>
         <insert tableName="SAMPLER_CITY">
             <column name="ID" value="2"/>
+            <column name="COUNTRY_ID" value="1"/>
             <column name="NAME" value="Bristol"/>
         </insert>
         <insert tableName="SAMPLER_CITY">
             <column name="ID" value="3"/>
+            <column name="COUNTRY_ID" value="1"/>
             <column name="NAME" value="Chester"/>
+        </insert>
+        <insert tableName="SAMPLER_CITY">
+            <column name="ID" value="4"/>
+            <column name="COUNTRY_ID" value="2"/>
+            <column name="NAME" value="New York"/>
+        </insert>
+        <insert tableName="SAMPLER_CITY">
+            <column name="ID" value="5"/>
+            <column name="COUNTRY_ID" value="2"/>
+            <column name="NAME" value="San Francisco"/>
+        </insert>
+        <insert tableName="SAMPLER_CITY">
+            <column name="ID" value="6"/>
+            <column name="COUNTRY_ID" value="2"/>
+            <column name="NAME" value="Las Vegas"/>
         </insert>
     </changeSet>
     <changeSet id="3" author="sampler">
         <insert tableName="SAMPLER_EMPLOYEE">
             <column name="ID" value="8c64ecf4-3be6-4d23-99d1-882ccd60e482"/>
             <column name="NAME" value="Emily"/>
-            <column name="ADDRESS_COUNTRY_ID" value="3"/>
+            <column name="ADDRESS_COUNTRY_ID" value="1"/>
             <column name="ADDRESS_CITY_ID" value="1"/>
             <column name="ADDRESS_ZIP" value="R7X 7M9AA"/>
             <column name="ADDRESS_ADDRESS_LINE" value="145 Main Street"/>
         </insert>
-    </changeSet>
-    <changeSet id="4" author="sampler">
         <insert tableName="SAMPLER_EMPLOYEE">
             <column name="ID" value="27626b62-bb9c-4b63-9c41-c1a21d57c8cc"/>
             <column name="NAME" value="Elizabet"/>
-            <column name="ADDRESS_COUNTRY_ID" value="2"/>
-            <column name="ADDRESS_CITY_ID" value="3"/>
+            <column name="ADDRESS_COUNTRY_ID" value="1"/>
+            <column name="ADDRESS_CITY_ID" value="2"/>
             <column name="ADDRESS_ZIP" value="F3E 4G7JB"/>
             <column name="ADDRESS_ADDRESS_LINE" value="432 Park Avenue"/>
         </insert>
-    </changeSet>
-    <changeSet id="5" author="sampler">
         <insert tableName="SAMPLER_EMPLOYEE">
             <column name="ID" value="e1fcb9f7-af11-45eb-85ce-2d9e8d3ea362"/>
             <column name="NAME" value="John"/>
-            <column name="ADDRESS_COUNTRY_ID" value="3"/>
-            <column name="ADDRESS_CITY_ID" value="1"/>
+            <column name="ADDRESS_COUNTRY_ID" value="1"/>
+            <column name="ADDRESS_CITY_ID" value="3"/>
             <column name="ADDRESS_ZIP" value="W2Y 8N5LW"/>
             <column name="ADDRESS_ADDRESS_LINE" value="273 Main Street"/>
         </insert>
-    </changeSet>
-    <changeSet id="6" author="sampler">
         <insert tableName="SAMPLER_EMPLOYEE">
             <column name="ID" value="b222196c-8be7-4a5a-a64b-8d23f4f82662"/>
             <column name="NAME" value="David"/>
-            <column name="ADDRESS_COUNTRY_ID" value="1"/>
-            <column name="ADDRESS_CITY_ID" value="3"/>
+            <column name="ADDRESS_COUNTRY_ID" value="2"/>
+            <column name="ADDRESS_CITY_ID" value="4"/>
             <column name="ADDRESS_ZIP" value="Z1X 2N4VX"/>
             <column name="ADDRESS_ADDRESS_LINE" value="601 Park Avenue"/>
         </insert>
-    </changeSet>
-    <changeSet id="7" author="sampler">
         <insert tableName="SAMPLER_EMPLOYEE">
             <column name="ID" value="2e6e2d14-7c14-4e7f-96d5-8365a31942e5"/>
             <column name="NAME" value="Alice"/>
-            <column name="ADDRESS_COUNTRY_ID" value="3"/>
-            <column name="ADDRESS_CITY_ID" value="1"/>
+            <column name="ADDRESS_COUNTRY_ID" value="2"/>
+            <column name="ADDRESS_CITY_ID" value="5"/>
             <column name="ADDRESS_ZIP" value="S7Z 6T3PA"/>
             <column name="ADDRESS_ADDRESS_LINE" value="789 Main Street"/>
         </insert>
-    </changeSet>
-    <changeSet id="8" author="sampler">
         <insert tableName="SAMPLER_EMPLOYEE">
             <column name="ID" value="d40f4ccf-2c1e-4dd3-8f5c-e47e1a72c263"/>
             <column name="NAME" value="Michael"/>
             <column name="ADDRESS_COUNTRY_ID" value="2"/>
-            <column name="ADDRESS_CITY_ID" value="1"/>
+            <column name="ADDRESS_CITY_ID" value="6"/>
             <column name="ADDRESS_ZIP" value="L3V 5W6JF"/>
             <column name="ADDRESS_ADDRESS_LINE" value="102 High Street"/>
-        </insert>
-    </changeSet>
-    <changeSet id="9" author="sampler">
-        <insert tableName="SAMPLER_EMPLOYEE">
-            <column name="ID" value="fc931c51-2cf0-4f86-b641-ec27c01c4d95"/>
-            <column name="NAME" value="Olivia"/>
-            <column name="ADDRESS_COUNTRY_ID" value="2"/>
-            <column name="ADDRESS_CITY_ID" value="2"/>
-            <column name="ADDRESS_ZIP" value="E1E 3P9WG"/>
-            <column name="ADDRESS_ADDRESS_LINE" value="56 Main Street"/>
-        </insert>
-    </changeSet>
-    <changeSet id="10" author="sampler">
-        <insert tableName="SAMPLER_EMPLOYEE">
-            <column name="ID" value="0c45a93f-78ff-4bf7-9f3f-648cdfe16ed5"/>
-            <column name="NAME" value="Sophia"/>
-            <column name="ADDRESS_COUNTRY_ID" value="3"/>
-            <column name="ADDRESS_CITY_ID" value="1"/>
-            <column name="ADDRESS_ZIP" value="V9L 2N8JP"/>
-            <column name="ADDRESS_ADDRESS_LINE" value="987 Park Avenue"/>
-        </insert>
-    </changeSet>
-    <changeSet id="11" author="sampler">
-        <insert tableName="SAMPLER_EMPLOYEE">
-            <column name="ID" value="8b3fdeaa-e19f-45cb-9c8e-d3c5db95b29a"/>
-            <column name="NAME" value="Bob"/>
-            <column name="ADDRESS_COUNTRY_ID" value="1"/>
-            <column name="ADDRESS_CITY_ID" value="2"/>
-            <column name="ADDRESS_ZIP" value="X0Y 1Z7BX"/>
-            <column name="ADDRESS_ADDRESS_LINE" value="654 High Street"/>
-        </insert>
-    </changeSet>
-    <changeSet id="12" author="sampler">
-        <insert tableName="SAMPLER_EMPLOYEE">
-            <column name="ID" value="3d153409-0c8c-48a6-b9d2-1e0af32f0472"/>
-            <column name="NAME" value="Daniel"/>
-            <column name="ADDRESS_COUNTRY_ID" value="1"/>
-            <column name="ADDRESS_CITY_ID" value="2"/>
-            <column name="ADDRESS_ZIP" value="Q5R 9H1BC"/>
-            <column name="ADDRESS_ADDRESS_LINE" value="765 Main Street"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

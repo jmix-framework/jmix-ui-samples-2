@@ -1,32 +1,27 @@
-<h2>Introduction</h2>
 <p>
-    When working on real projects, it's often necessary to create composite UI components. Jmix Flow UI greatly simplifies the process of creating unique UI elements specific to a project. Composite components allow developers to bundle multiple UI elements together, making it easier to manage and reuse them across various screens. These components can also host other components, enabling the creation and maintenance of complex UI structures efficiently.
+    Composite components are created by combining existing components together. They encapsulate UI layout and behaviour and allow you to reuse identical parts of UI in different views. Composite components can contain data-aware components and load data themselves or rely on data containers provided by the host view.
 </p>
 <p>
-    Composite components not only display UI elements but can also perform various tasks like loading data and connecting to data containers. This capability enhances the component's functionality, enabling it to interact with data sources and provide dynamic content to the user. By using composite components, developers can create and maintain consistent UI designs throughout their projects, saving time and effort by reducing code duplication and promoting efficient development practices.
-</p>
+    In this example, we demonstrate a composite component for editing addresses called <code>AddressComponent</code>. The component consists of several <code>TypedTextField</code> and <code>EntityComboBox</code> components representing the address parts.
 
-<h2>Example Overview</h2>
+    The component's constructor accepts a few infrastructure beans and creates inner components and data containers.
+
+    The <code>initContent()</code> method is invoked when the composite component is attached to the components tree. It adds its inner components to the parent component which is defined by the type parameter (<code>Composite&lt;FormLayout&gt;</code>).
+
+    The composite component defines its own API method <code>setDataContainer()</code> which must be invoked after the component is created in a view. The method binds the inner components to the provided data container.
+</p>
 <p>
-    In this example, we have a composite component called <code>AddressComponent</code> used for editing addresses. The component consists of several edit fields such as <code>zipField</code>, <code>countryEntityComboBox</code>, <code>cityEntityComboBox</code>, and <code>addressLine</code>.
-
-    The component uses various Vaadin Flow components such as <code>TypedTextField</code> and <code>EntityComboBox</code> to create the edit fields. These components are retrieved from the <code>UiComponents</code> bean, injected into the component using the <code>setApplicationContext</code> method.
-
-    The component also utilizes data components such as <code>InstanceContainer</code> and <code>DataManager</code> to handle the data associated with the address. The <code>InstanceContainer</code> is passed to the component using the <code>setDataContainer</code> method, and the component assigns this container to the value sources of the text fields using the <code>assignInstanceContainerToTextFields</code> method.
-
-    Overall, this example demonstrates how to create a composite component for editing addresses and how to manage the data associated with it.
+    After creating the composite component class, it can be used in views programmatically. See the <code>initAddress()</code> method of the
+    <code>CompositeComponentSample</code> class.
 </p>
-
-<h2>Step-by-Step Guide</h2>
-<p>To create a composite component, follow these steps:</p>
+<p>
+    To be able to use the new component in views XML declaratively, a few more steps are needed:
+</p>
 <ol>
-    <li>Define the Java component class (<code>AddressComponent.java</code> class).</li>
-    <li>Specify the XSD descriptor for the component (<code>address-component.xsd</code> file).</li>
-    <li>Implement the component loader (<code>AddressComponentLoader.java</code> class).</li>
-    <li>Register the component within your application. In our example, you can find the registration process in the <code>address</code> method of the <code>CompositeComponentConfiguration.java</code> class.</li>
-    <li>Once you've completed these steps, you can use the composite component in your XML screen descriptor. For example, see the <code>composite-component.xml</code> file. Additionally, you can also use it in your Java controllers for the screens. An example of this is available in the <code>CompositeComponentSample.java</code> file.</li>
+    <li>Create an XSD descriptor for the component (see <code>address-component.xsd</code>).</li>
+    <li>Implement the component loader (see <code>AddressComponentLoader.java</code>).</li>
+    <li>Register the component and its loader in the application (see <code>CompositeComponentConfiguration.java</code>).</li>
 </ol>
-
 <p>
-    The step-by-step guide for implementing composite components is described in more detail in the documentation.
+    Once these steps are completed, the composite component can be used in view XML descriptors. See the <code>composite-component.xml</code> file.
 </p>

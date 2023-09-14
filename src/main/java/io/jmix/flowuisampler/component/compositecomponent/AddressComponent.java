@@ -1,11 +1,10 @@
 package io.jmix.flowuisampler.component.compositecomponent;
 
-import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import io.jmix.core.DataManager;
+import io.jmix.core.Sort;
 import io.jmix.flowui.UiComponents;
-import io.jmix.flowui.component.UiComponentUtils;
 import io.jmix.flowui.component.combobox.EntityComboBox;
 import io.jmix.flowui.component.textfield.TypedTextField;
 import io.jmix.flowui.data.value.ContainerValueSource;
@@ -15,98 +14,74 @@ import io.jmix.flowui.model.InstanceContainer;
 import io.jmix.flowuisampler.entity.Address;
 import io.jmix.flowuisampler.entity.City;
 import io.jmix.flowuisampler.entity.Country;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 
 import java.util.List;
 
-public class AddressComponent extends Composite<FormLayout> implements ApplicationContextAware {
+public class AddressComponent extends Composite<FormLayout> {
 
-    protected UiComponents uiComponents;
-    protected DataComponents dataComponents;
-    protected DataManager dataManager;
+    protected final DataManager dataManager;
+    private final CollectionContainer<Country> countriesContainer;
+    private final CollectionContainer<City> citiesContainer;
 
-    protected InstanceContainer<Address> addressInstanceContainer;
-
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) {
-        uiComponents = applicationContext.getBean(UiComponents.class);
-        dataComponents = applicationContext.getBean(DataComponents.class);
-        dataManager = applicationContext.getBean(DataManager.class);
-    }
+    private final TypedTextField<String> zipField;
+    private final EntityComboBox<Country> countryEntityComboBox;
+    private final EntityComboBox<City> cityEntityComboBox;
+    private final TypedTextField<String> addressLine;
 
     @SuppressWarnings({"unchecked"})
-    @Override
-    protected FormLayout initContent() {
-        FormLayout content = super.initContent();
+    public AddressComponent(UiComponents uiComponents, DataComponents dataComponents, DataManager dataManager) {
+        this.dataManager = dataManager;
 
-        TypedTextField<String> zipField = uiComponents.create(TypedTextField.class);
-        zipField.setId("zipField");
+        zipField = uiComponents.create(TypedTextField.class);
         zipField.setMaxLength(32);
         zipField.setLabel("Zip");
 
-        EntityComboBox<Country> countryEntityComboBox = uiComponents.create(EntityComboBox.class);
-        countryEntityComboBox.setId("countryEntityComboBox");
+        countryEntityComboBox = uiComponents.create(EntityComboBox.class);
         countryEntityComboBox.setLabel("Country");
 
-        EntityComboBox<City> cityEntityComboBox = uiComponents.create(EntityComboBox.class);
-        cityEntityComboBox.setId("cityEntityComboBox");
+        cityEntityComboBox = uiComponents.create(EntityComboBox.class);
         cityEntityComboBox.setLabel("City");
 
-        TypedTextField<String> addressLine = uiComponents.create(TypedTextField.class);
-        addressLine.setId("addressLine");
+        addressLine = uiComponents.create(TypedTextField.class);
         addressLine.setLabel("Address Line");
 
-        content.add(zipField, countryEntityComboBox, cityEntityComboBox, addressLine);
+        countriesContainer = dataComponents.createCollectionContainer(Country.class);
+        countriesContainer.addItemChangeListener(countryItemChangeEvent -> {
+            cityEntityComboBox.setValue(null);
+            loadCities();
+        });
+        countryEntityComboBox.setItems(countriesContainer);
 
+        citiesContainer = dataComponents.createCollectionContainer(City.class);
+        cityEntityComboBox.setItems(citiesContainer);
+    }
+
+    private void loadCountries() {
+        List<Country> countries = dataManager.load(Country.class).all().sort(Sort.by("name")).list();
+        countriesContainer.setItems(countries);
+    }
+
+    private void loadCities() {
+        List<City> cities = dataManager.load(City.class)
+                .query("e.country = ?1", countriesContainer.getItemOrNull())
+                .list();
+        citiesContainer.setItems(cities);
+    }
+
+    @Override
+    protected FormLayout initContent() {
+        FormLayout content = super.initContent();
+        content.add(zipField, countryEntityComboBox, cityEntityComboBox, addressLine);
         return content;
     }
 
     public void setDataContainer(InstanceContainer<Address> instanceContainer) {
-        this.addressInstanceContainer = instanceContainer;
+        zipField.setValueSource(new ContainerValueSource<>(instanceContainer, "zip"));
+        addressLine.setValueSource(new ContainerValueSource<>(instanceContainer, "addressLine"));
+        countryEntityComboBox.setValueSource(new ContainerValueSource<>(instanceContainer, "country"));
+        cityEntityComboBox.setValueSource(new ContainerValueSource<>(instanceContainer, "city"));
 
-        assignInstanceContainerToTextFields();
-        assignInstanceContainerToEntityComboBoxes();
-    }
-
-    protected void assignInstanceContainerToTextFields() {
-        Component zipField = UiComponentUtils.findComponent(getContent(), "zipField")
-                .orElseThrow();
-        if (zipField instanceof TypedTextField<?> textField) {
-            textField.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "zip"));
-        }
-
-        Component addressLine = UiComponentUtils.findComponent(getContent(), "addressLine")
-                .orElseThrow();
-        if (addressLine instanceof TypedTextField<?> textField) {
-            textField.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "addressLine"));
-        }
-    }
-
-    @SuppressWarnings({"unchecked"})
-    protected void assignInstanceContainerToEntityComboBoxes() {
-        Component countryEntityComboBox = UiComponentUtils.findComponent(getContent(), "countryEntityComboBox")
-                .orElseThrow();
-        if (countryEntityComboBox instanceof EntityComboBox<?> entityComboBox) {
-            entityComboBox.setItems(loadEntities(Country.class));
-            entityComboBox.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "country"));
-        }
-
-        Component cityEntityComboBox = UiComponentUtils.findComponent(getContent(), "cityEntityComboBox")
-                .orElseThrow();
-        if (cityEntityComboBox instanceof EntityComboBox<?> entityComboBox) {
-            entityComboBox.setItems(loadEntities(City.class));
-            entityComboBox.setValueSource(new ContainerValueSource<>(addressInstanceContainer, "city"));
-        }
-    }
-
-    @SuppressWarnings({"rawtypes", "unchecked"})
-    protected CollectionContainer loadEntities(Class clazz) {
-        CollectionContainer collectionContainer = dataComponents.createCollectionContainer(clazz);
-
-        List items = dataManager.load(clazz).all().list();
-        collectionContainer.setItems(items);
-
-        return collectionContainer;
+        loadCountries();
+        loadCities();
     }
 }

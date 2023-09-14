@@ -6,18 +6,19 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd"
         objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
     <changeSet id="1" author="sampler">
-        <createTable tableName="SAMPLER_CITY">
+        <createTable tableName="SAMPLER_COUNTRY">
             <column name="ID" type="INT">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_sampler_city"/>
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_sampler_country"/>
             </column>
             <column name="NAME" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
     <changeSet id="2" author="sampler">
-        <createTable tableName="SAMPLER_COUNTRY">
+        <createTable tableName="SAMPLER_CITY">
             <column name="ID" type="INT">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_sampler_country"/>
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_sampler_city"/>
             </column>
+            <column name="COUNTRY_ID" type="INT"/>
             <column name="NAME" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
@@ -34,11 +35,16 @@
         </createTable>
     </changeSet>
     <changeSet id="4" author="sampler">
+        <addForeignKeyConstraint baseColumnNames="COUNTRY_ID" baseTableName="SAMPLER_CITY"
+                                 constraintName="FK_SAMPLER_CITY_ON_COUNTRY" referencedColumnNames="ID"
+                                 referencedTableName="SAMPLER_COUNTRY"/>
+    </changeSet>
+    <changeSet id="5" author="sampler">
         <addForeignKeyConstraint baseColumnNames="ADDRESS_CITY_ID" baseTableName="SAMPLER_EMPLOYEE"
                                  constraintName="FK_SAMPLER_EMPLOYEE_ON_ADDRESS_CITY" referencedColumnNames="ID"
                                  referencedTableName="SAMPLER_CITY"/>
     </changeSet>
-    <changeSet id="5" author="sampler">
+    <changeSet id="6" author="sampler">
         <addForeignKeyConstraint baseColumnNames="ADDRESS_COUNTRY_ID" baseTableName="SAMPLER_EMPLOYEE"
                                  constraintName="FK_SAMPLER_EMPLOYEE_ON_ADDRESS_COUNTRY" referencedColumnNames="ID"
                                  referencedTableName="SAMPLER_COUNTRY"/>
