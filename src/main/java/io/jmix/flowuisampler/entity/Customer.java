@@ -41,6 +41,10 @@ public class Customer {
     @Column(name = "GRADE")
     protected Integer grade;
 
+    public Boolean getActive() {
+        return active;
+    }
+
     public Customer() {
         this.id = UUID.randomUUID();
     }
