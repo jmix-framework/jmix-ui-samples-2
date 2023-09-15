@@ -21,6 +21,11 @@
         <item id="avatar"/>
         <menu id="badge">
             <item id="badge-simple"/>
+            <item id="badge-icons">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/badge-icons.css"/>
+                </otherFiles>
+            </item>
             <item id="badge-theme-variant" splitEnabled="true"/>
         </menu>
         <menu id="big-decimal-field">
@@ -475,6 +480,7 @@
                     <file name="io/jmix/flowuisampler/entity/Order.java"/>
                 </otherFiles>
             </item>
+            <item id="text-area-resizable"/>
             <item id="text-area-theme-variant" splitEnabled="true"/>
         </menu>
         <menu id="text-field">
@@ -551,6 +557,11 @@
             <item id="tabsheet-simple" page="tabSheet"/>
             <item id="tabsheet-icons" page="tabSheet"/>
             <item id="tabsheet-badges" page="tabSheet"/>
+            <item id="tabsheet-lazy-tab" page="tabSheet" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/flowuisampler/component/lazycomponent/LazyComponent.java"/>
+                </otherFiles>
+            </item>
             <item id="tabsheet-theme-variant" page="tabSheet"/>
         </menu>
     </menu>
@@ -600,17 +611,6 @@
         <item id="custom-filter-query" page="data/data-loaders" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/flowuisampler/entity/Customer.java"/>
-            </otherFiles>
-        </item>
-        <item id="tabsheet-lazy-tab" page="vc/layouts/tabSheet" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/flowuisampler/component/lazycomponent/LazyComponent.java"/>
-            </otherFiles>
-        </item>
-        <item id="text-area-resizable"/>
-        <item id="badge-icons">
-            <otherFiles>
-                <file name="META-INF/resources/themes/badge-icons.css"/>
             </otherFiles>
         </item>
         <item id="composite-component" page="visual-components" splitEnabled="true">

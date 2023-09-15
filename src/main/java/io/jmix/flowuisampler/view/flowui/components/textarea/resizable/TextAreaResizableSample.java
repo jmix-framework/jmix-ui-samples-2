@@ -1,4 +1,4 @@
-package io.jmix.flowuisampler.view.flowui.cookbook.textarearesizable;
+package io.jmix.flowuisampler.view.flowui.components.textarea.resizable;
 
 import io.jmix.flowui.component.textarea.JmixTextArea;
 import io.jmix.flowui.view.*;

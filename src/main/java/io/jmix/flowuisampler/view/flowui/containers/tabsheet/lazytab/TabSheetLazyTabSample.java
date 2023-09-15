@@ -1,4 +1,4 @@
-package io.jmix.flowuisampler.view.flowui.cookbook.tabsheetlazytab;
+package io.jmix.flowuisampler.view.flowui.containers.tabsheet.lazytab;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.html.Span;
@@ -15,7 +15,7 @@ import java.util.List;
 
 @ViewController("tabsheet-lazy-tab")
 @ViewDescriptor("tabsheet-lazy-tab.xml")
-public class TabSheetLazyTab extends StandardView {
+public class TabSheetLazyTabSample extends StandardView {
 
     @ViewComponent
     protected JmixTabSheet tabSheet;
