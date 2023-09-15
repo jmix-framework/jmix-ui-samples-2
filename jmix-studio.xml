@@ -30,13 +30,11 @@
       </entry>
       <entry key="jmix-flowui-sampler.main">
         <ModuleSettings>
-          <option name="dataStoreOptionsV2">
+          <option name="dataStoreOptions">
             <map>
               <entry key="main">
                 <value>
-                  <DataStoreSettingsV2>
-                    <option name="nameLengthMode" value="ORACLE" />
-                  </DataStoreSettingsV2>
+                  <DataStoreSettings />
                 </value>
               </entry>
             </map>
