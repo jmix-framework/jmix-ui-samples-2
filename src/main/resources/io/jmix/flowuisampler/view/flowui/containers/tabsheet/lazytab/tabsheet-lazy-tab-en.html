@@ -1,10 +1,10 @@
 <p>This example describes one way to create a lazy-loading tab.</p>
 
-<p>Lazy-tabs do not load their content when a view is opened, it reduces the number of components in memory.
-    Components within a tab are loaded only when user selects the tab. Additionally, if a lazy-tab includes visual
+<p>Lazy tabs do not load their content when a view is opened, which reduces the number of components in memory.
+    Components within a tab are loaded only when user selects the tab. Additionally, if a lazy tab includes visual
     components linked to a data source, containing a JPQL query, this query will not be invoked as well. As a result,
     the view opens quicker and data is loaded only when user requests it by selecting this tab.</p>
 
 <p>In this example, when you open the view, you can see that the content, located inside
-    lazy <code>LazyTab 1</code>, is null. When you select this tab, <code>checkComponents()</code> method will be called
+    lazy <code>LazyTab 1</code>, is null. When you select this tab, <code>checkComponents()</code> method is called
     again, and the components appear.</p>

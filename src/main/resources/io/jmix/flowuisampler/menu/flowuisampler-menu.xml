@@ -586,31 +586,10 @@
     </menu>
 
     <menu id="cookbook" url="flow-ui">
-        <item id="copy-action" page="actions/declarative-actions" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/flowuisampler/entity/Customer.java"/>
-            </otherFiles>
-        </item>
         <item id="cascading-dropdowns" page="facets/dataLoadCoordinator" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/flowuisampler/entity/Planet.java"/>
                 <file name="io/jmix/flowuisampler/entity/Moon.java"/>
-            </otherFiles>
-        </item>
-        <item id="read-only-customers" page="opening-views" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/flowuisampler/entity/Customer.java"/>
-                <file name="io/jmix/flowuisampler/entity/ReadOnlyCustomer.java"/>
-            </otherFiles>
-        </item>
-        <item id="custom-filter" page="facets/dataLoadCoordinator" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/flowuisampler/entity/Customer.java"/>
-            </otherFiles>
-        </item>
-        <item id="custom-filter-query" page="data/data-loaders" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/flowuisampler/entity/Customer.java"/>
             </otherFiles>
         </item>
         <item id="composite-component" page="visual-components" splitEnabled="true">
@@ -623,6 +602,27 @@
                 <file name="io/jmix/flowuisampler/entity/Address.java"/>
                 <file name="io/jmix/flowuisampler/entity/City.java"/>
                 <file name="io/jmix/flowuisampler/entity/Country.java"/>
+            </otherFiles>
+        </item>
+        <item id="copy-action" page="actions/declarative-actions" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+            </otherFiles>
+        </item>
+        <item id="custom-filter" page="facets/dataLoadCoordinator" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+            </otherFiles>
+        </item>
+        <item id="custom-filter-query" page="data/data-loaders" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+            </otherFiles>
+        </item>
+        <item id="read-only-customers" page="opening-views" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/flowuisampler/entity/Customer.java"/>
+                <file name="io/jmix/flowuisampler/entity/ReadOnlyCustomer.java"/>
             </otherFiles>
         </item>
     </menu>
