@@ -10,7 +10,7 @@ jmix {
     bomVersion = '2.0.1'
 }
 
-group = 'io.jmix.flowuisampler'
+group = 'io.jmix.uisamples'
 
 repositories {
     mavenCentral()

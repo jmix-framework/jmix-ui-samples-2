@@ -13,7 +13,7 @@
       "@vaadin/checkbox": "24.0.8",
       "@vaadin/checkbox-group": "24.0.8",
       "@vaadin/combo-box": "24.0.8",
-      "@vaadin/common-frontend": "0.0.17",
+      "@vaadin/common-frontend": "0.0.18",
       "@vaadin/component-base": "24.0.8",
       "@vaadin/confirm-dialog": "24.0.8",
       "@vaadin/context-menu": "24.0.8",

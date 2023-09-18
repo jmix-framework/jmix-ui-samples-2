@@ -1,0 +1,50 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <collection id="ordersDc"
+                    class="io.jmix.uisamples.entity.Order">
+            <fetchPlan extends="_local">
+                <property name="customer" fetchPlan="_local"/>
+            </fetchPlan>
+            <loader id="ordersDl">
+                <query>
+                    <![CDATA[select e from uisamples_Order e]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="customersDc"
+                    class="io.jmix.uisamples.entity.Customer">
+            <fetchPlan extends="_local"/>
+            <loader id="customersDl">
+                <query>
+                    <![CDATA[select e from Customer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <propertyFilter property="customer"
+                        operation="EQUAL"
+                        dataLoader="ordersDl">
+            <entityComboBox metaClass="Customer" itemsContainer="customersDc">
+                <actions>
+                    <action id="lookup" type="entity_lookup"/>
+                    <action id="clear" type="entity_clear"/>
+                </actions>
+            </entityComboBox>
+        </propertyFilter>
+        <dataGrid id="ordersDataGrid"
+                  dataContainer="ordersDc"
+                  width="100%"
+                  minHeight="20em">
+            <columns>
+                <column property="date"/>
+                <column property="customer"/>
+                <column property="amount"/>
+                <column property="description"/>
+            </columns>
+        </dataGrid>
+    </layout>
+</view>

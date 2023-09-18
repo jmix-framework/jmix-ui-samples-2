@@ -1,0 +1,14 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <instance id="pictureDc"
+                  class="io.jmix.uisamples.entity.Picture"
+                  fetchPlan="_local"/>
+    </data>
+    <layout>
+        <fileUploadField label="Load new image" dataContainer="pictureDc" property="content"
+                         clearButtonVisible="true" fileNameVisible="true" acceptedFileTypes=".png"/>
+        <image id="numberField" height="10em" width="10em"
+               alternateText="No picture loaded"
+               dataContainer="pictureDc" property="content"/>
+    </layout>
+</view>

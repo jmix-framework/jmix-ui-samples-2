@@ -1,0 +1,48 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout justifyContent="BETWEEN" classNames="flex-row flex-wrap">
+        <vbox width="AUTO" padding="false">
+            <details summaryText="Size variant" opened="true">
+                <hbox classNames="flex-wrap">
+                    <comboBox id="defaultComboBox" label="Default ComboBox"
+                              itemsEnum="io.jmix.uisamples.entity.CustomerGrade"/>
+                    <comboBox id="smallComboBox" label="Small"
+                              themeNames="small"
+                              itemsEnum="io.jmix.uisamples.entity.CustomerGrade"/>
+                </hbox>
+            </details>
+            <details summaryText="Align variant" opened="true">
+                <hbox classNames="flex-wrap">
+                    <comboBox id="alignLeftComboBox" label="Align left"
+                              themeNames="align-left"
+                              placeholder="Placeholder"
+                              itemsEnum="io.jmix.uisamples.entity.CustomerGrade"/>
+                    <comboBox id="alignCenterComboBox" label="Align center"
+                              themeNames="align-center"
+                              placeholder="Placeholder"
+                              itemsEnum="io.jmix.uisamples.entity.CustomerGrade"/>
+                    <comboBox id="alignRightComboBox" label="Align right"
+                              themeNames="align-right"
+                              placeholder="Placeholder"
+                              itemsEnum="io.jmix.uisamples.entity.CustomerGrade"/>
+                </hbox>
+            </details>
+            <details summaryText="Helper variant" opened="true">
+                <hbox classNames="flex-wrap">
+                    <comboBox id="defaultHelperComboBox" label="Default helper ComboBox"
+                              itemsEnum="io.jmix.uisamples.entity.CustomerGrade"
+                              helperText="Default helper text"/>
+                    <comboBox id="helperAboveComboBox" label="Helper above field"
+                              themeNames="helper-above-field"
+                              itemsEnum="io.jmix.uisamples.entity.CustomerGrade"
+                              helperText="Above helper text"/>
+                </hbox>
+            </details>
+        </vbox>
+        <details summaryText="Test ComboBox" opened="true" width="35%">
+            <vbox padding="false">
+                <comboBox id="testComboBox" itemsEnum="io.jmix.uisamples.entity.CustomerGrade"/>
+                <checkboxGroup id="settingsCheckboxGroup" label="TestComboBox settings" themeNames="vertical"/>
+            </vbox>
+        </details>
+    </layout>
+</view>

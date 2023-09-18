@@ -1,0 +1,14 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <multiValuePicker>
+            <actions>
+                <action id="select" type="multi_value_select">
+                    <properties>
+                        <property name="entityName" value="Customer"/>
+                    </properties>
+                </action>
+                <action id="clear" type="value_clear"/>
+            </actions>
+        </multiValuePicker>
+    </layout>
+</view>

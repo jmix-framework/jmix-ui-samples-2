@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  ~ Copyright 2022 Haulmont.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<menu-config xmlns="io/jmix/uisamples/menu/uisamples-menu.xsd">
+
+    <menu id="components" url="flow-ui/vc/components">
+        <item id="avatar"/>
+        <menu id="badge">
+            <item id="badge-simple"/>
+            <item id="badge-icons">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/badge-icons.css"/>
+                </otherFiles>
+            </item>
+            <item id="badge-theme-variant" splitEnabled="true"/>
+        </menu>
+        <menu id="big-decimal-field">
+            <item id="big-decimal-field-simple"/>
+            <item id="big-decimal-field-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Product.java"/>
+                </otherFiles>
+            </item>
+            <item id="big-decimal-field-theme-variant"/>
+        </menu>
+        <menu id="button">
+            <item id="button-simple" page="button"/>
+            <item id="button-action" page="button"/>
+            <item id="button-programmatic-action" page="button"/>
+            <item id="button-theme-variant" page="button" splitEnabled="true"/>
+        </menu>
+        <menu id="checkbox">
+            <item id="checkbox-simple" page="checkBox"/>
+            <item id="checkbox-dataaware" page="checkBox">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="checkbox-group">
+            <item id="checkbox-group-simple">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="checkbox-group-custom-items">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="checkbox-group-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Product.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="code-editor">
+            <item id="code-editor-simple" splitEnabled="true"/>
+            <item id="code-editor-mode-theme" splitEnabled="true"/>
+        </menu>
+        <menu id="combobox">
+            <item id="combobox-simple" page="comboBox">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="combobox-custom-items" page="comboBox">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="combobox-custom-filtering" page="comboBox"/>
+            <item id="combobox-user-input" page="comboBox"/>
+            <item id="combobox-custom-renderer" page="comboBox"/>
+            <item id="combobox-theme-variant" page="comboBox" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="context-help">
+            <item id="context-help-simple"/>
+            <item id="context-help-tooltip" page="tooltip" splitEnabled="true"/>
+        </menu>
+        <menu id="data-grid">
+            <item id="data-grid-simple" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-actions" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-selection-mode" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-frozen-column" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-custom-renderer" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-part-name-generator" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="META-INF/resources/themes/data-grid-part-name-generator.css"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-tooltip-generator" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-large-dataset" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-header-footer" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-key-value" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-var-columns" page="dataGrid" splitEnabled="true"/>
+            <item id="data-grid-inline-editor" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-editor-actions" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-editor-events" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-item-details" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/bean/CustomerDetailsGenerator.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-item-details-editor" page="dataGRid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/bean/CustomerDetailsGenerator.java"/>
+                    <file name="io/jmix/uisamples/bean/CustomerDetailsEditorGenerator.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-tree" page="treeDataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Task.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-theme-variant" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="date-picker">
+            <item id="date-picker-simple" page="datePicker"/>
+            <item id="date-picker-dataaware" page="datePicker">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="date-picker-custom-range" page="datePicker"/>
+            <item id="date-picker-theme-variant" page="datePicker"/>
+        </menu>
+        <menu id="date-time-picker">
+            <item id="date-time-picker-simple" page="dateTimePicker"/>
+            <item id="date-time-picker-dataaware" page="dateTimePicker">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Task.java"/>
+                </otherFiles>
+            </item>
+            <item id="date-time-picker-custom-range" page="dateTimePicker"/>
+            <item id="date-time-picker-theme-variant" page="dateTimePicker" splitEnabled="true"/>
+        </menu>
+        <menu id="dropdown-button">
+            <item id="dropdown-button-simple"/>
+            <item id="combo-button"/>
+            <item id="dropdown-button-theme-variant" splitEnabled="true"/>
+        </menu>
+        <menu id="email-field">
+            <item id="email-field-simple"/>
+            <item id="email-field-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="email-field-theme-variant"/>
+        </menu>
+        <item id="entity-combobox" page="entityComboBox">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Customer.java"/>
+                <file name="io/jmix/uisamples/entity/Order.java"/>
+            </otherFiles>
+        </item>
+        <menu id="entity-picker">
+            <item id="entity-picker-simple" page="entityPicker">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="entity-picker-actions" page="entityPicker">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="entity-picker-meta-class" page="entityPicker">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="generic-filter">
+            <item id="generic-filter-multiple-conditions" page="genericFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="generic-filter-property-condition" page="genericFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="generic-filter-jpql-condition" page="genericFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                    <file name="io/jmix/uisamples/entity/Product.java"/>
+                </otherFiles>
+            </item>
+            <item id="generic-filter-group-condition" page="genericFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="generic-filter-add-condition" page="genericFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="generic-filter-programmatically-defined" page="genericFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="html" url="flow-ui/vc">
+            <item id="html-component" page="html" splitEnabled="true">
+                <otherFiles>
+                    <file name="META-INF/resources/html/html-component.html"/>
+                    <file name="META-INF/resources/themes/html-component.css"/>
+                </otherFiles>
+            </item>
+            <item id="html-declaratively" page="html" splitEnabled="true">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/html-component.css"/>
+                </otherFiles>
+            </item>
+            <item id="html-programmatically" page="html" splitEnabled="true">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/html-component.css"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="icon">
+            <item id="icon-all" page="icon" splitEnabled="true"/>
+            <item id="icon-simple" page="icon"/>
+        </menu>
+        <menu id="image" url="flow-ui/vc/html-components">
+            <item id="image-simple" page="image"/>
+            <item id="image-dataaware" page="image">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Picture.java"/>
+                </otherFiles>
+            </item>
+            <item id="image-resources" page="image"/>
+            <item id="image-click" page="image"/>
+            <item id="image-theme-variant" page="image" splitEnabled="true"/>
+        </menu>
+        <menu id="integer-field">
+            <item id="integer-field-simple"/>
+            <item id="integer-field-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="integer-field-theme-variant"/>
+        </menu>
+        <menu id="list-box">
+            <item id="list-box-simple"/>
+            <item id="list-box-multi-select" page="multiSelectListBox" splitEnabled="true"/>
+            <item id="list-box-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Product.java"/>
+                </otherFiles>
+            </item>
+            <item id="list-box-custom-disabled">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/record/Product.java"/>
+                </otherFiles>
+            </item>
+            <item id="list-box-custom-renderer">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/record/Simpson.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="multi-select-combo-box">
+            <item id="multi-select-combo-box-simple" page="multiSelectComboBox">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Day.java"/>
+                </otherFiles>
+            </item>
+            <item id="multi-select-combo-box-dataaware" page="multiSelectComboBox">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Product.java"/>
+                    <file name="io/jmix/uisamples/entity/ProductTag.java"/>
+                </otherFiles>
+            </item>
+            <item id="multi-select-combo-box-item-label" page="multiSelectComboBox">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/ProductTag.java"/>
+                </otherFiles>
+            </item>
+            <item id="multi-select-combo-box-custom-renderer" page="multiSelectComboBox"/>
+            <item id="multi-select-combo-box-picker">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="multi-select-combo-box-theme-variant" splitEnabled="true"/>
+        </menu>
+        <menu id="number-field">
+            <item id="number-field-simple"/>
+            <item id="number-field-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Point.java"/>
+                </otherFiles>
+            </item>
+            <item id="number-field-theme-variant"/>
+        </menu>
+        <menu id="password-field">
+            <item id="password-field-simple" page="passwordField"/>
+            <item id="password-field-dataaware" page="passwordField">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/ProductTag.java"/>
+                </otherFiles>
+            </item>
+            <item id="password-field-theme-variant" page="passwordField"/>
+        </menu>
+        <menu id="progress-bar">
+            <item id="progress-bar-simple" page="progressBar"/>
+            <item id="progress-bar-theme-variant" page="progressBar" splitEnabled="true"/>
+        </menu>
+        <menu id="property-filter">
+            <item id="property-filter-simple" page="propertyFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="property-filter-editable-operation" page="propertyFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="property-filter-key-value" page="propertyFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="property-filter-custom-field" page="propertyFilter" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="radio-button-group">
+            <item id="radio-button-group-simple" page="radioButtonGroup">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="radio-button-group-custom-items" page="radioButtonGroup">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="radio-button-group-dataaware" page="radioButtonGroup">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Product.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="select">
+            <item id="select-simple"/>
+            <item id="select-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="simple-pagination">
+            <item id="simple-pagination-simple" page="simplePagination" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="simple-pagination-items-per-page" page="simplePagination" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="simple-pagination-before-refresh" page="simplePagination" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="simple-pagination-after-refresh" page="simplePagination" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="tabs">
+            <item id="tabs-simple" page="tabs"/>
+            <item id="tabs-states" page="tabs"/>
+            <item id="tabs-icons" page="tabs"/>
+            <item id="tabs-orientation" page="tabs"/>
+            <item id="tabs-theme-variant" page="tabs"/>
+        </menu>
+        <menu id="text-area">
+            <item id="text-area-simple"/>
+            <item id="text-area-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="text-area-resizable"/>
+            <item id="text-area-theme-variant" splitEnabled="true"/>
+        </menu>
+        <menu id="text-field">
+            <item id="text-field-simple" page="textField"/>
+            <item id="text-field-dataaware" page="textField">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="text-field-datatype" page="textField"/>
+            <item id="text-field-validator" page="textField">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/bean/PositiveIntegerValidator.java"/>
+                </otherFiles>
+            </item>
+            <item id="text-field-value-change" page="textField" splitEnabled="true"/>
+        </menu>
+        <menu id="time-picker">
+            <item id="time-picker-simple" page="timePicker"/>
+            <item id="time-picker-dataaware" page="timePicker">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Task.java"/>
+                </otherFiles>
+            </item>
+            <item id="time-picker-custom-range" page="timePicker"/>
+            <item id="time-picker-theme-variant" page="timePicker"/>
+        </menu>
+        <menu id="value-picker">
+            <item id="value-picker-simple" page="valuePicker"/>
+            <item id="value-picker-dataaware" page="valuePicker"/>
+            <item id="value-picker-multi"/>
+            <item id="value-picker-multi-enum"/>
+            <item id="value-picker-multi-entity"/>
+        </menu>
+    </menu>
+
+    <menu id="containers" url="flow-ui/vc/layouts">
+        <menu id="accordion">
+            <item id="accordion-simple" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="accordion-theme-variant" page="accordion"/>
+        </menu>
+        <menu id="details">
+            <item id="details-simple" page="details" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="details-theme-variant" page="details"/>
+        </menu>
+        <menu id="boxlayout">
+            <item id="hbox-simple" page="hbox"/>
+            <item id="vbox-simple" page="vbox"/>
+        </menu>
+        <menu id="form-layout">
+            <item id="form-layout-simple" page="formLayout" splitEnabled="true"/>
+            <item id="form-layout-dataaware" page="formLayout">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="form-layout-responsive-steps" page="formLayout" splitEnabled="true"/>
+        </menu>
+        <item id="scroller" page="scroller" splitEnabled="true"/>
+        <menu id="split">
+            <item id="split-simple" page="split"/>
+            <item id="split-theme-variant" page="split"/>
+        </menu>
+        <menu id="tabsheet">
+            <item id="tabsheet-simple" page="tabSheet"/>
+            <item id="tabsheet-icons" page="tabSheet"/>
+            <item id="tabsheet-badges" page="tabSheet"/>
+            <item id="tabsheet-lazy-tab" page="tabSheet" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/component/lazycomponent/LazyComponent.java"/>
+                </otherFiles>
+            </item>
+            <item id="tabsheet-theme-variant" page="tabSheet"/>
+        </menu>
+    </menu>
+
+    <menu id="dialogs-and-notifications" url="flow-ui">
+        <menu id="dialogs">
+            <item id="message-dialog" page="dialogs"/>
+            <item id="option-dialog" page="dialogs"/>
+            <item id="input-dialog" page="dialogs">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="background-task-dialog" page="background-tasks"/>
+        </menu>
+        <menu id="notifications">
+            <item id="notification-simple" page="notifications"/>
+            <item id="notification-position" page="notifications" splitEnabled="true"/>
+            <item id="notification-theme-variant" page="notifications" splitEnabled="true"/>
+        </menu>
+    </menu>
+
+    <menu id="cookbook" url="flow-ui">
+        <item id="cascading-dropdowns" page="facets/dataLoadCoordinator" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Planet.java"/>
+                <file name="io/jmix/uisamples/entity/Moon.java"/>
+            </otherFiles>
+        </item>
+        <item id="composite-component" page="visual-components" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/component/compositecomponent/AddressComponent.java"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/compositecomponent/address-component.xsd"/>
+                <file name="io/jmix/uisamples/component/compositecomponent/AddressComponentLoader.java"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/compositecomponent/CompositeComponentConfiguration.java"/>
+                <file name="io/jmix/uisamples/entity/Employee.java"/>
+                <file name="io/jmix/uisamples/entity/Address.java"/>
+                <file name="io/jmix/uisamples/entity/City.java"/>
+                <file name="io/jmix/uisamples/entity/Country.java"/>
+            </otherFiles>
+        </item>
+        <item id="copy-action" page="actions/declarative-actions" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Customer.java"/>
+            </otherFiles>
+        </item>
+        <item id="custom-filter" page="facets/dataLoadCoordinator" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Customer.java"/>
+            </otherFiles>
+        </item>
+        <item id="custom-filter-query" page="data/data-loaders" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Customer.java"/>
+            </otherFiles>
+        </item>
+        <item id="read-only-customers" page="opening-views" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Customer.java"/>
+                <file name="io/jmix/uisamples/entity/ReadOnlyCustomer.java"/>
+            </otherFiles>
+        </item>
+    </menu>
+</menu-config>

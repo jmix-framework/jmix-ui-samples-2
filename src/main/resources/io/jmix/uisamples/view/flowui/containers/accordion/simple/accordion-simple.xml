@@ -1,0 +1,41 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <collection id="customersDc"
+                    class="io.jmix.uisamples.entity.Customer"
+                    fetchPlan="_local">
+            <loader id="customersLoader">
+                <query>
+                    <![CDATA[select e from Customer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <accordion id="mainAccordion" height="100%" width="100%">
+            <accordionPanel summaryText="Panel with DataGrid">
+                <dataGrid id="customerDataGrid"
+                          dataContainer="customersDc"
+                          width="100%"
+                          minHeight="15em">
+                    <columns>
+                        <column property="name"/>
+                        <column property="lastName"/>
+                        <column property="age"/>
+                        <column property="active"/>
+                        <column property="grade"/>
+                    </columns>
+                </dataGrid>
+            </accordionPanel>
+            <accordionPanel summaryText="Panel with FormLayout">
+                <formLayout>
+                    <textField label="Field 1"/>
+                    <textField label="Field 2"/>
+                    <textField label="Field 3"/>
+                </formLayout>
+            </accordionPanel>
+        </accordion>
+    </layout>
+</view>

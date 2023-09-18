@@ -1,0 +1,15 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <instance id="customerDc"
+                  class="io.jmix.uisamples.entity.Customer"
+                  fetchPlan="_local"/>
+    </data>
+    <layout>
+        <integerField id="integerField" label="Field connected to a container" width="15em"
+                         dataContainer="customerDc" property="age"/>
+        <hbox>
+            <span text="Value in the container:"/>
+            <span id="spanValue"/>
+        </hbox>
+    </layout>
+</view>

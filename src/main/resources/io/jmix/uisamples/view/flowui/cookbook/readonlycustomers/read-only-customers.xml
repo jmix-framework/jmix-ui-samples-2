@@ -1,0 +1,38 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data readOnly="true">
+        <collection id="readOnlyCustomersDc"
+                    class="io.jmix.uisamples.entity.ReadOnlyCustomer">
+            <fetchPlan extends="_base"/>
+            <loader id="readOnlyCustomersDl">
+                <query>
+                    <![CDATA[select e from ReadOnlyCustomer e order by e.fullName]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <hbox id="buttonsPanel" classNames="buttons-panel">
+            <button id="createBtn" action="readOnlyCustomersDataGrid.create"/>
+            <button id="editBtn" action="readOnlyCustomersDataGrid.edit"/>
+            <button id="removeBtn" action="readOnlyCustomersDataGrid.remove"/>
+        </hbox>
+        <dataGrid id="readOnlyCustomersDataGrid"
+                  dataContainer="readOnlyCustomersDc"
+                  width="100%"
+                  minHeight="20em">
+            <actions>
+                <action id="create" type="list_create"/>
+                <action id="edit" type="list_edit"/>
+                <action id="remove" type="list_remove"/>
+            </actions>
+            <columns>
+                <column property="fullName"/>
+                <column property="age"/>
+            </columns>
+        </dataGrid>
+    </layout>
+</view>
+

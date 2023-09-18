@@ -1,0 +1,6 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <select itemsEnum="io.jmix.uisamples.entity.CustomerGrade"
+                emptySelectionAllowed="true" emptySelectionCaption="Empty"/>
+    </layout>
+</view>

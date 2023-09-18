@@ -1,0 +1,26 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <instance id="orderDc"
+                  class="io.jmix.uisamples.entity.Order"
+                  fetchPlan="_local"/>
+        <instance id="customerDc"
+                  class="io.jmix.uisamples.entity.Customer"
+                  fetchPlan="_local"/>
+    </data>
+    <layout classNames="flex-row flex-wrap">
+        <comboBox id="amountComboBox"
+                  label="Items List"
+                  dataContainer="orderDc"
+                  property="amount"/>
+        <comboBox id="ageComboBox"
+                  label="Items Map"
+                  dataContainer="customerDc"
+                  property="age"/>
+        <comboBox id="gradeComboBox"
+                  label="Items Enum"
+                  dataContainer="customerDc"
+                  itemsEnum="io.jmix.uisamples.entity.CustomerGrade"
+                  property="grade"
+                  placeholder="Select grade"/>
+    </layout>
+</view>

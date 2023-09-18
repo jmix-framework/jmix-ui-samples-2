@@ -1,0 +1,39 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <collection id="customersDc"
+                    class="io.jmix.uisamples.entity.Customer"
+                    fetchPlan="_base">
+            <loader id="customersDl">
+                <query>
+                    <![CDATA[select e from Customer e order by e.name]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <genericFilter id="filter" summaryText="Generic filter" opened="false"
+                       dataLoader="customersDl">
+            <properties include=".*"/>
+        </genericFilter>
+        <hbox alignItems="END" classNames="flex-wrap">
+            <textField id="nameFilterField" label="Custom filter" placeholder="First or last name" width="15em"/>
+            <button id="customersDataGridRefreshBtn" action="customersDataGrid.refresh"/>
+        </hbox>
+        <dataGrid id="customersDataGrid" dataContainer="customersDc" width="100%">
+            <actions>
+                <action id="refresh" type="list_refresh"/>
+            </actions>
+            <columns>
+                <column property="name"/>
+                <column property="lastName"/>
+                <column property="age"/>
+                <column property="active"/>
+                <column property="grade"/>
+            </columns>
+        </dataGrid>
+    </layout>
+</view>
+

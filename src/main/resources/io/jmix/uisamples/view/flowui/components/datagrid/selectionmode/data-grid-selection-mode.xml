@@ -1,0 +1,40 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data readOnly="true">
+        <collection id="customersDc"
+                    class="io.jmix.uisamples.entity.Customer"
+                    fetchPlan="_local">
+            <loader id="customersDl">
+                <query>
+                    <![CDATA[select e from Customer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <select id="selectionModeSelect" label="Selection mode"/>
+        <hbox id="buttonsPanel" classNames="buttons-panel">
+            <button id="greetAllBtn" action="customersDataGrid.greetAll"/>
+            <button id="greetOneBtn" action="customersDataGrid.greetOne"/>
+        </hbox>
+        <dataGrid id="customersDataGrid"
+                  width="100%"
+                  minHeight="20em"
+                  dataContainer="customersDc">
+            <actions>
+                <action id="greetAll" type="list_itemTracking" icon="COMMENTS" text="Greet all"/>
+                <action id="greetOne" type="list_itemTracking" icon="COMMENT" text="Greet single selected"/>
+            </actions>
+            <columns>
+                <column property="name"/>
+                <column property="lastName"/>
+                <column property="email"/>
+                <column property="age"/>
+                <column property="active"/>
+                <column property="grade"/>
+            </columns>
+        </dataGrid>
+    </layout>
+</view>

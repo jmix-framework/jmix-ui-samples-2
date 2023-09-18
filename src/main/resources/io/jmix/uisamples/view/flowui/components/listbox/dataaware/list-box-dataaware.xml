@@ -1,0 +1,19 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <collection id="productsDc"
+                    class="io.jmix.uisamples.entity.Product"
+                    fetchPlan="_local">
+            <loader id="productsDl">
+                <query>
+                    <![CDATA[select e from Product e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <listBox itemsContainer="productsDc"/>
+    </layout>
+</view>

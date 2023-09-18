@@ -1,0 +1,15 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <instance id="orderDc"
+                  class="io.jmix.uisamples.entity.Order"
+                  fetchPlan="_local"/>
+    </data>
+    <layout>
+        <datePicker id="datePicker" label="DatePicker"
+                         dataContainer="orderDc" property="date"/>
+        <hbox>
+            <span text="Value in the container:"/>
+            <span id="spanValue"/>
+        </hbox>
+    </layout>
+</view>

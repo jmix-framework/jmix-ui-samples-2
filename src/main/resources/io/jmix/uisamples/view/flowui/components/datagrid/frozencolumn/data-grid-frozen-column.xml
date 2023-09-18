@@ -1,0 +1,36 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data readOnly="true">
+        <collection id="customersDc"
+                    class="io.jmix.uisamples.entity.Customer"
+                    fetchPlan="_local">
+            <loader id="customersDl">
+                <query>
+                    <![CDATA[select e from Customer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <span text="Change the size of the columns to see the frozen column."/>
+        <hbox classNames="buttons-panel items-center">
+            <select id="columnSelect" placeholder="Column to freeze"/>
+            <hbox id="checkboxPlaceholder" padding="false"/>
+        </hbox>
+        <dataGrid id="customersDataGrid"
+                  width="100%"
+                  minHeight="20em"
+                  dataContainer="customersDc">
+            <columns>
+                <column property="name" width="13em" resizable="true"/>
+                <column property="lastName" width="13em" resizable="true"/>
+                <column property="email" width="13em" resizable="true"/>
+                <column property="age" width="13em" resizable="true"/>
+                <column property="active" width="13em" resizable="true"/>
+                <column property="grade" width="13em" resizable="true"/>
+            </columns>
+        </dataGrid>
+    </layout>
+</view>

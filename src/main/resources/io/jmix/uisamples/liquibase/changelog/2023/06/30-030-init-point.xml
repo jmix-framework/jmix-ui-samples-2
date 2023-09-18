@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+
+    <changeSet author="uisamples" id="1">
+        <createTable tableName="POINT">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_POINT"/>
+            </column>
+            <column name="X" type="DOUBLE"/>
+            <column name="Y" type="DOUBLE"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="uisamples" id="2">
+        <insert tableName="POINT">
+            <column name="ID" value="2d47b668-8fae-8a1f-f65f-145e5b11d812"/>
+            <column name="X" valueNumeric="1.0"/>
+            <column name="Y" valueNumeric="13.0"/>
+        </insert>
+        <insert tableName="POINT">
+            <column name="ID" value="4431be86-e95d-a046-a609-fa988b35ac76"/>
+            <column name="X" valueNumeric="5.0"/>
+            <column name="Y" valueNumeric="-6.0"/>
+        </insert>
+        <insert tableName="POINT">
+            <column name="ID" value="68e7e4ff-b821-cb86-14d7-a54bb1ff2d47"/>
+            <column name="X" valueNumeric="14.0"/>
+            <column name="Y" valueNumeric="10.0"/>
+        </insert>
+        <insert tableName="POINT">
+            <column name="ID" value="78259a35-b6c9-ada0-cb0f-689735bbd1fb"/>
+            <column name="X" valueNumeric="3.0"/>
+            <column name="Y" valueNumeric="5.0"/>
+        </insert>
+        <insert tableName="POINT">
+            <column name="ID" value="b2f832c8-c2a9-5ef5-58dd-dd793fd26189"/>
+            <column name="X" valueNumeric="8.0"/>
+            <column name="Y" valueNumeric="-10.0"/>
+        </insert>
+        <insert tableName="POINT">
+            <column name="ID" value="c732e449-d790-1143-5532-01b491b08634"/>
+            <column name="X" valueNumeric="-4.0"/>
+            <column name="Y" valueNumeric="15.0"/>
+        </insert>
+        <insert tableName="POINT">
+            <column name="ID" value="e66eb943-7b88-06ba-06c1-51067f874204"/>
+            <column name="X" valueNumeric="6.0"/>
+            <column name="Y" valueNumeric="1.0"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

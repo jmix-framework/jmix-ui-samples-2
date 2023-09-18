@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="uisamples" id="1">
+
+        <createTable tableName="TASK">
+            <column name="ID" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="NAME" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DUE_DATE" type="datetime"/>
+            <column name="ASSIGNEE_ID" type="varchar(36)"/>
+            <column name="PARENT_TASK_ID" type="varchar(36)"/>
+        </createTable>
+
+        <insert tableName="TASK">
+            <column name="ID" value="10685e09-25c8-b3fe-22ba-238304d292b3"/>
+            <column name="NAME" value="Task1"/>
+            <column name="DUE_DATE" valueDate="2020-07-30 00:00:00"/>
+            <column name="ASSIGNEE_ID" value="48eda61c-4142-0e47-5ca8-f338c36cfb0e"/>
+        </insert>
+        <insert tableName="TASK">
+            <column name="ID" value="9b62fc2f-bf83-2a24-d392-0a332e472a01"/>
+            <column name="NAME" value="Task2"/>
+            <column name="DUE_DATE" valueDate="2020-07-02 00:00:00"/>
+            <column name="ASSIGNEE_ID" value="068ff1ae-992e-51db-b20f-8e21bcd19bfc"/>
+        </insert>
+        <insert tableName="TASK">
+            <column name="ID" value="489706de-c25f-c24d-8222-2d9b79189bc8"/>
+            <column name="NAME" value="Task3"/>
+            <column name="DUE_DATE" valueDate="2020-07-16 00:00:00"/>
+            <column name="ASSIGNEE_ID" value="9d9f028c-eade-eee2-d4d8-e97ebb969c54"/>
+            <column name="PARENT_TASK_ID" value="10685e09-25c8-b3fe-22ba-238304d292b3"/>
+        </insert>
+        <insert tableName="TASK">
+            <column name="ID" value="aa591e3a-7d2b-874d-51c0-3620030c2d64"/>
+            <column name="NAME" value="Task4"/>
+            <column name="DUE_DATE" valueDate="2020-07-31 00:00:00"/>
+            <column name="ASSIGNEE_ID" value="b6b31099-d194-fb3e-dd51-89d085dcc11c"/>
+            <column name="PARENT_TASK_ID" value="489706de-c25f-c24d-8222-2d9b79189bc8"/>
+        </insert>
+        <insert tableName="TASK">
+            <column name="ID" value="4572c65a-3f1e-30a6-b038-bc86ff26cfc9"/>
+            <column name="NAME" value="Task5"/>
+            <column name="DUE_DATE" valueDate="2020-08-02 00:00:00"/>
+            <column name="ASSIGNEE_ID" value="ee875696-0a4d-0d54-41c8-b3dea6e3e7d1"/>
+            <column name="PARENT_TASK_ID" value="9b62fc2f-bf83-2a24-d392-0a332e472a01"/>
+        </insert>
+        <insert tableName="TASK">
+            <column name="ID" value="2373294a-f53c-ea74-2c24-c80725b7ba85"/>
+            <column name="NAME" value="Task6"/>
+            <column name="DUE_DATE" valueDate="2020-08-01 00:00:00"/>
+            <column name="ASSIGNEE_ID" value="e7e127d7-33b4-2bd9-d405-0f7923a8bec6"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

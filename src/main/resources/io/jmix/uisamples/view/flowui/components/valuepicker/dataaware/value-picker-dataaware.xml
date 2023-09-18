@@ -1,0 +1,20 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <instance id="customerDc"
+                  class="io.jmix.uisamples.entity.Customer"
+                  fetchPlan="_local"/>
+    </data>
+    <layout>
+        <valuePicker id="valuePicker" dataContainer="customerDc" property="name" allowCustomValue="true"
+                     label="Name" helperText="Generate or type a customer name">
+            <actions>
+                <action id="generate" icon="REFRESH" description="Generate name"/>
+                <action id="value_clear" type="value_clear"/>
+            </actions>
+        </valuePicker>
+        <hbox>
+            <span text="Value in the container:"/>
+            <span id="spanValue"/>
+        </hbox>
+    </layout>
+</view>

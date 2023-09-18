@@ -1,0 +1,32 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <collection id="ordersDc"
+                    class="io.jmix.uisamples.entity.Order"
+                    fetchPlan="_local">
+            <loader id="ordersDl">
+                <query>
+                    <![CDATA[select e from uisamples_Order e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <propertyFilter property="amount"
+                        operation="GREATER_OR_EQUAL"
+                        dataLoader="ordersDl"/>
+        <dataGrid id="orderDataGrid"
+                  dataContainer="ordersDc"
+                  width="100%"
+                  minHeight="20em">
+            <columns>
+                <column property="date"/>
+                <column property="customer"/>
+                <column property="amount"/>
+                <column property="description"/>
+            </columns>
+        </dataGrid>
+    </layout>
+</view>

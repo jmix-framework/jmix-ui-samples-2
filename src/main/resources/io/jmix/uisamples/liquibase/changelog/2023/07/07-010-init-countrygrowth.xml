@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="uisamples" id="1">
+
+        <createTable tableName="COUNTRY_GROWTH">
+            <column name="ID" type="UUID">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="COUNTRY" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FLAG" type="varchar(255)"/>
+            <column name="PREV_YEAR" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CURR_YEAR" type="double">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <insert tableName="COUNTRY_GROWTH">
+            <column name="ID" value="719b65f6-a32d-426f-8f69-db3f800a5124"/>
+            <column name="COUNTRY" value="USA"/>
+            <column name="FLAG" value="files/flags/flag-us.svg"/>
+            <column name="PREV_YEAR" valueNumeric="3.5"/>
+            <column name="CURR_YEAR" valueNumeric="4.2"/>
+        </insert>
+        <insert tableName="COUNTRY_GROWTH">
+            <column name="ID" value="f74efb19-3d52-43cf-918e-87f48a9ac960"/>
+            <column name="COUNTRY" value="UK"/>
+            <column name="FLAG" value="files/flags/flag-gb.svg"/>
+            <column name="PREV_YEAR" valueNumeric="1.7"/>
+            <column name="CURR_YEAR" valueNumeric="3.1"/>
+        </insert>
+        <insert tableName="COUNTRY_GROWTH">
+            <column name="ID" value="104ccf82-7d0a-4dc2-9273-6d66470ba661"/>
+            <column name="COUNTRY" value="Canada"/>
+            <column name="FLAG" value="files/flags/flag-ca.svg"/>
+            <column name="PREV_YEAR" valueNumeric="2.8"/>
+            <column name="CURR_YEAR" valueNumeric="2.9"/>
+        </insert>
+        <insert tableName="COUNTRY_GROWTH">
+            <column name="ID" value="b06075ab-66da-46fb-bbd9-6584e943367a"/>
+            <column name="COUNTRY" value="Japan"/>
+            <column name="FLAG" value="files/flags/flag-jp.svg"/>
+            <column name="PREV_YEAR" valueNumeric="2.6"/>
+            <column name="CURR_YEAR" valueNumeric="2.3"/>
+        </insert>
+        <insert tableName="COUNTRY_GROWTH">
+            <column name="ID" value="6f05051f-3dc3-4605-9287-467ea7b408ae"/>
+            <column name="COUNTRY" value="France"/>
+            <column name="FLAG" value="files/flags/flag-fr.svg"/>
+            <column name="PREV_YEAR" valueNumeric="1.4"/>
+            <column name="CURR_YEAR" valueNumeric="2.1"/>
+        </insert>
+        <insert tableName="COUNTRY_GROWTH">
+            <column name="ID" value="47bd990b-b54d-4d77-989f-edfb6b52d5c9"/>
+            <column name="COUNTRY" value="Brazil"/>
+            <column name="FLAG" value="files/flags/flag-br.svg"/>
+            <column name="PREV_YEAR" valueNumeric="2.6"/>
+            <column name="CURR_YEAR" valueNumeric="4.9"/>
+        </insert>
+        <insert tableName="COUNTRY_GROWTH">
+            <column name="ID" value="a9ce13f3-bcb9-4924-9651-a15ede3b3f3e"/>
+            <column name="COUNTRY" value="Russia"/>
+            <column name="FLAG" value="files/flags/flag-ru.svg"/>
+            <column name="PREV_YEAR" valueNumeric="6.4"/>
+            <column name="CURR_YEAR" valueNumeric="7.2"/>
+        </insert>
+        <insert tableName="COUNTRY_GROWTH">
+            <column name="ID" value="ebe80366-5264-4955-861c-bdabcea8c18a"/>
+            <column name="COUNTRY" value="India"/>
+            <column name="FLAG" value="files/flags/flag-in.svg"/>
+            <column name="PREV_YEAR" valueNumeric="8.0"/>
+            <column name="CURR_YEAR" valueNumeric="7.1"/>
+        </insert>
+        <insert tableName="COUNTRY_GROWTH">
+            <column name="ID" value="054a6e6a-86f8-4400-9e2d-1ccb0aa487f5"/>
+            <column name="COUNTRY" value="China"/>
+            <column name="FLAG" value="files/flags/flag-cn.svg"/>
+            <column name="PREV_YEAR" valueNumeric="9.9"/>
+            <column name="CURR_YEAR" valueNumeric="10.1"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,15 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <instance id="pointDc"
+                  class="io.jmix.uisamples.entity.Point"
+                  fetchPlan="_local"/>
+    </data>
+    <layout>
+        <numberField id="numberField" label="Field connected to a container" width="15em"
+                         dataContainer="pointDc" property="x"/>
+        <hbox>
+            <span text="Value in the container:"/>
+            <span id="spanValue"/>
+        </hbox>
+    </layout>
+</view>
