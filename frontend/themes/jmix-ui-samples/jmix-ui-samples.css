@@ -25,7 +25,6 @@
     width: fit-content;
     display: flex;
     flex-direction: row;
-    align-items: center;
     gap: var(--lumo-space-s);
     margin: calc(var(--lumo-space-m) * 14 / 16) 0;
     margin-inline-start: var(--lumo-space-m);
@@ -34,6 +33,16 @@
 .jmix-main-view-header .theme-toggle {
     margin-inline-start: auto;
     margin-inline-end: var(--lumo-space-s);
+}
+
+.jmix-main-view-header-link {
+    display: flex;
+    align-items: center;
+    gap: var(--lumo-space-s);
+}
+
+.jmix-main-view-header-link:hover {
+    text-decoration: none;
 }
 
 vaadin-app-layout::part(drawer) {

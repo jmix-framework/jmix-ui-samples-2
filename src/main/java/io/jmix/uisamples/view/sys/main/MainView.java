@@ -20,9 +20,13 @@ import com.vaadin.flow.component.*;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
+import com.vaadin.flow.theme.lumo.LumoUtility;
 import io.jmix.core.session.SessionData;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.app.main.StandardMainView;
@@ -31,10 +35,7 @@ import io.jmix.flowui.component.textfield.TypedTextField;
 import io.jmix.flowui.kit.component.button.JmixButton;
 import io.jmix.flowui.kit.component.main.ListMenu;
 import io.jmix.flowui.menu.MenuItem;
-import io.jmix.flowui.view.Subscribe;
-import io.jmix.flowui.view.ViewComponent;
-import io.jmix.flowui.view.ViewController;
-import io.jmix.flowui.view.ViewDescriptor;
+import io.jmix.flowui.view.*;
 import io.jmix.uisamples.bean.MenuNavigationExpander;
 import io.jmix.uisamples.component.themeswitcher.ThemeToggle;
 import io.jmix.uisamples.config.UiSamplesMenuConfig;
@@ -64,6 +65,8 @@ public class MainView extends StandardMainView {
     protected TypedTextField<String> searchField;
     @ViewComponent
     protected ThemeToggle themeToggle;
+    @ViewComponent
+    protected Div applicationTitlePlaceholder;
 
     @Autowired
     protected UiSamplesMenuConfig menuConfig;
@@ -73,6 +76,8 @@ public class MainView extends StandardMainView {
     protected ObjectProvider<SessionData> sessionDataProvider;
     @Autowired
     protected MenuNavigationExpander menuNavigationExpander;
+    @Autowired
+    protected MessageBundle messageBundle;
 
     protected List<JmixListMenu.MenuItem> foundItems = new ArrayList<>();
     protected List<String> parentListIdsToExpand = new ArrayList<>();
@@ -80,6 +85,7 @@ public class MainView extends StandardMainView {
     @Subscribe
     public void onInit(InitEvent event) {
         initSideMenu();
+        initApplicationTitle();
         initThemeSessionAttribute();
 
         menuNavigationExpander.setExpandCallback(this::expandAllParentRecursively);
@@ -104,6 +110,32 @@ public class MainView extends StandardMainView {
             ThemeChangedEvent themeChangedEvent = new ThemeChangedEvent(this, currentTheme);
             getApplicationContext().publishEvent(themeChangedEvent);
         });
+    }
+
+    protected void initApplicationTitle() {
+        RouterLink link = uiComponents.create(RouterLink.class);
+        link.setRoute(MainView.class);
+        link.addClassNames("jmix-main-view-header-link");
+
+        link.add(createApplicationImage(), createApplicationText());
+
+        applicationTitlePlaceholder.addComponentAsFirst(link);
+    }
+
+    protected Component createApplicationImage() {
+        Image image = uiComponents.create(Image.class);
+        image.setSrc("icons/icon.png");
+
+        image.setWidth("1.5em");
+        image.setHeight("1.5em");
+        return image;
+    }
+
+    protected Component createApplicationText() {
+        H2 h2 = uiComponents.create(H2.class);
+        h2.setText(messageBundle.getMessage("applicationTitle.text"));
+        h2.setClassName("jmix-main-view-title");
+        return h2;
     }
 
     protected void initSideMenu() {
@@ -246,11 +278,6 @@ public class MainView extends StandardMainView {
         for (JmixListMenu.MenuItem item : menu.getMenuItems()) {
             expand(item, true);
         }
-    }
-
-    @Subscribe("applicationTitlePlaceholder")
-    protected void onApplicationTitleClick(ClickEvent<Div> event) {
-        UI.getCurrent().navigate(getClass());
     }
 
     protected void expand(JmixListMenu.MenuItem item, boolean isExpand) {
