@@ -142,9 +142,14 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-header-footer" page="dataGrid" splitEnabled="true">
+            <item id="data-grid-header-filter" page="dataGrid" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-header-footer" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/CountryGrowth.java"/>
                 </otherFiles>
             </item>
             <item id="data-grid-key-value" page="dataGrid" splitEnabled="true">

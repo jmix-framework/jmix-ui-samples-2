@@ -1,0 +1,31 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data readOnly="true">
+        <collection id="customersDc"
+                    class="io.jmix.uisamples.entity.Customer"
+                    fetchPlan="_local">
+            <loader id="customersDl">
+                <query>
+                    <![CDATA[select e from Customer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <dataGrid id="customersDataGrid"
+                  width="100%"
+                  minHeight="20em"
+                  dataContainer="customersDc">
+            <columns filterable="true">
+                <column property="name"/>
+                <column property="lastName" filterable="false"/>
+                <column property="email" filterable="false"/>
+                <column property="age"/>
+                <column property="active"/>
+                <column property="grade"/>
+            </columns>
+        </dataGrid>
+    </layout>
+</view>
