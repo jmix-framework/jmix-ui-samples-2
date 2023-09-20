@@ -1,0 +1,39 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <collection id="ordersDc"
+                    class="io.jmix.uisamples.entity.Order">
+            <fetchPlan extends="_local">
+                <property name="customer" fetchPlan="_local"/>
+            </fetchPlan>
+            <loader id="ordersLoader">
+                <query>
+                    <![CDATA[select e from uisamples_Order e order by e.date]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <dataGrid id="ordersDataGrid"
+                  width="100%"
+                  minHeight="20em"
+                  dataContainer="ordersDc"
+                  aggregatable="true"
+                  aggregationPosition="TOP">
+            <columns>
+                <column property="date"/>
+                <column property="customer"/>
+                <column property="customer.grade">
+                    <aggregation
+                            strategyClass="io.jmix.uisamples.view.flowui.components.datagrid.aggregation.DataGridCustomerGradeAggregation"/>
+                </column>
+                <column property="amount">
+                    <aggregation type="SUM"/>
+                </column>
+                <column property="description"/>
+            </columns>
+        </dataGrid>
+    </layout>
+</view>

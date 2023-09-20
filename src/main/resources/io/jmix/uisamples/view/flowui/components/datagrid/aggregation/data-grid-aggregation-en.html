@@ -1,0 +1,28 @@
+<p><code>aggregatable</code> attribute enables aggregation for <b>DataGrid</b> rows. The following operations are
+    supported:</p>
+
+<ul>
+    <li>
+        <code>SUM</code> - calculate the sum
+    </li>
+    <li>
+        <code>AVG</code> - find the average value
+    </li>
+    <li>
+        <code>COUNT</code> - calculate the total number
+    </li>
+    <li>
+        <code>MIN</code> - find the minimum value
+    </li>
+    <li>
+        <code>MAX</code> - find the maximum value
+    </li>
+</ul>
+
+<p>The <code>aggregation</code> element should be set for aggregated <b>DataGrid</b> cells with the <code>type</code> attribute, which sets the
+    aggregation function. The aggregated table values are shown in an additional row at the bottom of the <b>DataGrid</b>.
+</p>
+<p>The <code>aggregationPosition</code> attribute allows you to specify the location of the aggregation row:
+    <code>TOP</code> or <code>BOTTOM</code>. <code>BOTTOM</code> is used by default.</p>
+<p>In addition to the operations listed above, you can define a custom aggregation strategy by implementing the <code>AggregationStrategy</code>
+    interface.</p>

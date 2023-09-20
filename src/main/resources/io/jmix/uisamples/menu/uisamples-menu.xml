@@ -182,6 +182,13 @@
                     <file name="io/jmix/uisamples/bean/CustomerDetailsEditorGenerator.java"/>
                 </otherFiles>
             </item>
+            <item id="data-grid-aggregation" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/components/datagrid/aggregation/DataGridCustomerGradeAggregation.java"/>
+                </otherFiles>
+            </item>
             <item id="data-grid-tree" page="treeDataGrid" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Task.java"/>
