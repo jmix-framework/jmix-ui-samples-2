@@ -26,7 +26,6 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
-import com.vaadin.flow.theme.lumo.LumoUtility;
 import io.jmix.core.session.SessionData;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.app.main.StandardMainView;
@@ -37,14 +36,12 @@ import io.jmix.flowui.kit.component.main.ListMenu;
 import io.jmix.flowui.menu.MenuItem;
 import io.jmix.flowui.view.*;
 import io.jmix.uisamples.bean.MenuNavigationExpander;
-import io.jmix.uisamples.component.themeswitcher.ThemeToggle;
 import io.jmix.uisamples.config.UiSamplesMenuConfig;
 import io.jmix.uisamples.config.UiSamplesMenuItem;
 import io.jmix.uisamples.view.sys.sampleview.SampleView;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationEvent;
 import org.springframework.lang.Nullable;
 
 import java.util.ArrayList;
@@ -57,14 +54,10 @@ import java.util.List;
 @AnonymousAllowed
 public class MainView extends StandardMainView {
 
-    public static final String CURRENT_THEME_SESSION_ATTRIBUTE = "currentTheme";
-
     @ViewComponent
     protected JmixListMenu menu;
     @ViewComponent
     protected TypedTextField<String> searchField;
-    @ViewComponent
-    protected ThemeToggle themeToggle;
     @ViewComponent
     protected Div applicationTitlePlaceholder;
 
@@ -86,30 +79,8 @@ public class MainView extends StandardMainView {
     public void onInit(InitEvent event) {
         initSideMenu();
         initApplicationTitle();
-        initThemeSessionAttribute();
 
         menuNavigationExpander.setExpandCallback(this::expandAllParentRecursively);
-    }
-
-    protected void initThemeSessionAttribute() {
-        SessionData sessionData = sessionDataProvider.getIfAvailable();
-
-        if (sessionData != null) {
-            themeToggle.getElement().executeJs("return this.getCurrentTheme();")
-                    .then(String.class, currentTheme ->
-                            sessionData.setAttribute(CURRENT_THEME_SESSION_ATTRIBUTE, currentTheme));
-        }
-
-        ComponentUtil.addListener(themeToggle, ThemeToggle.ThemeToggleThemeChangedEvent.class, event -> {
-            String currentTheme = event.getValue();
-
-            if (sessionData != null) {
-                sessionData.setAttribute(CURRENT_THEME_SESSION_ATTRIBUTE, currentTheme);
-            }
-
-            ThemeChangedEvent themeChangedEvent = new ThemeChangedEvent(this, currentTheme);
-            getApplicationContext().publishEvent(themeChangedEvent);
-        });
     }
 
     protected void initApplicationTitle() {
@@ -310,19 +281,6 @@ public class MainView extends StandardMainView {
         if (itemToExpand.getParent() != null) {
             parentListIdsToExpand.add(itemToExpand.getParent().getId());
             fillParentListToExpand(itemToExpand.getParent().getId());
-        }
-    }
-
-    public static class ThemeChangedEvent extends ApplicationEvent {
-        protected final String theme;
-
-        public ThemeChangedEvent(MainView source, String theme) {
-            super(source);
-            this.theme = theme;
-        }
-
-        public String getTheme() {
-            return theme;
         }
     }
 }

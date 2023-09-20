@@ -53,12 +53,10 @@ import io.jmix.flowui.component.splitlayout.JmixSplitLayout;
 import io.jmix.flowui.component.tabsheet.JmixTabSheet;
 import io.jmix.flowui.kit.component.button.JmixButton;
 import io.jmix.flowui.kit.component.codeeditor.CodeEditorMode;
-import io.jmix.flowui.kit.component.codeeditor.CodeEditorTheme;
 import io.jmix.flowui.view.*;
 import io.jmix.uisamples.bean.MenuNavigationExpander;
 import io.jmix.uisamples.config.UiSamplesMenuConfig;
 import io.jmix.uisamples.config.UiSamplesMenuItem;
-import io.jmix.uisamples.util.CodeEditorThemeHelper;
 import io.jmix.uisamples.util.UiSamplesHelper;
 import io.jmix.uisamples.view.sys.main.MainView;
 import org.apache.commons.collections4.CollectionUtils;
@@ -99,8 +97,6 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     @Autowired
     protected Notifications notifications;
     @Autowired
-    protected CodeEditorThemeHelper codeEditorThemeHelper;
-    @Autowired
     protected MenuNavigationExpander menuNavigationExpander;
 
     protected String sampleId;
@@ -114,7 +110,6 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     public void beforeEnter(BeforeEnterEvent event) {
         event.getRouteParameters().get("sampleId")
                 .ifPresent(this::updateSample);
-        codeEditorThemeHelper.setCodeEditors(codeEditors);
         super.beforeEnter(event);
     }
 
@@ -253,7 +248,6 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     protected CodeEditor createCodeEditor(CodeEditorMode mode) {
         CodeEditor editor = uiComponents.create(CodeEditor.class);
 
-        editor.setTheme(getSessionTheme());
         editor.setShowPrintMargin(false);
         editor.setMode(mode);
         editor.setReadOnly(true);
@@ -454,18 +448,5 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
 
     protected Locale getCurrentLocale() {
         return UI.getCurrent().getLocale();
-    }
-
-    protected CodeEditorTheme getSessionTheme() {
-        SessionData sessionData = sessionDataProvider.getIfAvailable();
-
-        if (sessionData != null) {
-            String currentTheme = (String) sessionData.getAttribute(MainView.CURRENT_THEME_SESSION_ATTRIBUTE);
-            return "dark".equalsIgnoreCase(currentTheme)
-                    ? CodeEditorTheme.NORD_DARK
-                    : CodeEditorTheme.TEXTMATE;
-        }
-
-        return CodeEditorTheme.TEXTMATE;
     }
 }
