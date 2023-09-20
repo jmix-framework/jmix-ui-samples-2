@@ -18,7 +18,7 @@
 <menu-config xmlns="io/jmix/uisamples/menu/uisamples-menu.xsd">
 
     <menu id="components" url="flow-ui/vc/components">
-        <item id="avatar"/>
+        <item id="avatar" page="avatar"/>
         <menu id="badge">
             <item id="badge-simple"/>
             <item id="badge-icons">
@@ -29,13 +29,13 @@
             <item id="badge-theme-variant" splitEnabled="true"/>
         </menu>
         <menu id="big-decimal-field">
-            <item id="big-decimal-field-simple"/>
-            <item id="big-decimal-field-dataaware">
+            <item id="big-decimal-field-simple" page="bigDecimalField"/>
+            <item id="big-decimal-field-dataaware" page="bigDecimalField">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Product.java"/>
                 </otherFiles>
             </item>
-            <item id="big-decimal-field-theme-variant"/>
+            <item id="big-decimal-field-theme-variant" page="bigDecimalField"/>
         </menu>
         <menu id="button">
             <item id="button-simple" page="button"/>
@@ -52,17 +52,17 @@
             </item>
         </menu>
         <menu id="checkbox-group">
-            <item id="checkbox-group-simple">
+            <item id="checkbox-group-simple" page="checkboxGroup">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
                 </otherFiles>
             </item>
-            <item id="checkbox-group-custom-items">
+            <item id="checkbox-group-custom-items" page="checkboxGroup">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
                 </otherFiles>
             </item>
-            <item id="checkbox-group-dataaware">
+            <item id="checkbox-group-dataaware" page="checkboxGroup">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Product.java"/>
                 </otherFiles>
@@ -175,7 +175,7 @@
                     <file name="io/jmix/uisamples/bean/CustomerDetailsGenerator.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-item-details-editor" page="dataGRid" splitEnabled="true">
+            <item id="data-grid-item-details-editor" page="dataGrid" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                     <file name="io/jmix/uisamples/bean/CustomerDetailsGenerator.java"/>
@@ -214,18 +214,18 @@
             <item id="date-time-picker-theme-variant" page="dateTimePicker" splitEnabled="true"/>
         </menu>
         <menu id="dropdown-button">
-            <item id="dropdown-button-simple"/>
-            <item id="combo-button"/>
-            <item id="dropdown-button-theme-variant" splitEnabled="true"/>
+            <item id="dropdown-button-simple" page="dropdownButton"/>
+            <item id="combo-button" page="dropdownButton"/>
+            <item id="dropdown-button-theme-variant" page="dropdownButton" splitEnabled="true"/>
         </menu>
         <menu id="email-field">
-            <item id="email-field-simple"/>
-            <item id="email-field-dataaware">
+            <item id="email-field-simple" page="emailField"/>
+            <item id="email-field-dataaware" page="emailField">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="email-field-theme-variant"/>
+            <item id="email-field-theme-variant" page="emailField"/>
         </menu>
         <item id="entity-combobox" page="entityComboBox">
             <otherFiles>
@@ -320,28 +320,28 @@
             <item id="image-theme-variant" page="image" splitEnabled="true"/>
         </menu>
         <menu id="integer-field">
-            <item id="integer-field-simple"/>
-            <item id="integer-field-dataaware">
+            <item id="integer-field-simple" page="integerField"/>
+            <item id="integer-field-dataaware" page="integerField">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="integer-field-theme-variant"/>
+            <item id="integer-field-theme-variant" page="integerField"/>
         </menu>
         <menu id="list-box">
-            <item id="list-box-simple"/>
+            <item id="list-box-simple" page="listBox"/>
             <item id="list-box-multi-select" page="multiSelectListBox" splitEnabled="true"/>
-            <item id="list-box-dataaware">
+            <item id="list-box-dataaware" page="listBox">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Product.java"/>
                 </otherFiles>
             </item>
-            <item id="list-box-custom-disabled">
+            <item id="list-box-custom-disabled" page="listBox">
                 <otherFiles>
                     <file name="io/jmix/uisamples/record/Product.java"/>
                 </otherFiles>
             </item>
-            <item id="list-box-custom-renderer">
+            <item id="list-box-custom-renderer" page="listBox">
                 <otherFiles>
                     <file name="io/jmix/uisamples/record/Simpson.java"/>
                 </otherFiles>
@@ -370,16 +370,16 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="multi-select-combo-box-theme-variant" splitEnabled="true"/>
+            <item id="multi-select-combo-box-theme-variant" page="multiSelectComboBox" splitEnabled="true"/>
         </menu>
         <menu id="number-field">
-            <item id="number-field-simple"/>
-            <item id="number-field-dataaware">
+            <item id="number-field-simple" page="numberField"/>
+            <item id="number-field-dataaware" page="numberField">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Point.java"/>
                 </otherFiles>
             </item>
-            <item id="number-field-theme-variant"/>
+            <item id="number-field-theme-variant" page="numberField"/>
         </menu>
         <menu id="password-field">
             <item id="password-field-simple" page="passwordField"/>
@@ -474,14 +474,14 @@
             <item id="tabs-theme-variant" page="tabs"/>
         </menu>
         <menu id="text-area">
-            <item id="text-area-simple"/>
-            <item id="text-area-dataaware">
+            <item id="text-area-simple" page="textArea"/>
+            <item id="text-area-dataaware" page="textArea">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Order.java"/>
                 </otherFiles>
             </item>
-            <item id="text-area-resizable"/>
-            <item id="text-area-theme-variant" splitEnabled="true"/>
+            <item id="text-area-resizable" page="textArea"/>
+            <item id="text-area-theme-variant" page="textArea" splitEnabled="true"/>
         </menu>
         <menu id="text-field">
             <item id="text-field-simple" page="textField"/>
@@ -511,15 +511,15 @@
         <menu id="value-picker">
             <item id="value-picker-simple" page="valuePicker"/>
             <item id="value-picker-dataaware" page="valuePicker"/>
-            <item id="value-picker-multi"/>
-            <item id="value-picker-multi-enum"/>
-            <item id="value-picker-multi-entity"/>
+            <item id="value-picker-multi" page="multiValuePicker"/>
+            <item id="value-picker-multi-enum" page="multiValuePicker"/>
+            <item id="value-picker-multi-entity" page="multiValuePicker"/>
         </menu>
     </menu>
 
     <menu id="containers" url="flow-ui/vc/layouts">
         <menu id="accordion">
-            <item id="accordion-simple" splitEnabled="true">
+            <item id="accordion-simple" page="accordion" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
