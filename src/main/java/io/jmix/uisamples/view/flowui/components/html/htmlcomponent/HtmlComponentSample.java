@@ -2,10 +2,8 @@ package io.jmix.uisamples.view.flowui.components.html.htmlcomponent;
 
 import com.vaadin.flow.component.Html;
 import io.jmix.core.Resources;
-import io.jmix.flowui.view.StandardView;
-import io.jmix.flowui.view.Subscribe;
-import io.jmix.flowui.view.ViewController;
-import io.jmix.flowui.view.ViewDescriptor;
+import io.jmix.flowui.component.tabsheet.JmixTabSheet;
+import io.jmix.flowui.view.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.InputStream;
@@ -16,6 +14,9 @@ public class HtmlComponentSample extends StandardView {
 
     protected static final String SRC_PATH = "META-INF/resources/html/html-component.html";
 
+    @ViewComponent
+    protected JmixTabSheet tabSheet;
+
     @Autowired
     protected Resources resources;
 
@@ -24,6 +25,6 @@ public class HtmlComponentSample extends StandardView {
         InputStream resourceAsStream = resources.getResourceAsStream(SRC_PATH);
 
         Html html = new Html(resourceAsStream);
-        getContent().add(html);
+        tabSheet.add("Programmatically added component", html);
     }
 }
