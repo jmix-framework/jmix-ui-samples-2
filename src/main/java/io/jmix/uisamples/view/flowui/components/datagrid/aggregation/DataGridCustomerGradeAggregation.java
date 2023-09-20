@@ -24,7 +24,7 @@ public class DataGridCustomerGradeAggregation implements AggregationStrategy<Cus
         if (CollectionUtils.isNotEmpty(propertyValues)) {
             for (CustomerGrade grade : CustomerGrade.values()) {
                 long current = propertyValues.stream()
-                        .filter(customerGrade -> customerGrade.equals(grade))
+                        .filter(grade::equals)
                         .count();
 
                 if (current > max) {

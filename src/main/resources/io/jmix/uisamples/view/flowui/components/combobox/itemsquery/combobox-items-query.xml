@@ -1,0 +1,17 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <tabSheet id="tabSheet" width="100%">
+            <tab id="declarativeTab" label="Declaratively">
+                <comboBox id="declarativeComboBox" label="Customer">
+                    <itemsQuery searchStringFormat="(?i)%${searchString}%"
+                                escapeValueForLike="true">
+                        <![CDATA[select e.name from Customer e where e.name like :searchString escape '\' order by e.name asc]]>
+                    </itemsQuery>
+                </comboBox>
+            </tab>
+            <tab id="programmaticTab" label="Programmatic">
+                <comboBox id="programmaticComboBox" label="Customer"/>
+            </tab>
+        </tabSheet>
+    </layout>
+</view>

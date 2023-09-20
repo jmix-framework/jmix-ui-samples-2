@@ -86,6 +86,11 @@
                     <file name="io/jmix/uisamples/entity/Order.java"/>
                 </otherFiles>
             </item>
+            <item id="combobox-items-query" page="comboBox" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
             <item id="combobox-custom-filtering" page="comboBox"/>
             <item id="combobox-user-input" page="comboBox"/>
             <item id="combobox-custom-renderer" page="comboBox"/>
@@ -244,12 +249,19 @@
             </item>
             <item id="email-field-theme-variant" page="emailField"/>
         </menu>
-        <item id="entity-combobox" page="entityComboBox">
-            <otherFiles>
-                <file name="io/jmix/uisamples/entity/Customer.java"/>
-                <file name="io/jmix/uisamples/entity/Order.java"/>
-            </otherFiles>
-        </item>
+        <menu id="entity-combobox">
+            <item id="entity-combobox-simple" page="entityComboBox">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="entity-combobox-items-query" page="entityComboBox" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
         <menu id="entity-picker">
             <item id="entity-picker-simple" page="entityPicker">
                 <otherFiles>
@@ -383,6 +395,11 @@
             </item>
             <item id="multi-select-combo-box-custom-renderer" page="multiSelectComboBox"/>
             <item id="multi-select-combo-box-picker">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="multi-select-combo-box-items-query" page="multiSelectComboBox" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>

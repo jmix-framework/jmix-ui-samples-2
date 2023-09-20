@@ -1,0 +1,37 @@
+<p>Компонент <b>ComboBox</b> поддерживает обратный вызов для получения элементов из серверной части:</p>
+
+<p>Вы можете определить запрос декларативно, используя элемент <code>itemsQuery</code> в XML.</p>
+
+<p>Элемент <code>itemsQuery</code> для <code>ComboBox</code> имеет следующие атрибуты:</p>
+<ul>
+    <li>
+        <code>escapeValueForLike</code> - включает поиск значений, содержащих специальные символы:
+        <code>%</code>, <code>\</code> и т. д. Значение по умолчанию — <code>false</code>.
+    </li>
+    <li>
+        <code>searchStringFormat</code> - строка Groovy. C её помощью, вы можете использовать любые допустимые строковые
+        выражения Groovy.
+    </li>
+</ul>
+
+<p><b>Примечание:</b> <code>entityClass</code> и <code>fetchPlan</code> отсутствуют, поскольку <code>ComboBox</code>
+    предполагает, что
+    будут загружены скалярные значения. В случае, если требуются, сущности используйте <code>EntityComboBox</code>.</p>
+
+<p>Если <code>itemsQuery</code> не определен, вы можете программно установить список элементов, используя <code>setItemsFetchCallback</code>
+    в ViewController.</p>
+
+<p><b>Примечание:</b> Поскольку реальная работа делегируется <code>com.vaadin.flow.data.provider.HasLazyDataView#setItems(com.vaadin.flow.data.provider.CallbackDataProvider.FetchCallback</code>,
+    экземпляр <code>QueryTrace</code> передается обратному вызову <code>fetch</code>.</p>
+
+<p>В результате - несколько ограничений:</p>
+<ul>
+    <li>
+        Необходимо вызвать методы <code>query.getOffset()</code> и <code>query.getLimit()</code>, в противном случае
+        выбрасывается исключение.
+    </li>
+    <li>
+        Количество элементов, возвращаемых обратным вызовом, не может превышать значение <code>limit</code>, в противном
+        случае выбрасывается исключение.
+    </li>
+</ul>
