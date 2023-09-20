@@ -24,7 +24,7 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.Anchor;
-import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
@@ -307,7 +307,7 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
             sb.append("<hr>");
         }
 
-        Label doc = uiComponents.create(Label.class);
+        Div doc = uiComponents.create(Div.class);
 
         doc.setWidthFull();
         doc.getElement().setProperty("innerHTML", sb.toString());
@@ -376,14 +376,16 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     }
 
     protected String getCopyToClipboardScript() {
-        return "const textarea = document.createElement(\"textarea\");\n" +
-                "  textarea.value = $0;\n" +
-                "  textarea.style.position = \"absolute\";\n" +
-                "  textarea.style.opacity = \"0\";\n" +
-                "  document.body.appendChild(textarea);\n" +
-                "  textarea.select();\n" +
-                "  document.execCommand(\"copy\");\n" +
-                "  document.body.removeChild(textarea);\n";
+        return """
+                const textarea = document.createElement("textarea");
+                  textarea.value = $0;
+                  textarea.style.position = "absolute";
+                  textarea.style.opacity = "0";
+                  document.body.appendChild(textarea);
+                  textarea.select();
+                  document.execCommand("copy");
+                  document.body.removeChild(textarea);
+                """;
     }
 
     protected String getControllerFileName(String controllerName) {

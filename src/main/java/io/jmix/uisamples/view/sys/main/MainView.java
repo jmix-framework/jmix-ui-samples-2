@@ -42,7 +42,6 @@ import io.jmix.uisamples.view.sys.sampleview.SampleView;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.lang.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -202,7 +201,7 @@ public class MainView extends StandardMainView {
                 }
             }
 
-            removeNotRequestedItems(List.copyOf(menu.getMenuItems()), null, searchValue);
+            removeNotRequestedItems(List.copyOf(menu.getMenuItems()), searchValue);
         }
     }
 
@@ -219,7 +218,6 @@ public class MainView extends StandardMainView {
 
     @SuppressWarnings("ConstantConditions")
     protected void removeNotRequestedItems(List<JmixListMenu.MenuItem> list,
-                                           @Nullable ListMenu.MenuBarItem parentItem,
                                            String searchValue) {
         for (JmixListMenu.MenuItem item : list) {
             if (item.isMenu() && item instanceof ListMenu.MenuBarItem menuItem && menuItem.hasChildren()) {
@@ -227,7 +225,7 @@ public class MainView extends StandardMainView {
                     menu.removeMenuItem(item);
                 } else if (!StringUtils.containsIgnoreCase(item.getTitle(), searchValue)) {
                     ListMenu.MenuBarItem menuBarItem = (ListMenu.MenuBarItem) item;
-                    removeNotRequestedItems(menuBarItem.getChildren(), menuBarItem, searchValue);
+                    removeNotRequestedItems(menuBarItem.getChildren(), searchValue);
                 }
             } else if (!StringUtils.containsIgnoreCase(item.getTitle(), searchValue)) {
                 menu.removeMenuItem(item);
