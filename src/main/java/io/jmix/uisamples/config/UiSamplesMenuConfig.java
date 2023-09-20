@@ -141,7 +141,6 @@ public class UiSamplesMenuConfig {
                     menuItem = new UiSamplesMenuItem(parentItem, id);
                     menuItem.setMenu(true);
 
-                    loadString(element, "image", menuItem::setImage);
                     loadString(element, "url", menuItem::setUrl);
 
                     loadMenuItems(element, menuItem);
@@ -168,7 +167,6 @@ public class UiSamplesMenuConfig {
         loadString(element, "page", menuItem::setPage);
         loadString(element, "url", menuItem::setUrl);
         loadString(element, "anchor", menuItem::setAnchor);
-        loadString(element, "image", menuItem::setImage);
 
         loaderSupport.loadBoolean(element, "splitEnabled")
                 .ifPresent(menuItem::setSplitEnabled);

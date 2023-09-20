@@ -568,15 +568,15 @@
 
     <menu id="dialogs-and-notifications" url="flow-ui">
         <menu id="dialogs">
-            <item id="message-dialog" page="dialogs"/>
-            <item id="option-dialog" page="dialogs"/>
-            <item id="input-dialog" page="dialogs">
+            <item id="message-dialog" page="dialogs" anchor="message-dialog"/>
+            <item id="option-dialog" page="dialogs" anchor="option-dialog"/>
+            <item id="input-dialog" page="dialogs" anchor="input-dialog">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                     <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
                 </otherFiles>
             </item>
-            <item id="background-task-dialog" page="background-tasks"/>
+            <item id="background-task-dialog" page="background-tasks" anchor="notes-and-tips"/>
         </menu>
         <menu id="notifications">
             <item id="notification-simple" page="notifications"/>

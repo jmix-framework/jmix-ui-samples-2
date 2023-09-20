@@ -32,7 +32,6 @@ public class UiSamplesMenuItem {
     protected String url;
     protected String page;
     protected String anchor;
-    protected String image;
     protected boolean splitEnabled;
     protected List<String> otherFiles;
     protected Map<String, Object> viewParams;
@@ -128,14 +127,6 @@ public class UiSamplesMenuItem {
 
     public void setViewParams(Map<String, Object> viewParams) {
         this.viewParams = viewParams;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     @Override
