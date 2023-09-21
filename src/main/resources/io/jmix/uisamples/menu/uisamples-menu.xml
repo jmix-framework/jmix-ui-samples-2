@@ -571,6 +571,7 @@
         <menu id="boxlayout">
             <item id="hbox-simple" page="hbox"/>
             <item id="vbox-simple" page="vbox"/>
+            <item id="flex-layout-simple"/>
         </menu>
         <menu id="form-layout">
             <item id="form-layout-simple" page="formLayout" splitEnabled="true"/>

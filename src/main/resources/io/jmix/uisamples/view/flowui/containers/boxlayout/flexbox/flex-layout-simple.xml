@@ -1,0 +1,20 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <split width="100%" themeNames="splitter-spacing">
+            <flexLayout alignItems="CENTER" flexDirection="COLUMN">
+                <span text="Span"/>
+                <textField placeholder="TextField"/>
+                <button text="Button"/>
+                <button text="Button"/>
+            </flexLayout>
+            <flexLayout alignItems="CENTER" flexDirection="ROW"
+                        justifyContent="CENTER" flexWrap="WRAP"
+                        classNames="gap-s">
+                <span text="Span"/>
+                <textField placeholder="TextField"/>
+                <button text="Button"/>
+                <button text="Button"/>
+            </flexLayout>
+        </split>
+    </layout>
+</view>
