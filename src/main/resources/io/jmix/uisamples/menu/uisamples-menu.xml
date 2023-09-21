@@ -657,6 +657,11 @@
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>
         </item>
+        <item id="custom-login">
+            <otherFiles>
+                <file name="META-INF/resources/themes/custom-login.css"/>
+            </otherFiles>
+        </item>
         <item id="custom-filter" page="facets/dataLoadCoordinator" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
