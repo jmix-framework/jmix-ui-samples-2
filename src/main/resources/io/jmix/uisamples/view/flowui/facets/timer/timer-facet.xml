@@ -1,0 +1,13 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <facets>
+        <timer id="timer"
+               delay="3000"
+               autostart="false"
+               repeating="true"/>
+    </facets>
+    <layout classNames="flex-row flex-wrap" alignItems="CENTER">
+        <button id="timerStartBtn" text="Start" icon="PLAY" themeNames="primary"/>
+        <button id="timerStopBtn" text="Stop" icon="PAUSE" themeNames="primary error"/>
+        <span id="timerIndicator" text="Timer is ready to start" themeNames="contrast pill"/>
+    </layout>
+</view>

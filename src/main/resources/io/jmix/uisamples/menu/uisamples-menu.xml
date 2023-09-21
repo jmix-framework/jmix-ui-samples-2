@@ -620,6 +620,10 @@
         </menu>
     </menu>
 
+    <menu id="facets" url="flow-ui/facets">
+        <item id="timer-facet"/>
+    </menu>
+
     <menu id="cookbook" url="flow-ui">
         <item id="cascading-dropdowns" page="facets/dataLoadCoordinator" splitEnabled="true">
             <otherFiles>
