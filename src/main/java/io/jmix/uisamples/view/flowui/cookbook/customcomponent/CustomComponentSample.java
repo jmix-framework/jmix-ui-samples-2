@@ -1,5 +1,6 @@
 package io.jmix.uisamples.view.flowui.cookbook.customcomponent;
 
+import com.vaadin.flow.component.notification.Notification;
 import io.jmix.flowui.Notifications;
 import io.jmix.flowui.view.StandardView;
 import io.jmix.flowui.view.Subscribe;
@@ -17,6 +18,8 @@ public class CustomComponentSample extends StandardView {
 
     @Subscribe("slider")
     protected void onSliderChange(Slider.SlideChangedEvent event) {
-        notifications.show("New value is : " + event.getValue());
+        notifications.create("New value is : " + event.getValue())
+                .withPosition(Notification.Position.TOP_CENTER)
+                .show();
     }
 }

@@ -1,43 +1,41 @@
-<p>To create your own custom component or integrate a third party JavaScript library, you need to describe its
-    server-side and client-side parts.</p>
-<p>Taking <a href="https://jqueryui.com/slider/" target="_blank">Slider | jQuery UI</a> as an example, this sample shows how it can be integrated.</p>
-
-<p>JS libraries and other sources can be imported from the server-side using the following annotations:</p>
+<p>
+    You can create custom UI components based on third-party JavaScript libraries. This example demonstrates integration of the <a href="https://jqueryui.com/slider/" target="_blank">jQuery UI Slider</a> widget and its usage in a Jmix view.
+</p>
+<p>
+    The <code>Slider.js</code> file located in the <code>frontend/src/component/slider</code> folder contains a web component wrapping the jQuery UI Slider widget. Its <code>ready()</code> method is used to initialize the widget.
+</p>
+<p>
+    The server-side part of the custom component is defined in <code>Slider.java</code>. It contains a number of annotations for integration with the client-side part:
+</p>
 <ul>
     <li>
-        <code>@Tag</code> - defines the name of the <b>HTML</b> element.
+        <code>@Tag</code> - specifies the name of the custom HTML element of the web component.
     </li>
     <li>
-        <code>@NpmPackage</code> - used to define NPM dependency.
+        <code>@NpmPackage</code> imports an NPM module.
     </li>
     <li>
-        <code>@CssImport</code> - used to import corresponding styles.
+        <code>@JsModule</code> - imports a JavaScript module.
     </li>
     <li>
-        <code>@JsModule</code> - used to import custom <b>JavaScript</b>.
+        <code>@CssImport</code> - imports styles.
     </li>
 </ul>
-
-<p>Your component may require in-project front-end files, such as additional <b>JavaScript</b> modules. In which case,
-    add them to the <code>src/main/resources/META-INF/frontend</code> directory so that they are packaged in the
-    component JAR.</p>
-
-<p>In this example, on the client-side, the <code>ready()</code> method can be used to initialize the corresponding <b>JS</b>
-    library.</p>
-
-<p>To completely integrate the component, it is necessary to support it in <b>XML</b>.</p>
-<p>Below are a few steps you need to take to do it:</p>
+<p>
+    After creating the client-side and server-side parts of the component, it can be used in views by creating an instance of its Java class and adding it to a parent component.
+</p>
+<p>
+    The following steps completely integrate the component into Jmix UI:
+</p>
 <ol>
-    <li>
-        Create an <b>XSD Schema</b> for the component (see <code>custom-component.xsd</code>).
-    </li>
-    <li>
-        Implement the component loader that will parse it from <b>XML</b> into a <b>Java-object</b> (see <code>SliderLoader.java</code>).
-    </li>
-    <li>
-        Register the component and its loader in the application (see <code>CustomComponentConfiguration.java</code>).
-    </li>
-    <li>
-        Add the custom component <b>XSD Scheme</b> to the <b>XML</b> view descriptor so that you can use the component (see <code>custom-component.xml</code>).
-    </li>
+    <li>Create an XSD for the component (see <code>custom-component.xsd</code>).</li>
+    <li>Implement the component loader (see <code>SliderLoader.java</code>).</li>
+    <li>Register the component and its loader in the application (see <code>CustomComponentConfiguration.java</code>).</li>
 </ol>
+<p>
+    Once these steps are completed, the custom component can be used in view XML descriptors. See the <code>custom-component.xml</code> file.
+</p>
+<p>
+    See more information about creating custom components in Vaadin documentation: <a href="https://vaadin.com/docs/latest/advanced/loading-resources#using-annotations" target="_blank">Importing JavaScript & CSS</a>,
+    <a href="https://vaadin.com/docs/latest/create-ui/web-components" target="_blank">Integrating Web Components</a>, <a href="https://vaadin.com/docs/latest/create-ui/element-api" target="_blank">Element API</a>.
+</p>

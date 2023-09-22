@@ -1,41 +1,41 @@
-<p>Для создания собственного компонента, или интеграции <b>third-party JavaScript</b> необходимо описать серверную и клиентскую часть компонента.</p>
-<p>Для реализации будет взят <a href="https://jqueryui.com/slider/" target="_blank">Slider | jQuery UI</a>. В данном примере показано, как интегрировать такой компонент.</p>
-
-<p>JS библиотеки и другие источники могут быть импортированы с серверной части при помощи следующих аннотаций:</p>
+<p>
+    Собственные UI-компоненты можно создавать на базе сторонних JavaScript библиотек. Данный пример демонстрирует интеграцию виджета <a href="https://jqueryui.com/slider/" target="_blank">jQuery UI Slider</a> и его использование в экране Jmix.
+</p>
+<p>
+    Файл <code>Slider.js</code>, расположенный в каталоге <code>frontend/src/component/slider</code>, содержит веб-компонент, оборачивающий виджет jQuery UI Slider. Его метод <code>ready()</code> используется для инициализации виджета.
+</p>
+<p>
+    Серверная часть кастомного компонента определена в классе <code>Slider.java</code>. Он содержит несколько аннотаций для интеграции с клиентской частью:
+</p>
 <ul>
     <li>
-        <code>@Tag</code> - определяет название элемента <b>HTML</b>.
+        <code>@Tag</code> - задает имя кастомного HTML-элемента веб-компонента.
     </li>
     <li>
-        <code>@NpmPackage</code> - используется для определения <b>NPM зависимостей</b>.
+        <code>@NpmPackage</code> импортирует NPM-модуль.
     </li>
     <li>
-        <code>@CssImport</code> - используется для подключения соответствующих стилей.
+        <code>@JsModule</code> - импортирует JavaScript-модуль.
     </li>
     <li>
-        <code>@JsModule</code> - используется для импорта пользовательских <b>JavaScript</b> файлов.
+        <code>@CssImport</code> - импортирует стили.
     </li>
 </ul>
-
-<p>Вашему компоненту могут потребоваться внутренние файлы клиентской части, например дополнительные модули <b>JavaScript</b>. В таком случае,
-    добавьте их в каталог <code>src/main/resources/META-INF/frontend</code>, чтобы они были упакованы в
-    компонент <b>JAR</b>.</p>
-
-<p>В данном примере, в клиентской части используется метод <code>ready()</code> для инициализации необходимой библиотеки <b>JS</b>.</p>
-
-<p>Для полной интеграции компонента необходимо обеспечить его поддержку в <b>XML</b>.</p>
-<p>Ниже представлены несколько шагов, которые позволят это сделать:</p>
+<p>
+    После создания клиентской и серверной частей компонента, его можно использовать в экранах путем создания экземпляра Java-класса и добавления в родительский компонент.
+</p>
+<p>
+    Ниже описаны шаги для полной интеграции компонента в Jmix UI:
+</p>
 <ol>
-    <li>
-        Создать <b>XSD схему</b> для компонента (с.м. <code>custom-component.xsd</code>).
-    </li>
-    <li>
-        Реализовать загрузчик компонента, который будет анализировать <b>XML</b> и создавать по нему соответствующий <b>Java-объект</b> (с.м. <code>SliderLoader.java</code>).
-    </li>
-    <li>
-        Зарегистрировать компонент и его загрузчик в приложении (с.м. <code>CustomComponentConfiguration.java</code>).
-    </li>
-    <li>
-        Добавить собственную <b>XSD схему</b> в <b>XML-файл</b> экрана для того, чтобы использовать компонент (с.м. <code>custom-component.xml</code>).
-    </li>
+    <li>Создать XSD для компонента (см. <code>custom-component.xsd</code>).</li>
+    <li>Реализовать загрузчик компонента (см. <code>SliderLoader.java</code>).</li>
+    <li>Зарегистрировать компонент и его загрузчик в приложении (см. <code>CustomComponentConfiguration.java</code>).</li>
 </ol>
+<p>
+    После завершения этих шагов компонент можно использовать в XML-дескрипторах экранов. См. файл <code>custom-component.xml</code>.
+</p>
+<p>
+    Подробная информация о создании кастомных компонентов приведена в документации Vaadin: <a href="https://vaadin.com/docs/latest/advanced/loading-resources#using-annotations" target="_blank">Importing JavaScript & CSS</a>,
+    <a href="https://vaadin.com/docs/latest/create-ui/web-components" target="_blank">Integrating Web Components</a>, <a href="https://vaadin.com/docs/latest/create-ui/element-api" target="_blank">Element API</a>.
+</p>

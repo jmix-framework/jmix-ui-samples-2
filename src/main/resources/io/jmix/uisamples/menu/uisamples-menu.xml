@@ -604,6 +604,11 @@
                 <file name="io/jmix/uisamples/entity/Country.java"/>
             </otherFiles>
         </item>
+        <item id="copy-action" page="actions/declarative-actions" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Customer.java"/>
+            </otherFiles>
+        </item>
         <item id="custom-component" page="visual-components" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/component/customcomponent/Slider.java"/>
@@ -611,11 +616,6 @@
                 <file name="io/jmix/uisamples/view/flowui/cookbook/customcomponent/custom-component.xsd"/>
                 <file name="io/jmix/uisamples/component/customcomponent/SliderLoader.java"/>
                 <file name="io/jmix/uisamples/view/flowui/cookbook/customcomponent/CustomComponentConfiguration.java"/>
-            </otherFiles>
-        </item>
-        <item id="copy-action" page="actions/declarative-actions" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>
         </item>
         <item id="custom-filter" page="facets/dataLoadCoordinator" splitEnabled="true">
