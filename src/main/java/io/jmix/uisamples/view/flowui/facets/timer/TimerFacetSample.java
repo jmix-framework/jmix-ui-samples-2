@@ -18,6 +18,10 @@ public class TimerFacetSample extends StandardView {
     protected Timer timer;
     @ViewComponent
     protected Span timerIndicator;
+    @ViewComponent
+    protected JmixButton timerStartBtn;
+    @ViewComponent
+    protected JmixButton timerStopBtn;
 
     @Autowired
     protected Notifications notifications;
@@ -29,6 +33,7 @@ public class TimerFacetSample extends StandardView {
     protected void onStartTimerClick(ClickEvent<JmixButton> event) {
         timer.start();
 
+
         timerIndicator.setText("Timer started");
         timerIndicator.getElement().getThemeList().clear();
         timerIndicator.getElement().getThemeList().add("badge pill success");
@@ -37,6 +42,9 @@ public class TimerFacetSample extends StandardView {
                 .withPosition(Notification.Position.BOTTOM_END)
                 .withThemeVariant(NotificationVariant.LUMO_SUCCESS)
                 .show();
+
+        timerStartBtn.setEnabled(false);
+        timerStopBtn.setEnabled(true);
     }
 
     @Subscribe("timerStopBtn")
@@ -47,6 +55,9 @@ public class TimerFacetSample extends StandardView {
         timerIndicator.setText("Timer stopped");
         timerIndicator.getElement().getThemeList().clear();
         timerIndicator.getElement().getThemeList().add("badge pill error");
+
+        timerStartBtn.setEnabled(true);
+        timerStopBtn.setEnabled(false);
     }
 
     @Subscribe("timer")
