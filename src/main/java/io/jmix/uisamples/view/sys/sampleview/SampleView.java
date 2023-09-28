@@ -17,10 +17,7 @@
 package io.jmix.uisamples.view.sys.sampleview;
 
 import com.google.common.base.Strings;
-import com.vaadin.flow.component.ClickEvent;
-import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.ComponentUtil;
-import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.*;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.Anchor;
@@ -42,6 +39,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import io.jmix.core.CoreProperties;
 import io.jmix.core.Messages;
+import io.jmix.core.Resources;
 import io.jmix.core.session.SessionData;
 import io.jmix.flowui.Notifications;
 import io.jmix.flowui.UiComponents;
@@ -51,6 +49,7 @@ import io.jmix.flowui.component.layout.ViewLayout;
 import io.jmix.flowui.component.scroller.JmixScroller;
 import io.jmix.flowui.component.splitlayout.JmixSplitLayout;
 import io.jmix.flowui.component.tabsheet.JmixTabSheet;
+import io.jmix.flowui.exception.GuiDevelopmentException;
 import io.jmix.flowui.kit.component.button.JmixButton;
 import io.jmix.flowui.kit.component.codeeditor.CodeEditorMode;
 import io.jmix.flowui.kit.component.codeeditor.CodeEditorTheme;
@@ -67,6 +66,7 @@ import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 
+import java.io.InputStream;
 import java.util.*;
 
 @Route(value = "sample/:sampleId?", layout = MainView.class)
@@ -77,6 +77,7 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
 
     protected static final String DOC_URL_MESSAGES_KEY = "docUrl";
     protected static final String CODE_EDITOR_HEIGHT = "-webkit-fill-available";
+    protected static final String SRC_ROOT_PATH = "io/jmix/uisamples/view/flowui/";
 
     @Autowired
     protected UiSamplesMenuConfig menuConfig;
@@ -102,6 +103,8 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     protected CodeEditorThemeHelper codeEditorThemeHelper;
     @Autowired
     protected MenuNavigationExpander menuNavigationExpander;
+    @Autowired
+    protected Resources resources;
 
     protected String sampleId;
     protected StandardView sampleView;
@@ -138,11 +141,27 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
         this.sampleId = sampleId;
         this.menuItem = menuConfig.getItemById(sampleId);
 
-        StandardView sampleView = ((StandardView) views.create(sampleId));
-        this.sampleView = sampleView;
+        if (menuItem.isAbout()) {
+            initAboutView();
+        } else {
+            this.sampleView = (StandardView) views.create(sampleId);
+            updateLayout(sampleView);
+            updateTabs();
+        }
+    }
 
-        updateLayout(sampleView);
-        updateTabs();
+    protected void initAboutView() {
+        getContent().removeAll();
+        String resourcePath = SRC_ROOT_PATH + Strings.nullToEmpty(menuItem.getAboutLocation());
+        InputStream resourceAsStream = resources.getResourceAsStream(resourcePath);
+
+        if (resourceAsStream == null) {
+            String message = String.format("Resource with path '%s' can't be loaded", resourcePath);
+            throw new GuiDevelopmentException(message, getId().orElse("sampleView"));
+        }
+
+        Html html = new Html(resourceAsStream);
+        getContent().add(html);
     }
 
     protected void updateLayout(StandardView sampleView) {
@@ -175,6 +194,7 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
             getContent().expand(tabSheet);
         }
     }
+
 
     protected void createTabSheet() {
         tabSheet = uiComponents.create(JmixTabSheet.class);

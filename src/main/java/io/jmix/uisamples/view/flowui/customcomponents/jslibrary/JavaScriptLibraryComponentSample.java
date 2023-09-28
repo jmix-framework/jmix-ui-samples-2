@@ -1,4 +1,4 @@
-package io.jmix.uisamples.view.flowui.cookbook.customcomponent;
+package io.jmix.uisamples.view.flowui.customcomponents.jslibrary;
 
 import com.vaadin.flow.component.notification.Notification;
 import io.jmix.flowui.Notifications;
@@ -6,12 +6,12 @@ import io.jmix.flowui.view.StandardView;
 import io.jmix.flowui.view.Subscribe;
 import io.jmix.flowui.view.ViewController;
 import io.jmix.flowui.view.ViewDescriptor;
-import io.jmix.uisamples.component.customcomponent.Slider;
+import io.jmix.uisamples.component.slider.Slider;
 import org.springframework.beans.factory.annotation.Autowired;
 
-@ViewController("custom-component")
-@ViewDescriptor("custom-component.xml")
-public class CustomComponentSample extends StandardView {
+@ViewController("custom-component-js-library")
+@ViewDescriptor("custom-component-js-library.xml")
+public class JavaScriptLibraryComponentSample extends StandardView {
 
     @Autowired
     protected Notifications notifications;

@@ -1,4 +1,4 @@
-package io.jmix.uisamples.view.flowui.cookbook.compositecomponent;
+package io.jmix.uisamples.view.flowui.customcomponents.composite;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
 import io.jmix.flowui.UiComponents;
@@ -6,7 +6,7 @@ import io.jmix.flowui.component.select.JmixSelect;
 import io.jmix.flowui.component.tabsheet.JmixTabSheet;
 import io.jmix.flowui.model.InstanceContainer;
 import io.jmix.flowui.view.*;
-import io.jmix.uisamples.component.compositecomponent.AddressComponent;
+import io.jmix.uisamples.component.addresscomponent.AddressComponent;
 import io.jmix.uisamples.entity.Address;
 import io.jmix.uisamples.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;

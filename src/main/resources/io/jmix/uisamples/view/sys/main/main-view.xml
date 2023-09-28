@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <mainView xmlns="http://jmix.io/schema/flowui/main-view"
-          xmlns:app="http://schemas.company.com/ui.ex1/0.1/app-ui-components.xsd"
+          xmlns:app="http://jmix.io/schema/uisamples/theme-toggle.xsd"
           title="msg://MainView.title">
     <actions>
         <action id="logout" type="logout"/>

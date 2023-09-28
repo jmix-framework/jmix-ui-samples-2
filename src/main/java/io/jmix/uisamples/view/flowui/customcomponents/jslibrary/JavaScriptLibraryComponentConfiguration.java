@@ -1,14 +1,14 @@
-package io.jmix.uisamples.view.flowui.cookbook.customcomponent;
+package io.jmix.uisamples.view.flowui.customcomponents.jslibrary;
 
 import io.jmix.flowui.sys.registration.ComponentRegistration;
 import io.jmix.flowui.sys.registration.ComponentRegistrationBuilder;
-import io.jmix.uisamples.component.customcomponent.Slider;
-import io.jmix.uisamples.component.customcomponent.SliderLoader;
+import io.jmix.uisamples.component.slider.Slider;
+import io.jmix.uisamples.component.slider.SliderLoader;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class CustomComponentConfiguration {
+public class JavaScriptLibraryComponentConfiguration {
 
     @Bean
     public ComponentRegistration slider() {

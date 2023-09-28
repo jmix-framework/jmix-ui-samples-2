@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns="http://schemas.company.com/ui.ex1/0.1/app-ui-components.xsd"
+<xs:schema xmlns="http://io.jmix.uisamples/theme-toggle.xsd"
            elementFormDefault="qualified"
-           targetNamespace="http://schemas.company.com/ui.ex1/0.1/app-ui-components.xsd"
+           targetNamespace="http://io.jmix.uisamples/theme-toggle.xsd"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:layout="http://jmix.io/schema/flowui/layout">
 

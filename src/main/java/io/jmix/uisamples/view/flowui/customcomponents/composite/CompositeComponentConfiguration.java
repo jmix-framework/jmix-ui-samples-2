@@ -1,9 +1,9 @@
-package io.jmix.uisamples.view.flowui.cookbook.compositecomponent;
+package io.jmix.uisamples.view.flowui.customcomponents.composite;
 
 import io.jmix.flowui.sys.registration.ComponentRegistration;
 import io.jmix.flowui.sys.registration.ComponentRegistrationBuilder;
-import io.jmix.uisamples.component.compositecomponent.AddressComponent;
-import io.jmix.uisamples.component.compositecomponent.AddressComponentLoader;
+import io.jmix.uisamples.component.addresscomponent.AddressComponent;
+import io.jmix.uisamples.component.addresscomponent.AddressComponentLoader;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

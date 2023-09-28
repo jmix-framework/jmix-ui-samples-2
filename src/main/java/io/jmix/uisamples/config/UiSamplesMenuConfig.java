@@ -146,6 +146,8 @@ public class UiSamplesMenuConfig {
                     loadMenuItems(element, menuItem);
                 } else if ("item".equals(element.getName())) {
                     menuItem = parseItem(element, parentItem, id);
+                } else if ("about".equals(element.getName())) {
+                    menuItem = parseAbout(element, parentItem, id);
                 } else {
                     log.warn(String.format("Unknown tag '%s' in sample-config", element.getName()));
                 }
@@ -159,6 +161,15 @@ public class UiSamplesMenuConfig {
                 rootItems.add(menuItem);
             }
         }
+    }
+
+    protected UiSamplesMenuItem parseAbout(Element element, UiSamplesMenuItem parentItem, String id) {
+        UiSamplesMenuItem menuItem = new UiSamplesMenuItem(parentItem, id);
+
+        menuItem.setAbout(true);
+        loadString(element, "location", menuItem::setAboutLocation);
+
+        return menuItem;
     }
 
     protected UiSamplesMenuItem parseItem(Element element, UiSamplesMenuItem parentItem, String id) {
@@ -182,7 +193,7 @@ public class UiSamplesMenuConfig {
             menuItem.setOtherFiles(otherFiles);
         }
 
-        Element screenParamsElement = element.element("screenParams");
+        Element screenParamsElement = element.element("viewParamsType");
         if (screenParamsElement != null && !screenParamsElement.elements().isEmpty()) {
             Map<String, Object> params = new HashMap<>();
             for (Element param : screenParamsElement.elements()) {

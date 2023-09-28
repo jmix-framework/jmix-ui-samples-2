@@ -15,6 +15,6 @@
  */
 
 @NonNullApi
-package io.jmix.uisamples.component.customcomponent;
+package io.jmix.uisamples.component.themetoggle;
 
 import org.springframework.lang.NonNullApi;

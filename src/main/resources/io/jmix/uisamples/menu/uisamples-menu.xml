@@ -585,6 +585,40 @@
         </menu>
     </menu>
 
+    <menu id="custom-components" url="flow-ui">
+        <about id="custom-component" location="customcomponents/about/about.html"/>
+        <item id="composite-component" page="visual-components" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/component/addresscomponent/AddressComponent.java"/>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/composite/composite-component.xsd"/>
+                <file name="io/jmix/uisamples/component/addresscomponent/AddressComponentLoader.java"/>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/composite/CompositeComponentConfiguration.java"/>
+                <file name="io/jmix/uisamples/entity/Employee.java"/>
+                <file name="io/jmix/uisamples/entity/Address.java"/>
+                <file name="io/jmix/uisamples/entity/City.java"/>
+                <file name="io/jmix/uisamples/entity/Country.java"/>
+            </otherFiles>
+        </item>
+        <item id="custom-component-js-library" page="visual-components" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/component/slider/Slider.java"/>
+                <file name="META-INF/resources/js/slider.js"/>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/jslibrary/custom-component-js-library.xsd"/>
+                <file name="io/jmix/uisamples/component/slider/SliderLoader.java"/>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/jslibrary/JavaScriptLibraryComponentConfiguration.java"/>
+            </otherFiles>
+        </item>
+        <item id="custom-component-from-scratch" page="visual-components" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/component/themetoggle/ThemeToggle.java"/>
+                <file name="META-INF/resources/js/theme-toggle.js"/>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/fromscratch/theme-toggle.xsd"/>
+                <file name="io/jmix/uisamples/component/themetoggle/ThemeToggleLoader.java"/>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/fromscratch/ThemeToggleRegistration.java"/>
+            </otherFiles>
+        </item>
+    </menu>
+
     <menu id="cookbook" url="flow-ui">
         <item id="cascading-dropdowns" page="facets/dataLoadCoordinator" splitEnabled="true">
             <otherFiles>
@@ -592,30 +626,9 @@
                 <file name="io/jmix/uisamples/entity/Moon.java"/>
             </otherFiles>
         </item>
-        <item id="composite-component" page="visual-components" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/uisamples/component/compositecomponent/AddressComponent.java"/>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/compositecomponent/address-component.xsd"/>
-                <file name="io/jmix/uisamples/component/compositecomponent/AddressComponentLoader.java"/>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/compositecomponent/CompositeComponentConfiguration.java"/>
-                <file name="io/jmix/uisamples/entity/Employee.java"/>
-                <file name="io/jmix/uisamples/entity/Address.java"/>
-                <file name="io/jmix/uisamples/entity/City.java"/>
-                <file name="io/jmix/uisamples/entity/Country.java"/>
-            </otherFiles>
-        </item>
         <item id="copy-action" page="actions/declarative-actions" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
-            </otherFiles>
-        </item>
-        <item id="custom-component" page="visual-components" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/uisamples/component/customcomponent/Slider.java"/>
-                <file name="META-INF/resources/js/slider.js"/>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/customcomponent/custom-component.xsd"/>
-                <file name="io/jmix/uisamples/component/customcomponent/SliderLoader.java"/>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/customcomponent/CustomComponentConfiguration.java"/>
             </otherFiles>
         </item>
         <item id="custom-filter" page="facets/dataLoadCoordinator" splitEnabled="true">

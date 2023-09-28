@@ -1,4 +1,4 @@
-package io.jmix.uisamples.component.themeswitcher;
+package io.jmix.uisamples.component.themetoggle;
 
 import io.jmix.flowui.xml.layout.loader.AbstractComponentLoader;
 

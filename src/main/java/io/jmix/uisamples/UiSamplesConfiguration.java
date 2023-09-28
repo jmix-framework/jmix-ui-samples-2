@@ -18,11 +18,7 @@ package io.jmix.uisamples;
 
 import com.google.common.base.Strings;
 import io.jmix.core.security.CoreSecurityConfiguration;
-import io.jmix.flowui.sys.registration.ComponentRegistration;
-import io.jmix.flowui.sys.registration.ComponentRegistrationBuilder;
 import io.jmix.uisamples.bean.UiSamplesRoutingDataSource;
-import io.jmix.uisamples.component.themeswitcher.ThemeToggle;
-import io.jmix.uisamples.component.themeswitcher.ThemeToggleLoader;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,12 +67,5 @@ public class UiSamplesConfiguration {
                 + "http://localhost:"
                 + environment.getProperty("local.server.port")
                 + Strings.nullToEmpty(environment.getProperty("server.servlet.context-path")));
-    }
-
-    @Bean
-    public ComponentRegistration themeToggle() {
-        return ComponentRegistrationBuilder.create(ThemeToggle.class)
-                .withComponentLoader("themeToggle", ThemeToggleLoader.class)
-                .build();
     }
 }

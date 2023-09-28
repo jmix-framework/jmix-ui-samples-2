@@ -1,4 +1,4 @@
-package io.jmix.uisamples.component.customcomponent;
+package io.jmix.uisamples.component.slider;
 
 import com.vaadin.flow.component.*;
 import com.vaadin.flow.component.dependency.CssImport;

@@ -1,4 +1,4 @@
-package io.jmix.uisamples.component.customcomponent;
+package io.jmix.uisamples.component.slider;
 
 import io.jmix.flowui.xml.layout.loader.AbstractComponentLoader;
 

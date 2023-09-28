@@ -1,4 +1,4 @@
-package io.jmix.uisamples.component.themeswitcher;
+package io.jmix.uisamples.component.themetoggle;
 
 
 import com.vaadin.flow.component.*;
@@ -8,6 +8,7 @@ import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.shared.HasTooltip;
 import com.vaadin.flow.dom.Element;
+import com.vaadin.flow.shared.Registration;
 import io.jmix.flowui.kit.component.HasTitle;
 import org.springframework.lang.Nullable;
 
@@ -213,13 +214,17 @@ public class ThemeToggle extends Component implements ClickNotifier<ThemeToggle>
         }
     }
 
+    public Registration addThemeChangeListener(ComponentEventListener<ThemeToggleThemeChangedEvent> listener) {
+        return addListener(ThemeToggleThemeChangedEvent.class, listener);
+    }
+
     @DomEvent(THEME_CHANGED_EVENT)
     public static class ThemeToggleThemeChangedEvent extends ComponentEvent<ThemeToggle> {
 
         protected String value;
 
         public ThemeToggleThemeChangedEvent(ThemeToggle source, boolean fromClient,
-                                               @EventData("event.detail.value") String value) {
+                                            @EventData("event.detail.value") String value) {
             super(source, fromClient);
             this.value = value;
         }
