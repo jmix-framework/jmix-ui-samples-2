@@ -1,5 +1,5 @@
 <view xmlns="http://jmix.io/schema/flowui/view"
-      xmlns:sl="http://io.jmix.uisamples/slider-component.xsd">
+      xmlns:sl="http://io.jmix.uisamples/slider.xsd">
     <layout classNames="flex" justifyContent="CENTER" alignItems="CENTER">
         <h2 text="Slider"/>
         <sl:slider id="slider"

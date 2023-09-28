@@ -517,7 +517,7 @@
         </menu>
     </menu>
 
-    <menu id="containers" url="flow-ui/vc/layouts">
+    <menu id="layouts" url="flow-ui/vc/layouts">
         <menu id="accordion">
             <item id="accordion-simple" page="accordion" splitEnabled="true">
                 <otherFiles>
@@ -590,9 +590,9 @@
         <item id="composite-component" page="visual-components" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/component/addresscomponent/AddressComponent.java"/>
-                <file name="io/jmix/uisamples/view/flowui/customcomponents/composite/composite-component.xsd"/>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/composite/address-component.xsd"/>
                 <file name="io/jmix/uisamples/component/addresscomponent/AddressComponentLoader.java"/>
-                <file name="io/jmix/uisamples/view/flowui/customcomponents/composite/CompositeComponentConfiguration.java"/>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/composite/AddressComponentRegistration.java"/>
                 <file name="io/jmix/uisamples/entity/Employee.java"/>
                 <file name="io/jmix/uisamples/entity/Address.java"/>
                 <file name="io/jmix/uisamples/entity/City.java"/>
@@ -603,9 +603,9 @@
             <otherFiles>
                 <file name="io/jmix/uisamples/component/slider/Slider.java"/>
                 <file name="META-INF/resources/js/slider.js"/>
-                <file name="io/jmix/uisamples/view/flowui/customcomponents/jslibrary/custom-component-js-library.xsd"/>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/jslibrary/slider.xsd"/>
                 <file name="io/jmix/uisamples/component/slider/SliderLoader.java"/>
-                <file name="io/jmix/uisamples/view/flowui/customcomponents/jslibrary/JavaScriptLibraryComponentConfiguration.java"/>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/jslibrary/SliderComponentRegistration.java"/>
             </otherFiles>
         </item>
         <item id="custom-component-from-scratch" page="visual-components" splitEnabled="true">

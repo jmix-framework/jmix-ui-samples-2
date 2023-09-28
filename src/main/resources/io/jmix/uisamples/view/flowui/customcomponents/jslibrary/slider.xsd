@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<xs:schema xmlns="http://io.jmix.uisamples/slider-component.xsd"
+<xs:schema xmlns="http://io.jmix.uisamples/slider.xsd"
            elementFormDefault="qualified"
-           targetNamespace="http://io.jmix.uisamples/slider-component.xsd"
+           targetNamespace="http://io.jmix.uisamples/slider.xsd"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:layout="http://jmix.io/schema/flowui/layout">
 

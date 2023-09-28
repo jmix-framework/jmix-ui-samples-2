@@ -10,8 +10,8 @@ import io.jmix.uisamples.component.slider.Slider;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @ViewController("custom-component-js-library")
-@ViewDescriptor("custom-component-js-library.xml")
-public class JavaScriptLibraryComponentSample extends StandardView {
+@ViewDescriptor("slider-usage.xml")
+public class SliderUsage extends StandardView {
 
     @Autowired
     protected Notifications notifications;

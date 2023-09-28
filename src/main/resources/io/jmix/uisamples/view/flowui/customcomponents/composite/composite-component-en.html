@@ -2,8 +2,9 @@
     Composite components are created by combining existing components together. They encapsulate UI layout and behaviour and allow you to reuse identical parts of UI in different views. Composite components can contain data-aware components and load data themselves or rely on data containers provided by the host view.
 </p>
 <p>
-    In this example, we demonstrate a composite component for editing addresses called <code>AddressComponent</code>. The component consists of several <code>TypedTextField</code> and <code>EntityComboBox</code> components representing the address parts.
-
+    In this example, we demonstrate a composite component for editing addresses called <code>AddressComponent</code>. The component consists of several <code>TypedTextField</code> and <code>EntityComboBox</code> components representing the address parts. It works with the <code>Address</code> embeddable entity.
+</p>
+<p>
     The component's constructor accepts a few infrastructure beans and creates inner components and data containers.
 
     The <code>initContent()</code> method is invoked when the composite component is attached to the components tree. It adds its inner components to the parent component which is defined by the type parameter (<code>Composite&lt;FormLayout&gt;</code>).
@@ -12,16 +13,16 @@
 </p>
 <p>
     After creating the composite component class, it can be used in views programmatically. See the <code>initAddress()</code> method of the
-    <code>CompositeComponentSample</code> class.
+    <code>AddressUsage</code> class.
 </p>
 <p>
     To be able to use the new component in views XML declaratively, a few more steps are needed:
 </p>
 <ol>
-    <li>Create an XSD for the component (see <code>composite-component.xsd</code>).</li>
+    <li>Create an XSD for the component (see <code>address-component.xsd</code>).</li>
     <li>Implement the component loader (see <code>AddressComponentLoader.java</code>).</li>
-    <li>Register the component and its loader in the application (see <code>CompositeComponentConfiguration.java</code>).</li>
+    <li>Register the component and its loader in the application (see <code>AddressComponentRegistration.java</code>).</li>
 </ol>
 <p>
-    Once these steps are completed, the composite component can be used in view XML descriptors. See the <code>composite-component.xml</code> file.
+    Once these steps are completed, the composite component can be used in view XML descriptors. See the <code>address-usage.xml</code> file.
 </p>

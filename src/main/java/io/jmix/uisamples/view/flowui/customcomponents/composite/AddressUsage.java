@@ -12,8 +12,8 @@ import io.jmix.uisamples.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @ViewController("composite-component")
-@ViewDescriptor("composite-component.xml")
-public class CompositeComponentSample extends StandardView {
+@ViewDescriptor("address-usage.xml")
+public class AddressUsage extends StandardView {
 
     @ViewComponent
     protected InstanceContainer<Address> addressDc;
