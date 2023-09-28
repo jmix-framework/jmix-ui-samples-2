@@ -17,7 +17,8 @@
 
 <menu-config xmlns="io/jmix/uisamples/menu/uisamples-menu.xsd">
 
-    <menu id="components" url="flow-ui/vc/components">
+    <menu id="components-root" url="flow-ui/vc/components">
+        <about id="components" location="components/about/about.html"/>
         <item id="avatar" page="avatar"/>
         <menu id="badge">
             <item id="badge-simple"/>
@@ -517,7 +518,8 @@
         </menu>
     </menu>
 
-    <menu id="layouts" url="flow-ui/vc/layouts">
+    <menu id="layouts-root" url="flow-ui/vc/layouts">
+        <about id="layouts" location="containers/about/about.html"/>
         <menu id="accordion">
             <item id="accordion-simple" page="accordion" splitEnabled="true">
                 <otherFiles>
@@ -566,7 +568,8 @@
         </menu>
     </menu>
 
-    <menu id="dialogs-and-notifications" url="flow-ui">
+    <menu id="dialogs-and-notifications-root" url="flow-ui">
+        <about id="dialogs-and-notifications" location="dialogsandnotifications/about/about.html"/>
         <menu id="dialogs">
             <item id="message-dialog" page="dialogs" anchor="message-dialog"/>
             <item id="option-dialog" page="dialogs" anchor="option-dialog"/>
@@ -585,7 +588,7 @@
         </menu>
     </menu>
 
-    <menu id="custom-components" url="flow-ui">
+    <menu id="custom-components-root" url="flow-ui">
         <about id="custom-component" location="customcomponents/about/about.html"/>
         <item id="composite-component" page="visual-components" splitEnabled="true">
             <otherFiles>
@@ -619,7 +622,8 @@
         </item>
     </menu>
 
-    <menu id="cookbook" url="flow-ui">
+    <menu id="cookbook-root" url="flow-ui">
+        <about id="cookbook" location="cookbook/about/about.html"/>
         <item id="cascading-dropdowns" page="facets/dataLoadCoordinator" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/Planet.java"/>
