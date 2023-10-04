@@ -3,37 +3,37 @@
         <details summaryText="Simple icon" opened="true">
             <vbox padding="false">
                 <hbox classNames="flex-wrap">
-                    <span themeNames="normal">
+                    <span themeNames="badge normal">
                         <icon icon="CLOCK" classNames="badged-icon"/>
                         <span text="Pending"/>
                     </span>
-                    <span themeNames="success">
+                    <span themeNames="badge success">
                         <icon icon="CHECK" classNames="badged-icon"/>
                         <span text="Confirmed"/>
                     </span>
-                    <span themeNames="error">
+                    <span themeNames="badge error">
                         <icon icon="EXCLAMATION_CIRCLE_O" classNames="badged-icon"/>
                         <span text="Denied"/>
                     </span>
-                    <span themeNames="contrast">
+                    <span themeNames="badge contrast">
                         <icon icon="HAND" classNames="badged-icon"/>
                         <span text="On hold"/>
                     </span>
                 </hbox>
                 <hbox classNames="flex-wrap">
-                    <span themeNames="normal">
+                    <span themeNames="badge normal">
                         <span text="Pending"/>
                         <icon icon="CLOCK" classNames="badged-icon"/>
                     </span>
-                    <span themeNames="success">
+                    <span themeNames="badge success">
                         <span text="Confirmed"/>
                         <icon icon="CHECK" classNames="badged-icon"/>
                     </span>
-                    <span themeNames="error">
+                    <span themeNames="badge error">
                         <span text="Denied"/>
                         <icon icon="EXCLAMATION_CIRCLE_O" classNames="badged-icon"/>
                     </span>
-                    <span themeNames="contrast">
+                    <span themeNames="badge contrast">
                         <span text="On hold"/>
                         <icon icon="HAND" classNames="badged-icon"/>
                     </span>

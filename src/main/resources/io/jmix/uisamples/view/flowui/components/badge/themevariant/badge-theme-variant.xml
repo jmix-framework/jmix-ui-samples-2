@@ -3,28 +3,28 @@
         <vbox width="AUTO" padding="false">
             <details summaryText="Style variant" opened="true">
                 <hbox classNames="flex-wrap">
-                    <span text="Pending" themeNames="normal"/>
-                    <span text="Confirmed" themeNames="success"/>
-                    <span text="Denied" themeNames="error"/>
-                    <span text="On hold" themeNames="contrast"/>
+                    <span text="Pending" themeNames="badge normal"/>
+                    <span text="Confirmed" themeNames="badge success"/>
+                    <span text="Denied" themeNames="badge error"/>
+                    <span text="On hold" themeNames="badge contrast"/>
                 </hbox>
             </details>
             <details summaryText="Size variant" opened="true">
                 <hbox classNames="flex-wrap">
-                    <span text="Medium badge" themeNames="normal"/>
-                    <span text="Small badge" themeNames="small"/>
+                    <span text="Medium badge" themeNames="badge normal"/>
+                    <span text="Small badge" themeNames="badge small"/>
                 </hbox>
             </details>
             <details summaryText="Visual variant" opened="true">
                 <hbox classNames="flex-wrap">
-                    <span text="Parimary badge" themeNames="normal primary"/>
-                    <span text="Pill badge" themeNames="normal pill"/>
+                    <span text="Parimary badge" themeNames="badge normal primary"/>
+                    <span text="Pill badge" themeNames="badge normal pill"/>
                 </hbox>
             </details>
         </vbox>
         <details summaryText="Test badge" opened="true" width="35%">
             <vbox padding="false">
-                <span id="testBadge" themeNames="normal"/>
+                <span id="testBadge" themeNames="badge normal"/>
                 <checkboxGroup id="settingsCheckboxGroup" label="TestBadge settings" themeNames="vertical"/>
             </vbox>
         </details>

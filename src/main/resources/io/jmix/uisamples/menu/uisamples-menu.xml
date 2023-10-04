@@ -627,13 +627,6 @@
         <item id="timer-facet"/>
     </menu>
 
-    <menu id="cookbook" url="flow-ui">
-        <item id="cascading-dropdowns" page="facets/dataLoadCoordinator" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/uisamples/entity/Planet.java"/>
-                <file name="io/jmix/uisamples/entity/Moon.java"/>
-            </otherFiles>
-        </item>
     <menu id="custom-components-root" url="flow-ui">
         <about id="custom-component" location="customcomponents/about/about.html"/>
         <item id="composite-component" page="visual-components" splitEnabled="true">
