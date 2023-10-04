@@ -1,0 +1,41 @@
+<p>
+    Собственные UI-компоненты можно создавать на базе сторонних JavaScript библиотек. Данный пример демонстрирует интеграцию виджета <a href="https://jqueryui.com/slider/" target="_blank">jQuery UI Slider</a> и его использование в экране Jmix.
+</p>
+<p>
+    Файл <code>Slider.js</code>, расположенный в каталоге <code>frontend/src/component/slider</code>, содержит веб-компонент, оборачивающий виджет jQuery UI Slider. Его метод <code>ready()</code> используется для инициализации виджета.
+</p>
+<p>
+    Серверная часть кастомного компонента определена в классе <code>Slider.java</code>. Он содержит несколько аннотаций для интеграции с клиентской частью:
+</p>
+<ul>
+    <li>
+        <code>@Tag</code> - задает имя кастомного HTML-элемента веб-компонента.
+    </li>
+    <li>
+        <code>@NpmPackage</code> импортирует NPM-модуль.
+    </li>
+    <li>
+        <code>@JsModule</code> - импортирует JavaScript-модуль.
+    </li>
+    <li>
+        <code>@CssImport</code> - импортирует стили.
+    </li>
+</ul>
+<p>
+    После создания клиентской и серверной частей компонента, его можно использовать в экранах путем создания экземпляра Java-класса и добавления в родительский компонент.
+</p>
+<p>
+    Ниже описаны шаги для полной интеграции компонента в Jmix UI:
+</p>
+<ol>
+    <li>Создать XSD для компонента (см. <code>slider.xsd</code>).</li>
+    <li>Реализовать загрузчик компонента (см. <code>SliderLoader.java</code>).</li>
+    <li>Зарегистрировать компонент и его загрузчик в приложении (см. <code>SliderComponentRegistration.java</code>).</li>
+</ol>
+<p>
+    После завершения этих шагов компонент можно использовать в XML-дескрипторах экранов. См. файл <code>slider-usage.xml</code>.
+</p>
+<p>
+    Подробная информация о создании кастомных компонентов приведена в документации Vaadin: <a href="https://vaadin.com/docs/latest/advanced/loading-resources#using-annotations" target="_blank">Importing JavaScript & CSS</a>,
+    <a href="https://vaadin.com/docs/latest/create-ui/web-components" target="_blank">Integrating Web Components</a>, <a href="https://vaadin.com/docs/latest/create-ui/element-api" target="_blank">Element API</a>.
+</p>

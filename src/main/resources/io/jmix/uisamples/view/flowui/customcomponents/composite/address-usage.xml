@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:address="http://io.jmix.uisamples/address-component.xsd">
+    <data>
+        <collection id="employeesDc"
+                    class="io.jmix.uisamples.entity.Employee">
+            <fetchPlan extends="_base">
+                <property name="address" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="employeesLoader">
+                <query>
+                    <![CDATA[select e from Employee e order by e.name]]>
+                </query>
+            </loader>
+        </collection>
+        <instance id="employeeDc" class="io.jmix.uisamples.entity.Employee">
+            <instance id="addressDc" property="address"/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <select id="employeeSelect" label="Employee" itemsContainer="employeesDc"
+                helperText="Select an employee whose address to display" minWidth="20em"/>
+        <tabSheet id="tabSheet" width="100%">
+            <tab id="declarative" label="msg://declarativeTab.label">
+                <address:address id="addressComponent" dataContainer="addressDc"/>
+            </tab>
+        </tabSheet>
+    </layout>
+</view>

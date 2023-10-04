@@ -13,7 +13,7 @@
       "@vaadin/checkbox": "24.0.8",
       "@vaadin/checkbox-group": "24.0.8",
       "@vaadin/combo-box": "24.0.8",
-      "@vaadin/common-frontend": "0.0.17",
+      "@vaadin/common-frontend": "0.0.18",
       "@vaadin/component-base": "24.0.8",
       "@vaadin/confirm-dialog": "24.0.8",
       "@vaadin/context-menu": "24.0.8",
@@ -68,6 +68,8 @@
       "ace-builds": "1.18.0",
       "construct-style-sheets-polyfill": "3.1.0",
       "date-fns": "2.29.3",
+      "jquery": "1.9.1",
+      "jquery-ui": "1.13.2",
       "lit": "2.6.1"
     },
     "devDependencies": {
@@ -86,7 +88,7 @@
       "workbox-core": "6.5.4",
       "workbox-precaching": "6.5.4"
     },
-    "hash": "3e6ecced448cce6240dac5976113a0d7f604337c7bc0b089a77da613ff04d89a"
+    "hash": "c1527df5307313308aa5b95fd0ec1fc2c212623824ffcac98a2ec92aa86b6ddb"
   },
   "dependencies": {
     "@polymer/polymer": "3.5.1",
@@ -167,6 +169,8 @@
     "ace-builds": "1.18.0",
     "construct-style-sheets-polyfill": "3.1.0",
     "date-fns": "2.29.3",
+    "jquery": "1.9.1",
+    "jquery-ui": "1.13.2",
     "lit": "2.6.1"
   },
   "devDependencies": {

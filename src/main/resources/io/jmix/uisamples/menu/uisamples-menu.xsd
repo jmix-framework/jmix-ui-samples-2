@@ -28,15 +28,21 @@
             <xs:choice minOccurs="0" maxOccurs="unbounded">
                 <xs:element type="itemType" name="item" maxOccurs="unbounded" minOccurs="0"/>
                 <xs:element type="menuType" name="menu" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element type="aboutType" name="about" maxOccurs="unbounded" minOccurs="0"/>
             </xs:choice>
         </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="aboutType">
+        <xs:attribute name="id" type="xs:string" use="required"/>
+        <xs:attribute name="location" type="xs:string" use="required"/>
     </xs:complexType>
 
     <xs:complexType name="itemType">
         <xs:sequence>
             <xs:choice minOccurs="0" maxOccurs="unbounded">
                 <xs:element name="otherFiles" type="otherFilesType" minOccurs="0"/>
-                <xs:element name="screenParams" type="screenParamsType" minOccurs="0"/>
+                <xs:element name="viewParams" type="viewParamsType" minOccurs="0"/>
             </xs:choice>
         </xs:sequence>
         <xs:attribute name="id" type="xs:string" use="required"/>
@@ -51,6 +57,7 @@
             <xs:choice minOccurs="0" maxOccurs="unbounded">
                 <xs:element type="menuType" name="menu" maxOccurs="unbounded" minOccurs="0"/>
                 <xs:element type="itemType" name="item" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element type="aboutType" name="about" maxOccurs="unbounded" minOccurs="0"/>
             </xs:choice>
         </xs:sequence>
         <xs:attribute name="id" type="xs:string" use="required"/>
@@ -74,7 +81,7 @@
         <xs:attribute name="value" type="xs:string" use="required"/>
     </xs:complexType>
 
-    <xs:complexType name="screenParamsType">
+    <xs:complexType name="viewParamsType">
         <xs:sequence>
             <xs:choice minOccurs="0" maxOccurs="unbounded">
                 <xs:element name="param" type="paramType"/>

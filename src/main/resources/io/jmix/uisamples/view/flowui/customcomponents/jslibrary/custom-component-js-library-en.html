@@ -1,0 +1,41 @@
+<p>
+    You can create custom UI components based on third-party JavaScript libraries. This example demonstrates integration of the <a href="https://jqueryui.com/slider/" target="_blank">jQuery UI Slider</a> widget and its usage in a Jmix view.
+</p>
+<p>
+    The <code>Slider.js</code> file located in the <code>frontend/src/component/slider</code> folder contains a web component wrapping the jQuery UI Slider widget. Its <code>ready()</code> method is used to initialize the widget.
+</p>
+<p>
+    The server-side part of the custom component is defined in <code>Slider.java</code>. It contains a number of annotations for integration with the client-side part:
+</p>
+<ul>
+    <li>
+        <code>@Tag</code> - specifies the name of the custom HTML element of the web component.
+    </li>
+    <li>
+        <code>@NpmPackage</code> imports an NPM module.
+    </li>
+    <li>
+        <code>@JsModule</code> - imports a JavaScript module.
+    </li>
+    <li>
+        <code>@CssImport</code> - imports styles.
+    </li>
+</ul>
+<p>
+    After creating the client-side and server-side parts of the component, it can be used in views by creating an instance of its Java class and adding it to a parent component.
+</p>
+<p>
+    The following steps completely integrate the component into Jmix UI:
+</p>
+<ol>
+    <li>Create an XSD for the component (see <code>slider.xsd</code>).</li>
+    <li>Implement the component loader (see <code>SliderLoader.java</code>).</li>
+    <li>Register the component and its loader in the application (see <code>SliderComponentRegistration.java</code>).</li>
+</ol>
+<p>
+    Once these steps are completed, the custom component can be used in view XML descriptors. See the <code>slider-usage.xml</code> file.
+</p>
+<p>
+    See more information about creating custom components in Vaadin documentation: <a href="https://vaadin.com/docs/latest/advanced/loading-resources#using-annotations" target="_blank">Importing JavaScript & CSS</a>,
+    <a href="https://vaadin.com/docs/latest/create-ui/web-components" target="_blank">Integrating Web Components</a>, <a href="https://vaadin.com/docs/latest/create-ui/element-api" target="_blank">Element API</a>.
+</p>

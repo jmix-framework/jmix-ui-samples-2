@@ -17,7 +17,8 @@
 
 <menu-config xmlns="io/jmix/uisamples/menu/uisamples-menu.xsd">
 
-    <menu id="components" url="flow-ui/vc/components">
+    <menu id="components-root" url="flow-ui/vc/components">
+        <about id="components" location="components/about/about.html"/>
         <item id="avatar" page="avatar"/>
         <menu id="badge">
             <item id="badge-simple"/>
@@ -551,7 +552,8 @@
         </menu>
     </menu>
 
-    <menu id="containers" url="flow-ui/vc/layouts">
+    <menu id="layouts-root" url="flow-ui/vc/layouts">
+        <about id="layouts" location="containers/about/about.html"/>
         <menu id="accordion">
             <item id="accordion-simple" page="accordion" splitEnabled="true">
                 <otherFiles>
@@ -601,7 +603,8 @@
         </menu>
     </menu>
 
-    <menu id="dialogs-and-notifications" url="flow-ui">
+    <menu id="dialogs-and-notifications-root" url="flow-ui">
+        <about id="dialogs-and-notifications" location="dialogsandnotifications/about/about.html"/>
         <menu id="dialogs">
             <item id="message-dialog" page="dialogs" anchor="message-dialog"/>
             <item id="option-dialog" page="dialogs" anchor="option-dialog"/>
@@ -631,25 +634,46 @@
                 <file name="io/jmix/uisamples/entity/Moon.java"/>
             </otherFiles>
         </item>
+    <menu id="custom-components-root" url="flow-ui">
+        <about id="custom-component" location="customcomponents/about/about.html"/>
         <item id="composite-component" page="visual-components" splitEnabled="true">
             <otherFiles>
-                <file name="io/jmix/uisamples/component/compositecomponent/AddressComponent.java"/>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/compositecomponent/address-component.xsd"/>
-                <file name="io/jmix/uisamples/component/compositecomponent/AddressComponentLoader.java"/>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/compositecomponent/CompositeComponentConfiguration.java"/>
+                <file name="io/jmix/uisamples/component/addresscomponent/AddressComponent.java"/>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/composite/address-component.xsd"/>
+                <file name="io/jmix/uisamples/component/addresscomponent/AddressComponentLoader.java"/>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/composite/AddressComponentRegistration.java"/>
                 <file name="io/jmix/uisamples/entity/Employee.java"/>
                 <file name="io/jmix/uisamples/entity/Address.java"/>
                 <file name="io/jmix/uisamples/entity/City.java"/>
                 <file name="io/jmix/uisamples/entity/Country.java"/>
             </otherFiles>
         </item>
-        <item id="custom-component" page="visual-components" splitEnabled="true">
+        <item id="custom-component-js-library" page="visual-components" splitEnabled="true">
             <otherFiles>
-                <file name="io/jmix/uisamples/component/customcomponent/Slider.java"/>
+                <file name="io/jmix/uisamples/component/slider/Slider.java"/>
                 <file name="META-INF/resources/js/slider.js"/>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/customcomponent/custom-component.xsd"/>
-                <file name="io/jmix/uisamples/component/customcomponent/SliderLoader.java"/>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/customcomponent/CustomComponentConfiguration.java"/>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/jslibrary/slider.xsd"/>
+                <file name="io/jmix/uisamples/component/slider/SliderLoader.java"/>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/jslibrary/SliderComponentRegistration.java"/>
+            </otherFiles>
+        </item>
+        <item id="custom-component-from-scratch" page="visual-components" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/component/themetoggle/ThemeToggle.java"/>
+                <file name="META-INF/resources/js/theme-toggle.js"/>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/fromscratch/theme-toggle.xsd"/>
+                <file name="io/jmix/uisamples/component/themetoggle/ThemeToggleLoader.java"/>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/fromscratch/ThemeToggleRegistration.java"/>
+            </otherFiles>
+        </item>
+    </menu>
+
+    <menu id="cookbook-root" url="flow-ui">
+        <about id="cookbook" location="cookbook/about/about.html"/>
+        <item id="cascading-dropdowns" page="facets/dataLoadCoordinator" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Planet.java"/>
+                <file name="io/jmix/uisamples/entity/Moon.java"/>
             </otherFiles>
         </item>
         <item id="copy-action" page="actions/declarative-actions" splitEnabled="true">

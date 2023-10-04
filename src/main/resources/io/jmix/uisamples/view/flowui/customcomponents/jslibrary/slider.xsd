@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://io.jmix.uisamples/slider.xsd"
+           elementFormDefault="qualified"
+           targetNamespace="http://io.jmix.uisamples/slider.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:layout="http://jmix.io/schema/flowui/layout">
+
+    <xs:element name="slider">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="layout:baseComponent">
+                    <xs:attribute name="min" type="xs:integer"/>
+                    <xs:attribute name="max" type="xs:integer"/>
+                    <xs:attribute name="value" type="xs:integer"/>
+
+                    <xs:attributeGroup ref="layout:hasSize"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
