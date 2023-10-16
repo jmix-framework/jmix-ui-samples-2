@@ -17,7 +17,7 @@
             </details>
             <details summaryText="Visual variant" opened="true">
                 <hbox classNames="flex-wrap">
-                    <span text="Parimary badge" themeNames="normal primary"/>
+                    <span text="Primary badge" themeNames="normal primary"/>
                     <span text="Pill badge" themeNames="normal pill"/>
                 </hbox>
             </details>
