@@ -1,6 +1,5 @@
 package io.jmix.uisamples.view.flowui.components.listbox.customrenderer;
 
-import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.avatar.Avatar;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
@@ -36,17 +35,11 @@ public class ListBoxCustomRendererSample extends StandardView {
 
     @Subscribe
     protected void onInit(InitEvent event) {
-        List<Simpson> items = List.of(
-                new Simpson("Homer Jay Simpson", "Homer","homer-simpson.png"),
-                new Simpson("Marjorie Jacqueline Simpson", "Marge", "marge-simpson.png"),
-                new Simpson("Bartholomew Jojo Simpson", "Bart", "bart-simpson.png")
-        );
-
-        listBox.setItems(items);
-        listBox.setRenderer(getComponentRenderer());
+        listBox.setItems(getListBoxItems());
     }
 
-    protected ComponentRenderer<Component, Simpson> getComponentRenderer() {
+    @Supply(to = "listBox", subject = "renderer")
+    protected ComponentRenderer<HorizontalLayout, Simpson> listBoxRenderer() {
         return new ComponentRenderer<>(simpson -> {
             HorizontalLayout row = uiComponents.create(HorizontalLayout.class);
             row.setAlignItems(FlexComponent.Alignment.CENTER);
@@ -67,6 +60,14 @@ public class ListBoxCustomRendererSample extends StandardView {
             row.addClassName(LumoUtility.LineHeight.MEDIUM);
             return row;
         });
+    }
+
+    protected List<Simpson> getListBoxItems() {
+        return List.of(
+                new Simpson("Homer Jay Simpson", "Homer", "homer-simpson.png"),
+                new Simpson("Marjorie Jacqueline Simpson", "Marge", "marge-simpson.png"),
+                new Simpson("Bartholomew Jojo Simpson", "Bart", "bart-simpson.png")
+        );
     }
 
     protected StreamResource getSimpsonImage(Simpson simpson) {

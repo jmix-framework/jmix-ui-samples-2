@@ -5,10 +5,13 @@
                 <multiSelectComboBox id="declarativeMultiSelectComboBox" label="Customer"
                                 metaClass="Customer">
                     <itemsQuery class="io.jmix.uisamples.entity.Customer"
-                                searchStringFormat="(?i)%${searchString}%"
+                                searchStringFormat="(?i)%${inputString}%"
                                 escapeValueForLike="true"
                                 fetchPlan="_local">
-                        <![CDATA[select e from Customer e where e.name like :searchString escape '\' order by e.name asc]]>
+                        <query>
+                            <![CDATA[select e from Customer e where e.name
+                            like :searchString escape '\' order by e.name asc]]>
+                        </query>
                     </itemsQuery>
                 </multiSelectComboBox>
             </tab>

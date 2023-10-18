@@ -17,6 +17,11 @@ public class CodeEditorSimpleSample extends StandardView {
         codeEditor.setHighlightActiveLine(event.getValue());
     }
 
+    @Subscribe("highlightGutterCheckbox")
+    protected void onHighlightGutterCheckboxValueChange(ComponentValueChangeEvent<JmixCheckbox, Boolean> event) {
+        codeEditor.setHighlightGutterLine(event.getValue());
+    }
+
     @Subscribe("gutterCheckbox")
     protected void onGutterCheckboxValueChange(ComponentValueChangeEvent<JmixCheckbox, Boolean> event) {
         codeEditor.setShowGutter(event.getValue());

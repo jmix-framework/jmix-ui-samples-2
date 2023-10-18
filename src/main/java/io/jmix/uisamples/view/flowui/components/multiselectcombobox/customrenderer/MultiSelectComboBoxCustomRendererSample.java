@@ -1,9 +1,9 @@
 package io.jmix.uisamples.view.flowui.components.multiselectcombobox.customrenderer;
 
-import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
+import com.vaadin.flow.data.renderer.Renderer;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.component.multiselectcombobox.JmixMultiSelectComboBox;
 import io.jmix.flowui.view.*;
@@ -22,10 +22,10 @@ public class MultiSelectComboBoxCustomRendererSample extends StandardView {
     @Subscribe
     protected void onInit(InitEvent event) {
         iconsMultiSelectComboBox.setItems(VaadinIcon.values());
-        iconsMultiSelectComboBox.setRenderer(getMultiSelectComboBoxComponentRenderer());
     }
 
-    protected ComponentRenderer<Component, VaadinIcon> getMultiSelectComboBoxComponentRenderer() {
+    @Supply(to = "iconsMultiSelectComboBox", subject = "renderer")
+    protected Renderer<VaadinIcon> multiSelectComboBoxComponentRenderer() {
         return new ComponentRenderer<>(vaadinIcon -> {
             HorizontalLayout contentBox = uiComponents.create(HorizontalLayout.class);
             contentBox.setPadding(false);

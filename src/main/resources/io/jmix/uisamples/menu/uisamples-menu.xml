@@ -674,7 +674,7 @@
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>
         </item>
-        <item id="custom-login">
+        <item id="custom-login" splitEnabled="true">
             <otherFiles>
                 <file name="META-INF/resources/themes/custom-login.css"/>
             </otherFiles>

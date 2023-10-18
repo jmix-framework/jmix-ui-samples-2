@@ -2,9 +2,7 @@
     <layout>
         <tabSheet id="tabSheet" width="100%">
             <tab id="declarativeTab" label="Declaratively added component">
-                <html>
-                    <file path="META-INF/resources/html/html-component.html"/>
-                </html>
+                <html file="META-INF/resources/html/html-component.html"/>
             </tab>
         </tabSheet>
     </layout>

@@ -33,7 +33,6 @@ public class TimerFacetSample extends StandardView {
     protected void onStartTimerClick(ClickEvent<JmixButton> event) {
         timer.start();
 
-
         timerIndicator.setText("Timer started");
         timerIndicator.getElement().getThemeList().clear();
         timerIndicator.getElement().getThemeList().add("badge pill success");

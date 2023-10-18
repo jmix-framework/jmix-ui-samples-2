@@ -23,12 +23,11 @@ public class ListBoxCustomDisabledSample extends StandardView {
 
     protected void initListBox() {
         listBox.setItems(getListBoxItems());
-        listBox.setRenderer(getRenderer());
-
         listBox.setItemEnabledProvider(product -> product.count() > 0);
     }
 
-    protected ComponentRenderer<Text, Product> getRenderer() {
+    @Supply(to = "listBox", subject = "renderer")
+    protected ComponentRenderer<Text, Product> listBoxRenderer() {
         return new ComponentRenderer<>(product -> new Text(product.getDisplayName()));
     }
 

@@ -8,7 +8,16 @@
         <code>%</code>, <code>\</code>, etc. The default value is <code>false</code>.
     </li>
     <li>
-        <code>searchStringFormat</code> - a Groovy string. Thus, you can use any valid Groovy-string expressions.
+        <code>searchStringFormat</code> - a string that contains a variable to be substituted with actual
+        value by <code>io.jmix.flowui.sys.substitutor.StringSubstitutor.</code> The default implementation delegates
+        its work to <code>org.apache.commons.text.StringSubstitutor.</code>.
+    </li>
+</ul>
+
+<p>The <code>itemsQuery</code> element for the <code>ComboBox</code> has the following nested elements:</p>
+<ul>
+    <li>
+        <code>query</code> - an element that contains a JPQL query.
     </li>
 </ul>
 

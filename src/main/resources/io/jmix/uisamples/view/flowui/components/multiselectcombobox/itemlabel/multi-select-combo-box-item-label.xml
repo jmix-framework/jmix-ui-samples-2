@@ -14,6 +14,6 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
-        <multiSelectComboBox id="multiSelectComboBox" itemsContainer="productTagsDc"/>
+        <multiSelectComboBox id="multiSelectComboBox" label="Product tags" itemsContainer="productTagsDc"/>
     </layout>
 </view>

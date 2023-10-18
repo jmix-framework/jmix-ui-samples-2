@@ -18,13 +18,13 @@
                   width="100%"
                   minHeight="20em"
                   dataContainer="customersDc">
-            <columns filterable="true">
-                <column property="name"/>
-                <column property="lastName" filterable="false"/>
-                <column property="email" filterable="false"/>
-                <column property="age"/>
-                <column property="active"/>
-                <column property="grade"/>
+            <columns>
+                <column property="name" filterable="true"/>
+                <column property="lastName"/>
+                <column property="email"/>
+                <column property="age" filterable="true"/>
+                <column property="active" filterable="true"/>
+                <column property="grade" filterable="true"/>
             </columns>
         </dataGrid>
     </layout>

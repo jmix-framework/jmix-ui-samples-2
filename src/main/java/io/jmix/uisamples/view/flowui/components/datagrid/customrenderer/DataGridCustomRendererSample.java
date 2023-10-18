@@ -2,6 +2,7 @@ package io.jmix.uisamples.view.flowui.components.datagrid.customrenderer;
 
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
+import com.vaadin.flow.data.renderer.Renderer;
 import io.jmix.core.Messages;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.component.checkbox.JmixCheckbox;
@@ -23,7 +24,7 @@ public class DataGridCustomRendererSample extends StandardView {
     protected Messages messages;
 
     @Supply(to = "customersDataGrid.active", subject = "renderer")
-    protected ComponentRenderer<JmixCheckbox, Customer> createActiveComponentRenderer() {
+    protected Renderer<Customer> activeComponentRenderer() {
         return new ComponentRenderer<>(
                 () -> {
                     JmixCheckbox checkbox = uiComponents.create(JmixCheckbox.class);
@@ -35,7 +36,7 @@ public class DataGridCustomRendererSample extends StandardView {
     }
 
     @Supply(to = "customersDataGrid.grade", subject = "renderer")
-    protected ComponentRenderer<Span, Customer> createStatusComponentRenderer() {
+    protected Renderer<Customer> statusComponentRenderer() {
         return new ComponentRenderer<>(this::createGradeComponent, this::gradeComponentUpdater);
     }
 

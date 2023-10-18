@@ -1,6 +1,7 @@
 package io.jmix.uisamples.view.flowui.components.combobox.itemsquery;
 
 import com.vaadin.flow.data.provider.Query;
+import com.vaadin.flow.data.renderer.Renderer;
 import com.vaadin.flow.data.renderer.TextRenderer;
 import io.jmix.core.DataManager;
 import io.jmix.flowui.view.*;
@@ -25,7 +26,7 @@ public class ComboBoxItemsQuerySample extends StandardView {
     }
 
     @Supply(to = "programmaticComboBox", subject = "renderer")
-    protected TextRenderer<Customer> comboBoxTextRenderer() {
+    protected Renderer<Customer> comboBoxTextRenderer() {
         return new TextRenderer<>(Customer::getName);
     }
 
