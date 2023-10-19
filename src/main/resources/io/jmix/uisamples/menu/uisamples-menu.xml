@@ -545,10 +545,35 @@
         </menu>
         <menu id="value-picker">
             <item id="value-picker-simple" page="valuePicker"/>
-            <item id="value-picker-dataaware" page="valuePicker"/>
+            <item id="value-picker-dataaware" page="valuePicker">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
             <item id="value-picker-multi" page="multiValuePicker"/>
-            <item id="value-picker-multi-enum" page="multiValuePicker"/>
-            <item id="value-picker-multi-entity" page="multiValuePicker"/>
+            <item id="value-picker-multi-enum" page="multiValuePicker">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="value-picker-multi-entity" page="multiValuePicker">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="virtual-list">
+            <item id="virtual-list-simple" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="virtual-list-custom-items" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Day.java"/>
+                </otherFiles>
+            </item>
         </menu>
     </menu>
 
