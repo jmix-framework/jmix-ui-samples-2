@@ -699,6 +699,13 @@
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>
         </item>
+        <item id="charts-addon" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/chartsaddon/chart.xsd"/>
+                <file name="io/jmix/uisamples/component/chart/ChartLoader.java"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/chartsaddon/ChartComponentRegistration.java"/>
+            </otherFiles>
+        </item>
         <item id="custom-login" splitEnabled="true">
             <otherFiles>
                 <file name="META-INF/resources/themes/custom-login.css"/>

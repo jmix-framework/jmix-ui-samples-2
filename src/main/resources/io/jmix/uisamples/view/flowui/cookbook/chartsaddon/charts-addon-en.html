@@ -1,0 +1,40 @@
+<p>The Jmix Platform doesn't limit the possibility of integration with any Vaadin components, including addons. This way you can connect any addon, and it will work out of the box.</p>
+<p>This example demonstrates the integration of the <a href="https://vaadin.com/directory/component/so-charts">Charts
+    add-on</a>. You can find other addons here: <a href="https://vaadin.com/directory/?q=">Vaadin Directory</a></p>
+
+<p>To connect the addon you must complete the following steps:</p>
+<ol>
+    <li>
+        Add the <b>vaadin-addons</b> maven repository to the project's <code>build.gradle</code>:
+        <pre>repositories {
+    // ...
+    maven {
+        url 'https://maven.vaadin.com/vaadin-addons'
+    }
+    // ...
+}</pre>
+    </li>
+    <li>
+        Add the dependency of the add-on to the <code>build.gradle</code>:
+        <pre>dependencies {
+    // ...
+    implementation 'com.storedobject.chart:so-charts:3.2.4'
+    // ...
+}</pre>
+    </li>
+</ol>
+
+<p>To be able to use the components from add-on in views XML declaratively, a few more steps are needed:</p>
+<ol>
+    <li>
+        Create an XSD for the components (see <code>chart.xsd</code>
+    </li>
+    <li>
+        Implement the component loaders (see <code>ChartLoader.java</code>).
+    </li>
+    <li>
+        Register the components and its loaders in the application (see <code>ChartComponentRegistration.java</code>).
+    </li>
+</ol>
+
+<p><b>Note:</b> the sample provides partial support for components (not all properties and components are described in XML).</p>

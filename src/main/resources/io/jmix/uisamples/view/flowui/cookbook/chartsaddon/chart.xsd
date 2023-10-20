@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://io.jmix.uisamples/chart.xsd"
+           elementFormDefault="qualified"
+           targetNamespace="http://io.jmix.uisamples/chart.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:layout="http://jmix.io/schema/flowui/layout">
+
+    <xs:element name="chart">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="layout:baseComponent">
+                    <xs:sequence>
+                        <xs:group ref="chartComponents"/>
+                    </xs:sequence>
+
+                    <xs:attribute name="labels" type="xs:string"/>
+                    <xs:attribute name="data" type="xs:string"/>
+
+                    <xs:attributeGroup ref="layout:hasSize"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:group name="chartComponents">
+        <xs:sequence>
+            <xs:choice maxOccurs="unbounded">
+                <xs:element name="nightingaleRoseChart" type="baseChart"/>
+                <xs:element name="barChart" type="baseChart"/>
+                <xs:element name="toolbox" type="toolbox"/>
+                <xs:element name="title" type="title"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:group>
+
+    <xs:complexType name="baseChart">
+        <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="toolbox">
+        <xs:sequence maxOccurs="unbounded">
+            <xs:element name="buttons" type="toolboxButtons"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="toolboxButtons">
+        <xs:sequence>
+            <xs:element name="button">
+                <xs:complexType>
+                    <xs:attribute name="type" type="toolboxButtonType"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="toolboxButtonType">
+        <xs:restriction>
+            <xs:enumeration value="download"/>
+            <xs:enumeration value="restore"/>
+            <xs:enumeration value="zoom"/>
+            <xs:enumeration value="data-view"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="title">
+        <xs:attribute name="text" type="xs:string"/>
+        <xs:attribute name="subText" type="xs:string"/>
+    </xs:complexType>
+</xs:schema>
