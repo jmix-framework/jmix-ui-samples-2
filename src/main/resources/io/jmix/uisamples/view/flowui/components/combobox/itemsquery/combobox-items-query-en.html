@@ -1,0 +1,41 @@
+<p><b>ComboBox</b> component supports a callback for fetching items from a back end:</p>
+
+<p>You can define the query declaratively using <code>itemsQuery</code> element in XML.</p>
+<p>The <code>itemsQuery</code> element for the <code>ComboBox</code> has following attributes:</p>
+<ul>
+    <li>
+        <code>escapeValueForLike</code> - enables searching for the values that contain special symbols:
+        <code>%</code>, <code>\</code>, etc. The default value is <code>false</code>.
+    </li>
+    <li>
+        <code>searchStringFormat</code> - a string that contains a variable to be substituted with actual
+        value by <code>io.jmix.flowui.sys.substitutor.StringSubstitutor.</code> The default implementation delegates
+        its work to <code>org.apache.commons.text.StringSubstitutor.</code>.
+    </li>
+</ul>
+
+<p>The <code>itemsQuery</code> element for the <code>ComboBox</code> has the following nested elements:</p>
+<ul>
+    <li>
+        <code>query</code> - an element that contains a JPQL query.
+    </li>
+</ul>
+
+<p><b>Note:</b> there is no <code>entityClass</code> and <code>fetchPlan</code> because <code>ComboBox</code> assumes
+    that scalar values will be loaded. In case if entities use <code>EntityComboBox</code>.</p>
+
+<p>If <code>itemsQuery</code> is not defined, you can programmatically set the list of options using <code>setItemsFetchCallback</code>
+    in the ViewController.</p>
+
+<p><b>Note:</b> Because the real work is delegated to<code>com.vaadin.flow.data.provider.HasLazyDataView#setItems(com.vaadin.flow.data.provider.CallbackDataProvider.FetchCallback</code>,
+    the <code>QueryTrace</code> instance is passed to the <code>fetch</code> callback.</p>
+
+<p>As a result, there are several limitations:</p>
+<ul>
+    <li>
+        <code>query.getOffset()</code> and <code>query.getLimit()</code> methods must be called, otherwise an exception is thrown.
+    </li>
+    <li>
+        The amount of items returned from callback cannot exceed the <code>limit</code> value, otherwise an exception is thrown.
+    </li>
+</ul>

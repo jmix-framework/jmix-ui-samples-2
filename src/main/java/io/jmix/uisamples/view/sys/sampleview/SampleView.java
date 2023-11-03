@@ -21,7 +21,7 @@ import com.vaadin.flow.component.*;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.Anchor;
-import com.vaadin.flow.component.html.Label;
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
@@ -52,12 +52,10 @@ import io.jmix.flowui.component.tabsheet.JmixTabSheet;
 import io.jmix.flowui.exception.GuiDevelopmentException;
 import io.jmix.flowui.kit.component.button.JmixButton;
 import io.jmix.flowui.kit.component.codeeditor.CodeEditorMode;
-import io.jmix.flowui.kit.component.codeeditor.CodeEditorTheme;
 import io.jmix.flowui.view.*;
 import io.jmix.uisamples.bean.MenuNavigationExpander;
 import io.jmix.uisamples.config.UiSamplesMenuConfig;
 import io.jmix.uisamples.config.UiSamplesMenuItem;
-import io.jmix.uisamples.util.CodeEditorThemeHelper;
 import io.jmix.uisamples.util.UiSamplesHelper;
 import io.jmix.uisamples.view.sys.main.MainView;
 import org.apache.commons.collections4.CollectionUtils;
@@ -100,8 +98,6 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     @Autowired
     protected Notifications notifications;
     @Autowired
-    protected CodeEditorThemeHelper codeEditorThemeHelper;
-    @Autowired
     protected MenuNavigationExpander menuNavigationExpander;
     @Autowired
     protected Resources resources;
@@ -117,7 +113,6 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     public void beforeEnter(BeforeEnterEvent event) {
         event.getRouteParameters().get("sampleId")
                 .ifPresent(this::updateSample);
-        codeEditorThemeHelper.setCodeEditors(codeEditors);
         super.beforeEnter(event);
     }
 
@@ -273,7 +268,6 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     protected CodeEditor createCodeEditor(CodeEditorMode mode) {
         CodeEditor editor = uiComponents.create(CodeEditor.class);
 
-        editor.setTheme(getSessionTheme());
         editor.setShowPrintMargin(false);
         editor.setMode(mode);
         editor.setReadOnly(true);
@@ -334,7 +328,7 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
             sb.append("<hr>");
         }
 
-        Label doc = uiComponents.create(Label.class);
+        Div doc = uiComponents.create(Div.class);
 
         doc.setWidthFull();
         doc.getElement().setProperty("innerHTML", sb.toString());
@@ -403,14 +397,16 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     }
 
     protected String getCopyToClipboardScript() {
-        return "const textarea = document.createElement(\"textarea\");\n" +
-                "  textarea.value = $0;\n" +
-                "  textarea.style.position = \"absolute\";\n" +
-                "  textarea.style.opacity = \"0\";\n" +
-                "  document.body.appendChild(textarea);\n" +
-                "  textarea.select();\n" +
-                "  document.execCommand(\"copy\");\n" +
-                "  document.body.removeChild(textarea);\n";
+        return """
+                const textarea = document.createElement("textarea");
+                  textarea.value = $0;
+                  textarea.style.position = "absolute";
+                  textarea.style.opacity = "0";
+                  document.body.appendChild(textarea);
+                  textarea.select();
+                  document.execCommand("copy");
+                  document.body.removeChild(textarea);
+                """;
     }
 
     protected String getControllerFileName(String controllerName) {
@@ -475,18 +471,5 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
 
     protected Locale getCurrentLocale() {
         return UI.getCurrent().getLocale();
-    }
-
-    protected CodeEditorTheme getSessionTheme() {
-        SessionData sessionData = sessionDataProvider.getIfAvailable();
-
-        if (sessionData != null) {
-            String currentTheme = (String) sessionData.getAttribute(MainView.CURRENT_THEME_SESSION_ATTRIBUTE);
-            return "dark".equalsIgnoreCase(currentTheme)
-                    ? CodeEditorTheme.NORD_DARK
-                    : CodeEditorTheme.TEXTMATE;
-        }
-
-        return CodeEditorTheme.TEXTMATE;
     }
 }

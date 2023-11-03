@@ -3,18 +3,33 @@
         <split width="100%" themeNames="splitter-spacing" splitterPosition="66">
             <formLayout>
                 <responsiveSteps>
-                    <responsiveStep minWidth="0" columns="1"/>
-                    <responsiveStep minWidth="40em" columns="2"/>
-                    <responsiveStep minWidth="60em" columns="4"/>
+                    <responsiveStep minWidth="0" columns="1" labelsPosition="TOP"/>
+                    <responsiveStep minWidth="30em" columns="1" labelsPosition="ASIDE"/>
+                    <responsiveStep minWidth="40em" columns="2" labelsPosition="TOP"/>
+                    <responsiveStep minWidth="50em" columns="2" labelsPosition="ASIDE"/>
+                    <responsiveStep minWidth="60em" columns="4" labelsPosition="TOP"/>
                 </responsiveSteps>
-
-                <textField label="TextField"/>
-                <dateTimePicker label="DateTimePicker"/>
-                <textArea label="TextArea"/>
-                <checkbox label="Checkbox"/>
-                <textArea label="TextArea with column span" colspan="2"/>
-                <passwordField label="PasswordField"/>
-                <emailField label="EmailField"/>
+                <formItem label="TextField">
+                    <textField/>
+                </formItem>
+                <formItem label="DateTimePicker">
+                    <dateTimePicker/>
+                </formItem>
+                <formItem label="TextArea">
+                    <textArea/>
+                </formItem>
+                <formItem label="Checkbox">
+                    <checkbox/>
+                </formItem>
+                <formItem label="TextArea with column span" colspan="2">
+                    <textArea/>
+                </formItem>
+                <formItem label="PasswordField">
+                    <passwordField/>
+                </formItem>
+                <formItem label="EmailField">
+                    <emailField/>
+                </formItem>
             </formLayout>
             <formLayout>
                 <responsiveSteps>

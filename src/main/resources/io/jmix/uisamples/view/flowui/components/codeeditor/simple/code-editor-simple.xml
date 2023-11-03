@@ -2,6 +2,7 @@
     <layout>
         <hbox classNames="buttons-panel">
             <checkbox id="highlightCheckbox" label="Highlight active line" value="true"/>
+            <checkbox id="highlightGutterCheckbox" label="Highlight gutter line" value="true"/>
             <checkbox id="gutterCheckbox" label="Show Gutter" value="true"/>
             <checkbox id="lineNumbersCheckbox" label="Line numbers" value="true"/>
             <checkbox id="printMarginCheckbox" label="Print margin" value="true"/>

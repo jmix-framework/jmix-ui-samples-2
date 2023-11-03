@@ -1,0 +1,7 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <virtualList id="virtualList" width="15em"
+                     itemsEnum="io.jmix.uisamples.entity.Day"
+                     alignSelf="CENTER"/>
+    </layout>
+</view>

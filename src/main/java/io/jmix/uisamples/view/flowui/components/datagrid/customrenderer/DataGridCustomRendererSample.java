@@ -2,12 +2,14 @@ package io.jmix.uisamples.view.flowui.components.datagrid.customrenderer;
 
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
-import io.jmix.core.MessageTools;
+import com.vaadin.flow.data.renderer.Renderer;
 import io.jmix.core.Messages;
-import io.jmix.core.Metadata;
 import io.jmix.flowui.UiComponents;
-import io.jmix.flowui.component.grid.DataGrid;
-import io.jmix.flowui.view.*;
+import io.jmix.flowui.component.checkbox.JmixCheckbox;
+import io.jmix.flowui.view.StandardView;
+import io.jmix.flowui.view.Supply;
+import io.jmix.flowui.view.ViewController;
+import io.jmix.flowui.view.ViewDescriptor;
 import io.jmix.uisamples.entity.Customer;
 import io.jmix.uisamples.entity.CustomerGrade;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,25 +18,25 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("data-grid-custom-renderer.xml")
 public class DataGridCustomRendererSample extends StandardView {
 
-    @ViewComponent
-    protected DataGrid<Customer> customersDataGrid;
-
     @Autowired
     protected UiComponents uiComponents;
     @Autowired
     protected Messages messages;
-    @Autowired
-    protected MessageTools messageTools;
-    @Autowired
-    protected Metadata metadata;
 
-    @Subscribe
-    protected void onInit(InitEvent event) {
-        customersDataGrid.addColumn(createStatusComponentRenderer())
-                .setHeader(messageTools.getPropertyCaption(metadata.getClass(Customer.class), "grade"));
+    @Supply(to = "customersDataGrid.active", subject = "renderer")
+    protected Renderer<Customer> activeComponentRenderer() {
+        return new ComponentRenderer<>(
+                () -> {
+                    JmixCheckbox checkbox = uiComponents.create(JmixCheckbox.class);
+                    checkbox.setReadOnly(true);
+                    return checkbox;
+                },
+                (checkbox, customer) -> checkbox.setValue(customer.isActive())
+        );
     }
 
-    protected ComponentRenderer<Span, Customer> createStatusComponentRenderer() {
+    @Supply(to = "customersDataGrid.grade", subject = "renderer")
+    protected Renderer<Customer> statusComponentRenderer() {
         return new ComponentRenderer<>(this::createGradeComponent, this::gradeComponentUpdater);
     }
 

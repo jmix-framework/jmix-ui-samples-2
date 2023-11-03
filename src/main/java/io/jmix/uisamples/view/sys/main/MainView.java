@@ -39,7 +39,6 @@ import io.jmix.flowui.kit.component.main.ListMenu;
 import io.jmix.flowui.menu.MenuItem;
 import io.jmix.flowui.view.*;
 import io.jmix.uisamples.bean.MenuNavigationExpander;
-import io.jmix.uisamples.component.themetoggle.ThemeToggle;
 import io.jmix.uisamples.config.UiSamplesMenuConfig;
 import io.jmix.uisamples.config.UiSamplesMenuItem;
 import io.jmix.uisamples.view.sys.sampleview.SampleView;
@@ -48,8 +47,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationEvent;
-import org.springframework.lang.Nullable;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -64,14 +61,10 @@ public class MainView extends StandardMainView {
 
     private static final Logger log = LoggerFactory.getLogger(MainView.class);
 
-    public static final String CURRENT_THEME_SESSION_ATTRIBUTE = "currentTheme";
-
     @ViewComponent
     protected JmixListMenu menu;
     @ViewComponent
     protected TypedTextField<String> searchField;
-    @ViewComponent
-    protected ThemeToggle themeToggle;
     @ViewComponent
     protected Div applicationTitlePlaceholder;
 
@@ -91,12 +84,10 @@ public class MainView extends StandardMainView {
     protected List<JmixListMenu.MenuItem> foundItems = new ArrayList<>();
     protected List<String> parentListIdsToExpand = new ArrayList<>();
 
-
     @Subscribe
     public void onInit(InitEvent event) {
         initSideMenu();
         initApplicationTitle();
-        initThemeSessionAttribute();
 
         menuNavigationExpander.setExpandCallback(this::expandAllParentRecursively);
     }
@@ -118,27 +109,6 @@ public class MainView extends StandardMainView {
             html.addClassName(LumoUtility.Padding.MEDIUM);
             content.setContent(html);
         }
-    }
-
-    protected void initThemeSessionAttribute() {
-        SessionData sessionData = sessionDataProvider.getIfAvailable();
-
-        if (sessionData != null) {
-            themeToggle.getElement().executeJs("return this.getCurrentTheme();")
-                    .then(String.class, currentTheme ->
-                            sessionData.setAttribute(CURRENT_THEME_SESSION_ATTRIBUTE, currentTheme));
-        }
-
-        ComponentUtil.addListener(themeToggle, ThemeToggle.ThemeToggleThemeChangedEvent.class, event -> {
-            String currentTheme = event.getValue();
-
-            if (sessionData != null) {
-                sessionData.setAttribute(CURRENT_THEME_SESSION_ATTRIBUTE, currentTheme);
-            }
-
-            ThemeChangedEvent themeChangedEvent = new ThemeChangedEvent(this, currentTheme);
-            getApplicationContext().publishEvent(themeChangedEvent);
-        });
     }
 
     protected void initApplicationTitle() {
@@ -260,7 +230,7 @@ public class MainView extends StandardMainView {
                 }
             }
 
-            removeNotRequestedItems(List.copyOf(menu.getMenuItems()), null, searchValue);
+            removeNotRequestedItems(List.copyOf(menu.getMenuItems()), searchValue);
         }
     }
 
@@ -277,7 +247,6 @@ public class MainView extends StandardMainView {
 
     @SuppressWarnings("ConstantConditions")
     protected void removeNotRequestedItems(List<JmixListMenu.MenuItem> list,
-                                           @Nullable ListMenu.MenuBarItem parentItem,
                                            String searchValue) {
         for (JmixListMenu.MenuItem item : list) {
             if (item.isMenu() && item instanceof ListMenu.MenuBarItem menuItem && menuItem.hasChildren()) {
@@ -285,7 +254,7 @@ public class MainView extends StandardMainView {
                     menu.removeMenuItem(item);
                 } else if (!StringUtils.containsIgnoreCase(item.getTitle(), searchValue)) {
                     ListMenu.MenuBarItem menuBarItem = (ListMenu.MenuBarItem) item;
-                    removeNotRequestedItems(menuBarItem.getChildren(), menuBarItem, searchValue);
+                    removeNotRequestedItems(menuBarItem.getChildren(), searchValue);
                 }
             } else if (!StringUtils.containsIgnoreCase(item.getTitle(), searchValue)) {
                 menu.removeMenuItem(item);
@@ -339,19 +308,6 @@ public class MainView extends StandardMainView {
         if (itemToExpand.getParent() != null) {
             parentListIdsToExpand.add(itemToExpand.getParent().getId());
             fillParentListToExpand(itemToExpand.getParent().getId());
-        }
-    }
-
-    public static class ThemeChangedEvent extends ApplicationEvent {
-        protected final String theme;
-
-        public ThemeChangedEvent(MainView source, String theme) {
-            super(source);
-            this.theme = theme;
-        }
-
-        public String getTheme() {
-            return theme;
         }
     }
 }

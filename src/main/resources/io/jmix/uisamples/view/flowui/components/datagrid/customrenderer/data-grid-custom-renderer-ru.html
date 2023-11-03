@@ -1,1 +1,19 @@
-<p>Существует возможность кастомизации отображения колонки. Для этого можно воспользоваться методом <code>addColumn()</code>.</p>
+<p>Существует возможность настроить отображения столбца.</p>
+<p>Следующие <code>renderer</code> можно определить декларативно в XML:</p>
+<ul>
+    <li><code>localDateRenderer</code></li>
+    <li><code>localDateTimeRenderer</code></li>
+    <li><code>numberRenderer</code></li>
+</ul>
+<p><b>Например:</b></p>
+<code>
+    &lt;column property="dueDate"&gt;
+    &lt;localDateRenderer format="yyyy-MM-dd"/&gt;
+    &lt;/column&gt;
+</code>
+
+<p>Также можно предоставить <code>renderer</code> в контроллере экрана с помощью аннотации<code>@Supply</code>.</p>
+<p>Метод, помеченный аннотацией <code>@Supply</code>, возвращает значение, которое будет передано в качестве входного
+    параметра методу, определенному <code>subject</code>.</p>
+
+<p>Кроме того, вы можете использовать для этого метод <code>addColumn()</code>.</p>

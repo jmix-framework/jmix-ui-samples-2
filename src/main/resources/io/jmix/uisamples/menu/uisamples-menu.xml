@@ -87,6 +87,11 @@
                     <file name="io/jmix/uisamples/entity/Order.java"/>
                 </otherFiles>
             </item>
+            <item id="combobox-items-query" page="comboBox" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
             <item id="combobox-custom-filtering" page="comboBox"/>
             <item id="combobox-user-input" page="comboBox"/>
             <item id="combobox-custom-renderer" page="comboBox"/>
@@ -122,6 +127,11 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
+            <item id="data-grid-multi-sort" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
             <item id="data-grid-custom-renderer" page="dataGrid" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
@@ -143,9 +153,14 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-header-footer" page="dataGrid" splitEnabled="true">
+            <item id="data-grid-header-filter" page="dataGrid" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-header-footer" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/CountryGrowth.java"/>
                 </otherFiles>
             </item>
             <item id="data-grid-key-value" page="dataGrid" splitEnabled="true">
@@ -181,6 +196,13 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                     <file name="io/jmix/uisamples/bean/CustomerDetailsGenerator.java"/>
                     <file name="io/jmix/uisamples/bean/CustomerDetailsEditorGenerator.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-aggregation" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/components/datagrid/aggregation/DataGridCustomerGradeAggregation.java"/>
                 </otherFiles>
             </item>
             <item id="data-grid-tree" page="treeDataGrid" splitEnabled="true">
@@ -228,12 +250,19 @@
             </item>
             <item id="email-field-theme-variant" page="emailField"/>
         </menu>
-        <item id="entity-combobox" page="entityComboBox">
-            <otherFiles>
-                <file name="io/jmix/uisamples/entity/Customer.java"/>
-                <file name="io/jmix/uisamples/entity/Order.java"/>
-            </otherFiles>
-        </item>
+        <menu id="entity-combobox">
+            <item id="entity-combobox-simple" page="entityComboBox">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="entity-combobox-items-query" page="entityComboBox" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
         <menu id="entity-picker">
             <item id="entity-picker-simple" page="entityPicker">
                 <otherFiles>
@@ -367,6 +396,11 @@
             </item>
             <item id="multi-select-combo-box-custom-renderer" page="multiSelectComboBox"/>
             <item id="multi-select-combo-box-picker">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="multi-select-combo-box-items-query" page="multiSelectComboBox" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
@@ -511,10 +545,35 @@
         </menu>
         <menu id="value-picker">
             <item id="value-picker-simple" page="valuePicker"/>
-            <item id="value-picker-dataaware" page="valuePicker"/>
+            <item id="value-picker-dataaware" page="valuePicker">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
             <item id="value-picker-multi" page="multiValuePicker"/>
-            <item id="value-picker-multi-enum" page="multiValuePicker"/>
-            <item id="value-picker-multi-entity" page="multiValuePicker"/>
+            <item id="value-picker-multi-enum" page="multiValuePicker">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="value-picker-multi-entity" page="multiValuePicker">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="virtual-list">
+            <item id="virtual-list-simple" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="virtual-list-custom-items" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Day.java"/>
+                </otherFiles>
+            </item>
         </menu>
     </menu>
 
@@ -539,6 +598,7 @@
         <menu id="boxlayout">
             <item id="hbox-simple" page="hbox"/>
             <item id="vbox-simple" page="vbox"/>
+            <item id="flex-layout-simple"/>
         </menu>
         <menu id="form-layout">
             <item id="form-layout-simple" page="formLayout" splitEnabled="true"/>
@@ -588,6 +648,10 @@
         </menu>
     </menu>
 
+    <menu id="facets" url="flow-ui/facets">
+        <item id="timer-facet"/>
+    </menu>
+
     <menu id="custom-components-root" url="flow-ui">
         <about id="custom-component" location="customcomponents/about/about.html"/>
         <item id="composite-component" page="visual-components" splitEnabled="true">
@@ -633,6 +697,11 @@
         <item id="copy-action" page="actions/declarative-actions" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
+            </otherFiles>
+        </item>
+        <item id="custom-login" splitEnabled="true">
+            <otherFiles>
+                <file name="META-INF/resources/themes/custom-login.css"/>
             </otherFiles>
         </item>
         <item id="custom-filter" page="facets/dataLoadCoordinator" splitEnabled="true">

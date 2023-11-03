@@ -1,0 +1,24 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <tabSheet id="tabSheet" width="100%">
+            <tab id="declarativeTab" label="Declaratively">
+                <multiSelectComboBox id="declarativeMultiSelectComboBox" label="Customer"
+                                metaClass="Customer">
+                    <itemsQuery class="io.jmix.uisamples.entity.Customer"
+                                searchStringFormat="(?i)%${inputString}%"
+                                escapeValueForLike="true"
+                                fetchPlan="_local">
+                        <query>
+                            <![CDATA[select e from Customer e where e.name
+                            like :searchString escape '\' order by e.name asc]]>
+                        </query>
+                    </itemsQuery>
+                </multiSelectComboBox>
+            </tab>
+            <tab id="programmaticTab" label="Programmatic">
+                <multiSelectComboBox id="programmaticMultiSelectComboBox" label="Customer"
+                                     metaClass="Customer"/>
+            </tab>
+        </tabSheet>
+    </layout>
+</view>

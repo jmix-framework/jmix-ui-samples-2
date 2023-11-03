@@ -1,0 +1,20 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout padding="false" spacing="false">
+        <hr/>
+        <div classNames="custom-login">
+            <loginForm id="login"
+                       rememberMeVisible="false"
+                       forgotPasswordButtonVisible="false"
+                       localesVisible="false">
+                <form title="Custom Login Sample"
+                      username="Username"
+                      password="Password"
+                      rememberMe="Remember me"
+                      submit="Log in"
+                      forgotPassword="Forgot password"/>
+            </loginForm>
+        </div>
+        <hr/>
+    </layout>
+</view>
+

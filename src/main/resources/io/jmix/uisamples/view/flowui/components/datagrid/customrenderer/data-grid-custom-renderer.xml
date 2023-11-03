@@ -24,6 +24,7 @@
                 <column property="email"/>
                 <column property="age"/>
                 <column property="active"/>
+                <column property="grade"/>
             </columns>
         </dataGrid>
     </layout>

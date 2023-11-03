@@ -1,1 +1,18 @@
-<p>It is possible to customize the render of column. You can use the <code>addColumn()</code> method for it.</p>
+<p>It is possible to customize the render of column.</p>
+<p>The following renderers can be defined declaratively in XML:</p>
+<ul>
+    <li><code>localDateRenderer</code></li>
+    <li><code>localDateTimeRenderer</code></li>
+    <li><code>numberRenderer</code></li>
+</ul>
+<p><b>E.g.:</b></p>
+<code>
+    &lt;column property="dueDate"&gt;
+        &lt;localDateRenderer format="yyyy-MM-dd"/&gt;
+    &lt;/column&gt;
+</code>
+
+<p>Alternatively, renderers can be supplied in a view controller using the <code>@Supply</code> annotation.</p>
+<p>Method annotated with <code>@Supply</code> returns a value that will be passed as an input parameter to a method defined by subject.</p>
+
+<p>Also, you can use the <code>addColumn()</code> method for it.</p>

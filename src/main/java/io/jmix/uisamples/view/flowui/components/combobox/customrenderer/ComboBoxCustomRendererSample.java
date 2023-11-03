@@ -4,6 +4,7 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
+import com.vaadin.flow.data.renderer.Renderer;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.component.combobox.JmixComboBox;
 import io.jmix.flowui.view.*;
@@ -22,7 +23,11 @@ public class ComboBoxCustomRendererSample extends StandardView {
     @Subscribe
     protected void onInit(InitEvent event) {
         iconsComboBox.setItems(VaadinIcon.values());
-        iconsComboBox.setRenderer(new ComponentRenderer<Component, VaadinIcon>(vaadinIcon -> {
+    }
+
+    @Supply(to = "iconsComboBox", subject = "renderer")
+    protected Renderer<VaadinIcon> iconsComboBoxRenderer() {
+        return new ComponentRenderer<Component, VaadinIcon>(vaadinIcon -> {
             HorizontalLayout contentBox = uiComponents.create(HorizontalLayout.class);
             contentBox.setPadding(false);
 
@@ -30,6 +35,6 @@ public class ComboBoxCustomRendererSample extends StandardView {
             contentBox.add(vaadinIcon.name());
 
             return contentBox;
-        }));
+        });
     }
 }

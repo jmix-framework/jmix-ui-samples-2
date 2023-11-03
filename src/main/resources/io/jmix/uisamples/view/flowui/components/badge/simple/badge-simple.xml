@@ -1,8 +1,8 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout classNames="flex-row flex-wrap">
-        <span text="Pending" themeNames="normal"/>
-        <span text="Confirmed" themeNames="success"/>
-        <span text="Denied" themeNames="error"/>
-        <span text="On hold" themeNames="contrast"/>
+        <span text="Pending" themeNames="badge normal"/>
+        <span text="Confirmed" themeNames="badge success"/>
+        <span text="Denied" themeNames="badge error"/>
+        <span text="On hold" themeNames="badge contrast"/>
     </layout>
 </view>
