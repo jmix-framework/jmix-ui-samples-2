@@ -278,6 +278,11 @@
     "@polymer/polymer": "$@polymer/polymer",
     "date-fns": "$date-fns",
     "ace-builds": "$ace-builds",
-    "@vaadin/overlay": "$@vaadin/overlay"
+    "@vaadin/overlay": "$@vaadin/overlay",
+    "@vaadin/a11y-base": "$@vaadin/a11y-base",
+    "@vaadin/side-nav": "$@vaadin/side-nav",
+    "jquery": "$jquery",
+    "jquery-ui": "$jquery-ui",
+    "mobile-drag-drop": "$mobile-drag-drop"
   }
 }
