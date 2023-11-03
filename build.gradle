@@ -1,5 +1,5 @@
 plugins {
-    id 'io.jmix' version '2.0.1'
+    id 'io.jmix' version '2.1.0'
     id 'java'
 }
 
@@ -17,6 +17,10 @@ repositories {
     maven {
         url 'https://nexus.jmix.io/repository/public'
     }
+}
+
+vaadin {
+    optimizeBundle = false
 }
 
 dependencies {
