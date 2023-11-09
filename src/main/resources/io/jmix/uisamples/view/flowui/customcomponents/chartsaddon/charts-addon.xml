@@ -1,0 +1,31 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:chart="http://io.jmix.uisamples/chart.xsd">
+    <layout padding="false">
+        <tabSheet id="tabSheet" width="100%">
+            <tab id="barChartTab" label="Declaratively added bar chart">
+                <chart:chart width="99%" minHeight="30em"
+                             labels="Backlog, Next, In-progress, Review, QA, Done"
+                             data="18, 8, 5, 6, 29, 53">
+                    <chart:barChart name="Bars"/>
+                    <chart:toolbox>
+                        <chart:buttons>
+                            <chart:button type="zoom"/>
+                            <chart:button type="download"/>
+                        </chart:buttons>
+                    </chart:toolbox>
+                    <chart:title text="Jmix Framework Issues"
+                                 subText="The current status is presented in bars"/>
+                </chart:chart>
+            </tab>
+            <tab id="roseChart" label="Declaratively added rose chart">
+                <chart:chart width="99%" minHeight="30em"
+                             labels="Backlog, Next, In-progress, Review, QA, Done"
+                             data="18, 8, 5, 6, 29, 53">
+                    <chart:nightingaleRoseChart name="Issue"/>
+                    <chart:title text="Jmix Framework Issues"
+                                 subText="The current status is presented in rose chart"/>
+                </chart:chart>
+            </tab>
+        </tabSheet>
+    </layout>
+</view>
