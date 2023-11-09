@@ -13,7 +13,6 @@ import com.vaadin.flow.theme.lumo.LumoUtility;
 import io.jmix.core.MetadataTools;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.component.details.JmixDetails;
-import io.jmix.flowui.component.virtuallist.JmixVirtualList;
 import io.jmix.flowui.view.StandardView;
 import io.jmix.flowui.view.Supply;
 import io.jmix.flowui.view.ViewController;

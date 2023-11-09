@@ -39,7 +39,6 @@ import io.jmix.flowui.kit.component.main.ListMenu;
 import io.jmix.flowui.menu.MenuItem;
 import io.jmix.flowui.view.*;
 import io.jmix.uisamples.bean.MenuNavigationExpander;
-import io.jmix.uisamples.component.themetoggle.ThemeToggle;
 import io.jmix.uisamples.config.UiSamplesMenuConfig;
 import io.jmix.uisamples.config.UiSamplesMenuItem;
 import io.jmix.uisamples.view.sys.sampleview.SampleView;
@@ -61,8 +60,6 @@ import java.util.List;
 public class MainView extends StandardMainView {
 
     private static final Logger log = LoggerFactory.getLogger(MainView.class);
-
-    public static final String CURRENT_THEME_SESSION_ATTRIBUTE = "currentTheme";
 
     @ViewComponent
     protected JmixListMenu menu;
