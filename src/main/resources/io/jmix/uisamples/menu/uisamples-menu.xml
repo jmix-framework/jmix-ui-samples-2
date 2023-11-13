@@ -471,7 +471,11 @@
             </item>
         </menu>
         <menu id="select">
-            <item id="select-simple"/>
+            <item id="select-simple">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
             <item id="select-dataaware">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
