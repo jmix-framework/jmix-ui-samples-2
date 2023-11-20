@@ -13,7 +13,7 @@
                             <chart:button type="download"/>
                         </chart:buttons>
                     </chart:toolbox>
-                    <chart:title text="Jmix Framework Issues"
+                    <chart:title text="Issues by status"
                                  subText="The current status is presented in bars"/>
                 </chart:chart>
             </tab>
@@ -22,7 +22,7 @@
                              labels="Backlog, Next, In-progress, Review, QA, Done"
                              data="18, 8, 5, 6, 29, 53">
                     <chart:nightingaleRoseChart name="Issue"/>
-                    <chart:title text="Jmix Framework Issues"
+                    <chart:title text="Issues by status"
                                  subText="The current status is presented in rose chart"/>
                 </chart:chart>
             </tab>
