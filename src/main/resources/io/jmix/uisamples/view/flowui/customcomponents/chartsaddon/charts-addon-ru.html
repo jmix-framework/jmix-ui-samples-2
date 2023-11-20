@@ -1,0 +1,33 @@
+<p>Вы можете использовать любые сторонние аддоны для Vaadin из <a href="https://vaadin.com/directory" target="_blank">Vaadin Directory</a> или из других источников. В этом примере показана интеграция аддона <a href="https://vaadin.com/directory/component/so-charts" target="_blank">SO Charts</a>.</p>
+
+<p>Чтобы добавить аддон Vaadin в ваше приложение, добавьте репозиторий Vaadin Add-ons и зависимость на аддон в файле <code>build.gradle</code> проекта:</p>
+
+<pre>repositories {
+    maven {
+        url 'https://maven.vaadin.com/vaadin-addons'
+    }
+    // ...
+}
+
+dependencies {
+    implementation 'com.storedobject.chart:so-charts:3.2.4'
+    // ...
+}</pre>
+
+После этого вы сможете использовать компоненты аддона программно, см. например <code>ChartsAddonSample.java</code>.
+
+Чтобы использовать компоненты аддона декларативно в XML экранов, требуется выполнить несколько дополнительных шагов:
+
+<ol>
+    <li>
+        Создать XSD для компонентов (см. <code>chart.xsd</code>).
+    </li>
+    <li>
+        Реализовать загрузчики компонентов (см. <code>ChartLoader.java</code>).
+    </li>
+    <li>
+        Зарегистрировать компоненты и их загрузчики в приложении (см. <code>ChartComponentRegistration.java</code>).
+    </li>
+</ol>
+
+<b>Примечание:</b> В данном примере предоставляется только частичная поддержка компонентов аддона (не все компоненты и свойства описаны для использования в XML).

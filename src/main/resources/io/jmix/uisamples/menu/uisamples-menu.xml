@@ -679,6 +679,13 @@
                 <file name="io/jmix/uisamples/view/flowui/customcomponents/jslibrary/SliderComponentRegistration.java"/>
             </otherFiles>
         </item>
+        <item id="charts-addon" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/chartsaddon/chart.xsd"/>
+                <file name="io/jmix/uisamples/component/chart/ChartLoader.java"/>
+                <file name="io/jmix/uisamples/view/flowui/customcomponents/chartsaddon/ChartComponentRegistration.java"/>
+            </otherFiles>
+        </item>
         <item id="custom-component-from-scratch" page="visual-components" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/component/themetoggle/ThemeToggle.java"/>

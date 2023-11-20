@@ -70,6 +70,7 @@
       "ace-builds": "1.18.0",
       "construct-style-sheets-polyfill": "3.1.0",
       "date-fns": "2.29.3",
+      "echarts": "5.4.2",
       "jquery": "1.9.1",
       "jquery-ui": "1.13.2",
       "lit": "2.7.6",
@@ -93,7 +94,7 @@
       "workbox-core": "7.0.0",
       "workbox-precaching": "7.0.0"
     },
-    "hash": "56e8b7babc6b96149b78676257f69700b63ced7a6c0dc531db915aa59381c3fc"
+    "hash": "aed3dc71962baeba8e8f41f41427f304e0620ff039fa2a232d0e591af3c7bc2b"
   },
   "dependencies": {
     "@polymer/polymer": "3.5.1",
@@ -176,6 +177,7 @@
     "ace-builds": "1.18.0",
     "construct-style-sheets-polyfill": "3.1.0",
     "date-fns": "2.29.3",
+    "echarts": "5.4.2",
     "jquery": "1.9.1",
     "jquery-ui": "1.13.2",
     "lit": "2.7.6",
