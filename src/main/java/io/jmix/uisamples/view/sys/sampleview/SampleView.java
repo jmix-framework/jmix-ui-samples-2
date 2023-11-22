@@ -272,14 +272,9 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
         editor.setMode(mode);
         editor.setReadOnly(true);
         editor.setWidthFull();
+        editor.setHeightFull();
+        editor.getStyle().setPadding("unset");
         editor.setFontSize("0.9rem");
-
-        if (UI.getCurrent().getSession().getBrowser().isFirefox()) {
-            editor.setMinHeight("20em");
-            editor.setHeight("95%");
-        } else {
-            editor.setHeight(CODE_EDITOR_HEIGHT);
-        }
 
         codeEditors.add(editor);
         return editor;
