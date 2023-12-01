@@ -20,6 +20,11 @@
     <menu id="components-root" url="flow-ui/vc/components">
         <about id="components" location="components/about/about.html"/>
         <item id="avatar" page="avatar"/>
+        <item id="file-upload-field" page="file-upload-field">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Picture.java"/>
+            </otherFiles>
+        </item>
         <menu id="badge">
             <item id="badge-simple"/>
             <item id="badge-icons">

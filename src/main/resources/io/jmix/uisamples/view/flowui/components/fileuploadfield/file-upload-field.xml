@@ -1,0 +1,12 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+<data>
+    <instance id="pictureDc" class="io.jmix.uisamples.entity.Picture">
+    </instance>
+</data>
+<layout>
+    <fileUploadField id="fileUploadField" label="Select Image" dataContainer="pictureDc"
+                     property="content"
+                     clearButtonVisible="true"
+                     fileNameVisible="true"/>
+</layout>
+</view>
