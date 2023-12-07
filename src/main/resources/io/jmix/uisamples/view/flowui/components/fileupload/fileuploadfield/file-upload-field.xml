@@ -4,9 +4,12 @@
     </instance>
 </data>
 <layout>
-    <fileUploadField id="fileUploadField" label="Select Image" dataContainer="pictureDc"
+    <fileUploadField id="fileUploadField" label="Select File" dataContainer="pictureDc"
                      property="content"
                      clearButtonVisible="true"
-                     fileNameVisible="true"/>
+                     fileNameVisible="true"
+                     maxFileSize="51200"
+                     acceptedFileTypes="image/png,image/jpeg"
+    />
 </layout>
 </view>
