@@ -1,0 +1,14 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+<data>
+    <instance id="documentDc" class="io.jmix.uisamples.entity.Document">
+    </instance>
+</data>
+<layout>
+    <fileStorageUploadField id="fileStorageUploadField" label="Select File" dataContainer="documentDc"
+                     property="content"
+                     fileNameVisible="false"
+                     maxFileSize="10000"
+                     fileStoragePutMode="MANUAL"
+    />
+</layout>
+</view>
