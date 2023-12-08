@@ -8,8 +8,11 @@
                      property="content"
                      clearButtonVisible="true"
                      fileNameVisible="true"
+                     dropAllowed="true"
                      maxFileSize="51200"
                      acceptedFileTypes="image/png,image/jpeg"
+
     />
 </layout>
 </view>
+

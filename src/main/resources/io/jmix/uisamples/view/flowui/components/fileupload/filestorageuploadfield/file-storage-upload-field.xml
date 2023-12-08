@@ -7,6 +7,7 @@
     <fileStorageUploadField id="fileStorageUploadField" label="Select File" dataContainer="documentDc"
                      property="content"
                      fileNameVisible="false"
+                     dropAllowed="true"
                      maxFileSize="10000"
                      fileStoragePutMode="MANUAL"
     />
