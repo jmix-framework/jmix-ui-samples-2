@@ -21,8 +21,8 @@ public class FileUploadFieldSample extends StandardView {
     public void onFileUploadFieldFileUploadSucceeded(
             final FileUploadSucceededEvent<FileStorageUploadField> event) {
         String fileName = event.getFileName();
-        notifications.create("Your file \""
-                        + fileName + "\" has been uploaded successfully.").withThemeVariant(NotificationVariant.LUMO_PRIMARY)
+        notifications.create("Your file %s has been uploaded successfully.".formatted(event.getFileName()))
+                .withThemeVariant(NotificationVariant.LUMO_PRIMARY)
                 .show();
     }
 }

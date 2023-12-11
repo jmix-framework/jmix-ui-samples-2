@@ -17,27 +17,27 @@ import java.util.UUID;
 @ViewController("file-storage-upload-field")
 @ViewDescriptor("file-storage-upload-field.xml")
 public class FileStorageUploadFieldSample extends StandardView {
-    @Autowired
-    private TemporaryStorage temporaryStorage;
+
     @ViewComponent
     private FileStorageUploadField fileStorageUploadField;
+
+    @Autowired
+    private TemporaryStorage temporaryStorage;
     @Autowired
     private Notifications notifications;
 
     @Subscribe("fileStorageUploadField")
-    public void onFileStorageUploadFieldFileUploadSucceeded(
-            final FileUploadSucceededEvent<FileStorageUploadField> event) {
+    public void onFileStorageUploadFieldFileUploadSucceeded(final FileUploadSucceededEvent<FileStorageUploadField> event) {
         Receiver receiver = event.getReceiver();
-        if (receiver instanceof FileTemporaryStorageBuffer) {
-            UUID fileId = ((FileTemporaryStorageBuffer) receiver)
-                    .getFileData().getFileInfo().getId();
+        if (receiver instanceof FileTemporaryStorageBuffer storageBuffer) {
+            UUID fileId = storageBuffer.getFileData().getFileInfo().getId();
             File file = temporaryStorage.getFile(fileId);
 
             if (file != null) {
                 FileRef fileRef = new FileRef("tempStorage", file.getAbsolutePath(), file.getName());
                 fileStorageUploadField.setValue(fileRef);
-                notifications.create("Your file \""
-                                + event.getFileName() + "\" has been uploaded successfully.").withThemeVariant(NotificationVariant.LUMO_PRIMARY)
+                notifications.create("Your file %s has been uploaded successfully.".formatted(event.getFileName()))
+                        .withThemeVariant(NotificationVariant.LUMO_PRIMARY)
                         .show();
                 temporaryStorage.deleteFile(fileId);
             }

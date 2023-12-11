@@ -20,18 +20,6 @@
     <menu id="components-root" url="flow-ui/vc/components">
         <about id="components" location="components/about/about.html"/>
         <item id="avatar" page="avatar"/>
-        <menu id="upload-field">
-            <item id="file-upload-field" page="file-upload-field">
-                <otherFiles>
-                    <file name="io/jmix/uisamples/entity/Picture.java"/>
-                </otherFiles>
-            </item>
-            <item id="file-storage-upload-field" page="file-upload-field">
-                <otherFiles>
-                    <file name="io/jmix/uisamples/entity/Document.java"/>
-                </otherFiles>
-            </item>
-        </menu>
         <menu id="badge">
             <item id="badge-simple"/>
             <item id="badge-icons">
@@ -386,6 +374,18 @@
             <item id="list-box-custom-renderer" page="listBox">
                 <otherFiles>
                     <file name="io/jmix/uisamples/record/Simpson.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="managing-files">
+            <item id="file-upload-field" page="file-upload-field">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Picture.java"/>
+                </otherFiles>
+            </item>
+            <item id="file-storage-upload-field" page="file-upload-field">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Document.java"/>
                 </otherFiles>
             </item>
         </menu>
