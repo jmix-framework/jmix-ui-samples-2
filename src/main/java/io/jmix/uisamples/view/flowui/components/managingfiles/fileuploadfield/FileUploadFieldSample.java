@@ -1,11 +1,8 @@
-package io.jmix.uisamples.view.flowui.components.fileupload.fileuploadfield;
+package io.jmix.uisamples.view.flowui.components.managingfiles.fileuploadfield;
 
 import com.vaadin.flow.component.notification.NotificationVariant;
-import com.vaadin.flow.component.upload.Receiver;
 import io.jmix.flowui.Notifications;
 import io.jmix.flowui.component.upload.FileStorageUploadField;
-import io.jmix.flowui.component.upload.FileUploadField;
-import io.jmix.flowui.component.upload.receiver.FileTemporaryStorageBuffer;
 import io.jmix.flowui.kit.component.upload.event.FileUploadSucceededEvent;
 import io.jmix.flowui.view.*;
 import org.springframework.beans.factory.annotation.Autowired;
