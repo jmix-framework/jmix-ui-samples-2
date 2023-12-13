@@ -1,4 +1,4 @@
-package io.jmix.uisamples.view.flowui.components.managingfiles.fileuploadfield;
+package io.jmix.uisamples.view.flowui.components.fileuploadfields.fileuploadfield;
 
 import com.vaadin.flow.component.notification.NotificationVariant;
 import io.jmix.flowui.Notifications;

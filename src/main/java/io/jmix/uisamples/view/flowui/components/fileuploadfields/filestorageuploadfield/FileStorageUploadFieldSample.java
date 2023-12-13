@@ -1,4 +1,4 @@
-package io.jmix.uisamples.view.flowui.components.managingfiles.filestorageuploadfield;
+package io.jmix.uisamples.view.flowui.components.fileuploadfields.filestorageuploadfield;
 
 import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.upload.Receiver;
@@ -31,6 +31,7 @@ public class FileStorageUploadFieldSample extends StandardView {
         Receiver receiver = event.getReceiver();
         if (receiver instanceof FileTemporaryStorageBuffer storageBuffer) {
             UUID fileId = storageBuffer.getFileData().getFileInfo().getId();
+            // Uploaded files are uploaded and removed from a temporary storage upon completion of the upload process for demonstration purposes.
             File file = temporaryStorage.getFile(fileId);
 
             if (file != null) {
