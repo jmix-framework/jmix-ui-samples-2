@@ -4,12 +4,12 @@
     </instance>
 </data>
 <layout>
-    <fileStorageUploadField id="fileStorageUploadField" label="Select File" dataContainer="documentDc"
-                     property="content"
-                     fileNameVisible="false"
-                     dropAllowed="true"
-                     maxFileSize="10000"
-                     fileStoragePutMode="MANUAL"
+    <fileStorageUploadField id="fileStorageUploadField" label="Select File"
+                            dataContainer="documentDc" property="content"
+                            fileNameVisible="false"
+                            dropAllowed="true"
+                            maxFileSize="51200"
+                            fileStoragePutMode="MANUAL"
     />
 </layout>
 </view>

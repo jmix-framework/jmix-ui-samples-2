@@ -26,20 +26,24 @@ public class FileStorageUploadFieldSample extends StandardView {
     @Autowired
     private Notifications notifications;
 
+    // This handler is needed only when fileStoragePutMode="MANUAL".
+    // In AUTO mode the field automatically moves the uploaded file from temporary storage
+    // to the FileStorage and sets the returned FileRef to the entity attribute.
     @Subscribe("fileStorageUploadField")
     public void onFileStorageUploadFieldFileUploadSucceeded(final FileUploadSucceededEvent<FileStorageUploadField> event) {
         Receiver receiver = event.getReceiver();
         if (receiver instanceof FileTemporaryStorageBuffer storageBuffer) {
             UUID fileId = storageBuffer.getFileData().getFileInfo().getId();
-            // Uploaded files are uploaded and removed from a temporary storage upon completion of the upload process for demonstration purposes.
             File file = temporaryStorage.getFile(fileId);
-
             if (file != null) {
                 FileRef fileRef = new FileRef("tempStorage", file.getAbsolutePath(), file.getName());
                 fileStorageUploadField.setValue(fileRef);
                 notifications.create("Your file %s has been uploaded successfully.".formatted(event.getFileName()))
                         .withThemeVariant(NotificationVariant.LUMO_PRIMARY)
                         .show();
+                // Remove the uploaded file.
+                // In a real-world application you would move the file to FileStorage here using
+                // the temporaryStorage.putFileIntoStorage() method.
                 temporaryStorage.deleteFile(fileId);
             }
         }

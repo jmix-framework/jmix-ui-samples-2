@@ -1,11 +1,10 @@
 <p>
-    The <code>fileStorageUploadField</code> component uploads files to a file storage system.
-    It allows users to upload a file and automatically links it to an entity attribute as a <code>FileRef</code> object.
-    This functionality enables users to handle file storage and access within the application, with the <code>FileRef</code> serving as a reference to the file's location in the storage system.
+    The <code>fileStorageUploadField</code> component uploads files to the Jmix FileStorage.
+    It allows users to upload a file and automatically links it to an entity attribute as a <code>FileRef</code> object. The <code>FileRef</code> serves as a reference to the file's location in the file storage.
 </p>
 <p>
-    This example allows uploading of any files of any type with a size limit of 10 KB. The component features a "drop zone" for drag-and-drop uploads, activated by dragging files over the component's button.
+    This example allows uploading of files of any type with a size limit of 50 KB. The component features a "drop zone" for drag-and-drop uploads, activated by dragging files over the component's button.
 </p>
 <p>
-    <strong>Note:</strong> The uploaded files are stored in a temporary storage instead of a permanent file storage system. The example only demonstrates how to handle file uploads and should be adapted for production use.
+    <strong>Note:</strong> In this example, files are uploaded to the temporary storage and immediately removed. See the comments in <code>FileStorageUploadFieldSample.java</code>.
 </p>
