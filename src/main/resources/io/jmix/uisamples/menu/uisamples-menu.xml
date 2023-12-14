@@ -282,6 +282,18 @@
                 </otherFiles>
             </item>
         </menu>
+        <menu id="file-upload-fields">
+            <item id="file-storage-upload-field" page="fileStorageUploadField">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Document.java"/>
+                </otherFiles>
+            </item>
+            <item id="file-upload-field" page="fileUploadField">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Picture.java"/>
+                </otherFiles>
+            </item>
+        </menu>
         <menu id="generic-filter">
             <item id="generic-filter-multiple-conditions" page="genericFilter" splitEnabled="true">
                 <otherFiles>

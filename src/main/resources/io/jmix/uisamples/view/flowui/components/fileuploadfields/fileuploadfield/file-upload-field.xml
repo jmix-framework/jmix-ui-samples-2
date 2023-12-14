@@ -1,0 +1,16 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+<data>
+    <instance id="pictureDc" class="io.jmix.uisamples.entity.Picture">
+    </instance>
+</data>
+<layout>
+    <fileUploadField id="fileUploadField" label="Select File"
+                     dataContainer="pictureDc" property="content"
+                     clearButtonVisible="true"
+                     fileNameVisible="true"
+                     dropAllowed="true"
+                     maxFileSize="51200"
+                     acceptedFileTypes="image/png,image/jpeg"
+    />
+</layout>
+</view>
