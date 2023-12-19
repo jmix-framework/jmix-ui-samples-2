@@ -54,5 +54,3 @@ processResources {
 test {
     useJUnitPlatform()
 }
-
-version = '2.1.1'
