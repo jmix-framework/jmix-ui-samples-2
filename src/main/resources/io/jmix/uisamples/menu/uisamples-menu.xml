@@ -293,6 +293,7 @@
                     <file name="io/jmix/uisamples/entity/Picture.java"/>
                 </otherFiles>
             </item>
+            <item id="upload" page="upload"/>
         </menu>
         <menu id="generic-filter">
             <item id="generic-filter-multiple-conditions" page="genericFilter" splitEnabled="true">
