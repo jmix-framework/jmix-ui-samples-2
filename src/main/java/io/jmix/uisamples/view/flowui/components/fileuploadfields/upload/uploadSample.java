@@ -33,5 +33,4 @@ public class uploadSample extends StandardView {
                 .withCloseable(true)
                 .show();
     }
-
 }
