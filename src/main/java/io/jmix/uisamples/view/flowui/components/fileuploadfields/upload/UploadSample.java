@@ -4,8 +4,6 @@ import com.vaadin.flow.component.notification.NotificationVariant;
 import com.vaadin.flow.component.upload.FileRejectedEvent;
 import com.vaadin.flow.component.upload.SucceededEvent;
 import io.jmix.flowui.Notifications;
-import io.jmix.flowui.component.upload.FileStorageUploadField;
-import io.jmix.flowui.kit.component.upload.event.FileUploadSucceededEvent;
 import io.jmix.flowui.view.StandardView;
 import io.jmix.flowui.view.Subscribe;
 import io.jmix.flowui.view.ViewController;
@@ -14,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @ViewController("upload")
 @ViewDescriptor("upload.xml")
-public class uploadSample extends StandardView {
+public class UploadSample extends StandardView {
 
     @Autowired
     private Notifications notifications;
