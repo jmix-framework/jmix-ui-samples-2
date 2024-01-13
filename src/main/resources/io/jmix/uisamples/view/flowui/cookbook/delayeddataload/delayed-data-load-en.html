@@ -1,0 +1,16 @@
+<p>This example shows how you can delay a costly data loading operation until the user has made the final selection of
+    conditions.</p>
+
+<p>Try to select multiple rows in the left data grid displaying orders. The right data grid will be loaded in 2 sec
+    after your last selection and will show all items of the selected orders with
+    calculated total quantity, grouped by product name.</p>
+
+<p>The example uses a <a href="/ui-samples/sample/timer-facet" target="_blank">timer</a> facet which is restarted on each
+    selection change. The data loading is performed when the last timer goes off, that is in 2 sec after the last
+    selection change.</p>
+
+<p>The left data grid is linked with a regular collection data container for the <code>Order</code> entity. It is loaded
+    by the loader triggered in the <code>BeforeShowEvent</code> event handler.</p>
+
+<p>The right data grid is connected to a key-value container loaded with aggregated data. Its loader is triggered in the
+    <code>TimerActionEvent</code> handler.</p>

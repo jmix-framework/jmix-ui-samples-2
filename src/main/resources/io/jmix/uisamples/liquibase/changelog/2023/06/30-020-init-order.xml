@@ -57,6 +57,13 @@
             <column name="AMOUNT" valueNumeric="59999.00"/>
             <column name="DESCRIPTION" value="Gamer equipment"/>
         </insert>
+        <insert tableName="ORDER">
+            <column name="ID" value="7eccf6a8-b53a-4b36-9cc8-bf37cf805150"/>
+            <column name="CUSTOMER_ID" value="4d750fdb-8ed7-a4e4-88d2-40974615cab2"/>
+            <column name="DATE_" valueDate="2021-05-27"/>
+            <column name="AMOUNT" valueNumeric="25498.00"/>
+            <column name="DESCRIPTION" value="Office equipment"/>
+        </insert>
 
         <insert tableName="ORDER_ITEM">
             <column name="ID" value="08f26f09-4e6c-125a-12a0-0a8877a57ab2"/>
@@ -123,6 +130,18 @@
             <column name="PRODUCT_ID" value="17bc9b95-b562-0dd2-f904-db6df80b9c71"/>
             <column name="QUANTITY" valueNumeric="1.000"/>
             <column name="ORDER_ID" value="3fbc4ce8-7f8c-dcd0-5788-967f94f6ddbf"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ID" value="45ee00ac-c176-48a0-98e3-3c81a5e53055"/>
+            <column name="PRODUCT_ID" value="17bc9b95-b562-0dd2-f904-db6df80b9c71"/>
+            <column name="QUANTITY" valueNumeric="1.000"/>
+            <column name="ORDER_ID" value="7eccf6a8-b53a-4b36-9cc8-bf37cf805150"/>
+        </insert>
+        <insert tableName="ORDER_ITEM">
+            <column name="ID" value="88c21272-e630-4d97-8736-7196dab91db2"/>
+            <column name="PRODUCT_ID" value="2ab4dece-2f67-69cd-0a76-fe1cd33537f6"/>
+            <column name="QUANTITY" valueNumeric="1.000"/>
+            <column name="ORDER_ID" value="7eccf6a8-b53a-4b36-9cc8-bf37cf805150"/>
         </insert>
 
     </changeSet>

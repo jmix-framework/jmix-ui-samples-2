@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <collection id="ordersDc" class="io.jmix.uisamples.entity.Order">
+            <fetchPlan extends="_base"/>
+            <loader id="ordersDl" readOnly="true">
+                <query>
+                    <![CDATA[select o from uisamples_Order o order by o.date]]>
+                </query>
+            </loader>
+        </collection>
+        <keyValueCollection id="orderItemsDc">
+            <loader id="orderItemsDl">
+                <query>
+                    <![CDATA[select o.product.name, SUM(o.quantity)
+                    from OrderItem o
+                    where o.order in :orders
+                    group by o.product.name]]>
+                </query>
+            </loader>
+            <properties>
+                <property name="product" datatype="string"/>
+                <property name="quantity" datatype="decimal"/>
+            </properties>
+        </keyValueCollection>
+    </data>
+    <facets>
+        <timer id="timer" delay="2000"/>
+    </facets>
+    <layout>
+        <hbox width="100%">
+            <vbox padding="false">
+                <h4 text="Orders"/>
+                <dataGrid width="100%" id="ordersDataGrid" dataContainer="ordersDc" selectionMode="MULTI">
+                    <columns>
+                        <column property="date"/>
+                        <column property="amount"/>
+                        <column property="description"/>
+                    </columns>
+                </dataGrid>
+            </vbox>
+            <vbox padding="false">
+                <h4 id="orderItemsHeader" text="Order Items">
+                </h4>
+                <dataGrid width="100%" id="orderItemsDataGrid" dataContainer="orderItemsDc">
+                    <columns>
+                        <column property="product" header="Product"/>
+                        <column property="quantity" header="Total quantity"/>
+                    </columns>
+                </dataGrid>
+            </vbox>
+        </hbox>
+    </layout>
+</view>

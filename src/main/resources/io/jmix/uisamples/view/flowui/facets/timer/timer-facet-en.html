@@ -1,22 +1,21 @@
-<p><b>Timer</b> is a facet (non-visual component) designed to run some code at specified time intervals.</p>
-<p>The timer works in a thread that handles user interface events, therefore it can update view components.</p>
-<p>Timer stops working when a view it was created for is closed.</p>
+<p><b>Timer</b> is a facet (non-visual component) designed to run UI code at specified time intervals.</p>
+<p>The timer action is initiated from the browser as a user request and its handler can update UI components. The timer stops working when the view it was created for is closed.</p>
 
-<p>Timers are described using the <code>timer</code> element. It has the following attributes: </p>
+<p>Timers are defined using the <code>timer</code> element. It has the following attributes: </p>
 <ul>
     <li>
-        <code>delay</code> - a required attribute;<br/>
-        it defines timer interval in milliseconds;
+        <code>delay</code> - defines timer interval in milliseconds;<br/>
     </li>
     <li>
-        <code>autostart</code> - an optional attribute;<br/>
-        when it is set to <code>true</code>, timer starts immediately after the view is opened. By default, the value is <code>false</code>,
+        <code>autostart</code> - if set to <code>true</code>, the timer starts immediately after the view is opened. By default, the value is <code>false</code>,
         witch means that the timer will start only when its <code>start()</code> method is invoked;
     </li>
     <li>
-        <code>repeating</code> - an optional attribute, turns on repeated executions of the timer. If the attribute is set to <code>true</code>,
+        <code>repeating</code> - turns on repeated execution of the timer. If the attribute is set to <code>true</code>,
         the timer runs in cycles at equals intervals defined in the <code>delay</code> attribute. Otherwise, the timer runs only once - <code>delay</code> milliseconds after the timer start.
     </li>
 </ul>
 
-<p>To execute some code on timer, subscribe to its <code>TimerActionEvent</code> in the view controller.</p>
+<p>To execute code on timer, subscribe to its <code>TimerActionEvent</code> in the view controller.</p>
+
+<p>See also <a href="/ui-samples/sample/delayed-data-load">the example</a> of how to use timer to delay a costly data loading operation until the user has made the final selection of conditions.</p>

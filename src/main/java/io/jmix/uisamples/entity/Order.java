@@ -19,7 +19,7 @@ import java.util.UUID;
 public class Order {
 
     @Id
-    @Column(name = "ID")
+    @Column(name = "ID", nullable = false)
     @JmixGeneratedValue
     protected UUID id;
 
