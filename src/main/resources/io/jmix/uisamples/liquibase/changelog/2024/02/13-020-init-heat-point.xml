@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="uisamples">
+        <createTable tableName="HEAT_POINT">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_HEAT_POINT"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)"/>
+            <column name="POINT" type="varchar(100 BYTE)"/>
+            <column name="INTENSITY" type="DOUBLE"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="uisamples">
+        <insert tableName="HEAT_POINT">
+            <column name="ID" value="702d45b5-15e2-491c-bcc8-9e2bafc08c56"/>
+            <column name="NAME" value="1"/>
+            <column name="INTENSITY" value="0.7"/>
+            <column name="POINT" value="POINT (-1.9886970520019531 53.46408767296994)"/>
+        </insert>
+        <insert tableName="HEAT_POINT">
+            <column name="ID" value="f455f7c0-2167-424f-825e-8d0ae4c35283"/>
+            <column name="NAME" value="2"/>
+            <column name="INTENSITY" value="0.7"/>
+            <column name="POINT" value="POINT (-1.989426612854004 53.46470083596062)"/>
+        </insert>
+        <insert tableName="HEAT_POINT">
+            <column name="ID" value="1c4b39a0-dd36-4c47-af81-90ba14de47dc"/>
+            <column name="NAME" value="3"/>
+            <column name="INTENSITY" value="0.7"/>
+            <column name="POINT" value="POINT (-1.990971565246582 53.465160702391685)"/>
+        </insert>
+        <insert tableName="HEAT_POINT">
+            <column name="ID" value="4b7735a2-41d2-4cf1-bf3b-26d29f07e380"/>
+            <column name="NAME" value="4"/>
+            <column name="INTENSITY" value="0.7"/>
+            <column name="POINT" value="POINT (-1.9925594329833984 53.464598642743894)"/>
+        </insert>
+        <insert tableName="HEAT_POINT">
+            <column name="ID" value="922500c7-7a9b-4e74-af48-f4214b6ed3d0"/>
+            <column name="NAME" value="5"/>
+            <column name="INTENSITY" value="0.7"/>
+            <column name="POINT" value="POINT (-1.990799903869629 53.464445352457474)"/>
+        </insert>
+        <insert tableName="HEAT_POINT">
+            <column name="ID" value="43e5b6b3-09f2-4303-a55a-58be45d8a0ee"/>
+            <column name="NAME" value="6"/>
+            <column name="INTENSITY" value="0.7"/>
+            <column name="POINT" value="POINT (-1.9923019409179688 53.46388328333828)"/>
+        </insert>
+        <insert tableName="HEAT_POINT">
+            <column name="ID" value="ec239efd-7b96-4acf-baad-cdfb0546ed96"/>
+            <column name="NAME" value="7"/>
+            <column name="INTENSITY" value="0.7"/>
+            <column name="POINT" value="POINT (-1.9920873641967773 53.46304016570603)"/>
+        </insert>
+        <insert tableName="HEAT_POINT">
+            <column name="ID" value="40ebf49f-3cc4-48ca-bee8-5a53dc7ac955"/>
+            <column name="NAME" value="8"/>
+            <column name="INTENSITY" value="0.7"/>
+            <column name="POINT" value="POINT (-1.9908857345581055 53.46355114808806)"/>
+        </insert>
+        <insert tableName="HEAT_POINT">
+            <column name="ID" value="100da288-ba4f-4300-960c-07e588196d06"/>
+            <column name="NAME" value="9"/>
+            <column name="INTENSITY" value="0.7"/>
+            <column name="POINT" value="POINT (-1.9895124435424805 53.46388328333828)"/>
+        </insert>
+        <insert tableName="HEAT_POINT">
+            <column name="ID" value="c5282437-9287-4acd-bc95-a05cd1f8a89b"/>
+            <column name="NAME" value="10"/>
+            <column name="INTENSITY" value="0.7"/>
+            <column name="POINT" value="POINT (-1.9884395599365234 53.464138770224096)"/>
+        </insert>
+        <insert tableName="HEAT_POINT">
+            <column name="ID" value="e2e82a37-4d43-45f6-a5ca-c42b92606be1"/>
+            <column name="NAME" value="11"/>
+            <column name="INTENSITY" value="0.7"/>
+            <column name="POINT" value="POINT (-1.9873237609863281 53.46367889272259)"/>
+        </insert>
+        <insert tableName="HEAT_POINT">
+            <column name="ID" value="6927e83f-297f-4e99-944c-6beb9dca1303"/>
+            <column name="NAME" value="12"/>
+            <column name="INTENSITY" value="0.7"/>
+            <column name="POINT" value="POINT (-1.9886112213134766 53.46334675587328)"/>
+        </insert>
+        <insert tableName="HEAT_POINT">
+            <column name="ID" value="7a0ead7a-5ee0-423c-b82a-30c16e5f5e61"/>
+            <column name="NAME" value="13"/>
+            <column name="INTENSITY" value="0.7"/>
+            <column name="POINT" value="POINT (-1.9898557662963867 53.46296351781824)"/>
+        </insert>
+        <insert tableName="HEAT_POINT">
+            <column name="ID" value="72d806f8-0d8f-49aa-9b5e-d1c7b970dd6f"/>
+            <column name="NAME" value="14"/>
+            <column name="INTENSITY" value="0.7"/>
+            <column name="POINT" value="POINT (-1.990971565246582 53.46229923032746)"/>
+        </insert>
+        <insert tableName="HEAT_POINT">
+            <column name="ID" value="ffa5feb6-ac93-4377-9026-05767fca1599"/>
+            <column name="NAME" value="15"/>
+            <column name="INTENSITY" value="0.7"/>
+            <column name="POINT" value="POINT (-1.9874095916748047 53.46296351781824)"/>
+        </insert>
+        <insert tableName="HEAT_POINT">
+            <column name="ID" value="bce3f933-614d-4163-9780-56c2ab73680b"/>
+            <column name="NAME" value="16"/>
+            <column name="INTENSITY" value="0.7"/>
+            <column name="POINT" value="POINT (-1.98891162872314455 53.46237587941455)"/>
+        </insert>
+        <insert tableName="HEAT_POINT">
+            <column name="ID" value="ce45d9d9-78ff-438d-b9d8-2cc94b75478e"/>
+            <column name="NAME" value="17"/>
+            <column name="INTENSITY" value="0.7"/>
+            <column name="POINT" value="POINT (-1.9907569885253906 53.46199263259525)"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

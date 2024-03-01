@@ -1,0 +1,19 @@
+<p>
+    Компонент <code>GeoMap</code> поддерживает отображение статических изображений. Для этого нужно использовать слой
+    <code>image</code>. На выбор есть два источника:
+</p>
+<ul>
+    <li>
+        <code>imageStaticSource</code> отображает статические ресурсы. Атрибут <code>url</code> позволяет указать URL
+        до внешнего ресурса или до ресурса в приложении, см.
+        <a href="https://vaadin.com/docs/latest/advanced/loading-resources">Vaadin docs :: Loading Resources</a>
+        Также можно программно указать ресурс через <code>StreamResource</code>.
+    </li>
+    <li>
+        <code>imageWmsSource</code> отображает изображение поставляемое WMS сервисом.
+    </li>
+</ul>
+<p>
+    В данном примере отображается изображение из ресурсов приложения. Для <code>imageStaticSource</code> и
+    <code>mapView</code> нужно обязательно указать <code>projection</code> и <code>extent</code>.
+</p>

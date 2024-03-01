@@ -1,0 +1,19 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:charts="http://jmix.io/schema/charts/ui">
+    <layout>
+        <charts:chart id="chart" height="100%" width="100%" minHeight="30em">
+            <charts:title text="Funnel Comapre" left="left" top="bottom"/>
+            <charts:tooltip trigger="ITEM" formatter="{a} &lt;br/&gt;{b} : {c}%"/>
+            <charts:legend orientation="VERTICAL" left="left"/>
+
+            <charts:series>
+                <charts:funnel name="Pyramid"
+                               width="40%" left="5%" top="5%"
+                               sort="ASCENDING" funnelAlign="RIGHT"/>
+                <charts:funnel name="Pyramid"
+                               width="40%" left="55%" top="5%"
+                               funnelAlign="LEFT"/>
+            </charts:series>
+        </charts:chart>
+    </layout>
+</view>

@@ -1,0 +1,38 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:charts="http://jmix.io/schema/charts/ui">
+    <data readOnly="true">
+        <keyValueCollection id="salesDc">
+            <properties>
+                <property name="customer" class="io.jmix.uisamples.entity.Customer"/>
+                <property name="sum" datatype="decimal"/>
+            </properties>
+            <loader id="salesDl">
+                <query>
+                    <![CDATA[select o.customer, sum(o.amount) from uisamples_Order o group by o.customer]]>
+                </query>
+            </loader>
+        </keyValueCollection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <charts:chart id="chart" width="100%" height="100%" minHeight="30em">
+            <charts:dataSet>
+                <charts:source dataContainer="salesDc"
+                               categoryField="customer"
+                               valueFields="sum"/>
+            </charts:dataSet>
+
+            <charts:legend/>
+            <charts:tooltip trigger="ITEM"/>
+
+            <charts:series>
+                <charts:pie name="Customer">
+                    <charts:tooltip/>
+                    <charts:label formatter="{b}: {d}%"/>
+                </charts:pie>
+            </charts:series>
+        </charts:chart>
+    </layout>
+</view>

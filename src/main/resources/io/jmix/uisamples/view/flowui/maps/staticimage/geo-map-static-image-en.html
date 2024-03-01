@@ -1,0 +1,19 @@
+<p>
+    The <code>GeoMap</code> supports displaying static images as a map content. There is an <code>image</code> layer that
+    can display single images. It contains the following sources:
+</p>
+<ul>
+    <li>
+        <code>imageStaticSource</code> displays static images. The <code>url</code> attribute defines the URL
+        of external or application resource (see
+        <a href="https://vaadin.com/docs/latest/advanced/loading-resources">Vaadin docs :: Loading Resources</a>)
+        The source also supports programmatically setting an image using <code>StreamResource</code>.
+    </li>
+    <li>
+        <code>imageWmsSource</code> displays single, untiled images from WMS services.
+    </li>
+</ul>
+<p>
+    In this example, <code>GeoMap</code> displays image from application resources. Note, that
+    <code>imageStaticSource</code> and <code>mapView</code> must define <code>projection</code> and <code>extent</code>.
+</p>

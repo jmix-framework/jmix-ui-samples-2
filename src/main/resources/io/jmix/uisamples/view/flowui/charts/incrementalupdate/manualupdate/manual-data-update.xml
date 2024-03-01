@@ -1,0 +1,66 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:charts="http://jmix.io/schema/charts/ui">
+    <data readOnly="true">
+        <collection id="transportDc" class="io.jmix.uisamples.entity.TransportCount"
+                    fetchPlan="_local">
+            <loader id="transportDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from TransportCount e order by e.year]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <hbox padding="false">
+            <button id="addDataBtn" text="Add" icon="PLUS" themeNames="primary"/>
+            <button id="removeDataBtn" text="Remove" icon="MINUS" themeNames="primary error"/>
+        </hbox>
+        <charts:chart id="chart" width="100%" height="100%" minHeight="30em">
+            <charts:title text="Transport count" right="10%"/>
+            <charts:legend/>
+
+            <charts:tooltip trigger="AXIS">
+                <charts:formatterFunction>
+                    <![CDATA[
+                        function (params) {
+                              var tar = params[1];
+
+                              return '<b>Year:</b> ' + tar.name + '<br/><hr/>' +
+                              '<b>Cars:</b> ' + tar.value.cars + '<br/>' +
+                              '<b>Motorcycles:</b> ' + tar.value.motorcycles + '<br/>' +
+                              '<b>Bicycles:</b> ' + tar.value.bicycles + '<br/>';
+                            }
+                    ]]>
+                </charts:formatterFunction>
+                <charts:axisPointer type="SHADOW"/>
+            </charts:tooltip>
+
+            <charts:xAxes>
+                <charts:xAxis/>
+            </charts:xAxes>
+            <charts:yAxes>
+                <charts:yAxis/>
+            </charts:yAxes>
+
+            <charts:dataSet>
+                <charts:source dataContainer="transportDc" categoryField="year"
+                               valueFields="cars, motorcycles, bicycles"/>
+            </charts:dataSet>
+
+            <charts:series>
+                <charts:line name="Car sells">
+                    <charts:areaStyle/>
+                </charts:line>
+                <charts:line name="Motorcycle sells">
+                    <charts:areaStyle/>
+                </charts:line>
+                <charts:line name="Bicycle sells">
+                    <charts:areaStyle/>
+                </charts:line>
+            </charts:series>
+        </charts:chart>
+    </layout>
+</view>

@@ -1,0 +1,43 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:maps="http://jmix.io/schema/maps/ui">
+    <data>
+        <collection id="heatPointsDc"
+                    class="io.jmix.uisamples.entity.HeatPoint"
+                    fetchPlan="_base">
+            <loader id="heatPointsDl">
+                <query><![CDATA[select e from HeatPoint e]]></query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <maps:geoMap id="map"
+                     height="100%"
+                     width="100%"
+                     minHeight="25em">
+            <maps:mapView zoom="14"
+                          centerX="-1.9901218933105469"
+                          centerY="53.46047450112283"/>
+            <maps:layers>
+                <maps:tile>
+                    <maps:osmSource/>
+                </maps:tile>
+                <maps:heatmap weightProperty="intensity"
+                              blur="15"
+                              radius="20">
+                    <maps:heatmapDataVectorSource dataContainer="heatPointsDc"
+                                                  property="point"/>
+                </maps:heatmap>
+                <maps:heatmap id="heatmapLayer"
+                              blur="15"
+                              maxZoom="15.5"
+                              radius="20"
+                              weightProperty="weight">
+                    <maps:vectorSource id="source"/>
+                </maps:heatmap>
+            </maps:layers>
+        </maps:geoMap>
+    </layout>
+</view>

@@ -3,7 +3,7 @@
     <layout padding="false">
         <tabSheet id="tabSheet" width="100%">
             <tab id="barChartTab" label="Declaratively added bar chart">
-                <chart:chart width="99%" minHeight="30em"
+                <chart:sochart width="99%" minHeight="30em"
                              labels="Backlog, Next, In-progress, Review, QA, Done"
                              data="18, 8, 5, 6, 29, 53">
                     <chart:barChart name="Bars"/>
@@ -15,7 +15,7 @@
                     </chart:toolbox>
                     <chart:title text="Issues by status"
                                  subText="The current status is presented in bars"/>
-                </chart:chart>
+                </chart:sochart>
             </tab>
             <tab id="roseChart" label="Declaratively added rose chart">
                 <chart:chart width="99%" minHeight="30em"

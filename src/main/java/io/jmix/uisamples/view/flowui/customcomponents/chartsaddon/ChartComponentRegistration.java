@@ -11,9 +11,9 @@ import org.springframework.context.annotation.Configuration;
 public class ChartComponentRegistration {
 
     @Bean
-    public ComponentRegistration chart() {
+    public ComponentRegistration soChart() {
         return ComponentRegistrationBuilder.create(SOChart.class)
-                .withComponentLoader("chart", ChartLoader.class)
+                .withComponentLoader("sochart", ChartLoader.class)
                 .build();
     }
 }

@@ -1,0 +1,17 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:charts="http://jmix.io/schema/charts/ui">
+    <layout>
+        <charts:chart height="100%" width="100%" minHeight="30em">
+            <charts:tooltip formatter="{a} &lt;br/&gt;{b} : {c}%"/>
+
+            <charts:series>
+                <charts:gauge name="Pressure">
+                    <charts:data>
+                        <charts:dataItem value="50" name="SCORE"/>
+                    </charts:data>
+                    <charts:detail formatter="{value}"/>
+                </charts:gauge>
+            </charts:series>
+        </charts:chart>
+    </layout>
+</view>

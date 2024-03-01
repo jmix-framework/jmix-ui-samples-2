@@ -1,0 +1,40 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:charts="http://jmix.io/schema/charts/ui">
+    <data readOnly="true">
+        <collection id="countryLitresDc"
+                    class="io.jmix.uisamples.entity.CountryLitres"
+                    fetchPlan="_local">
+            <loader id="countryLitresDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from CountryLitres e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <charts:chart id="chart" width="100%" height="100%" minHeight="30em">
+            <charts:title text="Liters" subtext="By countries"/>
+            <charts:legend top="0"/>
+            <charts:tooltip trigger="ITEM"/>
+
+            <charts:dataSet>
+                <charts:source dataContainer="countryLitresDc"
+                               categoryField="country" valueFields="litres"/>
+            </charts:dataSet>
+
+            <charts:series>
+                <charts:pie name="Radius" center="25% 50%" roseType="RADIUS"
+                            radius="20 175">
+                    <charts:label formatter="{b}: {d}%"/>
+                </charts:pie>
+                <charts:pie name="Area" center="75% 50%" roseType="AREA"
+                            radius="20 175">
+                    <charts:label formatter="{b}: {d}%"/>
+                </charts:pie>
+            </charts:series>
+        </charts:chart>
+    </layout>
+</view>

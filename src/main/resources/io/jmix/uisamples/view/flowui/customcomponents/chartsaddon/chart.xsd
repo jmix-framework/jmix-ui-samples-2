@@ -5,7 +5,7 @@
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:layout="http://jmix.io/schema/flowui/layout">
 
-    <xs:element name="chart">
+    <xs:element name="sochart">
         <xs:complexType>
             <xs:complexContent>
                 <xs:extension base="layout:baseComponent">

@@ -1,0 +1,33 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:charts="http://jmix.io/schema/charts/ui">
+    <data readOnly="true">
+        <collection id="pointDc" class="io.jmix.uisamples.entity.Point">
+            <loader id="pointDl" readOnly="true"/>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <charts:chart id="chart" width="100%" height="100%" minHeight="30em">
+            <charts:title text="Scatter chart"/>
+
+            <charts:axisPointer show="true" type="LINE"/>
+
+            <charts:xAxes>
+                <charts:xAxis type="VALUE"/>
+            </charts:xAxes>
+            <charts:yAxes>
+                <charts:yAxis/>
+            </charts:yAxes>
+
+            <charts:dataSet>
+                <charts:source dataContainer="pointDc" valueFields="x y"/>
+            </charts:dataSet>
+
+            <charts:series>
+                <charts:scatter symbolSize="20"/>
+            </charts:series>
+        </charts:chart>
+    </layout>
+</view>

@@ -1,0 +1,47 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:charts="http://jmix.io/schema/charts/ui">
+    <layout>
+        <charts:chart height="100%" width="100%" minHeight="30em">
+            <charts:series>
+                <charts:gauge name="Better">
+                    <charts:title fontSize="14"/>
+
+                    <charts:detail width="40" height="14" fontSize="14" color="WHITE" borderRadius="3" backgroundColor="inherit"
+                                   formatter="{value}%"/>
+
+                    <charts:anchor show="true" showAbove="true" size="18">
+                        <charts:itemStyle color="#FAC858"/>
+                    </charts:anchor>
+
+                    <charts:pointer
+                            icon="path://M2.9,0.7L2.9,0.7c1.4,0,2.6,1.2,2.6,2.6v115c0,1.4-1.2,2.6-2.6,2.6l0,0c-1.4,0-2.6-1.2-2.6-2.6V3.3C0.3,1.9,1.4,0.7,2.9,0.7z"
+                            width="8"
+                            length="80%"
+                            offsetCenter="0 8%"/>
+
+                    <charts:progress show="true" overlap="true" roundCap="true"/>
+
+                    <charts:axisLine roundCap="true"/>
+
+                    <charts:data>
+                        <charts:dataItem name="Good" value="20">
+                            <charts:title offsetCenter="-40% 80%"/>
+                            <charts:detail offsetCenter="-40% 95%"/>
+                        </charts:dataItem>
+
+                        <charts:dataItem name="Better" value="40">
+                            <charts:title offsetCenter="0% 80%"/>
+                            <charts:detail offsetCenter="0% 95%"/>
+                        </charts:dataItem>
+
+                        <charts:dataItem name="Perfect" value="60">
+                            <charts:title offsetCenter="40% 80%"/>
+                            <charts:detail offsetCenter="40% 95%"/>
+                        </charts:dataItem>
+                    </charts:data>
+
+                </charts:gauge>
+            </charts:series>
+        </charts:chart>
+    </layout>
+</view>

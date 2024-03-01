@@ -1,0 +1,21 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:maps="http://jmix.io/schema/maps/ui">
+    <layout>
+        <maps:geoMap id="map"
+                     height="100%"
+                     width="100%"
+                     minHeight="25em">
+            <maps:mapView zoom="4"
+                          centerX="83.71492512079742"
+                          centerY="35.88107336211214"/>
+            <maps:layers>
+                <maps:tile>
+                    <maps:osmSource/>
+                </maps:tile>
+                <maps:vector id="vectorSource">
+                    <maps:vectorSource id="source"/>
+                </maps:vector>
+            </maps:layers>
+        </maps:geoMap>
+    </layout>
+</view>

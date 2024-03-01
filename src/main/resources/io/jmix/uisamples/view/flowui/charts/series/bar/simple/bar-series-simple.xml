@@ -1,0 +1,44 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:charts="http://jmix.io/schema/charts/ui">
+    <data readOnly="true">
+        <collection id="countryGrowthDc"
+                    class="io.jmix.uisamples.entity.CountryGrowth">
+            <fetchPlan extends="_local"/>
+            <loader id="countryGrowthDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from CountryGrowth e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <charts:chart id="chart" width="100%" height="100%" minHeight="30em">
+            <charts:tooltip trigger="AXIS">
+                <charts:axisPointer type="SHADOW"/>
+            </charts:tooltip>
+            <charts:legend/>
+
+            <charts:xAxes>
+                <charts:xAxis/>
+            </charts:xAxes>
+            <charts:yAxes>
+                <charts:yAxis>
+                    <charts:axisLabel formatter="{value} %"/>
+                </charts:yAxis>
+            </charts:yAxes>
+
+            <charts:dataSet>
+                <charts:source dataContainer="countryGrowthDc"
+                               categoryField="country" valueFields="prevYear currYear"/>
+            </charts:dataSet>
+
+            <charts:series>
+                <charts:bar name="Previous year"/>
+                <charts:bar name="Current year"/>
+            </charts:series>
+        </charts:chart>
+    </layout>
+</view>

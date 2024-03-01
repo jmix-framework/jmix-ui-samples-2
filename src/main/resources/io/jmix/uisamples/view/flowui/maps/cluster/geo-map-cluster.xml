@@ -1,0 +1,38 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:maps="http://jmix.io/schema/maps/ui">
+    <data>
+        <collection id="locationsDc"
+                    class="io.jmix.uisamples.entity.Location"
+                    fetchPlan="_base">
+            <loader id="locationsDl">
+                <query><![CDATA[select e from Location e]]></query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <maps:geoMap id="map"
+                     height="100%"
+                     width="100%"
+                     minHeight="25em">
+            <maps:mapView zoom="14"
+                          centerX="-1.9901218933105469"
+                          centerY="53.46047450112283"/>
+            <maps:layers>
+                <maps:tile>
+                    <maps:osmSource/>
+                </maps:tile>
+                <maps:vector>
+                    <maps:cluster weightProperty="weight"
+                                  distance="30"
+                                  minDistance="30">
+                        <maps:dataVectorSource dataContainer="locationsDc"
+                                               property="point"/>
+                    </maps:cluster>
+                </maps:vector>
+            </maps:layers>
+        </maps:geoMap>
+    </layout>
+</view>

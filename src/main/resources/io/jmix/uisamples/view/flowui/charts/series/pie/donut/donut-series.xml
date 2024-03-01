@@ -1,0 +1,20 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:charts="http://jmix.io/schema/charts/ui">
+    <layout>
+        <charts:chart id="chart" width="100%" height="100%" minHeight="30em">
+            <charts:title text="Donut chart"/>
+            <charts:legend top="0"/>
+            <charts:tooltip trigger="ITEM" formatter="{b}: {d}%"/>
+
+            <charts:series>
+                <charts:pie name="Category" radius="50% 80%">
+                    <charts:label show="false" position="CENTER"/>
+                    <charts:labelLine show="false"/>
+                    <charts:emphasis>
+                        <charts:label show="true" fontSize="40" fontWeight="bold"/>
+                    </charts:emphasis>
+                </charts:pie>
+            </charts:series>
+        </charts:chart>
+    </layout>
+</view>

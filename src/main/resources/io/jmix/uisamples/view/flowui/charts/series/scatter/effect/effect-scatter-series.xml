@@ -1,0 +1,35 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:charts="http://jmix.io/schema/charts/ui">
+    <data readOnly="true">
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <charts:chart id="chart" width="100%" height="100%" minHeight="30em">
+            <charts:title text="Series scatter chart"/>
+
+            <charts:xAxes>
+                <charts:xAxis type="VALUE"/>
+            </charts:xAxes>
+            <charts:yAxes>
+                <charts:yAxis scale="true"/>
+            </charts:yAxes>
+
+            <charts:series>
+                <charts:effectScatter symbolSizeFunction="function(data) { return Math.sqrt(data.amount) / 5e2; }">
+                    <charts:emphasis focus="SELF"/>
+
+                    <charts:labelLayout y="20" align="CENTER" hideOverlap="true" moveOverlap="SHIFT_X"/>
+
+                    <charts:labelLine show="true" length="5">
+                        <charts:lineStyle color="#bbb"/>
+                    </charts:labelLine>
+
+                    <charts:label show="true"
+                                  formatterFunction="function(param) { return param.value.name; }" position="TOP"/>
+                </charts:effectScatter>
+            </charts:series>
+        </charts:chart>
+    </layout>
+</view>

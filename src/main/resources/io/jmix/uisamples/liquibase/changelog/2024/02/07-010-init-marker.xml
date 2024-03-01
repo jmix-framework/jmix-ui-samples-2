@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="uisamples">
+        <createTable tableName="MARKER">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_MARKER"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)"/>
+            <column name="POINT" type="varchar(100 BYTE)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="uisamples">
+        <insert tableName="MARKER">
+            <column name="ID" value="e3686940-213a-447d-af27-37761d54daa8"/>
+            <column name="NAME" value="Moscow"/>
+            <column name="POINT" value="POINT (37.617298 55.755825)"/>
+        </insert>
+        <insert tableName="MARKER">
+            <column name="ID" value="08398fcc-f717-4631-8812-d6e0f69feacc"/>
+            <column name="NAME" value="Helsinki"/>
+            <column name="POINT" value="POINT (24.940104585126434 60.17227763542766)"/>
+        </insert>
+        <insert tableName="MARKER">
+            <column name="ID" value="fb74bd82-df5d-4d67-a42a-5a7b7ea447bf"/>
+            <column name="NAME" value="Berlin"/>
+            <column name="POINT" value="POINT (13.394374248887095 52.51655979225592)"/>
+        </insert>
+        <insert tableName="MARKER">
+            <column name="ID" value="785ae427-dc7b-4646-a00b-53e983512036"/>
+            <column name="NAME" value="Paris"/>
+            <column name="POINT" value="POINT (2.3143298486464454 48.87737249066353)"/>
+        </insert>
+        <insert tableName="MARKER">
+            <column name="ID" value="82a57f81-db7c-45e7-9aa1-1556f5f1f5f4"/>
+            <column name="NAME" value="London"/>
+            <column name="POINT" value="POINT (-0.11482542656378006 51.51575123264132)"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
