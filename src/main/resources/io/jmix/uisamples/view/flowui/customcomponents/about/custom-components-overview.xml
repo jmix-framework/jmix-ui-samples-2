@@ -1,0 +1,28 @@
+<overview>
+    <header>
+        <text message="customComponents.title" style="overview-title"/>
+        <text message="customComponents.description" style="overview-description"/>
+    </header>
+
+    <samples>
+        <sample>
+            <image src="icons/customcomponents/compositeComponent.png" link="composite-component"/>
+            <text message="compositeComponent.title" link="composite-component" style="overview-sample-title"/>
+            <text message="compositeComponent.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/customcomponents/layouts.png" link="custom-component-js-library"/>
+            <text message="customComponents.layouts.title"
+                  link="custom-component-js-library"
+                  style="overview-sample-title"/>
+            <text message="customComponents.layouts.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/customcomponents/dialogsAndNotifications.png" link="custom-component-from-scratch"/>
+            <text message="customComponents.dialogsAndNotifications.title"
+                  link="custom-component-from-scratch"
+                  style="overview-sample-title"/>
+            <text message="customComponents.dialogsAndNotifications.description" style="overview-description"/>
+        </sample>
+    </samples>
+</overview>

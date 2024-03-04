@@ -58,6 +58,7 @@ import io.jmix.uisamples.config.UiSamplesMenuConfig;
 import io.jmix.uisamples.config.UiSamplesMenuItem;
 import io.jmix.uisamples.util.UiSamplesHelper;
 import io.jmix.uisamples.view.sys.main.MainView;
+import io.jmix.uisamples.view.sys.main.OverviewPageGenerator;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.ObjectProvider;
@@ -147,16 +148,26 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
 
     protected void initAboutView() {
         getContent().removeAll();
-        String resourcePath = SRC_ROOT_PATH + Strings.nullToEmpty(menuItem.getAboutLocation());
-        InputStream resourceAsStream = resources.getResourceAsStream(resourcePath);
+        if (true) {
+            OverviewPageGenerator generator = new OverviewPageGenerator(uiComponents, resources, messageBundle);
+            generator.generate(SRC_ROOT_PATH
+                    + menuItem.getId().replace("-", "")
+                    + "/about/"
+                    + menuItem.getId()
+                    + "-overview.xml");
+            getContent().add(generator.getContent());
+        } else {
+            String resourcePath = SRC_ROOT_PATH + Strings.nullToEmpty(menuItem.getAboutLocation());
+            InputStream resourceAsStream = resources.getResourceAsStream(resourcePath);
 
-        if (resourceAsStream == null) {
-            String message = String.format("Resource with path '%s' can't be loaded", resourcePath);
-            throw new GuiDevelopmentException(message, getId().orElse("sampleView"));
+            if (resourceAsStream == null) {
+                String message = String.format("Resource with path '%s' can't be loaded", resourcePath);
+                throw new GuiDevelopmentException(message, getId().orElse("sampleView"));
+            }
+
+            Html html = new Html(resourceAsStream);
+            getContent().add(html);
         }
-
-        Html html = new Html(resourceAsStream);
-        getContent().add(html);
     }
 
     protected void updateLayout(StandardView sampleView) {

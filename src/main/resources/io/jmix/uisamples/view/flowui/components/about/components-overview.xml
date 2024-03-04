@@ -1,0 +1,90 @@
+<overview>
+    <header>
+        <text message="components.title" style="overview-title"/>
+        <text message="components.description" style="overview-description"/>
+    </header>
+
+    <samples>
+        <sample>
+            <image src="icons/components/interactionBackground.png"/>
+            <text message="interaction.title"
+                  style="overview-sample-title"/>
+            <tag name="button" link="button-simple" style="overview-tag-font overview-tag-interaction"/>
+            <tag name="dropDownButton" link="button-theme-variant" style="overview-tag-font overview-tag-interaction"/>
+            <tag name="checkBox" link="checkbox-simple" style="overview-tag-font overview-tag-interaction"/>
+            <tag name="checkBoxGroup" link="checkbox-group-simple" style="overview-tag-font overview-tag-interaction"/>
+            <tag name="radioButtonGroup"
+                 link="radio-button-group-simple"
+                 style="overview-tag-font overview-tag-interaction"/>
+            <tag name="tabs" link="tabs-simple" style="overview-tag-font overview-tag-interaction"/>
+        </sample>
+        <sample>
+            <image src="icons/components/visualizationBackground.png"/>
+            <text message="visualization.title" style="overview-sample-title"/>
+            <tag name="avatar" link="avatar" style="overview-tag-font overview-tag-visualization"/>
+            <tag name="badge" link="badge-simple" style="overview-tag-font overview-tag-visualization"/>
+            <tag name="helperText" style="overview-tag-font overview-tag-visualization"/>
+            <tag name="tooltip" link="context-help-tooltip" style="overview-tag-font overview-tag-visualization"/>
+            <tag name="html" link="html-component" style="overview-tag-font overview-tag-visualization"/>
+            <tag name="icon" link="icon-simple" style="overview-tag-font overview-tag-visualization"/>
+            <tag name="image" link="image-simple" style="overview-tag-font overview-tag-visualization"/>
+            <tag name="progressBar" link="progress-bar-simple" style="overview-tag-font overview-tag-visualization"/>
+        </sample>
+        <sample>
+            <image src="icons/components/inputFieldsBackground.png"/>
+            <text message="inputFields.title" style="overview-sample-title"/>
+            <tag name="textField" link="text-field-simple" style="overview-tag-font overview-tag-inputFields"/>
+            <tag name="emailField" link="email-field-simple" style="overview-tag-font overview-tag-inputFields"/>
+            <tag name="textArea" link="text-area-simple" style="overview-tag-font overview-tag-inputFields"/>
+            <tag name="passwordField" link="password-field-simple" style="overview-tag-font overview-tag-inputFields"/>
+            <tag name="codeEditor" link="code-editor-simple" style="overview-tag-font overview-tag-inputFields"/>
+            <tag name="numberField" link="number-field-simple" style="overview-tag-font overview-tag-inputFields"/>
+            <tag name="bigDecimalField"
+                 link="big-decimal-field-simple"
+                 style="overview-tag-font overview-tag-inputFields"/>
+            <tag name="integerField" link="integer-field-simple" style="overview-tag-font overview-tag-inputFields"/>
+        </sample>
+        <sample>
+            <image src="icons/components/comboBoxesBackground.png"/>
+            <text message="comboBoxes.title" style="overview-sample-title"/>
+            <tag name="entityComboBox"
+                 link="entity-combobox-simple"
+                 style="overview-tag-font overview-tag-comboBoxes"/>
+            <tag name="comboBox" link="combobox-simple" style="overview-tag-font overview-tag-comboBoxes"/>
+            <tag name="multiSelectComboBox"
+                 link="multi-select-combo-box-simple"
+                 style="overview-tag-font overview-tag-comboBoxes"/>
+            <tag name="select" link="select-simple" style="overview-tag-font overview-tag-comboBoxes"/>
+        </sample>
+        <sample>
+            <image src="icons/components/pickerFieldsBackground.png"/>
+            <text message="pickerFields.title" style="overview-sample-title"/>
+            <tag name="entityPicker" link="entity-picker-simple" style="overview-tag-font overview-tag-pickerFields"/>
+            <tag name="valuePicker" link="value-picker-simple" style="overview-tag-font overview-tag-pickerFields"/>
+            <tag name="datePicker" link="date-picker-simple" style="overview-tag-font overview-tag-pickerFields"/>
+            <tag name="timePicker" link="time-picker-simple" style="overview-tag-font overview-tag-pickerFields"/>
+            <tag name="dateTimePicker"
+                 link="date-time-picker-simple"
+                 style="overview-tag-font overview-tag-pickerFields"/>
+        </sample>
+        <sample>
+            <image src="icons/components/listsAndTablesBackground.png"/>
+            <text message="listsAndTables.title" style="overview-sample-title"/>
+            <tag name="dataGrid" link="data-grid-simple" style="overview-tag-font overview-tag-listsAndTables"/>
+            <tag name="listBox" link="list-box-simple" style="overview-tag-font overview-tag-listsAndTables"/>
+        </sample>
+        <sample>
+            <image src="icons/components/filteringAndPagingBackground.png"/>
+            <text message="filteringAndPaging.title" style="overview-sample-title"/>
+            <tag name="genericFilter"
+                 link="generic-filter-multiple-conditions"
+                 style="overview-tag-font overview-tag-filteringAndPaging"/>
+            <tag name="propertyFilter"
+                 link="property-filter-simple"
+                 style="overview-tag-font overview-tag-filteringAndPaging"/>
+            <tag name="simplePagination"
+                 link="simple-pagination-simple"
+                 style="overview-tag-font overview-tag-filteringAndPaging"/>
+        </sample>
+    </samples>
+</overview>

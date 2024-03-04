@@ -595,7 +595,7 @@
     </menu>
 
     <menu id="layouts-root" url="flow-ui/vc/layouts">
-        <about id="layouts" location="containers/about/about.html"/>
+        <about id="containers" location="containers/about/about.html"/>
         <menu id="accordion">
             <item id="accordion-simple" page="accordion" splitEnabled="true">
                 <otherFiles>
@@ -833,7 +833,7 @@
     </menu>
 
     <menu id="custom-components-root" url="flow-ui">
-        <about id="custom-component" location="customcomponents/about/about.html"/>
+        <about id="custom-components" location="customcomponents/about/about.html"/>
         <item id="composite-component" page="visual-components" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/component/addresscomponent/AddressComponent.java"/>

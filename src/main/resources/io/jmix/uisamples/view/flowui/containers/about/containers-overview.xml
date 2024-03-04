@@ -1,0 +1,40 @@
+<overview>
+    <header>
+        <text message="layouts.title" style="overview-title"/>
+        <text message="layouts.description" style="overview-description"/>
+    </header>
+
+    <samples>
+        <sample>
+            <image src="icons/layouts/vboxAndHbox.png" link="hbox-simple"/>
+            <text message="vboxAndHbox.title" link="hbox-simple" style="overview-sample-title"/>
+            <text message="vboxAndHbox.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/layouts/formLayout.png" link="form-layout-simple"/>
+            <text message="formLayout.title" link="form-layout-simple" style="overview-sample-title"/>
+            <text message="formLayout.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/layouts/tabSheetAndAccordion.png" link="tabsheet-simple"/>
+            <text message="tabSheetAndAccordion.title" link="tabsheet-simple" style="overview-sample-title"/>
+            <text message="tabSheetAndAccordion.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/layouts/details.png" link="details-simple"/>
+            <text message="details.title" link="details-simple" style="overview-sample-title"/>
+            <text message="details.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/layouts/scroller.png" link="scroller"/>
+            <text message="scroller.title" link="scroller" style="overview-sample-title"/>
+            <text message="scroller.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/layouts/split.png" link="split-simple"/>
+            <text message="split.title" link="split-simple" style="overview-sample-title"/>
+            <text message="split.description" style="overview-description"/>
+        </sample>
+
+    </samples>
+</overview>

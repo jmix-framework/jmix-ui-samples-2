@@ -94,7 +94,16 @@ public class MainView extends StandardMainView {
 
     @Subscribe
     public void onReady(final ReadyEvent event) {
-        initWelcomePage();
+//        initWelcomePage();
+        createOverviewLayout();
+    }
+
+    private void createOverviewLayout() {
+        if (getContent().getContent() == null) {
+            OverviewPageGenerator generator = new OverviewPageGenerator(uiComponents, resources, messageBundle);
+            generator.generate("io/jmix/uisamples/view/sys/main/main-overview.xml");
+            getContent().setContent(generator.getContent());
+        }
     }
 
     private void initWelcomePage() {

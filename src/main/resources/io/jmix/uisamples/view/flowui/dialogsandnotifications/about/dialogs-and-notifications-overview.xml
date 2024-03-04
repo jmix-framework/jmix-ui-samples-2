@@ -1,0 +1,34 @@
+<overview>
+    <header>
+        <text message="dialogsAndNotifications.title" style="overview-title"/>
+        <text message="dialogsAndNotifications.description" style="overview-description"/>
+    </header>
+
+    <samples>
+        <sample>
+            <image src="icons/dialogsAndNotifications/messageDialog.png" link="message-dialog"/>
+            <text message="messageDialog.title" link="message-dialog" style="overview-sample-title"/>
+            <text message="messageDialog.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/dialogsAndNotifications/optionDialog.png" link="option-dialog"/>
+            <text message="optionDialog.title" link="option-dialog" style="overview-sample-title"/>
+            <text message="optionDialog.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/dialogsAndNotifications/inputDialog.png" link="input-dialog"/>
+            <text message="inputDialog.title" link="input-dialog" style="overview-sample-title"/>
+            <text message="inputDialog.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/dialogsAndNotifications/backgroundTaskDialog.png" link="background-task-dialog"/>
+            <text message="backgroundTaskDialog.title" link="background-task-dialog" style="overview-sample-title"/>
+            <text message="backgroundTaskDialog.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/dialogsAndNotifications/notifications.png" link="notification-simple"/>
+            <text message="notifications.title" link="notification-simple" style="overview-sample-title"/>
+            <text message="notifications.description" style="overview-description"/>
+        </sample>
+    </samples>
+</overview>

@@ -1,0 +1,45 @@
+<overview>
+    <header>
+        <text message="overview.title" style="overview-title"/>
+        <text message="overview.description" style="overview-description"/>
+    </header>
+
+    <samples>
+        <sample>
+            <image src="icons/main/components.png"
+                   link="components"/>
+            <text message="components.title"
+                  style="overview-sample-title"
+                  link="components"/>
+            <text message="components.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/main/layouts.png" link="containers"/>
+            <text message="layouts.title" style="overview-sample-title" link="containers"/>
+            <text message="layouts.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/main/dialogsAndNotifications.png" link="dialogs-and-notifications"/>
+            <text message="dialogsAndNotifications.title" style="overview-sample-title" link="dialogs-and-notifications"/>
+            <text message="dialogsAndNotifications.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/main/customComponents.png" link="custom-components"/>
+            <text message="customComponents.title" style="overview-sample-title" link="custom-components"/>
+            <text message="customComponents.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/main/cookbook.png" link="cookbook"/>
+            <text message="cookbook.title" style="overview-sample-title" link="cookbook"/>
+            <text message="cookbook.description" style="overview-description"/>
+        </sample>
+    </samples>
+
+    <resources>
+        <text message="resources.title" href="https://jmix.io" style="overview-title"/>
+        <text message="resource.website" href="https://docs.jmix.io" style="overview-link"/>
+        <text message="resource.documentation" href="https://docs.jmix.io" style="overview-link"/>
+        <text message="resource.forum" href="https://forum.jmix.io/" style="overview-link"/>
+        <text message="resource.sources" href="https://github.com/jmix-framework/jmix-ui-samples-2" style="overview-link"/>
+    </resources>
+</overview>

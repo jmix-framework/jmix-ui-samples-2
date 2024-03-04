@@ -1,0 +1,34 @@
+<overview>
+    <header>
+        <text message="cookbook.title" style="overview-title"/>
+        <text message="cookbook.description" style="overview-description"/>
+    </header>
+
+    <samples>
+        <sample>
+            <image src="icons/cookbook/cascadingDropdowns.png" link="cascading-dropdowns"/>
+            <text message="cascadingDropdowns.title" link="cascading-dropdowns" style="overview-sample-title"/>
+            <text message="cascadingDropdowns.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/cookbook/copyingEntities.png" link="copy-action"/>
+            <text message="copyingEntities.title" link="copy-action" style="overview-sample-title"/>
+            <text message="copyingEntities.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/cookbook/declarativeConditionsFilter.png" link="custom-filter"/>
+            <text message="declarativeConditionsFilter.title" link="custom-filter" style="overview-sample-title"/>
+            <text message="declarativeConditionsFilter.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/cookbook/queryModificationFilter.png" link="custom-filter-query"/>
+            <text message="queryModificationFilter.title" link="custom-filter-query" style="overview-sample-title"/>
+            <text message="queryModificationFilter.description" style="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/cookbook/databaseView.png" link="read-only-customers"/>
+            <text message="databaseView.title" link="read-only-customers" style="overview-sample-title"/>
+            <text message="databaseView.description" style="overview-description"/>
+        </sample>
+    </samples>
+</overview>
