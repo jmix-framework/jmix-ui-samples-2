@@ -1,6 +1,7 @@
 package io.jmix.uisamples.view.sys.main;
 
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Span;
@@ -57,11 +58,11 @@ public class OverviewPageGenerator {
     private void initHeader(Element header) {
         if (header != null) {
             List<Element> textElements = header.elements("text");
-            VerticalLayout verticalLayout = (VerticalLayout)uiComponents.create(VerticalLayout.class);
+            VerticalLayout verticalLayout = uiComponents.create(VerticalLayout.class);
             verticalLayout.setPadding(false);
             verticalLayout.setMaxWidth("41em");
             for (Element textElement : textElements) {
-                verticalLayout.add(new Component[]{createLabel(textElement)});
+                verticalLayout.add(createLabel(textElement));
             }
 
             overviewRoot.add(verticalLayout);
@@ -70,12 +71,15 @@ public class OverviewPageGenerator {
 
     private void initSamples(Element samples) {
         if (samples != null) {
-            FlexLayout flexLayout = (FlexLayout)uiComponents.create(FlexLayout.class);
+            FlexLayout flexLayout = uiComponents.create(FlexLayout.class);
             flexLayout.setAlignContent(FlexLayout.ContentAlignment.START);
             flexLayout.setFlexDirection(FlexLayout.FlexDirection.ROW);
-            flexLayout.setJustifyContentMode(FlexComponent.JustifyContentMode.START);
+            flexLayout.setJustifyContentMode(!isSmallDevice()
+                    ? FlexComponent.JustifyContentMode.START
+                    : FlexComponent.JustifyContentMode.CENTER);
             flexLayout.setFlexWrap(FlexLayout.FlexWrap.WRAP);
             flexLayout.addClassName("gap-l");
+
             overviewRoot.add(flexLayout);
 
             List<Element> samplesList = samples.elements();
@@ -112,14 +116,11 @@ public class OverviewPageGenerator {
         for (Element tagElement : tagElements) {
             Span span = uiComponents.create(Span.class);
             span.getElement().getThemeList().add("badge normal pill");
-            String style = tagElement.attributeValue("style");
-            if (StringUtils.isNotEmpty(style)) {
-                span.addClassNames(style.split(" "));
-            }
+            addClassNames(span, tagElement.attributeValue("classNames"));
 
             span.setText(tagElement.attributeValue("name"));
-            String link = tagElement.attributeValue("link");
-            flexLayout.add(StringUtils.isNotEmpty(link) ? createLink(span, link) : span);
+            String route = tagElement.attributeValue("route");
+            flexLayout.add(StringUtils.isNotEmpty(route) ? createRoute(span, route) : span);
         }
 
         return flexLayout;
@@ -129,32 +130,30 @@ public class OverviewPageGenerator {
         Image image = uiComponents.create(Image.class);
         image.setSrc(imageElement.attributeValue("src"));
         image.setWidth("20em");
-        String link = imageElement.attributeValue("link");
-        return StringUtils.isNotEmpty(link) ? createLink(image, link) : image;
+        String route = imageElement.attributeValue("route");
+        return StringUtils.isNotEmpty(route) ? createRoute(image, route) : image;
     }
 
-    private Component createLabel(Element labelElemetn) {
-        Component label = createLabel(messageBundle.getMessage(labelElemetn.attributeValue("message")),
-                labelElemetn.attributeValue("style"));
-        String link = labelElemetn.attributeValue("link");
-        return StringUtils.isNotEmpty(link) ? createLink(label, link) : label;
+    private Component createLabel(Element labelElement) {
+        Component label = createLabel(messageBundle.getMessage(labelElement.attributeValue("message")),
+                labelElement.attributeValue("classNames"));
+        String route = labelElement.attributeValue("route");
+        return StringUtils.isNotEmpty(route) ? createRoute(label, route) : label;
     }
 
-    private Component createLink(Component component, String link) {
+    private Component createRoute(Component component, String route) {
         RouterLink routerLink = uiComponents.create(RouterLink.class);
-        RouteParameters routeParams = new RouteParameters("sampleId", link);
+        RouteParameters routeParams = new RouteParameters("sampleId", route);
         routerLink.setRoute(SampleView.class, routeParams);
         routerLink.addClassNames("jmix-main-view-header-link");
-        routerLink.add(new Component[]{component});
+        routerLink.add(component);
         return routerLink;
     }
 
-    private Component createLabel(String text, String style) {
+    private Component createLabel(String text, String classNames) {
         Span span = uiComponents.create(Span.class);
         span.setText(text);
-        if (StringUtils.isNotEmpty(style)) {
-            span.addClassName(style);
-        }
+        addClassNames(span, classNames);
 
         return span;
     }
@@ -166,7 +165,10 @@ public class OverviewPageGenerator {
             verticalLayout.setPadding(false);
 
             for (Element textElement : textElements) {
-                verticalLayout.add(createAnchor(textElement));
+                String href = textElement.attributeValue("href");
+                verticalLayout.add(StringUtils.isNotEmpty(href)
+                        ? createAnchor(textElement)
+                        : createLabel(textElement));
             }
 
             overviewRoot.add(verticalLayout);
@@ -178,11 +180,20 @@ public class OverviewPageGenerator {
         anchor.setText(messageBundle.getMessage(textElement.attributeValue("message")));
         anchor.setHref(textElement.attributeValue("href"));
         anchor.setTarget("_blank");
-        String style = textElement.attributeValue("style");
-        if (StringUtils.isNotEmpty(style)) {
-            anchor.addClassName(style);
-        }
+        addClassNames(anchor, textElement.attributeValue("classNames"));
 
         return anchor;
+    }
+
+    private void addClassNames(Component component, String classNames) {
+        if (StringUtils.isNotEmpty(classNames)) {
+            component.addClassNames(classNames.split(" "));
+        }
+    }
+
+    private boolean isSmallDevice() {
+        // magic number from vaadin-app-layout.js
+        // '--vaadin-app-layout-touch-optimized' style property
+        return UI.getCurrent().getInternals().getExtendedClientDetails().getScreenWidth() < 801;
     }
 }

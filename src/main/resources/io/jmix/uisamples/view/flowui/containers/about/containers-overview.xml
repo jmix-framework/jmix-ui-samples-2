@@ -1,39 +1,44 @@
 <overview>
     <header>
-        <text message="layouts.title" style="overview-title"/>
-        <text message="layouts.description" style="overview-description"/>
+        <text message="layouts.title" classNames="overview-title"/>
+        <text message="layouts.description" classNames="overview-description"/>
     </header>
 
     <samples>
         <sample>
-            <image src="icons/layouts/vboxAndHbox.png" link="hbox-simple"/>
-            <text message="vboxAndHbox.title" link="hbox-simple" style="overview-sample-title"/>
-            <text message="vboxAndHbox.description" style="overview-description"/>
+            <image src="icons/layouts/vboxAndHbox.png" route="hbox-simple"/>
+            <text message="vboxAndHbox.title" route="hbox-simple" classNames="overview-sample-title"/>
+            <text message="vboxAndHbox.description" classNames="overview-description"/>
         </sample>
         <sample>
-            <image src="icons/layouts/formLayout.png" link="form-layout-simple"/>
-            <text message="formLayout.title" link="form-layout-simple" style="overview-sample-title"/>
-            <text message="formLayout.description" style="overview-description"/>
+            <image src="icons/layouts/formLayout.png" route="form-layout-simple"/>
+            <text message="formLayout.title" route="form-layout-simple" classNames="overview-sample-title"/>
+            <text message="formLayout.description" classNames="overview-description"/>
         </sample>
         <sample>
-            <image src="icons/layouts/tabSheetAndAccordion.png" link="tabsheet-simple"/>
-            <text message="tabSheetAndAccordion.title" link="tabsheet-simple" style="overview-sample-title"/>
-            <text message="tabSheetAndAccordion.description" style="overview-description"/>
+            <image src="icons/layouts/tabSheet.png" route="tabsheet-simple"/>
+            <text message="tabSheet.title" route="tabsheet-simple" classNames="overview-sample-title"/>
+            <text message="tabSheet.description" classNames="overview-description"/>
         </sample>
         <sample>
-            <image src="icons/layouts/details.png" link="details-simple"/>
-            <text message="details.title" link="details-simple" style="overview-sample-title"/>
-            <text message="details.description" style="overview-description"/>
+            <image src="icons/layouts/accordion.png" route="accordion-simple"/>
+            <text message="accordion.title" route="accordion-simple" classNames="overview-sample-title"/>
+            <text message="accordion.description" classNames="overview-description"/>
         </sample>
         <sample>
-            <image src="icons/layouts/scroller.png" link="scroller"/>
-            <text message="scroller.title" link="scroller" style="overview-sample-title"/>
-            <text message="scroller.description" style="overview-description"/>
+            <image src="icons/layouts/details.png" route="details-simple"/>
+            <text message="details.title" route="details-simple" classNames="overview-sample-title"/>
+            <text message="details.description" classNames="overview-description"/>
         </sample>
         <sample>
-            <image src="icons/layouts/split.png" link="split-simple"/>
-            <text message="split.title" link="split-simple" style="overview-sample-title"/>
-            <text message="split.description" style="overview-description"/>
+            <image src="icons/layouts/scroller.png" route="scroller"/>
+            <text message="scroller.title" route="scroller" classNames="overview-sample-title"/>
+            <text message="scroller.description" classNames="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/layouts/split.png" route="split-simple"/>
+            <text message="split.title" route="split-simple" classNames="overview-sample-title"/>
+            <text message="split.description" classNames="overview-description"/>
         </sample>
 
     </samples>

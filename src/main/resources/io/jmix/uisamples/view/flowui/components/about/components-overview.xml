@@ -1,90 +1,92 @@
 <overview>
     <header>
-        <text message="components.title" style="overview-title"/>
-        <text message="components.description" style="overview-description"/>
+        <text message="components.title" classNames="overview-title"/>
+        <text message="components.description" classNames="overview-description"/>
     </header>
 
     <samples>
         <sample>
             <image src="icons/components/interactionBackground.png"/>
             <text message="interaction.title"
-                  style="overview-sample-title"/>
-            <tag name="button" link="button-simple" style="overview-tag-font overview-tag-interaction"/>
-            <tag name="dropDownButton" link="button-theme-variant" style="overview-tag-font overview-tag-interaction"/>
-            <tag name="checkBox" link="checkbox-simple" style="overview-tag-font overview-tag-interaction"/>
-            <tag name="checkBoxGroup" link="checkbox-group-simple" style="overview-tag-font overview-tag-interaction"/>
+                  classNames="overview-sample-title"/>
+            <tag name="button" route="button-simple" classNames="overview-tag-font overview-tag-grey"/>
+            <tag name="dropdownButton" route="button-theme-variant" classNames="overview-tag-font overview-tag-grey"/>
+            <tag name="checkbox" route="checkbox-simple" classNames="overview-tag-font overview-tag-grey"/>
+            <tag name="checkboxGroup" route="checkbox-group-simple" classNames="overview-tag-font overview-tag-grey"/>
             <tag name="radioButtonGroup"
-                 link="radio-button-group-simple"
-                 style="overview-tag-font overview-tag-interaction"/>
-            <tag name="tabs" link="tabs-simple" style="overview-tag-font overview-tag-interaction"/>
+                 route="radio-button-group-simple"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag name="tabs" route="tabs-simple" classNames="overview-tag-font overview-tag-grey"/>
         </sample>
         <sample>
             <image src="icons/components/visualizationBackground.png"/>
-            <text message="visualization.title" style="overview-sample-title"/>
-            <tag name="avatar" link="avatar" style="overview-tag-font overview-tag-visualization"/>
-            <tag name="badge" link="badge-simple" style="overview-tag-font overview-tag-visualization"/>
-            <tag name="helperText" style="overview-tag-font overview-tag-visualization"/>
-            <tag name="tooltip" link="context-help-tooltip" style="overview-tag-font overview-tag-visualization"/>
-            <tag name="html" link="html-component" style="overview-tag-font overview-tag-visualization"/>
-            <tag name="icon" link="icon-simple" style="overview-tag-font overview-tag-visualization"/>
-            <tag name="image" link="image-simple" style="overview-tag-font overview-tag-visualization"/>
-            <tag name="progressBar" link="progress-bar-simple" style="overview-tag-font overview-tag-visualization"/>
+            <text message="visualization.title" classNames="overview-sample-title"/>
+            <tag name="avatar" route="avatar" classNames="overview-tag-font overview-tag-blue"/>
+            <tag name="badge" route="badge-simple" classNames="overview-tag-font overview-tag-blue"/>
+            <tag name="helperText" route="context-help-simple" classNames="overview-tag-font overview-tag-blue"/>
+            <tag name="tooltip" route="context-help-tooltip" classNames="overview-tag-font overview-tag-blue"/>
+            <tag name="html" route="html-component" classNames="overview-tag-font overview-tag-blue"/>
+            <tag name="icon" route="icon-simple" classNames="overview-tag-font overview-tag-blue"/>
+            <tag name="image" route="image-simple" classNames="overview-tag-font overview-tag-blue"/>
+            <tag name="progressBar" route="progress-bar-simple" classNames="overview-tag-font overview-tag-blue"/>
         </sample>
         <sample>
             <image src="icons/components/inputFieldsBackground.png"/>
-            <text message="inputFields.title" style="overview-sample-title"/>
-            <tag name="textField" link="text-field-simple" style="overview-tag-font overview-tag-inputFields"/>
-            <tag name="emailField" link="email-field-simple" style="overview-tag-font overview-tag-inputFields"/>
-            <tag name="textArea" link="text-area-simple" style="overview-tag-font overview-tag-inputFields"/>
-            <tag name="passwordField" link="password-field-simple" style="overview-tag-font overview-tag-inputFields"/>
-            <tag name="codeEditor" link="code-editor-simple" style="overview-tag-font overview-tag-inputFields"/>
-            <tag name="numberField" link="number-field-simple" style="overview-tag-font overview-tag-inputFields"/>
+            <text message="inputFields.title" classNames="overview-sample-title"/>
+            <tag name="textField" route="text-field-simple" classNames="overview-tag-font overview-tag-green"/>
+            <tag name="emailField" route="email-field-simple" classNames="overview-tag-font overview-tag-green"/>
+            <tag name="textArea" route="text-area-simple" classNames="overview-tag-font overview-tag-green"/>
+            <tag name="passwordField" route="password-field-simple" classNames="overview-tag-font overview-tag-green"/>
+            <tag name="codeEditor" route="code-editor-simple" classNames="overview-tag-font overview-tag-green"/>
+            <tag name="numberField" route="number-field-simple" classNames="overview-tag-font overview-tag-green"/>
             <tag name="bigDecimalField"
-                 link="big-decimal-field-simple"
-                 style="overview-tag-font overview-tag-inputFields"/>
-            <tag name="integerField" link="integer-field-simple" style="overview-tag-font overview-tag-inputFields"/>
+                 route="big-decimal-field-simple"
+                 classNames="overview-tag-font overview-tag-green"/>
+            <tag name="integerField" route="integer-field-simple" classNames="overview-tag-font overview-tag-green"/>
+            <tag name="fileUploadField" route="file-upload-field" classNames="overview-tag-font overview-tag-green"/>
         </sample>
         <sample>
             <image src="icons/components/comboBoxesBackground.png"/>
-            <text message="comboBoxes.title" style="overview-sample-title"/>
+            <text message="comboBoxes.title" classNames="overview-sample-title"/>
             <tag name="entityComboBox"
-                 link="entity-combobox-simple"
-                 style="overview-tag-font overview-tag-comboBoxes"/>
-            <tag name="comboBox" link="combobox-simple" style="overview-tag-font overview-tag-comboBoxes"/>
+                 route="entity-combobox-simple"
+                 classNames="overview-tag-font overview-tag-purple"/>
+            <tag name="comboBox" route="combobox-simple" classNames="overview-tag-font overview-tag-purple"/>
             <tag name="multiSelectComboBox"
-                 link="multi-select-combo-box-simple"
-                 style="overview-tag-font overview-tag-comboBoxes"/>
-            <tag name="select" link="select-simple" style="overview-tag-font overview-tag-comboBoxes"/>
+                 route="multi-select-combo-box-simple"
+                 classNames="overview-tag-font overview-tag-purple"/>
+            <tag name="select" route="select-simple" classNames="overview-tag-font overview-tag-purple"/>
         </sample>
         <sample>
             <image src="icons/components/pickerFieldsBackground.png"/>
-            <text message="pickerFields.title" style="overview-sample-title"/>
-            <tag name="entityPicker" link="entity-picker-simple" style="overview-tag-font overview-tag-pickerFields"/>
-            <tag name="valuePicker" link="value-picker-simple" style="overview-tag-font overview-tag-pickerFields"/>
-            <tag name="datePicker" link="date-picker-simple" style="overview-tag-font overview-tag-pickerFields"/>
-            <tag name="timePicker" link="time-picker-simple" style="overview-tag-font overview-tag-pickerFields"/>
+            <text message="pickerFields.title" classNames="overview-sample-title"/>
+            <tag name="entityPicker" route="entity-picker-simple" classNames="overview-tag-font overview-tag-red"/>
+            <tag name="valuePicker" route="value-picker-simple" classNames="overview-tag-font overview-tag-red"/>
+            <tag name="datePicker" route="date-picker-simple" classNames="overview-tag-font overview-tag-red"/>
+            <tag name="timePicker" route="time-picker-simple" classNames="overview-tag-font overview-tag-red"/>
             <tag name="dateTimePicker"
-                 link="date-time-picker-simple"
-                 style="overview-tag-font overview-tag-pickerFields"/>
+                 route="date-time-picker-simple"
+                 classNames="overview-tag-font overview-tag-red"/>
         </sample>
         <sample>
             <image src="icons/components/listsAndTablesBackground.png"/>
-            <text message="listsAndTables.title" style="overview-sample-title"/>
-            <tag name="dataGrid" link="data-grid-simple" style="overview-tag-font overview-tag-listsAndTables"/>
-            <tag name="listBox" link="list-box-simple" style="overview-tag-font overview-tag-listsAndTables"/>
+            <text message="listsAndTables.title" classNames="overview-sample-title"/>
+            <tag name="dataGrid" route="data-grid-simple" classNames="overview-tag-font overview-tag-yellow"/>
+            <tag name="listBox" route="list-box-simple" classNames="overview-tag-font overview-tag-yellow"/>
+            <tag name="virtualList" route="virtual-list-simple" classNames="overview-tag-font overview-tag-yellow"/>
         </sample>
         <sample>
             <image src="icons/components/filteringAndPagingBackground.png"/>
-            <text message="filteringAndPaging.title" style="overview-sample-title"/>
+            <text message="filteringAndPaging.title" classNames="overview-sample-title"/>
             <tag name="genericFilter"
-                 link="generic-filter-multiple-conditions"
-                 style="overview-tag-font overview-tag-filteringAndPaging"/>
+                 route="generic-filter-multiple-conditions"
+                 classNames="overview-tag-font overview-tag-orange"/>
             <tag name="propertyFilter"
-                 link="property-filter-simple"
-                 style="overview-tag-font overview-tag-filteringAndPaging"/>
+                 route="property-filter-simple"
+                 classNames="overview-tag-font overview-tag-orange"/>
             <tag name="simplePagination"
-                 link="simple-pagination-simple"
-                 style="overview-tag-font overview-tag-filteringAndPaging"/>
+                 route="simple-pagination-simple"
+                 classNames="overview-tag-font overview-tag-orange"/>
         </sample>
     </samples>
 </overview>

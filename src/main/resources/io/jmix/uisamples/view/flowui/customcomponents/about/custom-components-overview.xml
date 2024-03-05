@@ -1,28 +1,35 @@
 <overview>
     <header>
-        <text message="customComponents.title" style="overview-title"/>
-        <text message="customComponents.description" style="overview-description"/>
+        <text message="customComponents.title" classNames="overview-title"/>
+        <text message="customComponents.description" classNames="overview-description"/>
     </header>
 
     <samples>
         <sample>
-            <image src="icons/customcomponents/compositeComponent.png" link="composite-component"/>
-            <text message="compositeComponent.title" link="composite-component" style="overview-sample-title"/>
-            <text message="compositeComponent.description" style="overview-description"/>
+            <image src="icons/customcomponents/compositeComponent.png" route="composite-component"/>
+            <text message="compositeComponent.title" route="composite-component" classNames="overview-sample-title"/>
+            <text message="compositeComponent.description" classNames="overview-description"/>
         </sample>
         <sample>
-            <image src="icons/customcomponents/layouts.png" link="custom-component-js-library"/>
-            <text message="customComponents.layouts.title"
-                  link="custom-component-js-library"
-                  style="overview-sample-title"/>
-            <text message="customComponents.layouts.description" style="overview-description"/>
+            <image src="icons/customcomponents/jsLibrary.png" route="custom-component-js-library"/>
+            <text message="jsLibrary.title"
+                  route="custom-component-js-library"
+                  classNames="overview-sample-title"/>
+            <text message="jsLibrary.description" classNames="overview-description"/>
         </sample>
         <sample>
-            <image src="icons/customcomponents/dialogsAndNotifications.png" link="custom-component-from-scratch"/>
-            <text message="customComponents.dialogsAndNotifications.title"
-                  link="custom-component-from-scratch"
-                  style="overview-sample-title"/>
-            <text message="customComponents.dialogsAndNotifications.description" style="overview-description"/>
+            <image src="icons/customcomponents/chartsAddon.png" route="charts-addon"/>
+            <text message="chartsAddon.title"
+                  route="charts-addon"
+                  classNames="overview-sample-title"/>
+            <text message="chartsAddon.description" classNames="overview-description"/>
+        </sample>
+        <sample>
+            <image src="icons/customcomponents/componentFromScratch.png" route="custom-component-from-scratch"/>
+            <text message="componentFromScratch.title"
+                  route="custom-component-from-scratch"
+                  classNames="overview-sample-title"/>
+            <text message="componentFromScratch.description" classNames="overview-description"/>
         </sample>
     </samples>
 </overview>

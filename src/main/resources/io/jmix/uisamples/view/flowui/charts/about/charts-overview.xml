@@ -1,0 +1,48 @@
+<overview>
+    <header>
+        <text message="charts.title" classNames="overview-title"/>
+        <text message="charts.description" classNames="overview-description"/>
+    </header>
+
+    <samples>
+        <sample>
+            <image src="icons/backgrounds/purple.png"/>
+            <text message="series.title"
+                  classNames="overview-sample-title"/>
+            <tag name="line" route="line-series-simple" classNames="overview-tag-font overview-tag-purple"/>
+            <tag name="bar" route="bar-series-simple" classNames="overview-tag-font overview-tag-purple"/>
+            <tag name="pie" route="pie-series-simple" classNames="overview-tag-font overview-tag-purple"/>
+            <tag name="scatter" route="scatter-series-simple" classNames="overview-tag-font overview-tag-purple"/>
+            <tag name="radar" route="radar-series-simple" classNames="overview-tag-font overview-tag-purple"/>
+            <tag name="candlestick" route="candlestick-series-simple" classNames="overview-tag-font overview-tag-purple"/>
+            <tag name="funnel" route="funnel-series-simple" classNames="overview-tag-font overview-tag-purple"/>
+            <tag name="gauge" route="gauge-series-simple" classNames="overview-tag-font overview-tag-purple"/>
+        </sample>
+        <sample>
+            <image src="icons/backgrounds/orange.png"/>
+            <text message="dataItems.title" classNames="overview-sample-title"/>
+            <tag name="entity" route="entity-data-item" classNames="overview-tag-font overview-tag-orange"/>
+            <tag name="map" route="map-data-item" classNames="overview-tag-font overview-tag-orange"/>
+            <tag name="simple" route="simple-data-item" classNames="overview-tag-font overview-tag-orange"/>
+        </sample>
+        <sample>
+            <image src="icons/backgrounds/green.png"/>
+            <text message="incrementalDataUpdate.title" classNames="overview-sample-title"/>
+            <tag name="automatic" route="automatic-data-update" classNames="overview-tag-font overview-tag-green"/>
+            <tag name="manual" route="manual-data-update" classNames="overview-tag-font overview-tag-green"/>
+        </sample>
+        <sample>
+            <image src="icons/backgrounds/grey.png"/>
+            <text message="other.title" classNames="overview-sample-title"/>
+            <tag name="keyValueContainer"
+                 route="chart-key-value-container"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag name="nativeJSON"
+                 route="chart-native-json"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag name="export"
+                 route="chart-export"
+                 classNames="overview-tag-font overview-tag-grey"/>
+        </sample>
+    </samples>
+</overview>

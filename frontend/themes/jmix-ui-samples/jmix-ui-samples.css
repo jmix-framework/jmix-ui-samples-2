@@ -70,12 +70,10 @@ vaadin-app-layout::part(drawer) {
 }
 
 .overview-title {
-    color: #4F5C78;
     font: bold 1.5em "Open Sans", sans-serif;
 }
 
 .overview-description {
-    color: #4F5C78;
     font: 1.0em "Open Sans", sans-serif;
 }
 
@@ -85,7 +83,6 @@ vaadin-app-layout::part(drawer) {
 }
 
 .overview-link {
-    color: #1277FC;
     font: bold 1.0em "Open Sans", sans-serif;
 }
 
@@ -99,30 +96,30 @@ vaadin-app-layout::part(drawer) {
     color: #4F5C78;
 }
 
-.overview-tag-interaction {
+.overview-tag-grey {
     background-color: #F4F8FE;
 }
 
-.overview-tag-visualization {
+.overview-tag-blue {
     background-color: #E9FEFE;
 }
 
-.overview-tag-inputFields {
+.overview-tag-green {
     background-color: #EFFEEF;
 }
 
-.overview-tag-comboBoxes {
+.overview-tag-purple {
     background-color: #FBF4FE;
 }
 
-.overview-tag-pickerFields {
+.overview-tag-red {
     background-color: #FEF4F6;
 }
 
-.overview-tag-listsAndTables {
+.overview-tag-yellow {
     background-color: #FDFBE8;
 }
 
-.overview-tag-filteringAndPaging {
+.overview-tag-orange {
     background-color: #FEF9ED;
 }

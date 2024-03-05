@@ -1,0 +1,40 @@
+<overview>
+    <header>
+        <text message="maps.title" classNames="overview-title"/>
+        <text message="maps.description" classNames="overview-description"/>
+    </header>
+
+    <samples>
+        <sample>
+            <image src="icons/backgrounds/yellow.png"/>
+            <text message="baseFeatures.title"
+                  classNames="overview-sample-title"/>
+            <tag name="actions" route="geo-map-actions" classNames="overview-tag-font overview-tag-yellow"/>
+            <tag name="points" route="geo-map-point" classNames="overview-tag-font overview-tag-yellow"/>
+            <tag name="polygons" route="geo-map-polygon" classNames="overview-tag-font overview-tag-yellow"/>
+            <tag name="lineStrings" route="geo-map-line-string" classNames="overview-tag-font overview-tag-yellow"/>
+            <tag name="multiGeometries" route="geo-map-multi-geometries" classNames="overview-tag-font overview-tag-yellow"/>
+        </sample>
+        <sample>
+            <image src="icons/backgrounds/red.png"/>
+            <text message="styling.title"
+                  classNames="overview-sample-title"/>
+            <tag name="point" route="geo-map-point-styling" classNames="overview-tag-font overview-tag-red"/>
+            <tag name="polygon" route="geo-map-polygon-styling" classNames="overview-tag-font overview-tag-red"/>
+            <tag name="lineString" route="geo-map-line-string-styling" classNames="overview-tag-font overview-tag-red"/>
+        </sample>
+        <sample>
+            <image src="icons/backgrounds/blue.png"/>
+            <text message="dataGeneralization.title"
+                  classNames="overview-sample-title"/>
+            <tag name="cluster" route="geo-map-cluster" classNames="overview-tag-font overview-tag-blue"/>
+            <tag name="heatmap" route="geo-map-heatmap" classNames="overview-tag-font overview-tag-blue"/>
+        </sample>
+        <sample>
+            <image src="icons/backgrounds/green.png"/>
+            <text message="maps.other.title"
+                  classNames="overview-sample-title"/>
+            <tag name="staticImage" route="geo-map-static-image" classNames="overview-tag-font overview-tag-green"/>
+        </sample>
+    </samples>
+</overview>

@@ -150,11 +150,7 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
         getContent().removeAll();
         if (true) {
             OverviewPageGenerator generator = new OverviewPageGenerator(uiComponents, resources, messageBundle);
-            generator.generate(SRC_ROOT_PATH
-                    + menuItem.getId().replace("-", "")
-                    + "/about/"
-                    + menuItem.getId()
-                    + "-overview.xml");
+            generator.generate(SRC_ROOT_PATH + Strings.nullToEmpty(menuItem.getAboutLocation()));
             getContent().add(generator.getContent());
         } else {
             String resourcePath = SRC_ROOT_PATH + Strings.nullToEmpty(menuItem.getAboutLocation());
@@ -212,6 +208,9 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
 
     @Override
     public String getPageTitle() {
+        if (menuItem.isAbout()) {
+            return "";
+        }
         String title = menuConfig.getMenuItemTitle(sampleId);
         if (Strings.isNullOrEmpty(title) || sampleId == null) {
             title = super.getPageTitle();
