@@ -1,21 +1,19 @@
-package io.jmix.uisamples.view.sys.main;
+package io.jmix.uisamples.bean;
 
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.HasText;
 import com.vaadin.flow.component.UI;
-import com.vaadin.flow.component.html.Anchor;
-import com.vaadin.flow.component.html.H3;
-import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.RouteParameters;
 import com.vaadin.flow.router.RouterLink;
+import com.vaadin.flow.theme.lumo.LumoUtility;
+import io.jmix.core.Messages;
 import io.jmix.core.Resources;
-import io.jmix.core.common.util.Dom4j;
+import io.jmix.core.common.xmlparsing.Dom4jTools;
 import io.jmix.flowui.UiComponents;
-import io.jmix.flowui.exception.GuiDevelopmentException;
-import io.jmix.flowui.view.MessageBundle;
 import io.jmix.uisamples.view.sys.sampleview.SampleView;
 import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Document;
@@ -24,54 +22,56 @@ import org.dom4j.Element;
 import java.io.InputStream;
 import java.util.List;
 
+@org.springframework.stereotype.Component
 public class OverviewPageGenerator {
 
-    private UiComponents uiComponents;
-    private Resources resources;
-    private MessageBundle messageBundle;
-    private VerticalLayout overviewRoot;
+    private final Dom4jTools dom4jTools;
+    private final UiComponents uiComponents;
+    private final Resources resources;
+    private final Messages messages;
 
-    public OverviewPageGenerator(UiComponents uiComponents, Resources resources, MessageBundle messageBundle) {
+    public OverviewPageGenerator(Dom4jTools dom4jTools, UiComponents uiComponents, Resources resources,
+                                 Messages messages) {
+        this.dom4jTools = dom4jTools;
         this.uiComponents = uiComponents;
         this.resources = resources;
-        this.messageBundle = messageBundle;
+        this.messages = messages;
     }
 
-    public void generate(String var1) {
-        overviewRoot = uiComponents.create(VerticalLayout.class);
-        InputStream inputStream = resources.getResourceAsStream(var1);
+    public Component generate(String messagesPrefix, String resourceName) {
+        String prefix = messagesPrefix + "-overview";
+
+        VerticalLayout overviewRoot = uiComponents.create(VerticalLayout.class);
+        InputStream inputStream = resources.getResourceAsStream(resourceName);
         if (inputStream == null) {
-            String errorMessage = String.format("Resource with path '%s' can't be loaded", var1);
-            throw new GuiDevelopmentException(errorMessage, "sampleView");
+            String errorMessage = String.format("Resource with path '%s' can't be loaded", resourceName);
+            throw new IllegalArgumentException(errorMessage);
         } else {
-            Document document = Dom4j.readDocument(inputStream);
+            Document document = dom4jTools.readDocument(inputStream);
             Element rootElement = document.getRootElement();
-            initHeader(rootElement.element("header"));
-            initSamples(rootElement.element("samples"));
-            overviewRoot.add(createLabel("", ""));
-            initResources(rootElement.element("resources"));
+            initHeader(rootElement.element("header"), overviewRoot, prefix);
+            initSamples(rootElement.element("samples"), overviewRoot, prefix);
+            initResources(rootElement.element("resources"), overviewRoot, prefix);
         }
-    }
 
-    public Component getContent() {
         return overviewRoot;
     }
 
-    private void initHeader(Element header) {
+    private void initHeader(Element header, VerticalLayout overviewRoot, String messagesPrefix) {
         if (header != null) {
             List<Element> textElements = header.elements("text");
             VerticalLayout verticalLayout = uiComponents.create(VerticalLayout.class);
             verticalLayout.setPadding(false);
             verticalLayout.setMaxWidth("41em");
             for (Element textElement : textElements) {
-                verticalLayout.add(createLabel(textElement));
+                verticalLayout.add(createLabel(textElement, messagesPrefix));
             }
 
             overviewRoot.add(verticalLayout);
         }
     }
 
-    private void initSamples(Element samples) {
+    private void initSamples(Element samples, VerticalLayout overviewRoot, String messagesPrefix) {
         if (samples != null) {
             FlexLayout flexLayout = uiComponents.create(FlexLayout.class);
             flexLayout.setAlignContent(FlexLayout.ContentAlignment.START);
@@ -80,7 +80,7 @@ public class OverviewPageGenerator {
                     ? FlexComponent.JustifyContentMode.START
                     : FlexComponent.JustifyContentMode.CENTER);
             flexLayout.setFlexWrap(FlexLayout.FlexWrap.WRAP);
-            flexLayout.addClassName("gap-l");
+            flexLayout.addClassName(LumoUtility.Gap.LARGE);
 
             overviewRoot.add(flexLayout);
 
@@ -90,11 +90,12 @@ public class OverviewPageGenerator {
                 verticalLayout.setPadding(false);
                 verticalLayout.setWidth("20em");
                 verticalLayout.add(createImage(sample.element("image")));
+                verticalLayout.addClassName(LumoUtility.Gap.MEDIUM);
 
                 List<Element> textElements = sample.elements("text");
 
                 for (Element textElement : textElements) {
-                    verticalLayout.add(createLabel(textElement));
+                    verticalLayout.add(createLabel(textElement, messagesPrefix));
                 }
 
                 List<Element> tagElements =  sample.elements("tag");
@@ -113,16 +114,19 @@ public class OverviewPageGenerator {
         flexLayout.setFlexDirection(FlexLayout.FlexDirection.ROW);
         flexLayout.setJustifyContentMode(FlexComponent.JustifyContentMode.START);
         flexLayout.setFlexWrap(FlexLayout.FlexWrap.WRAP);
-        flexLayout.addClassName("gap-s");
+        flexLayout.addClassName(LumoUtility.Gap.SMALL);
 
         for (Element tagElement : tagElements) {
-            Span span = uiComponents.create(Span.class);
-            span.getElement().getThemeList().add("badge normal pill");
-            addClassNames(span, tagElement.attributeValue("classNames"));
+            Component tag = createComponentByName(tagElement.attributeValue("component"));
 
-            span.setText(tagElement.attributeValue("name"));
+            tag.getElement().getThemeList().add("badge pill");
+            addClassNames(tag, tagElement.attributeValue("classNames"));
+            if (tag instanceof HasText hasText) {
+                hasText.setText(tagElement.attributeValue("text"));
+            }
+
             String route = tagElement.attributeValue("route");
-            flexLayout.add(StringUtils.isNotEmpty(route) ? createRoute(span, route) : span);
+            flexLayout.add(StringUtils.isNotEmpty(route) ? createRoute(tag, route) : tag);
         }
 
         return flexLayout;
@@ -136,9 +140,11 @@ public class OverviewPageGenerator {
         return StringUtils.isNotEmpty(route) ? createRoute(image, route) : image;
     }
 
-    private Component createLabel(Element labelElement) {
-        Component label = createLabel(messageBundle.getMessage(labelElement.attributeValue("message")),
-                labelElement.attributeValue("classNames"));
+    private Component createLabel(Element labelElement, String messagesPrefix) {
+        Component label = createLabel(getMessage(messagesPrefix,
+                labelElement.attributeValue("message")),
+                labelElement.attributeValue("classNames"),
+                labelElement.attributeValue("component"));
         String route = labelElement.attributeValue("route");
         return StringUtils.isNotEmpty(route) ? createRoute(label, route) : label;
     }
@@ -152,15 +158,34 @@ public class OverviewPageGenerator {
         return routerLink;
     }
 
-    private Component createLabel(String text, String classNames) {
-        H3 h3 = uiComponents.create(H3.class);
-        h3.setText(text);
-        addClassNames(h3, classNames);
+    private Component createLabel(String text, String classNames, String componentName) {
+        Component component = createComponentByName(componentName);
+        if (component instanceof HasText hasText) {
+            hasText.setText(text);
+        }
+        addClassNames(component, classNames);
 
-        return h3;
+        return component;
     }
 
-    private void initResources(Element resources) {
+    private Component createComponentByName(String componentName) {
+        if ("h1".equals(componentName)) {
+            return uiComponents.create(H1.class);
+        } else if ("h2".equals(componentName)) {
+            return uiComponents.create(H2.class);
+        } else if ("h3".equals(componentName)) {
+            return uiComponents.create(H3.class);
+        } else if ("h4".equals(componentName)) {
+            return uiComponents.create(H4.class);
+        } else if ("h5".equals(componentName)) {
+            return uiComponents.create(H5.class);
+        } else if ("h6".equals(componentName)) {
+            return uiComponents.create(H6.class);
+        }
+        return uiComponents.create(Span.class);
+    }
+
+    private void initResources(Element resources, VerticalLayout overviewRoot, String messagesPrefix) {
         if (resources != null) {
             List<Element> textElements = resources.elements("text");
             VerticalLayout verticalLayout = uiComponents.create(VerticalLayout.class);
@@ -169,19 +194,19 @@ public class OverviewPageGenerator {
             for (Element textElement : textElements) {
                 String href = textElement.attributeValue("href");
                 verticalLayout.add(StringUtils.isNotEmpty(href)
-                        ? createAnchor(textElement)
-                        : createLabel(textElement));
+                        ? createAnchor(textElement, messagesPrefix)
+                        : createLabel(textElement, messagesPrefix));
             }
 
             overviewRoot.add(verticalLayout);
         }
     }
 
-    private Component createAnchor(Element textElement) {
+    private Component createAnchor(Element textElement, String messagesPrefix) {
         Anchor anchor = uiComponents.create(Anchor.class);
-        anchor.setText(messageBundle.getMessage(textElement.attributeValue("message")));
+        anchor.setText(getMessage(messagesPrefix, textElement.attributeValue("message")));
         anchor.setHref(textElement.attributeValue("href"));
-        anchor.setTarget("_blank");
+        anchor.setTarget(AnchorTarget.BLANK);
         addClassNames(anchor, textElement.attributeValue("classNames"));
 
         return anchor;
@@ -191,6 +216,10 @@ public class OverviewPageGenerator {
         if (StringUtils.isNotEmpty(classNames)) {
             component.addClassNames(classNames.split(" "));
         }
+    }
+
+    private String getMessage(String messagesPrefix, String code) {
+        return messages.getMessage(messagesPrefix + "." + code);
     }
 
     private boolean isSmallDevice() {

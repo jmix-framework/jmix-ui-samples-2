@@ -3,8 +3,21 @@
            xmlns="io/jmix/uisamples/view/overview-page.xsd"
            elementFormDefault="qualified">
 
+    <xs:simpleType name="componentType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="h1"/>
+            <xs:enumeration value="h2"/>
+            <xs:enumeration value="h3"/>
+            <xs:enumeration value="h4"/>
+            <xs:enumeration value="h5"/>
+            <xs:enumeration value="h6"/>
+            <xs:enumeration value="Span"/>
+        </xs:restriction>
+    </xs:simpleType>
+
     <xs:complexType name="textType">
         <xs:attribute name="message" type="xs:string" use="required"/>
+        <xs:attribute name="component" type="componentType"/>
         <xs:attribute name="route" type="xs:string"/>
         <xs:attribute name="classNames" type="xs:string"/>
         <xs:attribute name="href" type="xs:string"/>
@@ -16,7 +29,8 @@
     </xs:complexType>
 
     <xs:complexType name="tagType">
-        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="text" type="xs:string" use="required"/>
+        <xs:attribute name="component" type="componentType"/>
         <xs:attribute name="route" type="xs:string"/>
         <xs:attribute name="classNames" type="xs:string"/>
     </xs:complexType>

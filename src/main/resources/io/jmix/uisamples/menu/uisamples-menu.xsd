@@ -28,12 +28,12 @@
             <xs:choice minOccurs="0" maxOccurs="unbounded">
                 <xs:element type="itemType" name="item" maxOccurs="unbounded" minOccurs="0"/>
                 <xs:element type="menuType" name="menu" maxOccurs="unbounded" minOccurs="0"/>
-                <xs:element type="aboutType" name="about" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element type="overviewType" name="overview" maxOccurs="unbounded" minOccurs="0"/>
             </xs:choice>
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="aboutType">
+    <xs:complexType name="overviewType">
         <xs:attribute name="id" type="xs:string" use="required"/>
         <xs:attribute name="location" type="xs:string" use="required"/>
     </xs:complexType>
@@ -57,7 +57,7 @@
             <xs:choice minOccurs="0" maxOccurs="unbounded">
                 <xs:element type="menuType" name="menu" maxOccurs="unbounded" minOccurs="0"/>
                 <xs:element type="itemType" name="item" maxOccurs="unbounded" minOccurs="0"/>
-                <xs:element type="aboutType" name="about" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element type="overviewType" name="overview" maxOccurs="unbounded" minOccurs="0"/>
             </xs:choice>
         </xs:sequence>
         <xs:attribute name="id" type="xs:string" use="required"/>

@@ -17,7 +17,10 @@
 package io.jmix.uisamples.view.sys.sampleview;
 
 import com.google.common.base.Strings;
-import com.vaadin.flow.component.*;
+import com.vaadin.flow.component.ClickEvent;
+import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.ComponentUtil;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.Anchor;
@@ -49,23 +52,21 @@ import io.jmix.flowui.component.layout.ViewLayout;
 import io.jmix.flowui.component.scroller.JmixScroller;
 import io.jmix.flowui.component.splitlayout.JmixSplitLayout;
 import io.jmix.flowui.component.tabsheet.JmixTabSheet;
-import io.jmix.flowui.exception.GuiDevelopmentException;
 import io.jmix.flowui.kit.component.button.JmixButton;
 import io.jmix.flowui.kit.component.codeeditor.CodeEditorMode;
 import io.jmix.flowui.view.*;
 import io.jmix.uisamples.bean.MenuNavigationExpander;
+import io.jmix.uisamples.bean.OverviewPageGenerator;
 import io.jmix.uisamples.config.UiSamplesMenuConfig;
 import io.jmix.uisamples.config.UiSamplesMenuItem;
 import io.jmix.uisamples.util.UiSamplesHelper;
 import io.jmix.uisamples.view.sys.main.MainView;
-import io.jmix.uisamples.view.sys.main.OverviewPageGenerator;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 
-import java.io.InputStream;
 import java.util.*;
 
 @Route(value = "sample/:sampleId?", layout = MainView.class)
@@ -75,7 +76,6 @@ import java.util.*;
 public class SampleView extends StandardView implements LocaleChangeObserver {
 
     protected static final String DOC_URL_MESSAGES_KEY = "docUrl";
-    protected static final String CODE_EDITOR_HEIGHT = "-webkit-fill-available";
     protected static final String SRC_ROOT_PATH = "io/jmix/uisamples/view/flowui/";
 
     @Autowired
@@ -102,6 +102,8 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     protected MenuNavigationExpander menuNavigationExpander;
     @Autowired
     protected Resources resources;
+    @Autowired
+    protected OverviewPageGenerator overviewPageGenerator;
 
     protected String sampleId;
     protected StandardView sampleView;
@@ -137,7 +139,7 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
         this.sampleId = sampleId;
         this.menuItem = menuConfig.getItemById(sampleId);
 
-        if (menuItem.isAbout()) {
+        if (menuItem.isOverview()) {
             initAboutView();
         } else {
             this.sampleView = (StandardView) views.create(sampleId);
@@ -149,9 +151,8 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     protected void initAboutView() {
         getContent().removeAll();
 
-        OverviewPageGenerator generator = new OverviewPageGenerator(uiComponents, resources, messageBundle);
-        generator.generate(SRC_ROOT_PATH + Strings.nullToEmpty(menuItem.getAboutLocation()));
-        getContent().add(generator.getContent());
+        getContent().add(overviewPageGenerator.generate(menuItem.getId(),
+                SRC_ROOT_PATH + Strings.nullToEmpty(menuItem.getOverviewLocation())));
     }
 
     protected void updateLayout(StandardView sampleView) {
@@ -196,9 +197,6 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
 
     @Override
     public String getPageTitle() {
-        if (menuItem.isAbout()) {
-            return "";
-        }
         String title = menuConfig.getMenuItemTitle(sampleId);
         if (Strings.isNullOrEmpty(title) || sampleId == null) {
             title = super.getPageTitle();

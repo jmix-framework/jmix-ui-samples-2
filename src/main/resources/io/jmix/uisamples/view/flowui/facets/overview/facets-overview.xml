@@ -1,0 +1,13 @@
+<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
+    <header>
+        <text message="title" component="h2"/>
+        <text message="description"/>
+    </header>
+    <samples>
+        <sample>
+            <image src="icons/facets/timer.png" route="timer-facet"/>
+            <text message="timer.title" route="hbox-simple" component="h4"/>
+            <text message="timer.description"/>
+        </sample>
+    </samples>
+</overview>

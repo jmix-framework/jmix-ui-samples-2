@@ -26,12 +26,10 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
-import com.vaadin.flow.theme.lumo.LumoUtility;
 import io.jmix.core.Resources;
 import io.jmix.core.session.SessionData;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.app.main.StandardMainView;
-import io.jmix.flowui.component.applayout.JmixAppLayout;
 import io.jmix.flowui.component.main.JmixListMenu;
 import io.jmix.flowui.component.textfield.TypedTextField;
 import io.jmix.flowui.kit.component.button.JmixButton;
@@ -39,16 +37,14 @@ import io.jmix.flowui.kit.component.main.ListMenu;
 import io.jmix.flowui.menu.MenuItem;
 import io.jmix.flowui.view.*;
 import io.jmix.uisamples.bean.MenuNavigationExpander;
+import io.jmix.uisamples.bean.OverviewPageGenerator;
 import io.jmix.uisamples.config.UiSamplesMenuConfig;
 import io.jmix.uisamples.config.UiSamplesMenuItem;
 import io.jmix.uisamples.view.sys.sampleview.SampleView;
 import org.apache.commons.lang3.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -58,8 +54,6 @@ import java.util.List;
 @ViewDescriptor("main-view.xml")
 @AnonymousAllowed
 public class MainView extends StandardMainView {
-
-    private static final Logger log = LoggerFactory.getLogger(MainView.class);
 
     @ViewComponent
     protected JmixListMenu menu;
@@ -78,6 +72,8 @@ public class MainView extends StandardMainView {
     protected MenuNavigationExpander menuNavigationExpander;
     @Autowired
     protected MessageBundle messageBundle;
+    @Autowired
+    protected OverviewPageGenerator overviewPageGenerator;
     @Autowired
     private Resources resources;
 
@@ -99,9 +95,9 @@ public class MainView extends StandardMainView {
 
     private void createOverviewLayout() {
         if (getContent().getContent() == null) {
-            OverviewPageGenerator generator = new OverviewPageGenerator(uiComponents, resources, messageBundle);
-            generator.generate("io/jmix/uisamples/view/sys/main/main-overview.xml");
-            getContent().setContent(generator.getContent());
+            getContent().setContent(overviewPageGenerator.generate(
+                    "main",
+                    "io/jmix/uisamples/view/sys/main/main-overview.xml"));
         }
     }
 

@@ -69,32 +69,6 @@ vaadin-app-layout::part(drawer) {
     list-style-type: none;
 }
 
-.overview-title {
-    font: bold 1.5em "Open Sans", sans-serif;
-}
-
-.overview-description {
-    font: 1.0em "Open Sans", sans-serif;
-}
-
-.overview-sample-title {
-    font: bold 1.0em "Open Sans", sans-serif;
-}
-
-.overview-route {
-    font: bold 1.0em "Open Sans", sans-serif;
-}
-
-.image-style {
-    background-image: url('icons/yellow.png');
-}
-
-.overview-tag-font {
-    font: 0.9em "Open Sans", sans-serif;
-    font-weight: 400;
-    color: #4F5C78;
-}
-
 .overview-tag-grey {
     background-color: #F4F8FE;
 }
@@ -120,5 +94,6 @@ vaadin-app-layout::part(drawer) {
 }
 
 .overview-tag-orange {
+    color: var(--lumo-header-text-color);
     background-color: #FEF9ED;
 }

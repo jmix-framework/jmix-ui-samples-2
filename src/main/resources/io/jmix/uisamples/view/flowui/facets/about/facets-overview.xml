@@ -1,9 +1,0 @@
-<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
-    <samples>
-        <sample>
-            <image src="icons/facets/timer.png" route="timer-facet"/>
-            <text message="timer.title" route="hbox-simple" classNames="overview-sample-title"/>
-            <text message="timer.description" classNames="overview-description"/>
-        </sample>
-    </samples>
-</overview>

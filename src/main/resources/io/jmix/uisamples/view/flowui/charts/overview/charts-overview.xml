@@ -1,0 +1,49 @@
+<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
+    <header>
+        <text message="title" component="h2"/>
+        <text message="description"/>
+    </header>
+
+    <samples>
+        <sample>
+            <image src="icons/charts/series.png" route="line-series-simple"/>
+            <text message="series.title"
+                  route="line-series-simple" component="h4"/>
+            <tag text="line" route="line-series-simple" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="bar" route="bar-series-simple" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="pie" route="pie-series-simple" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="scatter" route="scatter-series-simple" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="radar" route="radar-series-simple" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="candlestick" route="candlestick-series-simple" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="funnel" route="funnel-series-simple" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="gauge" route="gauge-series-simple" classNames="overview-tag-font overview-tag-grey"/>
+        </sample>
+        <sample>
+            <image src="icons/charts/dataItems.png" route="entity-data-item"/>
+            <text message="dataItems.title" route="entity-data-item" component="h4"/>
+            <tag text="entity" route="entity-data-item" classNames="overview-tag-font overview-tag-blue"/>
+            <tag text="map" route="map-data-item" classNames="overview-tag-font overview-tag-blue"/>
+            <tag text="simple" route="simple-data-item" classNames="overview-tag-font overview-tag-blue"/>
+        </sample>
+        <sample>
+            <image src="icons/charts/incrementalDataUpdate.png" route="automatic-data-update"/>
+            <text message="incrementalDataUpdate.title"
+                  route="automatic-data-update" component="h4"/>
+            <tag text="automatic" route="automatic-data-update" classNames="overview-tag-font overview-tag-green"/>
+            <tag text="manual" route="manual-data-update" classNames="overview-tag-font overview-tag-green"/>
+        </sample>
+        <sample>
+            <image src="icons/charts/other.png" route="chart-key-value-container"/>
+            <text message="other.title" route="chart-key-value-container" component="h4"/>
+            <tag text="keyValueContainer"
+                 route="chart-key-value-container"
+                 classNames="overview-tag-font overview-tag-yellow"/>
+            <tag text="nativeJSON"
+                 route="chart-native-json"
+                 classNames="overview-tag-font overview-tag-yellow"/>
+            <tag text="export"
+                 route="chart-export"
+                 classNames="overview-tag-font overview-tag-yellow"/>
+        </sample>
+    </samples>
+</overview>
