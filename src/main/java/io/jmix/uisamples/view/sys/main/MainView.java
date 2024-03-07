@@ -94,7 +94,6 @@ public class MainView extends StandardMainView {
 
     @Subscribe
     public void onReady(final ReadyEvent event) {
-//        initWelcomePage();
         createOverviewLayout();
     }
 
@@ -103,20 +102,6 @@ public class MainView extends StandardMainView {
             OverviewPageGenerator generator = new OverviewPageGenerator(uiComponents, resources, messageBundle);
             generator.generate("io/jmix/uisamples/view/sys/main/main-overview.xml");
             getContent().setContent(generator.getContent());
-        }
-    }
-
-    private void initWelcomePage() {
-        JmixAppLayout content = getContent();
-        if (getContent().getContent() == null) {
-            InputStream stream = resources.getResourceAsStream("io/jmix/uisamples/view/sys/main/welcome.html");
-            if (stream == null) {
-                log.error("Cannot load welcome.html");
-                return;
-            }
-            Html html = new Html(stream);
-            html.addClassName(LumoUtility.Padding.MEDIUM);
-            content.setContent(html);
         }
     }
 

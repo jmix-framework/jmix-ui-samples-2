@@ -148,22 +148,10 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
 
     protected void initAboutView() {
         getContent().removeAll();
-        if (true) {
-            OverviewPageGenerator generator = new OverviewPageGenerator(uiComponents, resources, messageBundle);
-            generator.generate(SRC_ROOT_PATH + Strings.nullToEmpty(menuItem.getAboutLocation()));
-            getContent().add(generator.getContent());
-        } else {
-            String resourcePath = SRC_ROOT_PATH + Strings.nullToEmpty(menuItem.getAboutLocation());
-            InputStream resourceAsStream = resources.getResourceAsStream(resourcePath);
 
-            if (resourceAsStream == null) {
-                String message = String.format("Resource with path '%s' can't be loaded", resourcePath);
-                throw new GuiDevelopmentException(message, getId().orElse("sampleView"));
-            }
-
-            Html html = new Html(resourceAsStream);
-            getContent().add(html);
-        }
+        OverviewPageGenerator generator = new OverviewPageGenerator(uiComponents, resources, messageBundle);
+        generator.generate(SRC_ROOT_PATH + Strings.nullToEmpty(menuItem.getAboutLocation()));
+        getContent().add(generator.getContent());
     }
 
     protected void updateLayout(StandardView sampleView) {

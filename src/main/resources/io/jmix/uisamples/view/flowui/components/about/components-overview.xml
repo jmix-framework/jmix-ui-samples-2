@@ -6,8 +6,9 @@
 
     <samples>
         <sample>
-            <image src="icons/components/interactionBackground.png"/>
+            <image src="icons/components/interactionBackground.png" route="button-simple"/>
             <text message="interaction.title"
+                  route="button-simple"
                   classNames="overview-sample-title"/>
             <tag name="button" route="button-simple" classNames="overview-tag-font overview-tag-grey"/>
             <tag name="dropdownButton" route="button-theme-variant" classNames="overview-tag-font overview-tag-grey"/>
@@ -19,8 +20,8 @@
             <tag name="tabs" route="tabs-simple" classNames="overview-tag-font overview-tag-grey"/>
         </sample>
         <sample>
-            <image src="icons/components/visualizationBackground.png"/>
-            <text message="visualization.title" classNames="overview-sample-title"/>
+            <image src="icons/components/visualizationBackground.png" route="avatar"/>
+            <text message="visualization.title" route="avatar" classNames="overview-sample-title"/>
             <tag name="avatar" route="avatar" classNames="overview-tag-font overview-tag-blue"/>
             <tag name="badge" route="badge-simple" classNames="overview-tag-font overview-tag-blue"/>
             <tag name="helperText" route="context-help-simple" classNames="overview-tag-font overview-tag-blue"/>
@@ -31,8 +32,8 @@
             <tag name="progressBar" route="progress-bar-simple" classNames="overview-tag-font overview-tag-blue"/>
         </sample>
         <sample>
-            <image src="icons/components/inputFieldsBackground.png"/>
-            <text message="inputFields.title" classNames="overview-sample-title"/>
+            <image src="icons/components/inputFieldsBackground.png" route="text-field-simple"/>
+            <text message="inputFields.title" route="text-field-simple" classNames="overview-sample-title"/>
             <tag name="textField" route="text-field-simple" classNames="overview-tag-font overview-tag-green"/>
             <tag name="emailField" route="email-field-simple" classNames="overview-tag-font overview-tag-green"/>
             <tag name="textArea" route="text-area-simple" classNames="overview-tag-font overview-tag-green"/>
@@ -46,8 +47,8 @@
             <tag name="fileUploadField" route="file-upload-field" classNames="overview-tag-font overview-tag-green"/>
         </sample>
         <sample>
-            <image src="icons/components/comboBoxesBackground.png"/>
-            <text message="comboBoxes.title" classNames="overview-sample-title"/>
+            <image src="icons/components/comboBoxesBackground.png" route="entity-combobox-simple"/>
+            <text message="comboBoxes.title" route="entity-combobox-simple" classNames="overview-sample-title"/>
             <tag name="entityComboBox"
                  route="entity-combobox-simple"
                  classNames="overview-tag-font overview-tag-purple"/>
@@ -58,8 +59,8 @@
             <tag name="select" route="select-simple" classNames="overview-tag-font overview-tag-purple"/>
         </sample>
         <sample>
-            <image src="icons/components/pickerFieldsBackground.png"/>
-            <text message="pickerFields.title" classNames="overview-sample-title"/>
+            <image src="icons/components/pickerFieldsBackground.png" route="entity-picker-simple"/>
+            <text message="pickerFields.title" route="entity-picker-simple" classNames="overview-sample-title"/>
             <tag name="entityPicker" route="entity-picker-simple" classNames="overview-tag-font overview-tag-red"/>
             <tag name="valuePicker" route="value-picker-simple" classNames="overview-tag-font overview-tag-red"/>
             <tag name="datePicker" route="date-picker-simple" classNames="overview-tag-font overview-tag-red"/>
@@ -69,15 +70,17 @@
                  classNames="overview-tag-font overview-tag-red"/>
         </sample>
         <sample>
-            <image src="icons/components/listsAndTablesBackground.png"/>
-            <text message="listsAndTables.title" classNames="overview-sample-title"/>
+            <image src="icons/components/listsAndTablesBackground.png" route="data-grid-simple"/>
+            <text message="listsAndTables.title" route="data-grid-simple" classNames="overview-sample-title"/>
             <tag name="dataGrid" route="data-grid-simple" classNames="overview-tag-font overview-tag-yellow"/>
             <tag name="listBox" route="list-box-simple" classNames="overview-tag-font overview-tag-yellow"/>
             <tag name="virtualList" route="virtual-list-simple" classNames="overview-tag-font overview-tag-yellow"/>
         </sample>
         <sample>
-            <image src="icons/components/filteringAndPagingBackground.png"/>
-            <text message="filteringAndPaging.title" classNames="overview-sample-title"/>
+            <image src="icons/components/filteringAndPagingBackground.png" route="generic-filter-multiple-conditions"/>
+            <text message="filteringAndPaging.title"
+                  route="generic-filter-multiple-conditions"
+                  classNames="overview-sample-title"/>
             <tag name="genericFilter"
                  route="generic-filter-multiple-conditions"
                  classNames="overview-tag-font overview-tag-orange"/>

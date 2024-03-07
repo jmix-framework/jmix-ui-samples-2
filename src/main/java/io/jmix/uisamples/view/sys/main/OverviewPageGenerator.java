@@ -3,6 +3,7 @@ package io.jmix.uisamples.view.sys.main;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.Anchor;
+import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
@@ -24,15 +25,16 @@ import java.io.InputStream;
 import java.util.List;
 
 public class OverviewPageGenerator {
+
     private UiComponents uiComponents;
     private Resources resources;
     private MessageBundle messageBundle;
     private VerticalLayout overviewRoot;
 
-    public OverviewPageGenerator(UiComponents var1, Resources var2, MessageBundle var3) {
-        this.uiComponents = var1;
-        this.resources = var2;
-        this.messageBundle = var3;
+    public OverviewPageGenerator(UiComponents uiComponents, Resources resources, MessageBundle messageBundle) {
+        this.uiComponents = uiComponents;
+        this.resources = resources;
+        this.messageBundle = messageBundle;
     }
 
     public void generate(String var1) {
@@ -151,11 +153,11 @@ public class OverviewPageGenerator {
     }
 
     private Component createLabel(String text, String classNames) {
-        Span span = uiComponents.create(Span.class);
-        span.setText(text);
-        addClassNames(span, classNames);
+        H3 h3 = uiComponents.create(H3.class);
+        h3.setText(text);
+        addClassNames(h3, classNames);
 
-        return span;
+        return h3;
     }
 
     private void initResources(Element resources) {

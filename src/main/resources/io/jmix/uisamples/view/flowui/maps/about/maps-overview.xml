@@ -6,35 +6,33 @@
 
     <samples>
         <sample>
-            <image src="icons/backgrounds/yellow.png"/>
+            <image src="icons/maps/base.png" route="geo-map-actions"/>
             <text message="baseFeatures.title"
+                  route="geo-map-actions"
                   classNames="overview-sample-title"/>
-            <tag name="actions" route="geo-map-actions" classNames="overview-tag-font overview-tag-yellow"/>
-            <tag name="points" route="geo-map-point" classNames="overview-tag-font overview-tag-yellow"/>
-            <tag name="polygons" route="geo-map-polygon" classNames="overview-tag-font overview-tag-yellow"/>
-            <tag name="lineStrings" route="geo-map-line-string" classNames="overview-tag-font overview-tag-yellow"/>
-            <tag name="multiGeometries" route="geo-map-multi-geometries" classNames="overview-tag-font overview-tag-yellow"/>
+            <tag name="actions" route="geo-map-actions" classNames="overview-tag-font overview-tag-grey"/>
+            <tag name="points" route="geo-map-point" classNames="overview-tag-font overview-tag-grey"/>
+            <tag name="polygons" route="geo-map-polygon" classNames="overview-tag-font overview-tag-grey"/>
+            <tag name="lineStrings" route="geo-map-line-string" classNames="overview-tag-font overview-tag-grey"/>
+            <tag name="multiGeometries" route="geo-map-multi-geometries" classNames="overview-tag-font overview-tag-grey"/>
         </sample>
         <sample>
-            <image src="icons/backgrounds/red.png"/>
+            <image src="icons/maps/styling.png" route="geo-map-point-styling"/>
             <text message="styling.title"
+                  route="geo-map-point-styling"
                   classNames="overview-sample-title"/>
-            <tag name="point" route="geo-map-point-styling" classNames="overview-tag-font overview-tag-red"/>
-            <tag name="polygon" route="geo-map-polygon-styling" classNames="overview-tag-font overview-tag-red"/>
-            <tag name="lineString" route="geo-map-line-string-styling" classNames="overview-tag-font overview-tag-red"/>
+            <tag name="point" route="geo-map-point-styling" classNames="overview-tag-font overview-tag-grey"/>
+            <tag name="polygon" route="geo-map-polygon-styling" classNames="overview-tag-font overview-tag-grey"/>
+            <tag name="lineString" route="geo-map-line-string-styling" classNames="overview-tag-font overview-tag-grey"/>
+            <tag name="staticImage" route="geo-map-static-image" classNames="overview-tag-font overview-tag-grey"/>
         </sample>
         <sample>
-            <image src="icons/backgrounds/blue.png"/>
+            <image src="icons/maps/generalization.png" route="geo-map-cluster"/>
             <text message="dataGeneralization.title"
+                  route="geo-map-cluster"
                   classNames="overview-sample-title"/>
-            <tag name="cluster" route="geo-map-cluster" classNames="overview-tag-font overview-tag-blue"/>
-            <tag name="heatmap" route="geo-map-heatmap" classNames="overview-tag-font overview-tag-blue"/>
-        </sample>
-        <sample>
-            <image src="icons/backgrounds/green.png"/>
-            <text message="maps.other.title"
-                  classNames="overview-sample-title"/>
-            <tag name="staticImage" route="geo-map-static-image" classNames="overview-tag-font overview-tag-green"/>
+            <tag name="cluster" route="geo-map-cluster" classNames="overview-tag-font overview-tag-grey"/>
+            <tag name="heatmap" route="geo-map-heatmap" classNames="overview-tag-font overview-tag-grey"/>
         </sample>
     </samples>
 </overview>

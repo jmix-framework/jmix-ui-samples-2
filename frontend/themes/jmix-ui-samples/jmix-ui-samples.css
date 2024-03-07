@@ -78,11 +78,10 @@ vaadin-app-layout::part(drawer) {
 }
 
 .overview-sample-title {
-    color: #4F5C78;
     font: bold 1.0em "Open Sans", sans-serif;
 }
 
-.overview-link {
+.overview-route {
     font: bold 1.0em "Open Sans", sans-serif;
 }
 
