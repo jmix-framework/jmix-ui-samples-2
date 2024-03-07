@@ -124,6 +124,7 @@ public class OverviewPageGenerator {
             if (tag instanceof HasText hasText) {
                 hasText.setText(tagElement.attributeValue("text"));
             }
+            tag.addClassName(LumoUtility.FontWeight.LIGHT);
 
             String route = tagElement.attributeValue("route");
             flexLayout.add(StringUtils.isNotEmpty(route) ? createRoute(tag, route) : tag);
@@ -190,6 +191,7 @@ public class OverviewPageGenerator {
             List<Element> textElements = resources.elements("text");
             VerticalLayout verticalLayout = uiComponents.create(VerticalLayout.class);
             verticalLayout.setPadding(false);
+            verticalLayout.addClassName(LumoUtility.Gap.XSMALL);
 
             for (Element textElement : textElements) {
                 String href = textElement.attributeValue("href");
@@ -207,6 +209,7 @@ public class OverviewPageGenerator {
         anchor.setText(getMessage(messagesPrefix, textElement.attributeValue("message")));
         anchor.setHref(textElement.attributeValue("href"));
         anchor.setTarget(AnchorTarget.BLANK);
+        anchor.addClassName(LumoUtility.FontWeight.BOLD);
         addClassNames(anchor, textElement.attributeValue("classNames"));
 
         return anchor;

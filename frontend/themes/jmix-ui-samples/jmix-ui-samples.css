@@ -70,30 +70,47 @@ vaadin-app-layout::part(drawer) {
 }
 
 .overview-tag-grey {
+    color: #4F5C78;
+    font-weight: 400;
     background-color: #F4F8FE;
 }
 
 .overview-tag-blue {
+    color: #4F5C78;
+    font-weight: 400;
     background-color: #E9FEFE;
 }
 
 .overview-tag-green {
+    color: #4F5C78;
+    font-weight: 400;
     background-color: #EFFEEF;
 }
 
 .overview-tag-purple {
+    color: #4F5C78;
+    font-weight: 400;
     background-color: #FBF4FE;
 }
 
 .overview-tag-red {
+    color: #4F5C78;
+    font-weight: 400;
     background-color: #FEF4F6;
 }
 
 .overview-tag-yellow {
+    color: #4F5C78;
+    font-weight: 400;
     background-color: #FDFBE8;
 }
 
 .overview-tag-orange {
-    color: var(--lumo-header-text-color);
+    color: #4F5C78;
+    font-weight: 400;
     background-color: #FEF9ED;
+}
+
+.overview-resources-title-padding {
+    padding-bottom: 0.35em;
 }

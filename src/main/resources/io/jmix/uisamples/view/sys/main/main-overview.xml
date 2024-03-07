@@ -49,7 +49,7 @@
     </samples>
 
     <resources>
-        <text message="resources.title" component="h2"/>
+        <text message="resources.title" component="h2" classNames="overview-resources-title-padding"/>
         <text message="resource.website" href="https://jmix.io"/>
         <text message="resource.documentation" href="https://docs.jmix.io"/>
         <text message="resource.forum" href="https://forum.jmix.io/"/>
