@@ -1,4 +1,4 @@
-<overview>
+<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
     <samples>
         <sample>
             <image src="icons/facets/timer.png" route="timer-facet"/>

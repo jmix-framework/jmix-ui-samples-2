@@ -1,4 +1,4 @@
-<overview>
+<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
     <header>
         <text message="maps.title" classNames="overview-title"/>
         <text message="maps.description" classNames="overview-description"/>

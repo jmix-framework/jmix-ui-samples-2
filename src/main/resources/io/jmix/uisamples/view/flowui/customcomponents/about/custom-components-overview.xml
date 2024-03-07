@@ -1,4 +1,4 @@
-<overview>
+<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
     <header>
         <text message="customComponents.title" classNames="overview-title"/>
         <text message="customComponents.description" classNames="overview-description"/>
