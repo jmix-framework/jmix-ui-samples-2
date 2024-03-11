@@ -1,5 +1,6 @@
 package io.jmix.uisamples.bean;
 
+import com.google.common.base.Strings;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.HasText;
 import com.vaadin.flow.component.UI;
@@ -18,8 +19,8 @@ import io.jmix.uisamples.view.sys.sampleview.SampleView;
 import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.Element;
+import org.springframework.lang.Nullable;
 
-import javax.annotation.Nullable;
 import java.io.InputStream;
 import java.util.List;
 
@@ -44,12 +45,14 @@ public class OverviewPageGenerator {
 
         VerticalLayout overviewRoot = uiComponents.create(VerticalLayout.class);
         InputStream inputStream = resources.getResourceAsStream(resourceName);
+
         if (inputStream == null) {
             String errorMessage = String.format("Resource with path '%s' can't be loaded", resourceName);
             throw new IllegalArgumentException(errorMessage);
         } else {
             Document document = dom4jTools.readDocument(inputStream);
             Element rootElement = document.getRootElement();
+
             initHeader(rootElement.element("header"), overviewRoot, prefix);
             initSamples(rootElement.element("samples"), overviewRoot, prefix);
             initResources(rootElement.element("resources"), overviewRoot, prefix);
@@ -62,8 +65,10 @@ public class OverviewPageGenerator {
         if (header != null) {
             List<Element> textElements = header.elements("text");
             VerticalLayout verticalLayout = uiComponents.create(VerticalLayout.class);
+
             verticalLayout.setPadding(false);
             verticalLayout.setMaxWidth("41em");
+
             for (Element textElement : textElements) {
                 verticalLayout.add(createLabel(textElement, messagesPrefix));
             }
@@ -77,10 +82,11 @@ public class OverviewPageGenerator {
             FlexLayout flexLayout = uiComponents.create(FlexLayout.class);
             flexLayout.setAlignContent(FlexLayout.ContentAlignment.START);
             flexLayout.setFlexDirection(FlexLayout.FlexDirection.ROW);
+            flexLayout.setFlexWrap(FlexLayout.FlexWrap.WRAP);
+
             flexLayout.setJustifyContentMode(!isSmallDevice()
                     ? FlexComponent.JustifyContentMode.START
                     : FlexComponent.JustifyContentMode.CENTER);
-            flexLayout.setFlexWrap(FlexLayout.FlexWrap.WRAP);
             flexLayout.addClassName(LumoUtility.Gap.LARGE);
 
             overviewRoot.add(flexLayout);
@@ -90,6 +96,7 @@ public class OverviewPageGenerator {
                 VerticalLayout verticalLayout = uiComponents.create(VerticalLayout.class);
                 verticalLayout.setPadding(false);
                 verticalLayout.setWidth("20em");
+
                 verticalLayout.add(createImage(sample.element("image")));
                 verticalLayout.addClassName(LumoUtility.Gap.MEDIUM);
 
@@ -99,7 +106,7 @@ public class OverviewPageGenerator {
                     verticalLayout.add(createLabel(textElement, messagesPrefix));
                 }
 
-                List<Element> tagElements =  sample.elements("tag");
+                List<Element> tagElements = sample.elements("tag");
                 if (!tagElements.isEmpty()) {
                     verticalLayout.add(createTags(tagElements));
                 }
@@ -137,15 +144,17 @@ public class OverviewPageGenerator {
         Image image = uiComponents.create(Image.class);
         image.setSrc(imageElement.attributeValue("src"));
         image.setWidth("20em");
+
         String route = imageElement.attributeValue("route");
         return StringUtils.isNotEmpty(route) ? createRoute(image, route) : image;
     }
 
     private Component createLabel(Element labelElement, String messagesPrefix) {
-        Component label = createLabel(getMessage(messagesPrefix,
-                labelElement.attributeValue("message")),
+        Component label = createLabel(
+                getMessage(messagesPrefix, labelElement.attributeValue("message")),
                 labelElement.attributeValue("classNames"),
-                labelElement.attributeValue("component"));
+                labelElement.attributeValue("component")
+        );
         String route = labelElement.attributeValue("route");
         return StringUtils.isNotEmpty(route) ? createRoute(label, route) : label;
     }
@@ -153,9 +162,11 @@ public class OverviewPageGenerator {
     private Component createRoute(Component component, String route) {
         RouterLink routerLink = uiComponents.create(RouterLink.class);
         RouteParameters routeParams = new RouteParameters("sampleId", route);
+
         routerLink.setRoute(SampleView.class, routeParams);
         routerLink.addClassNames("jmix-main-view-header-link");
         routerLink.add(component);
+
         return routerLink;
     }
 
@@ -170,17 +181,19 @@ public class OverviewPageGenerator {
     }
 
     private Component createComponentByName(@Nullable String componentName) {
-        return componentName == null
-                ? uiComponents.create(Span.class)
-                : switch (componentName) {
-                    case "h1" -> uiComponents.create(H1.class);
-                    case "h2" -> uiComponents.create(H2.class);
-                    case "h3" -> uiComponents.create(H3.class);
-                    case "h4" -> uiComponents.create(H4.class);
-                    case "h5" -> uiComponents.create(H5.class);
-                    case "h6" -> uiComponents.create(H6.class);
-                    default -> uiComponents.create(Span.class);
-                };
+        if (Strings.isNullOrEmpty(componentName)) {
+            return uiComponents.create(Span.class);
+        }
+
+        return switch (componentName) {
+            case "h1" -> uiComponents.create(H1.class);
+            case "h2" -> uiComponents.create(H2.class);
+            case "h3" -> uiComponents.create(H3.class);
+            case "h4" -> uiComponents.create(H4.class);
+            case "h5" -> uiComponents.create(H5.class);
+            case "h6" -> uiComponents.create(H6.class);
+            default -> uiComponents.create(Span.class);
+        };
     }
 
     private void initResources(@Nullable Element resources, VerticalLayout overviewRoot, String messagesPrefix) {
@@ -206,6 +219,7 @@ public class OverviewPageGenerator {
         anchor.setText(getMessage(messagesPrefix, textElement.attributeValue("message")));
         anchor.setHref(textElement.attributeValue("href"));
         anchor.setTarget(AnchorTarget.BLANK);
+
         anchor.addClassName(LumoUtility.FontWeight.BOLD);
         addClassNames(anchor, textElement.attributeValue("classNames"));
 
