@@ -1,0 +1,44 @@
+<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
+    <header>
+        <text message="title" component="h2"/>
+        <text message="description"/>
+    </header>
+
+    <samples>
+        <sample>
+            <image src="icons/cookbook/cascadingDropdowns.png" route="cascading-dropdowns"/>
+            <text message="cascadingDropdowns.title" route="cascading-dropdowns" component="h4"/>
+            <text message="cascadingDropdowns.description"/>
+        </sample>
+        <sample>
+            <image src="icons/cookbook/copyingEntities.png" route="copy-action"/>
+            <text message="copyingEntities.title" route="copy-action" component="h4"/>
+            <text message="copyingEntities.description"/>
+        </sample>
+        <sample>
+            <image src="icons/cookbook/customLoginForm.png" route="custom-login"/>
+            <text message="customLoginForm.title" route="custom-login" component="h4"/>
+            <text message="customLoginForm.description"/>
+        </sample>
+        <sample>
+            <image src="icons/cookbook/declarativeConditionsFilter.png" route="custom-filter"/>
+            <text message="declarativeConditionsFilter.title" route="custom-filter" component="h4"/>
+            <text message="declarativeConditionsFilter.description"/>
+        </sample>
+        <sample>
+            <image src="icons/cookbook/queryModificationFilter.png" route="custom-filter-query"/>
+            <text message="queryModificationFilter.title" route="custom-filter-query" component="h4"/>
+            <text message="queryModificationFilter.description"/>
+        </sample>
+        <sample>
+            <image src="icons/cookbook/delayedDataLoading.png" route="delayed-data-load"/>
+            <text message="delayedDataLoading.title" route="delayed-data-load" component="h4"/>
+            <text message="delayedDataLoading.description"/>
+        </sample>
+        <sample>
+            <image src="icons/cookbook/databaseView.png" route="read-only-customers"/>
+            <text message="databaseView.title" route="read-only-customers" component="h4"/>
+            <text message="databaseView.description"/>
+        </sample>
+    </samples>
+</overview>

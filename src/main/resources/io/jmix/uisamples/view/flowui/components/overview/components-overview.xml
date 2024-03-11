@@ -1,0 +1,92 @@
+<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
+    <header>
+        <text message="title" component="h2"/>
+        <text message="description"/>
+    </header>
+
+    <samples>
+        <sample>
+            <image src="icons/components/interactionBackground.png" route="button-simple"/>
+            <text message="interaction.title" route="button-simple" component="h4"/>
+            <tag text="button" route="button-simple" classNames="overview-tag-grey"/>
+            <tag text="dropdownButton" route="dropdown-button-simple" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="checkbox" route="checkbox-simple" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="checkboxGroup" route="checkbox-group-simple" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="radioButtonGroup"
+                 route="radio-button-group-simple"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="tabs" route="tabs-simple" classNames="overview-tag-font overview-tag-grey"/>
+        </sample>
+        <sample>
+            <image src="icons/components/visualizationBackground.png" route="avatar"/>
+            <text message="visualization.title" route="avatar" component="h4"/>
+            <tag text="avatar" route="avatar" classNames="overview-tag-font overview-tag-blue"/>
+            <tag text="badge" route="badge-simple" classNames="overview-tag-font overview-tag-blue"/>
+            <tag text="helperText" route="context-help-simple" classNames="overview-tag-font overview-tag-blue"/>
+            <tag text="tooltip" route="context-help-tooltip" classNames="overview-tag-font overview-tag-blue"/>
+            <tag text="html" route="html-component" classNames="overview-tag-font overview-tag-blue"/>
+            <tag text="icon" route="icon-simple" classNames="overview-tag-font overview-tag-blue"/>
+            <tag text="image" route="image-simple" classNames="overview-tag-font overview-tag-blue"/>
+            <tag text="progressBar" route="progress-bar-simple" classNames="overview-tag-font overview-tag-blue"/>
+        </sample>
+        <sample>
+            <image src="icons/components/inputFieldsBackground.png" route="text-field-simple"/>
+            <text message="inputFields.title" route="text-field-simple" component="h4"/>
+            <tag text="textField" route="text-field-simple" classNames="overview-tag-font overview-tag-green"/>
+            <tag text="emailField" route="email-field-simple" classNames="overview-tag-font overview-tag-green"/>
+            <tag text="textArea" route="text-area-simple" classNames="overview-tag-font overview-tag-green"/>
+            <tag text="passwordField" route="password-field-simple" classNames="overview-tag-font overview-tag-green"/>
+            <tag text="codeEditor" route="code-editor-simple" classNames="overview-tag-font overview-tag-green"/>
+            <tag text="numberField" route="number-field-simple" classNames="overview-tag-font overview-tag-green"/>
+            <tag text="bigDecimalField"
+                 route="big-decimal-field-simple"
+                 classNames="overview-tag-font overview-tag-green"/>
+            <tag text="integerField" route="integer-field-simple" classNames="overview-tag-font overview-tag-green"/>
+            <tag text="fileUploadField" route="file-upload-field" classNames="overview-tag-font overview-tag-green"/>
+        </sample>
+        <sample>
+            <image src="icons/components/comboBoxesBackground.png" route="entity-combobox-simple"/>
+            <text message="comboBoxes.title" route="entity-combobox-simple" component="h4"/>
+            <tag text="entityComboBox"
+                 route="entity-combobox-simple"
+                 classNames="overview-tag-font overview-tag-purple"/>
+            <tag text="comboBox" route="combobox-simple" classNames="overview-tag-font overview-tag-purple"/>
+            <tag text="multiSelectComboBox"
+                 route="multi-select-combo-box-simple"
+                 classNames="overview-tag-font overview-tag-purple"/>
+            <tag text="select" route="select-simple" classNames="overview-tag-font overview-tag-purple"/>
+        </sample>
+        <sample>
+            <image src="icons/components/pickerFieldsBackground.png" route="entity-picker-simple"/>
+            <text message="pickerFields.title" route="entity-picker-simple" component="h4"/>
+            <tag text="entityPicker" route="entity-picker-simple" classNames="overview-tag-font overview-tag-red"/>
+            <tag text="valuePicker" route="value-picker-simple" classNames="overview-tag-font overview-tag-red"/>
+            <tag text="datePicker" route="date-picker-simple" classNames="overview-tag-font overview-tag-red"/>
+            <tag text="timePicker" route="time-picker-simple" classNames="overview-tag-font overview-tag-red"/>
+            <tag text="dateTimePicker"
+                 route="date-time-picker-simple"
+                 classNames="overview-tag-font overview-tag-red"/>
+        </sample>
+        <sample>
+            <image src="icons/components/listsAndTablesBackground.png" route="data-grid-simple"/>
+            <text message="listsAndTables.title" route="data-grid-simple" component="h4"/>
+            <tag text="dataGrid" route="data-grid-simple" classNames="overview-tag-font overview-tag-yellow"/>
+            <tag text="listBox" route="list-box-simple" classNames="overview-tag-font overview-tag-yellow"/>
+            <tag text="virtualList" route="virtual-list-simple" classNames="overview-tag-font overview-tag-yellow"/>
+        </sample>
+        <sample>
+            <image src="icons/components/filteringAndPagingBackground.png" route="generic-filter-multiple-conditions"/>
+            <text message="filteringAndPaging.title"
+                  route="generic-filter-multiple-conditions" component="h4"/>
+            <tag text="genericFilter"
+                 route="generic-filter-multiple-conditions"
+                 classNames="overview-tag-font overview-tag-orange"/>
+            <tag text="propertyFilter"
+                 route="property-filter-simple"
+                 classNames="overview-tag-font overview-tag-orange"/>
+            <tag text="simplePagination"
+                 route="simple-pagination-simple"
+                 classNames="overview-tag-font overview-tag-orange"/>
+        </sample>
+    </samples>
+</overview>

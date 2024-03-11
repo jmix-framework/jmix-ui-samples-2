@@ -18,7 +18,7 @@
 <menu-config xmlns="io/jmix/uisamples/menu/uisamples-menu.xsd">
 
     <menu id="components-root" url="flow-ui/vc/components">
-        <about id="components" location="components/about/about.html"/>
+        <overview id="components" location="components/overview/components-overview.xml"/>
         <item id="avatar" page="avatar"/>
         <menu id="badge">
             <item id="badge-simple"/>
@@ -595,7 +595,7 @@
     </menu>
 
     <menu id="layouts-root" url="flow-ui/vc/layouts">
-        <about id="layouts" location="containers/about/about.html"/>
+        <overview id="layouts" location="containers/overview/containers-overview.xml"/>
         <menu id="accordion">
             <item id="accordion-simple" page="accordion" splitEnabled="true">
                 <otherFiles>
@@ -646,7 +646,8 @@
     </menu>
 
     <menu id="dialogs-and-notifications-root" url="flow-ui">
-        <about id="dialogs-and-notifications" location="dialogsandnotifications/about/about.html"/>
+        <overview id="dialogs-and-notifications"
+               location="dialogsandnotifications/overview/dialogs-and-notifications-overview.xml"/>
         <menu id="dialogs">
             <item id="message-dialog" page="dialogs" anchor="message-dialog"/>
             <item id="option-dialog" page="dialogs" anchor="option-dialog"/>
@@ -665,11 +666,15 @@
         </menu>
     </menu>
 
-    <menu id="facets" url="flow-ui/facets">
+    <menu id="facets-root" url="flow-ui/facets">
+        <overview id="facets"
+               location="facets/overview/facets-overview.xml"/>
         <item id="timer-facet" page="timer"/>
     </menu>
 
-    <menu id="charts">
+    <menu id="charts-root">
+        <overview id="charts"
+               location="charts/overview/charts-overview.xml"/>
         <menu id="series">
             <menu id="line-series">
                 <item id="line-series-simple" splitEnabled="true">
@@ -791,6 +796,8 @@
     </menu>
 
     <menu id="geo-map-root">
+        <overview id="maps"
+               location="maps/overview/maps-overview.xml"/>
         <item id="geo-map-actions" splitEnabled="true"/>
         <item id="geo-map-point" splitEnabled="true">
             <otherFiles>
@@ -833,7 +840,7 @@
     </menu>
 
     <menu id="custom-components-root" url="flow-ui">
-        <about id="custom-component" location="customcomponents/about/about.html"/>
+        <overview id="custom-component" location="customcomponents/overview/custom-components-overview.xml"/>
         <item id="composite-component" page="visual-components" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/component/addresscomponent/AddressComponent.java"/>
@@ -874,7 +881,7 @@
     </menu>
 
     <menu id="cookbook-root" url="flow-ui">
-        <about id="cookbook" location="cookbook/about/about.html"/>
+        <overview id="cookbook" location="cookbook/overview/cookbook-overview.xml"/>
         <item id="cascading-dropdowns" page="facets/dataLoadCoordinator" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/Planet.java"/>

@@ -146,8 +146,8 @@ public class UiSamplesMenuConfig {
                     loadMenuItems(element, menuItem);
                 } else if ("item".equals(element.getName())) {
                     menuItem = parseItem(element, parentItem, id);
-                } else if ("about".equals(element.getName())) {
-                    menuItem = parseAbout(element, parentItem, id);
+                } else if ("overview".equals(element.getName())) {
+                    menuItem = parseOverview(element, parentItem, id);
                 } else {
                     log.warn(String.format("Unknown tag '%s' in sample-config", element.getName()));
                 }
@@ -163,11 +163,11 @@ public class UiSamplesMenuConfig {
         }
     }
 
-    protected UiSamplesMenuItem parseAbout(Element element, UiSamplesMenuItem parentItem, String id) {
+    protected UiSamplesMenuItem parseOverview(Element element, UiSamplesMenuItem parentItem, String id) {
         UiSamplesMenuItem menuItem = new UiSamplesMenuItem(parentItem, id);
 
-        menuItem.setAbout(true);
-        loadString(element, "location", menuItem::setAboutLocation);
+        menuItem.setOverview(true);
+        loadString(element, "location", menuItem::setOverviewLocation);
 
         return menuItem;
     }

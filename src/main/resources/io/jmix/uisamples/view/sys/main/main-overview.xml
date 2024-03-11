@@ -1,0 +1,59 @@
+<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
+    <header>
+        <text message="title" component="h2"/>
+        <text message="description"/>
+    </header>
+
+    <samples>
+        <sample>
+            <image src="icons/main/components.png"
+                   route="components"/>
+            <text message="components.title" route="components" component="h4"/>
+            <text message="components.description"/>
+        </sample>
+        <sample>
+            <image src="icons/main/layouts.png" route="layouts"/>
+            <text message="layouts.title" route="layouts" component="h4"/>
+            <text message="layouts.description"/>
+        </sample>
+        <sample>
+            <image src="icons/main/dialogsAndNotifications.png" route="dialogs-and-notifications"/>
+            <text message="dialogsAndNotifications.title" route="dialogs-and-notifications" component="h4"/>
+            <text message="dialogsAndNotifications.description"/>
+        </sample>
+        <sample>
+            <image src="icons/main/facets.png" route="facets"/>
+            <text message="facets.title" route="facets" component="h4"/>
+            <text message="facets.description"/>
+        </sample>
+        <sample>
+            <image src="icons/main/charts.png" route="charts"/>
+            <text message="charts.title" route="charts" component="h4"/>
+            <text message="charts.description"/>
+        </sample>
+        <sample>
+            <image src="icons/main/maps.png" route="maps"/>
+            <text message="maps.title" route="maps" component="h4"/>
+            <text message="maps.description"/>
+        </sample>
+        <sample>
+            <image src="icons/main/customComponents.png" route="custom-component"/>
+            <text message="customComponents.title" route="custom-component" component="h4"/>
+            <text message="customComponents.description"/>
+        </sample>
+        <sample>
+            <image src="icons/main/cookbook.png" route="cookbook"/>
+            <text message="cookbook.title" route="cookbook" component="h4"/>
+            <text message="cookbook.description"/>
+        </sample>
+    </samples>
+
+    <resources>
+        <text message="resources.title" component="h2" classNames="overview-resources-title-padding"/>
+        <text message="resource.website" href="https://jmix.io"/>
+        <text message="resource.documentation" href="https://docs.jmix.io"/>
+        <text message="resource.forum" href="https://forum.jmix.io/"/>
+        <text message="resource.sources"
+              href="https://github.com/jmix-framework/jmix-ui-samples-2"/>
+    </resources>
+</overview>

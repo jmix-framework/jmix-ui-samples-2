@@ -1,0 +1,35 @@
+<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
+    <header>
+        <text message="title" component="h2"/>
+        <text message="description"/>
+    </header>
+
+    <samples>
+        <sample>
+            <image src="icons/maps/base.png" route="geo-map-actions"/>
+            <text message="baseFeatures.title"
+                  route="geo-map-actions" component="h4"/>
+            <tag text="actions" route="geo-map-actions" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="points" route="geo-map-point" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="polygons" route="geo-map-polygon" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="lineStrings" route="geo-map-line-string" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="multiGeometries" route="geo-map-multi-geometries" classNames="overview-tag-font overview-tag-grey"/>
+        </sample>
+        <sample>
+            <image src="icons/maps/styling.png" route="geo-map-point-styling"/>
+            <text message="styling.title"
+                  route="geo-map-point-styling" component="h4"/>
+            <tag text="point" route="geo-map-point-styling" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="polygon" route="geo-map-polygon-styling" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="lineString" route="geo-map-line-string-styling" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="staticImage" route="geo-map-static-image" classNames="overview-tag-font overview-tag-grey"/>
+        </sample>
+        <sample>
+            <image src="icons/maps/generalization.png" route="geo-map-cluster"/>
+            <text message="dataGeneralization.title"
+                  route="geo-map-cluster" component="h4"/>
+            <tag text="cluster" route="geo-map-cluster" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="heatmap" route="geo-map-heatmap" classNames="overview-tag-font overview-tag-grey"/>
+        </sample>
+    </samples>
+</overview>

@@ -1,0 +1,83 @@
+<xs:schema targetNamespace="io/jmix/uisamples/view/overview-page.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="io/jmix/uisamples/view/overview-page.xsd"
+           elementFormDefault="qualified">
+
+    <xs:simpleType name="componentType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="h1"/>
+            <xs:enumeration value="h2"/>
+            <xs:enumeration value="h3"/>
+            <xs:enumeration value="h4"/>
+            <xs:enumeration value="h5"/>
+            <xs:enumeration value="h6"/>
+            <xs:enumeration value="Span"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="textType">
+        <xs:attribute name="message" type="xs:string" use="required"/>
+        <xs:attribute name="component" type="componentType"/>
+        <xs:attribute name="route" type="xs:string"/>
+        <xs:attribute name="classNames" type="xs:string"/>
+        <xs:attribute name="href" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="imageType">
+        <xs:attribute name="src" type="xs:string" use="required"/>
+        <xs:attribute name="route" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="tagType">
+        <xs:attribute name="text" type="xs:string" use="required"/>
+        <xs:attribute name="component" type="componentType"/>
+        <xs:attribute name="route" type="xs:string"/>
+        <xs:attribute name="classNames" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="headerType">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element type="textType" name="text" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="sampleType">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element type="textType" name="text" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element type="imageType" name="image" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element type="tagType" name="tag" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="samplesType">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element type="sampleType" name="sample" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="resourcesType">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element type="textType" name="text" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="overviewSectionType">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element type="headerType" name="header" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element type="samplesType" name="samples" maxOccurs="unbounded" minOccurs="0"/>
+                <xs:element type="resourcesType" name="resources" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="overview" type="overviewSectionType"/>
+</xs:schema>

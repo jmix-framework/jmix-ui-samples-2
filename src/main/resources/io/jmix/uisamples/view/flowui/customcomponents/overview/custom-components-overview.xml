@@ -1,0 +1,32 @@
+<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
+    <header>
+        <text message="title" component="h2"/>
+        <text message="description"/>
+    </header>
+
+    <samples>
+        <sample>
+            <image src="icons/customcomponents/compositeComponent.png" route="composite-component"/>
+            <text message="compositeComponent.title" route="composite-component" component="h4"/>
+            <text message="compositeComponent.description"/>
+        </sample>
+        <sample>
+            <image src="icons/customcomponents/jsLibrary.png" route="custom-component-js-library"/>
+            <text message="jsLibrary.title"
+                  route="custom-component-js-library" component="h4"/>
+            <text message="jsLibrary.description"/>
+        </sample>
+        <sample>
+            <image src="icons/customcomponents/chartsAddon.png" route="charts-addon"/>
+            <text message="chartsAddon.title"
+                  route="charts-addon" component="h4"/>
+            <text message="chartsAddon.description"/>
+        </sample>
+        <sample>
+            <image src="icons/customcomponents/componentFromScratch.png" route="custom-component-from-scratch"/>
+            <text message="componentFromScratch.title"
+                  route="custom-component-from-scratch" component="h4"/>
+            <text message="componentFromScratch.description"/>
+        </sample>
+    </samples>
+</overview>

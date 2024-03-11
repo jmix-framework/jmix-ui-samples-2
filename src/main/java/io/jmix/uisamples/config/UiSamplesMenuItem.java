@@ -36,10 +36,10 @@ public class UiSamplesMenuItem {
     protected List<String> otherFiles;
     protected Map<String, Object> viewParams;
 
-    protected String aboutLocation;
+    protected String overviewLocation;
 
     protected boolean isMenu = false;
-    protected boolean isAbout = false;
+    protected boolean isOverview = false;
 
     public UiSamplesMenuItem(@Nullable UiSamplesMenuItem parent, String id) {
         this.parent = parent;
@@ -63,21 +63,21 @@ public class UiSamplesMenuItem {
         this.isMenu = isMenu;
     }
 
-    public boolean isAbout() {
-        return isAbout;
+    public boolean isOverview() {
+        return isOverview;
     }
 
-    public void setAbout(boolean isAbout) {
-        this.isAbout = isAbout;
+    public void setOverview(boolean isOverview) {
+        this.isOverview = isOverview;
     }
 
     @Nullable
-    public String getAboutLocation() {
-        return aboutLocation;
+    public String getOverviewLocation() {
+        return overviewLocation;
     }
 
-    public void setAboutLocation(String aboutLocation) {
-        this.aboutLocation = aboutLocation;
+    public void setOverviewLocation(String overviewLocation) {
+        this.overviewLocation = overviewLocation;
     }
 
     public boolean isSplitEnabled() {
