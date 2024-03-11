@@ -40,7 +40,7 @@ public class OverviewPageGenerator {
         this.messages = messages;
     }
 
-    public Component generate(String messagesPrefix, String resourceName) {
+    public VerticalLayout generate(String messagesPrefix, String resourceName) {
         String prefix = messagesPrefix + "-overview";
 
         VerticalLayout overviewRoot = uiComponents.create(VerticalLayout.class);

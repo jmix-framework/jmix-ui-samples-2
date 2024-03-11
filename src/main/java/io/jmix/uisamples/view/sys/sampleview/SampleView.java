@@ -140,7 +140,7 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
         this.menuItem = menuConfig.getItemById(sampleId);
 
         if (menuItem.isOverview()) {
-            initAboutView();
+            initOverviewView();
         } else {
             this.sampleView = (StandardView) views.create(sampleId);
             updateLayout(sampleView);
@@ -148,11 +148,14 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
         }
     }
 
-    protected void initAboutView() {
+    protected void initOverviewView() {
         getContent().removeAll();
 
-        getContent().add(overviewPageGenerator.generate(menuItem.getId(),
-                SRC_ROOT_PATH + Strings.nullToEmpty(menuItem.getOverviewLocation())));
+        VerticalLayout content = overviewPageGenerator.generate(menuItem.getId(),
+                SRC_ROOT_PATH + Strings.nullToEmpty(menuItem.getOverviewLocation()));
+        content.setPadding(false);
+
+        getContent().add(content);
     }
 
     protected void updateLayout(StandardView sampleView) {

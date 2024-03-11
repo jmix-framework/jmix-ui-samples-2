@@ -6,27 +6,27 @@
 
     <samples>
         <sample>
-            <image src="icons/dialogsAndNotifications/messageDialog.png" route="message-dialog"/>
+            <image src="icons/dialogsandnotifications/messageDialog.png" route="message-dialog"/>
             <text message="messageDialog.title" route="message-dialog" component="h4"/>
             <text message="messageDialog.description"/>
         </sample>
         <sample>
-            <image src="icons/dialogsAndNotifications/optionDialog.png" route="option-dialog"/>
+            <image src="icons/dialogsandnotifications/optionDialog.png" route="option-dialog"/>
             <text message="optionDialog.title" route="option-dialog" component="h4"/>
             <text message="optionDialog.description"/>
         </sample>
         <sample>
-            <image src="icons/dialogsAndNotifications/inputDialog.png" route="input-dialog"/>
+            <image src="icons/dialogsandnotifications/inputDialog.png" route="input-dialog"/>
             <text message="inputDialog.title" route="input-dialog" component="h4"/>
             <text message="inputDialog.description"/>
         </sample>
         <sample>
-            <image src="icons/dialogsAndNotifications/backgroundTaskDialog.png" route="background-task-dialog"/>
+            <image src="icons/dialogsandnotifications/backgroundTaskDialog.png" route="background-task-dialog"/>
             <text message="backgroundTaskDialog.title" route="background-task-dialog" component="h4"/>
             <text message="backgroundTaskDialog.description"/>
         </sample>
         <sample>
-            <image src="icons/dialogsAndNotifications/notifications.png" route="notification-simple"/>
+            <image src="icons/dialogsandnotifications/notifications.png" route="notification-simple"/>
             <text message="notifications.title" route="notification-simple" component="h4"/>
             <text message="notifications.description"/>
         </sample>
