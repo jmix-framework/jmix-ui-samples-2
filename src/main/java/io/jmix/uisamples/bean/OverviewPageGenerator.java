@@ -19,6 +19,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.dom4j.Document;
 import org.dom4j.Element;
 
+import javax.annotation.Nullable;
 import java.io.InputStream;
 import java.util.List;
 
@@ -57,7 +58,7 @@ public class OverviewPageGenerator {
         return overviewRoot;
     }
 
-    private void initHeader(Element header, VerticalLayout overviewRoot, String messagesPrefix) {
+    private void initHeader(@Nullable Element header, VerticalLayout overviewRoot, String messagesPrefix) {
         if (header != null) {
             List<Element> textElements = header.elements("text");
             VerticalLayout verticalLayout = uiComponents.create(VerticalLayout.class);
@@ -71,7 +72,7 @@ public class OverviewPageGenerator {
         }
     }
 
-    private void initSamples(Element samples, VerticalLayout overviewRoot, String messagesPrefix) {
+    private void initSamples(@Nullable Element samples, VerticalLayout overviewRoot, String messagesPrefix) {
         if (samples != null) {
             FlexLayout flexLayout = uiComponents.create(FlexLayout.class);
             flexLayout.setAlignContent(FlexLayout.ContentAlignment.START);
@@ -124,7 +125,6 @@ public class OverviewPageGenerator {
             if (tag instanceof HasText hasText) {
                 hasText.setText(tagElement.attributeValue("text"));
             }
-            tag.addClassName(LumoUtility.FontWeight.LIGHT);
 
             String route = tagElement.attributeValue("route");
             flexLayout.add(StringUtils.isNotEmpty(route) ? createRoute(tag, route) : tag);
@@ -169,24 +169,21 @@ public class OverviewPageGenerator {
         return component;
     }
 
-    private Component createComponentByName(String componentName) {
-        if ("h1".equals(componentName)) {
-            return uiComponents.create(H1.class);
-        } else if ("h2".equals(componentName)) {
-            return uiComponents.create(H2.class);
-        } else if ("h3".equals(componentName)) {
-            return uiComponents.create(H3.class);
-        } else if ("h4".equals(componentName)) {
-            return uiComponents.create(H4.class);
-        } else if ("h5".equals(componentName)) {
-            return uiComponents.create(H5.class);
-        } else if ("h6".equals(componentName)) {
-            return uiComponents.create(H6.class);
-        }
-        return uiComponents.create(Span.class);
+    private Component createComponentByName(@Nullable String componentName) {
+        return componentName == null
+                ? uiComponents.create(Span.class)
+                : switch (componentName) {
+                    case "h1" -> uiComponents.create(H1.class);
+                    case "h2" -> uiComponents.create(H2.class);
+                    case "h3" -> uiComponents.create(H3.class);
+                    case "h4" -> uiComponents.create(H4.class);
+                    case "h5" -> uiComponents.create(H5.class);
+                    case "h6" -> uiComponents.create(H6.class);
+                    default -> uiComponents.create(Span.class);
+                };
     }
 
-    private void initResources(Element resources, VerticalLayout overviewRoot, String messagesPrefix) {
+    private void initResources(@Nullable Element resources, VerticalLayout overviewRoot, String messagesPrefix) {
         if (resources != null) {
             List<Element> textElements = resources.elements("text");
             VerticalLayout verticalLayout = uiComponents.create(VerticalLayout.class);
