@@ -22,7 +22,6 @@
             <tag text="point" route="geo-map-point-styling" classNames="overview-tag-font overview-tag-grey"/>
             <tag text="polygon" route="geo-map-polygon-styling" classNames="overview-tag-font overview-tag-grey"/>
             <tag text="lineString" route="geo-map-line-string-styling" classNames="overview-tag-font overview-tag-grey"/>
-            <tag text="staticImage" route="geo-map-static-image" classNames="overview-tag-font overview-tag-grey"/>
         </sample>
         <sample>
             <image src="icons/maps/generalization.png" route="geo-map-cluster"/>
@@ -30,6 +29,12 @@
                   route="geo-map-cluster" component="h4"/>
             <tag text="cluster" route="geo-map-cluster" classNames="overview-tag-font overview-tag-grey"/>
             <tag text="heatmap" route="geo-map-heatmap" classNames="overview-tag-font overview-tag-grey"/>
+        </sample>
+        <sample>
+            <image src="icons/maps/rasterSources.png" route="geo-map-static-image"/>
+            <text message="rasterSources.title"
+                  route="geo-map-cluster" component="h4"/>
+            <tag text="staticImage" route="geo-map-static-image" classNames="overview-tag-font overview-tag-grey"/>
         </sample>
     </samples>
 </overview>
