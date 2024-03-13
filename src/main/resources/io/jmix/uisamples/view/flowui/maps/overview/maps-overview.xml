@@ -33,7 +33,7 @@
         <sample>
             <image src="icons/maps/rasterSources.png" route="geo-map-static-image"/>
             <text message="rasterSources.title"
-                  route="geo-map-cluster" component="h4"/>
+                  route="geo-map-static-image" component="h4"/>
             <tag text="staticImage" route="geo-map-static-image" classNames="overview-tag-font overview-tag-grey"/>
         </sample>
     </samples>
