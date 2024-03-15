@@ -210,6 +210,11 @@
                     <file name="io/jmix/uisamples/entity/Task.java"/>
                 </otherFiles>
             </item>
+            <item id="data-grid-tree-lazy-nodes" page="treeDataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Task.java"/>
+                </otherFiles>
+            </item>
             <item id="data-grid-theme-variant" page="dataGrid" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>

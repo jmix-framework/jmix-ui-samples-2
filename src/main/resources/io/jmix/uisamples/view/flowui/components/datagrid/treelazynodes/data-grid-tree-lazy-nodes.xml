@@ -1,0 +1,15 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <treeDataGrid id="taskDataGrid"
+                      metaClass="Task"
+                      hierarchyProperty="parentTask"
+                      width="100%"
+                      minHeight="20em">
+            <columns>
+                <column property="name"/>
+                <column property="dueDate"/>
+                <column property="assignee"/>
+            </columns>
+        </treeDataGrid>
+    </layout>
+</view>
