@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://FoodDetailView.title">
+    <data>
+        <instance id="foodDc" class="io.jmix.uisamples.entity.Food"/>
+    </data>
+    <actions>
+        <action id="saveAction" type="detail_saveClose"/>
+        <action id="closeAction" type="detail_close"/>
+    </actions>
+    <layout>
+        <hbox>
+            <h2 id="foodTitle"/>
+            <avatar id="foodIcon" />
+            <fileUploadField id="foodIconUpload" uploadIcon="UPLOAD" uploadText=""/>
+        </hbox>
+        <formLayout id="form" dataContainer="foodDc">
+            <textField id="titleField" property="title"/>
+            <textField property="description"/>
+            <textField property="price">
+                <validators>
+                    <positive message="msg://price.validation.negative">true</positive>
+                </validators>
+            </textField>
+        </formLayout>
+        <hbox id="detailActions">
+            <button id="saveAndCloseBtn" action="saveAction"/>
+            <button id="closeBtn" action="closeAction"/>
+        </hbox>
+    </layout>
+</view>
