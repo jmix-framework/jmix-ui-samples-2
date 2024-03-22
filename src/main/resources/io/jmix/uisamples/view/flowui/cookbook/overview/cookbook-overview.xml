@@ -21,6 +21,11 @@
             <text message="copyToClipboard.description"/>
         </sample>
         <sample>
+            <image src="icons/cookbook/iframePdf.png" route="iframe-pdf"/>
+            <text message="iframePdf.title" route="iframe-pdf" component="h4"/>
+            <text message="iframePdf.description"/>
+        </sample>
+        <sample>
             <image src="icons/cookbook/customLoginForm.png" route="custom-login"/>
             <text message="customLoginForm.title" route="custom-login" component="h4"/>
             <text message="customLoginForm.description"/>

@@ -899,6 +899,13 @@
             </otherFiles>
         </item>
         <item id="copy-to-clipboard"/>
+        <item id="iframe-pdf" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdf/IframeCustomSecurity.java"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdf/CustomRestSecurityConfiguration.java"/>
+                <file name="io/jmix/uisamples/rest/CustomFileDownloadController.java"/>
+            </otherFiles>
+        </item>
         <item id="custom-login" splitEnabled="true">
             <otherFiles>
                 <file name="META-INF/resources/themes/custom-login.css"/>
