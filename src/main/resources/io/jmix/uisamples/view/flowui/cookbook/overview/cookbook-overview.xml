@@ -16,6 +16,11 @@
             <text message="copyingEntities.description"/>
         </sample>
         <sample>
+            <image src="icons/cookbook/copyToClipboard.png" route="copy-to-clipboard"/>
+            <text message="copyToClipboard.title" route="copy-to-clipboard" component="h4"/>
+            <text message="copyToClipboard.description"/>
+        </sample>
+        <sample>
             <image src="icons/cookbook/customLoginForm.png" route="custom-login"/>
             <text message="customLoginForm.title" route="custom-login" component="h4"/>
             <text message="customLoginForm.description"/>

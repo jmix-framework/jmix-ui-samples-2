@@ -898,6 +898,7 @@
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>
         </item>
+        <item id="copy-to-clipboard"/>
         <item id="custom-login" splitEnabled="true">
             <otherFiles>
                 <file name="META-INF/resources/themes/custom-login.css"/>

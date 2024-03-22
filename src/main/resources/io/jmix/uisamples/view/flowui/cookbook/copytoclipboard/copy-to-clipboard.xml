@@ -1,0 +1,9 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <textField id="textField" value="UI Samples">
+            <suffix>
+                <button id="copyButton" icon="COPY" themeNames="tertiary-inline"/>
+            </suffix>
+        </textField>
+    </layout>
+</view>
