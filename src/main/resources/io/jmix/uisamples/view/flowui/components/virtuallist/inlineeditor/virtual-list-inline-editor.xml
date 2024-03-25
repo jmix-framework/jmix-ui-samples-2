@@ -6,13 +6,17 @@
             <loader id="foodDl"/>
         </collection>
     </data>
-    <actions>
-        <action id="addAction" actionVariant="PRIMARY" icon="PLUS" text="msg:///actions.Add"/>
-    </actions>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
     <layout>
         <hbox width="100%" padding="false">
             <h2 id="menusItemsTabTitle" text="msg://foodListTitle"/>
-            <button id="addBtn" action="addAction" classNames="virtual-list-inline-editor-add-button"/>
+            <button id="addBtn"
+                    classNames="virtual-list-inline-editor-add-button"
+                    themeNames="primary"
+                    icon="PLUS"
+                    text="msg:///actions.Add"/>
         </hbox>
         <html id="foodDescription" content="msg://foodListDescription"/>
         <virtualList id="foodList" itemsContainer="foodDc" width="100%"/>

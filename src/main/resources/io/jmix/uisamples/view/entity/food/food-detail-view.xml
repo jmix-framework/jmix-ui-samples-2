@@ -12,14 +12,14 @@
         <hbox>
             <h2 id="foodTitle"/>
             <avatar id="foodIcon" />
-            <fileUploadField id="foodIconUpload" uploadIcon="UPLOAD" uploadText=""/>
+            <fileUploadField id="foodIconUpload" dataContainer="foodDc" property="icon" uploadIcon="UPLOAD" uploadText=""/>
         </hbox>
         <formLayout id="form" dataContainer="foodDc">
             <textField id="titleField" property="title"/>
             <textField property="description"/>
             <textField property="price">
                 <validators>
-                    <positive message="msg://price.validation.negative">true</positive>
+                    <positive message="msg://price.validation.negative"/>
                 </validators>
             </textField>
         </formLayout>

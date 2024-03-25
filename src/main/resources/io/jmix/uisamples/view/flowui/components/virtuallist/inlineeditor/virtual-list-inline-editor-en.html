@@ -1,17 +1,25 @@
 <p>
-    An example how to build inline editor on entity with <code>VirtualList</code>. Here are the steps you need to take to do this:
-<ul>
-    <li>In the view to declare <code>VirtualList</code>;</li>
-    <li>For the created <code>VirtualList</code> generate <code>Renderer</code>;</li>
-    <li>In the <code>Renderer</code> start to generate card of <code>Vertical Layout</code>, each contains following elements:
-        <ul>
-            <li><strong>Avatar</strong> - optional element, stands first in the <code>Vertical Layout</code> (card);</li>
-            <li><strong>Info Layout</strong> - any composition of elements that can display information in the card about the details of the current item;</li>
-            <li><strong>Button Layout</strong> - layout where the control buttons for working with the current element are located;</li>
-        </ul>
-    </li>
-    <li>Create a <code>DetailView</code> which edits the selected entity or creates a new one;</li>
-    <li>Hang <code>action</code> on all buttons to control CRUD;</li>
-    <li>Your inline editor with <code>VirtualList</code> is done.</li>
-</ul>
+    An example of how to build an inline editor on an entity using <code>VirtualList</code>. Here are the steps you need
+    to take:
+
+    <ul>
+        <li>In the view, declare <code>VirtualList</code>;</li>
+        <li>Generate a <code>Renderer</code> for the created <code>VirtualList</code>;</li>
+        <li>In the <code>Renderer</code>, begin by generating cards of <code>Vertical Layout</code>, each containing the
+            following elements:
+            <ul>
+                <li><strong>Avatar</strong> - an optional element, placed first in the <code>Vertical Layout</code> (card);
+                </li>
+                <li><strong>Info Layout</strong> - any combination of elements that can display information about the
+                    current item;
+                </li>
+                <li><strong>Button Layout</strong> - a layout containing control buttons for working with the current
+                    element;
+                </li>
+            </ul>
+        </li>
+        <li>Create a <code>DetailView</code> to edit the selected entity or create a new one;</li>
+        <li>Attach actions to all buttons to control CRUD operations;</li>
+        <li>Your inline editor with <code>VirtualList</code> is ready.</li>
+    </ul>
 </p>
