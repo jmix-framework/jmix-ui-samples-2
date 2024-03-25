@@ -1,16 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
-        <tabSheet width="100%" height="100%">
-            <tab id="staticResourceTab" label="Static resource">
-                <vbox width="100%" height="100%" padding="false">
-                    <iframe width="100%" height="100%" resource="pdf/tutorial.pdf" css="border: unset;"/>
-                </vbox>
-            </tab>
-            <tab id="fileRefTab" label="FileRef">
-                <vbox width="100%" height="100%" padding="false">
-                    <iframe id="fileRefIframe" width="100%" height="100%" css="border: unset;"/>
-                </vbox>
-            </tab>
-        </tabSheet>
+        <iframe width="100%" height="100%" css="border: unset;"
+                resource="pdf/tutorial.pdf"/>
     </layout>
 </view>

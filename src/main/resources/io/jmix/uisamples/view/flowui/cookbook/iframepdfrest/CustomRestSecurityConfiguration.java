@@ -1,4 +1,4 @@
-package io.jmix.uisamples.view.flowui.cookbook.iframepdf;
+package io.jmix.uisamples.view.flowui.cookbook.iframepdfrest;
 
 import io.jmix.core.JmixSecurityFilterChainOrder;
 import org.springframework.context.annotation.Bean;

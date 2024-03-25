@@ -26,6 +26,11 @@
             <text message="iframePdf.description"/>
         </sample>
         <sample>
+            <image src="icons/cookbook/iframePdf.png" route="iframe-pdf-rest"/>
+            <text message="iframePdfRest.title" route="iframe-pdf-rest" component="h4"/>
+            <text message="iframePdfRest.description"/>
+        </sample>
+        <sample>
             <image src="icons/cookbook/customLoginForm.png" route="custom-login"/>
             <text message="customLoginForm.title" route="custom-login" component="h4"/>
             <text message="customLoginForm.description"/>

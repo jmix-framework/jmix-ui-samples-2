@@ -1,21 +1,10 @@
 <p>
-    This sample demonstrates two approaches for displaying PDF files using the <code>IFrame</code> component.<br/>
-    On the first tab you can see an example of displaying PDF as a static resource. To make displaying such resources available, you need to configure the <code>frame-ancestors</code> policy directive. See <code>IframeCustomSecurity.java</code>.
+    This sample demonstrates possible approaches for displaying PDF files as a static resource using the <code>IFrame</code> component.<br/>
+    Static resources should be stored in the <code>META-INF/resources</code> folder.
+    To make displaying such resources available, you need to configure the <code>frame-ancestors</code> policy directive. See <code>IframeCustomSecurity.java</code>.<br/>
 </p>
 
 <p>
     This source code contains a directive that allows the use of resources if the requests is sent from <code>demo.jmix.io</code>.<br/>
     More detailed information is available in the documentation for the directive: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors" target="_blank">CSP: frame-ancestors - HTTP | MDN 6</a>.
-</p>
-
-<p>
-    The seconds tab shows the display of the PDF file from the file storage. This method is convenient if the document is stored in an entity as a <code>FileRef</code>.<br/>
-    If your application is configured with a <b>Generic REST API</b> you can simply specify the request address as the source for the <code>IFrame</code> (see <a href="https://docs.jmix.io/jmix/rest/files-api.html" target="_blank">Files API :: Jmix Documentation</a>).<br/>
-    Thus, this request will receive a file that will be displayed using standard browser tools in <code>IFrame</code>.
-</p>
-
-<p>
-    In this example, a custom request controller was configured. See <code>CustomFileDownloadController.java</code>.<br/>
-    In order for this type of requests to be processed correctly by the application, it is required to add a special security filter.<br/>
-    See <code>CustomRestSecurityConfiguration.java</code>.
 </p>
