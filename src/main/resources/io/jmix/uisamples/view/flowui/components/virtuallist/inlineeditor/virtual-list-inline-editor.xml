@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://virtualListInlineEditor.title">
+    <data>
+        <collection id="foodDc" class="io.jmix.uisamples.entity.Food">
+            <loader id="foodDl"/>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <hbox width="100%" padding="false" alignItems="CENTER">
+            <h2 id="menusItemsTabTitle" text="msg://foodListTitle"/>
+            <button id="addBtn"
+                    classNames="virtual-list-inline-editor-add-button"
+                    themeNames="primary"
+                    icon="PLUS"
+                    text="msg:///actions.Add"/>
+        </hbox>
+        <html id="foodDescription" content="msg://foodListDescription"/>
+        <virtualList id="foodList" itemsContainer="foodDc" width="100%"/>
+    </layout>
+</view>

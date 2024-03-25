@@ -591,6 +591,14 @@
                     <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
                 </otherFiles>
             </item>
+            <item id="virtual-list-inline-editor" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Food.java"/>
+                    <file name="io/jmix/uisamples/view/entity/food/FoodDetailView.java"/>
+                    <file name="io/jmix/uisamples/view/entity/food/food-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/bean/FoodPlaceholderDataGenerator.java"/>
+                </otherFiles>
+            </item>
             <item id="virtual-list-custom-items" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Day.java"/>

@@ -1,0 +1,25 @@
+<p>
+    An example of how to build an inline editor on an entity using <code>VirtualList</code>. Here are the steps you need
+    to take:
+
+    <ul>
+        <li>In the view, declare <code>VirtualList</code>;</li>
+        <li>Generate a <code>Renderer</code> for the created <code>VirtualList</code>;</li>
+        <li>In the <code>Renderer</code>, begin by generating cards of <code>Vertical Layout</code>, each containing the
+            following elements:
+            <ul>
+                <li><strong>Avatar</strong> - an optional element, placed first in the <code>Vertical Layout</code> (card);
+                </li>
+                <li><strong>Info Layout</strong> - any combination of elements that can display information about the
+                    current item;
+                </li>
+                <li><strong>Button Layout</strong> - a layout containing control buttons for working with the current
+                    element;
+                </li>
+            </ul>
+        </li>
+        <li>Create a <code>DetailView</code> to edit the selected entity or create a new one;</li>
+        <li>Attach actions to all buttons to control CRUD operations;</li>
+        <li>Your inline editor with <code>VirtualList</code> is ready.</li>
+    </ul>
+</p>

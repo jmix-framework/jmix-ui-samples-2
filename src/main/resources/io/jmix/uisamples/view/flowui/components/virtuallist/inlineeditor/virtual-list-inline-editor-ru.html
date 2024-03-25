@@ -1,0 +1,18 @@
+<p>
+    Пример того, как можно построить inline editor над сущностью при помощи <code>VirtualList</code>. Шаги, по которым стоит выстраивать
+    inline editor списков:
+    <ul>
+        <li>В экране объявить <code>VirtualList</code>.</li>
+        <li>Для созданного <code>VirtualList</code> сгенерировать <code>Renderer</code>;</li>
+        <li>В <code>Renderer</code> генерировать карточки <code>Vertical Layout</code>, каждая карточка состоит из 3 элементов:
+            <ul>
+                <li><strong>Avatar</strong> - опциональный элемент, стоит в начале <code>Vertical Layout</code> (карточки);</li>
+                <li><strong>Info Layout</strong> - любый набор компонент; цель - донести информацию в карточке о деталях текущего элемента;</li>
+                <li><strong>Button Layout</strong> - layout в котором находятся управляющие кнопки работы с текущим элементом;</li>
+            </ul>
+        </li>
+        <li>Создать <code>DetailView</code> который редактирует выбранную сущность или создает новую;</li>
+        <li>На все управляющие кнопки добавить слушатель событий для управления CRUD;</li>
+        <li>Ваш inline editor в <code>VirtualList</code> готов.</li>
+    </ul>
+</p>

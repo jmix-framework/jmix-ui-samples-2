@@ -21,7 +21,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 @ViewController("virtual-list-custom-items")
 @ViewDescriptor("virtual-list-custom-items.xml")
-public class VirtualListCustomItems extends StandardView {
+public class VirtualListCustomItemsSample extends StandardView {
 
     @Autowired
     protected UiComponents uiComponents;
