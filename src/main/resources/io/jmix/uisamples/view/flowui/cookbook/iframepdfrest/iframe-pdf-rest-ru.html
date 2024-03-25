@@ -1,0 +1,21 @@
+<p>
+    В данном примере демонстрируется подхода для отображения PDF-файлов из локального хранилища с использованием компонента <code>IFrame</code> и <b>REST API</b>.<br/>
+</p>
+
+<p>
+    Этот способ удобен, если документ хранится в сущности, в качестве <code>FileRef</code>.<br/>
+    Если в Вашем приложении настроен <b>Generic REST API</b>, то вы можете просто указать адрес запроса в качестве источника для <code>IFrame</code> (см. <a href="https://docs.jmix.ru/jmix/rest/files-api.html" target="_blank">Files API :: Документация Jmix</a>).<br/>
+    Таким образом по этом запросу придёт файл, который будет отображен стандартными средствами браузера в <code>IFrame</code>.
+</p>
+
+<p>
+    В данном примере настроен собственный контроллер запросов. См. исходный код в <code>CustomFileDownloadController</code>.<br/>
+    Чтобы такого вида запросы правильно обрабатывались приложением, необходимо добавить специальный фильтр.<br/>
+    См. исходный код в <code>CustomRestSecurityConfiguration</code>.
+</p>
+
+<p>
+    В исходном коде указана директива, которая разрешает использовать ресурсы в том случае, если запрос идёт с <code>demo.jmix.io</code>.<br/>
+    Более подробная информация доступна в документации к директиве: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors" target="_blank">CSP: frame-ancestors - HTTP | MDN 6</a>.
+</p>
+

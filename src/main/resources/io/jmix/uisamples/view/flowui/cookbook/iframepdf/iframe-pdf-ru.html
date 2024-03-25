@@ -1,0 +1,12 @@
+<p>
+    В данном примере демонстрируется подход для отображения PDF-файлов в виде статического ресурса с использованием компонента <code>IFrame</code>.<br/>
+    Статические ресурсы должны хранится в папке <code>META-INF/resources</code>.
+    Чтобы отображения таких ресурсов стало доступно - необходимо настроить директиву политики <code>frame-ancestors</code>.<br/>
+    См. исходный код в <code>IframeCustomSecurity</code>.
+</p>
+
+<p>
+    В исходном коде указана директива, которая разрешает использовать ресурсы в том случае, если запрос идёт с <code>demo.jmix.io</code>.<br/>
+    Более подробная информация доступна в документации к директиве: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors" target="_blank">CSP: frame-ancestors - HTTP | MDN 6</a>.
+</p>
+

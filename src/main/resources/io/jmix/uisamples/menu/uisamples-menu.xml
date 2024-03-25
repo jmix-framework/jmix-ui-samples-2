@@ -210,6 +210,11 @@
                     <file name="io/jmix/uisamples/entity/Task.java"/>
                 </otherFiles>
             </item>
+            <item id="data-grid-tree-lazy-nodes" page="treeDataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Task.java"/>
+                </otherFiles>
+            </item>
             <item id="data-grid-theme-variant" page="dataGrid" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
@@ -900,6 +905,18 @@
         <item id="copy-action" page="actions/declarative-actions" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
+            </otherFiles>
+        </item>
+        <item id="copy-to-clipboard"/>
+        <item id="iframe-pdf" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdf/IframeCustomSecurity.java"/>
+            </otherFiles>
+        </item>
+        <item id="iframe-pdf-rest" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdfrest/CustomRestSecurityConfiguration.java"/>
+                <file name="io/jmix/uisamples/rest/CustomFileDownloadController.java"/>
             </otherFiles>
         </item>
         <item id="custom-login" splitEnabled="true">
