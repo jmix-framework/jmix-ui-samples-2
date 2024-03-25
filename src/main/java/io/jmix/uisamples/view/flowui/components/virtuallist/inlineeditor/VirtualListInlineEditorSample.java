@@ -54,7 +54,6 @@ public class VirtualListInlineEditorSample extends StandardView {
             rootCardLayout.setMargin(true);
 
             VerticalLayout infoLayout = new VerticalLayout();
-            infoLayout.setMargin(false);
             infoLayout.setSpacing(false);
             infoLayout.setPadding(false);
             infoLayout.setWidth("30%");
@@ -76,7 +75,6 @@ public class VirtualListInlineEditorSample extends StandardView {
                     messages.formatMessage(getClass(), "foodListItemDescription", item.getPrice()))
             );
             itemDetailLayout.setPadding(false);
-            itemDetailLayout.setMargin(false);
             itemDetailLayout.setAlignItems(FlexComponent.Alignment.CENTER);
 
             infoLayout.add(new Html(messages.formatMessage(getClass(), "foodItemTitle", item.getTitle())));
@@ -85,7 +83,6 @@ public class VirtualListInlineEditorSample extends StandardView {
             VerticalLayout buttonsPanel = new VerticalLayout();
             buttonsPanel.setWidth("AUTO");
             buttonsPanel.setPadding(false);
-            buttonsPanel.setMargin(false);
             buttonsPanel.setSpacing(false);
 
             Button detailButton = new Button(new Icon(VaadinIcon.PENCIL));
