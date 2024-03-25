@@ -597,7 +597,6 @@
                     <file name="io/jmix/uisamples/view/entity/food/FoodDetailView.java"/>
                     <file name="io/jmix/uisamples/view/entity/food/food-detail-view.xml"/>
                     <file name="io/jmix/uisamples/bean/FoodPlaceholderDataGenerator.java"/>
-                    <file name="META-INF/resources/themes/virtual-list-inline-editor.css"/>
                 </otherFiles>
             </item>
             <item id="virtual-list-custom-items" splitEnabled="true">
