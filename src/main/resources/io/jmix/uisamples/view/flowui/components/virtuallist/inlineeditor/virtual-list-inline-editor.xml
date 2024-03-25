@@ -10,7 +10,7 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
-        <hbox width="100%" padding="false">
+        <hbox width="100%" padding="false" alignItems="CENTER">
             <h2 id="menusItemsTabTitle" text="msg://foodListTitle"/>
             <button id="addBtn"
                     classNames="virtual-list-inline-editor-add-button"
