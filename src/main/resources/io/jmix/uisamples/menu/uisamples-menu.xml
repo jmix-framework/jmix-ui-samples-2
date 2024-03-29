@@ -540,6 +540,15 @@
             <item id="text-area-resizable" page="textArea"/>
             <item id="text-area-theme-variant" page="textArea" splitEnabled="true"/>
         </menu>
+        <menu id="rich-text-editor">
+            <item id="rich-text-editor-simple" splitEnabled="true"/>
+            <item id="rich-text-editor-dataaware" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                </otherFiles>
+            </item>
+            <item id="rich-text-editor-theme-variant" splitEnabled="true"/>
+        </menu>
         <menu id="text-field">
             <item id="text-field-simple" page="textField"/>
             <item id="text-field-dataaware" page="textField">

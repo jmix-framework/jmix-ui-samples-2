@@ -1,0 +1,5 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <richTextEditor id="richTextEditor" label="RichTextEditor" helperText="Helper text"/>
+    </layout>
+</view>
