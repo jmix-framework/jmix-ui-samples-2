@@ -19,6 +19,7 @@
             <dataGrid id="customersDataGrid"
                       width="100%"
                       minHeight="20em"
+                      columnReorderingAllowed="true"
                       dataContainer="customersDc">
                 <columns>
                     <column property="name"/>
