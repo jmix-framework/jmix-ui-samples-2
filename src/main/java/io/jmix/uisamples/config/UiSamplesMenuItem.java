@@ -16,12 +16,10 @@
 
 package io.jmix.uisamples.config;
 
+import io.jmix.flowui.menu.MenuItem;
 import org.springframework.lang.Nullable;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class UiSamplesMenuItem {
 
@@ -34,6 +32,7 @@ public class UiSamplesMenuItem {
     protected String anchor;
     protected boolean splitEnabled;
     protected List<String> otherFiles;
+    protected List<MenuItem.MenuItemParameter> urlQueryParameters;
     protected Map<String, Object> viewParams;
 
     protected String overviewLocation;
@@ -96,6 +95,14 @@ public class UiSamplesMenuItem {
 
     public void setOtherFiles(List<String> otherFiles) {
         this.otherFiles = otherFiles;
+    }
+
+    public List<MenuItem.MenuItemParameter> getUrlQueryParameters() {
+        return Objects.requireNonNullElse(urlQueryParameters, Collections.emptyList());
+    }
+
+    public void setUrlQueryParameters(List<MenuItem.MenuItemParameter> urlQueryParameters) {
+        this.urlQueryParameters = urlQueryParameters;
     }
 
     @Nullable

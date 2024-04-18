@@ -19,6 +19,7 @@
         <xs:attribute name="message" type="xs:string" use="required"/>
         <xs:attribute name="component" type="componentType"/>
         <xs:attribute name="route" type="xs:string"/>
+        <xs:attribute name="queryParameters" type="xs:string"/>
         <xs:attribute name="classNames" type="xs:string"/>
         <xs:attribute name="href" type="xs:string"/>
     </xs:complexType>
@@ -26,12 +27,14 @@
     <xs:complexType name="imageType">
         <xs:attribute name="src" type="xs:string" use="required"/>
         <xs:attribute name="route" type="xs:string"/>
+        <xs:attribute name="queryParameters" type="xs:string"/>
     </xs:complexType>
 
     <xs:complexType name="tagType">
         <xs:attribute name="text" type="xs:string" use="required"/>
         <xs:attribute name="component" type="componentType"/>
         <xs:attribute name="route" type="xs:string"/>
+        <xs:attribute name="queryParameters" type="xs:string"/>
         <xs:attribute name="classNames" type="xs:string"/>
     </xs:complexType>
 

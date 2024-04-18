@@ -8,6 +8,7 @@ import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.QueryParameters;
 import com.vaadin.flow.router.RouteParameters;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.theme.lumo.LumoUtility;
@@ -134,7 +135,8 @@ public class OverviewPageGenerator {
             }
 
             String route = tagElement.attributeValue("route");
-            flexLayout.add(StringUtils.isNotEmpty(route) ? createRoute(tag, route) : tag);
+            String urlQueryParameters = tagElement.attributeValue("queryParameters");
+            flexLayout.add(StringUtils.isNotEmpty(route) ? createRoute(tag, route, urlQueryParameters) : tag);
         }
 
         return flexLayout;
@@ -146,7 +148,8 @@ public class OverviewPageGenerator {
         image.setWidth("20em");
 
         String route = imageElement.attributeValue("route");
-        return StringUtils.isNotEmpty(route) ? createRoute(image, route) : image;
+        String urlQueryParameters = imageElement.attributeValue("queryParameters");
+        return StringUtils.isNotEmpty(route) ? createRoute(image, route, urlQueryParameters) : image;
     }
 
     private Component createLabel(Element labelElement, String messagesPrefix) {
@@ -156,14 +159,16 @@ public class OverviewPageGenerator {
                 labelElement.attributeValue("component")
         );
         String route = labelElement.attributeValue("route");
-        return StringUtils.isNotEmpty(route) ? createRoute(label, route) : label;
+        String urlQueryParameters = labelElement.attributeValue("queryParameters");
+        return StringUtils.isNotEmpty(route) ? createRoute(label, route, urlQueryParameters) : label;
     }
 
-    private Component createRoute(Component component, String route) {
+    private Component createRoute(Component component, String route, String urlQueryParameters) {
         RouterLink routerLink = uiComponents.create(RouterLink.class);
         RouteParameters routeParams = new RouteParameters("sampleId", route);
 
         routerLink.setRoute(SampleView.class, routeParams);
+        routerLink.setQueryParameters(QueryParameters.fromString(urlQueryParameters));
         routerLink.addClassNames("jmix-main-view-header-link");
         routerLink.add(component);
 

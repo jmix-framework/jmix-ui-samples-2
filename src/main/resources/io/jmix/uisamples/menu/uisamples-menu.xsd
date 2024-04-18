@@ -17,9 +17,9 @@
   -->
 
 <xs:schema targetNamespace="io/jmix/uisamples/menu/uisamples-menu.xsd"
-        xmlns:xs="http://www.w3.org/2001/XMLSchema"
-        xmlns="io/jmix/uisamples/menu/uisamples-menu.xsd"
-        elementFormDefault="qualified">
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="io/jmix/uisamples/menu/uisamples-menu.xsd"
+           elementFormDefault="qualified">
 
     <xs:element name="menu-config" type="menuOrItem"/>
 
@@ -42,6 +42,7 @@
         <xs:sequence>
             <xs:choice minOccurs="0" maxOccurs="unbounded">
                 <xs:element name="otherFiles" type="otherFilesType" minOccurs="0"/>
+                <xs:element name="urlQueryParameters" type="parametersType" minOccurs="0"/>
                 <xs:element name="viewParams" type="viewParamsType" minOccurs="0"/>
             </xs:choice>
         </xs:sequence>
@@ -87,5 +88,16 @@
                 <xs:element name="param" type="paramType"/>
             </xs:choice>
         </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="parametersType">
+        <xs:sequence>
+            <xs:element name="parameter" type="parameter" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="parameter">
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="value" type="xs:string" use="required"/>
     </xs:complexType>
 </xs:schema>

@@ -16,9 +16,11 @@
 
 package io.jmix.uisamples.config;
 
+import com.google.common.base.Strings;
 import io.jmix.core.Messages;
 import io.jmix.core.Resources;
 import io.jmix.core.common.xmlparsing.Dom4jTools;
+import io.jmix.flowui.menu.MenuItem;
 import io.jmix.flowui.xml.layout.support.LoaderSupport;
 import org.apache.commons.collections4.IterableUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -191,6 +193,32 @@ public class UiSamplesMenuConfig {
                     otherFiles.add(fileName);
             }
             menuItem.setOtherFiles(otherFiles);
+        }
+
+        Element parametersElement = element.element("urlQueryParameters");
+        if (parametersElement != null && !parametersElement.elements().isEmpty()) {
+            List<Element> parameterList = parametersElement.elements("parameter");
+            List<MenuItem.MenuItemParameter> itemParameters = new ArrayList<>(parameterList.size());
+
+            for (Element parameter : parameterList) {
+                String parameterName = parameter.attributeValue("name");
+
+                if (Strings.isNullOrEmpty(parameterName)) {
+                    throw new IllegalStateException("Parameter cannot have empty name");
+                }
+
+                String parameterValue = parameter.attributeValue("value");
+
+                if (Strings.isNullOrEmpty(parameterValue)) {
+                    String message = String.format("Parameter with name '%s' cannot have empty value", parameterName);
+                    throw new IllegalStateException(message);
+                }
+
+                MenuItem.MenuItemParameter itemParameter = new MenuItem.MenuItemParameter(parameterName, parameterValue);
+
+                itemParameters.add(itemParameter);
+            }
+            menuItem.setUrlQueryParameters(itemParameters);
         }
 
         Element screenParamsElement = element.element("viewParamsType");

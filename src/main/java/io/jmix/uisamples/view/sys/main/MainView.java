@@ -74,8 +74,6 @@ public class MainView extends StandardMainView {
     protected MessageBundle messageBundle;
     @Autowired
     protected OverviewPageGenerator overviewPageGenerator;
-    @Autowired
-    private Resources resources;
 
     protected List<JmixListMenu.MenuItem> foundItems = new ArrayList<>();
     protected List<String> parentListIdsToExpand = new ArrayList<>();
@@ -166,6 +164,7 @@ public class MainView extends StandardMainView {
                 JmixListMenu.ViewMenuItem child = new JmixListMenu.ViewMenuItem(id)
                         .withTitle(menuConfig.getMenuItemTitle(currentItem.getId()))
                         .withControllerClass(SampleView.class)
+                        .withUrlQueryParameters(currentItem.getUrlQueryParameters())
                         .withRouteParameters(Collections.singletonList(sampleIdParam));
 
                 parentSideMenuItem.addChildItem(child);

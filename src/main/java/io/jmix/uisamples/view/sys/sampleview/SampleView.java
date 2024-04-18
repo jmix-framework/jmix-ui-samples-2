@@ -117,6 +117,10 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
         event.getRouteParameters().get("sampleId")
                 .ifPresent(this::updateSample);
         super.beforeEnter(event);
+
+        if (sampleView != null) {
+            sampleView.beforeEnter(event);
+        }
     }
 
     @Override
@@ -188,7 +192,6 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
             getContent().expand(tabSheet);
         }
     }
-
 
     protected void createTabSheet() {
         tabSheet = uiComponents.create(JmixTabSheet.class);

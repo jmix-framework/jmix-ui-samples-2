@@ -1,0 +1,20 @@
+<p>
+    <code>dataLoadCoordinator</code> facet is designed for triggering data loaders and for declarative linking
+    of data loaders to data containers, visual components, and view lifecycle events.
+</p>
+<p>
+    There are three working modes:
+</p>
+<ul>
+    <li>
+        <b>Automatic</b> mode is activated by <code>auto</code> attribute. A loaders are triggered on <code>BeforeShowEvent</code>.
+    </li>
+    <li>
+        <b>Manual</b> mode uses nested <code>refresh</code> elements that control when the data loaders must be triggered.
+    </li>
+    <li>
+        <b>Semi-automatic</b> mode is a combination of <b>automatic</b> and <b>manual</b> modes. When the <code>auto</code>
+        attribute is set to <code>true</code>, and there are some manually configured triggers, <code>DataLoadCoordinator</code>
+        will automatically configure all loaders having no manual configuration.
+    </li>
+</ul>

@@ -5,9 +5,26 @@
     </header>
     <samples>
         <sample>
+            <image src="icons/facets/dataLoadCoordinator.png" route="data-load-coordinator"/>
+            <text message="dataLoadCoordinator.title" route="data-load-coordinator" component="h4"/>
+            <text message="dataLoadCoordinator.description"/>
+        </sample>
+        <sample>
             <image src="icons/facets/timer.png" route="timer-facet"/>
-            <text message="timer.title" route="hbox-simple" component="h4"/>
+            <text message="timer.title" route="timer-facet" component="h4"/>
             <text message="timer.description"/>
+        </sample>
+        <sample>
+            <image src="icons/facets/urlQueryParameters.png" route="url-query-parameters"
+                   queryParameters="genericFilterCondition=property:age_greater_30"/>
+            <text message="urlQueryParameters.title" route="url-query-parameters"
+                  queryParameters="genericFilterCondition=property:age_greater_30" component="h4"/>
+            <text message="urlQueryParameters.description"/>
+        </sample>
+        <sample>
+            <image src="icons/facets/settings.png" route="settings-facet"/>
+            <text message="settings.title" route="settings-facet" component="h4"/>
+            <text message="settings.description"/>
         </sample>
     </samples>
 </overview>

@@ -1,0 +1,27 @@
+<p>
+    <code>urlQueryParameters</code> facet is designed for declarative binding of the view state to the URL.
+    It allows you to preserve the view state when navigating between views or refreshing the browser page.
+    <br/>
+    The obvious example is the entity list view with pagination and filtering.
+    You will want to preserve pagination and filtering parameters when refreshing the browser page and when navigating
+    to a detail view and back.
+</p>
+<p>
+    Supported components:
+</p>
+<ul>
+    <li>
+        <code>pagination</code>
+    </li>
+    <li>
+        <code>propertyFilter</code>
+    </li>
+    <li>
+        <code>genericFilter</code>
+    </li>
+</ul>
+<p>
+    In this sample, when opening the view, the age filter condition was automatically applied from the URL.
+    You can use pagination and see that new parameters have been added to the URL.
+    After reloading the page, the state of these components will be restored.
+</p>

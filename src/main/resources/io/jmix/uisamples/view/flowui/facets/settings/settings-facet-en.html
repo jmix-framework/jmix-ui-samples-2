@@ -1,0 +1,32 @@
+<p>
+    <code>Settings</code> facet is designed to persist the state of UI components or custom data in a database in <code>FLOWUI_USER_SETTINGS</code> table.<br/>
+    <code>UserSettingsItem</code> JPA entity is used for saving state.
+</p>
+<p>
+    To enable <b>settings</b> in a View, it should contain the <code>SettingsFacet</code>. The simplest way to add facet is XML.<br/>
+    Facet with <code>auto="true"</code> tries to find all components with defined ID that supports <b>settings</b>.
+    All these components will save and apply their settings.
+</p>
+<p>
+    Supported components:
+</p>
+<ul>
+    <li>
+        <code>DataGrid</code>: saves order, sorting and visibility of columns
+    </li>
+    <li>
+        <code>Details</code>: saves <code>opened</code> state
+    </li>
+    <li>
+        <code>SimplePagination</code>: saves <code>maxResults</code>, if <code>itemsPerPageVisible</code> attribute is <code>true</code>
+    </li>
+    <li>
+        <code>GenericFilter</code>: saves <code>opened</code> state
+    </li>
+</ul>
+<p>
+    This sample uses <code>DataGrid</code> and <code>Details</code> components to demonstrate how settings facet works.
+    The initial state of the <code>Details</code> component is set to <code>opened</code>.
+    You can change this state, then go to another view and return.
+    The last state will be restored. The same is possible for a <code>DataGrid</code> component.
+</p>
