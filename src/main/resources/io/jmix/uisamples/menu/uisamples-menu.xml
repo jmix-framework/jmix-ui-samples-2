@@ -334,7 +334,7 @@
                 </otherFiles>
             </item>
         </menu>
-        <menu id="html" url="flow-ui/vc">
+        <menu id="html">
             <item id="html-component" page="html" splitEnabled="true">
                 <otherFiles>
                     <file name="META-INF/resources/html/html-component.html"/>
