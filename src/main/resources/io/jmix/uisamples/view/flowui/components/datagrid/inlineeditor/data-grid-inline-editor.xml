@@ -14,28 +14,48 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
-        <checkbox id="editorBufferedCheckbox" label="Editor buffered"/>
-        <dataGrid id="customersDataGrid"
-                  width="100%"
-                  minHeight="20em"
-                  dataContainer="customersDc">
-            <columns>
-                <column property="name" editable="true"/>
-                <column property="lastName" editable="true"/>
-                <column property="email"/>
-                <column property="age"/>
-                <column property="active"/>
-                <column property="grade" editable="true"/>
-                <editorActionsColumn key="bufferedEditorColumn" visible="false">
-                    <editButton text="Edit" icon="PENCIL"/>
-                    <saveButton icon="CHECK" themeNames="success"/>
-                    <cancelButton icon="CLOSE" themeNames="error"/>
-                </editorActionsColumn>
-                <editorActionsColumn key="nonBufferedEditorColumn" visible="true">
-                    <editButton text="Edit" icon="PENCIL"/>
-                    <closeButton text="Close" icon="CLOSE"/>
-                </editorActionsColumn>
-            </columns>
-        </dataGrid>
+        <tabSheet width="100%" height="100%">
+            <tab id="buffered" label="Buffered editor column">
+                <dataGrid id="customersDataGridBuffered"
+                          width="100%"
+                          height="100%"
+                          minHeight="20em"
+                          dataContainer="customersDc">
+                    <columns>
+                        <column property="name" editable="true"/>
+                        <column property="lastName" editable="true"/>
+                        <column property="email"/>
+                        <column property="age"/>
+                        <column property="active"/>
+                        <column property="grade" editable="true"/>
+                        <editorActionsColumn key="bufferedEditorColumn">
+                            <editButton text="Edit" icon="PENCIL"/>
+                            <saveButton icon="CHECK" themeNames="success"/>
+                            <cancelButton icon="CLOSE" themeNames="error"/>
+                        </editorActionsColumn>
+                    </columns>
+                </dataGrid>
+            </tab>
+            <tab id="nonBufferedEditorColumn" label="Non-buffered editor column">
+                <dataGrid id="customersDataGridNonBuffered"
+                          width="100%"
+                          height="100%"
+                          minHeight="20em"
+                          dataContainer="customersDc">
+                    <columns>
+                        <column property="name" editable="true"/>
+                        <column property="lastName" editable="true"/>
+                        <column property="email"/>
+                        <column property="age"/>
+                        <column property="active"/>
+                        <column property="grade" editable="true"/>
+                        <editorActionsColumn key="nonBufferedEditorColumn">
+                            <editButton text="Edit" icon="PENCIL"/>
+                            <closeButton text="Close" icon="CLOSE"/>
+                        </editorActionsColumn>
+                    </columns>
+                </dataGrid>
+            </tab>
+        </tabSheet>
     </layout>
 </view>
