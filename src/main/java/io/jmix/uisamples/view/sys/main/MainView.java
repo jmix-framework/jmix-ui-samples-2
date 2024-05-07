@@ -22,11 +22,11 @@ import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
-import io.jmix.core.Resources;
 import io.jmix.core.session.SessionData;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.app.main.StandardMainView;
@@ -77,6 +77,7 @@ public class MainView extends StandardMainView {
 
     protected List<JmixListMenu.MenuItem> foundItems = new ArrayList<>();
     protected List<String> parentListIdsToExpand = new ArrayList<>();
+    protected boolean showNew;
 
     @Subscribe
     public void onInit(InitEvent event) {
@@ -152,16 +153,18 @@ public class MainView extends StandardMainView {
         for (UiSamplesMenuItem currentItem : parentUiSamplesItem.getChildren()) {
             String id = currentItem.getId();
 
+            ListMenu.MenuItem child;
+
             if (currentItem.isMenu()) {
-                ListMenu.MenuBarItem child = new ListMenu.MenuBarItem(id)
+                child = new ListMenu.MenuBarItem(id)
                         .withTitle(menuConfig.getMenuItemTitle(currentItem.getId()));
 
-                loadMenuItems(currentItem, child);
+                loadMenuItems(currentItem, (ListMenu.MenuBarItem) child);
                 parentSideMenuItem.addChildItem(child);
             } else {
                 MenuItem.MenuItemParameter sampleIdParam = new MenuItem.MenuItemParameter("sampleId", id);
 
-                JmixListMenu.ViewMenuItem child = new JmixListMenu.ViewMenuItem(id)
+                child = new JmixListMenu.ViewMenuItem(id)
                         .withTitle(menuConfig.getMenuItemTitle(currentItem.getId()))
                         .withControllerClass(SampleView.class)
                         .withUrlQueryParameters(currentItem.getUrlQueryParameters())
@@ -169,7 +172,19 @@ public class MainView extends StandardMainView {
 
                 parentSideMenuItem.addChildItem(child);
             }
+
+            if (currentItem.isNew()) {
+                appendNewBadge(child);
+            }
         }
+    }
+
+    protected void appendNewBadge(ListMenu.MenuItem child) {
+        Span newBadge = uiComponents.create(Span.class);
+        newBadge.setText(messageBundle.getMessage("newBadge.text"));
+        newBadge.getElement().getThemeList().add("badge pill small");
+
+        child.setSuffixComponent(newBadge);
     }
 
     protected void initSearchField() {
@@ -203,7 +218,7 @@ public class MainView extends StandardMainView {
         menu.removeAllMenuItems();
         initMenuItems();
 
-        if (!StringUtils.isEmpty(searchValue)) {
+        if (!StringUtils.isEmpty(searchValue) || showNew) {
             findItemsRecursively(menu.getMenuItems(), searchValue);
 
             for (JmixListMenu.MenuItem item : foundItems) {
@@ -214,7 +229,7 @@ public class MainView extends StandardMainView {
                 ListMenu.MenuItem menuItem = menu.getMenuItem(item.getId());
                 if (menuItem.isMenu()
                         && menuItem instanceof ListMenu.MenuBarItem menuBarItem
-                        && !menuBarItem.getChildren().isEmpty()) {
+                        && !menuBarItem.getChildItems().isEmpty()) {
                     expand(menuItem, true);
                 }
             }
@@ -225,11 +240,14 @@ public class MainView extends StandardMainView {
 
     protected void findItemsRecursively(List<JmixListMenu.MenuItem> items, String searchValue) {
         for (JmixListMenu.MenuItem item : items) {
-            if (StringUtils.containsIgnoreCase(item.getTitle(), searchValue)) {
+            if (showNew && item.getSuffixComponent() != null
+                    && (searchValue == null || StringUtils.containsIgnoreCase(item.getTitle(), searchValue))) {
+                foundItems.add(item);
+            } else if (!showNew && StringUtils.containsIgnoreCase(item.getTitle(), searchValue)) {
                 foundItems.add(item);
             }
             if (item.isMenu()) {
-                findItemsRecursively(((ListMenu.MenuBarItem) item).getChildren(), searchValue);
+                findItemsRecursively(((ListMenu.MenuBarItem) item).getChildItems(), searchValue);
             }
         }
     }
@@ -241,13 +259,28 @@ public class MainView extends StandardMainView {
             if (item.isMenu() && item instanceof ListMenu.MenuBarItem menuItem && menuItem.hasChildren()) {
                 if (!menuItem.isOpened()) {
                     menu.removeMenuItem(item);
-                } else if (!StringUtils.containsIgnoreCase(item.getTitle(), searchValue)) {
+                } else if (!StringUtils.containsIgnoreCase(item.getTitle(), searchValue)
+                        || showNew && item.getSuffixComponent() == null) {
                     ListMenu.MenuBarItem menuBarItem = (ListMenu.MenuBarItem) item;
-                    removeNotRequestedItems(menuBarItem.getChildren(), searchValue);
+                    removeNotRequestedItems(menuBarItem.getChildItems(), searchValue);
                 }
-            } else if (!StringUtils.containsIgnoreCase(item.getTitle(), searchValue)) {
+            } else if (!StringUtils.containsIgnoreCase(item.getTitle(), searchValue)
+                    || showNew && item.getSuffixComponent() == null) {
                 menu.removeMenuItem(item);
             }
+        }
+    }
+
+    @Subscribe("showNewBtn")
+    public void onShowNewBtnClick(ClickEvent<Button> event) {
+        showNew = !showNew;
+        search(searchField.getValue());
+
+        Button showNewBtn = event.getSource();
+        if (showNew) {
+            showNewBtn.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+        } else {
+            showNewBtn.removeThemeVariants(ButtonVariant.LUMO_PRIMARY);
         }
     }
 
@@ -271,7 +304,7 @@ public class MainView extends StandardMainView {
         if (item.isMenu()) {
             ((ListMenu.MenuBarItem) item).setOpened(isExpand);
 
-            for (JmixListMenu.MenuItem menuItem : ((ListMenu.MenuBarItem) item).getChildren()) {
+            for (JmixListMenu.MenuItem menuItem : ((ListMenu.MenuBarItem) item).getChildItems()) {
                 if (menuItem.isMenu()) {
                     expand(menuItem, isExpand);
                 }

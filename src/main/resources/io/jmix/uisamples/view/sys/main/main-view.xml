@@ -28,11 +28,14 @@
                 </hbox>
                 <hbox classNames="jmix-menu-tools" spacing="false">
                     <h4 id="menuLabel" text="msg://menu.label"/>
+                    <button id="showNewBtn"
+                          text="msg://menu.showNew"
+                          themeNames="badge small pill tertiary-inline"
+                          classNames="jmix-menu-tools-button me-xs"/>
                     <button id="collapseAllBtn"
                             title="msg://menu.collapseAll"
                             icon="COMPRESS"
-                            themeNames="icon small tertiary"
-                            classNames="jmix-menu-tools-button"/>
+                            themeNames="icon small tertiary"/>
                     <button id="expandAllBtn"
                             title="msg://menu.expandAll"
                             icon="EXPAND"

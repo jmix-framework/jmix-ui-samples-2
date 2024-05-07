@@ -144,6 +144,7 @@ public class UiSamplesMenuConfig {
                     menuItem.setMenu(true);
 
                     loadString(element, "url", menuItem::setUrl);
+                    loadBoolean(element, "isNew", menuItem::setNew);
 
                     loadMenuItems(element, menuItem);
                 } else if ("item".equals(element.getName())) {
@@ -181,8 +182,8 @@ public class UiSamplesMenuConfig {
         loadString(element, "url", menuItem::setUrl);
         loadString(element, "anchor", menuItem::setAnchor);
 
-        loaderSupport.loadBoolean(element, "splitEnabled")
-                .ifPresent(menuItem::setSplitEnabled);
+        loadBoolean(element, "isNew", menuItem::setNew);
+        loadBoolean(element, "splitEnabled", menuItem::setSplitEnabled);
 
         Element otherFilesElement = element.element("otherFiles");
         if (otherFilesElement != null && !otherFilesElement.elements().isEmpty()) {
@@ -319,6 +320,15 @@ public class UiSamplesMenuConfig {
 
     protected void loadString(Element element, String attributeName, Consumer<String> setter) {
         loadString(element, attributeName)
+                .ifPresent(setter);
+    }
+
+    protected Optional<Boolean> loadBoolean(Element element, String attributeName) {
+        return loaderSupport.loadBoolean(element, attributeName);
+    }
+
+    protected void loadBoolean(Element element, String attributeName, Consumer<Boolean> setter) {
+        loadBoolean(element, attributeName)
                 .ifPresent(setter);
     }
 }

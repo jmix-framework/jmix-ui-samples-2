@@ -540,7 +540,7 @@
             <item id="text-area-resizable" page="textArea"/>
             <item id="text-area-theme-variant" page="textArea" splitEnabled="true"/>
         </menu>
-        <menu id="rich-text-editor">
+        <menu id="rich-text-editor" isNew="true">
             <item id="rich-text-editor-simple" page="richTextEditor" splitEnabled="true"/>
             <item id="rich-text-editor-dataaware" page="richTextEditor" splitEnabled="true">
                 <otherFiles>
@@ -600,7 +600,7 @@
                     <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
                 </otherFiles>
             </item>
-            <item id="virtual-list-inline-editor" splitEnabled="true">
+            <item id="virtual-list-inline-editor" splitEnabled="true" isNew="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Food.java"/>
                     <file name="io/jmix/uisamples/view/entity/food/FoodDetailView.java"/>
@@ -691,14 +691,14 @@
     <menu id="facets-root" url="flow-ui/facets">
         <overview id="facets"
                   location="facets/overview/facets-overview.xml"/>
-        <item id="data-load-coordinator" page="dataLoadCoordinator" splitEnabled="true">
+        <item id="data-load-coordinator" page="dataLoadCoordinator" splitEnabled="true" isNew="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/Order.java"/>
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>
         </item>
         <item id="timer-facet" page="timer"/>
-        <item id="url-query-parameters" page="urlQueryParameters" splitEnabled="true">
+        <item id="url-query-parameters" page="urlQueryParameters" splitEnabled="true" isNew="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>
@@ -706,7 +706,7 @@
                 <parameter name="genericFilterCondition" value="property:age_greater_30"/>
             </urlQueryParameters>
         </item>
-        <item id="settings-facet" splitEnabled="true">
+        <item id="settings-facet" splitEnabled="true" isNew="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>
@@ -935,12 +935,12 @@
             </otherFiles>
         </item>
         <item id="copy-to-clipboard"/>
-        <item id="iframe-pdf" splitEnabled="true">
+        <item id="iframe-pdf" splitEnabled="true" isNew="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdf/IframeCustomSecurity.java"/>
             </otherFiles>
         </item>
-        <item id="iframe-pdf-rest" splitEnabled="true">
+        <item id="iframe-pdf-rest" splitEnabled="true" isNew="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdfrest/CustomRestSecurityConfiguration.java"/>
                 <file name="io/jmix/uisamples/rest/CustomFileDownloadController.java"/>

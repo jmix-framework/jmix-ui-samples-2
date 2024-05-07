@@ -30,6 +30,7 @@ public class UiSamplesMenuItem {
     protected String url;
     protected String page;
     protected String anchor;
+    protected boolean isNew;
     protected boolean splitEnabled;
     protected List<String> otherFiles;
     protected List<MenuItem.MenuItemParameter> urlQueryParameters;
@@ -85,6 +86,14 @@ public class UiSamplesMenuItem {
 
     public void setSplitEnabled(boolean splitEnabled) {
         this.splitEnabled = splitEnabled;
+    }
+
+    public boolean isNew() {
+        return isNew;
+    }
+
+    public void setNew(boolean aNew) {
+        isNew = aNew;
     }
 
     public List<String> getOtherFiles() {

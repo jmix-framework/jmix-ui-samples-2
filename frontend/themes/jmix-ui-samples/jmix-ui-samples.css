@@ -1,11 +1,12 @@
 /* Define your styles here */
 
 .jmix-search-field {
-    margin: var(--lumo-space-s);
+    margin: var(--lumo-space-wide-s);
 }
 
 .jmix-menu-tools {
     margin: var(--lumo-space-wide-m);
+    align-items: center;
 }
 
 .jmix-menu-tools-button {

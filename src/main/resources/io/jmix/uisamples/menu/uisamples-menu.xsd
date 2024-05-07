@@ -50,6 +50,7 @@
         <xs:attribute name="url" type="xs:string"/>
         <xs:attribute name="page" type="xs:string"/>
         <xs:attribute name="anchor" type="xs:string"/>
+        <xs:attribute name="isNew" type="xs:boolean"/>
         <xs:attribute name="splitEnabled" type="xs:boolean"/>
     </xs:complexType>
 
@@ -62,6 +63,7 @@
             </xs:choice>
         </xs:sequence>
         <xs:attribute name="id" type="xs:string" use="required"/>
+        <xs:attribute name="isNew" type="xs:boolean"/>
         <xs:attribute name="url" type="xs:string"/>
     </xs:complexType>
 

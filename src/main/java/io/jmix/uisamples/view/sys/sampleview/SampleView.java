@@ -24,6 +24,7 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.Anchor;
+import com.vaadin.flow.component.html.AnchorTarget;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
@@ -360,14 +361,14 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
         Anchor docLink = uiComponents.create(Anchor.class);
         docLink.setText(messageBundle.getMessage("documentation"));
         docLink.setHref(docUrl.toString());
-        docLink.setTarget("_blank");
+        docLink.setTarget(AnchorTarget.BLANK);
         return docLink;
     }
 
     protected Component permalink() {
         JmixButton permalinkButton = uiComponents.create(JmixButton.class);
 
-        permalinkButton.setIcon(VaadinIcon.COPY.create());
+        permalinkButton.setIcon(VaadinIcon.LINK.create());
         permalinkButton.setTitle(messageBundle.getMessage("permalink.title"));
         permalinkButton.addThemeVariants(ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_TERTIARY_INLINE);
         permalinkButton.addClassNames("me-s", "ms-auto");
