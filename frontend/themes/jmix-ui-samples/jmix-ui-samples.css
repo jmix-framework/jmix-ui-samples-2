@@ -55,19 +55,10 @@ vaadin-app-layout::part(drawer) {
     width: 22em;
 }
 
-.about-panels-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2em;
-}
-
-.about-panel {
-    width: 20em;
-}
-
-.about-panel ul {
-    padding: 0;
-    list-style-type: none;
+.overview-main-layout {
+    grid-gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
 }
 
 .overview-tag-grey {

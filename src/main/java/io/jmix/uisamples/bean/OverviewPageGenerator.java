@@ -3,7 +3,6 @@ package io.jmix.uisamples.bean;
 import com.google.common.base.Strings;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.HasText;
-import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
@@ -80,29 +79,19 @@ public class OverviewPageGenerator {
 
     private void initSamples(@Nullable Element samples, VerticalLayout overviewRoot, String messagesPrefix) {
         if (samples != null) {
-            FlexLayout flexLayout = uiComponents.create(FlexLayout.class);
-            flexLayout.setAlignContent(FlexLayout.ContentAlignment.START);
-            flexLayout.setFlexDirection(FlexLayout.FlexDirection.ROW);
-            flexLayout.setFlexWrap(FlexLayout.FlexWrap.WRAP);
-
-            flexLayout.setJustifyContentMode(!isSmallDevice()
-                    ? FlexComponent.JustifyContentMode.START
-                    : FlexComponent.JustifyContentMode.CENTER);
-            flexLayout.addClassName(LumoUtility.Gap.LARGE);
-
-            overviewRoot.add(flexLayout);
+            Div mainLayout = uiComponents.create(Div.class);
+            mainLayout.setWidthFull();
+            mainLayout.setClassName("overview-main-layout");
+            overviewRoot.add(mainLayout);
 
             List<Element> samplesList = samples.elements();
             for (Element sample : samplesList) {
                 VerticalLayout verticalLayout = uiComponents.create(VerticalLayout.class);
                 verticalLayout.setPadding(false);
-                verticalLayout.setWidth("20em");
 
                 verticalLayout.add(createImage(sample.element("image")));
-                verticalLayout.addClassName(LumoUtility.Gap.MEDIUM);
 
                 List<Element> textElements = sample.elements("text");
-
                 for (Element textElement : textElements) {
                     verticalLayout.add(createLabel(textElement, messagesPrefix));
                 }
@@ -112,7 +101,7 @@ public class OverviewPageGenerator {
                     verticalLayout.add(createTags(tagElements));
                 }
 
-                flexLayout.add(verticalLayout);
+                mainLayout.add(verticalLayout);
             }
         }
     }
@@ -145,7 +134,7 @@ public class OverviewPageGenerator {
     private Component createImage(Element imageElement) {
         Image image = uiComponents.create(Image.class);
         image.setSrc(imageElement.attributeValue("src"));
-        image.setWidth("20em");
+        image.setWidthFull();
 
         String route = imageElement.attributeValue("route");
         String urlQueryParameters = imageElement.attributeValue("queryParameters");
@@ -239,11 +228,5 @@ public class OverviewPageGenerator {
 
     private String getMessage(String messagesPrefix, String code) {
         return messages.getMessage(messagesPrefix + "." + code);
-    }
-
-    private boolean isSmallDevice() {
-        // magic number from vaadin-app-layout.js
-        // '--vaadin-app-layout-touch-optimized' style property
-        return UI.getCurrent().getInternals().getExtendedClientDetails().getScreenWidth() < 801;
     }
 }
