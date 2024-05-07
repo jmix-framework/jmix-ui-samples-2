@@ -44,6 +44,7 @@ import io.jmix.uisamples.view.sys.sampleview.SampleView;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -213,7 +214,7 @@ public class MainView extends StandardMainView {
     }
 
     @SuppressWarnings("ConstantConditions")
-    protected void search(String searchValue) {
+    protected void search(@Nullable String searchValue) {
         foundItems.clear();
         menu.removeAllMenuItems();
         initMenuItems();
@@ -238,18 +239,23 @@ public class MainView extends StandardMainView {
         }
     }
 
-    protected void findItemsRecursively(List<JmixListMenu.MenuItem> items, String searchValue) {
+    protected void findItemsRecursively(List<JmixListMenu.MenuItem> items, @Nullable String searchValue) {
         for (JmixListMenu.MenuItem item : items) {
-            if (showNew && item.getSuffixComponent() != null
-                    && (searchValue == null || StringUtils.containsIgnoreCase(item.getTitle(), searchValue))) {
-                foundItems.add(item);
-            } else if (!showNew && StringUtils.containsIgnoreCase(item.getTitle(), searchValue)) {
+            if (hasNewBadgeIfRequired(item) && matchSearchValue(item, searchValue)) {
                 foundItems.add(item);
             }
             if (item.isMenu()) {
                 findItemsRecursively(((ListMenu.MenuBarItem) item).getChildItems(), searchValue);
             }
         }
+    }
+
+    protected boolean hasNewBadgeIfRequired(JmixListMenu.MenuItem item) {
+        return !showNew || item.getSuffixComponent() != null;
+    }
+
+    protected boolean matchSearchValue(JmixListMenu.MenuItem item, @Nullable String searchValue) {
+        return searchValue == null || StringUtils.containsIgnoreCase(item.getTitle(), searchValue);
     }
 
     @SuppressWarnings("ConstantConditions")
