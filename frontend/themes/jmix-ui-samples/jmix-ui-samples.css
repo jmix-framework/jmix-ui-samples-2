@@ -58,7 +58,7 @@ vaadin-app-layout::part(drawer) {
 .overview-main-layout {
     grid-gap: 1.5rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 }
 
 .overview-tag-grey {
