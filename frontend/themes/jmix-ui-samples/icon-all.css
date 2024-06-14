@@ -23,8 +23,9 @@
     background-color: var(--lumo-contrast-5pct);;
 
     width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-gap: 1.5em;
+    grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
 }
 
 .icon-info-description {

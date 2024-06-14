@@ -35,8 +35,6 @@ public class IconAllSample extends StandardView {
 
     protected static final String ICON_ATTRIBUTE_NAME = "icon";
 
-    protected static final String ICON_INFO_WIDTH = "15%";
-
     @ViewComponent
     protected JmixRadioButtonGroup<String> iconSetRadioButtonGroup;
     @ViewComponent
@@ -116,7 +114,6 @@ public class IconAllSample extends StandardView {
         infoDiv.add(iconName, iconFqn);
 
         div.add(vaadinIcon, infoDiv);
-        div.setWidth(ICON_INFO_WIDTH);
         return div;
     }
 
