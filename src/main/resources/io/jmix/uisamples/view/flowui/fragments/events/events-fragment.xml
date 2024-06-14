@@ -1,0 +1,5 @@
+<fragment xmlns="http://jmix.io/schema/flowui/fragment">
+    <content>
+        <hbox padding="false" classNames="flex-row flex-wrap"/>
+    </content>
+</fragment>

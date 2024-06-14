@@ -6,7 +6,9 @@
             <checkbox id="gutterCheckbox" label="Show Gutter" value="true"/>
             <checkbox id="lineNumbersCheckbox" label="Line numbers" value="true"/>
             <checkbox id="printMarginCheckbox" label="Print margin" value="true"/>
+            <checkbox id="useSoftTabsCheckbox" label="Use soft tabs" value="true"/>
+            <checkbox id="textWrapCheckbox" label="Text wrap" value="false"/>
         </hbox>
-        <codeEditor id="codeEditor" width="100%"/>
+        <codeEditor id="codeEditor"/>
     </layout>
 </view>

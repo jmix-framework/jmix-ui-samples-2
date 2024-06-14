@@ -36,4 +36,14 @@ public class CodeEditorSimpleSample extends StandardView {
     protected void onPrintMarginCheckboxValueChange(ComponentValueChangeEvent<JmixCheckbox, Boolean> event) {
         codeEditor.setShowPrintMargin(event.getValue());
     }
+
+    @Subscribe("useSoftTabsCheckbox")
+    protected void onUseSoftTabsCheckboxValueChange(ComponentValueChangeEvent<JmixCheckbox, Boolean> event) {
+        codeEditor.setUseSoftTabs(event.getValue());
+    }
+
+    @Subscribe("textWrapCheckbox")
+    protected void onTextWrapCheckboxValueChange(ComponentValueChangeEvent<JmixCheckbox, Boolean> event) {
+        codeEditor.setTextWrap(event.getValue());
+    }
 }

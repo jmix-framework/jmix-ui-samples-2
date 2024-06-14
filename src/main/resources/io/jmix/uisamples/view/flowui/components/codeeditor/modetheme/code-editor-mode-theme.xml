@@ -4,6 +4,6 @@
             <select id="modeComboBox" label="Mode"/>
             <select id="themeComboBox" label="Theme"/>
         </hbox>
-        <codeEditor id="codeEditor" width="100%"/>
+        <codeEditor id="codeEditor"/>
     </layout>
 </view>

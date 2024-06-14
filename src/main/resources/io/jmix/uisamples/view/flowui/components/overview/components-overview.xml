@@ -74,6 +74,7 @@
             <tag text="dataGrid" route="data-grid-simple" classNames="overview-tag-font overview-tag-yellow"/>
             <tag text="listBox" route="list-box-simple" classNames="overview-tag-font overview-tag-yellow"/>
             <tag text="virtualList" route="virtual-list-simple" classNames="overview-tag-font overview-tag-yellow"/>
+            <tag text="twinColumn" route="twin-column-simple" classNames="overview-tag-font overview-tag-yellow"/>
         </sample>
         <sample>
             <image src="icons/components/filteringAndPagingBackground.png" route="generic-filter-multiple-conditions"/>

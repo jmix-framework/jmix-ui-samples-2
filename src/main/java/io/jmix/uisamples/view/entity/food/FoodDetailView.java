@@ -28,7 +28,7 @@ public class FoodDetailView extends StandardDetailView<Food> {
     private H2 foodTitle;
 
     @Subscribe
-    public void obBeforeShow(final BeforeShowEvent event) {
+    public void onBeforeShow(final BeforeShowEvent event) {
         initIconComponents();
     }
 

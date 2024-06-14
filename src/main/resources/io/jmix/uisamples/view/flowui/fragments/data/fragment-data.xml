@@ -1,0 +1,24 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <collection id="employeesDc"
+                    class="io.jmix.uisamples.entity.Employee">
+            <fetchPlan extends="_base">
+                <property name="address" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="employeesDl">
+                <query>
+                    <![CDATA[select e from Employee e order by e.name]]>
+                </query>
+            </loader>
+        </collection>
+        <instance id="addressDc" class="io.jmix.uisamples.entity.Address"/>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <select id="employeeSelect" label="Employee" itemsContainer="employeesDc"
+                helperText="Select an employee whose address to display" minWidth="20em"/>
+        <fragment class="io.jmix.uisamples.view.flowui.fragments.data.AddressFragment"/>
+    </layout>
+</view>

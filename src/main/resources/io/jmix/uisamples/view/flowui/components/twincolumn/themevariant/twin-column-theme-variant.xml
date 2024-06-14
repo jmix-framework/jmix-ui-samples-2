@@ -1,0 +1,22 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data readOnly="true">
+        <collection id="customersDc"
+                    class="io.jmix.uisamples.entity.Customer"
+                    fetchPlan="_local">
+            <loader id="customersDl">
+                <query>
+                    <![CDATA[select e from Customer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <hbox classNames="buttons-panel">
+            <checkboxGroup id="twinColumnThemeCheckboxGroup" label="ThemeVariants"/>
+        </hbox>
+        <twinColumn id="customersTwinColumn" label="Customers TwinColumn" itemsContainer="customersDc"/>
+    </layout>
+</view>

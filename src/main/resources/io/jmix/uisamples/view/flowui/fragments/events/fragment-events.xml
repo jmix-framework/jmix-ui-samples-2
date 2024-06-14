@@ -1,0 +1,8 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <h4 text="The sequence of events when the fragment created declaratively"/>
+        <fragment id="declarativeFragment" class="io.jmix.uisamples.view.flowui.fragments.events.EventsFragment"/>
+        <hr/>
+        <h4 text="The sequence of events when the fragment created programmatically on InitEvnet"/>
+    </layout>
+</view>

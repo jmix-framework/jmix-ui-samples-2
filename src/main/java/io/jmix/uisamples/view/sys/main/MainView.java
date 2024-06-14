@@ -57,6 +57,8 @@ import java.util.List;
 public class MainView extends StandardMainView {
 
     @ViewComponent
+    protected MessageBundle messageBundle;
+    @ViewComponent
     protected JmixListMenu menu;
     @ViewComponent
     protected TypedTextField<String> searchField;
@@ -71,8 +73,6 @@ public class MainView extends StandardMainView {
     protected ObjectProvider<SessionData> sessionDataProvider;
     @Autowired
     protected MenuNavigationExpander menuNavigationExpander;
-    @Autowired
-    protected MessageBundle messageBundle;
     @Autowired
     protected OverviewPageGenerator overviewPageGenerator;
 
@@ -145,6 +145,10 @@ public class MainView extends StandardMainView {
             loadMenuItems(item, menuItem);
 
             menu.addMenuItem(menuItem);
+
+            if (item.isNew()) {
+                appendNewBadge(menuItem);
+            }
         }
         UI.getCurrent().addAfterNavigationListener(event -> updateTitle());
     }

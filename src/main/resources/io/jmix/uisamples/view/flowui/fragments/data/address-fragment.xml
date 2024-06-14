@@ -1,0 +1,33 @@
+<fragment xmlns="http://jmix.io/schema/flowui/fragment">
+    <data>
+        <instance id="addressDc" class="io.jmix.uisamples.entity.Address"
+                  fetchPlan="_base"
+                  provided="true"/>
+        <collection id="countryDc" class="io.jmix.uisamples.entity.Country"
+                    fetchPlan="_base">
+            <loader id="countryDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from Country e order by e.name]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="cityDc" class="io.jmix.uisamples.entity.City">
+            <fetchPlan extends="_base">
+                <property name="country" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="cityDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from City e where e.country = :country order by e.name]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <content>
+        <formLayout dataContainer="addressDc">
+            <textField maxLength="32" property="zip"/>
+            <entityComboBox id="countryComboBox" property="country" itemsContainer="countryDc"/>
+            <entityComboBox id="cityComboBox" property="city" itemsContainer="cityDc"/>
+            <textField property="addressLine"/>
+        </formLayout>
+    </content>
+</fragment>
