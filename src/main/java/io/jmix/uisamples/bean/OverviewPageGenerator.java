@@ -211,7 +211,7 @@ public class OverviewPageGenerator {
     private Component createAnchor(Element textElement, String messagesPrefix) {
         Anchor anchor = uiComponents.create(Anchor.class);
         anchor.setText(getMessage(messagesPrefix, textElement.attributeValue("message")));
-        anchor.setHref(textElement.attributeValue("href"));
+        anchor.setHref(getMessage(messagesPrefix, textElement.attributeValue("href")));
         anchor.setTarget(AnchorTarget.BLANK);
 
         anchor.addClassName(LumoUtility.FontWeight.BOLD);

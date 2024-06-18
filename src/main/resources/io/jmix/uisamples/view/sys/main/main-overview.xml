@@ -55,10 +55,9 @@
 
     <resources>
         <text message="resources.title" component="h2" classNames="overview-resources-title-padding"/>
-        <text message="resource.website" href="https://jmix.io"/>
-        <text message="resource.documentation" href="https://docs.jmix.io"/>
-        <text message="resource.forum" href="https://forum.jmix.io/"/>
-        <text message="resource.sources"
-              href="https://github.com/jmix-framework/jmix-ui-samples-2"/>
+        <text message="resource.website" href="resource.website.href"/>
+        <text message="resource.documentation" href="resource.documentation.href"/>
+        <text message="resource.forum" href="resource.forum.href"/>
+        <text message="resource.sources" href="resource.sources.href"/>
     </resources>
 </overview>

@@ -26,8 +26,8 @@ import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
+import com.vaadin.flow.server.VaadinSession;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
-import io.jmix.core.session.SessionData;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.app.main.StandardMainView;
 import io.jmix.flowui.component.main.JmixListMenu;
@@ -42,13 +42,14 @@ import io.jmix.uisamples.config.UiSamplesMenuConfig;
 import io.jmix.uisamples.config.UiSamplesMenuItem;
 import io.jmix.uisamples.view.sys.sampleview.SampleView;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.lang.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 @Route("")
 @ViewController("MainView")
@@ -70,11 +71,12 @@ public class MainView extends StandardMainView {
     @Autowired
     protected UiComponents uiComponents;
     @Autowired
-    protected ObjectProvider<SessionData> sessionDataProvider;
-    @Autowired
     protected MenuNavigationExpander menuNavigationExpander;
     @Autowired
     protected OverviewPageGenerator overviewPageGenerator;
+
+    @Value("${UI_SAMPLES_LOCALE:en}")
+    protected String locale;
 
     protected List<JmixListMenu.MenuItem> foundItems = new ArrayList<>();
     protected List<String> parentListIdsToExpand = new ArrayList<>();
@@ -82,10 +84,17 @@ public class MainView extends StandardMainView {
 
     @Subscribe
     public void onInit(InitEvent event) {
+        initLocale();
         initSideMenu();
         initApplicationTitle();
 
         menuNavigationExpander.setExpandCallback(this::expandAllParentRecursively);
+    }
+
+    public void initLocale() {
+        if (!"en".equals(locale)) {
+            VaadinSession.getCurrent().setLocale(Locale.forLanguageTag(locale));
+        }
     }
 
     @Subscribe

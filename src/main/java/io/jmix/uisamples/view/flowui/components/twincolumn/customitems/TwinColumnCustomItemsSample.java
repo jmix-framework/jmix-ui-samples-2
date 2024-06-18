@@ -23,8 +23,7 @@ public class TwinColumnCustomItemsSample extends StandardView {
     @Subscribe
     protected void onInit(InitEvent event) {
         twinColumnWithList.setItems(getItemsList());
-        // todo uncomment after fix
-//        ComponentUtils.setItemsMap(twinColumnWithMap, getItemsMap());
+        ComponentUtils.setItemsMap(twinColumnWithMap, getItemsMap());
         twinColumnWithEnum.setItems(CustomerGrade.class);
     }
 

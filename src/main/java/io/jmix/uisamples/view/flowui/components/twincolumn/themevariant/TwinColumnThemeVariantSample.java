@@ -44,7 +44,7 @@ public class TwinColumnThemeVariantSample extends StandardView {
 
         map.put(TwinColumnVariant.NO_BORDER, "No border");
         map.put(TwinColumnVariant.NO_ROW_BORDER, "No row borders");
-        map.put(TwinColumnVariant.CHECKBOXES, "Checkmarks");
+        map.put(TwinColumnVariant.CHECKMARKS, "Checkmarks");
         map.put(TwinColumnVariant.NO_SPACE_BETWEEN_ACTIONS, "No space between actions");
         return map;
     }
