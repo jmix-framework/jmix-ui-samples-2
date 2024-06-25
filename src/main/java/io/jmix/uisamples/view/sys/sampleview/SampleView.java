@@ -19,7 +19,6 @@ package io.jmix.uisamples.view.sys.sampleview;
 import com.google.common.base.Strings;
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.ComponentUtil;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -35,8 +34,6 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.page.Page;
 import com.vaadin.flow.component.splitlayout.SplitLayout;
 import com.vaadin.flow.component.tabs.Tab;
-import com.vaadin.flow.i18n.LocaleChangeEvent;
-import com.vaadin.flow.i18n.LocaleChangeObserver;
 import com.vaadin.flow.router.AfterNavigationEvent;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.Route;
@@ -74,7 +71,7 @@ import java.util.*;
 @ViewController("SampleView")
 @ViewDescriptor("sample-view.xml")
 @AnonymousAllowed
-public class SampleView extends StandardView implements LocaleChangeObserver {
+public class SampleView extends StandardView {
 
     protected static final String DOC_URL_MESSAGES_KEY = "docUrl";
     protected static final String SRC_ROOT_PATH = "io/jmix/uisamples/view/flowui/";
@@ -418,11 +415,6 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
                 addTab(tabTitle, codeEditor, VaadinIcon.GLOBE.create());
             }
         }
-    }
-
-    @Override
-    public void localeChange(LocaleChangeEvent event) {
-        // TODO: 22.12.2022 implement kremnevda
     }
 
     protected CodeEditorMode getCodeEditorMode(String src) {
