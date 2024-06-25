@@ -70,8 +70,8 @@
             </item>
         </menu>
         <menu id="code-editor">
-            <item id="code-editor-simple" splitEnabled="true"/>
-            <item id="code-editor-mode-theme" splitEnabled="true"/>
+            <item id="code-editor-simple" page="codeEditor" splitEnabled="true"/>
+            <item id="code-editor-mode-theme" page="codeEditor" splitEnabled="true"/>
         </menu>
         <menu id="combobox">
             <item id="combobox-simple" page="comboBox">
@@ -458,6 +458,11 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
+            <item id="property-filter-date-interval-operation" page="propertyFilter" splitEnabled="true" isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                </otherFiles>
+            </item>
             <item id="property-filter-key-value" page="propertyFilter" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Order.java"/>
@@ -540,7 +545,7 @@
             <item id="text-area-resizable" page="textArea"/>
             <item id="text-area-theme-variant" page="textArea" splitEnabled="true"/>
         </menu>
-        <menu id="rich-text-editor" isNew="true">
+        <menu id="rich-text-editor">
             <item id="rich-text-editor-simple" page="richTextEditor" splitEnabled="true"/>
             <item id="rich-text-editor-dataaware" page="richTextEditor" splitEnabled="true">
                 <otherFiles>
@@ -574,6 +579,21 @@
             <item id="time-picker-custom-range" page="timePicker"/>
             <item id="time-picker-theme-variant" page="timePicker"/>
         </menu>
+        <menu id="twin-column" isNew="true">
+            <item id="twin-column-simple"/>
+            <item id="twin-column-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Product.java"/>
+                    <file name="io/jmix/uisamples/entity/ProductTag.java"/>
+                </otherFiles>
+            </item>
+            <item id="twin-column-custom-items" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="twin-column-theme-variant"/>
+        </menu>
         <menu id="value-picker">
             <item id="value-picker-simple" page="valuePicker"/>
             <item id="value-picker-dataaware" page="valuePicker">
@@ -600,7 +620,7 @@
                     <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
                 </otherFiles>
             </item>
-            <item id="virtual-list-inline-editor" splitEnabled="true" isNew="true">
+            <item id="virtual-list-inline-editor" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Food.java"/>
                     <file name="io/jmix/uisamples/view/entity/food/FoodDetailView.java"/>
@@ -688,17 +708,49 @@
         </menu>
     </menu>
 
+    <menu id="fragments-root" isNew="true">
+        <overview id="fragments"
+                  location="fragments/overview/fragments-overview.xml"/>
+        <item id="fragment-simple">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/fragments/simple/button-simple-fragment.xml"/>
+                <file name="io/jmix/uisamples/view/flowui/fragments/simple/ButtonSimpleFragment.java"/>
+            </otherFiles>
+        </item>
+        <item id="fragment-data" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/fragments/data/address-fragment.xml"/>
+                <file name="io/jmix/uisamples/view/flowui/fragments/data/AddressFragment.java"/>
+                <file name="io/jmix/uisamples/entity/Address.java"/>
+                <file name="io/jmix/uisamples/entity/Country.java"/>
+                <file name="io/jmix/uisamples/entity/City.java"/>
+            </otherFiles>
+        </item>
+        <item id="fragment-programmatically-defined">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/fragments/simple/button-simple-fragment.xml"/>
+                <file name="io/jmix/uisamples/view/flowui/fragments/simple/ButtonSimpleFragment.java"/>
+            </otherFiles>
+        </item>
+        <item id="fragment-events">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/fragments/events/events-fragment.xml"/>
+                <file name="io/jmix/uisamples/view/flowui/fragments/events/EventsFragment.java"/>
+            </otherFiles>
+        </item>
+    </menu>
+
     <menu id="facets-root" url="flow-ui/facets">
         <overview id="facets"
                   location="facets/overview/facets-overview.xml"/>
-        <item id="data-load-coordinator" page="dataLoadCoordinator" splitEnabled="true" isNew="true">
+        <item id="data-load-coordinator" page="dataLoadCoordinator" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/Order.java"/>
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>
         </item>
         <item id="timer-facet" page="timer"/>
-        <item id="url-query-parameters" page="urlQueryParameters" splitEnabled="true" isNew="true">
+        <item id="url-query-parameters" page="urlQueryParameters" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>
@@ -706,7 +758,7 @@
                 <parameter name="genericFilterCondition" value="property:age_greater_30"/>
             </urlQueryParameters>
         </item>
-        <item id="settings-facet" splitEnabled="true" isNew="true">
+        <item id="settings-facet" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>
@@ -919,6 +971,7 @@
                 <file name="io/jmix/uisamples/view/flowui/customcomponents/fromscratch/ThemeToggleRegistration.java"/>
             </otherFiles>
         </item>
+        <item id="generic-component-xml" isNew="true"/>
     </menu>
 
     <menu id="cookbook-root" url="flow-ui">
@@ -935,12 +988,12 @@
             </otherFiles>
         </item>
         <item id="copy-to-clipboard"/>
-        <item id="iframe-pdf" splitEnabled="true" isNew="true">
+        <item id="iframe-pdf" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdf/IframeCustomSecurity.java"/>
             </otherFiles>
         </item>
-        <item id="iframe-pdf-rest" splitEnabled="true" isNew="true">
+        <item id="iframe-pdf-rest" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdfrest/CustomRestSecurityConfiguration.java"/>
                 <file name="io/jmix/uisamples/rest/CustomFileDownloadController.java"/>

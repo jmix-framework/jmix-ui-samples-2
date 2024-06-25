@@ -79,14 +79,15 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
     protected static final String DOC_URL_MESSAGES_KEY = "docUrl";
     protected static final String SRC_ROOT_PATH = "io/jmix/uisamples/view/flowui/";
 
+    @ViewComponent
+    protected MessageBundle messageBundle;
+
     @Autowired
     protected UiSamplesMenuConfig menuConfig;
     @Autowired
     protected UiComponents uiComponents;
     @Autowired
     protected ViewRegistry viewRegistry;
-    @Autowired
-    protected MessageBundle messageBundle;
     @Autowired
     protected UiSamplesHelper uiSamplesHelper;
     @Autowired
@@ -131,13 +132,6 @@ public class SampleView extends StandardView implements LocaleChangeObserver {
         }
 
         super.afterNavigation(event);
-    }
-
-    @Subscribe
-    public void onBeforeShow(BeforeShowEvent event) {
-        if (sampleView != null) {
-            ComponentUtil.fireEvent(sampleView, new BeforeShowEvent(sampleView));
-        }
     }
 
     protected void updateSample(String sampleId) {

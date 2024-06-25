@@ -1,0 +1,10 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <component id="button" class="io.jmix.flowui.kit.component.button.JmixButton">
+            <properties>
+                <property name="text" value="Save"/>
+                <property name="icon" value="ARCHIVE" type="ICON"/>
+            </properties>
+        </component>
+    </layout>
+</view>

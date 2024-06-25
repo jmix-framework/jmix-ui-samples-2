@@ -22,6 +22,11 @@
             <text message="dialogsAndNotifications.description"/>
         </sample>
         <sample>
+            <image src="icons/main/fragments.png" route="fragments"/>
+            <text message="fragments.title" route="fragments" component="h4"/>
+            <text message="fragments.description"/>
+        </sample>
+        <sample>
             <image src="icons/main/facets.png" route="facets"/>
             <text message="facets.title" route="facets" component="h4"/>
             <text message="facets.description"/>

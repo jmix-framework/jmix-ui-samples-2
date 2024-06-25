@@ -28,5 +28,11 @@
                   route="custom-component-from-scratch" component="h4"/>
             <text message="componentFromScratch.description"/>
         </sample>
+        <sample>
+            <image src="icons/customcomponents/genericComponentXml.png" route="generic-component-xml"/>
+            <text message="genericComponentXml.title"
+                  route="generic-component-xml" component="h4"/>
+            <text message="genericComponentXml.description"/>
+        </sample>
     </samples>
 </overview>

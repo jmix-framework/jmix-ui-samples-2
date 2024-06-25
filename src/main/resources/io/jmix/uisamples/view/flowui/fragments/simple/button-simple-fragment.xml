@@ -1,0 +1,17 @@
+<fragment xmlns="http://jmix.io/schema/flowui/fragment">
+    <content>
+        <details opened="true" summaryText="Fragment">
+            <hbox>
+                <button id="helloButton"
+                        text="Say hello!"
+                        title="Click me!"/>
+                <button id="saveButton1"
+                        text="Save"
+                        icon="ARCHIVE"/>
+                <button id="saveButton2"
+                        title="Save"
+                        icon="ARCHIVE"/>
+            </hbox>
+        </details>
+    </content>
+</fragment>

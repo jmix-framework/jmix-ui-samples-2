@@ -1,0 +1,20 @@
+<p>
+    A fragment can subscribe to some events in its lifecycle, as well as in the lifecycle of its host-view.<br/>
+    The following events are available for subscription:
+</p>
+<ul>
+    <li><code>Fragment.ReadyEvent</code></li>
+    <li><code>View.InitEvent</code> (host)</li>
+    <li><code>View.BeforeShowEvent</code> (host)</li>
+    <li><code>View.ReadyEvent</code> (host)</li>
+</ul>
+<p>
+    <code>Fragment.ReadyEvent</code> - an event that is fired after the fragment and all its declaratively defined inner
+    components are created, fully initialized and dependency injection completed. Event subscriptions are implemented in
+    such a way that the listeners defined in the host-view are executed first, and then in the fragment.
+</p>
+<p>
+    Note that when creating the fragment programmatically, the <code>View.InitEvent</code> event listener for host-view
+    was not executed. This happened because at that moment the fragment was created and the <code>View.InitEvent</code>
+    event has already fired.
+</p>

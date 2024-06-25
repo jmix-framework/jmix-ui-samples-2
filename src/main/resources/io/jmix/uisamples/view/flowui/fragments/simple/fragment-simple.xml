@@ -1,0 +1,5 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <fragment class="io.jmix.uisamples.view.flowui.fragments.simple.ButtonSimpleFragment"/>
+    </layout>
+</view>

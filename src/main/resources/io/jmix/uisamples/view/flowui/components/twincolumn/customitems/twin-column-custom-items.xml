@@ -1,0 +1,10 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout classNames="flex-row flex-wrap">
+        <twinColumn id="twinColumnWithList"
+                    label="Items List"/>
+        <twinColumn id="twinColumnWithMap"
+                    label="Items Map"/>
+        <twinColumn id="twinColumnWithEnum"
+                    label="Items Enum"/>
+    </layout>
+</view>

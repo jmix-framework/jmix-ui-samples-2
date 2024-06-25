@@ -1,0 +1,19 @@
+<p>
+    To create a <b>Fragment</b>, you need to create a class that extends the <code>io.jmix.flowui.fragment.Fragment</code> class.
+    Note that the <b>Fragment</b> is typed by a component, which will be the root for your component.
+    Also, this component must be specified as content in the <b>XML markup</b>. In this case, it is the <code>JmixDetails</code> component.<br/>
+    To bind XML file to a fragment-component, use the <code>@FragmentDescriptor</code> annotation (see <code>FragmentSimpleSample.java</code>).
+</p>
+<p>
+    To define a <b>Fragment</b> component in a view, use the <code>fragment</code> tag.
+    You will need to provide the fully qualified class name of your fragment (see <code>fragment-simple.xml</code>).
+</p>
+<p>
+    Just like for views, fragments have a declarative implementation of subscriptions adn installers for components.<br/>
+    You can use <code>@Subscribe</code>, <code>@Install</code> and <code>@Supply</code> annotations for this.
+</p>
+<p>
+    Please note that components inside the fragment are not assigned actual IDs.
+    Hidden IDs are set for them, and <code>FragmentUtils</code> is used to work with them.
+    This is done to avoid conflict between the components and their IDs located on host views.
+</p>

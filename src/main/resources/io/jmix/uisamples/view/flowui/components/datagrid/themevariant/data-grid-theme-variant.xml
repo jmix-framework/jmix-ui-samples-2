@@ -14,7 +14,7 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
-        <hbox classNames="buttons-panel items-center">
+        <hbox classNames="buttons-panel">
             <checkboxGroup id="gridSettingsCheckboxGroup" label="ThemeVariants"/>
         </hbox>
         <dataGrid id="customersDataGrid"

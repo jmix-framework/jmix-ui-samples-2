@@ -1,0 +1,18 @@
+<p>
+    Fragments, like views, can work with data. <br/> This is done using the <code>&lt;data/&gt;</code> tag in the
+    fragment descriptor. <br/>
+    A fragment can have its own data containers and loaders, defined in the <code>&lt;data/&gt;</code> XML element.
+    At the same time, the framework creates a single instance of <code>DataContext</code> for the view and all its
+    fragments.
+</p>
+<p>
+    Therefore, all loaded entities are merged to the same context and their changes are saved when the host view is
+    committed.
+    Data components defined with <code>provided="true"</code> attribute which means that <b>the container with the same
+    id</b> must exist in a host view or enclosing fragment, i.e. it must be provided from outside.
+</p>
+<p>
+    In this sample, a <b>InstanceContainer</b> is defined in the host view. In the fragment, a
+    <b>InstanceContainer</b> has been created with the same ID and <code>provided="true"</code> attribute.
+    Thus, the host-view container will be used in the fragment.
+</p>

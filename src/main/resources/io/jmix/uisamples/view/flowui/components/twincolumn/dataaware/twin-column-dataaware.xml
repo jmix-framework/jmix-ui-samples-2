@@ -1,0 +1,29 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data readOnly="true">
+        <instance id="productDc"
+                  class="io.jmix.uisamples.entity.Product"
+                  fetchPlan="_local">
+        </instance>
+        <collection id="productTagsDc"
+                    class="io.jmix.uisamples.entity.ProductTag"
+                    fetchPlan="_local">
+            <loader id="productTagsDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from ProductTag e order by e.name]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <twinColumn id="twinColumn" label="Tags" optionsColumnLabel="Available tags"
+                    selectedItemsColumnLabel="Selected tags" itemsContainer="productTagsDc"
+                    dataContainer="productDc" property="tags"/>
+        <hbox>
+            <span text="Value in the container:"/>
+            <span id="spanValue"/>
+        </hbox>
+    </layout>
+</view>

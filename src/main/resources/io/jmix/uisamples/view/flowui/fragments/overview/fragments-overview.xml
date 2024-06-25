@@ -1,0 +1,28 @@
+<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
+    <header>
+        <text message="title" component="h2"/>
+        <text message="description"/>
+    </header>
+    <samples>
+        <sample>
+            <image src="icons/fragments/simple.png" route="fragment-simple"/>
+            <text message="simple.title" route="fragment-simple" component="h4"/>
+            <text message="simple.description"/>
+        </sample>
+        <sample>
+            <image src="icons/fragments/data.png" route="fragment-data"/>
+            <text message="data.title" route="fragment-data" component="h4"/>
+            <text message="data.description"/>
+        </sample>
+        <sample>
+            <image src="icons/fragments/programmatic.png" route="fragment-programmatically-defined"/>
+            <text message="programmatic.title" route="fragment-programmatically-defined" component="h4"/>
+            <text message="programmatic.description"/>
+        </sample>
+        <sample>
+            <image src="icons/fragments/events.png" route="fragment-events"/>
+            <text message="events.title" route="fragment-events" component="h4"/>
+            <text message="events.description"/>
+        </sample>
+    </samples>
+</overview>

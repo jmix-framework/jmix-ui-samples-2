@@ -16,6 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class AddressUsage extends StandardView {
 
     @ViewComponent
+    protected MessageBundle messageBundle;
+    @ViewComponent
     protected InstanceContainer<Address> addressDc;
     @ViewComponent
     protected InstanceContainer<Employee> employeeDc;
@@ -24,8 +26,6 @@ public class AddressUsage extends StandardView {
 
     @Autowired
     protected UiComponents uiComponents;
-    @Autowired
-    protected MessageBundle messageBundle;
 
     @Subscribe
     protected void onInit(InitEvent event) {
