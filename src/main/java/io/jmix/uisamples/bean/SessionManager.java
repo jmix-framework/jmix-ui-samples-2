@@ -17,10 +17,16 @@
 package io.jmix.uisamples.bean;
 
 import com.vaadin.flow.server.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+import java.util.Locale;
 
 @Component("uisamples_SessionManager")
 public class SessionManager implements VaadinServiceInitListener {
+
+    @Value("${UI_SAMPLES_LOCALE:en}")
+    protected String locale;
 
     @Override
     public void serviceInit(ServiceInitEvent event) {
@@ -29,5 +35,14 @@ public class SessionManager implements VaadinServiceInitListener {
             messages.setSessionExpiredNotificationEnabled(true);
             return messages;
         });
+        event.getSource().addSessionInitListener(this::onSessionInit);
+    }
+
+    protected void onSessionInit(SessionInitEvent sessionInitEvent) {
+        initLocale();
+    }
+
+    public void initLocale() {
+        VaadinSession.getCurrent().setLocale(Locale.forLanguageTag(locale));
     }
 }

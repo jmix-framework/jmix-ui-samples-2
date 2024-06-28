@@ -75,26 +75,16 @@ public class MainView extends StandardMainView {
     @Autowired
     protected OverviewPageGenerator overviewPageGenerator;
 
-    @Value("${UI_SAMPLES_LOCALE:en}")
-    protected String locale;
-
     protected List<JmixListMenu.MenuItem> foundItems = new ArrayList<>();
     protected List<String> parentListIdsToExpand = new ArrayList<>();
     protected boolean showNew;
 
     @Subscribe
     public void onInit(InitEvent event) {
-        initLocale();
         initSideMenu();
         initApplicationTitle();
 
         menuNavigationExpander.setExpandCallback(this::expandAllParentRecursively);
-    }
-
-    public void initLocale() {
-        if (!"en".equals(locale)) {
-            VaadinSession.getCurrent().setLocale(Locale.forLanguageTag(locale));
-        }
     }
 
     @Subscribe
