@@ -545,14 +545,14 @@
             <item id="text-area-resizable" page="textArea"/>
             <item id="text-area-theme-variant" page="textArea" splitEnabled="true"/>
         </menu>
-        <menu id="rich-text-editor">
-            <item id="rich-text-editor-simple" page="richTextEditor" splitEnabled="true"/>
-            <item id="rich-text-editor-dataaware" page="richTextEditor" splitEnabled="true">
-                <otherFiles>
-                    <file name="io/jmix/uisamples/entity/Order.java"/>
-                </otherFiles>
-            </item>
-            <item id="rich-text-editor-theme-variant" page="richTextEditor" splitEnabled="true"/>
+<!--        <menu id="rich-text-editor">-->
+<!--            <item id="rich-text-editor-simple" page="richTextEditor" splitEnabled="true"/>-->
+<!--            <item id="rich-text-editor-dataaware" page="richTextEditor" splitEnabled="true">-->
+<!--                <otherFiles>-->
+<!--                    <file name="io/jmix/uisamples/entity/Order.java"/>-->
+<!--                </otherFiles>-->
+<!--            </item>-->
+<!--            <item id="rich-text-editor-theme-variant" page="richTextEditor" splitEnabled="true"/>-->
         </menu>
         <menu id="text-field">
             <item id="text-field-simple" page="textField"/>
