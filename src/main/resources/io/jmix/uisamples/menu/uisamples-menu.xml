@@ -553,7 +553,7 @@
 <!--                </otherFiles>-->
 <!--            </item>-->
 <!--            <item id="rich-text-editor-theme-variant" page="richTextEditor" splitEnabled="true"/>-->
-<!--        </menu>-->
+        </menu>
         <menu id="text-field">
             <item id="text-field-simple" page="textField"/>
             <item id="text-field-dataaware" page="textField">
