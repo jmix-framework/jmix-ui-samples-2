@@ -4,7 +4,7 @@
             <checkbox id="reorderableCheckbox" label="Reorderable"/>
             <checkbox id="selectAllButtonsCheckbox" label="Select all buttons visible"/>
         </hbox>
-        <twinColumn id="twinColumn" label="Shopping list" optionsColumnLabel="Need to buy"
+        <twinColumn id="twinColumn" label="Shopping list" itemsColumnLabel="Need to buy"
                     selectedItemsColumnLabel="Purchased"/>
     </layout>
 </view>

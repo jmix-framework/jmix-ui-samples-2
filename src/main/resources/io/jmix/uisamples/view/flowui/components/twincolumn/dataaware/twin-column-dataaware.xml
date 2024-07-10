@@ -18,7 +18,7 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
-        <twinColumn id="twinColumn" label="Tags" optionsColumnLabel="Available tags"
+        <twinColumn id="twinColumn" label="Tags" itemsColumnLabel="Available tags"
                     selectedItemsColumnLabel="Selected tags" itemsContainer="productTagsDc"
                     dataContainer="productDc" property="tags"/>
         <hbox>
