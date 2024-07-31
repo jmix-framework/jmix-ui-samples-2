@@ -765,76 +765,76 @@
         </item>
     </menu>
 
-    <menu id="charts-root">
+    <menu id="charts-root" url="charts">
         <overview id="charts"
                   location="charts/overview/charts-overview.xml"/>
         <menu id="series">
             <menu id="line-series">
-                <item id="line-series-simple" splitEnabled="true">
+                <item id="line-series-simple" page="chart-component" anchor="series" splitEnabled="true">
                     <otherFiles>
                         <file name="io/jmix/uisamples/entity/DateValue.java"/>
                     </otherFiles>
                 </item>
-                <item id="smoothed-line-series" splitEnabled="true">
+                <item id="smoothed-line-series" page="chart-component" anchor="series" splitEnabled="true">
                     <otherFiles>
                         <file name="io/jmix/uisamples/entity/DateValue.java"/>
                     </otherFiles>
                 </item>
-                <item id="stacked-area-series" splitEnabled="true">
+                <item id="stacked-area-series" page="chart-component" anchor="series" splitEnabled="true">
                     <otherFiles>
                         <file name="io/jmix/uisamples/entity/TransportCount.java"/>
                     </otherFiles>
                 </item>
-                <item id="multiple-axes-line-series" splitEnabled="true">
+                <item id="multiple-axes-line-series" page="chart-component" anchor="series" splitEnabled="true">
                     <otherFiles>
                         <file name="io/jmix/uisamples/entity/DateValueVolume.java"/>
                     </otherFiles>
                 </item>
             </menu>
             <menu id="bar-series">
-                <item id="bar-series-simple" splitEnabled="true">
+                <item id="bar-series-simple" page="chart-component" anchor="series" splitEnabled="true">
                     <otherFiles>
                         <file name="io/jmix/uisamples/entity/CountryGrowth.java"/>
                     </otherFiles>
                 </item>
-                <item id="stacked-bar-series" splitEnabled="true">
+                <item id="stacked-bar-series" page="chart-component" anchor="series" splitEnabled="true">
                     <otherFiles>
                         <file name="io/jmix/uisamples/entity/TransportCount.java"/>
                     </otherFiles>
                 </item>
             </menu>
             <menu id="pie-series">
-                <item id="pie-series-simple" splitEnabled="true">
+                <item id="pie-series-simple" page="chart-component" anchor="series" splitEnabled="true">
                     <otherFiles>
                         <file name="io/jmix/uisamples/entity/CountryLitres.java"/>
                     </otherFiles>
                 </item>
-                <item id="donut-series" splitEnabled="true"/>
-                <item id="pie-rose-type" splitEnabled="true">
+                <item id="donut-series" page="chart-component" anchor="series" splitEnabled="true"/>
+                <item id="pie-rose-type" page="chart-component" anchor="series" splitEnabled="true">
                     <otherFiles>
                         <file name="io/jmix/uisamples/entity/CountryLitres.java"/>
                     </otherFiles>
                 </item>
             </menu>
             <menu id="scatter-series">
-                <item id="scatter-series-simple" splitEnabled="true">
+                <item id="scatter-series-simple" page="chart-component" anchor="series" splitEnabled="true">
                     <otherFiles>
                         <file name="io/jmix/uisamples/entity/Point.java"/>
                     </otherFiles>
                 </item>
-                <item id="effect-scatter-series" splitEnabled="true"/>
+                <item id="effect-scatter-series" page="chart-component" anchor="series" splitEnabled="true"/>
             </menu>
             <menu id="radar-series">
-                <item id="radar-series-simple" splitEnabled="true">
+                <item id="radar-series-simple" page="chart-component" anchor="series" splitEnabled="true">
                     <otherFiles>
                         <file name="io/jmix/uisamples/entity/CountryLitres.java"/>
                     </otherFiles>
                 </item>
-                <item id="radar-series-multiple" splitEnabled="true"/>
+                <item id="radar-series-multiple" page="chart-component" anchor="series" splitEnabled="true"/>
             </menu>
             <menu id="candlestick-series">
-                <item id="candlestick-series-simple" splitEnabled="true"/>
-                <item id="candlestick-series-volume" splitEnabled="true">
+                <item id="candlestick-series-simple" page="chart-component" anchor="series" splitEnabled="true"/>
+                <item id="candlestick-series-volume" page="chart-component" anchor="series" splitEnabled="true">
                     <otherFiles>
                         <file name="io/jmix/uisamples/entity/StockData.java"/>
                         <file name="io/jmix/uisamples/bean/StockDataGenerator.java"/>
@@ -842,27 +842,27 @@
                 </item>
             </menu>
             <menu id="funnel-series">
-                <item id="funnel-series-simple" splitEnabled="true">
+                <item id="funnel-series-simple" page="chart-component" anchor="series" splitEnabled="true">
                     <otherFiles>
                         <file name="io/jmix/uisamples/entity/TitleValue.java"/>
                     </otherFiles>
                 </item>
-                <item id="funnel-alignment" splitEnabled="true"/>
+                <item id="funnel-alignment" page="chart-component" anchor="series" splitEnabled="true"/>
             </menu>
             <menu id="gauge-series">
-                <item id="gauge-series-simple" splitEnabled="true"/>
-                <item id="gauge-series-multiple-needles" splitEnabled="true"/>
-                <item id="gauge-series-colorized" splitEnabled="true"/>
+                <item id="gauge-series-simple" page="chart-component" anchor="series" splitEnabled="true"/>
+                <item id="gauge-series-multiple-needles" page="chart-component" anchor="series" splitEnabled="true"/>
+                <item id="gauge-series-colorized" page="chart-component" anchor="series" splitEnabled="true"/>
             </menu>
         </menu>
         <menu id="data-items">
-            <item id="entity-data-item" splitEnabled="true">
+            <item id="entity-data-item" page="data-binding" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/ValueDescription.java"/>
                 </otherFiles>
             </item>
-            <item id="map-data-item" splitEnabled="true"/>
-            <item id="simple-data-item" splitEnabled="true"/>
+            <item id="map-data-item" page="data-binding" splitEnabled="true"/>
+            <item id="simple-data-item" page="data-binding" splitEnabled="true"/>
         </menu>
         <menu id="incremental-update">
             <item id="automatic-data-update" splitEnabled="true">
@@ -877,59 +877,60 @@
             </item>
         </menu>
         <menu id="other">
-            <item id="chart-key-value-container" splitEnabled="true">
+            <item id="chart-key-value-container" page="chart-component" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Order.java"/>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="chart-native-json" splitEnabled="true"/>
-            <item id="chart-export" splitEnabled="true"/>
+            <item id="chart-native-json" page="chart-component" anchor="native-json" splitEnabled="true"/>
+            <item id="chart-export" page="chart-component" anchor="tool-box" splitEnabled="true"/>
         </menu>
     </menu>
 
-    <menu id="geo-map-root">
+    <menu id="geo-map-root" url="maps">
         <overview id="maps"
                   location="maps/overview/maps-overview.xml"/>
-        <item id="geo-map-actions" splitEnabled="true"/>
-        <item id="geo-map-point" splitEnabled="true">
+        <item id="geo-map-actions" page="events" splitEnabled="true"/>
+        <item id="geo-map-point" page="features-geometries" anchor="point-feature" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/Marker.java"/>
             </otherFiles>
         </item>
-        <item id="geo-map-polygon" splitEnabled="true">
+        <item id="geo-map-polygon" page="features-geometries" anchor="polygon-feature" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/view/flowui/maps/polygon/PolygonFeatures.java"/>
             </otherFiles>
         </item>
-        <item id="geo-map-line-string" splitEnabled="true"/>
-        <item id="geo-map-multi-geometries" splitEnabled="true">
+        <item id="geo-map-line-string" page="features-geometries" anchor="line-string-feature" splitEnabled="true"/>
+        <item id="geo-map-multi-geometries" page="features-geometries" anchor="multi-line-string-feature"
+              splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/view/flowui/maps/multigeometry/MultiGeometries.java"/>
             </otherFiles>
         </item>
-        <item id="geo-map-point-styling" splitEnabled="true"/>
-        <item id="geo-map-polygon-styling" splitEnabled="true">
+        <item id="geo-map-point-styling" page="style" anchor="_style_for_pointfeature" splitEnabled="true"/>
+        <item id="geo-map-polygon-styling" page="style" anchor="_style_for_polygonfeature" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/view/flowui/maps/polygon/PolygonFeatures.java"/>
             </otherFiles>
         </item>
-        <item id="geo-map-line-string-styling" splitEnabled="true">
+        <item id="geo-map-line-string-styling" page="style" anchor="_style_for_linestringfeature" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/view/flowui/maps/linestringstyle/LineStringCoordinates.java"/>
             </otherFiles>
         </item>
-        <item id="geo-map-cluster" splitEnabled="true">
+        <item id="geo-map-cluster" page="high-density-data-visualization" anchor="clustering" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/Location.java"/>
             </otherFiles>
         </item>
-        <item id="geo-map-heatmap" splitEnabled="true">
+        <item id="geo-map-heatmap" page="high-density-data-visualization" anchor="heatmap" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/HeatPoint.java"/>
             </otherFiles>
         </item>
-        <item id="geo-map-static-image" splitEnabled="true"/>
+        <item id="geo-map-static-image" page="layers-sources" anchor="image-layer" splitEnabled="true"/>
     </menu>
 
     <menu id="custom-components-root" url="flow-ui">
