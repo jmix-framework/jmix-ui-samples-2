@@ -1,0 +1,45 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:kanban="http://jmix.io/schema/kanban/ui">
+    <data readOnly="true">
+        <collection id="kanbanTasksDc" class="io.jmix.uisamples.entity.KanbanTask">
+            <fetchPlan extends="_base"/>
+            <loader id="kanbanTasksDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from KanbanTask e order by e.name asc]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <hbox classNames="buttons-panel">
+            <button id="showAllBtn" text="msg://showAllBtn.text" icon="CIRCLE"/>
+            <button id="resetExecutedBtn" text="msg://resetExecutedBtn.text" icon="REFRESH"/>
+        </hbox>
+        <hbox width="100%" height="100%">
+            <kanban:kanban id="kanban" dataContainer="kanbanTasksDc"
+                           classNames="flex-grow"
+                           columnActionsEnabled="true"
+                           collapsible="true"
+                           columnReorderingAllowed="true"
+                           taskUserIconVisible="false"
+                           taskTagsVisible="true">
+                <kanban:propertiesMapping id="id"
+                                          status="status"
+                                          text="name"
+                                          color="color"
+                                          tags="tags"/>
+                <kanban:columns>
+                    <kanban:column dataField="todo" label="msg://kanban.column.todo"/>
+                    <kanban:column dataField="in_progress" label="msg://kanban.column.in_progress"/>
+                    <kanban:column dataField="testing" label="msg://kanban.column.testing"/>
+                    <kanban:column dataField="done" label="msg://kanban.column.done"/>
+                </kanban:columns>
+            </kanban:kanban>
+            <checkboxGroup id="eventsCheckboxGroup" label="msg://eventsCheckboxGroup.label" themeNames="vertical"
+                           readOnly="true" classNames="flex-grow"/>
+        </hbox>
+    </layout>
+</view>

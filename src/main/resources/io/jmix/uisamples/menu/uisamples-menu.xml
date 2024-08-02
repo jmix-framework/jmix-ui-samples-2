@@ -948,7 +948,27 @@
                 <file name="io/jmix/uisamples/entity/TaskPriority.java"/>
             </otherFiles>
         </item>
+        <item id="kanban-data-saving" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
+                <file name="io/jmix/uisamples/entity/KanbanUser.java"/>
+                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
+                <file name="io/jmix/uisamples/entity/TaskPriority.java"/>
+            </otherFiles>
+        </item>
         <item id="kanban-column-actions" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
+                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
+            </otherFiles>
+        </item>
+        <item id="kanban-events" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
+                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
+            </otherFiles>
+        </item>
+        <item id="kanban-hierarchical-columns" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
                 <file name="io/jmix/uisamples/entity/TaskStatus.java"/>

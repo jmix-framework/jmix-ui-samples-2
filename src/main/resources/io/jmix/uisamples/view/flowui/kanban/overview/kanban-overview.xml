@@ -15,9 +15,24 @@
             <text message="data.description"/>
         </sample>
         <sample>
+            <image src="icons/kanban/dataSaving.png" route="kanban-data-saving"/>
+            <text message="data-saving.title" route="kanban-data-saving" component="h4"/>
+            <text message="data-saving.description"/>
+        </sample>
+        <sample>
             <image src="icons/kanban/columnActions.png" route="kanban-column-actions"/>
             <text message="column-actions.title" route="kanban-column-actions" component="h4"/>
             <text message="column-actions.description"/>
+        </sample>
+        <sample>
+            <image src="icons/kanban/events.png" route="kanban-events"/>
+            <text message="events.title" route="kanban-events" component="h4"/>
+            <text message="events.description"/>
+        </sample>
+        <sample>
+            <image src="icons/kanban/hierarchicalColumns.png" route="kanban-hierarchical-columns"/>
+            <text message="hierarchical-columns.title" route="kanban-hierarchical-columns" component="h4"/>
+            <text message="hierarchical-columns.description"/>
         </sample>
     </samples>
 </overview>
