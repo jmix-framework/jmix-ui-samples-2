@@ -1,0 +1,49 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:kanban="http://jmix.io/schema/kanban/ui">
+    <data readOnly="true">
+        <collection id="kanbanTasksDc" class="io.jmix.uisamples.entity.KanbanTask">
+            <fetchPlan extends="_base"/>
+            <loader id="kanbanTasksDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from KanbanTask e order by e.name asc]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <genericFilter dataLoader="kanbanTasksDl"/>
+        <hbox classNames="buttons-panel">
+            <button id="createBtn" action="kanban.create"/>
+            <button id="editBtn" action="kanban.edit"/>
+            <button id="removeBtn" action="kanban.remove"/>
+        </hbox>
+        <kanban:kanban id="kanban" dataContainer="kanbanTasksDc"
+                       width="100%" height="100%" taskUserIconVisible="false">
+            <kanban:propertiesMapping id="id" status="status" text="name"/>
+
+            <kanban:actions>
+                <kanban:action id="create" type="list_create">
+                    <kanban:properties>
+                        <kanban:property name="openMode" value="DIALOG"/>
+                    </kanban:properties>
+                </kanban:action>
+                <kanban:action id="edit" type="list_edit">
+                    <kanban:properties>
+                        <kanban:property name="openMode" value="DIALOG"/>
+                    </kanban:properties>
+                </kanban:action>
+                <kanban:action id="remove" type="list_remove"/>
+            </kanban:actions>
+
+            <kanban:columns>
+                <kanban:column dataField="todo" label="msg://kanban.column.todo"/>
+                <kanban:column dataField="in_progress" label="msg://kanban.column.in_progress"/>
+                <kanban:column dataField="testing" label="msg://kanban.column.testing"/>
+                <kanban:column dataField="done" label="msg://kanban.column.done"/>
+            </kanban:columns>
+        </kanban:kanban>
+    </layout>
+</view>

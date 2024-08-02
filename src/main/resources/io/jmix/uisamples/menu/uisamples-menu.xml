@@ -458,7 +458,7 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="property-filter-date-interval-operation" page="propertyFilter" splitEnabled="true" isNew="true">
+            <item id="property-filter-date-interval-operation" page="propertyFilter" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Order.java"/>
                 </otherFiles>
@@ -579,7 +579,7 @@
             <item id="time-picker-custom-range" page="timePicker"/>
             <item id="time-picker-theme-variant" page="timePicker"/>
         </menu>
-        <menu id="twin-column" isNew="true">
+        <menu id="twin-column">
             <item id="twin-column-simple"/>
             <item id="twin-column-dataaware">
                 <otherFiles>
@@ -708,7 +708,7 @@
         </menu>
     </menu>
 
-    <menu id="fragments-root" isNew="true">
+    <menu id="fragments-root">
         <overview id="fragments"
                   location="fragments/overview/fragments-overview.xml"/>
         <item id="fragment-simple">
@@ -889,8 +889,7 @@
     </menu>
 
     <menu id="geo-map-root" url="maps">
-        <overview id="maps"
-                  location="maps/overview/maps-overview.xml"/>
+        <overview id="maps" location="maps/overview/maps-overview.xml"/>
         <item id="geo-map-actions" page="events" splitEnabled="true"/>
         <item id="geo-map-point" page="features-geometries" anchor="point-feature" splitEnabled="true">
             <otherFiles>
@@ -933,6 +932,30 @@
         <item id="geo-map-static-image" page="layers-sources" anchor="image-layer" splitEnabled="true"/>
     </menu>
 
+    <menu id="kanban-root" isNew="true">
+        <overview id="kanban" location="kanban/overview/kanban-overview.xml"/>
+        <item id="kanban-simple" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
+                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
+            </otherFiles>
+        </item>
+        <item id="kanban-data" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
+                <file name="io/jmix/uisamples/entity/KanbanUser.java"/>
+                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
+                <file name="io/jmix/uisamples/entity/TaskPriority.java"/>
+            </otherFiles>
+        </item>
+        <item id="kanban-column-actions" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
+                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
+            </otherFiles>
+        </item>
+    </menu>
+
     <menu id="custom-components-root" url="flow-ui">
         <overview id="custom-component" location="customcomponents/overview/custom-components-overview.xml"/>
         <item id="composite-component" page="visual-components" splitEnabled="true">
@@ -972,7 +995,7 @@
                 <file name="io/jmix/uisamples/view/flowui/customcomponents/fromscratch/ThemeToggleRegistration.java"/>
             </otherFiles>
         </item>
-        <item id="generic-component-xml" isNew="true"/>
+        <item id="generic-component-xml"/>
     </menu>
 
     <menu id="cookbook-root" url="flow-ui">

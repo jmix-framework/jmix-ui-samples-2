@@ -1,0 +1,22 @@
+<p>Компонент доски <b>Kanban</b> имеет возможность привязки данных. Для этого следует указать атрибут <code>dataContainer</code>.
+    Вы можете фильтровать и редактировать данные в контейнере, все изменения будут отображены в компоненте.</p>
+<p>Чтобы задать соответствие атрибутов отображаемой сущности с атрибутами карточки задачи Kanban необходимо определить
+    объект <code>propertiesMapping</code>.</p>
+<p>Карточка задачи Kanban имеет следующий набор атрибутов:</p>
+<ul>
+    <li><code>id</code> (обязательный)</li>
+    <li><code>status</code> (обязательный)</li>
+    <li><code>text</code> (обязательный)</li>
+    <li><code>username</code></li>
+    <li><code>userAvatar</code></li>
+    <li><code>color</code></li>
+    <li><code>dueDate</code></li>
+    <li><code>progress</code></li>
+    <li><code>tags</code></li>
+    <li><code>priority</code></li>
+    <li><code>swimlane</code></li>
+</ul>
+<p>Правилами отображения соответствующих элементов на карточки задачи Kanban можно управлять с помощью свойств
+    компонента. Обязательные атрибуты имеют стандартные значения. Если объект <code>propertiesMapping</code> не указан,
+    при определении соответствия в сущности будут использоваться поля <code>id</code>, <code>status</code> и
+    <code>text</code>.</p>

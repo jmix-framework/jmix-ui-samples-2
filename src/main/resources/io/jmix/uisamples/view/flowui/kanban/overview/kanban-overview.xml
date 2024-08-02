@@ -1,0 +1,23 @@
+<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
+    <header>
+        <text message="title" component="h2"/>
+        <text message="description"/>
+    </header>
+    <samples>
+        <sample>
+            <image src="icons/kanban/simple.png" route="kanban-simple"/>
+            <text message="simple.title" route="kanban-simple" component="h4"/>
+            <text message="simple.description"/>
+        </sample>
+        <sample>
+            <image src="icons/kanban/data.png" route="kanban-data"/>
+            <text message="data.title" route="kanban-data" component="h4"/>
+            <text message="data.description"/>
+        </sample>
+        <sample>
+            <image src="icons/kanban/columnActions.png" route="kanban-column-actions"/>
+            <text message="column-actions.title" route="kanban-column-actions" component="h4"/>
+            <text message="column-actions.description"/>
+        </sample>
+    </samples>
+</overview>
