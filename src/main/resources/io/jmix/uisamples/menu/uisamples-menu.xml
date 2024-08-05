@@ -974,6 +974,18 @@
                 <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
             </otherFiles>
         </item>
+        <item id="kanban-columns-enum" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
+                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
+            </otherFiles>
+        </item>
+        <item id="kanban-styling" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
+                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
+            </otherFiles>
+        </item>
     </menu>
 
     <menu id="custom-components-root" url="flow-ui">

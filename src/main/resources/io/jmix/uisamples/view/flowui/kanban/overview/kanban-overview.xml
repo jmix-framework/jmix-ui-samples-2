@@ -34,5 +34,15 @@
             <text message="hierarchical-columns.title" route="kanban-hierarchical-columns" component="h4"/>
             <text message="hierarchical-columns.description"/>
         </sample>
+        <sample>
+            <image src="icons/kanban/columnsEnum.png" route="kanban-columns-enum"/>
+            <text message="columns-enum.title" route="kanban-columns-enum" component="h4"/>
+            <text message="columns-enum.description"/>
+        </sample>
+        <sample>
+            <image src="icons/kanban/styling.png" route="kanban-styling"/>
+            <text message="styling.title" route="kanban-styling" component="h4"/>
+            <text message="styling.description"/>
+        </sample>
     </samples>
 </overview>
