@@ -187,12 +187,14 @@ public class UiSamplesRoutingDataSource extends AbstractDataSource implements Ap
 
         if (!defaultSessionId.equals(sessionId)) {
             SpringLiquibase liquibase = applicationContext.getBean(SpringLiquibase.class);
-            liquibase.setShouldRun(true);
-            liquibase.setDataSource(sessionDataSource);
-            try {
-                liquibase.afterPropertiesSet();
-            } catch (LiquibaseException e) {
-                throw new RuntimeException("Error initializing datasource " + urlPrefix + sessionId, e);
+            synchronized (liquibase) {
+                liquibase.setShouldRun(true);
+                liquibase.setDataSource(sessionDataSource);
+                try {
+                    liquibase.afterPropertiesSet();
+                } catch (LiquibaseException e) {
+                    throw new RuntimeException("Error initializing datasource " + urlPrefix + sessionId, e);
+                }
             }
         }
 
