@@ -41,7 +41,8 @@ import com.vaadin.flow.server.auth.AnonymousAllowed;
 import io.jmix.core.CoreProperties;
 import io.jmix.core.Messages;
 import io.jmix.core.Resources;
-import io.jmix.core.session.SessionData;
+import io.jmix.core.security.ClientDetails;
+import io.jmix.core.security.CurrentAuthentication;
 import io.jmix.flowui.Notifications;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.Views;
@@ -61,9 +62,12 @@ import io.jmix.uisamples.util.UiSamplesHelper;
 import io.jmix.uisamples.view.sys.main.MainView;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.ObjectProvider;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.web.authentication.WebAuthenticationDetails;
 
 import java.util.*;
 
@@ -72,6 +76,8 @@ import java.util.*;
 @ViewDescriptor("sample-view.xml")
 @AnonymousAllowed
 public class SampleView extends StandardView {
+
+    private static final Logger log = LoggerFactory.getLogger(SampleView.class);
 
     protected static final String DOC_URL_MESSAGES_KEY = "docUrl";
     protected static final String SRC_ROOT_PATH = "io/jmix/uisamples/view/flowui/";
@@ -94,7 +100,7 @@ public class SampleView extends StandardView {
     @Autowired
     protected Views views;
     @Autowired
-    protected ObjectProvider<SessionData> sessionDataProvider;
+    protected CurrentAuthentication currentAuthentication;
     @Autowired
     protected Notifications notifications;
     @Autowired
@@ -132,6 +138,8 @@ public class SampleView extends StandardView {
     }
 
     protected void updateSample(String sampleId) {
+        log.debug("Sample {} opened for session with {} id", sampleId, getSessionId());
+
         this.sampleId = sampleId;
         this.menuItem = menuConfig.getItemById(sampleId);
 
@@ -455,5 +463,21 @@ public class SampleView extends StandardView {
 
     protected Locale getCurrentLocale() {
         return UI.getCurrent().getLocale();
+    }
+
+    private String getSessionId() {
+        String sessionId = null;
+        if (currentAuthentication.isSet()) {
+            Authentication authentication = currentAuthentication.getAuthentication();
+            Object details = authentication.getDetails();
+
+            if (details instanceof WebAuthenticationDetails) {
+                sessionId = ((WebAuthenticationDetails) details).getSessionId();
+            } else if (details instanceof ClientDetails) {
+                sessionId = ((ClientDetails) details).getSessionId();
+            }
+        }
+
+        return sessionId != null ? sessionId : "defaultId";
     }
 }
