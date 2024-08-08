@@ -138,7 +138,7 @@ public class SampleView extends StandardView {
     }
 
     protected void updateSample(String sampleId) {
-        log.debug("Sample {} opened for session with {} id", sampleId, getSessionId());
+        log.debug("Sample '{}' opened for session with {} id", sampleId, getSessionId());
 
         this.sampleId = sampleId;
         this.menuItem = menuConfig.getItemById(sampleId);
