@@ -99,6 +99,7 @@ public class UiSamplesRoutingDataSource extends AbstractDataSource implements Ap
                 shutdownSessionDataSource(entry.getKey(), entry.getValue());
                 iterator.remove();
                 sessionRegistry.removeSessionInformation(entry.getKey());
+                log.debug("Data source {} removed", entry.getKey());
             }
         }
     }
@@ -116,6 +117,7 @@ public class UiSamplesRoutingDataSource extends AbstractDataSource implements Ap
         if (sessionDataSource != null) {
             shutdownSessionDataSource(sessionId, sessionDataSource);
             dataSources.remove(sessionId);
+            log.debug("Data source {} removed on session destroyed", sessionId);
         }
 
         sessionRegistry.removeSessionInformation(sessionId);
