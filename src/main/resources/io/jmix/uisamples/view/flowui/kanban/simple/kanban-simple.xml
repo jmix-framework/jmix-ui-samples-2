@@ -21,7 +21,7 @@
             <button id="removeBtn" action="kanban.remove"/>
         </hbox>
         <kanban:kanban id="kanban" dataContainer="kanbanTasksDc"
-                       width="100%" height="100%" taskUserIconVisible="false">
+                       width="100%" height="100%">
             <kanban:propertiesMapping id="id" status="status" text="name"/>
 
             <kanban:actions>

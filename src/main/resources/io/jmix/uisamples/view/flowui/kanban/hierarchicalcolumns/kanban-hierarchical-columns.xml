@@ -21,7 +21,6 @@
                        columnActionsEnabled="true"
                        collapsible="true"
                        columnReorderingAllowed="true"
-                       taskUserIconVisible="false"
                        taskTagsVisible="true">
             <kanban:propertiesMapping id="id"
                                       status="status"

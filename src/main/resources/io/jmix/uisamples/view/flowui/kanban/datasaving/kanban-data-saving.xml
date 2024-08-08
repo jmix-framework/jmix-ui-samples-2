@@ -21,6 +21,7 @@
                                height="100%"
                                taskDueDateVisible="true"
                                taskPriorityVisible="true"
+                               taskUserAvatarVisible="true"
                                taskProgressVisible="true"
                                taskTagsVisible="true">
                     <kanban:propertiesMapping id="id"

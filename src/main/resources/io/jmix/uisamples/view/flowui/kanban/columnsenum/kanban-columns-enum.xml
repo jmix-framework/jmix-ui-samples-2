@@ -18,7 +18,6 @@
                        width="100%"
                        height="100%"
                        collapsible="true"
-                       taskUserIconVisible="false"
                        taskTagsVisible="true">
             <kanban:propertiesMapping id="id"
                                       status="status"

@@ -26,8 +26,7 @@
                        columnSummaryEnabled="true"
                        dropPlaceholderAllowed="true"
                        taskProgressVisible="true"
-                       columnFooterVisible="true"
-                       taskUserIconVisible="false">
+                       columnFooterVisible="true">
             <kanban:propertiesMapping id="id"
                                       status="status"
                                       text="name"
