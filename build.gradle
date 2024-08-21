@@ -14,8 +14,6 @@ jmix {
 group = 'io.jmix.uisamples'
 
 repositories {
-    // todo remove before merge
-    mavenLocal()
     mavenCentral()
     maven {
         url 'https://nexus.jmix.io/repository/public'
