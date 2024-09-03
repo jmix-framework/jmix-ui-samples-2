@@ -42,6 +42,7 @@
             <item id="button-simple" page="button"/>
             <item id="button-action" page="button"/>
             <item id="button-programmatic-action" page="button"/>
+            <item id="button-image" page="button" isNew="true"/>
             <item id="button-theme-variant" page="button" splitEnabled="true"/>
         </menu>
         <menu id="checkbox">
@@ -117,7 +118,7 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-context-menu" page="dataGrid" anchor="context-menu" splitEnabled="true">
+            <item id="data-grid-context-menu" page="dataGrid" anchor="context-menu" splitEnabled="true" isNew="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>

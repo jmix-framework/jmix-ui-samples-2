@@ -1,0 +1,5 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <button id="logoButton" themeNames="icon"/>
+    </layout>
+</view>
