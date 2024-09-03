@@ -1,0 +1,63 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <collection id="customersDc"
+                    class="io.jmix.uisamples.entity.Customer"
+                    fetchPlan="_local">
+            <loader id="customersDl">
+                <query>
+                    <![CDATA[select e from Customer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <hbox id="buttonsPanel" classNames="buttons-panel">
+            <button id="createBtn" action="customersDataGrid.create"/>
+            <button id="editBtn" action="customersDataGrid.edit"/>
+            <button id="removeBtn" action="customersDataGrid.remove"/>
+            <button id="greetingBtn" action="customersDataGrid.greeting"/>
+        </hbox>
+        <dataGrid id="customersDataGrid"
+                  width="100%"
+                  minHeight="20em"
+                  dataContainer="customersDc">
+            <contextMenu id="contextMenu">
+                <item text="CRUD" icon="TABLE">
+                    <item action="customersDataGrid.create" icon="PLUS"/>
+                    <item action="customersDataGrid.edit" icon="PENCIL"/>
+                    <item action="customersDataGrid.remove" icon="TRASH"/>
+                </item>
+                <item action="customersDataGrid.greeting" icon="COMMENT"/>
+                <separator/>
+                <item id="customerItem"/>
+                <item action="customersDataGrid.getInfo" icon="INFO_CIRCLE_O"/>
+            </contextMenu>
+            <actions showInContextMenuEnabled="false">
+                <action id="create" type="list_create">
+                    <properties>
+                        <property name="openMode" value="DIALOG"/>
+                    </properties>
+                </action>
+                <action id="edit" type="list_edit">
+                    <properties>
+                        <property name="openMode" value="DIALOG"/>
+                    </properties>
+                </action>
+                <action id="remove" type="list_remove"/>
+                <action id="greeting" type="list_itemTracking" icon="COMMENT" text="Greeting"/>
+                <action id="getInfo" type="list_itemTracking" icon="INFO_CIRCLE_O" text="Get info"/>
+            </actions>
+            <columns>
+                <column property="name"/>
+                <column property="lastName"/>
+                <column property="email"/>
+                <column property="age"/>
+                <column property="active"/>
+                <column property="grade"/>
+            </columns>
+        </dataGrid>
+    </layout>
+</view>

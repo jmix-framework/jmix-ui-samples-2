@@ -112,7 +112,12 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-actions" page="dataGrid" splitEnabled="true">
+            <item id="data-grid-actions" page="dataGrid" anchor="actions" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-context-menu" page="dataGrid" anchor="context-menu" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
@@ -127,12 +132,12 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-multi-sort" page="dataGrid" splitEnabled="true">
+            <item id="data-grid-multi-sort" page="dataGrid" anchor="multiple-sorting" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-custom-renderer" page="dataGrid" splitEnabled="true">
+            <item id="data-grid-custom-renderer" page="dataGrid" anchor="renderers" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
@@ -153,12 +158,12 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-header-filter" page="dataGrid" splitEnabled="true">
+            <item id="data-grid-header-filter" page="dataGrid" anchor="column-filtering" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-header-footer" page="dataGrid" splitEnabled="true">
+            <item id="data-grid-header-footer" page="dataGrid" anchor="header-footer" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/CountryGrowth.java"/>
                 </otherFiles>
@@ -170,35 +175,35 @@
                 </otherFiles>
             </item>
             <item id="data-grid-var-columns" page="dataGrid" splitEnabled="true"/>
-            <item id="data-grid-inline-editor" page="dataGrid" splitEnabled="true">
+            <item id="data-grid-inline-editor" page="dataGrid" anchor="inline-editing" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-editor-actions" page="dataGrid" splitEnabled="true">
+            <item id="data-grid-editor-actions" page="dataGrid" anchor="inline-editing" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-editor-events" page="dataGrid" splitEnabled="true">
+            <item id="data-grid-editor-events" page="dataGrid" anchor="inline-editing" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-item-details" page="dataGrid" splitEnabled="true">
+            <item id="data-grid-item-details" page="dataGrid" anchor="item-details" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                     <file name="io/jmix/uisamples/bean/CustomerDetailsGenerator.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-item-details-editor" page="dataGrid" splitEnabled="true">
+            <item id="data-grid-item-details-editor" page="dataGrid" anchor="item-details" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                     <file name="io/jmix/uisamples/bean/CustomerDetailsGenerator.java"/>
                     <file name="io/jmix/uisamples/bean/CustomerDetailsEditorGenerator.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-aggregation" page="dataGrid" splitEnabled="true">
+            <item id="data-grid-aggregation" page="dataGrid" anchor="aggregating" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                     <file name="io/jmix/uisamples/entity/Order.java"/>
