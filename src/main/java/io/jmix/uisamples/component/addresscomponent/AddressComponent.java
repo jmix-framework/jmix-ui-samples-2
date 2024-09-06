@@ -1,11 +1,11 @@
 package io.jmix.uisamples.component.addresscomponent;
 
 import com.vaadin.flow.component.Composite;
-import com.vaadin.flow.component.formlayout.FormLayout;
 import io.jmix.core.DataManager;
 import io.jmix.core.Sort;
 import io.jmix.flowui.UiComponents;
 import io.jmix.flowui.component.combobox.EntityComboBox;
+import io.jmix.flowui.component.formlayout.JmixFormLayout;
 import io.jmix.flowui.component.textfield.TypedTextField;
 import io.jmix.flowui.data.value.ContainerValueSource;
 import io.jmix.flowui.model.CollectionContainer;
@@ -17,7 +17,7 @@ import io.jmix.uisamples.entity.Country;
 
 import java.util.List;
 
-public class AddressComponent extends Composite<FormLayout> {
+public class AddressComponent extends Composite<JmixFormLayout> {
 
     protected final DataManager dataManager;
     private final CollectionContainer<Country> countriesContainer;
@@ -66,8 +66,8 @@ public class AddressComponent extends Composite<FormLayout> {
     }
 
     @Override
-    protected FormLayout initContent() {
-        FormLayout content = super.initContent();
+    protected JmixFormLayout initContent() {
+        JmixFormLayout content = super.initContent();
         content.add(zipField, countryEntityComboBox, cityEntityComboBox, addressLine);
         return content;
     }

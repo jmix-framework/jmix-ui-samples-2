@@ -31,6 +31,11 @@
             <text message="iframePdfRest.description"/>
         </sample>
         <sample>
+            <image src="icons/cookbook/wizard.png" route="wizard"/>
+            <text message="wizard.title" route="wizard" component="h4"/>
+            <text message="wizard.description"/>
+        </sample>
+        <sample>
             <image src="icons/cookbook/customLoginForm.png" route="custom-login"/>
             <text message="customLoginForm.title" route="custom-login" component="h4"/>
             <text message="customLoginForm.description"/>

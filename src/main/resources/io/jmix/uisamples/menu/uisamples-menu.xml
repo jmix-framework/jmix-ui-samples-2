@@ -1055,6 +1055,24 @@
                 <file name="io/jmix/uisamples/rest/CustomFileDownloadController.java"/>
             </otherFiles>
         </item>
+        <item id="wizard" isNew="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/WizardDialog.java"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/wizard-dialog.xml"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/WizardStep.java"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/WizardStepFragment.java"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/FirstStep.java"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/first-step.xml"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/SecondStep.java"/>
+                <file name="io/jmix/uisamples/component/addresscomponent/AddressComponent.java"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/ThirdStep.java"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/third-step.xml"/>
+                <file name="io/jmix/uisamples/entity/Employee.java"/>
+                <file name="io/jmix/uisamples/entity/Address.java"/>
+                <file name="io/jmix/uisamples/entity/Country.java"/>
+                <file name="io/jmix/uisamples/entity/City.java"/>
+            </otherFiles>
+        </item>
         <item id="custom-login" splitEnabled="true">
             <otherFiles>
                 <file name="META-INF/resources/themes/custom-login.css"/>

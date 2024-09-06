@@ -1,0 +1,10 @@
+<fragment xmlns="http://jmix.io/schema/flowui/fragment">
+    <content>
+        <formLayout>
+            <textField id="firstName" label="First name"/>
+            <textField id="lastName" label="Last name"/>
+            <emailField id="email" label="Email"/>
+            <textField id="department" label="Department"/>
+        </formLayout>
+    </content>
+</fragment>
