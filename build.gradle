@@ -1,5 +1,5 @@
 plugins {
-    id 'io.jmix' version '2.3.1'
+    id 'io.jmix' version '2.4.0-M1'
     id 'java'
 }
 
@@ -12,6 +12,11 @@ jmix {
 }
 
 group = 'io.jmix.uisamples'
+
+configurations.implementation {
+    exclude group: 'com.vaadin', module:'hilla'
+    exclude group: 'com.vaadin', module:'hilla-dev'
+}
 
 repositories {
     mavenCentral()

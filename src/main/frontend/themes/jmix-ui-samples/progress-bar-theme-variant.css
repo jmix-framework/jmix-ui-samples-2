@@ -1,0 +1,4 @@
+
+.progress-bar-theme-variant-layout vaadin-progress-bar {
+    min-height: calc(var(--lumo-size-l) / 10)
+}
