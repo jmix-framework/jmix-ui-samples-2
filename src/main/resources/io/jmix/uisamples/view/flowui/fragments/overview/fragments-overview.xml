@@ -24,5 +24,10 @@
             <text message="events.title" route="fragment-events" component="h4"/>
             <text message="events.description"/>
         </sample>
+        <sample>
+            <image src="icons/fragments/renderer.png" route="fragment-renderer"/>
+            <text message="renderer.title" route="fragment-renderer" component="h4"/>
+            <text message="renderer.description"/>
+        </sample>
     </samples>
 </overview>

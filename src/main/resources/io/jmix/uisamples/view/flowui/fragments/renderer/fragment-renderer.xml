@@ -1,0 +1,22 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data readOnly="true">
+        <collection id="employeesDc"
+                    class="io.jmix.uisamples.entity.Employee">
+            <fetchPlan extends="_base"/>
+            <loader id="employeeDl">
+                <query>
+                    <![CDATA[select e from Employee e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout alignItems="CENTER">
+        <virtualList id="virtualList" width="100%" itemsContainer="employeesDc" alignSelf="CENTER">
+            <fragmentRenderer
+                    class="io.jmix.uisamples.view.flowui.fragments.renderer.EmployeeInfoFragment"/>
+        </virtualList>
+    </layout>
+</view>

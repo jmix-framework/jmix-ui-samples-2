@@ -738,6 +738,13 @@
                 <file name="io/jmix/uisamples/view/flowui/fragments/events/EventsFragment.java"/>
             </otherFiles>
         </item>
+        <item id="fragment-renderer" splitEnabled="true" isNew="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/fragments/renderer/EmployeeInfoFragment.java"/>
+                <file name="io/jmix/uisamples/view/flowui/fragments/renderer/employee-info-fragment.xml"/>
+                <file name="io/jmix/uisamples/entity/Customer.java"/>
+            </otherFiles>
+        </item>
     </menu>
 
     <menu id="facets-root" url="flow-ui/facets">

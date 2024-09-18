@@ -1,0 +1,20 @@
+<p>The <code>virtualList</code> component supports fragments as renderers.</p>
+<p>To do this you need to add a nested <code>&lt;fragmentRenderer/&gt;</code> element. Using the <code>class</code>
+    attribute, you must specify <b>the fragment class</b> that extends the special <code>io.jmix.flowui.fragmentrenderer.FragmentRenderer</code>
+    abstract class.</p>
+<p>Fragment renderer is very similar to a regular fragment. The difference is that the <b>fragmentRenderer</b> must
+    contain an instance container in which the item to be renderer will be set. To specify which container an item
+    should be placed in, use the <code>@RendererItemContainer</code> annotation.</p>
+<p>List of supported components:</p>
+<ul>
+    <li><code>VirtualList</code></li>
+    <li><code>DataGrid.Column</code></li>
+    <li><code>CheckboxGroup</code></li>
+    <li><code>MultiSelectComboBox</code></li>
+    <li><code>MultiSelectComboBoxPicker</code></li>
+    <li><code>EntityComboBox</code></li>
+    <li><code>RadioButtonGroup</code></li>
+    <li><code>Select</code></li>
+    <li><code>ListBox</code></li>
+    <li><code>MultiSelectListBox</code></li>
+</ul>
