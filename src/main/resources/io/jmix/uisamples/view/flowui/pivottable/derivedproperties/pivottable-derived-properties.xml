@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:pivot="http://jmix.io/schema/pvttbl/ui">
+    <data>
+        <collection id="temperatureDataDc"
+                    class="io.jmix.uisamples.entity.TemperatureData">
+            <fetchPlan extends="_local"/>
+            <loader id="tipsLoader">
+                <query>
+                    <![CDATA[select e from TemperatureData e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout expand="pivotTable" spacing="true">
+        <pivot:pivotTable id="pivotTable"
+                          dataContainer="temperatureDataDc"
+                          showColumnTotals="false"
+                          showRowTotals="false">
+            <pivot:properties>
+                <pivot:property name="temperature"/>
+                <pivot:property name="city"/>
+                <pivot:property name="month"/>
+            </pivot:properties>
+            <pivot:columns>
+                <pivot:column value="msg://io.jmix.uisamples.entity/City"/>
+            </pivot:columns>
+            <pivot:rows>
+                <pivot:row value="msg://io.jmix.uisamples.entity/TemperatureData.month"/>
+                <pivot:row value="msg://temperature.fahrenheit"/>
+            </pivot:rows>
+            <pivot:aggregation mode="AVERAGE">
+                <pivot:property name="msg://io.jmix.uisamples.entity/TemperatureData.temperature"/>
+            </pivot:aggregation>
+        </pivot:pivotTable>
+    </layout>
+</view>

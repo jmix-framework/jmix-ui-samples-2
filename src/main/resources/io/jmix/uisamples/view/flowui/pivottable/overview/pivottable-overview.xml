@@ -1,0 +1,58 @@
+<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
+    <header>
+        <text message="title" component="h2"/>
+        <text message="description"/>
+    </header>
+    <samples>
+        <sample>
+            <image src="icons/pivottable/simple.png" route="pivottable-simple"/>
+            <text message="simple.title" route="pivottable-simple" component="h4"/>
+            <text message="simple.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/properties.png" route="pivottable-properties"/>
+            <text message="properties.title" route="pivottable-properties" component="h4"/>
+            <text message="properties.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/sorterFunction.png" route="pivottable-sorter-function"/>
+            <text message="sorter-function.title" route="pivottable-sorter-function" component="h4"/>
+            <text message="sorter-function.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/ui.png" route="pivottable-ui"/>
+            <text message="ui.title" route="pivottable-ui" component="h4"/>
+            <text message="ui.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/uiProperties.png" route="pivottable-ui-properties"/>
+            <text message="ui-properties.title" route="pivottable-ui-properties" component="h4"/>
+            <text message="ui-properties.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/derivedProperties.png" route="pivottable-derived-properties"/>
+            <text message="derived-properties.title" route="pivottable-derived-properties" component="h4"/>
+            <text message="derived-properties.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/events.png" route="pivottable-events"/>
+            <text message="events.title" route="pivottable-events" component="h4"/>
+            <text message="events.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/export.png" route="pivottable-export"/>
+            <text message="export.title" route="pivottable-export" component="h4"/>
+            <text message="export.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/showAction.png" route="pivottable-show-action"/>
+            <text message="show-action.title" route="pivottable-show-action" component="h4"/>
+            <text message="show-action.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/settings.png" route="pivottable-settings"/>
+            <text message="settings.title" route="pivottable-settings" component="h4"/>
+            <text message="settings.description"/>
+        </sample>
+    </samples>
+</overview>

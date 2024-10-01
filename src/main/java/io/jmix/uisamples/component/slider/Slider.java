@@ -7,10 +7,10 @@ import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.shared.Registration;
 
 @Tag("demo-slider")
-@NpmPackage(value = "jquery", version = "1.9.1")
-@NpmPackage(value = "jquery-ui", version = "1.13.2")
-@CssImport("jquery-ui/dist/themes/base/jquery-ui.css")
-@JsModule("./src/component/slider/slider.js")
+//@NpmPackage(value = "jquery", version = "1.9.1")
+//@NpmPackage(value = "jquery-ui", version = "1.13.2")
+//@CssImport("jquery-ui/dist/themes/base/jquery-ui.css")
+//@JsModule("./src/component/slider/slider.js")
 public class Slider extends Component implements HasSize {
 
     public static final String VALUE_PROPERTY = "value";

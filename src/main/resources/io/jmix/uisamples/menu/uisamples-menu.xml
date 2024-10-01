@@ -988,6 +988,60 @@
         </item>
     </menu>
 
+    <menu id="pivottable-root" isNew="true">
+        <overview id="pivottable" location="pivottable/overview/pivottable-overview.xml"/>
+        <item id="pivottable-simple" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
+            </otherFiles>
+        </item>
+        <item id="pivottable-properties" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
+            </otherFiles>
+        </item>
+        <item id="pivottable-sorter-function" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
+            </otherFiles>
+        </item>
+        <item id="pivottable-ui" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
+            </otherFiles>
+        </item>
+        <item id="pivottable-ui-properties" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
+            </otherFiles>
+        </item>
+        <item id="pivottable-derived-properties" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TemperatureData.java"/>
+            </otherFiles>
+        </item>
+        <item id="pivottable-events" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
+            </otherFiles>
+        </item>
+        <item id="pivottable-export" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
+            </otherFiles>
+        </item>
+        <item id="pivottable-show-action" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
+            </otherFiles>
+        </item>
+        <item id="pivottable-settings" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
+            </otherFiles>
+        </item>
+    </menu>
+
     <menu id="custom-components-root" url="flow-ui">
         <overview id="custom-component" location="customcomponents/overview/custom-components-overview.xml"/>
         <item id="composite-component" page="visual-components" splitEnabled="true">

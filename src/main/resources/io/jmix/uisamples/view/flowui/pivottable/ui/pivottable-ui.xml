@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:pivot="http://jmix.io/schema/pvttbl/ui">
+    <data>
+        <collection id="tipsDc"
+                    class="io.jmix.uisamples.entity.TipInfo">
+            <fetchPlan extends="_local"/>
+            <loader id="tipsLoader">
+                <query>
+                    <![CDATA[select e from TipInfo e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <pivot:pivotTable id="pivotTable"
+                          dataContainer="tipsDc"
+                          height="100%"
+                          width="100%"
+                          showUI="true">
+            <pivot:properties>
+                <pivot:property name="totalBill"/>
+                <pivot:property name="tip"/>
+                <pivot:property name="sex"/>
+                <pivot:property name="smoker"/>
+                <pivot:property name="day"/>
+                <pivot:property name="time"/>
+                <pivot:property name="size"/>
+            </pivot:properties>
+            <pivot:renderers default="HEATMAP"/>
+            <pivot:aggregations default="SUM_OVER_SUM"/>
+            <pivot:aggregationProperties>
+                <pivot:property name="msg://io.jmix.uisamples.entity/TipInfo.tip"/>
+                <pivot:property name="msg://io.jmix.uisamples.entity/TipInfo.totalBill"/>
+            </pivot:aggregationProperties>
+            <pivot:columns>
+                <pivot:column value="msg://io.jmix.uisamples.entity/TipInfo.day"/>
+                <pivot:column value="msg://io.jmix.uisamples.entity/TipInfo.time"/>
+            </pivot:columns>
+            <pivot:rows>
+                <pivot:row value="msg://io.jmix.uisamples.entity/TipInfo.sex"/>
+                <pivot:row value="msg://io.jmix.uisamples.entity/TipInfo.smoker"/>
+            </pivot:rows>
+        </pivot:pivotTable>
+    </layout>
+</view>
