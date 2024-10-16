@@ -17,15 +17,25 @@
 package io.jmix.uisamples;
 
 import com.google.common.base.Strings;
+import io.jmix.core.CoreProperties;
+import io.jmix.core.JmixModules;
+import io.jmix.core.Resources;
 import io.jmix.core.security.CoreSecurityConfiguration;
+import io.jmix.flowui.exception.UiExceptionHandlers;
+import io.jmix.flowui.sys.JmixServiceInitListener;
+import io.jmix.flowui.view.ViewRegistry;
 import io.jmix.uisamples.bean.UiSamplesRoutingDataSource;
+import io.jmix.uisamples.bean.UiSamplesServiceInitListener;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.boot.context.event.ApplicationStartedEvent;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
 import org.springframework.context.event.EventListener;
 import org.springframework.core.env.Environment;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -56,6 +66,16 @@ public class UiSamplesConfiguration {
     @ConfigurationProperties(prefix = "session.datasource")
     public DataSource sessionDataSource() {
         return new BasicDataSource();
+    }
+
+    @Primary
+    @Bean("flowui_JmixServiceInitListener")
+    public JmixServiceInitListener uiSamplesServiceInitListener(ViewRegistry viewRegistry,
+                                                                UiExceptionHandlers uiExceptionHandlers,
+                                                                CoreProperties coreProperties,
+                                                                JmixModules modules,
+                                                                Resources resources) {
+        return new UiSamplesServiceInitListener(viewRegistry, uiExceptionHandlers, coreProperties, modules, resources);
     }
 
     @EventListener
