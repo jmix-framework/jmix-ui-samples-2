@@ -995,6 +995,14 @@
         </item>
     </menu>
 
+    <menu id="calendar-root" isNew="true">
+        <overview id="calendar" location="calendar/overview/calendar-overview.xml"/>
+        <item id="calendar-simple-calendar-event" splitEnabled="true"/>
+        <item id="calendar-container-calendar-data-provider" splitEnabled="true">
+
+        </item>
+    </menu>
+
     <menu id="custom-components-root" url="flow-ui">
         <overview id="custom-component" location="customcomponents/overview/custom-components-overview.xml"/>
         <item id="composite-component" page="visual-components" splitEnabled="true">
