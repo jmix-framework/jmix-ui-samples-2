@@ -1,8 +1,6 @@
 package io.jmix.uisamples.view.flowui.pivottable.derivedproperties;
 
-import com.vaadin.flow.component.ClickEvent;
 import io.jmix.core.Messages;
-import io.jmix.flowui.component.checkbox.JmixCheckbox;
 import io.jmix.flowui.view.*;
 import io.jmix.pivottableflowui.component.PivotTable;
 import io.jmix.pivottableflowui.kit.component.model.DerivedProperties;
@@ -25,7 +23,7 @@ public class PivotTableDerivedProperties extends StandardView {
     public void onInit(final InitEvent event) {
         String function = """
                 function(record) {
-                    return $.pivotUtilities.numberFormat()(record.%s * 1.8 + 32);
+                    return pivotTable.$jQuery.pivotUtilities.numberFormat()(record.%s * 1.8 + 32);
                 }
                 """;
         DerivedProperties derivedProperties = new DerivedProperties();

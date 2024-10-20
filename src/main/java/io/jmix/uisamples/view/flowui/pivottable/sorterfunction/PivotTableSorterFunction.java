@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class PivotTableSorterFunction extends StandardView {
 
     @ViewComponent
-    protected PivotTable pivotTable;
+    protected PivotTable<?> pivotTable;
     @Autowired
     private Messages messages;
 
@@ -21,7 +21,7 @@ public class PivotTableSorterFunction extends StandardView {
                 """
                     sortersFunction(property) {
                         if (property == "%s") {
-                            return $.pivotUtilities.sortAs([6,5,4,3,2,1]);
+                            return pivotTable.$jQuery.pivotUtilities.sortAs([6,5,4,3,2,1]);
                         }
                     }
                 """;

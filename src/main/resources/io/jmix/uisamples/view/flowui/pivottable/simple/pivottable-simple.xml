@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <view xmlns="http://jmix.io/schema/flowui/view"
-      xmlns:pivot="http://jmix.io/schema/pvttbl/ui">
+      xmlns:pvttbl="http://jmix.io/schema/pvttbl/ui">
     <data>
         <collection id="tipsDc"
                     class="io.jmix.uisamples.entity.TipInfo">
@@ -16,25 +16,25 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
-        <pivot:pivotTable id="pivotTable"
+        <pvttbl:pivotTable id="pivotTable"
                           dataContainer="tipsDc">
-            <pivot:properties>
-                <pivot:property name="totalBill"/>
-                <pivot:property name="tip"/>
-                <pivot:property name="sex"/>
-                <pivot:property name="smoker"/>
-                <pivot:property name="day"/>
-                <pivot:property name="time"/>
-                <pivot:property name="size"/>
-            </pivot:properties>
-            <pivot:columns>
-                <pivot:column value="msg://io.jmix.uisamples.entity/TipInfo.day"/>
-                <pivot:column value="msg://io.jmix.uisamples.entity/TipInfo.time"/>
-            </pivot:columns>
-            <pivot:rows>
-                <pivot:row value="msg://io.jmix.uisamples.entity/TipInfo.sex"/>
-                <pivot:row value="msg://io.jmix.uisamples.entity/TipInfo.smoker"/>
-            </pivot:rows>
-        </pivot:pivotTable>
+            <pvttbl:properties>
+                <pvttbl:property name="totalBill"/>
+                <pvttbl:property name="tip"/>
+                <pvttbl:property name="sex"/>
+                <pvttbl:property name="smoker"/>
+                <pvttbl:property name="day"/>
+                <pvttbl:property name="time"/>
+                <pvttbl:property name="size"/>
+            </pvttbl:properties>
+            <pvttbl:columns>
+                <pvttbl:column value="day"/>
+                <pvttbl:column value="time"/>
+            </pvttbl:columns>
+            <pvttbl:rows>
+                <pvttbl:row value="sex"/>
+                <pvttbl:row value="smoker"/>
+            </pvttbl:rows>
+        </pvttbl:pivotTable>
     </layout>
 </view>

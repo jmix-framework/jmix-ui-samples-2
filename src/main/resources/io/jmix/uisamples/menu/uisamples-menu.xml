@@ -1035,7 +1035,7 @@
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivottable-settings" splitEnabled="true">
+        <item id="pivottable-save-state" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
