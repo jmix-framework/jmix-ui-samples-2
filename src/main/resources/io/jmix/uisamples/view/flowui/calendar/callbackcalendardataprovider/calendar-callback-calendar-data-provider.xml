@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:calendar="http://jmix.io/schema/fullcalendar/ui">
+    <layout>
+        <hbox>
+            <button id="previousBtn" icon="ANGLE_LEFT"/>
+            <button id="nextBtn" icon="ANGLE_RIGHT"/>
+        </hbox>
+        <calendar:calendar id="calendar"
+                           height="100%"
+                           width="100%"
+                           minHeight="30em">
+            <calendar:dataProviders>
+                <calendar:callbackDataProvider title="title"
+                                               allDay="allDay"
+                                               startDateTime="startDate"
+                                               endDateTime="endDate">
+                    <calendar:itemsQuery class="io.jmix.uisamples.entity.Event"
+                                         fetchPlan="_base">
+                        <calendar:query>
+                            <![CDATA[select e from Event e
+                                        where e.startDate >= :fetchStartDate
+                                            and e.endDate < :fetchEndDate]]>
+                        </calendar:query>
+                    </calendar:itemsQuery>
+                </calendar:callbackDataProvider>
+            </calendar:dataProviders>
+        </calendar:calendar>
+    </layout>
+</view>

@@ -6,5 +6,5 @@ import io.jmix.flowui.view.ViewDescriptor;
 
 @ViewController(id = "calendar-container-calendar-data-provider")
 @ViewDescriptor(path = "calendar-container-calendar-data-provider.xml")
-public class CalendarContainerCalendarDataProvider extends StandardView {
+public class CalendarContainerCalendarDataProviderSample extends StandardView {
 }

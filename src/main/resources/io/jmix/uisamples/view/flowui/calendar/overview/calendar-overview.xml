@@ -3,4 +3,14 @@
         <text message="title" component="h2"/>
         <text message="description"/>
     </header>
+
+    <samples>
+        <sample>
+            <image src=""/>
+            <text message="data-binding.title" route="calendar-simple-calendar-event" component="h4"/>
+            <tag text="simpleCalendarEvent"
+                 route="calendar-simple-calendar-event"
+                 classNames="overview-tag-font overview-tag-grey"/>
+        </sample>
+    </samples>
 </overview>

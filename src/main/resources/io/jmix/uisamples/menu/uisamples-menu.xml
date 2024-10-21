@@ -995,12 +995,27 @@
         </item>
     </menu>
 
-    <menu id="calendar-root" isNew="true">
+    <menu id="calendar-root" isNew="true" url="calendar">
         <overview id="calendar" location="calendar/overview/calendar-overview.xml"/>
         <item id="calendar-simple-calendar-event" splitEnabled="true"/>
         <item id="calendar-container-calendar-data-provider" splitEnabled="true">
-
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Event.java"/>
+            </otherFiles>
         </item>
+        <item id="calendar-list-calendar-data-provider" splitEnabled="true"/>
+        <item id="calendar-callback-calendar-data-provider" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Event.java"/>
+            </otherFiles>
+        </item>
+        <item id="calendar-callback-load-delegate" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Event.java"/>
+                <file name="io/jmix/uisamples/bean/EventService.java"/>
+            </otherFiles>
+        </item>
+        <item id="calendar-calendar-data-retriever" splitEnabled="true"/>
     </menu>
 
     <menu id="custom-components-root" url="flow-ui">

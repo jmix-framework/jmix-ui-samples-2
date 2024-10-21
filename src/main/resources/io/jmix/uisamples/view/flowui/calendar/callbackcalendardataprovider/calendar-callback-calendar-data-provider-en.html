@@ -1,0 +1,15 @@
+<p>
+    The <code>CallbackCalendarDataProvider</code> loads data only when the component needs new events. The calendar
+    requires new data in the following cases:
+</p>
+<ul>
+    <li>
+        When the user switches to a calendar display mode that has a wider date range than the previous one.
+    </li>
+    <li>
+        When FullCalendar's navigation methods are invoked (e.g. <code>#navigateToNext()</code>).
+    </li>
+    <li>
+        When the time zone of the component is changed.
+    </li>
+</ul>
