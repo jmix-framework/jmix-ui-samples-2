@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:calendar="http://jmix.io/schema/fullcalendar/ui">
+    <layout>
+        <comboBox id="displayModesBox"/>
+        <calendar:calendar id="calendar"
+                           initialDisplayMode="twoMonths"
+                           height="100%"
+                           width="100%"
+                           minHeight="30em">
+            <calendar:customDisplayModes>
+                <calendar:displayMode id="twoMonths" type="MULTI_MONTH">
+                    <calendar:duration months="2"/>
+                </calendar:displayMode>
+            </calendar:customDisplayModes>
+        </calendar:calendar>
+    </layout>
+</view>

@@ -1016,6 +1016,14 @@
             </otherFiles>
         </item>
         <item id="calendar-calendar-data-retriever" splitEnabled="true"/>
+        <item id="calendar-calendar-display-modes" splitEnabled="true"/>
+        <item id="calendar-custom-calendar-display-mode" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/calendar/calendarcustomcalendardisplaymode/CustomCalendarDisplayModes.java"/>
+            </otherFiles>
+        </item>
+        <item id="calendar-display-mode-specific-properties" splitEnabled="true"/>
+        <item id="calendar-generic-calendar-display-modes" splitEnabled="true"/>
     </menu>
 
     <menu id="custom-components-root" url="flow-ui">

@@ -6,11 +6,42 @@
 
     <samples>
         <sample>
-            <image src=""/>
+            <image src="icons/calendar/data-binding.png" route="calendar-simple-calendar-event"/>
             <text message="data-binding.title" route="calendar-simple-calendar-event" component="h4"/>
             <tag text="simpleCalendarEvent"
                  route="calendar-simple-calendar-event"
                  classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="containerCalendarDataProvider"
+                 route="calendar-container-calendar-data-provider"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="listCalendarDataProvider"
+                 route="calendar-list-calendar-data-provider"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="callbackCalendarDataProvider"
+                 route="calendar-callback-calendar-data-provider"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="callbackLoadDelegate"
+                 route="calendar-callback-load-delegate"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="calendarDataRetriever"
+                 route="calendar-calendar-data-retriever"
+                 classNames="overview-tag-font overview-tag-grey"/>
+        </sample>
+        <sample>
+            <image src="icons/calendar/calendar-display-modes.png" route="calendar-calendar-display-modes"/>
+            <text message="calendar-display-modes.text" route="calendar-calendar-display-modes" component="h4"/>
+            <tag text="calendarDisplayModes"
+                 route="calendar-simple-calendar-event"
+                 classNames="overview-tag-font overview-tag-red"/>
+            <tag text="customCalendarDisplayMode"
+                 route="calendar-custom-calendar-display-mode"
+                 classNames="overview-tag-font overview-tag-red"/>
+            <tag text="displayModeSpecificProperties"
+                 route="calendar-display-mode-specific-properties"
+                 classNames="overview-tag-font overview-tag-red"/>
+            <tag text="genericCalendarDisplayModes"
+                 route="calendar-generic-calendar-display-modes"
+                 classNames="overview-tag-font overview-tag-red"/>
         </sample>
     </samples>
 </overview>
