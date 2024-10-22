@@ -1024,6 +1024,11 @@
         </item>
         <item id="calendar-display-mode-specific-properties" splitEnabled="true"/>
         <item id="calendar-generic-calendar-display-modes" splitEnabled="true"/>
+        <item id="calendar-event-start-editable" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Event.java"/>
+            </otherFiles>
+        </item>
     </menu>
 
     <menu id="custom-components-root" url="flow-ui">
