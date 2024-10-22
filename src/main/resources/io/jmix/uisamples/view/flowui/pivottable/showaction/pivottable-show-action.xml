@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <view xmlns="http://jmix.io/schema/flowui/view">
     <data>
-        <collection id="tipsDc"
-                    class="io.jmix.uisamples.entity.TipInfo">
-            <fetchPlan extends="_local"/>
-            <loader id="tipsLoader">
-                <query>
-                    <![CDATA[select e from TipInfo e]]>
-                </query>
-            </loader>
-        </collection>
         <collection id="tipInfoesDc" class="io.jmix.uisamples.entity.TipInfo">
             <fetchPlan extends="_base"/>
             <loader id="tipInfoesDl" readOnly="true">
@@ -26,10 +17,8 @@
         <hbox id="buttonsPanel" classNames="buttons-panel">
             <button id="showPivotTableActionButton"
                     action="tipInfoesDataGrid.showPivotTableAction"
-                    text="msg://io.jmix.uisamples.view.flowui.pivottable.showAction/defaultShowActionButton.text"/>
-            <button id="customShowPivotTableActionButton"
-                    text="msg://io.jmix.uisamples.view.flowui.pivottable.showAction/customShowActionButton.text"
-                    />
+                    text="msg://io.jmix.uisamples.view.flowui.pivottable.showaction/defaultShowActionButton.text"/>
+            <button id="customShowPivotTableActionButton"/>
         </hbox>
         <dataGrid id="tipInfoesDataGrid" dataContainer="tipInfoesDc" minWidth="100px" width="100%">
             <actions>

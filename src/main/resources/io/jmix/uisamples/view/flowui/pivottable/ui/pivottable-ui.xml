@@ -16,7 +16,7 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
-       <pvttbl:pivotTable id="pivotTable"
+        <pvttbl:pivotTable id="pivotTable"
                           dataContainer="tipsDc"
                           height="100%"
                           width="100%"
@@ -29,21 +29,21 @@
                <pvttbl:property name="day"/>
                <pvttbl:property name="time"/>
                <pvttbl:property name="size"/>
-            </pvttbl:properties>
+           </pvttbl:properties>
            <pvttbl:renderers default="HEATMAP"/>
            <pvttbl:aggregations default="SUM_OVER_SUM"/>
            <pvttbl:aggregationProperties>
                <pvttbl:property name="tip"/>
                <pvttbl:property name="totalBill"/>
-            </pvttbl:aggregationProperties>
+           </pvttbl:aggregationProperties>
            <pvttbl:columns>
                <pvttbl:column value="day"/>
                <pvttbl:column value="time"/>
-            </pvttbl:columns>
+           </pvttbl:columns>
            <pvttbl:rows>
                <pvttbl:row value="sex"/>
                <pvttbl:row value="smoker"/>
-            </pvttbl:rows>
+           </pvttbl:rows>
         </pvttbl:pivotTable>
     </layout>
 </view>

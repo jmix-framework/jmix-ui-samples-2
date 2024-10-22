@@ -1,6 +1,6 @@
 package io.jmix.uisamples.view.flowui.pivottable.showaction;
 
-import com.vaadin.flow.component.ClickEvent;
+import io.jmix.core.Messages;
 import io.jmix.flowui.Actions;
 import io.jmix.flowui.component.grid.DataGrid;
 import io.jmix.flowui.kit.component.button.JmixButton;
@@ -24,29 +24,31 @@ public class PivotTableShowAction extends StandardView {
     @ViewComponent
     private DataGrid<TipInfo> tipInfoesDataGrid;
     @ViewComponent
-    private JmixButton showPivotTableActionButton;
+    private JmixButton customShowPivotTableActionButton;
+    @Autowired
+    private Messages messages;
 
     @Subscribe
     public void onInit(final InitEvent event) {
         ShowPivotTableAction<TipInfo> showPivotTableAction = actions.create(ShowPivotTableAction.ID);
         showPivotTableAction.setTarget(tipInfoesDataGrid);
-        showPivotTableActionButton.setAction(showPivotTableAction);
-    }
+        customShowPivotTableActionButton.setAction(showPivotTableAction);
+        customShowPivotTableActionButton.setText(messages.getMessage(getClass(), "customShowActionButton.text"));
 
-    @Subscribe(id = "customShowPivotTableActionButton", subject = "clickListener")
-    public void onCustomShowPivotTableActionButtonClick(final ClickEvent<JmixButton> event) {
-        PivotTableViewBuilder builder = getApplicationContext().getBean(
-                PivotTableViewBuilder.class, tipInfoesDataGrid);
-        Renderers renderers = new Renderers();
-        renderers.setSelectedRenderer(Renderer.TABLE);
-        renderers.setRenderers(List.of(Renderer.TABLE, Renderer.TABLE_BAR_CHART, Renderer.HEATMAP,
-                Renderer.ROW_HEATMAP, Renderer.COL_HEATMAP));
+        showPivotTableAction.addActionPerformedListener(actionPerformedEvent -> {
+            PivotTableViewBuilder builder = getApplicationContext().getBean(
+                    PivotTableViewBuilder.class, tipInfoesDataGrid);
+            Renderers renderers = new Renderers();
+            renderers.setSelectedRenderer(Renderer.TABLE);
+            renderers.setRenderers(List.of(Renderer.TABLE, Renderer.TABLE_BAR_CHART, Renderer.HEATMAP,
+                    Renderer.ROW_HEATMAP, Renderer.COL_HEATMAP));
 
-        builder.withIncludedProperties(Arrays.asList("sex", "smoker", "day", "time"))
-                .withRows(Arrays.asList("sex", "smoker"))
-                .withColumns(Arrays.asList("day", "time"))
-                .withRenderers(renderers)
-                .withItems(tipInfoesDataGrid.getItems().getItems())
-                .show();
+            builder.withIncludedProperties(Arrays.asList("sex", "smoker", "day", "time"))
+                    .withRows(Arrays.asList("sex", "smoker"))
+                    .withColumns(Arrays.asList("day", "time"))
+                    .withRenderers(renderers)
+                    .withItems(tipInfoesDataGrid.getItems().getItems())
+                    .show();
+        });
     }
 }

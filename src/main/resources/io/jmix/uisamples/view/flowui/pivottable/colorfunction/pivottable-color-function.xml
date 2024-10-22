@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:pvttbl="http://jmix.io/schema/pvttbl/ui">
+    <data>
+        <collection id="temperatureDataDc"
+                    class="io.jmix.uisamples.entity.TemperatureData">
+            <fetchPlan extends="_local"/>
+            <loader id="tipsLoader">
+                <query>
+                    <![CDATA[select e from TemperatureData e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout expand="pivotTable" spacing="true">
+        <pvttbl:pivotTable id="pivotTable"
+                          dataContainer="temperatureDataDc"
+                          showColumnTotals="false"
+                          showRowTotals="false"
+                          renderer="HEATMAP">
+            <pvttbl:properties>
+                <pvttbl:property name="temperature"/>
+                <pvttbl:property name="city"/>
+                <pvttbl:property name="month"/>
+            </pvttbl:properties>
+            <pvttbl:columns>
+                <pvttbl:column value="city"/>
+            </pvttbl:columns>
+            <pvttbl:rows>
+                <pvttbl:row value="month"/>
+            </pvttbl:rows>
+            <pvttbl:aggregation mode="AVERAGE">
+                <pvttbl:property name="temperature"/>
+            </pvttbl:aggregation>
+            <pvttbl:rendererOptions>
+                <pvttbl:heatmap>
+                    <pvttbl:colorScaleGeneratorFunction><![CDATA[
+                    function(values) {
+                        var max, min;
+                        min = Math.min.apply(Math, values);
+                        max = Math.max.apply(Math, values);
+
+                        return function(x) {
+                            let fromR, fromG, fromB;
+                            let toR, toG, toB;
+                            if (x < 0) {
+                                min = -35;
+                                max = 0;
+                                fromR = 0, fromG = 0, fromB = 255;
+                                toR = 255, toG = 255, toB = 255;
+                            } else {
+                                min = 0;
+                                max = 35;
+                                fromR = 255, fromG = 255, fromB = 255;
+                                toR = 255, toG = 0, toB = 0;
+                            }
+
+                            let interpolationRatio = (x - min) / (max - min);
+                            let r = fromR - Math.round((fromR - toR) * interpolationRatio);
+                            let g = fromG - Math.round((fromG - toG) * interpolationRatio);
+                            let b = fromB - Math.round((fromB - toB) * interpolationRatio);
+                            return "rgb(" + r + ", " + g + ", " + b +")";
+                        }
+                    }]]>
+                    </pvttbl:colorScaleGeneratorFunction>
+                </pvttbl:heatmap>
+            </pvttbl:rendererOptions>
+        </pvttbl:pivotTable>
+    </layout>
+</view>

@@ -1040,6 +1040,11 @@
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
+        <item id="pivottable-color-function" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TemperatureData.java"/>
+            </otherFiles>
+        </item>
     </menu>
 
     <menu id="custom-components-root" url="flow-ui">

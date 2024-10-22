@@ -50,9 +50,14 @@
             <text message="show-action.description"/>
         </sample>
         <sample>
-            <image src="icons/pivottable/settings.png" route="pivottable-settings"/>
-            <text message="settings.title" route="pivottable-settings" component="h4"/>
-            <text message="settings.description"/>
+            <image src="icons/pivottable/saveState.png" route="pivottable-save-state"/>
+            <text message="save-state.title" route="pivottable-save-state" component="h4"/>
+            <text message="save-state.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/colorFunction.png" route="color-function"/>
+            <text message="color-function.title" route="pivottable-color-function" component="h4"/>
+            <text message="color-function.description"/>
         </sample>
     </samples>
 </overview>
