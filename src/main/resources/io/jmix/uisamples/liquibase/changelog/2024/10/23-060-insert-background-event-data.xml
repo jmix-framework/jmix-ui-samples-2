@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+
+    <property name="now" value="now()" dbms="hsqldb"/>
+
+    <!--Past events-->
+
+    <changeSet id="1" author="uisamples">
+        <insert tableName="BACKGROUND_EVENT">
+            <column name="ID" value="550e8400-e29b-41d4-a716-446655440028"/>
+            <column name="TITLE" value="Working shift #1"/>
+            <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -8 DAY)"/>
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -7 DAY)"/>
+            <column name="ALL_DAY" valueBoolean="true"/>
+            <column name="DISPLAY" value="background"/>
+            <column name="WORKING_SHIFT_ID" value="2bc7e6ed-e1b3-4210-b3a0-c4797a9f2b9c"/> <!--WS #1-->
+            <column name="CLASS_NAMES" value="green-background-event"/>
+        </insert>
+
+        <insert tableName="BACKGROUND_EVENT">
+            <column name="ID" value="550e8400-e29b-41d4-a716-446655440029"/>
+            <column name="TITLE" value="Working shift #2"/>
+            <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -15 DAY)"/>
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -14 DAY)"/>
+            <column name="ALL_DAY" valueBoolean="true"/>
+            <column name="DISPLAY" value="background"/>
+            <column name="WORKING_SHIFT_ID" value="2479fa7a-ad83-4faf-ab25-b276e2abb5ce"/> <!--WS #2-->
+            <column name="CLASS_NAMES" value="red-background-event"/>
+        </insert>
+
+        <insert tableName="BACKGROUND_EVENT">
+            <column name="ID" value="550e8400-e29b-41d4-a716-446655440030"/>
+            <column name="TITLE" value="Working shift #1"/>
+            <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -22 DAY)"/>
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -21 DAY)"/>
+            <column name="ALL_DAY" valueBoolean="true"/>
+            <column name="DISPLAY" value="background"/>
+            <column name="WORKING_SHIFT_ID" value="2bc7e6ed-e1b3-4210-b3a0-c4797a9f2b9c"/> <!--WS #1-->
+            <column name="CLASS_NAMES" value="green-background-event"/>
+        </insert>
+
+        <insert tableName="BACKGROUND_EVENT">
+            <column name="ID" value="550e8400-e29b-41d4-a716-446655440031"/>
+            <column name="TITLE" value="Working shift #2"/>
+            <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -29 DAY)"/>
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -28 DAY)"/>
+            <column name="ALL_DAY" valueBoolean="true"/>
+            <column name="DISPLAY" value="background"/>
+            <column name="WORKING_SHIFT_ID" value="2479fa7a-ad83-4faf-ab25-b276e2abb5ce"/> <!--WS #2-->
+            <column name="CLASS_NAMES" value="red-background-event"/>
+        </insert>
+    </changeSet>
+
+    <!--Current event-->
+
+    <changeSet id="2" author="uisamples">
+        <insert tableName="BACKGROUND_EVENT">
+            <column name="ID" value="550e8400-e29b-41d4-a716-446655440032"/>
+            <column name="TITLE" value="Working shift #1"/>
+            <column name="START_DATE" valueComputed="${now}"/>
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 1 DAY)"/>
+            <column name="ALL_DAY" valueBoolean="true"/>
+            <column name="DISPLAY" value="background"/>
+            <column name="WORKING_SHIFT_ID" value="2bc7e6ed-e1b3-4210-b3a0-c4797a9f2b9c"/> <!--WS #1-->
+            <column name="CLASS_NAMES" value="green-background-event"/>
+        </insert>
+    </changeSet>
+
+    <!--Future events-->
+
+    <changeSet id="3" author="uisamples">
+        <insert tableName="BACKGROUND_EVENT">
+            <column name="ID" value="550e8400-e29b-41d4-a716-446655440033"/>
+            <column name="TITLE" value="Working shift #2"/>
+            <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 8 DAY)"/>
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 9 DAY)"/>
+            <column name="ALL_DAY" valueBoolean="true"/>
+            <column name="DISPLAY" value="background"/>
+            <column name="WORKING_SHIFT_ID" value="2479fa7a-ad83-4faf-ab25-b276e2abb5ce"/> <!--WS #2-->
+            <column name="CLASS_NAMES" value="red-background-event"/>
+        </insert>
+
+        <insert tableName="BACKGROUND_EVENT">
+            <column name="ID" value="550e8400-e29b-41d4-a716-446655440034"/>
+            <column name="TITLE" value="Working shift #1"/>
+            <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 15 DAY)"/>
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 16 DAY)"/>
+            <column name="ALL_DAY" valueBoolean="true"/>
+            <column name="DISPLAY" value="background"/>
+            <column name="WORKING_SHIFT_ID" value="2bc7e6ed-e1b3-4210-b3a0-c4797a9f2b9c"/> <!--WS #1-->
+            <column name="CLASS_NAMES" value="green-background-event"/>
+        </insert>
+
+        <insert tableName="BACKGROUND_EVENT">
+            <column name="ID" value="550e8400-e29b-41d4-a716-446655440035"/>
+            <column name="TITLE" value="Working shift #2"/>
+            <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 22 DAY)"/>
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 23 DAY)"/>
+            <column name="ALL_DAY" valueBoolean="true"/>
+            <column name="DISPLAY" value="background"/>
+            <column name="WORKING_SHIFT_ID" value="2479fa7a-ad83-4faf-ab25-b276e2abb5ce"/> <!--WS #2-->
+            <column name="CLASS_NAMES" value="red-background-event"/>
+        </insert>
+
+        <insert tableName="BACKGROUND_EVENT">
+            <column name="ID" value="550e8400-e29b-41d4-a716-446655440036"/>
+            <column name="TITLE" value="Working shift #1"/>
+            <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 29 DAY)"/>
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 30 DAY)"/>
+            <column name="ALL_DAY" valueBoolean="true"/>
+            <column name="DISPLAY" value="background"/>
+            <column name="WORKING_SHIFT_ID" value="2bc7e6ed-e1b3-4210-b3a0-c4797a9f2b9c"/> <!--WS #1-->
+            <column name="CLASS_NAMES" value="green-background-event"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

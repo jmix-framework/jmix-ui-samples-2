@@ -1029,6 +1029,26 @@
                 <file name="io/jmix/uisamples/entity/Event.java"/>
             </otherFiles>
         </item>
+        <item id="calendar-event-duration-editable" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Event.java"/>
+            </otherFiles>
+        </item>
+        <item id="calendar-event-overlap-function" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Event.java"/>
+                <file name="io/jmix/uisamples/entity/BackgroundEvent.java"/>
+                <file name="io/jmix/uisamples/entity/WorkingShift.java"/>
+                <file name="io/jmix/uisamples/view/flowui/calendar/eventoverlapfunction/sample-styles.css"/>
+            </otherFiles>
+        </item>
+        <item id="calendar-event-constraint" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/calendar/eventconstraint/EventsHelper.java"/>
+            </otherFiles>
+        </item>
+        <item id="calendar-recurring-events" splitEnabled="true"/>
+        <item id="calendar-event-actions" splitEnabled="true"/>
     </menu>
 
     <menu id="custom-components-root" url="flow-ui">

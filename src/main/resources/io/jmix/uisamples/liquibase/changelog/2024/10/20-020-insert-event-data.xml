@@ -5,11 +5,12 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
         objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+
     <property name="now" value="now()" dbms="hsqldb"/>
 
     <!--Events for future -->
 
-    <changeSet id="1" author="uisamples">
+    <changeSet id="1" author="uisamples" dbms="hsqldb">
         <insert tableName="EVENT">
             <column name="ID" value="a7ddcb04-51a7-4698-9e97-9cc22f7866ac"/>
             <column name="TITLE" value="Project Kickoff"/>
@@ -30,7 +31,7 @@
             <column name="TITLE" value="Client Presentation"/>
             <column name="ALL_DAY" valueBoolean="true"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 6 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 145 HOUR)"/> <!--6 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 7 DAY)"/>
         </insert>
 
         <insert tableName="EVENT">
@@ -38,7 +39,7 @@
             <column name="TITLE" value="Weekly Standup"/>
             <column name="ALL_DAY" valueBoolean="true"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 8 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 193 HOUR)"/> <!--8 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 9 DAY)"/>
         </insert>
 
         <insert tableName="EVENT">
@@ -46,7 +47,7 @@
             <column name="TITLE" value="Monthly Review Session"/>
             <column name="ALL_DAY" valueBoolean="false"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 11 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 12 DAY )"/>
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 268 HOUR )"/> <!--11 days 2 hour-->
         </insert>
 
         <insert tableName="EVENT">
@@ -69,7 +70,7 @@
             <column name="TITLE" value="Sales Training Workshop"/>
             <column name="ALL_DAY" valueBoolean="true"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 18 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 433 HOUR)"/> <!--18 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 19 DAY)"/>
         </insert>
 
         <insert tableName="EVENT">
@@ -93,14 +94,14 @@
             <column name="TITLE" value="Innovation Brainstorming Session"/>
             <column name="ALL_DAY" valueBoolean="true"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 21 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 505 HOUR)"/> <!--21 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 22 DAY)"/>
         </insert>
         <insert tableName="EVENT">
             <column name="ID" value="550e8400-e29b-41d4-a716-446655440010"/>
             <column name="TITLE" value="Budget Planning Meeting"/>
             <column name="ALL_DAY" valueBoolean="true"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 21 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 505 HOUR)"/> <!--21 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 22 DAY)"/>
         </insert>
 
         <insert tableName="EVENT">
@@ -116,13 +117,13 @@
             <column name="TITLE" value="Health and Wellness Seminar"/>
             <column name="ALL_DAY" valueBoolean="true"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 25 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 601 HOUR)"/> <!--25 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL 26 DAY)"/>
         </insert>
     </changeSet>
 
     <!--Events for past -->
 
-    <changeSet id="2" author="uisamples">
+    <changeSet id="2" author="uisamples" dbms="hsqldb">
         <insert tableName="EVENT">
             <column name="ID" value="550e8400-e29b-41d4-a716-446655440014"/>
             <column name="TITLE" value="Community Service Day"/>
@@ -136,7 +137,7 @@
             <column name="TITLE" value="Annual Conference"/>
             <column name="ALL_DAY" valueBoolean="false"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -4 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -95 HOUR)"/> <!--4 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -95 HOUR)"/> <!--3 days and 23 hour-->
         </insert>
 
         <insert tableName="EVENT">
@@ -144,7 +145,7 @@
             <column name="TITLE" value="Web Development Workshop"/>
             <column name="ALL_DAY" valueBoolean="true"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -6 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -143 HOUR)"/> <!--6 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -5 DAY)"/>
         </insert>
 
         <insert tableName="EVENT">
@@ -152,7 +153,7 @@
             <column name="TITLE" value="Marketing Strategy Session"/>
             <column name="ALL_DAY" valueBoolean="true"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -8 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -191 HOUR)"/> <!--8 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -7 DAY)"/>
         </insert>
 
         <insert tableName="EVENT">
@@ -169,14 +170,14 @@
             <column name="TITLE" value="Leadership Development Program"/>
             <column name="ALL_DAY" valueBoolean="false"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -14 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -335 HOUR)"/> <!--14 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -335 HOUR)"/> <!--13 days and 23 hour-->
         </insert>
         <insert tableName="EVENT">
             <column name="ID" value="550e8400-e29b-41d4-a716-446655440020"/>
             <column name="TITLE" value="Social Media Strategy Meeting"/>
             <column name="ALL_DAY" valueBoolean="false"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -16 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -383 HOUR)"/> <!--16 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -383 HOUR)"/> <!--15 days and 23 hour-->
         </insert>
 
         <insert tableName="EVENT">
@@ -184,7 +185,7 @@
             <column name="TITLE" value="Creative Writing Workshop"/>
             <column name="ALL_DAY" valueBoolean="true"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -18 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -431 HOUR)"/> <!--18 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -17 DAY)"/>
         </insert>
 
         <insert tableName="EVENT">
@@ -192,7 +193,7 @@
             <column name="TITLE" value="Financial Review Meeting"/>
             <column name="ALL_DAY" valueBoolean="false"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -18 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -431 HOUR)"/> <!--18 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -431 HOUR)"/> <!--17 days and 23 hour-->
         </insert>
 
         <insert tableName="EVENT">
@@ -200,7 +201,7 @@
             <column name="TITLE" value="Technology Update Briefing"/>
             <column name="ALL_DAY" valueBoolean="false"/>
             <column name="START_DATE" valueDate="DATE_ADD(${now}, INTERVAL -19 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -455 HOUR)"/> <!--19 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -455 HOUR)"/> <!--18 days and 23 hour-->
         </insert>
 
         <insert tableName="EVENT">
@@ -208,14 +209,14 @@
             <column name="TITLE" value="Volunteer Appreciation Event"/>
             <column name="ALL_DAY" valueBoolean="true"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -21 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -503 HOUR)"/> <!--21 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -20 DAY)"/>
         </insert>
         <insert tableName="EVENT">
             <column name="ID" value="550e8400-e29b-41d4-a716-446655440025"/>
             <column name="TITLE" value="End-of-Year Celebration"/>
             <column name="ALL_DAY" valueBoolean="true"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -21 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -503 HOUR)"/> <!--21 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -20 DAY)"/>
         </insert>
 
         <insert tableName="EVENT">
@@ -223,7 +224,7 @@
             <column name="TITLE" value="Employee Recognition Ceremony"/>
             <column name="ALL_DAY" valueBoolean="false"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -23 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -551 HOUR)"/> <!--23 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -551 HOUR)"/> <!--22 days and 23 hour-->
         </insert>
 
         <insert tableName="EVENT">
@@ -231,7 +232,7 @@
             <column name="TITLE" value="Feedback and Improvement Session"/>
             <column name="ALL_DAY" valueBoolean="true"/>
             <column name="START_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -25 DAY)"/>
-            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -599 HOUR)"/> <!--25 days and 1 hour-->
+            <column name="END_DATE" valueComputed="DATE_ADD(${now}, INTERVAL -24 DAY)"/>
         </insert>
     </changeSet>
 

@@ -29,9 +29,9 @@
         </sample>
         <sample>
             <image src="icons/calendar/calendar-display-modes.png" route="calendar-calendar-display-modes"/>
-            <text message="calendar-display-modes.text" route="calendar-calendar-display-modes" component="h4"/>
+            <text message="calendar-display-modes.title" route="calendar-calendar-display-modes" component="h4"/>
             <tag text="calendarDisplayModes"
-                 route="calendar-simple-calendar-event"
+                 route="calendar-calendar-display-modes"
                  classNames="overview-tag-font overview-tag-red"/>
             <tag text="customCalendarDisplayMode"
                  route="calendar-custom-calendar-display-mode"
@@ -42,6 +42,28 @@
             <tag text="genericCalendarDisplayModes"
                  route="calendar-generic-calendar-display-modes"
                  classNames="overview-tag-font overview-tag-red"/>
+        </sample>
+        <sample>
+            <image src="icons/calendar/calendar-events.png" route="calendar-event-start-editable"/>
+            <text message="calendar-event-start-editable.title" route="calendar-event-start-editable" component="h4"/>
+            <tag text="eventStartEditable"
+                 route="calendar-event-start-editable"
+                 classNames="overview-tag-font overview-tag-orange"/>
+            <tag text="eventDurationEditable"
+                 route="calendar-event-duration-editable"
+                 classNames="overview-tag-font overview-tag-orange"/>
+            <tag text="eventOverlapFunction"
+                 route="calendar-event-overlap-function"
+                 classNames="overview-tag-font overview-tag-orange"/>
+            <tag text="eventConstraint"
+                 route="calendar-event-constraint"
+                 classNames="overview-tag-font overview-tag-orange"/>
+            <tag text="recurringEvents"
+                 route="calendar-recurring-events"
+                 classNames="overview-tag-font overview-tag-orange"/>
+            <tag text="eventActions"
+                 route="calendar-event-actions"
+                 classNames="overview-tag-font overview-tag-orange"/>
         </sample>
     </samples>
 </overview>

@@ -15,6 +15,9 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
+        <div classNames="border rounded-s p-s">
+            <span text="msg://sampleDescription.text"/>
+        </div>
         <calendar:calendar id="calendar"
                            height="100%"
                            width="100%"

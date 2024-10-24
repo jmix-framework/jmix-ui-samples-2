@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:calendar="http://jmix.io/schema/fullcalendar/ui">
+    <data>
+        <collection id="backgroundEventsDc" class="io.jmix.uisamples.entity.BackgroundEvent">
+            <fetchPlan extends="_base">
+                <property name="workingShift" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="backgroundEventsDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from BackgroundEvent e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <div classNames="border rounded-s p-s">
+            <span text="msg://sampleDescription.text"/>
+        </div>
+        <calendar:calendar id="calendar"
+                           eventStartEditable="true"
+                           eventDurationEditable="true"
+                           eventResizableFromStart="true"
+                           height="100%"
+                           width="100%"
+                           minHeight="30em">
+            <calendar:dataProviders>
+                <calendar:containerDataProvider dataContainer="backgroundEventsDc"
+                                                title="title"
+                                                allDay="allDay"
+                                                display="display"
+                                                startDateTime="startDate"
+                                                endDateTime="endDate"
+                                                classNames="classNames"
+                                                additionalProperties="workingShift.number"/>
+            </calendar:dataProviders>
+        </calendar:calendar>
+    </layout>
+</view>
