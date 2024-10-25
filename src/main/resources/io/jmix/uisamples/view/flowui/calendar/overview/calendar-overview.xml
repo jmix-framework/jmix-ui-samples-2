@@ -45,7 +45,7 @@
         </sample>
         <sample>
             <image src="icons/calendar/calendar-events.png" route="calendar-event-start-editable"/>
-            <text message="calendar-event-start-editable.title" route="calendar-event-start-editable" component="h4"/>
+            <text message="calendar-events.title" route="calendar-event-start-editable" component="h4"/>
             <tag text="eventStartEditable"
                  route="calendar-event-start-editable"
                  classNames="overview-tag-font overview-tag-orange"/>
@@ -64,6 +64,22 @@
             <tag text="eventActions"
                  route="calendar-event-actions"
                  classNames="overview-tag-font overview-tag-orange"/>
+        </sample>
+        <sample>
+            <image src="icons/calendar/selection.png" route="calendar-selection"/>
+            <text message="selection.title" route="calendar-selection"/>
+            <tag text="calendarSelection"
+                 route="calendar-selection"
+                 classNames="overview-tag-font overview-tag-blue"/>
+            <tag text="selectMirror"
+                 route="calendar-select-mirror"
+                 classNames="overview-tag-font overview-tag-blue"/>
+            <tag text="selectOverlapFunction"
+                 route="calendar-select-overlap-function"
+                 classNames="overview-tag-font overview-tag-blue"/>
+            <tag text="selectAllowFunction"
+                 route="calendar-select-allow-function"
+                 classNames="overview-tag-font overview-tag-blue"/>
         </sample>
     </samples>
 </overview>

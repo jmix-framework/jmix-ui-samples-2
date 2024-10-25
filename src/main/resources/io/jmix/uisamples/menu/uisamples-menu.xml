@@ -1049,6 +1049,10 @@
         </item>
         <item id="calendar-recurring-events" splitEnabled="true"/>
         <item id="calendar-event-actions" splitEnabled="true"/>
+        <item id="calendar-selection" splitEnabled="true"/>
+        <item id="calendar-select-mirror" splitEnabled="true"/>
+        <item id="calendar-select-overlap-function" splitEnabled="true"/>
+        <item id="calendar-select-allow-function" splitEnabled="true"/>
     </menu>
 
     <menu id="custom-components-root" url="flow-ui">
