@@ -1053,6 +1053,12 @@
         <item id="calendar-select-mirror" splitEnabled="true"/>
         <item id="calendar-select-overlap-function" splitEnabled="true"/>
         <item id="calendar-select-allow-function" splitEnabled="true"/>
+        <item id="calendar-class-names-generator" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/calendar/classnamesgenerator/sample-styles.css"/>
+            </otherFiles>
+        </item>>
+        <item id="calendar-event-styling" splitEnabled="true"/>
     </menu>
 
     <menu id="custom-components-root" url="flow-ui">

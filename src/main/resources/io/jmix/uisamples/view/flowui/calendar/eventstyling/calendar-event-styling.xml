@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:calendar="http://jmix.io/schema/fullcalendar/ui">
+    <layout>
+        <calendar:calendar id="calendar"
+                           eventBackgroundColor="#717BD8"
+                           eventTextColor="#081272"
+                           eventBorderColor="#1826B0"
+                           height="100%"
+                           width="100%"
+                           minHeight="30em"/>
+    </layout>
+</view>

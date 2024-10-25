@@ -81,5 +81,15 @@
                  route="calendar-select-allow-function"
                  classNames="overview-tag-font overview-tag-blue"/>
         </sample>
+        <sample>
+            <image src="icons/calendar/calendar-styling.png" route="calendar-class-names-generator"/>
+            <text message="calendar-styling.title" route="calendar-class-names-generator"/>
+            <tag text="classNamesGenerator"
+                 route="calendar-class-names-generator"
+                 classNames="overview-tag-font overview-tag-purple"/>
+            <tag text="eventStyling"
+                 route="calendar-event-styling"
+                 classNames="overview-tag-font overview-tag-purple"/>
+        </sample>
     </samples>
 </overview>
