@@ -1,0 +1,22 @@
+<fragment xmlns="http://jmix.io/schema/flowui/fragment">
+    <data readOnly="true">
+        <instance id="employeeDc" class="io.jmix.uisamples.entity.Employee"/>
+    </data>
+    <content>
+        <vbox padding="false" spacing="false" classNames="mb-m">
+            <div classNames="flex flex-row gap-xs">
+                <h3 dataContainer="employeeDc" property="firstName"/>
+                <h3 dataContainer="employeeDc" property="lastName"/>
+            </div>
+
+            <details summaryText="Address" width="100%">
+                <formLayout dataContainer="employeeDc">
+                    <textField property="address.zip" readOnly="true"/>
+                    <textField property="address.country" readOnly="true"/>
+                    <textField property="address.city" readOnly="true"/>
+                    <textField property="address.addressLine" readOnly="true"/>
+                </formLayout>
+            </details>
+        </vbox>
+    </content>
+</fragment>

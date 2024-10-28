@@ -1,0 +1,44 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:kanban="http://jmix.io/schema/kanban/ui">
+    <data readOnly="true">
+        <collection id="kanbanTasksDc" class="io.jmix.uisamples.entity.KanbanTask">
+            <fetchPlan extends="_base"/>
+            <loader id="kanbanTasksDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from KanbanTask e order by e.name asc]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <settings auto="true"/>
+    </facets>
+    <layout>
+        <hbox classNames="buttons-panel">
+            <button id="collapseAllBtn" text="msg://collapseAllBtn.text" icon="COMPRESS"/>
+            <button id="expandAllBtn" text="msg://expandAllBtn.text" icon="EXPAND"/>
+            <button id="hideAllBtn" text="msg://hideAllBtn.text" icon="CIRCLE_THIN"/>
+            <button id="showAllBtn" text="msg://showAllBtn.text" icon="CIRCLE"/>
+        </hbox>
+        <kanban:kanban id="kanban" dataContainer="kanbanTasksDc"
+                       width="100%"
+                       height="100%"
+                       collapsible="true"
+                       columnReorderingAllowed="true"
+                       columnActionsEnabled="true"
+                       taskTagsVisible="true">
+            <kanban:propertiesMapping id="id"
+                                      status="status"
+                                      text="name"
+                                      color="color"
+                                      tags="tags"/>
+            <kanban:columns>
+                <kanban:column dataField="todo" label="msg://kanban.column.todo"/>
+                <kanban:column dataField="in_progress" label="msg://kanban.column.in_progress"/>
+                <kanban:column dataField="testing" label="msg://kanban.column.testing"/>
+                <kanban:column dataField="done" label="msg://kanban.column.done"/>
+            </kanban:columns>
+        </kanban:kanban>
+    </layout>
+</view>

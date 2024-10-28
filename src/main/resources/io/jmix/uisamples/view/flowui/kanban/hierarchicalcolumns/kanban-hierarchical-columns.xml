@@ -1,0 +1,43 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:kanban="http://jmix.io/schema/kanban/ui">
+    <data readOnly="true">
+        <collection id="kanbanTasksDc" class="io.jmix.uisamples.entity.KanbanTask">
+            <fetchPlan extends="_base"/>
+            <loader id="kanbanTasksDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from KanbanTask e order by e.name asc]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <checkbox id="columnModeCheckbox" label="msg://columnModeCheckbox.label"/>
+        <kanban:kanban id="kanban" dataContainer="kanbanTasksDc"
+                       height="100%"
+                       width="100%"
+                       columnActionsEnabled="true"
+                       collapsible="true"
+                       columnReorderingAllowed="true"
+                       taskTagsVisible="true">
+            <kanban:propertiesMapping id="id"
+                                      status="status"
+                                      text="name"
+                                      color="color"
+                                      tags="tags"/>
+            <kanban:columns>
+                <kanban:column dataField="todo" label="msg://kanban.column.todo"/>
+                <kanban:column dataField="in_progress" label="msg://kanban.column.in_progress"/>
+                <kanban:column dataField="testing" label="msg://kanban.column.testing">
+                    <kanban:columns>
+                        <kanban:column dataField="manual" label="msg://kanban.column.testing.manual"/>
+                        <kanban:column dataField="auto" label="msg://kanban.column.testing.auto"/>
+                    </kanban:columns>
+                </kanban:column>
+                <kanban:column dataField="done" label="msg://kanban.column.done"/>
+            </kanban:columns>
+        </kanban:kanban>
+    </layout>
+</view>

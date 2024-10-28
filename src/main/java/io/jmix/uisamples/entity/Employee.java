@@ -2,9 +2,12 @@ package io.jmix.uisamples.entity;
 
 import io.jmix.core.entity.annotation.EmbeddedParameters;
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
+import io.jmix.core.metamodel.annotation.DependsOnProperties;
 import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.UUID;
 
@@ -18,9 +21,20 @@ public class Employee {
     @Id
     private UUID id;
 
-    @InstanceName
-    @Column(name = "NAME")
-    private String name;
+    @Column(name = "DEPARTMENT")
+    private String department;
+
+    @Column(name = "FIRST_NAME", nullable = false)
+    @NotNull
+    private String firstName;
+
+    @Column(name = "LAST_NAME", nullable = false)
+    @NotNull
+    private String lastName;
+
+    @Email
+    @Column(name = "EMAIL")
+    protected String email;
 
     @EmbeddedParameters(nullAllowed = false)
     @Embedded
@@ -42,12 +56,36 @@ public class Employee {
         this.address = address;
     }
 
-    public String getName() {
-        return name;
+    public String getDepartment() {
+        return department;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(final String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(final String email) {
+        this.email = email;
     }
 
     public UUID getId() {
@@ -56,5 +94,12 @@ public class Employee {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    @InstanceName
+    @DependsOnProperties({"firstName", "lastName"})
+    public String getDisplayName() {
+        return String.format("%s %s", (firstName != null ? firstName : ""),
+                (lastName != null ? lastName : ""));
     }
 }

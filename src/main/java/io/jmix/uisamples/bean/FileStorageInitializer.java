@@ -22,9 +22,17 @@ public class FileStorageInitializer {
     @EventListener
     @Authenticated
     public void onApplicationStarted(ApplicationStartedEvent event) {
-        FileRef fileRef = FileRef.create(SamplesFileStorage.DEFAULT_STORAGE_NAME, "documentation.pdf", "documentation.pdf");
+        uploadFile("META-INF/resources/pdf/", "documentation.pdf");
+        uploadFile("META-INF/resources/avatar/", "dora.png");
+        uploadFile("META-INF/resources/avatar/", "edward.png");
+        uploadFile("META-INF/resources/avatar/", "john.png");
+        uploadFile("META-INF/resources/avatar/", "mary.png");
+    }
+
+    private void uploadFile(String path, String fileName) {
+        FileRef fileRef = FileRef.create(SamplesFileStorage.DEFAULT_STORAGE_NAME, fileName, fileName);
         if (!fileStorage.fileExists(fileRef)) {
-            uploadFile(fileRef, "META-INF/resources/pdf/", "documentation.pdf");
+            uploadFile(fileRef, path, fileName);
         }
     }
 

@@ -1,0 +1,5 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <button id="button" text="Open wizard" icon="MAGIC" themeNames="primary"/>
+    </layout>
+</view>

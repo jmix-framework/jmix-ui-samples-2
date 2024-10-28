@@ -1,13 +1,14 @@
 plugins {
-    id 'io.jmix' version '2.3.1'
+    id 'io.jmix' version '2.4.0'
     id 'java'
+    id 'org.jetbrains.gradle.plugin.idea-ext' version '1.1.9'
 }
 
 apply plugin: 'org.springframework.boot'
 apply plugin: 'com.vaadin'
 
 jmix {
-    bomVersion = '2.3.1'
+    bomVersion = '2.4.0'
 }
 
 group = 'io.jmix.uisamples'
@@ -46,6 +47,7 @@ dependencies {
     implementation 'io.jmix.charts:jmix-charts-flowui-starter'
     implementation 'io.jmix.maps:jmix-maps-starter'
     implementation 'io.jmix.maps:jmix-maps-flowui-starter'
+    implementation 'io.jmix.kanban:jmix-kanban-flowui-starter'
 
     implementation 'com.storedobject.chart:so-charts:3.2.4'
 
@@ -59,6 +61,17 @@ dependencies {
     }
 
     implementation 'io.jmix.translations:jmix-translations-ru'
+}
+
+configurations.implementation {
+    exclude group: 'com.vaadin', module: 'hilla'
+    exclude group: 'com.vaadin', module: 'hilla-dev'
+}
+
+idea {
+    module {
+        excludeDirs.addAll(files '.jmix', 'node_modules', 'src/main/frontend/generated/', 'src/main/bundles')
+    }
 }
 
 processResources {

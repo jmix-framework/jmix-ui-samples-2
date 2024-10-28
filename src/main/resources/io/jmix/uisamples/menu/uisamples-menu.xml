@@ -42,7 +42,7 @@
             <item id="button-simple" page="button"/>
             <item id="button-action" page="button"/>
             <item id="button-programmatic-action" page="button"/>
-            <item id="button-image" page="button" isNew="true"/>
+            <item id="button-image" page="button"/>
             <item id="button-theme-variant" page="button" splitEnabled="true"/>
         </menu>
         <menu id="checkbox">
@@ -118,7 +118,7 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-context-menu" page="dataGrid" anchor="context-menu" splitEnabled="true" isNew="true">
+            <item id="data-grid-context-menu" page="dataGrid" anchor="context-menu" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
@@ -464,7 +464,7 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="property-filter-date-interval-operation" page="propertyFilter" splitEnabled="true" isNew="true">
+            <item id="property-filter-date-interval-operation" page="propertyFilter" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Order.java"/>
                 </otherFiles>
@@ -585,7 +585,7 @@
             <item id="time-picker-custom-range" page="timePicker"/>
             <item id="time-picker-theme-variant" page="timePicker"/>
         </menu>
-        <menu id="twin-column" isNew="true">
+        <menu id="twin-column">
             <item id="twin-column-simple"/>
             <item id="twin-column-dataaware">
                 <otherFiles>
@@ -714,7 +714,7 @@
         </menu>
     </menu>
 
-    <menu id="fragments-root" isNew="true">
+    <menu id="fragments-root">
         <overview id="fragments"
                   location="fragments/overview/fragments-overview.xml"/>
         <item id="fragment-simple">
@@ -742,6 +742,13 @@
             <otherFiles>
                 <file name="io/jmix/uisamples/view/flowui/fragments/events/events-fragment.xml"/>
                 <file name="io/jmix/uisamples/view/flowui/fragments/events/EventsFragment.java"/>
+            </otherFiles>
+        </item>
+        <item id="fragment-renderer" splitEnabled="true" isNew="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/fragments/renderer/EmployeeInfoFragment.java"/>
+                <file name="io/jmix/uisamples/view/flowui/fragments/renderer/employee-info-fragment.xml"/>
+                <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>
         </item>
     </menu>
@@ -895,8 +902,7 @@
     </menu>
 
     <menu id="geo-map-root" url="maps">
-        <overview id="maps"
-                  location="maps/overview/maps-overview.xml"/>
+        <overview id="maps" location="maps/overview/maps-overview.xml"/>
         <item id="geo-map-actions" page="events" splitEnabled="true"/>
         <item id="geo-map-point" page="features-geometries" anchor="point-feature" splitEnabled="true">
             <otherFiles>
@@ -939,6 +945,62 @@
         <item id="geo-map-static-image" page="layers-sources" anchor="image-layer" splitEnabled="true"/>
     </menu>
 
+    <menu id="kanban-root" isNew="true">
+        <overview id="kanban" location="kanban/overview/kanban-overview.xml"/>
+        <item id="kanban-simple" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
+                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
+            </otherFiles>
+        </item>
+        <item id="kanban-data" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
+                <file name="io/jmix/uisamples/entity/KanbanUser.java"/>
+                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
+                <file name="io/jmix/uisamples/entity/TaskPriority.java"/>
+            </otherFiles>
+        </item>
+        <item id="kanban-data-saving" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
+                <file name="io/jmix/uisamples/entity/KanbanUser.java"/>
+                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
+                <file name="io/jmix/uisamples/entity/TaskPriority.java"/>
+            </otherFiles>
+        </item>
+        <item id="kanban-column-actions" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
+                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
+            </otherFiles>
+        </item>
+        <item id="kanban-events" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
+                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
+            </otherFiles>
+        </item>
+        <item id="kanban-hierarchical-columns" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
+                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
+            </otherFiles>
+        </item>
+        <item id="kanban-columns-enum" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
+                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
+            </otherFiles>
+        </item>
+        <item id="kanban-styling" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
+                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
+            </otherFiles>
+        </item>
+    </menu>
+
     <menu id="custom-components-root" url="flow-ui">
         <overview id="custom-component" location="customcomponents/overview/custom-components-overview.xml"/>
         <item id="composite-component" page="visual-components" splitEnabled="true">
@@ -978,7 +1040,7 @@
                 <file name="io/jmix/uisamples/view/flowui/customcomponents/fromscratch/ThemeToggleRegistration.java"/>
             </otherFiles>
         </item>
-        <item id="generic-component-xml" isNew="true"/>
+        <item id="generic-component-xml"/>
     </menu>
 
     <menu id="cookbook-root" url="flow-ui">
@@ -1004,6 +1066,24 @@
             <otherFiles>
                 <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdfrest/CustomRestSecurityConfiguration.java"/>
                 <file name="io/jmix/uisamples/rest/CustomFileDownloadController.java"/>
+            </otherFiles>
+        </item>
+        <item id="wizard" isNew="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/WizardDialog.java"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/wizard-dialog.xml"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/WizardStep.java"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/WizardStepFragment.java"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/FirstStep.java"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/first-step.xml"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/SecondStep.java"/>
+                <file name="io/jmix/uisamples/component/addresscomponent/AddressComponent.java"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/ThirdStep.java"/>
+                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/third-step.xml"/>
+                <file name="io/jmix/uisamples/entity/Employee.java"/>
+                <file name="io/jmix/uisamples/entity/Address.java"/>
+                <file name="io/jmix/uisamples/entity/Country.java"/>
+                <file name="io/jmix/uisamples/entity/City.java"/>
             </otherFiles>
         </item>
         <item id="custom-login" splitEnabled="true">

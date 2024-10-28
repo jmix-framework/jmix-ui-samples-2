@@ -1,0 +1,21 @@
+<p>The <b>Kanban</b> board component has the ability to bind data. To do this, specify the <code>dataContainer</code>
+    attribute. You can filter and edit data in the container, all changes will be displayed in the component.</p>
+<p>To set the mapping of the attributes of the displayed entity with the attributes of the Kanban task card, you need to
+    define the <code>propertiesMapping</code> object.</p>
+<p>The Kanban task card has the following set of attributes:</p>
+<ul>
+    <li><code>id</code> (required)</li>
+    <li><code>status</code> (required)</li>
+    <li><code>text</code> (required)</li>
+    <li><code>username</code></li>
+    <li><code>userAvatar</code></li>
+    <li><code>color</code></li>
+    <li><code>dueDate</code></li>
+    <li><code>progress</code></li>
+    <li><code>tags</code></li>
+    <li><code>priority</code></li>
+    <li><code>swimlane</code></li>
+</ul>
+<p>The rules for displaying matching elements to Kanban task cards can be controlled using the component properties.
+    Required attributes have default values. If the <code>propertiesMapping</code> object is not specified, the entity
+    will use the <code>id</code>, <code>status</code>, and<code>text</code> fields to determine the mapping.</p>

@@ -7,7 +7,7 @@
             </fetchPlan>
             <loader id="employeesDl">
                 <query>
-                    <![CDATA[select e from Employee e order by e.name]]>
+                    <![CDATA[select e from Employee e order by e.firstName]]>
                 </query>
             </loader>
         </collection>

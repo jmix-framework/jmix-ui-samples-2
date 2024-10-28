@@ -42,6 +42,11 @@
             <text message="maps.description"/>
         </sample>
         <sample>
+            <image src="icons/main/kanban.png" route="kanban"/>
+            <text message="kanban.title" route="kanban" component="h4"/>
+            <text message="kanban.description"/>
+        </sample>
+        <sample>
             <image src="icons/main/customComponents.png" route="custom-component"/>
             <text message="customComponents.title" route="custom-component" component="h4"/>
             <text message="customComponents.description"/>

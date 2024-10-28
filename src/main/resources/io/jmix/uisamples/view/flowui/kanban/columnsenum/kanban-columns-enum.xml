@@ -1,0 +1,30 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:kanban="http://jmix.io/schema/kanban/ui">
+    <data readOnly="true">
+        <collection id="kanbanTasksDc" class="io.jmix.uisamples.entity.KanbanTask">
+            <fetchPlan extends="_base"/>
+            <loader id="kanbanTasksDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from KanbanTask e order by e.name asc]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <kanban:kanban id="kanban" dataContainer="kanbanTasksDc"
+                       width="100%"
+                       height="100%"
+                       collapsible="true"
+                       taskTagsVisible="true">
+            <kanban:propertiesMapping id="id"
+                                      status="status"
+                                      text="name"
+                                      color="color"
+                                      tags="tags"/>
+            <kanban:columns columnsEnum="io.jmix.uisamples.entity.TaskStatus"/>
+        </kanban:kanban>
+    </layout>
+</view>

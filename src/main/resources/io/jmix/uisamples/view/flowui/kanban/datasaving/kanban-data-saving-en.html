@@ -1,0 +1,14 @@
+<p>There are two ways to save changes for the <b>Kanban</b> board component: manual (default) and automatic.</p>
+<p>Using the component, it is possible to change three attributes of the entity:</p>
+<ul>
+    <li><code>status</code>, <code>swimlane</code> - by dragging Kanban task cards into different columns</li>
+    <li><code>priority</code> - using the corresponding drop-down list next to the text on the Kanban task card</li>
+</ul>
+<p>Changes are automatically commited in the <b>data container</b>, but by default do not initiate saving to the
+    database.</p>
+<p>In manual mode, you must define <code>SaveDelegate</code>, which will be called each time you change
+    cards using the Kanban board.</p>
+<p>In automatic mode, you must set the attribute <code>autoSave</code> in <b>XML</b> to <code>true</code>.
+    This will automatically set the <code>SaveDelegate</code> in the component, which will save the
+    <code>DataContext</code> of the current view.<br/> <b>Be careful, the entire view data context will be saved</b>.
+</p>

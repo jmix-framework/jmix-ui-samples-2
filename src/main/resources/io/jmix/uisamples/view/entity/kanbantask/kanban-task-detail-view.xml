@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://kanbanTaskDetailView.title"
+      focusComponent="form">
+    <data>
+        <instance id="kanbanTaskDc"
+                  class="io.jmix.uisamples.entity.KanbanTask">
+            <fetchPlan extends="_base">
+                <property name="assignee" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="kanbanTaskDl"/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <actions>
+        <action id="saveAction" type="detail_saveClose"/>
+        <action id="closeAction" type="detail_close"/>
+    </actions>
+    <layout>
+        <formLayout id="form" dataContainer="kanbanTaskDc">
+            <formItem>
+                <textField id="nameField" property="name"/>
+            </formItem>
+            <formItem>
+                <select id="statusField" property="status"/>
+            </formItem>
+            <formItem>
+                <entityPicker id="assigneeField" property="assignee">
+                    <actions>
+                        <action id="entityLookup" type="entity_lookup"/>
+                        <action id="entityClear" type="entity_clear"/>
+                    </actions>
+                </entityPicker>
+            </formItem>
+            <formItem label="msg://colorField.label">
+                <input id="colorField" type="color" minHeight="3em"/>
+            </formItem>
+            <formItem>
+                <textField id="progressField" property="progress"/>
+            </formItem>
+            <formItem>
+                <select id="priorityField" property="priority"/>
+            </formItem>
+            <formItem>
+                <datePicker id="dueDateField" property="dueDate"/>
+            </formItem>
+            <formItem>
+                <multiValuePicker id="tagsField">
+                    <actions>
+                        <action id="value_select" type="multi_value_select">
+                            <properties>
+                                <property name="javaClass" value="java.lang.String"/>
+                            </properties>
+                        </action>
+                        <action id="value_clear" type="value_clear"/>
+                    </actions>
+                </multiValuePicker>
+            </formItem>
+        </formLayout>
+        <hbox id="detailActions">
+            <button id="saveAndCloseBtn" action="saveAction"/>
+            <button id="closeBtn" action="closeAction"/>
+        </hbox>
+    </layout>
+</view>
