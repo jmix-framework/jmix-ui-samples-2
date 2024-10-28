@@ -1059,6 +1059,14 @@
             </otherFiles>
         </item>>
         <item id="calendar-event-styling" splitEnabled="true"/>
+        <item id="calendar-context-menu" splitEnabled="true">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Event.java"/>
+            </otherFiles>
+        </item>
+        <item id="calendar-actions" splitEnabled="true"/>
+        <item id="calendar-business-hours" splitEnabled="true"/>
+        <item id="calendar-url-query-parameters" splitEnabled="true"/>
     </menu>
 
     <menu id="custom-components-root" url="flow-ui">

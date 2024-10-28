@@ -20,7 +20,7 @@ public class CalendarSimpleCalendarEventSample extends StandardView {
     public void onInit(final InitEvent event) {
         SimpleCalendarEvent calendarEvent = SimpleCalendarEvent.create()
                 .withTitle("Meeting")
-                .withStartDateTime(LocalDate.now(), LocalTime.of(15, 0))
+                .withStartDateTime(LocalDate.now().withDayOfMonth(10), LocalTime.of(15, 0))
                 .build();
 
         calendar.addDataProvider(new ListCalendarDataProvider(List.of(calendarEvent)));

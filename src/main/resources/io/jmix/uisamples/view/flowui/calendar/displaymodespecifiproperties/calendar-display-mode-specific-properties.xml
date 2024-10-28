@@ -2,7 +2,7 @@
 <view xmlns="http://jmix.io/schema/flowui/view"
       xmlns:calendar="http://jmix.io/schema/fullcalendar/ui">
     <layout>
-        <comboBox id="displayModesBox" overlayWidth="250px"/>
+        <comboBox id="displayModesBox" width="15em" overlayWidth="15em"/>
         <calendar:calendar id="calendar"
                            height="100%"
                            width="100%"

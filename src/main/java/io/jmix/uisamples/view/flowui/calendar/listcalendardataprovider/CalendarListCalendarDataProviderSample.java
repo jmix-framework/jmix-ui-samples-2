@@ -9,7 +9,9 @@ import io.jmix.fullcalendarflowui.component.data.ListCalendarDataProvider;
 import io.jmix.fullcalendarflowui.component.data.SimpleCalendarEvent;
 import org.apache.commons.lang3.RandomStringUtils;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 @ViewController(id = "calendar-list-calendar-data-provider")
@@ -55,7 +57,7 @@ public class CalendarListCalendarDataProviderSample extends StandardView {
     private CalendarEvent createEvent() {
         return SimpleCalendarEvent.create()
                 .withTitle("Event: " + RandomStringUtils.randomAlphabetic(5))
-                .withStartDateTime(LocalDateTime.now())
+                .withStartDateTime(LocalDate.now().withDayOfMonth(10), LocalTime.NOON)
                 .build();
     }
 }

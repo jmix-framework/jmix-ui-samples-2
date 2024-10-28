@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.time.LocalDate;
 
 import static io.jmix.fullcalendarflowui.kit.component.model.GenericCalendarDisplayModes.DAY_GRID;
+import static io.jmix.fullcalendarflowui.kit.component.model.GenericCalendarDisplayModes.TIME_GRID;
 
 @ViewController(id = "calendar-generic-calendar-display-modes")
 @ViewDescriptor(path = "calendar-generic-calendar-display-modes.xml")
@@ -34,9 +35,13 @@ public class CalendarGenericCalendarDisplayModesSample extends StandardView {
     public void onInit(final InitEvent event) {
         genericDisplayModesBox.setItems(GenericCalendarDisplayModes.values());
         genericDisplayModesBox.setItemLabelGenerator(messages::getMessage);
-        genericDisplayModesBox.setValue(DAY_GRID);
+        genericDisplayModesBox.setValue(TIME_GRID);
         genericDisplayModesBox.addValueChangeListener(e ->
                 calendar.setCalendarDisplayMode(e.getValue() == null ? DAY_GRID : e.getValue()));
+
+        startDateField.setValue(LocalDate.now().minusDays(1));
+        endDateField.setValue(LocalDate.now().plusDays(1));
+        calendar.setVisibleRange(startDateField.getValue(), endDateField.getValue());
     }
 
     @Subscribe(id = "setRangeBtn", subject = "clickListener")

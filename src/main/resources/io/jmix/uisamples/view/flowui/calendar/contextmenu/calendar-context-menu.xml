@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:calendar="http://jmix.io/schema/fullcalendar/ui">
+    <data>
+        <collection id="eventsDc" class="io.jmix.uisamples.entity.Event">
+            <loader id="eventsDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from Event e]]>
+                </query>
+            </loader>
+            <fetchPlan extends="_base"/>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <calendar:calendar id="calendar"
+                           height="100%"
+                           width="100%"
+                           minHeight="30em">
+            <calendar:dataProviders>
+                <calendar:containerDataProvider id="dataProvider"
+                                                dataContainer="eventsDc"
+                                                title="title"
+                                                allDay="allDay"
+                                                startDateTime="startDate"
+                                                endDateTime="endDate"/>
+            </calendar:dataProviders>
+        </calendar:calendar>
+    </layout>
+</view>

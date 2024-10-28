@@ -35,12 +35,18 @@ public class CalendarCalendarDataRetrieverSample extends StandardView {
             return List.of(
                     SimpleCalendarEvent.create()
                             .withTitle("Morning jog")
-                            .withStartDateTime(LocalDate.now(), LocalTime.of(8, 0))
+                            .withStartDateTime(
+                                    LocalDate.now().withDayOfMonth(10),
+                                    LocalTime.of(8, 0))
                             .build(),
                     SimpleCalendarEvent.create()
                             .withTitle("Work hours")
-                            .withStartDateTime(LocalDate.now(), LocalTime.of(10, 0))
-                            .withEndDateTime(LocalDate.now(), LocalTime.of(19, 0))
+                            .withStartDateTime(
+                                    LocalDate.now().withDayOfMonth(10),
+                                    LocalTime.of(10, 0))
+                            .withEndDateTime(
+                                    LocalDate.now().withDayOfMonth(10),
+                                    LocalTime.of(19, 0))
                             .build());
         }
         return List.of();

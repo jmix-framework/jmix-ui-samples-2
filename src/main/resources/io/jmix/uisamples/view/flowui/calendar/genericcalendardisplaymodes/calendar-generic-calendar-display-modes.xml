@@ -3,7 +3,7 @@
       xmlns:calendar="http://jmix.io/schema/fullcalendar/ui">
     <layout>
         <hbox>
-            <comboBox id="genericDisplayModesBox" overlayWidth="250px"/>
+            <comboBox id="genericDisplayModesBox" overlayWidth="15em"/>
             <datePicker id="startDateField" datatype="localDate"/>
             <datePicker id="endDateField" datatype="localDate"/>
             <button id="setRangeBtn" text="Set date range"/>

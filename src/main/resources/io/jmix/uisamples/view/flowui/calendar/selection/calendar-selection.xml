@@ -10,7 +10,7 @@
                                minHeight="30em"
                                minWidth="30em"/>
             <vbox id="actionsBox" height="100%" width="30em" padding="false">
-                <comboBox id="displayModesBox" overlayWidth="15em"/>
+                <comboBox id="displayModesBox" width="15em" overlayWidth="15em"/>
                 <h5 text="msg://dateSelectionHeader.text"/>
                 <hbox width="100%" padding="false">
                     <datePicker id="startDateField" datatype="localDate"/>
