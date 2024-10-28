@@ -67,7 +67,7 @@
         </sample>
         <sample>
             <image src="icons/calendar/selection.png" route="calendar-select-overlap-function"/>
-            <text message="selection.title" route="calendar-select-overlap-function"/>
+            <text message="selection.title" route="calendar-select-overlap-function" component="h4"/>
             <tag text="selectOverlapFunction"
                  route="calendar-select-overlap-function"
                  classNames="overview-tag-font overview-tag-blue"/>
@@ -83,7 +83,7 @@
         </sample>
         <sample>
             <image src="icons/calendar/calendar-styling.png" route="calendar-class-names-generator"/>
-            <text message="calendar-styling.title" route="calendar-class-names-generator"/>
+            <text message="calendar-styling.title" route="calendar-class-names-generator" component="h4"/>
             <tag text="classNamesGenerator"
                  route="calendar-class-names-generator"
                  classNames="overview-tag-font overview-tag-purple"/>
@@ -93,7 +93,7 @@
         </sample>
         <sample>
             <image src="icons/calendar/other.png" route="calendar-context-menu"/>
-            <text message="calendar-other.title" route="calendar-context-menu"/>
+            <text message="calendar-other.title" route="calendar-context-menu" component="h4"/>
             <tag text="contextMenu"
                  route="calendar-context-menu"
                  classNames="overview-tag-font overview-tag-green"/>
