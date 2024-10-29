@@ -1001,6 +1001,108 @@
         </item>
     </menu>
 
+    <menu id="calendar-root" url="calendar" isNew="true">
+        <overview id="calendar" location="calendar/overview/calendar-overview.xml"/>
+        <item id="calendar-simple-calendar-event" splitEnabled="true"
+              page="full-calendar-component" anchor="simple-calendar-event"/>
+        <item id="calendar-container-calendar-data-provider" splitEnabled="true"
+              page="full-calendar-component" anchor="container-data-provider">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Event.java"/>
+            </otherFiles>
+        </item>
+        <item id="calendar-list-calendar-data-provider" splitEnabled="true"
+              page="full-calendar-component" anchor="list-calendar-data-provider"/>
+        <item id="calendar-callback-calendar-data-provider" splitEnabled="true"
+              page="full-calendar-component" anchor="callback-data-provider">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Event.java"/>
+            </otherFiles>
+        </item>
+        <item id="calendar-callback-load-delegate" splitEnabled="true"
+              page="full-calendar-component" anchor="callback-data-provider-and-load-delegate">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Event.java"/>
+                <file name="io/jmix/uisamples/bean/EventService.java"/>
+            </otherFiles>
+        </item>
+        <item id="calendar-calendar-data-retriever" splitEnabled="true"
+              page="full-calendar-component" anchor="calendar-data-retriever"/>
+        <item id="calendar-calendar-display-modes" splitEnabled="true"
+              page="full-calendar-component" anchor="calendar-display-modes"/>
+        <item id="calendar-custom-calendar-display-mode" splitEnabled="true"
+              page="full-calendar-component" anchor="custom-calendar-display-mode">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/calendar/calendarcustomcalendardisplaymode/CustomCalendarDisplayModes.java"/>
+            </otherFiles>
+        </item>
+        <item id="calendar-display-mode-specific-properties" splitEnabled="true"
+              page="full-calendar-component" anchor="_display_mode_properties"/>
+        <item id="calendar-generic-calendar-display-modes" splitEnabled="true"
+              page="full-calendar-component" anchor="display-mode-and-visible-range"/>
+        <item id="calendar-event-start-editable" splitEnabled="true"
+              page="full-calendar-component" anchor="drag-and-drop">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Event.java"/>
+            </otherFiles>
+        </item>
+        <item id="calendar-event-duration-editable" splitEnabled="true"
+              page="full-calendar-component" anchor="resizable">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Event.java"/>
+            </otherFiles>
+        </item>
+        <item id="calendar-event-overlap-function" splitEnabled="true"
+              page="full-calendar-component" anchor="event-overlap">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Event.java"/>
+                <file name="io/jmix/uisamples/entity/BackgroundEvent.java"/>
+                <file name="io/jmix/uisamples/entity/WorkingShift.java"/>
+                <file name="META-INF/resources/themes/calendar-event-overlap-function.css"/>
+            </otherFiles>
+        </item>
+        <item id="calendar-event-constraint" splitEnabled="true"
+              page="full-calendar-component" anchor="calendar-event-constraints">
+            <otherFiles>
+                <file name="io/jmix/uisamples/view/flowui/calendar/eventconstraint/EventsHelper.java"/>
+            </otherFiles>
+        </item>
+        <item id="calendar-recurring-events" splitEnabled="true"
+              page="full-calendar-component" anchor="recurring-events"/>
+        <item id="calendar-event-actions" splitEnabled="true"
+              page="full-calendar-component" anchor="handlers"/>
+        <item id="calendar-selection" splitEnabled="true"
+              page="full-calendar-component" anchor="selection"/>
+        <item id="calendar-select-mirror" splitEnabled="true"
+              page="full-calendar-component" anchor="selectMirror"/>
+        <item id="calendar-select-overlap-function" splitEnabled="true"
+              page="full-calendar-component"
+              anchor="select-overlap"/>
+        <item id="calendar-select-allow-function" splitEnabled="true"
+              page="full-calendar-component"
+              anchor="control-selection-by-a-javascript-function"/>
+        <item id="calendar-class-names-generator" splitEnabled="true"
+              page="full-calendar-component" anchor="class-names-generators">
+            <otherFiles>
+                <file name="META-INF/resources/themes/calendar-class-names-generator.css"/>
+            </otherFiles>
+        </item>
+        <item id="calendar-event-styling" splitEnabled="true"
+              page="full-calendar-component" anchor="component-and-event-properties"/>
+        <item id="calendar-context-menu" splitEnabled="true"
+              page="full-calendar-component" anchor="context-menu">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/Event.java"/>
+            </otherFiles>
+        </item>
+        <item id="calendar-actions" splitEnabled="true"
+              page="full-calendar-component" anchor="handlers"/>
+        <item id="calendar-business-hours" splitEnabled="true"
+              page="full-calendar-component" anchor="business-hours"/>
+        <item id="calendar-url-query-parameters" splitEnabled="true"
+              page="url-query-parameters"/>
+    </menu>
+
     <menu id="custom-components-root" url="flow-ui">
         <overview id="custom-component" location="customcomponents/overview/custom-components-overview.xml"/>
         <item id="composite-component" page="visual-components" splitEnabled="true">

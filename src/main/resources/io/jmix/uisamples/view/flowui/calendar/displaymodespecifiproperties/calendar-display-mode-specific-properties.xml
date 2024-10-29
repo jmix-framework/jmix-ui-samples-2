@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:calendar="http://jmix.io/schema/fullcalendar/ui">
+    <layout>
+        <comboBox id="displayModesBox" width="15em" overlayWidth="15em"/>
+        <calendar:calendar id="calendar"
+                           height="100%"
+                           width="100%"
+                           minHeight="30em">
+            <calendar:displayModeProperties>
+                <calendar:dayGridMonth showNonCurrentDates="false">
+                    <calendar:properties>
+                        <calendar:property name="weekNumbers" value="true"/>
+                    </calendar:properties>
+                </calendar:dayGridMonth>
+                <calendar:timeGridWeek allDaySlotVisible="false"/>
+            </calendar:displayModeProperties>
+        </calendar:calendar>
+    </layout>
+</view>

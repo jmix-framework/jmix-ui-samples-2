@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:calendar="http://jmix.io/schema/fullcalendar/ui">
+    <layout>
+        <hbox width="100%" height="100%" padding="false">
+            <calendar:calendar id="calendar"
+                               selectionEnabled="true"
+                               height="100%"
+                               width="100%"
+                               minHeight="30em"
+                               minWidth="30em"/>
+            <vbox id="actionsBox" height="100%" width="30em" padding="false">
+                <comboBox id="displayModesBox" width="15em" overlayWidth="15em"/>
+                <h5 text="msg://dateSelectionHeader.text"/>
+                <hbox width="100%" padding="false">
+                    <datePicker id="startDateField" datatype="localDate"/>
+                    <datePicker id="endDateField" datatype="localDate"/>
+                </hbox>
+                <button id="selectDateBtn" text="msg://selectDateBtn.text"/>
+                <h5 text="msg://dateTimeSelectionHeader.text"/>
+                <vbox width="100%" padding="false">
+                    <dateTimePicker id="startDateTimeField" datatype="localDateTime"/>
+                    <dateTimePicker id="endDateTimeField" datatype="localDateTime"/>
+                </vbox>
+                <button id="selectDateTimeBtn" text="msg://selectDateTimeBtn.text"/>
+            </vbox>
+        </hbox>
+    </layout>
+</view>

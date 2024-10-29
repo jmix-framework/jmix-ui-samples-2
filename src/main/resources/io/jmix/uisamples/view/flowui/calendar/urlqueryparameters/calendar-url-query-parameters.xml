@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:calendar="http://jmix.io/schema/fullcalendar/ui">
+    <facets>
+        <urlQueryParameters>
+            <calendar:calendarParameters component="calendar"/>
+        </urlQueryParameters>
+    </facets>
+    <layout>
+        <div classNames="border rounded-s p-s">
+            <span text="msg://sampleDescription.text"/>
+        </div>
+        <hbox padding="false">
+            <comboBox id="displayModesBox" width="15em" overlayWidth="15em"/>
+            <button id="prevBtn" icon="ANGLE_LEFT"/>
+            <button id="nextBtn" icon="ANGLE_RIGHT"/>
+        </hbox>
+        <calendar:calendar id="calendar"
+                           height="100%"
+                           width="100%"
+                           minHeight="30em"/>
+    </layout>
+</view>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:calendar="http://jmix.io/schema/fullcalendar/ui">
+    <layout>
+        <hbox>
+            <comboBox id="genericDisplayModesBox" width="15em" overlayWidth="15em"/>
+            <datePicker id="startDateField" datatype="localDate"/>
+            <datePicker id="endDateField" datatype="localDate"/>
+            <button id="setRangeBtn" text="msg://setRangeBtn.text"/>
+        </hbox>
+        <calendar:calendar id="calendar"
+                           initialDisplayMode="DAY_GRID"
+                           height="100%"
+                           width="100%"
+                           minHeight="30em"/>
+    </layout>
+</view>

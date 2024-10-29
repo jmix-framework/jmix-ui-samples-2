@@ -1,0 +1,111 @@
+<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
+    <header>
+        <text message="title" component="h2"/>
+        <text message="description"/>
+    </header>
+
+    <samples>
+        <sample>
+            <image src="icons/calendar/data-binding.png" route="calendar-container-calendar-data-provider"/>
+            <text message="data-binding.title" route="calendar-container-calendar-data-provider" component="h4"/>
+            <tag text="containerCalendarDataProvider"
+                 route="calendar-container-calendar-data-provider"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="simpleCalendarEvent"
+                 route="calendar-simple-calendar-event"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="listCalendarDataProvider"
+                 route="calendar-list-calendar-data-provider"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="callbackCalendarDataProvider"
+                 route="calendar-callback-calendar-data-provider"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="callbackLoadDelegate"
+                 route="calendar-callback-load-delegate"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="calendarDataRetriever"
+                 route="calendar-calendar-data-retriever"
+                 classNames="overview-tag-font overview-tag-grey"/>
+        </sample>
+        <sample>
+            <image src="icons/calendar/calendar-display-modes.png" route="calendar-custom-calendar-display-mode"/>
+            <text message="calendar-display-modes.title" route="calendar-custom-calendar-display-mode" component="h4"/>
+            <tag text="customCalendarDisplayMode"
+                 route="calendar-custom-calendar-display-mode"
+                 classNames="overview-tag-font overview-tag-red"/>
+            <tag text="calendarDisplayModes"
+                 route="calendar-calendar-display-modes"
+                 classNames="overview-tag-font overview-tag-red"/>
+            <tag text="displayModeSpecificProperties"
+                 route="calendar-display-mode-specific-properties"
+                 classNames="overview-tag-font overview-tag-red"/>
+            <tag text="genericCalendarDisplayModes"
+                 route="calendar-generic-calendar-display-modes"
+                 classNames="overview-tag-font overview-tag-red"/>
+        </sample>
+        <sample>
+            <image src="icons/calendar/calendar-events.png" route="calendar-event-overlap-function"/>
+            <text message="calendar-events.title" route="calendar-event-overlap-function" component="h4"/>
+            <tag text="eventOverlapFunction"
+                 route="calendar-event-overlap-function"
+                 classNames="overview-tag-font overview-tag-orange"/>
+            <tag text="eventStartEditable"
+                 route="calendar-event-start-editable"
+                 classNames="overview-tag-font overview-tag-orange"/>
+            <tag text="eventDurationEditable"
+                 route="calendar-event-duration-editable"
+                 classNames="overview-tag-font overview-tag-orange"/>
+            <tag text="eventConstraint"
+                 route="calendar-event-constraint"
+                 classNames="overview-tag-font overview-tag-orange"/>
+            <tag text="recurringEvents"
+                 route="calendar-recurring-events"
+                 classNames="overview-tag-font overview-tag-orange"/>
+            <tag text="eventActions"
+                 route="calendar-event-actions"
+                 classNames="overview-tag-font overview-tag-orange"/>
+        </sample>
+        <sample>
+            <image src="icons/calendar/selection.png" route="calendar-select-overlap-function"/>
+            <text message="selection.title" route="calendar-select-overlap-function" component="h4"/>
+            <tag text="selectOverlapFunction"
+                 route="calendar-select-overlap-function"
+                 classNames="overview-tag-font overview-tag-blue"/>
+            <tag text="calendarSelection"
+                 route="calendar-selection"
+                 classNames="overview-tag-font overview-tag-blue"/>
+            <tag text="selectMirror"
+                 route="calendar-select-mirror"
+                 classNames="overview-tag-font overview-tag-blue"/>
+            <tag text="selectAllowFunction"
+                 route="calendar-select-allow-function"
+                 classNames="overview-tag-font overview-tag-blue"/>
+        </sample>
+        <sample>
+            <image src="icons/calendar/calendar-styling.png" route="calendar-class-names-generator"/>
+            <text message="calendar-styling.title" route="calendar-class-names-generator" component="h4"/>
+            <tag text="classNamesGenerator"
+                 route="calendar-class-names-generator"
+                 classNames="overview-tag-font overview-tag-purple"/>
+            <tag text="eventStyling"
+                 route="calendar-event-styling"
+                 classNames="overview-tag-font overview-tag-purple"/>
+        </sample>
+        <sample>
+            <image src="icons/calendar/other.png" route="calendar-context-menu"/>
+            <text message="calendar-other.title" route="calendar-context-menu" component="h4"/>
+            <tag text="contextMenu"
+                 route="calendar-context-menu"
+                 classNames="overview-tag-font overview-tag-green"/>
+            <tag text="actions"
+                 route="calendar-actions"
+                 classNames="overview-tag-font overview-tag-green"/>
+            <tag text="businessHours"
+                 route="calendar-business-hours"
+                 classNames="overview-tag-font overview-tag-green"/>
+            <tag text="calendarUrlQueryParameters"
+                 route="calendar-url-query-parameters"
+                 classNames="overview-tag-font overview-tag-green"/>
+        </sample>
+    </samples>
+</overview>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:calendar="http://jmix.io/schema/fullcalendar/ui">
+    <layout>
+        <hbox>
+            <button id="addEventBtn" icon="lumo:plus" text="msg://addEventBtn.text"/>
+            <button id="removeEventBtn" icon="vaadin:ban" text="msg://removeEventBtn.text"/>
+            <button id="updateEventBtn" icon="lumo:reload"  text="msg://updateEventBtn.text"/>
+        </hbox>
+        <calendar:calendar id="calendar"
+                           height="100%"
+                           width="100%"
+                           minHeight="30em"/>
+    </layout>
+</view>

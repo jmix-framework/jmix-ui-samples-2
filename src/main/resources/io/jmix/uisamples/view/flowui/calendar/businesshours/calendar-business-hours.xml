@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:calendar="http://jmix.io/schema/fullcalendar/ui">
+    <layout>
+        <div classNames="border rounded-s p-s">
+            <span text="msg://sampleDescription.text"/>
+        </div>
+        <tabSheet width="100%" height="100%">
+            <tab id="declarativeTab" label="msg://declarativeCalendar.header">
+                <calendar:calendar id="declarativeCalendar"
+                                   initialDisplayMode="TIME_GRID_WEEK"
+                                   eventConstraintBusinessHoursEnabled="true"
+                                   eventStartEditable="true"
+                                   eventDurationEditable="true"
+                                   scrollTime="PT12h"
+                                   eventResizableFromStart="true"
+                                   height="100%"
+                                   width="100%"
+                                   minHeight="30em">
+                    <calendar:businessHours>
+                        <calendar:entry startTime="PT8h"
+                                        endTime="PT18h">
+                            <calendar:day name="MONDAY"/>
+                            <calendar:day name="WEDNESDAY"/>
+                            <calendar:day name="FRIDAY"/>
+                        </calendar:entry>
+                    </calendar:businessHours>
+
+                </calendar:calendar>
+            </tab>
+            <tab id="programmaticTab" label="msg://programmaticCalendar.header">
+                <calendar:calendar id="calendar"
+                                   initialDisplayMode="TIME_GRID_WEEK"
+                                   eventConstraintBusinessHoursEnabled="true"
+                                   eventStartEditable="true"
+                                   eventDurationEditable="true"
+                                   eventResizableFromStart="true"
+                                   scrollTime="PT12h"
+                                   height="100%"
+                                   width="100%"
+                                   minHeight="30em"/>
+            </tab>
+        </tabSheet>
+    </layout>
+</view>

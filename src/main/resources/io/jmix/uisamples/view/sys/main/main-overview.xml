@@ -47,6 +47,11 @@
             <text message="kanban.description"/>
         </sample>
         <sample>
+            <image src="icons/main/calendar.png" route="calendar"/>
+            <text message="calendar.title" route="calendar" component="h4"/>
+            <text message="calendar.description"/>
+        </sample>
+        <sample>
             <image src="icons/main/customComponents.png" route="custom-component"/>
             <text message="customComponents.title" route="custom-component" component="h4"/>
             <text message="customComponents.description"/>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="uisamples">
+        <insert tableName="WORKING_SHIFT">
+            <column name="ID" value="2bc7e6ed-e1b3-4210-b3a0-c4797a9f2b9c"/>
+            <column name="NUMBER_" value="WS #1"/>
+        </insert>
+        <insert tableName="WORKING_SHIFT">
+            <column name="ID" value="2479fa7a-ad83-4faf-ab25-b276e2abb5ce"/>
+            <column name="NUMBER_" value="WS #2"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

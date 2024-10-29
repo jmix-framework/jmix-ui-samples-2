@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:calendar="http://jmix.io/schema/fullcalendar/ui">
+    <layout>
+        <div classNames="border rounded-s p-s">
+            <span text="msg://sampleDescription.text"/>
+        </div>
+        <calendar:calendar id="calendar"
+                           eventStartEditable="true"
+                           eventDurationEditable="true"
+                           eventResizableFromStart="true"
+                           height="100%"
+                           width="100%"
+                           minHeight="30em"/>
+    </layout>
+</view>
