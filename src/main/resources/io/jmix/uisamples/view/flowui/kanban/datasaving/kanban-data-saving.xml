@@ -1,6 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view"
       xmlns:kanban="http://jmix.io/schema/kanban/ui">
-    <data>
+    <data readOnly="true">
         <collection id="kanbanTasksDc" class="io.jmix.uisamples.entity.KanbanTask">
             <fetchPlan extends="_base"/>
             <loader id="kanbanTasksDl">
