@@ -1015,7 +1015,7 @@
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivottable-derived-properties" splitEnabled="false">
+        <item id="pivottable-derived-properties" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TemperatureData.java"/>
             </otherFiles>
