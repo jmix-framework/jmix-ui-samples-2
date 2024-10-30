@@ -12,7 +12,6 @@ import io.jmix.pivottableflowui.kit.component.model.Renderers;
 import io.jmix.uisamples.entity.TipInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Arrays;
 import java.util.List;
 
 @ViewController("pivottable-show-action")
@@ -21,12 +20,12 @@ public class PivotTableShowAction extends StandardView {
 
     @Autowired
     private Actions actions;
+    @Autowired
+    private Messages messages;
     @ViewComponent
     private DataGrid<TipInfo> tipInfoesDataGrid;
     @ViewComponent
     private JmixButton customShowPivotTableActionButton;
-    @Autowired
-    private Messages messages;
 
     @Subscribe
     public void onInit(final InitEvent event) {
@@ -43,9 +42,9 @@ public class PivotTableShowAction extends StandardView {
             renderers.setRenderers(List.of(Renderer.TABLE, Renderer.TABLE_BAR_CHART, Renderer.HEATMAP,
                     Renderer.ROW_HEATMAP, Renderer.COL_HEATMAP));
 
-            builder.withIncludedProperties(Arrays.asList("sex", "smoker", "day", "time"))
-                    .withRows(Arrays.asList("sex", "smoker"))
-                    .withColumns(Arrays.asList("day", "time"))
+            builder.withIncludedProperties(List.of("sex", "smoker", "day", "time"))
+                    .withRows(List.of("sex", "smoker"))
+                    .withColumns(List.of("day", "time"))
                     .withRenderers(renderers)
                     .withItems(tipInfoesDataGrid.getItems().getItems())
                     .show();

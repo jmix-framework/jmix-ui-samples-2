@@ -30,10 +30,10 @@
                 <pvttbl:property name="size"/>
             </pvttbl:properties>
             <pvttbl:columns>
-                <pvttbl:column value="msg://io.jmix.uisamples.entity/TipInfo.size"/>
+                <pvttbl:column value="size"/>
             </pvttbl:columns>
             <pvttbl:rows>
-                <pvttbl:row value="msg://io.jmix.uisamples.entity/TipInfo.sex"/>
+                <pvttbl:row value="sex"/>
             </pvttbl:rows>
         </pvttbl:pivotTable>
     </layout>

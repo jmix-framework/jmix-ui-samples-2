@@ -17,12 +17,16 @@
         <hbox id="buttonsPanel" classNames="buttons-panel">
             <button id="showPivotTableActionButton"
                     action="tipInfoesDataGrid.showPivotTableAction"
-                    text="msg://io.jmix.uisamples.view.flowui.pivottable.showaction/defaultShowActionButton.text"/>
+                    text="msg://defaultShowActionButton.text"/>
             <button id="customShowPivotTableActionButton"/>
         </hbox>
-        <dataGrid id="tipInfoesDataGrid" dataContainer="tipInfoesDc" minWidth="100px" width="100%">
+        <dataGrid id="tipInfoesDataGrid" dataContainer="tipInfoesDc">
             <actions>
-                <action id="showPivotTableAction" type="pvttbl_showPivotTable"/>
+                <action id="showPivotTableAction" type="pvttbl_showPivotTable">
+                    <properties>
+                        <property name="openMode" value="DIALOG"/>
+                    </properties>
+                </action>
             </actions>
             <columns>
                 <column property="totalBill"/>

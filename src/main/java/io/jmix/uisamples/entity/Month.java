@@ -4,7 +4,6 @@ import io.jmix.core.metamodel.datatype.EnumClass;
 
 import org.springframework.lang.Nullable;
 
-
 public enum Month implements EnumClass<String> {
 
     JANUARY("january"),
@@ -26,6 +25,7 @@ public enum Month implements EnumClass<String> {
         this.id = id;
     }
 
+    @Override
     public String getId() {
         return id;
     }

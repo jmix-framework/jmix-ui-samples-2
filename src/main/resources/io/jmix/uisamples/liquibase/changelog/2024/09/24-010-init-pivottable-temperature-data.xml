@@ -16,12 +16,10 @@
             <column name="CITY" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="MONTH_" type="VARCHAR(255)">
-                <constraints nullable="false"/>
-            </column>
+            <column name="MONTH_" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
-    <changeSet id="2" author="test">
+    <changeSet id="2" author="uisamples">
         <insert tableName="TEMPERATURE_DATA">
             <column name="ID" value="123e4567-e89b-12d3-a456-426614174001"/>
             <column name="TEMPERATURE" value="-2"/>
@@ -241,7 +239,7 @@
         </insert>
     </changeSet>
 
-    <changeSet id="3" author="test">
+    <changeSet id="3" author="uisamples">
         <insert tableName="TEMPERATURE_DATA">
             <column name="ID" value="123e4567-e89b-12d3-a456-426614174013"/>
             <column name="TEMPERATURE" value="-10"/>
@@ -461,7 +459,7 @@
             <column name="MONTH_" value="december"/>
         </insert>
     </changeSet>
-    <changeSet id="4" author="test">
+    <changeSet id="4" author="uisamples">
         <insert tableName="TEMPERATURE_DATA">
             <column name="ID" value="123e4567-e89b-12d3-a456-426614234025"/>
             <column name="TEMPERATURE" value="-2"/>
@@ -682,7 +680,7 @@
         </insert>
     </changeSet>
 
-    <changeSet id="5" author="test">
+    <changeSet id="5" author="uisamples">
         <insert tableName="TEMPERATURE_DATA">
             <column name="ID" value="123e4567-e89b-12d3-a456-426614174121"/>
             <column name="TEMPERATURE" value="-7.5"/>

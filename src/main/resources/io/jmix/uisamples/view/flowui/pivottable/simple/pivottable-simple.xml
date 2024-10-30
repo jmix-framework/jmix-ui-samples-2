@@ -16,8 +16,7 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
-        <pvttbl:pivotTable id="pivotTable"
-                          dataContainer="tipsDc">
+        <pvttbl:pivotTable id="pivotTable" dataContainer="tipsDc">
             <pvttbl:properties>
                 <pvttbl:property name="totalBill"/>
                 <pvttbl:property name="tip"/>

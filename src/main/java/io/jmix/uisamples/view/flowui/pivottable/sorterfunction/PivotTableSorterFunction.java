@@ -4,6 +4,7 @@ import io.jmix.core.Messages;
 import io.jmix.flowui.view.*;
 import io.jmix.pivottableflowui.component.PivotTable;
 import io.jmix.pivottableflowui.kit.component.model.JsFunction;
+import io.jmix.uisamples.entity.TipInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @ViewController("pivottable-sorter-function")
@@ -11,7 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class PivotTableSorterFunction extends StandardView {
 
     @ViewComponent
-    protected PivotTable<?> pivotTable;
+    protected PivotTable<TipInfo> pivotTable;
     @Autowired
     private Messages messages;
 

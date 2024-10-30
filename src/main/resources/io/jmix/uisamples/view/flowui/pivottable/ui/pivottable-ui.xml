@@ -17,10 +17,12 @@
     </facets>
     <layout>
         <pvttbl:pivotTable id="pivotTable"
-                          dataContainer="tipsDc"
-                          height="100%"
-                          width="100%"
-                          showUI="true" unusedPropertiesVertical="10" menuLimit="30">
+                           dataContainer="tipsDc"
+                           height="100%"
+                           width="100%"
+                           showUI="true"
+                           unusedPropertiesVertical="10"
+                           menuLimit="30">
            <pvttbl:properties>
                <pvttbl:property name="totalBill"/>
                <pvttbl:property name="tip"/>

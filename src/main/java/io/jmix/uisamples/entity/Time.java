@@ -1,20 +1,20 @@
 package io.jmix.uisamples.entity;
 
 import io.jmix.core.metamodel.datatype.EnumClass;
-
-import javax.annotation.Nullable;
+import org.springframework.lang.Nullable;
 
 public enum Time implements EnumClass<String> {
 
     LUNCH("lunch"),
     DINNER("dinner");
 
-    private String id;
+    private final String id;
 
     Time(String value) {
         this.id = value;
     }
 
+    @Override
     public String getId() {
         return id;
     }

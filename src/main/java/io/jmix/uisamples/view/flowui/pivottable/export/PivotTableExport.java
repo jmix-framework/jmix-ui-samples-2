@@ -7,17 +7,17 @@ import io.jmix.pivottableflowui.component.PivotTable;
 import io.jmix.pivottableflowui.export.PivotTableExcelExporter;
 import io.jmix.pivottableflowui.export.PivotTableExporter;
 import io.jmix.pivottableflowui.export.PivotTableExporterImpl;
+import io.jmix.uisamples.entity.TipInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @ViewController("pivottable-export")
 @ViewDescriptor("pivottable-export.xml")
 public class PivotTableExport extends StandardView {
 
-    @ViewComponent
-    private PivotTable<?> pivotTable;
-
     @Autowired
     private PivotTableExcelExporter pivotTableExcelExporter;
+    @ViewComponent
+    private PivotTable<TipInfo> pivotTable;
 
     private PivotTableExporter pivotTableExport;
 

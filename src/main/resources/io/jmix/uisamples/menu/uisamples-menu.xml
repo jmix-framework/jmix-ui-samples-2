@@ -990,57 +990,57 @@
 
     <menu id="pivottable-root" isNew="true">
         <overview id="pivottable" location="pivottable/overview/pivottable-overview.xml"/>
-        <item id="pivottable-simple" splitEnabled="true">
+        <item id="pivottable-simple" splitEnabled="false">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivottable-properties" splitEnabled="true">
+        <item id="pivottable-properties" splitEnabled="false">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivottable-sorter-function" splitEnabled="true">
+        <item id="pivottable-sorter-function" splitEnabled="false">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivottable-ui" splitEnabled="true">
+        <item id="pivottable-ui" splitEnabled="false">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivottable-ui-properties" splitEnabled="true">
+        <item id="pivottable-ui-properties" splitEnabled="false">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivottable-derived-properties" splitEnabled="true">
+        <item id="pivottable-derived-properties" splitEnabled="false">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TemperatureData.java"/>
             </otherFiles>
         </item>
-        <item id="pivottable-events" splitEnabled="true">
+        <item id="pivottable-events" splitEnabled="false">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivottable-export" splitEnabled="true">
+        <item id="pivottable-export" splitEnabled="false">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivottable-show-action" splitEnabled="true">
+        <item id="pivottable-show-action" splitEnabled="false">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivottable-save-state" splitEnabled="true">
+        <item id="pivottable-save-state" splitEnabled="false">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivottable-color-function" splitEnabled="true">
+        <item id="pivottable-color-function" splitEnabled="false">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TemperatureData.java"/>
             </otherFiles>

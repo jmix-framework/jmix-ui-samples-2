@@ -14,11 +14,11 @@
     <facets>
         <dataLoadCoordinator auto="true"/>
     </facets>
-    <layout expand="pivotTable" spacing="true">
+    <layout>
         <button id="exportButton" text="msg://exportButton.text" icon="TABLE"/>
         <pvttbl:pivotTable id="pivotTable"
-                          dataContainer="tipsDc"
-                          showUI="true">
+                           dataContainer="tipsDc"
+                           showUI="true">
             <pvttbl:properties>
                 <pvttbl:property name="totalBill"/>
                 <pvttbl:property name="tip"/>

@@ -22,19 +22,13 @@
             <column name="SIZE_" type="int">
                 <constraints nullable="false"/>
             </column>
-            <column name="SEX" type="varchar(50)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="DAY_" type="varchar(50)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="TIME_" type="varchar(50)">
-                <constraints nullable="false"/>
-            </column>
+            <column name="SEX" type="varchar(50)"/>
+            <column name="DAY_" type="varchar(50)"/>
+            <column name="TIME_" type="varchar(50)"/>
         </createTable>
     </changeSet>
 
-    <changeSet author="sampler" id="2">
+    <changeSet author="uisamples" id="2">
         <insert tableName="TIP_INFO">
             <column name="ID" value="3fe1de55-113d-4f0d-bef2-6610e4921df7"/>
             <column name="TOTAL_BILL" value="16.99"/>

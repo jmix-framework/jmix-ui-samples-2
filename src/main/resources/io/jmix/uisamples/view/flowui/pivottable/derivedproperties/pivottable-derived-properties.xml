@@ -15,11 +15,11 @@
     <facets>
         <dataLoadCoordinator auto="true"/>
     </facets>
-    <layout expand="pivotTable" spacing="true">
+    <layout>
         <pvttbl:pivotTable id="pivotTable"
-                          dataContainer="temperatureDataDc"
-                          showColumnTotals="false"
-                          showRowTotals="false">
+                           dataContainer="temperatureDataDc"
+                           showColumnTotals="false"
+                           showRowTotals="false">
             <pvttbl:properties>
                 <pvttbl:property name="temperature"/>
                 <pvttbl:property name="city"/>

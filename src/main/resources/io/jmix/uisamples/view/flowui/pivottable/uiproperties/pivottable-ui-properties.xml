@@ -15,18 +15,18 @@
     <facets>
         <dataLoadCoordinator auto="true"/>
     </facets>
-    <layout expand="pivotTable" spacing="true">
-        <hbox>
+    <layout>
+        <hbox classNames="buttons-panel">
             <checkbox id="showRowTotalsCheckbox" label="msg://showRowTotalsCheckbox.label" value="true"/>
-            <checkbox id="showColumnTotalsCheckbox" label="msg://showColumnTotalsCheckbox.label" value="true" />
+            <checkbox id="showColumnTotalsCheckbox" label="msg://showColumnTotalsCheckbox.label" value="true"/>
             <checkbox id="showUiCheckbox" label="msg://showUiCheckbox.label" value="true"/>
             <checkbox id="disableCheckbox" label="msg://disableCheckbox.label" value="false"/>
         </hbox>
         <pvttbl:pivotTable id="pivotTable"
-                          dataContainer="tipsDc"
-                          showColumnTotals="true"
-                          showRowTotals="true"
-                          showUI="true">
+                           dataContainer="tipsDc"
+                           showColumnTotals="true"
+                           showRowTotals="true"
+                           showUI="true">
             <pvttbl:properties>
                 <pvttbl:property name="totalBill"/>
                 <pvttbl:property name="tip"/>

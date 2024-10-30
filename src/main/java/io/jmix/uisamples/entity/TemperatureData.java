@@ -6,6 +6,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import org.springframework.lang.Nullable;
 
 import java.util.UUID;
 
@@ -25,7 +26,7 @@ public class TemperatureData {
     @Column(name = "CITY", nullable = false)
     private String city;
 
-    @Column(name = "MONTH_", nullable = false)
+    @Column(name = "MONTH_")
     private String month;
 
     public UUID getId() {
@@ -52,11 +53,12 @@ public class TemperatureData {
         this.city = city;
     }
 
+    @Nullable
     public Month getMonth() {
-        return Month.fromId(month);
+        return month == null? null :Month.fromId(month);
     }
 
-    public void setMonth(Month month) {
-        this.month = month.getId();
+    public void setMonth(@Nullable Month month) {
+        this.month = month == null ? null : month.getId();
     }
 }

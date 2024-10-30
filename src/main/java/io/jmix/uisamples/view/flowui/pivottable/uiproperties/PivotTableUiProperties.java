@@ -4,14 +4,14 @@ import com.vaadin.flow.component.ClickEvent;
 import io.jmix.flowui.component.checkbox.JmixCheckbox;
 import io.jmix.flowui.view.*;
 import io.jmix.pivottableflowui.component.PivotTable;
-import org.springframework.beans.factory.annotation.Autowired;
+import io.jmix.uisamples.entity.TipInfo;
 
 @ViewController("pivottable-ui-properties")
 @ViewDescriptor("pivottable-ui-properties.xml")
 public class PivotTableUiProperties extends StandardView {
 
     @ViewComponent
-    private PivotTable<?> pivotTable;
+    private PivotTable<TipInfo> pivotTable;
 
     @Subscribe(id = "showRowTotalsCheckbox", subject = "clickListener")
     public void onShowRowTotalsCheckboxClick(final ClickEvent<JmixCheckbox> event) {

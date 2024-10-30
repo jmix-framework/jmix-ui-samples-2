@@ -39,7 +39,8 @@ class Slider extends ElementMixin(PolymerElement) {
     ready() {
         super.ready();
 
-        this._slider = $(this);
+        let $jQuery = jQuery.noConflict();
+        this._slider = $jQuery(this);
         this._slider.slider({
             min: this.min,
             max: this.max,

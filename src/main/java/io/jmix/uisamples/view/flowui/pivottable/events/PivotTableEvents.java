@@ -6,7 +6,11 @@ import io.jmix.flowui.view.*;
 import io.jmix.pivottableflowui.component.PivotTable;
 import io.jmix.pivottableflowui.kit.component.model.AggregationMode;
 import io.jmix.pivottableflowui.kit.component.model.Renderer;
+import io.jmix.pivottableflowui.kit.event.PivotTableCellClickEvent;
+import io.jmix.pivottableflowui.kit.event.PivotTableRefreshEvent;
+import io.jmix.pivottableflowui.kit.event.PivotTableRefreshEventDetail;
 import io.jmix.uisamples.entity.TemperatureData;
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -16,36 +20,38 @@ import java.util.stream.Collectors;
 @ViewDescriptor("pivottable-events.xml")
 public class PivotTableEvents extends StandardView {
 
-    @ViewComponent
-    protected PivotTable<TemperatureData> pivotTable;
     @Autowired
     private Notifications notifications;
     @Autowired
     private Messages messages;
+    @ViewComponent
+    private PivotTable<TemperatureData> pivotTable;
 
-    @Subscribe
-    public void onInit(final InitEvent event) {
-        pivotTable.addCellClickListener(e -> {
-            List<TemperatureData> items = e.getDetail().getItems();
-            StringBuilder notificationMessage = new StringBuilder();
-            items.forEach(temperatureData -> {
-                notificationMessage.append("Entity id: ")
-                        .append(temperatureData.getId())
-                        .append(", Celsius: ")
-                        .append(temperatureData.getTemperature())
-                        .append("\n");
-            });
-            notificationMessage.deleteCharAt(notificationMessage.length() - 1);
-            notifications.show("Cell click event (items in the cell)", notificationMessage.toString());
-        });
+    @Subscribe("pivotTable")
+    public void onPivotTablePivotTableCellClick(final PivotTableCellClickEvent<?> event) {
+        List<TemperatureData> items = event.getDetail().getItems();
 
-        pivotTable.addRefreshListener(e -> {
-            notifications.show("Refresh event",
-                    "Renderer: " + getRendererMessage(e.getDetail().getRenderer()) +
-                    "\nAggregation: " + getAggregatorMessage(e.getDetail().getAggregationMode()) +
-                    "\nRows: " + getLocalizedProperties(e.getDetail().getRows()) +
-                    "\nColumns: " + getLocalizedProperties(e.getDetail().getColumns()));
-        });
+        String message = items.stream()
+                .map(temperatureData -> String.format("Entity id: %s, Celsius: %d",
+                        temperatureData.getId(), temperatureData.getTemperature()))
+                .collect(Collectors.joining("\n"));
+        notifications.show("Cell click event (items in the cell)", message);
+    }
+
+    @Subscribe("pivotTable")
+    public void onPivotTablePivotTableRefresh(final PivotTableRefreshEvent event) {
+        PivotTableRefreshEventDetail refreshDetail = event.getDetail();
+        String message = """
+                Renderer: %s
+                Aggregation: %s
+                Rows: %s
+                Columns: %s
+                """.formatted(
+                        getRendererMessage(refreshDetail.getRenderer()),
+                        getAggregatorMessage(refreshDetail.getAggregationMode()),
+                        getLocalizedProperties(refreshDetail.getRows()),
+                        getLocalizedProperties(refreshDetail.getColumns()));
+        notifications.show("Refresh event", message);
     }
 
     private String getRendererMessage(Renderer renderer) {
@@ -57,11 +63,11 @@ public class PivotTableEvents extends StandardView {
     }
 
     private String getLocalizedProperties(List<String> properties) {
-        if (properties == null || properties.isEmpty()) {
+        if (CollectionUtils.isEmpty(properties)) {
             return "[Empty]";
         }
         return properties.stream()
-                .map(p -> pivotTable.getProperties().get(p))
+                .map(pivotTable.getProperties()::get)
                 .collect(Collectors.joining(", "));
     }
 }
