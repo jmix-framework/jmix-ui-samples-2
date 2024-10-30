@@ -1025,16 +1025,6 @@
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivottable-export" splitEnabled="false">
-            <otherFiles>
-                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
-            </otherFiles>
-        </item>
-        <item id="pivottable-show-action" splitEnabled="false">
-            <otherFiles>
-                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
-            </otherFiles>
-        </item>
         <item id="pivottable-save-state" splitEnabled="false">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>

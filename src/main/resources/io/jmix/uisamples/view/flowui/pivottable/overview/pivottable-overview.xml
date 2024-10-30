@@ -40,16 +40,6 @@
             <text message="events.description"/>
         </sample>
         <sample>
-            <image src="icons/pivottable/export.png" route="pivottable-export"/>
-            <text message="export.title" route="pivottable-export" component="h4"/>
-            <text message="export.description"/>
-        </sample>
-        <sample>
-            <image src="icons/pivottable/showAction.png" route="pivottable-show-action"/>
-            <text message="show-action.title" route="pivottable-show-action" component="h4"/>
-            <text message="show-action.description"/>
-        </sample>
-        <sample>
             <image src="icons/pivottable/saveState.png" route="pivottable-save-state"/>
             <text message="save-state.title" route="pivottable-save-state" component="h4"/>
             <text message="save-state.description"/>
