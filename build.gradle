@@ -53,7 +53,7 @@ dependencies {
     implementation 'io.jmix.maps:jmix-maps-starter'
     implementation 'io.jmix.maps:jmix-maps-flowui-starter'
     implementation 'io.jmix.kanban:jmix-kanban-flowui-starter'
-    implementation 'io.jmix.pivottable:jmix-pivottable-flowui-starter:2.4.999-SNAPSHOT'
+    implementation 'io.jmix.pivottable:jmix-pivottable-flowui-starter'
 
     implementation 'com.storedobject.chart:so-charts:3.2.4'
 
