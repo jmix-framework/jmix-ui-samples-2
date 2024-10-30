@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:pvttbl="http://jmix.io/schema/pvttbl/ui">
+    <data>
+        <collection id="tipsDc"
+                    class="io.jmix.uisamples.entity.TipInfo">
+            <fetchPlan extends="_local"/>
+            <loader id="tipsLoader">
+                <query>
+                    <![CDATA[select e from TipInfo e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <hbox classNames="buttons-panel">
+            <checkbox id="showRowTotalsCheckbox" label="msg://showRowTotalsCheckbox.label" value="true"/>
+            <checkbox id="showColumnTotalsCheckbox" label="msg://showColumnTotalsCheckbox.label" value="true"/>
+            <checkbox id="showUiCheckbox" label="msg://showUiCheckbox.label" value="true"/>
+            <checkbox id="disableCheckbox" label="msg://disableCheckbox.label" value="false"/>
+        </hbox>
+        <pvttbl:pivotTable id="pivotTable"
+                           dataContainer="tipsDc"
+                           showColumnTotals="true"
+                           showRowTotals="true"
+                           showUI="true">
+            <pvttbl:properties>
+                <pvttbl:property name="totalBill"/>
+                <pvttbl:property name="tip"/>
+                <pvttbl:property name="sex"/>
+                <pvttbl:property name="smoker"/>
+                <pvttbl:property name="day"/>
+                <pvttbl:property name="time"/>
+                <pvttbl:property name="size"/>
+            </pvttbl:properties>
+            <pvttbl:columns>
+                <pvttbl:column value="day"/>
+                <pvttbl:column value="time"/>
+            </pvttbl:columns>
+            <pvttbl:rows>
+                <pvttbl:row value="sex"/>
+                <pvttbl:row value="smoker"/>
+            </pvttbl:rows>
+        </pvttbl:pivotTable>
+    </layout>
+</view>

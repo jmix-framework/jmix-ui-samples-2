@@ -1103,6 +1103,55 @@
               page="url-query-parameters"/>
     </menu>
 
+    <menu id="pivot-table-root" isNew="true">
+        <overview id="pivot-table" location="pivottable/overview/pivot-table-overview.xml"/>
+        <item id="pivot-table-simple">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
+            </otherFiles>
+        </item>
+        <item id="pivot-table-properties">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
+            </otherFiles>
+        </item>
+        <item id="pivot-table-sorter-function">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
+            </otherFiles>
+        </item>
+        <item id="pivot-table-ui">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
+            </otherFiles>
+        </item>
+        <item id="pivot-table-ui-properties">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
+            </otherFiles>
+        </item>
+        <item id="pivot-table-derived-properties">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TemperatureData.java"/>
+            </otherFiles>
+        </item>
+        <item id="pivot-table-events">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
+            </otherFiles>
+        </item>
+        <item id="pivot-table-save-state">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TipInfo.java"/>
+            </otherFiles>
+        </item>
+        <item id="pivot-table-color-function">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/TemperatureData.java"/>
+            </otherFiles>
+        </item>
+    </menu>
+
     <menu id="custom-components-root" url="flow-ui">
         <overview id="custom-component" location="customcomponents/overview/custom-components-overview.xml"/>
         <item id="composite-component" page="visual-components" splitEnabled="true">

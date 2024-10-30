@@ -12,6 +12,7 @@ import jakarta.validation.constraints.NotNull;
 @Entity
 @JmixEntity
 public class Moon {
+
     @JmixGeneratedValue
     @Column(name = "ID", nullable = false)
     @Id

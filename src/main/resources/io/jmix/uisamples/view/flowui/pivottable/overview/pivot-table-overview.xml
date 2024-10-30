@@ -1,0 +1,53 @@
+<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
+    <header>
+        <text message="title" component="h2"/>
+        <text message="description"/>
+    </header>
+    <samples>
+        <sample>
+            <image src="icons/pivottable/simple.png" route="pivot-table-simple"/>
+            <text message="simple.title" route="pivot-table-simple" component="h4"/>
+            <text message="simple.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/properties.png" route="pivot-table-properties"/>
+            <text message="properties.title" route="pivot-table-properties" component="h4"/>
+            <text message="properties.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/sorterFunction.png" route="pivot-table-sorter-function"/>
+            <text message="sorter-function.title" route="pivot-table-sorter-function" component="h4"/>
+            <text message="sorter-function.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/ui.png" route="pivot-table-ui"/>
+            <text message="ui.title" route="pivot-table-ui" component="h4"/>
+            <text message="ui.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/uiProperties.png" route="pivot-table-ui-properties"/>
+            <text message="ui-properties.title" route="pivot-table-ui-properties" component="h4"/>
+            <text message="ui-properties.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/derivedProperties.png" route="pivot-table-derived-properties"/>
+            <text message="derived-properties.title" route="pivot-table-derived-properties" component="h4"/>
+            <text message="derived-properties.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/events.png" route="pivot-table-events"/>
+            <text message="events.title" route="pivot-table-events" component="h4"/>
+            <text message="events.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/saveState.png" route="pivot-table-save-state"/>
+            <text message="save-state.title" route="pivot-table-save-state" component="h4"/>
+            <text message="save-state.description"/>
+        </sample>
+        <sample>
+            <image src="icons/pivottable/colorFunction.png" route="pivot-table-color-function"/>
+            <text message="color-function.title" route="pivot-table-color-function" component="h4"/>
+            <text message="color-function.description"/>
+        </sample>
+    </samples>
+</overview>

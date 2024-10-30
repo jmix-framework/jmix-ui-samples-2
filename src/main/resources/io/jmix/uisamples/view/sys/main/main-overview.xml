@@ -52,6 +52,11 @@
             <text message="calendar.description"/>
         </sample>
         <sample>
+            <image src="icons/main/pivotTable.png" route="pivot-table"/>
+            <text message="pivotTable.title" route="pivot-table" component="h4"/>
+            <text message="pivotTable.description"/>
+        </sample>
+        <sample>
             <image src="icons/main/customComponents.png" route="custom-component"/>
             <text message="customComponents.title" route="custom-component" component="h4"/>
             <text message="customComponents.description"/>
