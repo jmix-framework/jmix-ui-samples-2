@@ -945,23 +945,16 @@
         <item id="geo-map-static-image" page="layers-sources" anchor="image-layer" splitEnabled="true"/>
     </menu>
 
-    <menu id="kanban-root" isNew="true">
+    <menu id="kanban-root" url="kanban" isNew="true">
         <overview id="kanban" location="kanban/overview/kanban-overview.xml"/>
-        <item id="kanban-simple" splitEnabled="true">
+        <item id="kanban-simple" splitEnabled="true" page="kanban-component">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
                 <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
             </otherFiles>
         </item>
-        <item id="kanban-data" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
-                <file name="io/jmix/uisamples/entity/KanbanUser.java"/>
-                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
-                <file name="io/jmix/uisamples/entity/TaskPriority.java"/>
-            </otherFiles>
-        </item>
-        <item id="kanban-data-saving" splitEnabled="true">
+        <item id="kanban-data" splitEnabled="true"
+              page="kanban-component" anchor="data-binding">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
                 <file name="io/jmix/uisamples/entity/KanbanUser.java"/>
@@ -969,31 +962,44 @@
                 <file name="io/jmix/uisamples/entity/TaskPriority.java"/>
             </otherFiles>
         </item>
-        <item id="kanban-column-actions" splitEnabled="true">
+        <item id="kanban-data-saving" splitEnabled="true"
+              page="kanban-component" anchor="save-delegate">
+            <otherFiles>
+                <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
+                <file name="io/jmix/uisamples/entity/KanbanUser.java"/>
+                <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
+                <file name="io/jmix/uisamples/entity/TaskPriority.java"/>
+            </otherFiles>
+        </item>
+        <item id="kanban-column-actions" splitEnabled="true"
+              page="kanban-styling" anchor="adding-column-actions-buttons">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
                 <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
             </otherFiles>
         </item>
-        <item id="kanban-events" splitEnabled="true">
+        <item id="kanban-events" splitEnabled="true"
+              page="kanban-component" anchor="handlers">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
                 <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
             </otherFiles>
         </item>
-        <item id="kanban-hierarchical-columns" splitEnabled="true">
+        <item id="kanban-hierarchical-columns" splitEnabled="true"
+              page="kanban-component" anchor="hierarchical-columns">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
                 <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
             </otherFiles>
         </item>
-        <item id="kanban-columns-enum" splitEnabled="true">
+        <item id="kanban-columns-enum" splitEnabled="true"
+              page="kanban-component" anchor="columnsEnum">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
                 <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
             </otherFiles>
         </item>
-        <item id="kanban-styling" splitEnabled="true">
+        <item id="kanban-styling" splitEnabled="true" page="kanban-styling">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/KanbanTask.java"/>
                 <file name="io/jmix/uisamples/entity/TaskStatus.java"/>
@@ -1103,49 +1109,54 @@
               page="url-query-parameters"/>
     </menu>
 
-    <menu id="pivot-table-root" isNew="true">
+    <menu id="pivot-table-root" url="pivot-table" isNew="true">
         <overview id="pivot-table" location="pivottable/overview/pivot-table-overview.xml"/>
-        <item id="pivot-table-simple">
+        <item id="pivot-table-simple" page="pivottable-component">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivot-table-properties">
+        <item id="pivot-table-properties" page="pivottable-component">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivot-table-sorter-function">
+        <item id="pivot-table-sorter-function" page="pivottable-component"
+              anchor="sortersFunction">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivot-table-ui">
+        <item id="pivot-table-ui" page="pivottable-component" anchor="ui-mode">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivot-table-ui-properties">
+        <item id="pivot-table-ui-properties" page="pivottable-component"
+              anchor="ui-mode">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivot-table-derived-properties">
+        <item id="pivot-table-derived-properties" page="pivottable-component"
+              anchor="derivedProperties">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TemperatureData.java"/>
             </otherFiles>
         </item>
-        <item id="pivot-table-events">
+        <item id="pivot-table-events" page="pivottable-component"
+              anchor="_handlers">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivot-table-save-state">
+        <item id="pivot-table-save-state" page="pivottable-component">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TipInfo.java"/>
             </otherFiles>
         </item>
-        <item id="pivot-table-color-function">
+        <item id="pivot-table-color-function" page="pivottable-component"
+              anchor="rendererOptions">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/TemperatureData.java"/>
             </otherFiles>
