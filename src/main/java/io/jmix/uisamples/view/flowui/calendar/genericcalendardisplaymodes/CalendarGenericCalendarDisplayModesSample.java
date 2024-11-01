@@ -35,7 +35,7 @@ public class CalendarGenericCalendarDisplayModesSample extends StandardView {
     public void onInit(final InitEvent event) {
         genericDisplayModesBox.setItems(GenericCalendarDisplayModes.values());
         genericDisplayModesBox.setItemLabelGenerator(messages::getMessage);
-        genericDisplayModesBox.setValue(TIME_GRID);
+        genericDisplayModesBox.setValue(DAY_GRID);
         genericDisplayModesBox.addValueChangeListener(e ->
                 calendar.setCalendarDisplayMode(e.getValue() == null ? DAY_GRID : e.getValue()));
 
