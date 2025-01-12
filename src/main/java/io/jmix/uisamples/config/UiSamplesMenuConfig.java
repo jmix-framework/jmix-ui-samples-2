@@ -184,6 +184,7 @@ public class UiSamplesMenuConfig {
 
         loadBoolean(element, "isNew", menuItem::setNew);
         loadBoolean(element, "splitEnabled", menuItem::setSplitEnabled);
+        loadBoolean(element, "defaultFiles", menuItem::setDefaultFiles);
 
         Element otherFilesElement = element.element("otherFiles");
         if (otherFilesElement != null && !otherFilesElement.elements().isEmpty()) {

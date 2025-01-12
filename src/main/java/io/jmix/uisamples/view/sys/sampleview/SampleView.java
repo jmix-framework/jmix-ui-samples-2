@@ -246,10 +246,11 @@ public class SampleView extends StandardView {
             addTab(message, componentDescription, VaadinIcon.INFO_CIRCLE_O.create());
         }
 
-        viewInfo.getTemplatePath()
-                .ifPresent(this::addSourceTab);
-
-        addSourceTab(getControllerFileName(viewInfo.getControllerClassName()));
+        if (menuItem.isDefaultFiles()) {
+            viewInfo.getTemplatePath()
+                    .ifPresent(this::addSourceTab);
+            addSourceTab(getControllerFileName(viewInfo.getControllerClassName()));
+        }
 
         List<String> otherFiles = menuItem.getOtherFiles();
         if (CollectionUtils.isNotEmpty(otherFiles)) {

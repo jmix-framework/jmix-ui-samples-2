@@ -52,6 +52,7 @@
         <xs:attribute name="anchor" type="xs:string"/>
         <xs:attribute name="isNew" type="xs:boolean"/>
         <xs:attribute name="splitEnabled" type="xs:boolean"/>
+        <xs:attribute name="defaultFiles" type="xs:boolean"/>
     </xs:complexType>
 
     <xs:complexType name="menuType">

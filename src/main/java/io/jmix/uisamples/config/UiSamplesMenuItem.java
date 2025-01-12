@@ -32,6 +32,7 @@ public class UiSamplesMenuItem {
     protected String anchor;
     protected boolean isNew;
     protected boolean splitEnabled;
+    protected boolean defaultFiles = true;
     protected List<String> otherFiles;
     protected List<MenuItem.MenuItemParameter> urlQueryParameters;
     protected Map<String, Object> viewParams;
@@ -94,6 +95,14 @@ public class UiSamplesMenuItem {
 
     public void setNew(boolean aNew) {
         isNew = aNew;
+    }
+
+    public boolean isDefaultFiles() {
+        return defaultFiles;
+    }
+
+    public void setDefaultFiles(boolean defaultFiles) {
+        this.defaultFiles = defaultFiles;
     }
 
     public List<String> getOtherFiles() {
