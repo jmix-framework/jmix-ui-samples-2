@@ -6,59 +6,113 @@
 
     <samples>
         <sample>
-            <image src="icons/cookbook/cascadingDropdowns.png" route="cascading-dropdowns"/>
-            <text message="cascadingDropdowns.title" route="cascading-dropdowns" component="h4"/>
-            <text message="cascadingDropdowns.description"/>
+            <image src="icons/cookbook/copyingEntities.png" route="cascading-dropdowns"/>
+            <text message="dataInUi.title" route="cascading-dropdowns" component="h4"/>
+            <text message="dataInUi.description"/>
+            <tag messagePrefix="uisamples-menu-config" message="cascading-dropdowns" route="cascading-dropdowns"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag messagePrefix="uisamples-menu-config" message="copy-action" route="copy-action"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag messagePrefix="uisamples-menu-config" message="custom-filter" route="custom-filter"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag messagePrefix="uisamples-menu-config" message="custom-filter-query" route="custom-filter-query"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag messagePrefix="uisamples-menu-config" message="delayed-data-load" route="delayed-data-load"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag messagePrefix="uisamples-menu-config" message="saving-entity-by-service" route="saving-entity-by-service"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag messagePrefix="uisamples-menu-config" message="read-only-customers" route="read-only-customers"
+                 classNames="overview-tag-font overview-tag-grey"/>
         </sample>
         <sample>
-            <image src="icons/cookbook/copyingEntities.png" route="copy-action"/>
-            <text message="copyingEntities.title" route="copy-action" component="h4"/>
-            <text message="copyingEntities.description"/>
+            <image src="icons/cookbook/cascadingDropdowns.png" route="composition-1-level"/>
+            <text message="compositions.title" route="composition-1-level" component="h4"/>
+            <text message="compositions.description"/>
+            <tag messagePrefix="uisamples-menu-config" message="composition-1-level" route="composition-1-level"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag messagePrefix="uisamples-menu-config" message="composition-2-levels" route="composition-2-levels"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag messagePrefix="uisamples-menu-config" message="composition-reduce-top" route="composition-reduce-top"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag messagePrefix="uisamples-menu-config" message="composition-reduce-bottom" route="composition-reduce-bottom"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag messagePrefix="uisamples-menu-config" message="composition-advanced" route="composition-advanced"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag messagePrefix="uisamples-menu-config" message="composition-info-panel" route="composition-info-panel"
+                 classNames="overview-tag-font overview-tag-grey"/>
         </sample>
         <sample>
-            <image src="icons/cookbook/copyToClipboard.png" route="copy-to-clipboard"/>
-            <text message="copyToClipboard.title" route="copy-to-clipboard" component="h4"/>
-            <text message="copyToClipboard.description"/>
+            <image src="icons/cookbook/wizard.png" route="copy-to-clipboard"/>
+            <text message="other.title" route="copy-to-clipboard" component="h4"/>
+            <text message="other.description"/>
+            <tag messagePrefix="uisamples-menu-config" message="copy-to-clipboard" route="copy-to-clipboard"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag messagePrefix="uisamples-menu-config" message="custom-login" route="custom-login"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag messagePrefix="uisamples-menu-config" message="iframe-pdf" route="iframe-pdf"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag messagePrefix="uisamples-menu-config" message="iframe-pdf-rest" route="iframe-pdf-rest"
+                 classNames="overview-tag-font overview-tag-grey"/>
+            <tag messagePrefix="uisamples-menu-config" message="wizard" route="wizard"
+                 classNames="overview-tag-font overview-tag-grey"/>
         </sample>
-        <sample>
-            <image src="icons/cookbook/iframePdf.png" route="iframe-pdf"/>
-            <text message="iframePdf.title" route="iframe-pdf" component="h4"/>
-            <text message="iframePdf.description"/>
-        </sample>
-        <sample>
-            <image src="icons/cookbook/iframePdf.png" route="iframe-pdf-rest"/>
-            <text message="iframePdfRest.title" route="iframe-pdf-rest" component="h4"/>
-            <text message="iframePdfRest.description"/>
-        </sample>
-        <sample>
-            <image src="icons/cookbook/wizard.png" route="wizard"/>
-            <text message="wizard.title" route="wizard" component="h4"/>
-            <text message="wizard.description"/>
-        </sample>
-        <sample>
-            <image src="icons/cookbook/customLoginForm.png" route="custom-login"/>
-            <text message="customLoginForm.title" route="custom-login" component="h4"/>
-            <text message="customLoginForm.description"/>
-        </sample>
-        <sample>
-            <image src="icons/cookbook/declarativeConditionsFilter.png" route="custom-filter"/>
-            <text message="declarativeConditionsFilter.title" route="custom-filter" component="h4"/>
-            <text message="declarativeConditionsFilter.description"/>
-        </sample>
-        <sample>
-            <image src="icons/cookbook/queryModificationFilter.png" route="custom-filter-query"/>
-            <text message="queryModificationFilter.title" route="custom-filter-query" component="h4"/>
-            <text message="queryModificationFilter.description"/>
-        </sample>
-        <sample>
-            <image src="icons/cookbook/delayedDataLoading.png" route="delayed-data-load"/>
-            <text message="delayedDataLoading.title" route="delayed-data-load" component="h4"/>
-            <text message="delayedDataLoading.description"/>
-        </sample>
-        <sample>
-            <image src="icons/cookbook/databaseView.png" route="read-only-customers"/>
-            <text message="databaseView.title" route="read-only-customers" component="h4"/>
-            <text message="databaseView.description"/>
-        </sample>
+
+        <!-- old -->
+
+<!--        <sample>-->
+<!--            <image src="icons/cookbook/cascadingDropdowns.png" route="cascading-dropdowns"/>-->
+<!--            <text message="cascadingDropdowns.title" route="cascading-dropdowns" component="h4"/>-->
+<!--            <text message="cascadingDropdowns.description"/>-->
+<!--        </sample>-->
+<!--        <sample>-->
+<!--            <image src="icons/cookbook/copyingEntities.png" route="copy-action"/>-->
+<!--            <text message="copyingEntities.title" route="copy-action" component="h4"/>-->
+<!--            <text message="copyingEntities.description"/>-->
+<!--        </sample>-->
+<!--        <sample>-->
+<!--            <image src="icons/cookbook/copyToClipboard.png" route="copy-to-clipboard"/>-->
+<!--            <text message="copyToClipboard.title" route="copy-to-clipboard" component="h4"/>-->
+<!--            <text message="copyToClipboard.description"/>-->
+<!--        </sample>-->
+<!--        <sample>-->
+<!--            <image src="icons/cookbook/iframePdf.png" route="iframe-pdf"/>-->
+<!--            <text message="iframePdf.title" route="iframe-pdf" component="h4"/>-->
+<!--            <text message="iframePdf.description"/>-->
+<!--        </sample>-->
+<!--        <sample>-->
+<!--            <image src="icons/cookbook/iframePdf.png" route="iframe-pdf-rest"/>-->
+<!--            <text message="iframePdfRest.title" route="iframe-pdf-rest" component="h4"/>-->
+<!--            <text message="iframePdfRest.description"/>-->
+<!--        </sample>-->
+<!--        <sample>-->
+<!--            <image src="icons/cookbook/wizard.png" route="wizard"/>-->
+<!--            <text message="wizard.title" route="wizard" component="h4"/>-->
+<!--            <text message="wizard.description"/>-->
+<!--        </sample>-->
+<!--        <sample>-->
+<!--            <image src="icons/cookbook/customLoginForm.png" route="custom-login"/>-->
+<!--            <text message="customLoginForm.title" route="custom-login" component="h4"/>-->
+<!--            <text message="customLoginForm.description"/>-->
+<!--        </sample>-->
+<!--        <sample>-->
+<!--            <image src="icons/cookbook/declarativeConditionsFilter.png" route="custom-filter"/>-->
+<!--            <text message="declarativeConditionsFilter.title" route="custom-filter" component="h4"/>-->
+<!--            <text message="declarativeConditionsFilter.description"/>-->
+<!--        </sample>-->
+<!--        <sample>-->
+<!--            <image src="icons/cookbook/queryModificationFilter.png" route="custom-filter-query"/>-->
+<!--            <text message="queryModificationFilter.title" route="custom-filter-query" component="h4"/>-->
+<!--            <text message="queryModificationFilter.description"/>-->
+<!--        </sample>-->
+<!--        <sample>-->
+<!--            <image src="icons/cookbook/delayedDataLoading.png" route="delayed-data-load"/>-->
+<!--            <text message="delayedDataLoading.title" route="delayed-data-load" component="h4"/>-->
+<!--            <text message="delayedDataLoading.description"/>-->
+<!--        </sample>-->
+<!--        <sample>-->
+<!--            <image src="icons/cookbook/databaseView.png" route="read-only-customers"/>-->
+<!--            <text message="databaseView.title" route="read-only-customers" component="h4"/>-->
+<!--            <text message="databaseView.description"/>-->
+<!--        </sample>-->
     </samples>
 </overview>

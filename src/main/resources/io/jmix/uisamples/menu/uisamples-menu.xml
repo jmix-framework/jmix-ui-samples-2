@@ -1207,74 +1207,103 @@
 
     <menu id="cookbook-root" url="flow-ui">
         <overview id="cookbook" location="cookbook/overview/cookbook-overview.xml"/>
-        <item id="cascading-dropdowns" page="facets/dataLoadCoordinator" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/uisamples/entity/Planet.java"/>
-                <file name="io/jmix/uisamples/entity/Moon.java"/>
-            </otherFiles>
-        </item>
-        <item id="copy-action" page="actions/declarative-actions" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/uisamples/entity/Customer.java"/>
-            </otherFiles>
-        </item>
-        <item id="copy-to-clipboard"/>
-        <item id="iframe-pdf" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdf/IframeCustomSecurity.java"/>
-            </otherFiles>
-        </item>
-        <item id="iframe-pdf-rest" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdfrest/CustomRestSecurityConfiguration.java"/>
-                <file name="io/jmix/uisamples/rest/CustomFileDownloadController.java"/>
-            </otherFiles>
-        </item>
-        <item id="wizard" isNew="true">
-            <otherFiles>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/WizardDialog.java"/>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/wizard-dialog.xml"/>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/WizardStep.java"/>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/WizardStepFragment.java"/>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/FirstStep.java"/>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/first-step.xml"/>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/SecondStep.java"/>
-                <file name="io/jmix/uisamples/component/addresscomponent/AddressComponent.java"/>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/ThirdStep.java"/>
-                <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/third-step.xml"/>
-                <file name="io/jmix/uisamples/entity/Employee.java"/>
-                <file name="io/jmix/uisamples/entity/Address.java"/>
-                <file name="io/jmix/uisamples/entity/Country.java"/>
-                <file name="io/jmix/uisamples/entity/City.java"/>
-            </otherFiles>
-        </item>
-        <item id="custom-login" splitEnabled="true">
-            <otherFiles>
-                <file name="META-INF/resources/themes/custom-login.css"/>
-            </otherFiles>
-        </item>
-        <item id="custom-filter" page="facets/dataLoadCoordinator" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/uisamples/entity/Customer.java"/>
-            </otherFiles>
-        </item>
-        <item id="custom-filter-query" page="data/data-loaders" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/uisamples/entity/Customer.java"/>
-            </otherFiles>
-        </item>
-        <item id="delayed-data-load" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/uisamples/entity/Order.java"/>
-                <file name="io/jmix/uisamples/entity/OrderItem.java"/>
-                <file name="io/jmix/uisamples/entity/Product.java"/>
-            </otherFiles>
-        </item>
-        <item id="read-only-customers" page="opening-views" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/uisamples/entity/Customer.java"/>
-                <file name="io/jmix/uisamples/entity/ReadOnlyCustomer.java"/>
-            </otherFiles>
-        </item>
+
+        <menu id="cookbook-ui-data">
+            <item id="cascading-dropdowns" page="facets/dataLoadCoordinator" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Planet.java"/>
+                    <file name="io/jmix/uisamples/entity/Moon.java"/>
+                </otherFiles>
+            </item>
+            <item id="copy-action" page="actions/declarative-actions" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="custom-filter" page="facets/dataLoadCoordinator" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="custom-filter-query" page="data/data-loaders" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="delayed-data-load" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                    <file name="io/jmix/uisamples/entity/OrderItem.java"/>
+                    <file name="io/jmix/uisamples/entity/Product.java"/>
+                </otherFiles>
+            </item>
+            <item id="saving-entity-by-service" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
+            </item>
+            <item id="read-only-customers" page="opening-views" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/ReadOnlyCustomer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="cookbook-composition">
+            <item id="composition-1-level" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Airport.java"/>
+                    <file name="io/jmix/uisamples/entity/Terminal.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/airport/airport-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/airport/AirportDetailView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/terminal/terminal-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/terminal/TerminalDetailView.java"/>
+                </otherFiles>
+            </item>
+            <item id="composition-2-levels" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
+            </item>
+            <item id="composition-reduce-top" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
+            </item>
+            <item id="composition-reduce-bottom" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
+            </item>
+            <item id="composition-advanced" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
+            </item>
+            <item id="composition-info-panel" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
+            </item>
+        </menu>
+        <menu id="cookbook-other">
+            <item id="copy-to-clipboard"/>
+            <item id="custom-login" splitEnabled="true">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/custom-login.css"/>
+                </otherFiles>
+            </item>
+            <item id="iframe-pdf" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdf/IframeCustomSecurity.java"/>
+                </otherFiles>
+            </item>
+            <item id="iframe-pdf-rest" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdfrest/CustomRestSecurityConfiguration.java"/>
+                    <file name="io/jmix/uisamples/rest/CustomFileDownloadController.java"/>
+                </otherFiles>
+            </item>
+            <item id="wizard" isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/WizardDialog.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/wizard-dialog.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/WizardStep.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/WizardStepFragment.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/FirstStep.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/first-step.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/SecondStep.java"/>
+                    <file name="io/jmix/uisamples/component/addresscomponent/AddressComponent.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/ThirdStep.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/third-step.xml"/>
+                    <file name="io/jmix/uisamples/entity/Employee.java"/>
+                    <file name="io/jmix/uisamples/entity/Address.java"/>
+                    <file name="io/jmix/uisamples/entity/Country.java"/>
+                    <file name="io/jmix/uisamples/entity/City.java"/>
+                </otherFiles>
+            </item>
+        </menu>
     </menu>
 </menu-config>

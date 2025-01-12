@@ -1,0 +1,48 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <collection id="airportsDc"
+                    class="io.jmix.uisamples.entity.Airport">
+            <fetchPlan extends="_base">
+                <property name="city" fetchPlan="_instance_name"/>
+            </fetchPlan>
+            <loader id="airportsDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from Airport e order by e.name asc]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <hbox id="buttonsPanel" classNames="buttons-panel">
+            <button id="createButton" action="airportsDataGrid.create"/>
+            <button id="editButton" action="airportsDataGrid.edit"/>
+            <button id="removeButton" action="airportsDataGrid.remove"/>
+        </hbox>
+        <dataGrid id="airportsDataGrid"
+                  width="100%"
+                  minHeight="20em"
+                  dataContainer="airportsDc">
+            <actions>
+                <action id="create" type="list_create" actionVariant="DEFAULT">
+                    <properties>
+                        <property name="openMode" value="DIALOG"/>
+                    </properties>
+                </action>
+                <action id="edit" type="list_edit">
+                    <properties>
+                        <property name="openMode" value="DIALOG"/>
+                    </properties>
+                </action>
+                <action id="remove" type="list_remove"/>
+            </actions>
+            <columns>
+                <column property="name"/>
+                <column property="iata"/>
+                <column property="city"/>
+            </columns>
+        </dataGrid>
+    </layout>
+</view>
