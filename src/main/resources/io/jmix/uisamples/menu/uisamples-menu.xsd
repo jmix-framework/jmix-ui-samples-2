@@ -47,9 +47,21 @@
             </xs:choice>
         </xs:sequence>
         <xs:attribute name="id" type="xs:string" use="required"/>
-        <xs:attribute name="url" type="xs:string"/>
-        <xs:attribute name="page" type="xs:string"/>
-        <xs:attribute name="anchor" type="xs:string"/>
+        <xs:attribute name="url" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>Path in the documentation under https://docs.jmix.io/jmix/. For example: flow-ui</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="page" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>Page name (without .html). Can contain path under url. For example: data/data-context </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="anchor" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>Anchor inside the page (without #). For example: save-delegate </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
         <xs:attribute name="isNew" type="xs:boolean"/>
         <xs:attribute name="splitEnabled" type="xs:boolean"/>
         <xs:attribute name="defaultFiles" type="xs:boolean"/>
