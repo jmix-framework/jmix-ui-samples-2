@@ -34,9 +34,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.page.Page;
 import com.vaadin.flow.component.splitlayout.SplitLayout;
 import com.vaadin.flow.component.tabs.Tab;
-import com.vaadin.flow.router.AfterNavigationEvent;
-import com.vaadin.flow.router.BeforeEnterEvent;
-import com.vaadin.flow.router.Route;
+import com.vaadin.flow.router.*;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import io.jmix.core.CoreProperties;
 import io.jmix.core.Messages;
@@ -62,6 +60,11 @@ import io.jmix.uisamples.util.UiSamplesHelper;
 import io.jmix.uisamples.view.sys.main.MainView;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.commonmark.node.Link;
+import org.commonmark.node.Node;
+import org.commonmark.parser.Parser;
+import org.commonmark.renderer.html.AttributeProvider;
+import org.commonmark.renderer.html.HtmlRenderer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -319,12 +322,29 @@ public class SampleView extends StandardView {
 
     protected Component createDescriptionTextComponent(String descriptionsPack) {
         StringBuilder sb = new StringBuilder();
-        String text = uiSamplesHelper.getFileContent(getDescriptionFileName(descriptionsPack));
+        String descriptionFileName = getDescriptionFileName(descriptionsPack);
 
+        String text = uiSamplesHelper.getFileContent(descriptionFileName + ".html");
         if (!Strings.isNullOrEmpty(text)) {
             sb.append(text);
-            sb.append("<hr>");
+        } else {
+            text = uiSamplesHelper.getFileContent(descriptionFileName + ".md");
+            if (!Strings.isNullOrEmpty(text)) {
+                Parser parser = Parser.builder().build();
+                Node document = parser.parse(text);
+                HtmlRenderer renderer = HtmlRenderer.builder()
+                        .attributeProviderFactory(context ->
+                                new MarkdownLinkAttributeProvider()
+                        )
+                        .build();
+                String html = renderer.render(document);
+                sb.append(html);
+            }
         }
+        if (sb.isEmpty()) {
+            sb.append("No description available");
+        }
+        sb.append("<hr>");
 
         Div doc = uiComponents.create(Div.class);
 
@@ -344,7 +364,6 @@ public class SampleView extends StandardView {
 
         sb.append(sampleId).append("-");
         sb.append(getCurrentLocale().toLanguageTag());
-        sb.append(".html");
 
         return sb.toString();
     }
@@ -480,5 +499,31 @@ public class SampleView extends StandardView {
         }
 
         return sessionId != null ? sessionId : "defaultId";
+    }
+
+    private String getCurrentUrlPath() {
+        RouteConfiguration routeConfiguration = RouteConfiguration.forSessionScope();
+        return sampleId == null ?
+                routeConfiguration.getUrl(getClass()) :
+                routeConfiguration.getUrl(getClass(), new RouteParameters("sampleId", sampleId));
+    }
+
+    private class MarkdownLinkAttributeProvider implements AttributeProvider {
+        @Override
+        public void setAttributes(Node node, String tagName, Map<String, String> attributes) {
+            if (node instanceof Link) {
+                String href = attributes.get("href");
+                if (href != null) {
+                    if (href.contains("{basePath}")) {
+                        String expandedHref = href.replace("{basePath}", getCurrentUrlPath());
+                        attributes.put("href", expandedHref);
+                    } else {
+                        // open external links in new tab
+                        attributes.put("target", "_blank");
+                    }
+                }
+            }
+        }
+
     }
 }
