@@ -202,6 +202,20 @@ public class SampleView extends StandardView {
         tabSheet.setId("tabSheet");
         tabSheet.setHeightFull();
         tabSheet.setWidthFull();
+
+        tabSheet.addSelectedChangeListener(event -> {
+            if (sampleId != null) {
+                String label = event.getSelectedTab().getLabel();
+
+                String currentUrl = RouteConfiguration.forSessionScope()
+                        .getUrl(getClass(), new RouteParameters("sampleId", sampleId))
+                        + "?" + QueryParameters.of("tab", label).getQueryString();
+
+                getUI().ifPresent(ui ->
+                        ui.getPage().getHistory().replaceState(null, currentUrl)
+                );
+            }
+        });
     }
 
     @Override
@@ -259,6 +273,22 @@ public class SampleView extends StandardView {
     protected void addTab(String title, Component component, Icon icon) {
         Tab addedTab = tabSheet.add(title, component);
         addedTab.addComponentAsFirst(icon);
+    }
+
+    @Subscribe
+    public void onQueryParametersChange(final QueryParametersChangeEvent event) {
+        if (tabSheet != null) {
+            event.getQueryParameters().getSingleParameter("tab").ifPresent(param ->
+                    tabSheet.getChildren()
+                            .map(component ->
+                                    (Tab) component)
+                            .filter(tab1 ->
+                                    tab1.getLabel().equals(param))
+                            .findFirst()
+                            .ifPresent(tab ->
+                                    tabSheet.setSelectedTab(tab))
+            );
+        }
     }
 
     protected void addSourceTab(String src) {
