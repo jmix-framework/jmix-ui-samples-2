@@ -98,7 +98,7 @@ public class OverviewPageGenerator {
 
                 List<Element> tagElements = sample.elements("tag");
                 if (!tagElements.isEmpty()) {
-                    verticalLayout.add(createTags(tagElements));
+                    verticalLayout.add(createTags(tagElements, messagesPrefix));
                 }
 
                 mainLayout.add(verticalLayout);
@@ -106,7 +106,7 @@ public class OverviewPageGenerator {
         }
     }
 
-    private Component createTags(List<Element> tagElements) {
+    private Component createTags(List<Element> tagElements, String messagesPrefix) {
         FlexLayout flexLayout = uiComponents.create(FlexLayout.class);
         flexLayout.setAlignContent(FlexLayout.ContentAlignment.START);
         flexLayout.setFlexDirection(FlexLayout.FlexDirection.ROW);
@@ -120,7 +120,18 @@ public class OverviewPageGenerator {
             tag.getElement().getThemeList().add("badge pill");
             addClassNames(tag, tagElement.attributeValue("classNames"));
             if (tag instanceof HasText hasText) {
-                hasText.setText(tagElement.attributeValue("text"));
+                String text = tagElement.attributeValue("text");
+                if (!Strings.isNullOrEmpty(text)) {
+                    hasText.setText(text);
+                } else {
+                    String message = tagElement.attributeValue("message");
+                    if (!Strings.isNullOrEmpty(message)) {
+                        String prefix = tagElement.attributeValue("messagePrefix");
+                        if (Strings.isNullOrEmpty(prefix))
+                            prefix = messagesPrefix;
+                        hasText.setText(getMessage(prefix, message));
+                    }
+                }
             }
 
             String route = tagElement.attributeValue("route");

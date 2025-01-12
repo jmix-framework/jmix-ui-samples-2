@@ -31,7 +31,9 @@
     </xs:complexType>
 
     <xs:complexType name="tagType">
-        <xs:attribute name="text" type="xs:string" use="required"/>
+        <xs:attribute name="text" type="xs:string"/>
+        <xs:attribute name="message" type="xs:string"/>
+        <xs:attribute name="messagePrefix" type="xs:string"/>
         <xs:attribute name="component" type="componentType"/>
         <xs:attribute name="route" type="xs:string"/>
         <xs:attribute name="queryParameters" type="xs:string"/>
