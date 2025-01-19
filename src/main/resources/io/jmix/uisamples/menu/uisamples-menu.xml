@@ -1271,6 +1271,19 @@
                 </otherFiles>
             </item>
             <item id="composition-reduce-top" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Airport.java"/>
+                    <file name="io/jmix/uisamples/entity/Terminal.java"/>
+                    <file name="io/jmix/uisamples/entity/MeetingPoint.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/airport3/airport-list-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/airport3/AirportListView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/airport3/airport-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/airport3/AirportDetailView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/terminal2/terminal-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/terminal2/TerminalDetailView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/meetingpoint/meeting-point-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/meetingpoint/MeetingPointDetailView.java"/>
+                </otherFiles>
             </item>
             <item id="composition-reduce-bottom" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
             </item>

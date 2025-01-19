@@ -1,0 +1,94 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <collection id="airportsDc"
+                    class="io.jmix.uisamples.entity.Airport">
+            <fetchPlan extends="_base">
+                <property name="city" fetchPlan="_instance_name"/>
+            </fetchPlan>
+            <loader id="airportsDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from Airport e order by e.name asc]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="terminalsDc" class="io.jmix.uisamples.entity.Terminal">
+            <fetchPlan extends="_base"/>
+            <loader id="terminalsDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from Terminal e where e.airport = :container_airportsDc
+                    order by e.name asc]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <hbox width="100%">
+            <vbox padding="false">
+                <h4 text="msg://airports"/>
+                <hbox id="buttonsPanel" classNames="buttons-panel">
+                    <button id="createButton" action="airportsDataGrid.create"/>
+                    <button id="editButton" action="airportsDataGrid.edit"/>
+                    <button id="removeButton" action="airportsDataGrid.remove"/>
+                </hbox>
+                <dataGrid id="airportsDataGrid"
+                              width="100%"
+                              minHeight="20em"
+                              dataContainer="airportsDc">
+                    <actions>
+                        <action id="create" type="list_create" actionVariant="DEFAULT">
+                            <properties>
+                                <property name="openMode" value="DIALOG"/>
+                                <property name="viewId" value="airport-detail-3"/>
+                            </properties>
+                        </action>
+                        <action id="edit" type="list_edit">
+                            <properties>
+                                <property name="openMode" value="DIALOG"/>
+                                <property name="viewId" value="airport-detail-3"/>
+                            </properties>
+                        </action>
+                        <action id="remove" type="list_remove"/>
+                    </actions>
+                    <columns>
+                        <column property="name"/>
+                        <column property="iata"/>
+                        <column property="city"/>
+                    </columns>
+                </dataGrid>
+            </vbox>
+            <vbox padding="false">
+                <h4 text="msg://terminals"/>
+                <hbox id="terminalsButtonsPanel" classNames="buttons-panel">
+                    <button id="terminalsCreateButton" action="terminalsDataGrid.create"/>
+                    <button id="terminalsEditButton" action="terminalsDataGrid.edit"/>
+                    <button id="terminalsRemoveButton" action="terminalsDataGrid.remove"/>
+                </hbox>
+                <dataGrid id="terminalsDataGrid" dataContainer="terminalsDc" minWidth="100px" width="100%">
+                    <actions>
+                        <action id="create" type="list_create" actionVariant="DEFAULT" enabled="false">
+                            <properties>
+                                <property name="openMode" value="DIALOG"/>
+                                <property name="viewId" value="terminal-detail-2"/>
+                            </properties>
+                        </action>
+                        <action id="edit" type="list_edit">
+                            <properties>
+                                <property name="openMode" value="DIALOG"/>
+                                <property name="viewId" value="terminal-detail-2"/>
+                            </properties>
+                        </action>
+                        <action id="remove" type="list_remove"/>
+                    </actions>
+                    <columns>
+                        <column property="name"/>
+                        <column property="terminalType"/>
+                        <column property="gateCount"/>
+                    </columns>
+                </dataGrid>
+            </vbox>
+        </hbox>
+    </layout>
+</view>

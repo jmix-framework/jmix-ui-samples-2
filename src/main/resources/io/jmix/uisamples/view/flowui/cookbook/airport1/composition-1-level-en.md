@@ -6,10 +6,10 @@ Terminals are saved to the database only together with the owning airport, when 
 
 Implementation details: 
 
-- [Airport.java]({basePath}?tab=Airport.java)
+- [Airport.java]({currentPath}?tab=Airport.java)
   - `Airport.terminals` attribute is annotated with `@Composition`.
 
-- [airport-detail-view.xml]({basePath}?tab=airport-detail-view.xml)
+- [airport-detail-view.xml]({currentPath}?tab=airport-detail-view.xml)
   - The fetch plan for loading `Airport` contains the `Airport.terminals` attribute.
   - A nested collection data container is defined for the `Airport.terminals` attribute. 
   - The data grid displaying terminals is connected to this data container.

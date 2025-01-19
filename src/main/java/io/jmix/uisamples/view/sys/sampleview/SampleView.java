@@ -58,6 +58,7 @@ import io.jmix.uisamples.config.UiSamplesMenuConfig;
 import io.jmix.uisamples.config.UiSamplesMenuItem;
 import io.jmix.uisamples.util.UiSamplesHelper;
 import io.jmix.uisamples.view.sys.main.MainView;
+import jakarta.servlet.ServletContext;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.commonmark.node.Link;
@@ -112,6 +113,8 @@ public class SampleView extends StandardView {
     protected Resources resources;
     @Autowired
     protected OverviewPageGenerator overviewPageGenerator;
+    @Autowired(required = false)
+    protected ServletContext servletContext;
 
     protected String sampleId;
     protected StandardView sampleView;
@@ -539,15 +542,26 @@ public class SampleView extends StandardView {
                 routeConfiguration.getUrl(getClass(), new RouteParameters("sampleId", sampleId));
     }
 
+    private String getContextPath() {
+        return servletContext != null ? servletContext.getContextPath() : "";
+    }
+
     private class MarkdownLinkAttributeProvider implements AttributeProvider {
         @Override
         public void setAttributes(Node node, String tagName, Map<String, String> attributes) {
             if (node instanceof Link) {
                 String href = attributes.get("href");
                 if (href != null) {
-                    if (href.contains("{basePath}")) {
-                        String expandedHref = href.replace("{basePath}", getCurrentUrlPath());
+                    if (href.contains("{currentPath}")) {
+                        String expandedHref = href.replace("{currentPath}", getCurrentUrlPath());
                         attributes.put("href", expandedHref);
+                    } else if (href.contains("{contextPath}")) {
+                        String expandedHref = href.replace("{contextPath}", getContextPath());
+                        attributes.put("href", expandedHref);
+                    } else if (href.contains("{docsBaseUrl}")) {
+                        String expandedHref = href.replace("{docsBaseUrl}", "https://docs.jmix.io/jmix");
+                        attributes.put("href", expandedHref);
+                        attributes.put("target", "_blank");
                     } else {
                         // open external links in new tab
                         attributes.put("target", "_blank");
