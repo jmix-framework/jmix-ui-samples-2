@@ -13,3 +13,4 @@ Implementation details:
   - The fetch plan for loading `Airport` contains the `Airport.terminals` attribute.
   - A nested collection data container is defined for the `Airport.terminals` attribute. 
   - The data grid displaying terminals is connected to this data container.
+  - The `create` and `edit` actions of the terminals data grid open the terminal detail view as a dialog (see `<property name="openMode" value="DIALOG"/>`). 

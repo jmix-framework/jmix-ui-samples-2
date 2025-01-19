@@ -1,4 +1,4 @@
-package io.jmix.uisamples.view.flowui.cookbook.airport;
+package io.jmix.uisamples.view.flowui.cookbook.airport1;
 
 import io.jmix.flowui.view.*;
 import io.jmix.uisamples.entity.Airport;

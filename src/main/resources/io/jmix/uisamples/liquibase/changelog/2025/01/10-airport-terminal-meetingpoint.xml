@@ -98,7 +98,7 @@
             <column name="ID" value="5a87b913-ccf4-476d-b9bf-6e4ef09265f6"/>
             <column name="VERSION" value="1"/>
             <column name="AIRPORT_ID" value="a030a77b-e652-42f3-a598-3169ac9d7c75"/>
-            <column name="NAME" value="Terminal 1"/>
+            <column name="NAME" value="Heathrow Terminal 1"/>
             <column name="TERMINAL_TYPE" value="I"/>
             <column name="GATE_COUNT" value="20"/>
         </insert>
@@ -122,8 +122,8 @@
             <column name="ID" value="5b87b913-ccf4-476d-b9bf-6e4ef09265f6"/>
             <column name="VERSION" value="1"/>
             <column name="AIRPORT_ID" value="a030a77b-e652-42f3-a598-3169ac9d7c75"/>
-            <column name="NAME" value="Terminal 2"/>
-            <column name="TERMINAL_TYPE" value="I"/>
+            <column name="NAME" value="Heathrow Terminal 2"/>
+            <column name="TERMINAL_TYPE" value="D"/>
             <column name="GATE_COUNT" value="25"/>
         </insert>
 
@@ -163,7 +163,7 @@
             <column name="ID" value="8246f572-80d7-4663-9d3d-01e2c3851137"/>
             <column name="VERSION" value="1"/>
             <column name="AIRPORT_ID" value="b030a77b-e652-42f3-a598-3169ac9d7c75"/>
-            <column name="NAME" value="Terminal 1"/>
+            <column name="NAME" value="Gatwick Terminal 1"/>
             <column name="TERMINAL_TYPE" value="I"/>
             <column name="GATE_COUNT" value="15"/>
         </insert>
@@ -187,8 +187,8 @@
             <column name="ID" value="a96e70eb-c9ab-4c09-b6b9-6297e079b2de"/>
             <column name="VERSION" value="1"/>
             <column name="AIRPORT_ID" value="b030a77b-e652-42f3-a598-3169ac9d7c75"/>
-            <column name="NAME" value="Terminal 2"/>
-            <column name="TERMINAL_TYPE" value="I"/>
+            <column name="NAME" value="Gatwick Terminal 2"/>
+            <column name="TERMINAL_TYPE" value="D"/>
             <column name="GATE_COUNT" value="18"/>
         </insert>
 
