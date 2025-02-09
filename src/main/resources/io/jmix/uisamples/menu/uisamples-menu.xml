@@ -1251,10 +1251,10 @@
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
                     <file name="io/jmix/uisamples/entity/Terminal.java"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/airport1/airport-detail-view.xml"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/airport1/AirportDetailView.java"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/terminal1/terminal-detail-view.xml"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/terminal1/TerminalDetailView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition1/airport-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition1/AirportDetailView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition1/terminal-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition1/TerminalDetailView.java"/>
                 </otherFiles>
             </item>
             <item id="composition-2-levels" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
@@ -1262,30 +1262,52 @@
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
                     <file name="io/jmix/uisamples/entity/Terminal.java"/>
                     <file name="io/jmix/uisamples/entity/MeetingPoint.java"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/airport2/airport-detail-view.xml"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/airport2/AirportDetailView.java"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/terminal2/terminal-detail-view.xml"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/terminal2/TerminalDetailView.java"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/meetingpoint/meeting-point-detail-view.xml"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/meetingpoint/MeetingPointDetailView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition2/airport-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition2/AirportDetailView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition2/terminal-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition2/TerminalDetailView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition2/meeting-point-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition2/MeetingPointDetailView.java"/>
                 </otherFiles>
             </item>
-            <item id="composition-reduce-top" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
+            <item id="composition-master-detail-1" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
                     <file name="io/jmix/uisamples/entity/Terminal.java"/>
                     <file name="io/jmix/uisamples/entity/MeetingPoint.java"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/airport3/airport-list-view.xml"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/airport3/AirportListView.java"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/airport3/airport-detail-view.xml"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/airport3/AirportDetailView.java"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/terminal2/terminal-detail-view.xml"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/terminal2/TerminalDetailView.java"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/meetingpoint/meeting-point-detail-view.xml"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/meetingpoint/MeetingPointDetailView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition3/airport-list-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition3/AirportListView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition3/airport-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition3/AirportDetailView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition3/terminal-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition3/TerminalDetailView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition3/meeting-point-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition3/MeetingPointDetailView.java"/>
                 </otherFiles>
             </item>
-            <item id="composition-reduce-bottom" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
+            <item id="composition-master-detail-2" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Airport.java"/>
+                    <file name="io/jmix/uisamples/entity/Terminal.java"/>
+                    <file name="io/jmix/uisamples/entity/MeetingPoint.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition4/airport-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition4/AirportDetailView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition4/terminal-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition4/TerminalDetailView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition4/meeting-point-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition4/MeetingPointDetailView.java"/>
+                </otherFiles>
+            </item>
+            <item id="composition-inline-edit" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Airport.java"/>
+                    <file name="io/jmix/uisamples/entity/Terminal.java"/>
+                    <file name="io/jmix/uisamples/entity/MeetingPoint.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition5/airport-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition5/AirportDetailView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition5/terminal-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition5/TerminalDetailView.java"/>
+                </otherFiles>
             </item>
             <item id="composition-advanced" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
             </item>
