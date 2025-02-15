@@ -8,12 +8,12 @@ Implementation details:
     - `Order.items` attribute is annotated with `@Composition`.
 
 - [OrderItem.java]({currentPath}?tab=OrderItem.java)
-  - `OrderItem.sortValue` attribute stores the position of the item within the order.
+  - `OrderItem.rowNum` attribute stores the position of the item within the order.
 
 - [OrderDetailView.java]({currentPath}?tab=OrderDetailView.java)
-  - `itemsDataGridCreateActionInitializer()` handler sets initial value to `sortValue` by incrementing a maximum value among existing items.
+  - `itemsDataGridCreateActionInitializer()` handler sets initial value to `rowNum` by incrementing a maximum value among existing items.
   - `onItemsDcItemChange()` event handler enables and disables **Up** and **Down** buttons according to the position of the selected item.
-  - `onUpButtonClick()` and `onDownButtonClick()` event listeners exchange `sortValue` between neighbour items and reorder table.
+  - `onUpButtonClick()` and `onDownButtonClick()` event listeners exchange `rowNum` between neighbour items and reorder table.
   - `itemsDataGridCreateActionViewConfigurer()` and `itemsDataGridEditActionViewConfigurer()` handlers pass a list of products already selected in the order items to `OrderItemDetailView`. This list is used to filter out already selected products from available options and thus ensure uniqueness of items in the order.
 
 - [OrderItemDetailView.java]({currentPath}?tab=OrderItemDetailView.java)

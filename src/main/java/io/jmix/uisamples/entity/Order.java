@@ -36,7 +36,7 @@ public class Order {
     @Column(name = "DESCRIPTION")
     private String description;
 
-    @OrderBy("sortValue")
+    @OrderBy("rowNum")
     @Composition
     @OneToMany(mappedBy = "order")
     private List<OrderItem> items;

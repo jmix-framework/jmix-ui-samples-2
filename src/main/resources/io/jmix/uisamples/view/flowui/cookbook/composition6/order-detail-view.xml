@@ -63,9 +63,9 @@
                 <action id="removeAction" type="list_remove"/>
             </actions>
             <columns sortable="false">
-                <column property="sortValue" width="5%"/>
+                <column property="rowNum" width="10%"/>
                 <column property="product" width="70%"/>
-                <column property="quantity" autoWidth="true" width="25%"/>
+                <column property="quantity" width="20%"/>
             </columns>
         </dataGrid>
         <hbox id="detailActions">

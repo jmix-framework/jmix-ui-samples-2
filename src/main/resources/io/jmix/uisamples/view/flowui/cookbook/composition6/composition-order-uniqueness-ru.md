@@ -8,12 +8,12 @@
   - Атрибут `Order.items` аннотирован с помощью `@Composition`.
 
 - [OrderItem.java]({currentPath}?tab=OrderItem.java)
-  - Атрибут `OrderItem.sortValue` хранит позицию элемента в рамках заказа.
+  - Атрибут `OrderItem.rowNum` хранит позицию элемента в рамках заказа.
 
 - [OrderDetailView.java]({currentPath}?tab=OrderDetailView.java)
-  - Обработчик `itemsDataGridCreateActionInitializer()` устанавливает начальное значение для `sortValue`, увеличивая максимальное значение, найденное среди существующих элементов.
+  - Обработчик `itemsDataGridCreateActionInitializer()` устанавливает начальное значение для `rowNum`, увеличивая максимальное значение, найденное среди существующих элементов.
   - Обработчик события `onItemsDcItemChange()` активирует и деактивирует кнопки **Up** и **Down** в зависимости от позиции выбранного элемента.
-  - Слушатели событий `onUpButtonClick()` и `onDownButtonClick()` меняют значения `sortValue` между соседними элементами и переупорядочивают таблицу.
+  - Слушатели событий `onUpButtonClick()` и `onDownButtonClick()` меняют значения `rowNum` между соседними элементами и переупорядочивают таблицу.
   - Обработчики `itemsDataGridCreateActionViewConfigurer()` и `itemsDataGridEditActionViewConfigurer()` передают список продуктов, уже выбранных в элементах заказа, в `OrderItemDetailView`. Этот список используется для удаления уже выбранных продуктов из доступных вариантов, что обеспечивает уникальность элементов в заказе.
 
 - [OrderItemDetailView.java]({currentPath}?tab=OrderItemDetailView.java)

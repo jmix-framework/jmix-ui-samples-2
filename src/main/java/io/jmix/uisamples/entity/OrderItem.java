@@ -29,8 +29,8 @@ public class OrderItem {
     @JoinColumn(name = "ORDER_ID")
     private Order order;
 
-    @Column(name = "SORT_VALUE")
-    private Integer sortValue;
+    @Column(name = "ROW_NUM")
+    private Integer rowNum;
 
     @InstanceName
     public String getInstanceName() {
@@ -69,11 +69,11 @@ public class OrderItem {
         return quantity;
     }
 
-    public Integer getSortValue() {
-        return sortValue;
+    public Integer getRowNum() {
+        return rowNum;
     }
 
-    public void setSortValue(Integer sortValue) {
-        this.sortValue = sortValue;
+    public void setRowNum(Integer rowNum) {
+        this.rowNum = rowNum;
     }
 }

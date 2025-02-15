@@ -28,10 +28,10 @@ public class OrderDetailView extends StandardDetailView<Order> {
     @Install(to = "itemsDataGrid.createAction", subject = "initializer")
     private void itemsDataGridCreateActionInitializer(final OrderItem orderItem) {
         Integer maxValue = itemsDc.getItems().stream()
-                .max(Comparator.comparing(OrderItem::getSortValue))
-                .map(OrderItem::getSortValue)
+                .max(Comparator.comparing(OrderItem::getRowNum))
+                .map(OrderItem::getRowNum)
                 .orElse(0);
-        orderItem.setSortValue(maxValue + 1);
+        orderItem.setRowNum(maxValue + 1);
     }
 
     // Enable and disable up/down buttons according to the position of selected item
@@ -55,12 +55,12 @@ public class OrderDetailView extends StandardDetailView<Order> {
     public void onUpButtonClick(final ClickEvent<JmixButton> event) {
         OrderItem currentItem = itemsDc.getItemOrNull();
         if (currentItem != null) {
-            currentItem.setSortValue(currentItem.getSortValue() - 1);
+            currentItem.setRowNum(currentItem.getRowNum() - 1);
 
             OrderItem prevItem = itemsDc.getItems().get(itemsDc.getItemIndex(currentItem) - 1);
-            prevItem.setSortValue(prevItem.getSortValue() + 1);
+            prevItem.setRowNum(prevItem.getRowNum() + 1);
 
-            itemsDc.getDisconnectedItems().sort(Comparator.comparing(OrderItem::getSortValue));
+            itemsDc.getDisconnectedItems().sort(Comparator.comparing(OrderItem::getRowNum));
         }
     }
 
@@ -69,12 +69,12 @@ public class OrderDetailView extends StandardDetailView<Order> {
     public void onDownButtonClick(final ClickEvent<JmixButton> event) {
         OrderItem currentItem = itemsDc.getItemOrNull();
         if (currentItem != null) {
-            currentItem.setSortValue(currentItem.getSortValue() + 1);
+            currentItem.setRowNum(currentItem.getRowNum() + 1);
 
             OrderItem nextItem = itemsDc.getItems().get(itemsDc.getItemIndex(currentItem) + 1);
-            nextItem.setSortValue(nextItem.getSortValue() - 1);
+            nextItem.setRowNum(nextItem.getRowNum() - 1);
 
-            itemsDc.getDisconnectedItems().sort(Comparator.comparing(OrderItem::getSortValue));
+            itemsDc.getDisconnectedItems().sort(Comparator.comparing(OrderItem::getRowNum));
         }
     }
 
