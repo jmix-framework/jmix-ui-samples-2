@@ -1,7 +1,6 @@
 package io.jmix.uisamples.view.flowui.cookbook.composition6;
 
 import com.vaadin.flow.component.ClickEvent;
-import com.vaadin.flow.router.Route;
 import io.jmix.flowui.kit.component.button.JmixButton;
 import io.jmix.flowui.model.CollectionPropertyContainer;
 import io.jmix.flowui.model.InstanceContainer;
@@ -9,12 +8,10 @@ import io.jmix.flowui.view.*;
 import io.jmix.uisamples.entity.Order;
 import io.jmix.uisamples.entity.OrderItem;
 import io.jmix.uisamples.entity.Product;
-import io.jmix.uisamples.view.sys.main.MainView;
 
 import java.util.Comparator;
 import java.util.List;
 
-@Route(value = "orders/:id", layout = MainView.class)
 @ViewController(id = "order-detail-1")
 @ViewDescriptor(path = "order-detail-view.xml")
 @EditedEntityContainer("orderDc")

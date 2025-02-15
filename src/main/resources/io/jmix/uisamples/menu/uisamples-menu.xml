@@ -1320,6 +1320,14 @@
                 </otherFiles>
             </item>
             <item id="composition-info-panel" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                    <file name="io/jmix/uisamples/entity/OrderItem.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition7/order-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition7/OrderDetailView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition7/order-item-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/composition7/OrderItemDetailView.java"/>
+                </otherFiles>
             </item>
         </menu>
         <menu id="cookbook-other">
