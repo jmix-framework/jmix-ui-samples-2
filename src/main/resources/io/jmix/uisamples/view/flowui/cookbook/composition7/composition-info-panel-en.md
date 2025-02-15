@@ -12,7 +12,7 @@ Implementation details:
 
 - [OrderDetailView.java]({currentPath}?tab=OrderDetailView.java)
   - `updateInfoPanel()` method updates the info panel when changes are detected.
-  - `onChange()` event listener calls `updateInfoPanel()` when the `DataContext` of this view detects changes in its entities. It happens, for example, when the user modifies the `date` attribute or the `items` collection. However, this listener does not react on changes made in the nested `OrderItemDetailView`. This is why `updateInfoPanel()` should also be called from the `OrderItemDetailView` itself.
+  - `onChange()` event listener calls `updateInfoPanel()` when the `DataContext` of this view detects changes in its entities. It happens, for example, when the user modifies the `date` attribute or the `items` collection. However, this listener does not react to changes made in the separate `OrderItemDetailView`. This is why `updateInfoPanel()` should also be called from the `OrderItemDetailView` itself.
   - `itemsDataGridEditActionViewConfigurer()` handler passes the reference to `updateInfoPanel()` to `OrderItemDetailView`.
   
 - [OrderItemDetailView.java]({currentPath}?tab=OrderItemDetailView.java)

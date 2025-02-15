@@ -19,8 +19,9 @@
                  classNames="overview-tag-font overview-tag-grey"/>
             <tag messagePrefix="uisamples-menu-config" message="delayed-data-load" route="delayed-data-load"
                  classNames="overview-tag-font overview-tag-grey"/>
-            <tag messagePrefix="uisamples-menu-config" message="saving-entity-by-service" route="saving-entity-by-service"
-                 classNames="overview-tag-font overview-tag-grey"/>
+<!-- TODO Jmix 2.5 -->
+<!--            <tag messagePrefix="uisamples-menu-config" message="saving-entity-by-service" route="saving-entity-by-service"-->
+<!--                 classNames="overview-tag-font overview-tag-grey"/>-->
             <tag messagePrefix="uisamples-menu-config" message="read-only-customers" route="read-only-customers"
                  classNames="overview-tag-font overview-tag-grey"/>
         </sample>
@@ -32,11 +33,11 @@
                  classNames="overview-tag-font overview-tag-grey"/>
             <tag messagePrefix="uisamples-menu-config" message="composition-2-levels" route="composition-2-levels"
                  classNames="overview-tag-font overview-tag-grey"/>
-            <tag messagePrefix="uisamples-menu-config" message="composition-reduce-top" route="composition-reduce-top"
+            <tag messagePrefix="uisamples-menu-config" message="composition-master-detail-1" route="composition-master-detail-1"
                  classNames="overview-tag-font overview-tag-grey"/>
-            <tag messagePrefix="uisamples-menu-config" message="composition-reduce-bottom" route="composition-reduce-bottom"
+            <tag messagePrefix="uisamples-menu-config" message="composition-master-detail-2" route="composition-master-detail-2"
                  classNames="overview-tag-font overview-tag-grey"/>
-            <tag messagePrefix="uisamples-menu-config" message="composition-advanced" route="composition-advanced"
+            <tag messagePrefix="uisamples-menu-config" message="composition-order-uniqueness" route="composition-order-uniqueness"
                  classNames="overview-tag-font overview-tag-grey"/>
             <tag messagePrefix="uisamples-menu-config" message="composition-info-panel" route="composition-info-panel"
                  classNames="overview-tag-font overview-tag-grey"/>

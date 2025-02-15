@@ -12,6 +12,8 @@ public class OrderDetailView extends StandardDetailView<Order> {
 
     @ViewComponent
     private Div infoPanel;
+    @ViewComponent
+    private MessageBundle messageBundle;
 
     @Subscribe(target = Target.DATA_CONTEXT)
     public void onChange(final DataContext.ChangeEvent event) {
@@ -24,7 +26,7 @@ public class OrderDetailView extends StandardDetailView<Order> {
     }
 
     private void updateInfoPanel() {
-        infoPanel.setText("There are unsaved changes!");
+        infoPanel.setText(messageBundle.getMessage("infoPanel.text.unsavedChanges"));
         infoPanel.getElement().getThemeList().remove("success");
         infoPanel.getElement().getThemeList().add("error");
     }

@@ -1,6 +1,6 @@
 This sample demonstrates how to implement ordering of composition items and ensure they have unique values within the root entity.
 
-The composition consists of the `Order` and `OrderItem` entities. If you open an order for editing, you can see the data grid with items. Each row has **#** column. You can move the item up and down with the corresponding buttons. When creating a new item or editing an existing one, the dropdown for selecting a product for the item contains only options that have not yet been added to the order.
+The composition consists of the `Order` and `OrderItem` entities. If you open an order for editing, you can see the data grid with items. The data grid has **#** column which shows the row number. You can move the item up and down with the corresponding buttons. When creating a new item or editing an existing one, the dropdown for selecting a product for the item contains only options that have not yet been added to the order.
 
 Implementation details:
 

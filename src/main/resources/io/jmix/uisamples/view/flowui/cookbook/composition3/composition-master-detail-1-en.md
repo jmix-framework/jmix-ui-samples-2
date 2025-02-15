@@ -1,6 +1,7 @@
-This sample illustrates how to reduce the nesting of dialog windows by using master-detail lists of entities on top of the composition.
 
-Here you can see the same data structure consisting of `Airport`, `Terminal` and `MeetingPoint` entities as in the [previous example]({contextPath}/sample/composition-2-levels) with two-level composition. However, the list of terminals is displayed next to the list of airports in a master-detail format, rather than within the airport detail view. This removes one level of nested dialog windows, thereby enhancing the user experience.
+This sample illustrates how to reduce the nesting of dialog windows by using master-detail lists of entities instead of the top level of the composition.
+
+Here you can see the same data structure consisting of `Airport`, `Terminal` and `MeetingPoint` entities as in the [previous example]({contextPath}/sample/composition-2-levels) with two-level relationship. However, the list of terminals is displayed next to the list of airports in a master-detail format, rather than within the airport detail view. This removes one level of nested dialog windows, thereby enhancing the user experience.
 
 In this example, airports and terminals are edited and saved independently, while meeting points are saved to the database only together with the owning terminal. So the composition relationship takes place only for `Terminal` and `MeetingPoint` entities. 
 

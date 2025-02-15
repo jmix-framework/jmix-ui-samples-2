@@ -1237,8 +1237,9 @@
                     <file name="io/jmix/uisamples/entity/Product.java"/>
                 </otherFiles>
             </item>
-            <item id="saving-entity-by-service" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">
-            </item>
+<!-- TODO Jmix 2.5 -->
+<!--            <item id="saving-entity-by-service" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">-->
+<!--            </item>-->
             <item id="read-only-customers" page="opening-views" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
