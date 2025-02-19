@@ -34,7 +34,7 @@
                 <column property="description" editable="true"/>
                 <editorActionsColumn key="editorActionsColumn">
                     <editButton/>
-                    <closeButton text="Close"/>
+                    <closeButton text="msg://closeButton.text"/>
                 </editorActionsColumn>
             </columns>
         </dataGrid>
