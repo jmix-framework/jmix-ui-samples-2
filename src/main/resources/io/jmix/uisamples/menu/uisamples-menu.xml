@@ -1251,9 +1251,9 @@
                 </otherFiles>
             </item>
         </menu>
-        <menu id="cookbook-composition">
+        <menu id="cookbook-composition" isNew="true">
             <item id="composition-1-level" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
-                  defaultFiles="false" isNew="true">
+                  defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
                     <file name="io/jmix/uisamples/entity/Terminal.java"/>
@@ -1264,7 +1264,7 @@
                 </otherFiles>
             </item>
             <item id="composition-2-levels" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
-                  defaultFiles="false" isNew="true">
+                  defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
                     <file name="io/jmix/uisamples/entity/Terminal.java"/>
@@ -1278,7 +1278,7 @@
                 </otherFiles>
             </item>
             <item id="composition-master-detail-1" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
-                  defaultFiles="false" isNew="true">
+                  defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
                     <file name="io/jmix/uisamples/entity/Terminal.java"/>
@@ -1294,7 +1294,7 @@
                 </otherFiles>
             </item>
             <item id="composition-master-detail-2" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
-                  defaultFiles="false" isNew="true">
+                  defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
                     <file name="io/jmix/uisamples/entity/Terminal.java"/>
@@ -1308,7 +1308,7 @@
                 </otherFiles>
             </item>
             <item id="composition-inline-edit" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
-                  defaultFiles="false" isNew="true">
+                  defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
                     <file name="io/jmix/uisamples/entity/Terminal.java"/>
@@ -1320,7 +1320,7 @@
                 </otherFiles>
             </item>
             <item id="composition-order-uniqueness" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
-                  defaultFiles="false" isNew="true">
+                  defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Order.java"/>
                     <file name="io/jmix/uisamples/entity/OrderItem.java"/>
@@ -1331,7 +1331,7 @@
                 </otherFiles>
             </item>
             <item id="composition-info-panel" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
-                  defaultFiles="false" isNew="true">
+                  defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Order.java"/>
                     <file name="io/jmix/uisamples/entity/OrderItem.java"/>

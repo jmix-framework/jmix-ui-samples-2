@@ -32,7 +32,7 @@ public class AirportDetailView extends StandardDetailView<Airport> {
     @Subscribe("terminalsDataGrid.createAction")
     public void onTerminalsDataGridCreateAction(final ActionPerformedEvent event) {
         if (terminalsDataGrid.getEditor().isOpen()) {
-            notifications.create("Close the editor before creating a new entity").show();
+            notifications.show("Close the editor before creating a new entity");
             return;
         }
 

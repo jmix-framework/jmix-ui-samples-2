@@ -1,9 +1,7 @@
 package io.jmix.uisamples.view.flowui.cookbook.composition5;
 
-import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.grid.ItemDoubleClickEvent;
 import io.jmix.flowui.Notifications;
-import io.jmix.flowui.component.UiComponentUtils;
 import io.jmix.flowui.component.grid.DataGrid;
 import io.jmix.flowui.kit.action.ActionPerformedEvent;
 import io.jmix.flowui.model.CollectionPropertyContainer;
@@ -31,20 +29,17 @@ public class TerminalDetailView extends StandardDetailView<Terminal> {
     @ViewComponent
     private DataContext dataContext;
 
-    @Subscribe
-    public void onReady(final ReadyEvent event) {
-        // Update the dialog title with the name of the edited terminal
-        Dialog dialog = UiComponentUtils.findDialog(this);
-        if (dialog != null) {
-            String title = messageBundle.formatMessage("meetingPoints", getEditedEntity().getName());
-            dialog.setHeaderTitle(title);
-        }
+    @Override
+    public String getPageTitle() {
+        return getEditedEntityOrNull() != null
+                ? messageBundle.formatMessage("meetingPoints", getEditedEntity().getName())
+                : super.getPageTitle();
     }
 
     @Subscribe("meetingPointsDataGrid.createAction")
     public void onMeetingPointsDataGridCreateAction(final ActionPerformedEvent event) {
         if (meetingPointsDataGrid.getEditor().isOpen()) {
-            notifications.create("Close the editor before creating a new entity").show();
+            notifications.show("Close the editor before creating a new entity");
             return;
         }
 
