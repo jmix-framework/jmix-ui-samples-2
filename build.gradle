@@ -52,6 +52,7 @@ dependencies {
     implementation 'io.jmix.pivottable:jmix-pivottable-flowui-starter'
 
     implementation 'com.storedobject.chart:so-charts:3.2.4'
+    implementation 'org.commonmark:commonmark:0.24.0'
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.apache.commons:commons-dbcp2'

@@ -14,24 +14,23 @@ import java.util.UUID;
 public class OrderItem {
 
     @Id
-    @Column(name = "ID")
+    @Column(name = "ID", nullable = false)
     @JmixGeneratedValue
-    protected UUID id;
+    private UUID id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PRODUCT_ID")
-    protected Product product;
+    private Product product;
 
     @Column(name = "QUANTITY", precision = 19, scale = 3)
-    protected BigDecimal quantity;
+    private BigDecimal quantity;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ORDER_ID")
-    protected Order order;
+    private Order order;
 
-    public OrderItem() {
-        this.id = UUID.randomUUID();
-    }
+    @Column(name = "ROW_NUM")
+    private Integer rowNum;
 
     @InstanceName
     public String getInstanceName() {
@@ -68,5 +67,13 @@ public class OrderItem {
 
     public BigDecimal getQuantity() {
         return quantity;
+    }
+
+    public Integer getRowNum() {
+        return rowNum;
+    }
+
+    public void setRowNum(Integer rowNum) {
+        this.rowNum = rowNum;
     }
 }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://airportDetailView.title"
+      focusComponent="form">
+    <data>
+        <instance id="airportDc"
+                  class="io.jmix.uisamples.entity.Airport">
+            <fetchPlan extends="_base">
+                <property name="city" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="airportDl"/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <actions>
+        <action id="saveAction" type="detail_saveClose"/>
+        <action id="closeAction" type="detail_close"/>
+    </actions>
+    <layout>
+        <formLayout id="form" dataContainer="airportDc">
+            <responsiveSteps>
+                <responsiveStep minWidth="0" columns="1"/>
+                <responsiveStep minWidth="40em" columns="2"/>
+            </responsiveSteps>
+            <textField id="nameField" property="name"/>
+            <textField id="iataField" property="iata"/>
+            <entityComboBox id="cityField" property="city">
+                <actions>
+                    <action id="entityClear" type="entity_clear"/>
+                </actions>
+                <itemsQuery class="io.jmix.uisamples.entity.City" escapeValueForLike="true"
+                            searchStringFormat="(?i)%${inputString}%">
+                    <fetchPlan extends="_base"/>
+                    <query>
+                        <![CDATA[select e from City e where e.name like :searchString escape '\' order by e.name]]>
+                    </query>
+                </itemsQuery>
+            </entityComboBox>
+        </formLayout>
+        <hbox id="detailActions">
+            <button id="saveAndCloseButton" action="saveAction"/>
+            <button id="closeButton" action="closeAction"/>
+        </hbox>
+    </layout>
+</view>

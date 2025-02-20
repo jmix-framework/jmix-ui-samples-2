@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="jmix-ui-samples-2">
+        <createTable tableName="AIRPORT">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_AIRPORT"/>
+            </column>
+            <column name="VERSION" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="IATA" type="VARCHAR(3)"/>
+            <column name="CITY_ID" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="jmix-ui-samples-2">
+        <createTable tableName="MEETING_POINT">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_MEETING_POINT"/>
+            </column>
+            <column name="VERSION" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DESCRIPTION" type="VARCHAR(255)"/>
+            <column name="TERMINAL_ID" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="3" author="jmix-ui-samples-2">
+        <createTable tableName="TERMINAL">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_TERMINAL"/>
+            </column>
+            <column name="VERSION" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NAME" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AIRPORT_ID" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TERMINAL_TYPE" type="VARCHAR(1)"/>
+            <column name="GATE_COUNT" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="4" author="jmix-ui-samples-2">
+        <createIndex indexName="IDX_AIRPORT_CITY" tableName="AIRPORT">
+            <column name="CITY_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="CITY_ID" baseTableName="AIRPORT" constraintName="FK_AIRPORT_ON_CITY"
+                                 referencedColumnNames="ID" referencedTableName="CITY"/>
+    </changeSet>
+    <changeSet id="5" author="jmix-ui-samples-2">
+        <createIndex indexName="IDX_MEETING_POINT_TERMINAL" tableName="MEETING_POINT">
+            <column name="TERMINAL_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="TERMINAL_ID" baseTableName="MEETING_POINT"
+                                 constraintName="FK_MEETING_POINT_ON_TERMINAL" onDelete="CASCADE"
+                                 referencedColumnNames="ID" referencedTableName="TERMINAL"/>
+    </changeSet>
+    <changeSet id="6" author="jmix-ui-samples-2">
+        <createIndex indexName="IDX_TERMINAL_AIRPORT" tableName="TERMINAL">
+            <column name="AIRPORT_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="AIRPORT_ID" baseTableName="TERMINAL"
+                                 constraintName="FK_TERMINAL_ON_AIRPORT" onDelete="CASCADE" referencedColumnNames="ID"
+                                 referencedTableName="AIRPORT"/>
+    </changeSet>
+
+    <changeSet id="7" author="demo">
+
+        <!-- Heathrow -->
+
+        <insert tableName="AIRPORT">
+            <column name="ID" value="a030a77b-e652-42f3-a598-3169ac9d7c75"/>
+            <column name="VERSION" value="1"/>
+            <column name="NAME" value="Heathrow"/>
+            <column name="IATA" value="LHR"/>
+            <column name="CITY_ID" value="1"/>
+        </insert>
+
+        <insert tableName="TERMINAL">
+            <column name="ID" value="5a87b913-ccf4-476d-b9bf-6e4ef09265f6"/>
+            <column name="VERSION" value="1"/>
+            <column name="AIRPORT_ID" value="a030a77b-e652-42f3-a598-3169ac9d7c75"/>
+            <column name="NAME" value="Heathrow Terminal 1"/>
+            <column name="TERMINAL_TYPE" value="I"/>
+            <column name="GATE_COUNT" value="20"/>
+        </insert>
+
+        <insert tableName="MEETING_POINT">
+            <column name="ID" valueComputed="uuid()"/>
+            <column name="VERSION" value="1"/>
+            <column name="TERMINAL_ID" value="5a87b913-ccf4-476d-b9bf-6e4ef09265f6"/>
+            <column name="NAME" value="Heathrow T1 Meeting point 1"/>
+            <column name="DESCRIPTION" value="Meeting point 1 description"/>
+        </insert>
+        <insert tableName="MEETING_POINT">
+            <column name="ID" valueComputed="uuid()"/>
+            <column name="VERSION" value="1"/>
+            <column name="TERMINAL_ID" value="5a87b913-ccf4-476d-b9bf-6e4ef09265f6"/>
+            <column name="NAME" value="Heathrow T1 Meeting point 2"/>
+            <column name="DESCRIPTION" value="Meeting point 2 description"/>
+        </insert>
+
+        <insert tableName="TERMINAL">
+            <column name="ID" value="5b87b913-ccf4-476d-b9bf-6e4ef09265f6"/>
+            <column name="VERSION" value="1"/>
+            <column name="AIRPORT_ID" value="a030a77b-e652-42f3-a598-3169ac9d7c75"/>
+            <column name="NAME" value="Heathrow Terminal 2"/>
+            <column name="TERMINAL_TYPE" value="D"/>
+            <column name="GATE_COUNT" value="25"/>
+        </insert>
+
+        <insert tableName="MEETING_POINT">
+            <column name="ID" valueComputed="uuid()"/>
+            <column name="VERSION" value="1"/>
+            <column name="TERMINAL_ID" value="5b87b913-ccf4-476d-b9bf-6e4ef09265f6"/>
+            <column name="NAME" value="Heathrow T2 Meeting point 1"/>
+            <column name="DESCRIPTION" value="Meeting point 1 description"/>
+        </insert>
+        <insert tableName="MEETING_POINT">
+            <column name="ID" valueComputed="uuid()"/>
+            <column name="VERSION" value="1"/>
+            <column name="TERMINAL_ID" value="5b87b913-ccf4-476d-b9bf-6e4ef09265f6"/>
+            <column name="NAME" value="Heathrow T2 Meeting point 2"/>
+            <column name="DESCRIPTION" value="Meeting point 2 description"/>
+        </insert>
+        <insert tableName="MEETING_POINT">
+            <column name="ID" valueComputed="uuid()"/>
+            <column name="VERSION" value="1"/>
+            <column name="TERMINAL_ID" value="5b87b913-ccf4-476d-b9bf-6e4ef09265f6"/>
+            <column name="NAME" value="Heathrow T2 Meeting point 3"/>
+            <column name="DESCRIPTION" value="Meeting point 3 description"/>
+        </insert>
+
+        <!-- Gatwick -->
+
+        <insert tableName="AIRPORT">
+            <column name="ID" value="b030a77b-e652-42f3-a598-3169ac9d7c75"/>
+            <column name="VERSION" value="1"/>
+            <column name="NAME" value="Gatwick"/>
+            <column name="IATA" value="LGW"/>
+            <column name="CITY_ID" value="1"/>
+        </insert>
+
+        <insert tableName="TERMINAL">
+            <column name="ID" value="8246f572-80d7-4663-9d3d-01e2c3851137"/>
+            <column name="VERSION" value="1"/>
+            <column name="AIRPORT_ID" value="b030a77b-e652-42f3-a598-3169ac9d7c75"/>
+            <column name="NAME" value="Gatwick Terminal 1"/>
+            <column name="TERMINAL_TYPE" value="I"/>
+            <column name="GATE_COUNT" value="15"/>
+        </insert>
+
+        <insert tableName="MEETING_POINT">
+            <column name="ID" valueComputed="uuid()"/>
+            <column name="VERSION" value="1"/>
+            <column name="TERMINAL_ID" value="8246f572-80d7-4663-9d3d-01e2c3851137"/>
+            <column name="NAME" value="Gatwick T1 Meeting point 1"/>
+            <column name="DESCRIPTION" value="Meeting point 1 description"/>
+        </insert>
+        <insert tableName="MEETING_POINT">
+            <column name="ID" valueComputed="uuid()"/>
+            <column name="VERSION" value="1"/>
+            <column name="TERMINAL_ID" value="8246f572-80d7-4663-9d3d-01e2c3851137"/>
+            <column name="NAME" value="Gatwick T1 Meeting point 2"/>
+            <column name="DESCRIPTION" value="Meeting point 2 description"/>
+        </insert>
+
+        <insert tableName="TERMINAL">
+            <column name="ID" value="a96e70eb-c9ab-4c09-b6b9-6297e079b2de"/>
+            <column name="VERSION" value="1"/>
+            <column name="AIRPORT_ID" value="b030a77b-e652-42f3-a598-3169ac9d7c75"/>
+            <column name="NAME" value="Gatwick Terminal 2"/>
+            <column name="TERMINAL_TYPE" value="D"/>
+            <column name="GATE_COUNT" value="18"/>
+        </insert>
+
+        <insert tableName="MEETING_POINT">
+            <column name="ID" valueComputed="uuid()"/>
+            <column name="VERSION" value="1"/>
+            <column name="TERMINAL_ID" value="a96e70eb-c9ab-4c09-b6b9-6297e079b2de"/>
+            <column name="NAME" value="Gatwick T2 Meeting point 1"/>
+            <column name="DESCRIPTION" value="Meeting point 1 description"/>
+        </insert>
+        <insert tableName="MEETING_POINT">
+            <column name="ID" valueComputed="uuid()"/>
+            <column name="VERSION" value="1"/>
+            <column name="TERMINAL_ID" value="a96e70eb-c9ab-4c09-b6b9-6297e079b2de"/>
+            <column name="NAME" value="Gatwick T2 Meeting point 2"/>
+            <column name="DESCRIPTION" value="Meeting point 2 description"/>
+        </insert>
+        <insert tableName="MEETING_POINT">
+            <column name="ID" valueComputed="uuid()"/>
+            <column name="VERSION" value="1"/>
+            <column name="TERMINAL_ID" value="a96e70eb-c9ab-4c09-b6b9-6297e079b2de"/>
+            <column name="NAME" value="Gatwick T2 Meeting point 3"/>
+            <column name="DESCRIPTION" value="Meeting point 3 description"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

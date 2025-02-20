@@ -1,8 +1,6 @@
 package io.jmix.uisamples.entity;
 
-import io.jmix.core.DeletePolicy;
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
-import io.jmix.core.entity.annotation.OnDelete;
 import io.jmix.core.metamodel.annotation.Composition;
 import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
@@ -10,7 +8,7 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 
 @Table(name = "ORDER")
@@ -21,31 +19,27 @@ public class Order {
     @Id
     @Column(name = "ID", nullable = false)
     @JmixGeneratedValue
-    protected UUID id;
+    private UUID id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CUSTOMER_ID")
-    protected Customer customer;
+    private Customer customer;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "DATE_", nullable = false)
     @InstanceName
-    protected Date date;
+    private Date date;
 
     @Column(name = "AMOUNT")
-    protected BigDecimal amount;
+    private BigDecimal amount;
 
     @Column(name = "DESCRIPTION")
-    protected String description;
+    private String description;
 
+    @OrderBy("rowNum")
     @Composition
-    @OnDelete(DeletePolicy.CASCADE)
     @OneToMany(mappedBy = "order")
-    protected Set<OrderItem> items;
-
-    public Order() {
-        this.id = UUID.randomUUID();
-    }
+    private List<OrderItem> items;
 
     public UUID getId() {
         return id;
@@ -55,11 +49,11 @@ public class Order {
         this.id = id;
     }
 
-    public void setItems(Set<OrderItem> items) {
+    public void setItems(List<OrderItem> items) {
         this.items = items;
     }
 
-    public Set<OrderItem> getItems() {
+    public List<OrderItem> getItems() {
         return items;
     }
 
