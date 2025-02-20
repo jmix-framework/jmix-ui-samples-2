@@ -934,6 +934,42 @@
                     <file name="io/jmix/uisamples/view/flowui/maps/linestringstyle/LineStringCoordinates.java"/>
                 </otherFiles>
             </item>
+            <item id="geo-map-select-style" page="style" splitEnabled="true" isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/maps/polygon/PolygonFeatures.java"/>
+                </otherFiles>
+            </item>
+            <item id="geo-map-select-style-provider" page="style" splitEnabled="true" isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Marker.java"/>
+                </otherFiles>
+            </item>
+            <item id="geo-map-modify-style" page="style" splitEnabled="true" isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/maps/modifystyle/feature/Geometries.java"/>
+                </otherFiles>
+            </item>
+            <item id="geo-map-modify-style-provider" page="style" splitEnabled="true" isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Marker.java"/>
+                </otherFiles>
+            </item>
+            <item id="geo-map-select-mode" page="layers-sources" splitEnabled="true" isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Marker.java"/>
+                    <file name="io/jmix/uisamples/bean/MountainService.java"/>
+                </otherFiles>
+            </item>
+            <item id="geo-map-drag-mode" page="layers-sources" splitEnabled="true" isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Marker.java"/>
+                </otherFiles>
+            </item>
+            <item id="geo-map-modify-mode" page="layers-sources" splitEnabled="true" isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/maps/modify/Geometries.java"/>
+                </otherFiles>
+            </item>
             <item id="geo-map-cluster" page="high-density-data-visualization" anchor="clustering" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Location.java"/>
