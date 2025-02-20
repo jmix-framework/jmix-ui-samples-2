@@ -43,10 +43,12 @@ public class OrderDetailView extends StandardDetailView<Order> {
         OrderItem orderItem = event.getItem();
         if (orderItem != null) {
             int index = itemsDc.getItemIndex(orderItem);
-            if (index > 0)
+            if (index > 0) {
                 upButton.setEnabled(true);
-            if (index < itemsDc.getItems().size() - 1)
+            }
+            if (index < itemsDc.getItems().size() - 1) {
                 downButton.setEnabled(true);
+            }
         }
     }
 

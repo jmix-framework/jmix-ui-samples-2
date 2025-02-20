@@ -16,6 +16,7 @@ import java.util.UUID;
 })
 @Entity
 public class Airport {
+
     @JmixGeneratedValue
     @Column(name = "ID", nullable = false)
     @Id

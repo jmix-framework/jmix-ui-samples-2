@@ -7,7 +7,6 @@ import io.jmix.flowui.view.*;
 import io.jmix.uisamples.entity.Airport;
 import io.jmix.uisamples.entity.Terminal;
 
-
 @ViewController(id = "composition-master-detail-1")
 @ViewDescriptor(path = "airport-list-view.xml")
 @DialogMode(width = "64em")

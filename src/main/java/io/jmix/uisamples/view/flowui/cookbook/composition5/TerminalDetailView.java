@@ -19,8 +19,6 @@ public class TerminalDetailView extends StandardDetailView<Terminal> {
 
     @Autowired
     private Notifications notifications;
-    @ViewComponent
-    private MessageBundle messageBundle;
 
     @ViewComponent
     private DataGrid<MeetingPoint> meetingPointsDataGrid;
@@ -28,6 +26,8 @@ public class TerminalDetailView extends StandardDetailView<Terminal> {
     private CollectionPropertyContainer<MeetingPoint> meetingPointsDc;
     @ViewComponent
     private DataContext dataContext;
+    @ViewComponent
+    private MessageBundle messageBundle;
 
     @Override
     public String getPageTitle() {

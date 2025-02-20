@@ -16,19 +16,24 @@ import java.util.UUID;
 })
 @Entity
 public class MeetingPoint {
+
     @JmixGeneratedValue
     @Column(name = "ID", nullable = false)
     @Id
     private UUID id;
+
     @Column(name = "VERSION", nullable = false)
     @Version
     private Integer version;
+
     @InstanceName
     @Column(name = "NAME", nullable = false)
     @NotNull
     private String name;
+
     @Column(name = "DESCRIPTION")
     private String description;
+
     @OnDeleteInverse(DeletePolicy.CASCADE)
     @JoinColumn(name = "TERMINAL_ID", nullable = false)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

@@ -18,6 +18,7 @@ import java.util.UUID;
 })
 @Entity
 public class Terminal {
+
     @JmixGeneratedValue
     @Column(name = "ID", nullable = false)
     @Id

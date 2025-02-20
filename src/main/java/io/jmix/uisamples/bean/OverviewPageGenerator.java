@@ -127,8 +127,9 @@ public class OverviewPageGenerator {
                     String message = tagElement.attributeValue("message");
                     if (!Strings.isNullOrEmpty(message)) {
                         String prefix = tagElement.attributeValue("messagePrefix");
-                        if (Strings.isNullOrEmpty(prefix))
+                        if (Strings.isNullOrEmpty(prefix)) {
                             prefix = messagesPrefix;
+                        }
                         hasText.setText(getMessage(prefix, message));
                     }
                 }

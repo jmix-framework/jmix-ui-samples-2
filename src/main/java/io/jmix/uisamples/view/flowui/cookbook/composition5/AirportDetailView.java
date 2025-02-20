@@ -50,8 +50,9 @@ public class AirportDetailView extends StandardDetailView<Airport> {
     @Subscribe("terminalsDataGrid.showMeetingPointsAction")
     public void onTerminalsDataGridShowMeetingPointsAction(final ActionPerformedEvent event) {
         Terminal terminal = terminalsDataGrid.getSingleSelectedItem();
-        if (terminal == null)
+        if (terminal == null) {
             return;
+        }
 
         // Open `TerminalDetailView` and pass the current `DataContext` to it as a parent
         // to support composition editing
