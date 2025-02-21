@@ -35,6 +35,14 @@
             <tag text="heatmap" route="geo-map-heatmap" classNames="overview-tag-font overview-tag-grey"/>
         </sample>
         <sample>
+            <image src="icons/maps/data-modification.png" route="geo-map-modify-mode"/>
+            <text message="dataModification.title"
+                  route="" classNames="h4"/>
+            <tag text="select" route="geo-map-select-mode" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="drag" route="geo-map-drag-mode" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="modify" route="geo-map-modify-mode" classNames="overview-tag-font overview-tag-grey"/>
+        </sample>
+        <sample>
             <image src="icons/maps/rasterSources.png" route="geo-map-static-image"/>
             <text message="rasterSources.title"
                   route="geo-map-static-image" component="h4"/>
