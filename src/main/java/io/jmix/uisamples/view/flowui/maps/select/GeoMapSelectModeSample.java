@@ -5,7 +5,7 @@ import io.jmix.core.LoadContext;
 import io.jmix.flowui.component.grid.DataGrid;
 import io.jmix.flowui.view.*;
 import io.jmix.mapsflowui.component.model.source.DataVectorSource;
-import io.jmix.mapsflowui.component.model.source.HasGeoObjectSelect.SourceGeoObjectSelectEvent;
+import io.jmix.mapsflowui.component.model.source.HasGeoObjectSelect.GeoObjectSelectEvent;
 import io.jmix.mapsflowui.kit.component.model.style.Fill;
 import io.jmix.mapsflowui.kit.component.model.style.Style;
 import io.jmix.mapsflowui.kit.component.model.style.image.Anchor;
@@ -71,7 +71,7 @@ public class GeoMapSelectModeSample extends StandardView {
     }
 
     @Subscribe("map.vectorLayer.source")
-    public void onSourceGeoObjectSelect(final SourceGeoObjectSelectEvent<Marker> event) {
+    public void onSourceGeoObjectSelect(final GeoObjectSelectEvent<Marker> event) {
         if (event.isFromClient()) {
             mountainsDataGrid.select(event.getSelected());
         }
