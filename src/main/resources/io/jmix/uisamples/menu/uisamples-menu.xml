@@ -1005,6 +1005,11 @@
                 </otherFiles>
             </item>
             <item id="geo-map-static-image" page="layers-sources" anchor="image-layer" splitEnabled="true"/>
+            <item id="geo-map-custom-projection" page="reference" anchor="projection" splitEnabled="true" isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/UiSamplesMapsConfiguration.java"/>
+                </otherFiles>
+            </item>
         </menu>
 
         <menu id="kanban-root" url="kanban">
