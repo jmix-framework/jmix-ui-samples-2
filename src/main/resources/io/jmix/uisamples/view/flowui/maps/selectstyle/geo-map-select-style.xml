@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:maps="http://jmix.io/schema/maps/ui">
+    <layout>
+        <div classNames="border rounded-s p-s">
+            <span text="msg://sampleDescription.text"/>
+        </div>
+        <maps:geoMap id="map"
+                     width="100%"
+                     height="100%"
+                     minHeight="25em">
+            <maps:mapView zoom="4"
+                          centerX="-101.1582317764"
+                          centerY="34.1532877663"/>
+            <maps:layers>
+                <maps:tile>
+                    <maps:osmSource/>
+                </maps:tile>
+                <maps:vector id="vectorLayer">
+                    <maps:vectorSource id="source" featureSelectEnabled="true"/>
+                </maps:vector>
+            </maps:layers>
+        </maps:geoMap>
+    </layout>
+</view>

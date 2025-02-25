@@ -22,6 +22,10 @@
             <tag text="point" route="geo-map-point-styling" classNames="overview-tag-font overview-tag-grey"/>
             <tag text="polygon" route="geo-map-polygon-styling" classNames="overview-tag-font overview-tag-grey"/>
             <tag text="lineString" route="geo-map-line-string-styling" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="selectStyle" route="geo-map-select-style" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="selectStyleProvider" route="geo-map-select-style-provider" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="modifyStyle" route="geo-map-modify-style" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="modifyStyleProvider" route="geo-map-modify-style-provider" classNames="overview-tag-font overview-tag-grey"/>
         </sample>
         <sample>
             <image src="icons/maps/generalization.png" route="geo-map-cluster"/>
@@ -29,6 +33,14 @@
                   route="geo-map-cluster" component="h4"/>
             <tag text="cluster" route="geo-map-cluster" classNames="overview-tag-font overview-tag-grey"/>
             <tag text="heatmap" route="geo-map-heatmap" classNames="overview-tag-font overview-tag-grey"/>
+        </sample>
+        <sample>
+            <image src="icons/maps/dataModification.png" route="geo-map-modify-mode"/>
+            <text message="dataModification.title"
+                  route="geo-map-modify-mode" component="h4"/>
+            <tag text="select" route="geo-map-select-mode" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="drag" route="geo-map-drag-mode" classNames="overview-tag-font overview-tag-grey"/>
+            <tag text="modify" route="geo-map-modify-mode" classNames="overview-tag-font overview-tag-grey"/>
         </sample>
         <sample>
             <image src="icons/maps/rasterSources.png" route="geo-map-static-image"/>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:maps="http://jmix.io/schema/maps/ui">
+    <data>
+        <collection id="markersDc"
+                    class="io.jmix.uisamples.entity.Marker"
+                    fetchPlan="_base">
+            <loader id="markersDl">
+                <query><![CDATA[select e from Marker e]]></query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <div classNames="border rounded-s p-s">
+            <span text="msg://sampleDescription.text"/>
+        </div>
+        <maps:geoMap id="map"
+                     width="100%"
+                     height="100%"
+                     minHeight="25em">
+            <maps:mapView centerX="18.045731051682072"
+                          centerY="49.63906914590179"
+                          zoom="3.6"/>
+            <maps:layers>
+                <maps:tile>
+                    <maps:osmSource/>
+                </maps:tile>
+                <maps:vector id="vectorLayer">
+                    <maps:dataVectorSource id="source"
+                                           featureSelectEnabled="true"
+                                           dataContainer="markersDc"
+                                           property="point"/>
+                </maps:vector>
+            </maps:layers>
+        </maps:geoMap>
+    </layout>
+</view>
