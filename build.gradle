@@ -1,6 +1,5 @@
 plugins {
-    // todo kd, switch to the stable version before merge
-    id 'io.jmix' version '2.5.0-RC1'
+    id 'io.jmix' version '2.5.0'
     id 'java'
     id 'org.jetbrains.gradle.plugin.idea-ext' version '1.1.9'
 }
@@ -9,8 +8,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'com.vaadin'
 
 jmix {
-    // todo kd, switch to the stable version before merge
-    bomVersion = '2.5.999-SNAPSHOT'
+    bomVersion = '2.5.0'
 }
 
 group = 'io.jmix.uisamples'
@@ -71,6 +69,7 @@ dependencies {
 configurations.implementation {
     exclude group: 'com.vaadin', module: 'hilla'
     exclude group: 'com.vaadin', module: 'hilla-dev'
+    exclude group: 'com.vaadin', module: 'copilot'
 }
 
 idea {
