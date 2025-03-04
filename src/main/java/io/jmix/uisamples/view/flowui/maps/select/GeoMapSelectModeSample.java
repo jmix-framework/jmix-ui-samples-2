@@ -73,13 +73,16 @@ public class GeoMapSelectModeSample extends StandardView {
     @Subscribe("map.vectorLayer.source")
     public void onSourceGeoObjectSelect(final GeoObjectSelectEvent<Marker> event) {
         if (event.isFromClient()) {
-            mountainsDataGrid.select(event.getSelected());
+            mountainsDataGrid.deselectAll();
+            mountainsDataGrid.select(source.getSelectedGeoObjects());
         }
     }
 
     @Subscribe("mountainsDataGrid")
     public void onMountainsDataGridSelection(final SelectionEvent<DataGrid<Marker>, Marker> event) {
-        source.deselectAllGeoObjects();
-        source.selectGeoObjects(event.getAllSelectedItems());
+        if (event.isFromClient()) {
+            source.deselectAllGeoObjects();
+            source.selectGeoObjects(event.getAllSelectedItems());
+        }
     }
 }
