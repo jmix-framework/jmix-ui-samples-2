@@ -1,0 +1,12 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox classNames="buttons-panel" alignItems="BASELINE">
+            <select id="modeSelect" label="Mode"/>
+            <checkbox id="defaultSuggestionsCheckbox" label="Default suggestions" value="true"/>
+            <checkbox id="liveSuggestionsCheckbox" label="Live suggestions" value="true"/>
+        </hbox>
+        <codeEditor id="codeEditor" height="100%" minHeight="15em"
+                    defaultSuggestionsEnabled="true"
+                    liveSuggestionsEnabled="true"/>
+    </layout>
+</view>

@@ -73,6 +73,8 @@
         <menu id="code-editor">
             <item id="code-editor-simple" page="codeEditor" splitEnabled="true"/>
             <item id="code-editor-mode-theme" page="codeEditor" splitEnabled="true"/>
+            <item id="code-editor-suggestions" page="codeEditor" splitEnabled="true" isNew="true"/>
+            <item id="code-editor-custom-suggestions" page="codeEditor" splitEnabled="true" isNew="true"/>
         </menu>
         <menu id="combobox">
             <item id="combobox-simple" page="comboBox">
@@ -934,38 +936,38 @@
                     <file name="io/jmix/uisamples/view/flowui/maps/linestringstyle/LineStringCoordinates.java"/>
                 </otherFiles>
             </item>
-            <item id="geo-map-select-style" page="style" splitEnabled="true" isNew="true">
+            <item id="geo-map-select-style" page="style" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/view/flowui/maps/polygon/PolygonFeatures.java"/>
                 </otherFiles>
             </item>
-            <item id="geo-map-select-style-provider" page="style" splitEnabled="true" isNew="true">
+            <item id="geo-map-select-style-provider" page="style" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Marker.java"/>
                 </otherFiles>
             </item>
-            <item id="geo-map-modify-style" page="style" splitEnabled="true" isNew="true">
+            <item id="geo-map-modify-style" page="style" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/view/flowui/maps/modifystyle/feature/Geometries.java"/>
                 </otherFiles>
             </item>
-            <item id="geo-map-modify-style-provider" page="style" splitEnabled="true" isNew="true">
+            <item id="geo-map-modify-style-provider" page="style" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Marker.java"/>
                 </otherFiles>
             </item>
-            <item id="geo-map-select-mode" page="layers-sources" splitEnabled="true" isNew="true">
+            <item id="geo-map-select-mode" page="layers-sources" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Marker.java"/>
                     <file name="io/jmix/uisamples/bean/MountainService.java"/>
                 </otherFiles>
             </item>
-            <item id="geo-map-drag-mode" page="layers-sources" splitEnabled="true" isNew="true">
+            <item id="geo-map-drag-mode" page="layers-sources" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Marker.java"/>
                 </otherFiles>
             </item>
-            <item id="geo-map-modify-mode" page="layers-sources" splitEnabled="true" isNew="true">
+            <item id="geo-map-modify-mode" page="layers-sources" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/view/flowui/maps/modify/Geometries.java"/>
                 </otherFiles>
@@ -1287,7 +1289,7 @@
                 </otherFiles>
             </item>
         </menu>
-        <menu id="cookbook-composition" isNew="true">
+        <menu id="cookbook-composition">
             <item id="composition-1-level" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
                   defaultFiles="false">
                 <otherFiles>
