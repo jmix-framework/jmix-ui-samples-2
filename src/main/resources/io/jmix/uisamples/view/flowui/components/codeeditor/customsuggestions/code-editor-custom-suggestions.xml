@@ -1,6 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
         <codeEditor id="codeEditor" height="100%" minHeight="15em"
-                    suggestOn="\\."/>
+                    suggestOn="\."/>
     </layout>
 </view>
