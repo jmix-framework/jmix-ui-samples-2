@@ -19,9 +19,8 @@
                  classNames="overview-tag-font overview-tag-grey"/>
             <tag messagePrefix="uisamples-menu-config" message="delayed-data-load" route="delayed-data-load"
                  classNames="overview-tag-font overview-tag-grey"/>
-<!-- TODO Jmix 2.5 -->
-<!--            <tag messagePrefix="uisamples-menu-config" message="saving-entity-by-service" route="saving-entity-by-service"-->
-<!--                 classNames="overview-tag-font overview-tag-grey"/>-->
+            <tag messagePrefix="uisamples-menu-config" message="saving-entity-by-service" route="saving-entity-by-service"
+                 classNames="overview-tag-font overview-tag-grey"/>
             <tag messagePrefix="uisamples-menu-config" message="read-only-customers" route="read-only-customers"
                  classNames="overview-tag-font overview-tag-grey"/>
         </sample>
