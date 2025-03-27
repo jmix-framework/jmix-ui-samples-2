@@ -63,6 +63,9 @@ public class ContractDetailView extends StandardDetailView<Contract> {
         // Merge the saved entity to DataContext
         var ignored = dataContext.merge(changedContract);
 
+        // Reset the view "modified" state
+        clearChanges();
+
         notifications.create("Status changed").withPosition(Notification.Position.TOP_END).show();
     }
 
