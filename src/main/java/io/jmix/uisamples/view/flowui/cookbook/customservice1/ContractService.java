@@ -19,9 +19,15 @@ public class ContractService {
 
     public Contract changeStatus(Contract contract, ContractStatus status) {
         contract.setStatus(status);
-        contract.setComments(StringUtils.defaultString(contract.getComments()) +
-                "\nChanged to " + status + " at " + LocalDateTime.now());
+
+        String comment = "Changed to " + status + " at " + LocalDateTime.now();
+        if (StringUtils.isEmpty(contract.getComments()))
+            contract.setComments(comment);
+        else
+            contract.setComments(contract.getComments() + "\n" + comment);
+
         Contract savedContract = dataManager.save(contract);
+
         // Return the saved instance
         return savedContract;
     }
