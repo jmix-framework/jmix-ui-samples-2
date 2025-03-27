@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      title="msg://contractDetailView.title"
+      focusComponent="form">
+    <data>
+        <instance id="contractDc"
+                  class="io.jmix.uisamples.entity.Contract">
+            <fetchPlan extends="_base">
+                <property name="customer" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="contractDl"/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <actions>
+        <action id="saveAction" type="detail_save" actionVariant="DEFAULT"/>
+        <action id="closeAction" type="detail_close"/>
+    </actions>
+    <layout>
+        <formLayout id="form" dataContainer="contractDc">
+            <responsiveSteps>
+                <responsiveStep minWidth="0" columns="1"/>
+                <responsiveStep minWidth="40em" columns="2"/>
+            </responsiveSteps>
+            <textField property="status" readOnly="true"/>
+            <datePicker id="dateField" property="date"/>
+            <textField id="numberField" property="number"/>
+            <entityPicker id="customerField" property="customer">
+                <actions>
+                    <action id="entityLookupAction" type="entity_lookup"/>
+                    <action id="entityClearAction" type="entity_clear"/>
+                </actions>
+            </entityPicker>
+            <textField id="descriptionField" property="description"/>
+            <textArea id="commentsField" height="9.5em" property="comments"/>
+        </formLayout>
+        <hbox id="detailActions">
+            <button id="approveButton" text="msg://approve"/>
+            <button id="reviseButton" text="msg://revise"/>
+            <button id="rejectButton" text="msg://reject"/>
+            <button id="saveAndCloseButton" action="saveAction" text="msg:///actions.Save"/>
+            <button id="closeButton" action="closeAction" text="msg:///actions.Close"/>
+        </hbox>
+    </layout>
+</view>

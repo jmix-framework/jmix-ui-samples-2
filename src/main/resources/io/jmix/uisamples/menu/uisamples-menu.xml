@@ -1277,9 +1277,15 @@
                     <file name="io/jmix/uisamples/entity/Product.java"/>
                 </otherFiles>
             </item>
-<!-- TODO Jmix 2.5 -->
-<!--            <item id="saving-entity-by-service" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">-->
-<!--            </item>-->
+            <item id="saving-entity-by-service" page="data/entities-in-ui" splitEnabled="true" defaultFiles="false"
+                  isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Contract.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/customservice1/contract-detail-view.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/customservice1/ContractDetailView.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/customservice1/ContractService.java"/>
+                </otherFiles>
+            </item>
             <item id="read-only-customers" page="opening-views" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
