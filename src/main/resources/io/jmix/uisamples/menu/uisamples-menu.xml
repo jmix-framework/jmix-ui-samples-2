@@ -536,6 +536,14 @@
                 </otherFiles>
             </item>
         </menu>
+        <menu id="switch" isNew="true">
+            <item id="switch-simple"/>
+            <item id="switch-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
         <menu id="tabs">
             <item id="tabs-simple" page="tabs"/>
             <item id="tabs-states" page="tabs"/>

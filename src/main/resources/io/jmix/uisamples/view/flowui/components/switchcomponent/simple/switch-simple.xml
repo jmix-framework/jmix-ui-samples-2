@@ -1,0 +1,5 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <switch id="carField" label="I have a car"/>
+    </layout>
+</view>
