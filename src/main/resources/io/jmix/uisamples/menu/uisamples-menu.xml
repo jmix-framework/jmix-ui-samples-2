@@ -563,7 +563,11 @@
                     <file name="io/jmix/uisamples/entity/Order.java"/>
                 </otherFiles>
             </item>
-            <item id="text-area-resizable" page="textArea"/>
+            <item id="text-area-resizable" page="textArea">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/text-area-resizable.css"/>
+                </otherFiles>
+            </item>
             <item id="text-area-theme-variant" page="textArea" splitEnabled="true"/>
         </menu>
         <menu id="rich-text-editor">

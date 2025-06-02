@@ -2,12 +2,15 @@
     <layout classNames="flex-row flex-wrap">
         <textArea id="textArea" label="Standard TextArea"/>
         <textArea id="resizableBothTextArea" label="Resizeable TextArea"
+                  classNames="resizable-both"
                   themeNames="helper-above-field"
                   helperText="Both direction"/>
         <textArea id="resizableVerticalTextArea" label="Resizeable TextArea"
+                  classNames="resizable-vertical"
                   themeNames="helper-above-field"
                   helperText="Vertical direction"/>
         <textArea id="resizableHorizontalTextArea" label="Resizeable TextArea"
+                  classNames="resizable-horizontal"
                   themeNames="helper-above-field"
                   helperText="Horizontal direction"/>
     </layout>
