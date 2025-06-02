@@ -62,7 +62,7 @@ public class EntityPickerActionsSample extends StandardView {
 
     protected Action createShowGradeAction() {
         return new BaseAction("showGrade")
-                .withIcon(VaadinIcon.ACADEMY_CAP)
+                .withIcon(VaadinIcon.ACADEMY_CAP.create())
                 .withHandler(actionPerformedEvent -> {
                     Customer customer = entityPicker.getValue();
 

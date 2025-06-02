@@ -156,6 +156,11 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
+            <item id="data-grid-empty-state" page="dataGrid" splitEnabled="true" anchor="empty-state" isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
             <item id="data-grid-large-dataset" page="dataGrid" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
@@ -876,7 +881,8 @@
                 </menu>
                 <menu id="gauge-series">
                     <item id="gauge-series-simple" page="chart-component" anchor="series" splitEnabled="true"/>
-                    <item id="gauge-series-multiple-needles" page="chart-component" anchor="series" splitEnabled="true"/>
+                    <item id="gauge-series-multiple-needles" page="chart-component" anchor="series"
+                          splitEnabled="true"/>
                     <item id="gauge-series-colorized" page="chart-component" anchor="series" splitEnabled="true"/>
                 </menu>
             </menu>
@@ -939,7 +945,8 @@
                     <file name="io/jmix/uisamples/view/flowui/maps/polygon/PolygonFeatures.java"/>
                 </otherFiles>
             </item>
-            <item id="geo-map-line-string-styling" page="style" anchor="_style_for_linestringfeature" splitEnabled="true">
+            <item id="geo-map-line-string-styling" page="style" anchor="_style_for_linestringfeature"
+                  splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/view/flowui/maps/linestringstyle/LineStringCoordinates.java"/>
                 </otherFiles>
@@ -1287,9 +1294,9 @@
                     <file name="io/jmix/uisamples/entity/Product.java"/>
                 </otherFiles>
             </item>
-<!-- TODO Jmix 2.5 -->
-<!--            <item id="saving-entity-by-service" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">-->
-<!--            </item>-->
+            <!-- TODO Jmix 2.5 -->
+            <!--            <item id="saving-entity-by-service" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true" defaultFiles="false">-->
+            <!--            </item>-->
             <item id="read-only-customers" page="opening-views" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
@@ -1298,7 +1305,8 @@
             </item>
         </menu>
         <menu id="cookbook-composition">
-            <item id="composition-1-level" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
+            <item id="composition-1-level" url="concepts" page="features" anchor="editing-aggregates"
+                  splitEnabled="true"
                   defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
@@ -1309,7 +1317,8 @@
                     <file name="io/jmix/uisamples/view/flowui/cookbook/composition1/TerminalDetailView.java"/>
                 </otherFiles>
             </item>
-            <item id="composition-2-levels" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
+            <item id="composition-2-levels" url="concepts" page="features" anchor="editing-aggregates"
+                  splitEnabled="true"
                   defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
@@ -1323,7 +1332,8 @@
                     <file name="io/jmix/uisamples/view/flowui/cookbook/composition2/MeetingPointDetailView.java"/>
                 </otherFiles>
             </item>
-            <item id="composition-master-detail-1" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
+            <item id="composition-master-detail-1" url="concepts" page="features" anchor="editing-aggregates"
+                  splitEnabled="true"
                   defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
@@ -1339,7 +1349,8 @@
                     <file name="io/jmix/uisamples/view/flowui/cookbook/composition3/MeetingPointDetailView.java"/>
                 </otherFiles>
             </item>
-            <item id="composition-master-detail-2" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
+            <item id="composition-master-detail-2" url="concepts" page="features" anchor="editing-aggregates"
+                  splitEnabled="true"
                   defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
@@ -1353,7 +1364,8 @@
                     <file name="io/jmix/uisamples/view/flowui/cookbook/composition4/MeetingPointDetailView.java"/>
                 </otherFiles>
             </item>
-            <item id="composition-inline-edit" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
+            <item id="composition-inline-edit" url="concepts" page="features" anchor="editing-aggregates"
+                  splitEnabled="true"
                   defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
@@ -1365,7 +1377,8 @@
                     <file name="io/jmix/uisamples/view/flowui/cookbook/composition5/TerminalDetailView.java"/>
                 </otherFiles>
             </item>
-            <item id="composition-order-uniqueness" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
+            <item id="composition-order-uniqueness" url="concepts" page="features" anchor="editing-aggregates"
+                  splitEnabled="true"
                   defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Order.java"/>
@@ -1376,7 +1389,8 @@
                     <file name="io/jmix/uisamples/view/flowui/cookbook/composition6/OrderItemDetailView.java"/>
                 </otherFiles>
             </item>
-            <item id="composition-info-panel" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
+            <item id="composition-info-panel" url="concepts" page="features" anchor="editing-aggregates"
+                  splitEnabled="true"
                   defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Order.java"/>
