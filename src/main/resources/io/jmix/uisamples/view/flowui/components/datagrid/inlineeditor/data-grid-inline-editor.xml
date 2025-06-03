@@ -3,7 +3,7 @@
         <collection id="customersDc"
                     class="io.jmix.uisamples.entity.Customer"
                     fetchPlan="_local">
-            <loader id="customersDl">
+            <loader id="customersDl" readOnly="true">
                 <query>
                     <![CDATA[select e from Customer e]]>
                 </query>
@@ -14,30 +14,12 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
+        <hbox alignItems="CENTER" width="100%" justifyContent="END">
+            <checkbox id="immediateCheckbox" label="Save immediately" value="true"/>
+            <button id="saveButton" text="Save" enabled="false"/>
+        </hbox>
         <tabSheet width="100%" height="100%">
-            <tab id="buffered" label="Buffered editor column">
-                <dataGrid id="customersDataGridBuffered"
-                          width="100%"
-                          height="100%"
-                          minHeight="20em"
-                          editorBuffered="true"
-                          dataContainer="customersDc">
-                    <columns>
-                        <column property="name" editable="true"/>
-                        <column property="lastName" editable="true"/>
-                        <column property="email"/>
-                        <column property="age"/>
-                        <column property="active"/>
-                        <column property="grade" editable="true"/>
-                        <editorActionsColumn key="bufferedEditorColumn">
-                            <editButton text="Edit" icon="PENCIL"/>
-                            <saveButton icon="CHECK" themeNames="success"/>
-                            <cancelButton icon="CLOSE" themeNames="error"/>
-                        </editorActionsColumn>
-                    </columns>
-                </dataGrid>
-            </tab>
-            <tab id="nonBufferedEditorColumn" label="Non-buffered editor column">
+            <tab id="nonBufferedTab" label="Non-buffered editor">
                 <dataGrid id="customersDataGridNonBuffered"
                           width="100%"
                           height="100%"
@@ -51,8 +33,30 @@
                         <column property="active"/>
                         <column property="grade" editable="true"/>
                         <editorActionsColumn key="nonBufferedEditorColumn">
-                            <editButton text="Edit" icon="PENCIL"/>
-                            <closeButton text="Close" icon="CLOSE"/>
+                            <editButton icon="PENCIL"/>
+                            <closeButton icon="CHECK"/>
+                        </editorActionsColumn>
+                    </columns>
+                </dataGrid>
+            </tab>
+            <tab id="bufferedTab" label="Buffered editor">
+                <dataGrid id="customersDataGridBuffered"
+                          width="100%"
+                          height="100%"
+                          minHeight="20em"
+                          dataContainer="customersDc"
+                          editorBuffered="true">
+                    <columns>
+                        <column property="name" editable="true"/>
+                        <column property="lastName" editable="true"/>
+                        <column property="email"/>
+                        <column property="age"/>
+                        <column property="active"/>
+                        <column property="grade" editable="true"/>
+                        <editorActionsColumn key="bufferedEditorColumn">
+                            <editButton icon="PENCIL"/>
+                            <saveButton icon="CHECK" themeNames="success"/>
+                            <cancelButton icon="CLOSE" themeNames="error"/>
                         </editorActionsColumn>
                     </columns>
                 </dataGrid>
