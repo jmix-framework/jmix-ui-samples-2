@@ -1,0 +1,7 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <button id="newResourceBtn" text="msg://newResourceBtn.text" icon="FILE_REFRESH"
+                disableOnClick="true"/>
+        <iframe id="iframe" width="100%" height="100%" css="border: unset;"/>
+    </layout>
+</view>

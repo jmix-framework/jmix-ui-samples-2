@@ -1429,6 +1429,11 @@
                     <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdf/IframeCustomSecurity.java"/>
                 </otherFiles>
             </item>
+            <item id="iframe-pdf-dynamic" splitEnabled="true" isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdfdynamic/IframeCustomSecurity.java"/>
+                </otherFiles>
+            </item>
             <item id="iframe-pdf-rest" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdfrest/CustomRestSecurityConfiguration.java"/>
