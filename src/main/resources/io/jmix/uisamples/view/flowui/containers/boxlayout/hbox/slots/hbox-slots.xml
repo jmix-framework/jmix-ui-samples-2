@@ -1,0 +1,16 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox width="100%">
+            <startSlot>
+                <span text="Span"/>
+            </startSlot>
+            <middleSlot>
+                <textField placeholder="TextField"/>
+                <button text="Button"/>
+            </middleSlot>
+            <endSlot>
+                <button text="Button"/>
+            </endSlot>
+        </hbox>
+    </layout>
+</view>

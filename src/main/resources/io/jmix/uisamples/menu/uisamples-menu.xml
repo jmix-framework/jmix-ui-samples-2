@@ -680,7 +680,10 @@
             <item id="details-theme-variant" page="details"/>
         </menu>
         <menu id="boxlayout">
-            <item id="hbox-simple" page="hbox"/>
+            <menu id="hbox">
+                <item id="hbox-simple" page="hbox"/>
+                <item id="hbox-slots" page="hbox" isNew="true"/>
+            </menu>
             <item id="vbox-simple" page="vbox"/>
             <item id="flex-layout-simple"/>
         </menu>
