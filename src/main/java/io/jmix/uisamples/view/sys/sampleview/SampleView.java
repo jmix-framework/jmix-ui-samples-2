@@ -559,7 +559,7 @@ public class SampleView extends StandardView {
                         String expandedHref = href.replace("{contextPath}", getContextPath());
                         attributes.put("href", expandedHref);
                     } else if (href.contains("{docsBaseUrl}")) {
-                        String expandedHref = href.replace("{docsBaseUrl}", "https://docs.jmix.io/jmix");
+                        String expandedHref = href.replace("{docsBaseUrl}", messages.getMessage(DOC_URL_MESSAGES_KEY));
                         attributes.put("href", expandedHref);
                         attributes.put("target", "_blank");
                     } else {

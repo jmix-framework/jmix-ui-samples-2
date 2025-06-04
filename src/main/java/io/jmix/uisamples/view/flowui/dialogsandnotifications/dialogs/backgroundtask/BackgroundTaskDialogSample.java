@@ -18,31 +18,31 @@ import java.util.concurrent.TimeUnit;
 public class BackgroundTaskDialogSample extends StandardView {
 
     @Autowired
-    protected Dialogs dialogs;
+    private Dialogs dialogs;
 
     @Subscribe("standardBackgroundTaskDialogButton")
-    protected void onStandardBackgroundTaskDialogButtonClick(ClickEvent<JmixButton> event) {
+    private void onStandardBackgroundTaskDialogButtonClick(ClickEvent<JmixButton> event) {
         dialogs.createBackgroundTaskDialog(getDefaultBackgroundTask())
                 .withHeader("Background task dialog")
                 .open();
     }
 
     @Subscribe("customBackgroundTaskDialogButton")
-    protected void onCustomBackgroundTaskDialogButtonClick(ClickEvent<JmixButton> event) {
+    private void onCustomBackgroundTaskDialogButtonClick(ClickEvent<JmixButton> event) {
         dialogs.createBackgroundTaskDialog(getDefaultBackgroundTask())
                 .withHeader("Background task dialog")
-                .withText("Background task are here!")
+                .withText("The background task is executing")
                 .withCancelAllowed(true)
                 .withShowProgressInPercentage(true)
-                .withTotal(6)
+                .withTotal(5)
                 .open();
     }
 
-    protected BackgroundTask<Integer, Void> getDefaultBackgroundTask() {
+    private BackgroundTask<Integer, Void> getDefaultBackgroundTask() {
         return new BackgroundTask<>(100) {
             @Override
             public Void run(TaskLifeCycle<Integer> taskLifeCycle) throws Exception {
-                for (int i = 1; i <= 6; i++) {
+                for (int i = 1; i <= 5; i++) {
                     TimeUnit.SECONDS.sleep(1);
                     taskLifeCycle.publish(i);
                 }

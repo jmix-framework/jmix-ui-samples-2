@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:c="http://jmix.io/schema/flowui/jpql-condition"
+      focusComponent="contractsDataGrid">
+    <data>
+        <collection id="contractsDc"
+                    class="io.jmix.uisamples.entity.Contract">
+            <fetchPlan extends="_base">
+                <property name="customer" fetchPlan="_base"/>
+            </fetchPlan>
+            <loader id="contractsDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from Contract e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <actions>
+        <action id="selectAction" type="lookup_select"/>
+        <action id="discardAction" type="lookup_discard"/>
+    </actions>
+    <layout>
+        <hbox id="buttonsPanel" classNames="buttons-panel">
+            <button id="createButton" action="contractsDataGrid.createAction"/>
+            <button id="editButton" action="contractsDataGrid.editAction"/>
+        </hbox>
+        <dataGrid id="contractsDataGrid"
+                  width="100%"
+                  minHeight="20em"
+                  dataContainer="contractsDc"
+                  columnReorderingAllowed="true">
+            <actions>
+                <action id="createAction" type="list_create" actionVariant="DEFAULT">
+                    <properties>
+                        <property name="openMode" value="DIALOG"/>
+                    </properties>
+                </action>
+                <action id="editAction" type="list_edit">
+                    <properties>
+                        <property name="openMode" value="DIALOG"/>
+                    </properties>
+                </action>
+            </actions>
+            <columns resizable="true">
+                <column property="date"/>
+                <column property="number"/>
+                <column property="description"/>
+                <column property="customer"/>
+                <column property="status"/>
+                <column property="comments"/>
+            </columns>
+        </dataGrid>
+        <hbox id="lookupActions" visible="false">
+            <button id="selectButton" action="selectAction"/>
+            <button id="discardButton" action="discardAction"/>
+        </hbox>
+    </layout>
+</view>

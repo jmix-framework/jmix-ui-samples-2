@@ -10,9 +10,6 @@
             </loader>
         </collection>
     </data>
-    <facets>
-        <dataLoadCoordinator auto="true"/>
-    </facets>
     <layout>
         <genericFilter id="filter" summaryText="Generic filter" opened="false"
                        dataLoader="customersDl">
@@ -29,6 +26,7 @@
             <columns>
                 <column property="name"/>
                 <column property="lastName"/>
+                <column property="email"/>
                 <column property="age"/>
                 <column property="active"/>
                 <column property="grade"/>

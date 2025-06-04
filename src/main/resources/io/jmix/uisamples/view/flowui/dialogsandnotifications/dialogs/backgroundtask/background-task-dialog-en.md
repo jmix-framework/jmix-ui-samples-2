@@ -1,0 +1,3 @@
+The `createBackgroundTaskDialog()` method of the `Dialogs` bean is the entry point to the fluent API that allows you to construct and show background task dialogs.
+
+In this example, the **Standard background task dialog** button handler creates a dialog with default parameters: indefinite progress bar and no cancel button. The **Custom background task dialog** button handler creates a customized dialog. Both handlers start the same background task that is executed for 5 seconds.
