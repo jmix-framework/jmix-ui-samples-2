@@ -63,8 +63,8 @@
                 <column property="terminalType" editable="true"/>
                 <column property="gateCount" editable="true"/>
                 <editorActionsColumn key="editorActionsColumn">
-                    <editButton/>
-                    <closeButton text="msg://closeButton.text"/>
+                    <editButton icon="PENCIL" text="msg:///actions.Edit"/>
+                    <closeButton icon="BAN" text="msg://closeButton.text"/>
                 </editorActionsColumn>
             </columns>
         </dataGrid>

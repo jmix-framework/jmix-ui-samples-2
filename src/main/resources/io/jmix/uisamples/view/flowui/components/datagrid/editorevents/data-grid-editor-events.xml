@@ -27,9 +27,9 @@
                 <column property="active"/>
                 <column property="grade" editable="true"/>
                 <editorActionsColumn key="bufferedEditorColumn">
-                    <editButton text="Edit" icon="PENCIL"/>
+                    <editButton icon="PENCIL" text="msg:///actions.Edit"/>
                     <saveButton icon="CHECK" themeNames="success"/>
-                    <cancelButton icon="CLOSE" themeNames="error"/>
+                    <cancelButton icon="CLOSE" themeNames="error" text="msg:///actions.Cancel"/>
                 </editorActionsColumn>
             </columns>
         </dataGrid>
