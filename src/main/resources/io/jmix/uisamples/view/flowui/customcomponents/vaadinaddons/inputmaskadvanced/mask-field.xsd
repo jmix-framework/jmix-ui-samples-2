@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://io.jmix.uisamples/mask.xsd"
+           elementFormDefault="qualified"
+           targetNamespace="http://io.jmix.uisamples/mask.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:layout="http://jmix.io/schema/flowui/layout">
+
+    <xs:element name="maskField">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="layout:baseComponent">
+                    <xs:sequence minOccurs="0">
+                        <xs:element name="options" type="maskOptions"/>
+
+                        <xs:element name="prefix" minOccurs="0" type="layout:prefixOrSuffixComponent"/>
+                        <xs:element name="suffix" minOccurs="0" type="layout:prefixOrSuffixComponent"/>
+                    </xs:sequence>
+
+                    <xs:attribute name="mask" type="xs:string"/>
+                    <xs:attribute name="label" type="layout:resourceString"/>
+                    <xs:attribute name="helperText" type="layout:resourceString"/>
+
+                    <xs:attribute name="lazy" type="xs:boolean"/>
+                    <xs:attribute name="overwrite" type="xs:boolean"/>
+                    <xs:attribute name="uppercase" type="xs:boolean"/>
+
+                    <xs:attributeGroup ref="layout:hasSize"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="maskOptions">
+        <xs:sequence maxOccurs="unbounded" minOccurs="0">
+            <xs:element name="option">
+                <xs:complexType>
+                    <xs:sequence maxOccurs="unbounded" minOccurs="0">
+                        <xs:element name="options" type="maskOptions"/>
+                    </xs:sequence>
+
+                    <xs:attribute name="key" type="maskOptionKeyType"/>
+                    <xs:attribute name="value" type="xs:string"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="maskOptionKeyType">
+        <xs:union>
+            <xs:simpleType>
+                <xs:restriction base="xs:string"/>
+            </xs:simpleType>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="lazy"/>
+                    <xs:enumeration value="overwrite"/>
+                    <xs:enumeration value="blocks"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:union>
+    </xs:simpleType>
+
+</xs:schema>

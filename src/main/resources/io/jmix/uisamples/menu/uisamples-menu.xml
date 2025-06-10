@@ -1250,13 +1250,24 @@
                 <file name="io/jmix/uisamples/view/flowui/customcomponents/jslibrary/SliderComponentRegistration.java"/>
             </otherFiles>
         </item>
-        <item id="charts-addon" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/uisamples/view/flowui/customcomponents/chartsaddon/chart.xsd"/>
-                <file name="io/jmix/uisamples/component/chart/ChartLoader.java"/>
-                <file name="io/jmix/uisamples/view/flowui/customcomponents/chartsaddon/ChartComponentRegistration.java"/>
-            </otherFiles>
-        </item>
+        <menu id="vaadin-addons">
+            <item id="charts-addon" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/customcomponents/vaadinaddons/socharts/chart.xsd"/>
+                    <file name="io/jmix/uisamples/component/chart/ChartLoader.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/customcomponents/vaadinaddons/socharts/ChartComponentRegistration.java"/>
+                </otherFiles>
+            </item>
+            <item id="input-mask-addon-simple" isNew="true"/>
+            <item id="input-mask-addon-advanced" isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/component/maskfield/MaskField.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/customcomponents/vaadinaddons/inputmaskadvanced/mask-field.xsd"/>
+                    <file name="io/jmix/uisamples/component/maskfield/MaskFieldLoader.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/customcomponents/vaadinaddons/inputmaskadvanced/MaskFieldRegistration.java"/>
+                </otherFiles>
+            </item>
+        </menu>
         <item id="custom-component-from-scratch" page="visual-components" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/component/themetoggle/ThemeToggle.java"/>

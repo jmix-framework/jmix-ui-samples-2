@@ -1,0 +1,10 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <textField id="phoneNumberField" label="msg://phoneNumberField.label"
+                   helperText="msg://phoneNumberField.helperText">
+            <suffix>
+                <button id="showNumberBtn" icon="PHONE" themeNames="tertiary-inline"/>
+            </suffix>
+        </textField>
+    </layout>
+</view>
