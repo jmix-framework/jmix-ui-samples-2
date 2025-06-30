@@ -248,7 +248,7 @@ public class UiSamplesMenuConfig {
         return menuItem;
     }
 
-    protected List<UiSamplesMenuItem> getItemsAsList() {
+    public List<UiSamplesMenuItem> getItemsAsList() {
         return getItemsAsList(getRootItems());
     }
 
