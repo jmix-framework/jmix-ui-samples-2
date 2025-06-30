@@ -19,7 +19,7 @@ public class ThemeToggleLoader extends AbstractComponentLoader<ThemeToggle> {
         componentLoader().loadWhiteSpace(resultComponent, element);
         componentLoader().loadEnabled(resultComponent, element);
         componentLoader().loadClassNames(resultComponent, element);
-        componentLoader().loadTabIndex(resultComponent, element);
+        componentLoader().loadFocusableAttributes(resultComponent, element);
         componentLoader().loadThemeNames(resultComponent, element);
         componentLoader().loadSizeAttributes(resultComponent, element);
     }

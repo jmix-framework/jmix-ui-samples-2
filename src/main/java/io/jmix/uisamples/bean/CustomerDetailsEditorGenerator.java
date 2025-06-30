@@ -89,7 +89,7 @@ public class CustomerDetailsEditorGenerator {
     protected Action createSaveAndCloseAction(GenerationContext context) {
         return new BaseAction("ok")
                 .withText("OK")
-                .withIcon(VaadinIcon.CHECK)
+                .withIcon(VaadinIcon.CHECK.create())
                 .withVariant(ActionVariant.PRIMARY)
                 .withHandler(e -> {
                     ValidationErrors validationErrors = validate(context.mainLayout());
@@ -108,7 +108,7 @@ public class CustomerDetailsEditorGenerator {
     protected Action createCancelAction(Customer customer) {
         return new BaseAction("cancel")
                 .withText("Cancel")
-                .withIcon(VaadinIcon.BAN)
+                .withIcon(VaadinIcon.BAN.create())
                 .withHandler(e -> {
                     customersDataGrid.setDetailsVisible(customer, false);
 

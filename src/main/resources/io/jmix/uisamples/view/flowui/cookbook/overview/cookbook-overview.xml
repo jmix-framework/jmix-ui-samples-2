@@ -51,6 +51,8 @@
                  classNames="overview-tag-font overview-tag-grey"/>
             <tag messagePrefix="uisamples-menu-config" message="iframe-pdf" route="iframe-pdf"
                  classNames="overview-tag-font overview-tag-grey"/>
+            <tag messagePrefix="uisamples-menu-config" message="iframe-pdf-dynamic" route="iframe-pdf-dynamic"
+                 classNames="overview-tag-font overview-tag-grey"/>
             <tag messagePrefix="uisamples-menu-config" message="iframe-pdf-rest" route="iframe-pdf-rest"
                  classNames="overview-tag-font overview-tag-grey"/>
             <tag messagePrefix="uisamples-menu-config" message="wizard" route="wizard"

@@ -1,0 +1,13 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:mask="http://io.jmix.uisamples/mask.xsd">
+    <layout>
+        <mask:maskField id="phoneNumberField" label="msg://phoneNumberField.label"
+                        helperText="msg://phoneNumberField.helperText" mask="+{1} 000 000-0000"
+                        lazy="false" overwrite="true">
+
+            <mask:suffix>
+                <button id="showNumberBtn" icon="PHONE" themeNames="tertiary-inline"/>
+            </mask:suffix>
+        </mask:maskField>
+    </layout>
+</view>

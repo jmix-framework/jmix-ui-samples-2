@@ -1,4 +1,4 @@
-package io.jmix.uisamples.view.flowui.containers.boxlayout.hbox;
+package io.jmix.uisamples.view.flowui.containers.boxlayout.hbox.simple;
 
 import io.jmix.flowui.view.StandardView;
 import io.jmix.flowui.view.ViewController;

@@ -1,4 +1,4 @@
-package io.jmix.uisamples.view.flowui.customcomponents.chartsaddon;
+package io.jmix.uisamples.view.flowui.customcomponents.vaadinaddons.socharts;
 
 import com.storedobject.chart.*;
 import com.vaadin.flow.component.Component;

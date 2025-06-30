@@ -73,6 +73,8 @@
         <menu id="code-editor">
             <item id="code-editor-simple" page="codeEditor" splitEnabled="true"/>
             <item id="code-editor-mode-theme" page="codeEditor" splitEnabled="true"/>
+            <item id="code-editor-suggestions" page="codeEditor" splitEnabled="true" isNew="true"/>
+            <item id="code-editor-custom-suggestions" page="codeEditor" splitEnabled="true" isNew="true"/>
         </menu>
         <menu id="combobox">
             <item id="combobox-simple" page="comboBox">
@@ -150,6 +152,11 @@
                 </otherFiles>
             </item>
             <item id="data-grid-tooltip-generator" page="dataGrid" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="data-grid-empty-state" page="dataGrid" splitEnabled="true" anchor="empty-state" isNew="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
@@ -534,6 +541,14 @@
                 </otherFiles>
             </item>
         </menu>
+        <menu id="switch" isNew="true">
+            <item id="switch-simple"/>
+            <item id="switch-dataaware">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
         <menu id="tabs">
             <item id="tabs-simple" page="tabs"/>
             <item id="tabs-states" page="tabs"/>
@@ -548,7 +563,11 @@
                     <file name="io/jmix/uisamples/entity/Order.java"/>
                 </otherFiles>
             </item>
-            <item id="text-area-resizable" page="textArea"/>
+            <item id="text-area-resizable" page="textArea">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/text-area-resizable.css"/>
+                </otherFiles>
+            </item>
             <item id="text-area-theme-variant" page="textArea" splitEnabled="true"/>
         </menu>
         <menu id="rich-text-editor">
@@ -661,7 +680,10 @@
             <item id="details-theme-variant" page="details"/>
         </menu>
         <menu id="boxlayout">
-            <item id="hbox-simple" page="hbox"/>
+            <menu id="hbox">
+                <item id="hbox-simple" page="hbox"/>
+                <item id="hbox-slots" page="hbox" isNew="true"/>
+            </menu>
             <item id="vbox-simple" page="vbox"/>
             <item id="flex-layout-simple"/>
         </menu>
@@ -866,7 +888,8 @@
                 </menu>
                 <menu id="gauge-series">
                     <item id="gauge-series-simple" page="chart-component" anchor="series" splitEnabled="true"/>
-                    <item id="gauge-series-multiple-needles" page="chart-component" anchor="series" splitEnabled="true"/>
+                    <item id="gauge-series-multiple-needles" page="chart-component" anchor="series"
+                          splitEnabled="true"/>
                     <item id="gauge-series-colorized" page="chart-component" anchor="series" splitEnabled="true"/>
                 </menu>
             </menu>
@@ -929,43 +952,44 @@
                     <file name="io/jmix/uisamples/view/flowui/maps/polygon/PolygonFeatures.java"/>
                 </otherFiles>
             </item>
-            <item id="geo-map-line-string-styling" page="style" anchor="_style_for_linestringfeature" splitEnabled="true">
+            <item id="geo-map-line-string-styling" page="style" anchor="_style_for_linestringfeature"
+                  splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/view/flowui/maps/linestringstyle/LineStringCoordinates.java"/>
                 </otherFiles>
             </item>
-            <item id="geo-map-select-style" page="style" splitEnabled="true" isNew="true">
+            <item id="geo-map-select-style" page="style" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/view/flowui/maps/polygon/PolygonFeatures.java"/>
                 </otherFiles>
             </item>
-            <item id="geo-map-select-style-provider" page="style" splitEnabled="true" isNew="true">
+            <item id="geo-map-select-style-provider" page="style" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Marker.java"/>
                 </otherFiles>
             </item>
-            <item id="geo-map-modify-style" page="style" splitEnabled="true" isNew="true">
+            <item id="geo-map-modify-style" page="style" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/view/flowui/maps/modifystyle/feature/Geometries.java"/>
                 </otherFiles>
             </item>
-            <item id="geo-map-modify-style-provider" page="style" splitEnabled="true" isNew="true">
+            <item id="geo-map-modify-style-provider" page="style" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Marker.java"/>
                 </otherFiles>
             </item>
-            <item id="geo-map-select-mode" page="layers-sources" splitEnabled="true" isNew="true">
+            <item id="geo-map-select-mode" page="layers-sources" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Marker.java"/>
                     <file name="io/jmix/uisamples/bean/MountainService.java"/>
                 </otherFiles>
             </item>
-            <item id="geo-map-drag-mode" page="layers-sources" splitEnabled="true" isNew="true">
+            <item id="geo-map-drag-mode" page="layers-sources" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Marker.java"/>
                 </otherFiles>
             </item>
-            <item id="geo-map-modify-mode" page="layers-sources" splitEnabled="true" isNew="true">
+            <item id="geo-map-modify-mode" page="layers-sources" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/view/flowui/maps/modify/Geometries.java"/>
                 </otherFiles>
@@ -981,6 +1005,11 @@
                 </otherFiles>
             </item>
             <item id="geo-map-static-image" page="layers-sources" anchor="image-layer" splitEnabled="true"/>
+            <item id="geo-map-custom-projection" page="reference" anchor="projection" splitEnabled="true" isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/UiSamplesMapsConfiguration.java"/>
+                </otherFiles>
+            </item>
         </menu>
 
         <menu id="kanban-root" url="kanban">
@@ -1226,13 +1255,24 @@
                 <file name="io/jmix/uisamples/view/flowui/customcomponents/jslibrary/SliderComponentRegistration.java"/>
             </otherFiles>
         </item>
-        <item id="charts-addon" splitEnabled="true">
-            <otherFiles>
-                <file name="io/jmix/uisamples/view/flowui/customcomponents/chartsaddon/chart.xsd"/>
-                <file name="io/jmix/uisamples/component/chart/ChartLoader.java"/>
-                <file name="io/jmix/uisamples/view/flowui/customcomponents/chartsaddon/ChartComponentRegistration.java"/>
-            </otherFiles>
-        </item>
+        <menu id="vaadin-addons">
+            <item id="charts-addon" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/customcomponents/vaadinaddons/socharts/chart.xsd"/>
+                    <file name="io/jmix/uisamples/component/chart/ChartLoader.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/customcomponents/vaadinaddons/socharts/ChartComponentRegistration.java"/>
+                </otherFiles>
+            </item>
+            <item id="input-mask-addon-simple" isNew="true"/>
+            <item id="input-mask-addon-advanced" isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/component/maskfield/MaskField.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/customcomponents/vaadinaddons/inputmaskadvanced/mask-field.xsd"/>
+                    <file name="io/jmix/uisamples/component/maskfield/MaskFieldLoader.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/customcomponents/vaadinaddons/inputmaskadvanced/MaskFieldRegistration.java"/>
+                </otherFiles>
+            </item>
+        </menu>
         <item id="custom-component-from-scratch" page="visual-components" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/component/themetoggle/ThemeToggle.java"/>
@@ -1295,8 +1335,9 @@
                 </otherFiles>
             </item>
         </menu>
-        <menu id="cookbook-composition" isNew="true">
-            <item id="composition-1-level" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
+        <menu id="cookbook-composition">
+            <item id="composition-1-level" url="concepts" page="features" anchor="editing-aggregates"
+                  splitEnabled="true"
                   defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
@@ -1307,7 +1348,8 @@
                     <file name="io/jmix/uisamples/view/flowui/cookbook/composition1/TerminalDetailView.java"/>
                 </otherFiles>
             </item>
-            <item id="composition-2-levels" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
+            <item id="composition-2-levels" url="concepts" page="features" anchor="editing-aggregates"
+                  splitEnabled="true"
                   defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
@@ -1321,7 +1363,8 @@
                     <file name="io/jmix/uisamples/view/flowui/cookbook/composition2/MeetingPointDetailView.java"/>
                 </otherFiles>
             </item>
-            <item id="composition-master-detail-1" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
+            <item id="composition-master-detail-1" url="concepts" page="features" anchor="editing-aggregates"
+                  splitEnabled="true"
                   defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
@@ -1337,7 +1380,8 @@
                     <file name="io/jmix/uisamples/view/flowui/cookbook/composition3/MeetingPointDetailView.java"/>
                 </otherFiles>
             </item>
-            <item id="composition-master-detail-2" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
+            <item id="composition-master-detail-2" url="concepts" page="features" anchor="editing-aggregates"
+                  splitEnabled="true"
                   defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
@@ -1351,7 +1395,8 @@
                     <file name="io/jmix/uisamples/view/flowui/cookbook/composition4/MeetingPointDetailView.java"/>
                 </otherFiles>
             </item>
-            <item id="composition-inline-edit" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
+            <item id="composition-inline-edit" url="concepts" page="features" anchor="editing-aggregates"
+                  splitEnabled="true"
                   defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Airport.java"/>
@@ -1363,7 +1408,8 @@
                     <file name="io/jmix/uisamples/view/flowui/cookbook/composition5/TerminalDetailView.java"/>
                 </otherFiles>
             </item>
-            <item id="composition-order-uniqueness" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
+            <item id="composition-order-uniqueness" url="concepts" page="features" anchor="editing-aggregates"
+                  splitEnabled="true"
                   defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Order.java"/>
@@ -1374,7 +1420,8 @@
                     <file name="io/jmix/uisamples/view/flowui/cookbook/composition6/OrderItemDetailView.java"/>
                 </otherFiles>
             </item>
-            <item id="composition-info-panel" url="concepts" page="features" anchor="editing-aggregates" splitEnabled="true"
+            <item id="composition-info-panel" url="concepts" page="features" anchor="editing-aggregates"
+                  splitEnabled="true"
                   defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Order.java"/>
@@ -1396,6 +1443,11 @@
             <item id="iframe-pdf" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdf/IframeCustomSecurity.java"/>
+                </otherFiles>
+            </item>
+            <item id="iframe-pdf-dynamic" splitEnabled="true" isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdfdynamic/IframeCustomSecurity.java"/>
                 </otherFiles>
             </item>
             <item id="iframe-pdf-rest" splitEnabled="true">
