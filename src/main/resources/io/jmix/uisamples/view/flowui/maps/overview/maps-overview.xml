@@ -48,5 +48,10 @@
                   route="geo-map-static-image" component="h4"/>
             <tag text="staticImage" route="geo-map-static-image" classNames="overview-tag-font overview-tag-grey"/>
         </sample>
+        <sample>
+            <image src="icons/maps/projection.png" route="geo-map-custom-projection"/>
+            <text message="projection.title" component="h4"/>
+            <tag text="customProjection" route="geo-map-custom-projection" classNames="overview-tag-font overview-tag-grey"/>
+        </sample>
     </samples>
 </overview>
