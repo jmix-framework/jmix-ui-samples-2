@@ -1,0 +1,23 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <card id="card" width="30em"
+              themeNames="cover-media elevated outlined"
+              title="msg://card.title" subtitle="msg://card.subtitle">
+            <media>
+                <image resource="icons/jmix-background.png"/>
+            </media>
+            <headerPrefix>
+                <avatar image="icons/jmix-icon.png"/>
+            </headerPrefix>
+            <content>
+                <p text="msg://card.content.text"/>
+            </content>
+            <footer>
+                <button id="visitSiteButton" text="msg://visitSiteButton.text" icon="EXTERNAL_LINK" themeNames="primary"
+                        iconAfterText="true"/>
+                <button id="learnMoreButton" text="msg://learnMoreButton.text" icon="QUESTION"
+                        iconAfterText="true"/>
+            </footer>
+        </card>
+    </layout>
+</view>

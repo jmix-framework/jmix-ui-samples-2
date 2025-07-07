@@ -8,12 +8,15 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'com.vaadin'
 
 jmix {
-    bomVersion = '2.6.0'
+    // todo: kd, replace by stable
+    bomVersion = '2.7.999-SNAPSHOT'
 }
 
 group = 'io.jmix.uisamples'
 
 repositories {
+    // todo: kd, remove me
+    mavenLocal()
     mavenCentral()
     maven {
         url 'https://nexus.jmix.io/repository/public'

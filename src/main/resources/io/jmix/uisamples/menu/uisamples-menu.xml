@@ -73,8 +73,8 @@
         <menu id="code-editor">
             <item id="code-editor-simple" page="codeEditor" splitEnabled="true"/>
             <item id="code-editor-mode-theme" page="codeEditor" splitEnabled="true"/>
-            <item id="code-editor-suggestions" page="codeEditor" splitEnabled="true" isNew="true"/>
-            <item id="code-editor-custom-suggestions" page="codeEditor" splitEnabled="true" isNew="true"/>
+            <item id="code-editor-suggestions" page="codeEditor" splitEnabled="true"/>
+            <item id="code-editor-custom-suggestions" page="codeEditor" splitEnabled="true"/>
         </menu>
         <menu id="combobox">
             <item id="combobox-simple" page="comboBox">
@@ -156,7 +156,7 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-empty-state" page="dataGrid" splitEnabled="true" anchor="empty-state" isNew="true">
+            <item id="data-grid-empty-state" page="dataGrid" splitEnabled="true" anchor="empty-state">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
@@ -541,7 +541,7 @@
                 </otherFiles>
             </item>
         </menu>
-        <menu id="switch" isNew="true">
+        <menu id="switch">
             <item id="switch-simple"/>
             <item id="switch-dataaware">
                 <otherFiles>
@@ -679,10 +679,19 @@
             </item>
             <item id="details-theme-variant" page="details"/>
         </menu>
+        <menu id="card" isNew="true">
+            <item id="card-simple" splitEnabled="true"/>
+            <item id="card-header"/>
+            <item id="card-theme-variant" splitEnabled="true">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/card-theme-variant.css"/>
+                </otherFiles>
+            </item>
+        </menu>
         <menu id="boxlayout">
             <menu id="hbox">
                 <item id="hbox-simple" page="hbox"/>
-                <item id="hbox-slots" page="hbox" isNew="true"/>
+                <item id="hbox-slots" page="hbox"/>
             </menu>
             <item id="vbox-simple" page="vbox"/>
             <item id="flex-layout-simple"/>
@@ -1005,7 +1014,7 @@
                 </otherFiles>
             </item>
             <item id="geo-map-static-image" page="layers-sources" anchor="image-layer" splitEnabled="true"/>
-            <item id="geo-map-custom-projection" page="reference" anchor="projection" splitEnabled="true" isNew="true">
+            <item id="geo-map-custom-projection" page="reference" anchor="projection" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/UiSamplesMapsConfiguration.java"/>
                 </otherFiles>
@@ -1263,8 +1272,8 @@
                     <file name="io/jmix/uisamples/view/flowui/customcomponents/vaadinaddons/socharts/ChartComponentRegistration.java"/>
                 </otherFiles>
             </item>
-            <item id="input-mask-addon-simple" isNew="true"/>
-            <item id="input-mask-addon-advanced" isNew="true">
+            <item id="input-mask-addon-simple"/>
+            <item id="input-mask-addon-advanced">
                 <otherFiles>
                     <file name="io/jmix/uisamples/component/maskfield/MaskField.java"/>
                     <file name="io/jmix/uisamples/view/flowui/customcomponents/vaadinaddons/inputmaskadvanced/mask-field.xsd"/>
@@ -1317,8 +1326,7 @@
                     <file name="io/jmix/uisamples/entity/Product.java"/>
                 </otherFiles>
             </item>
-            <item id="saving-entity-by-service" page="data/entities-in-ui" splitEnabled="true" defaultFiles="false"
-                  isNew="true">
+            <item id="saving-entity-by-service" page="data/entities-in-ui" splitEnabled="true" defaultFiles="false">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Contract.java"/>
                     <file name="io/jmix/uisamples/view/flowui/cookbook/customservice1/contract-detail-view.xml"/>
@@ -1445,7 +1453,7 @@
                     <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdf/IframeCustomSecurity.java"/>
                 </otherFiles>
             </item>
-            <item id="iframe-pdf-dynamic" splitEnabled="true" isNew="true">
+            <item id="iframe-pdf-dynamic" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/view/flowui/cookbook/iframepdfdynamic/IframeCustomSecurity.java"/>
                 </otherFiles>

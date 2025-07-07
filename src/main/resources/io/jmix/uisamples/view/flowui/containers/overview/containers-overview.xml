@@ -40,6 +40,11 @@
             <text message="split.title" route="split-simple" component="h4"/>
             <text message="split.description"/>
         </sample>
+        <sample>
+            <image src="icons/layouts/card.png" route="card-simple"/>
+            <text message="card.title" route="card-simple" component="h4"/>
+            <text message="card.description"/>
+        </sample>
 
     </samples>
 </overview>

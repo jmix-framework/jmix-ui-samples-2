@@ -1,0 +1,19 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <card id="card" width="30em"
+              themeNames="cover-media elevated outlined">
+            <headerPrefix>
+                <avatar image="icons/jmix-icon.png"/>
+            </headerPrefix>
+            <header>
+                <div classNames="flex flex-col-reverse leading-xs">
+                    <h2 text="Jmix"/>
+                    <div text="Modern Dev platform" classNames="uppercase text-xs text-secondary"/>
+                </div>
+            </header>
+            <headerSuffix>
+                <span text="Fullstack" themeNames="badge success"/>
+            </headerSuffix>
+        </card>
+    </layout>
+</view>
