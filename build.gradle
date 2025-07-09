@@ -55,6 +55,7 @@ dependencies {
     implementation 'com.storedobject.chart:so-charts:3.2.4'
     implementation 'org.vaadin.addons.componentfactory:vcf-input-mask:2.2.0'
     implementation 'org.commonmark:commonmark:0.24.0'
+    implementation 'org.jsoup:jsoup:1.17.2'
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.apache.commons:commons-dbcp2'

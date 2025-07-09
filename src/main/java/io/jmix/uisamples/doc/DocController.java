@@ -6,6 +6,7 @@ import io.jmix.flowui.view.ViewRegistry;
 import io.jmix.uisamples.config.UiSamplesMenuConfig;
 import io.jmix.uisamples.config.UiSamplesMenuItem;
 import io.jmix.uisamples.util.UiSamplesHelper;
+import org.jsoup.Jsoup;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,11 +44,10 @@ public class DocController {
 
         StringBuilder content = new StringBuilder();
 
-        content.append("# ").append(menuConfig.getMenuItemTitle(articleId)).append("\n");
+        content.append(getHeader(articleId)).append("\n\n");
 
         Package descriptionPackage = viewInfo.getControllerClass().getPackage();
         if (descriptionPackage != null) {
-            content.append("## Description\n");
             content.append(getDescription(articleId, descriptionPackage.getName()));
         }
 
@@ -55,27 +55,41 @@ public class DocController {
         if (menuItem.isDefaultFiles()) {
             viewInfo.getTemplatePath()
                     .ifPresent(templatePath -> {
-                        content.append("\n## ").append(uiSamplesHelper.getFileName(templatePath));
-                        content.append("\n```\n");
+                        content.append("\n\n").append(uiSamplesHelper.getFileName(templatePath));
+                        content.append("\n\n");
                         content.append(uiSamplesHelper.getFileContent(templatePath));
-                        content.append("\n```\n");
+                        content.append("\n\n");
                     });
             String controllerFilePath = getControllerFilePath(viewInfo.getControllerClassName());
-            content.append("\n## ").append(uiSamplesHelper.getFileName(controllerFilePath));
-            content.append("\n```\n");
+            content.append("\n\n").append(uiSamplesHelper.getFileName(controllerFilePath));
+            content.append("\n\n");
             content.append(uiSamplesHelper.getFileContent(controllerFilePath));
-            content.append("\n```\n");
+            content.append("\n\n");
         }
 
         List<String> otherFiles = menuItem.getOtherFiles();
         for (String filePath : otherFiles) {
-            content.append("\n## ").append(uiSamplesHelper.getFileName(filePath));
-            content.append("\n```\n");
+            content.append("\n\n").append(uiSamplesHelper.getFileName(filePath));
+            content.append("\n\n");
             content.append(uiSamplesHelper.getFileContent(filePath));
-            content.append("\n```\n");
+            content.append("\n\n");
         }
 
         return content.toString();
+    }
+
+    private String getHeader(String articleId) {
+        StringBuilder sb = new StringBuilder(menuConfig.getMenuItemTitle(articleId));
+        UiSamplesMenuItem menuItem = menuConfig.getItemById(articleId);
+        UiSamplesMenuItem parentItem = menuItem.getParent();
+        while (parentItem != null) {
+            sb.insert(0, " > ");
+            sb.insert(0, menuConfig.getMenuItemTitle(parentItem.getId()));
+            parentItem = parentItem.getParent();
+        }
+        sb.insert(0, "<Path>");
+        sb.append("</Path>");
+        return sb.toString();
     }
 
     private String getDescription(String articleId, String descriptionsPack) {
@@ -83,7 +97,7 @@ public class DocController {
 
         String text = uiSamplesHelper.getFileContent(descriptionFileName + ".html");
         if (!Strings.isNullOrEmpty(text)) {
-            return text;
+            return Jsoup.parse(text).text();
         } else {
             text = uiSamplesHelper.getFileContent(descriptionFileName + ".md");
             if (!Strings.isNullOrEmpty(text)) {
