@@ -706,6 +706,20 @@
             </item>
             <item id="form-layout-responsive-steps" page="formLayout" splitEnabled="true"/>
         </menu>
+        <menu id="grid-layout" isNew="true">
+            <item id="grid-layout-simple" splitEnabled="true"/>
+            <item id="grid-layout-dataaware" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="grid-layout-renderer" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+        </menu>
         <item id="scroller" page="scroller" splitEnabled="true"/>
         <menu id="split">
             <item id="split-simple" page="split"/>

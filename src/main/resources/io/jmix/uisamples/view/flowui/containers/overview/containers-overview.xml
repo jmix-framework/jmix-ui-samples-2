@@ -45,6 +45,11 @@
             <text message="card.title" route="card-simple" component="h4"/>
             <text message="card.description"/>
         </sample>
+        <sample>
+            <image src="icons/layouts/gridLayout.png" route="grid-layout-simple"/>
+            <text message="gridLayout.title" route="grid-layout-simple" component="h4"/>
+            <text message="gridLayout.description"/>
+        </sample>
 
     </samples>
 </overview>
