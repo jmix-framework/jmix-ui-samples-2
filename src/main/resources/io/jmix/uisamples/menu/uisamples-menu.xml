@@ -74,7 +74,11 @@
             <item id="code-editor-simple" page="codeEditor" splitEnabled="true"/>
             <item id="code-editor-mode-theme" page="codeEditor" splitEnabled="true"/>
             <item id="code-editor-suggestions" page="codeEditor" splitEnabled="true"/>
-            <item id="code-editor-custom-suggestions" page="codeEditor" splitEnabled="true"/>
+            <item id="code-editor-custom-suggestions" page="codeEditor" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
         </menu>
         <menu id="combobox">
             <item id="combobox-simple" page="comboBox">
@@ -538,6 +542,16 @@
             <item id="simple-pagination-after-refresh" page="simplePagination" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
+        <menu id="spreadsheet" isVaadinCommercial="true" isNew="true">
+            <item id="spreadsheet-simple" splitEnabled="true"/>
+            <item id="spreadsheet-advanced" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/components/spreadsheet/advanced/SpreadsheetStyler.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/components/spreadsheet/advanced/SpreadsheetRangeSupport.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/components/spreadsheet/advanced/SpreadsheetFormulaSupport.java"/>
                 </otherFiles>
             </item>
         </menu>

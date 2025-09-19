@@ -145,6 +145,7 @@ public class UiSamplesMenuConfig {
 
                     loadString(element, "url", menuItem::setUrl);
                     loadBoolean(element, "isNew", menuItem::setNew);
+                    loadBoolean(element, "isVaadinCommercial", menuItem::setVaadinCommercial);
 
                     loadMenuItems(element, menuItem);
                 } else if ("item".equals(element.getName())) {
@@ -183,6 +184,7 @@ public class UiSamplesMenuConfig {
         loadString(element, "anchor", menuItem::setAnchor);
 
         loadBoolean(element, "isNew", menuItem::setNew);
+        loadBoolean(element, "isVaadinCommercial", menuItem::setVaadinCommercial);
         loadBoolean(element, "splitEnabled", menuItem::setSplitEnabled);
         loadBoolean(element, "defaultFiles", menuItem::setDefaultFiles);
 
