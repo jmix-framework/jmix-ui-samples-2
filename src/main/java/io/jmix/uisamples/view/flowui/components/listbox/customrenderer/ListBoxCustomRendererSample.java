@@ -6,7 +6,7 @@ import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
-import com.vaadin.flow.server.StreamResource;
+import com.vaadin.flow.server.streams.DownloadHandler;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import io.jmix.core.Resources;
 import io.jmix.flowui.UiComponents;
@@ -15,15 +15,13 @@ import io.jmix.flowui.view.*;
 import io.jmix.uisamples.record.Simpson;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.io.InputStream;
 import java.util.List;
-import java.util.UUID;
 
 @ViewController("list-box-custom-renderer")
 @ViewDescriptor("list-box-custom-renderer.xml")
 public class ListBoxCustomRendererSample extends StandardView {
 
-    protected static final String PATH_PREFIX = "META-INF/resources/icons/";
+    protected static final String PATH_PREFIX = "/icons/";
 
     @ViewComponent
     protected JmixListBox<Simpson> listBox;
@@ -45,7 +43,7 @@ public class ListBoxCustomRendererSample extends StandardView {
             row.setAlignItems(FlexComponent.Alignment.CENTER);
 
             Avatar avatar = uiComponents.create(Avatar.class);
-            avatar.setImageResource(getSimpsonImage(simpson));
+            avatar.setImageHandler(getSimpsonImage(simpson));
 
             Span name = new Span(simpson.name());
             Span profession = new Span(simpson.shortName());
@@ -70,10 +68,8 @@ public class ListBoxCustomRendererSample extends StandardView {
         );
     }
 
-    protected StreamResource getSimpsonImage(Simpson simpson) {
+    protected DownloadHandler getSimpsonImage(Simpson simpson) {
         String picture = simpson.picture();
-        InputStream image = resources.getResourceAsStream(PATH_PREFIX + picture);
-
-        return new StreamResource(UUID.randomUUID().toString(), () -> image);
+        return DownloadHandler.forServletResource(PATH_PREFIX + picture);
     }
 }
