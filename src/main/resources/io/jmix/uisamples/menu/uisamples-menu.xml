@@ -704,7 +704,11 @@
         </menu>
         <menu id="board" isVaadinCommercial="true" isNew="true">
             <item id="board-simple"/>
-            <item id="board-chart" splitEnabled="true"/>
+            <item id="board-chart" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/TransportCount.java"/>
+                </otherFiles>
+            </item>
         </menu>
         <menu id="boxlayout">
             <menu id="hbox">
