@@ -31,15 +31,13 @@ public class BoardChartSample extends StandardView {
     @ViewComponent
     private Span totalPercentage;
 
-    private TransportCountHolder transportCountHolder;
-
     @Subscribe(id = "transportDc", target = Target.DATA_CONTAINER)
     public void onTransportDcCollectionChangeChange(CollectionChangeEvent<TransportCount> event) {
         recalculateCells();
     }
 
     private void recalculateCells() {
-        transportCountHolder = new TransportCountHolder();
+        TransportCountHolder transportCountHolder = new TransportCountHolder();
 
         transportDc.getItems()
                 .forEach(transportCountHolder::add);

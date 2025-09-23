@@ -282,16 +282,14 @@ public class SampleView extends StandardView {
     @Subscribe
     public void onQueryParametersChange(final QueryParametersChangeEvent event) {
         if (tabSheet != null) {
-            event.getQueryParameters().getSingleParameter("tab").ifPresent(param ->
-                    tabSheet.getChildren()
-                            .map(component ->
-                                    (Tab) component)
-                            .filter(tab1 ->
-                                    tab1.getLabel().equals(param))
-                            .findFirst()
-                            .ifPresent(tab ->
-                                    tabSheet.setSelectedTab(tab))
-            );
+            event.getQueryParameters().getSingleParameter("tab")
+                    .flatMap(param ->
+                            tabSheet.getChildren()
+                                    .map(Tab.class::cast)
+                                    .filter(tab1 -> tab1.getLabel().equals(param))
+                                    .findFirst()
+                    )
+                    .ifPresent(tab -> tabSheet.setSelectedTab(tab));
         }
     }
 

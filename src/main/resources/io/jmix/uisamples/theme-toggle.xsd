@@ -23,7 +23,7 @@
                     <xs:attributeGroup ref="layout:hasEnabled"/>
                     <xs:attributeGroup ref="layout:hasTitle"/>
                     <xs:attributeGroup ref="layout:hasClassNames"/>
-                    <xs:attributeGroup ref="layout:hasTabIndex"/>
+                    <xs:attributeGroup ref="layout:hasFocusableAttributes"/>
                 </xs:extension>
             </xs:complexContent>
         </xs:complexType>

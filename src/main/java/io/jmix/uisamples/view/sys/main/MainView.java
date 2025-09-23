@@ -43,6 +43,7 @@ import io.jmix.uisamples.config.UiSamplesMenuConfig;
 import io.jmix.uisamples.config.UiSamplesMenuItem;
 import io.jmix.uisamples.view.sys.sampleview.SampleView;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 
@@ -303,7 +304,7 @@ public class MainView extends StandardMainView {
     }
 
     protected boolean matchSearchValue(JmixListMenu.MenuItem item, @Nullable String searchValue) {
-        return searchValue == null || StringUtils.containsIgnoreCase(item.getTitle(), searchValue);
+        return searchValue == null || Strings.CI.contains(item.getTitle(), searchValue);
     }
 
     @SuppressWarnings("ConstantConditions")
@@ -313,12 +314,11 @@ public class MainView extends StandardMainView {
             if (item.isMenu() && item instanceof ListMenu.MenuBarItem menuItem && menuItem.hasChildren()) {
                 if (!menuItem.isOpened()) {
                     menu.removeMenuItem(item);
-                } else if (!StringUtils.containsIgnoreCase(item.getTitle(), searchValue)
+                } else if (!Strings.CI.contains(item.getTitle(), searchValue)
                         || showNew && item.getSuffixComponent() == null) {
-                    ListMenu.MenuBarItem menuBarItem = (ListMenu.MenuBarItem) item;
-                    removeNotRequestedItems(menuBarItem.getChildItems(), searchValue);
+                    removeNotRequestedItems(menuItem.getChildItems(), searchValue);
                 }
-            } else if (!StringUtils.containsIgnoreCase(item.getTitle(), searchValue)
+            } else if (!Strings.CI.contains(item.getTitle(), searchValue)
                     || showNew && item.getSuffixComponent() == null) {
                 menu.removeMenuItem(item);
             }

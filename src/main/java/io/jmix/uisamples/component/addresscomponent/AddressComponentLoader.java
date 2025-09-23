@@ -27,7 +27,7 @@ public class AddressComponentLoader extends AbstractComponentLoader<AddressCompo
         String containerId = loadString(element, "dataContainer")
                 .orElseThrow(() -> new GuiDevelopmentException(dataContainerIsNullErrorMessage, context));
 
-        InstanceContainer container = getComponentContext().getViewData().getContainer(containerId);
+        InstanceContainer container = getComponentContext().getDataHolder().getContainer(containerId);
         if (!Address.class.isAssignableFrom(container.getEntityMetaClass().getJavaClass())) {
             String improperDataBindingMessage = String.format(
                     "%s have improper data binding. The value for the " +

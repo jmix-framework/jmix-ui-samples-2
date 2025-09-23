@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.time.LocalDate;
 
 import static io.jmix.fullcalendarflowui.kit.component.model.GenericCalendarDisplayModes.DAY_GRID;
-import static io.jmix.fullcalendarflowui.kit.component.model.GenericCalendarDisplayModes.TIME_GRID;
 
 @ViewController("calendar-generic-calendar-display-modes")
 @ViewDescriptor("calendar-generic-calendar-display-modes.xml")
