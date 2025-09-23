@@ -702,6 +702,10 @@
                 </otherFiles>
             </item>
         </menu>
+        <menu id="board" isVaadinCommercial="true" isNew="true">
+            <item id="board-simple"/>
+            <item id="board-chart" splitEnabled="true"/>
+        </menu>
         <menu id="boxlayout">
             <menu id="hbox">
                 <item id="hbox-simple" page="hbox"/>
