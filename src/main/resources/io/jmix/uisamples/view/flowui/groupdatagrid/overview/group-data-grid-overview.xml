@@ -1,0 +1,13 @@
+<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
+    <header>
+        <text message="title" component="h2"/>
+        <text message="description"/>
+    </header>
+    <samples>
+        <sample>
+            <image src="" route="group-data-grid-simple"/>
+            <text message="simple.title" route="group-data-grid-simple" component="h4"/>
+            <text message="simple.description"/>
+        </sample>
+    </samples>
+</overview>

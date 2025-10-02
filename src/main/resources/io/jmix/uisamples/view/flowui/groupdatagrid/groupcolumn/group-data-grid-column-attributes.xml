@@ -1,0 +1,41 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:groupg="http://jmix.io/schema/groupdatagrid/ui">
+    <data>
+        <collection id="customersDc"
+                    class="io.jmix.uisamples.entity.Customer"
+                    fetchPlan="_base">
+            <loader id="customersDl">
+                <query>
+                    <![CDATA[select e from Customer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <hbox padding="false" classNames="items-center">
+            <comboBox id="groupIconsField" placeholder="msg://groupIconsField.placeholder" clearButtonVisible="true"/>
+            <checkbox id="groupIconVisibleField" label="msg://groupIconVisibleField.label"/>
+            <checkbox id="displayItemsCountField" label="msg://displayItemsCountField.label"/>
+            <checkbox id="displayColumnsGrouperOnIconClickField" label="msg://displayColumnsGrouperOnIconClickField.label"/>
+        </hbox>
+        <groupg:groupDataGrid id="customersGroupDataGrid"
+                              dataContainer="customersDc"
+                              width="100%"
+                              minHeight="20em">
+            <groupg:columns>
+                <groupg:groupBy>
+                    <groupg:column property="grade"/>
+                </groupg:groupBy>
+                <groupg:groupColumn key="group" header="msg://customersGroupDataGrid.group.header"/>
+                <groupg:column property="name"/>
+                <groupg:column property="lastName"/>
+                <groupg:column property="email"/>
+                <groupg:column property="age"/>
+                <groupg:column property="active"/>
+            </groupg:columns>
+        </groupg:groupDataGrid>
+    </layout>
+</view>

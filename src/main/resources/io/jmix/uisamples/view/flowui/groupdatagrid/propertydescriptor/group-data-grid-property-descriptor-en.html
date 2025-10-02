@@ -1,0 +1,14 @@
+<p>
+    <code>GroupDataGrid</code> can group data items by non-persistent properties. To enable grouping, describe the
+    property in the <code>GroupDataGridItems</code>. It requires a <code>GroupPropertyDescriptor</code> object where you
+    can define the property name and its value provider.
+</p>
+<p>
+    Note that the property name must match the column key that is not bound to an entity property.
+</p>
+<p>
+    By default, sorting will not work for this property. To sort the data correctly, you can specify properties from an
+    entity. For example, if you use <code>BaseGroupPropertyDescriptor</code> (the base implementation of
+    <code>GroupPropertyDescriptor</code>), you can set sort properties using the <code>withSortProperties()</code>
+    method. These properties will be used for sorting.
+</p>
