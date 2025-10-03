@@ -1276,7 +1276,7 @@
         </menu>
 
         <menu id="group-data-grid-root" url="group-data-grid" isNew="true">
-            <overview id="groupdatagrid" location="groupdatagrid/overview/group-data-grid-overview.xml"/>
+            <overview id="group-data-grid" location="groupdatagrid/overview/group-data-grid-overview.xml"/>
 
             <item id="group-data-grid-simple" splitEnabled="true">
                 <otherFiles>
