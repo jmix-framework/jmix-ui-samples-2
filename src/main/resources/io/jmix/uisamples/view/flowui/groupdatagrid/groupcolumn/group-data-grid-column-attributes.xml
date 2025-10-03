@@ -29,7 +29,7 @@
                 <groupg:groupBy>
                     <groupg:column property="grade"/>
                 </groupg:groupBy>
-                <groupg:groupColumn key="group" header="msg://customersGroupDataGrid.group.header"/>
+                <groupg:groupColumn key="group" header="msg://customersGroupDataGrid.group.header" resizable="true"/>
                 <groupg:column property="name"/>
                 <groupg:column property="lastName"/>
                 <groupg:column property="email"/>

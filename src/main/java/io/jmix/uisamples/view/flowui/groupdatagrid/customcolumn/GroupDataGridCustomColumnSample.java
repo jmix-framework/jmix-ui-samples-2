@@ -1,4 +1,4 @@
-package io.jmix.uisamples.view.flowui.groupdatagrid.propertydescriptor;
+package io.jmix.uisamples.view.flowui.groupdatagrid.customcolumn;
 
 import com.vaadin.flow.data.renderer.Renderer;
 import com.vaadin.flow.data.renderer.TextRenderer;
@@ -10,9 +10,9 @@ import io.jmix.uisamples.entity.Customer;
 
 import java.util.List;
 
-@ViewController("group-data-grid-property-descriptor")
-@ViewDescriptor(value = "group-data-grid-property-descriptor.xml")
-public class GroupDataGridPropertyDescriptorSample extends StandardView {
+@ViewController("group-data-grid-custom-column")
+@ViewDescriptor(value = "group-data-grid-custom-column.xml")
+public class GroupDataGridCustomColumnSample extends StandardView {
 
     @ViewComponent
     private GroupDataGrid<Customer> customersGroupDataGrid;

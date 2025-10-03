@@ -42,7 +42,7 @@ public class GroupDataGridRendererSample extends StandardView {
     private String getGradeColor(CustomerGrade grade) {
         return switch (grade) {
             case HIGH -> "#1F3A93";
-            case PREMIUM -> "#AF9B0C";
+            case PREMIUM -> "#ae0caf";
             default -> "#D7D7D7";
         };
     }

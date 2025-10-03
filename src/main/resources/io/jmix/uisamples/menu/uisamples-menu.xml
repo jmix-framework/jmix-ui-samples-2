@@ -1298,7 +1298,7 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="group-data-grid-property-descriptor" splitEnabled="true">
+            <item id="group-data-grid-custom-column" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
@@ -1311,6 +1311,7 @@
             <item id="group-data-grid-styling" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="META-INF/resources/themes/group-data-grid-styling.css"/>
                 </otherFiles>
             </item>
         </menu>

@@ -18,7 +18,8 @@ public class GroupDataGridStylingSample extends StandardView {
     private void onInit(InitEvent event) {
         DataGridColumn<Customer> group = customersGroupDataGrid.getColumnByKey("group");
         if (group != null) {
-            group.setGroupPartNameGenerator(groupInfo -> "group-column-group-row-cell");
+            group.setPartNameGenerator(customer ->
+                    customer.getGrade() == null ? "" : "group-column-cell " + customer.getGrade().toString().toLowerCase());
         }
     }
 
@@ -26,7 +27,7 @@ public class GroupDataGridStylingSample extends StandardView {
     private String onGroupPartNameGenerator(GroupInfo groupInfo) {
         GroupProperty property = groupInfo.getProperty();
         if (property.is("grade")) {
-            return "grade-group" + " " + groupInfo.getValue().toString().toLowerCase();
+            return "group-grade" + " " + groupInfo.getValue().toString().toLowerCase();
         }
         return "";
     }
