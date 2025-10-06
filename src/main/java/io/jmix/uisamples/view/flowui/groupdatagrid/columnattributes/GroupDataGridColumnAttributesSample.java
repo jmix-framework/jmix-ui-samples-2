@@ -1,4 +1,4 @@
-package io.jmix.uisamples.view.flowui.groupdatagrid.groupcolumn;
+package io.jmix.uisamples.view.flowui.groupdatagrid.columnattributes;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
 import com.vaadin.flow.component.icon.VaadinIcon;
