@@ -19,11 +19,12 @@
                               dataContainer="customersDc"
                               width="100%"
                               minHeight="20em">
+            <groupg:groupBy>
+                <groupg:column ref="active"/>
+            </groupg:groupBy>
             <groupg:columns>
-                <groupg:groupBy>
-                    <groupg:column property="active"/>
-                </groupg:groupBy>
                 <groupg:groupColumn key="group" header="msg://customersGroupDataGrid.group.header" resizable="true"/>
+                <groupg:column property="active"/>
                 <groupg:column property="grade"/>
                 <groupg:column property="name"/>
                 <groupg:column property="lastName"/>
