@@ -20,7 +20,7 @@
                               width="100%"
                               minHeight="20em">
             <groupg:groupBy>
-                <groupg:column ref="grade"/>
+                <groupg:columnRef key="grade"/>
             </groupg:groupBy>
             <groupg:columns>
                 <groupg:groupColumn header="msg://customersGroupDataGrid.group.header" resizable="true"/>
