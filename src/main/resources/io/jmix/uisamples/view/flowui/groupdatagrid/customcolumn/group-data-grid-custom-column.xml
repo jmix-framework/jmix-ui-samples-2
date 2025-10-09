@@ -1,5 +1,5 @@
 <view xmlns="http://jmix.io/schema/flowui/view"
-      xmlns:groupg="http://jmix.io/schema/groupdatagrid/ui">
+      xmlns:groupg="http://jmix.io/schema/groupgrid/ui">
     <data>
         <collection id="customersDc"
                     class="io.jmix.uisamples.entity.Customer"
