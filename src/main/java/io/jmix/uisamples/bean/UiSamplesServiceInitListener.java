@@ -1,5 +1,6 @@
 package io.jmix.uisamples.bean;
 
+import com.vaadin.flow.server.VaadinRequest;
 import com.vaadin.flow.server.VaadinSession;
 import io.jmix.core.CoreProperties;
 import io.jmix.core.JmixModules;
@@ -20,6 +21,12 @@ public class UiSamplesServiceInitListener extends JmixServiceInitListener {
 
     @Override
     protected void initCookieLocale(VaadinSession session) {
+        // do nothing
+        // locale has been handled by io.jmix.uisamples.bean.SessionManager
+    }
+
+    @Override
+    protected void initDefaultBrowserLocale(VaadinRequest request, VaadinSession session) {
         // do nothing
         // locale has been handled by io.jmix.uisamples.bean.SessionManager
     }
