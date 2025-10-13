@@ -1,0 +1,81 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <split height="100%" width="100%" splitterPosition="60">
+            <formLayout id="formLayout" width="100%" classNames="p-m" autoResponsive="true">
+                <formRow>
+                    <formItem label="msg://firstName.label">
+                        <textField/>
+                    </formItem>
+                    <formItem label="msg://lastName.label">
+                        <textField/>
+                    </formItem>
+                    <formItem label="msg://rating.label">
+                        <comboBox id="ratingField"/>
+                    </formItem>
+                </formRow>
+                <formRow>
+                    <formItem label="msg://countryName.label">
+                        <textField/>
+                    </formItem>
+                    <formItem label="msg://birthDate.label">
+                        <datePicker/>
+                    </formItem>
+                    <formItem label="msg://email.label">
+                        <emailField/>
+                    </formItem>
+                </formRow>
+                <formRow>
+                    <formItem label="msg://status.label">
+                        <comboBox/>
+                    </formItem>
+                    <formItem label="msg://phoneNumber.label">
+                        <textField/>
+                    </formItem>
+                    <formItem label="msg://address.label">
+                        <textField/>
+                    </formItem>
+                </formRow>
+            </formLayout>
+
+            <formLayout id="managementLayout" autoResponsive="true" autoRows="true"
+                        classNames="p-m"
+                        expandColumns="true"
+                        expandFields="true"
+                        rowSpacing="0">
+                <vbox spacing="false" padding="false">
+                    <textField id="columnSpacingField" placeholder="msg://columnSpacingField.placeholder"
+                               datatype="string" label="msg://columnSpacingField.label" width="100%"/>
+                    <textField id="rowSpacingField" placeholder="msg://rowSpacingField.placeholder" datatype="string"
+                               label="msg://rowSpacingField.label" width="100%"/>
+                    <textField id="labelSpacingField" placeholder="msg://labelSpacingField.placeholder"
+                               datatype="string" label="msg://labelSpacingField.label" width="100%">
+                        <suffix>
+                            <button id="labelSpacingHelpButton" icon="INFO_CIRCLE" themeNames="tertiary-inline"/>
+                        </suffix>
+                    </textField>
+                    <checkbox id="expandColumnsField" label="msg://expandColumnsField.label"/>
+                    <checkbox id="expandFieldsField" label="msg://expandFieldsField.label"/>
+                    <checkbox id="labelsAsideField" label="msg://labelsAsideField.label"/>
+                </vbox>
+                <vbox spacing="false" padding="false">
+                    <integerField id="maxColumnsField" label="msg://maxColumnsField.label" width="100%" themeNames="align-center">
+                        <prefix>
+                            <button id="maxColumnsFieldMinus" icon="lumo:minus"/>
+                        </prefix>
+                        <suffix>
+                            <button id="maxColumnsFieldPlus" icon="lumo:plus"/>
+                        </suffix>
+                    </integerField>
+                    <integerField id="minColumnsField" label="msg://minColumnsField.label" width="100%" themeNames="align-center">
+                        <prefix>
+                            <button id="minColumnsFieldMinus" icon="lumo:minus"/>
+                        </prefix>
+                        <suffix>
+                            <button id="minColumnsFieldPlus" icon="lumo:plus"/>
+                        </suffix>
+                    </integerField>
+                </vbox>
+            </formLayout>
+        </split>
+    </layout>
+</view>

@@ -727,6 +727,7 @@
                 </otherFiles>
             </item>
             <item id="form-layout-responsive-steps" page="formLayout" splitEnabled="true"/>
+            <item id="form-layout-auto-responsive" page="formLayout" splitEnabled="true" isNew="true"/>
         </menu>
         <menu id="grid-layout" isNew="true">
             <item id="grid-layout-simple" splitEnabled="true"/>
