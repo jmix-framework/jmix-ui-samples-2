@@ -1,0 +1,43 @@
+<overview xmlns="io/jmix/uisamples/view/overview-page.xsd">
+    <header>
+        <text message="title" component="h2"/>
+        <text message="description"/>
+    </header>
+    <samples>
+        <sample>
+            <image src="icons/groupdatagrid/simple.png" route="group-data-grid-simple"/>
+            <text message="simple.title" route="group-data-grid-simple" component="h4"/>
+            <text message="simple.description"/>
+        </sample>
+        <sample>
+            <image src="icons/groupdatagrid/column-attributes.png" route="group-data-grid-column-attributes"/>
+            <text message="column-attributes.title" route="group-data-grid-column-attributes" component="h4"/>
+            <text message="column-attributes.description"/>
+        </sample>
+        <sample>
+            <image src="icons/groupdatagrid/formatter.png" route="group-data-grid-formatter"/>
+            <text message="group-data-grid-formatter.title" route="group-data-grid-formatter" component="h4"/>
+            <text message="group-data-grid-formatter.description"/>
+        </sample>
+        <sample>
+            <image src="icons/groupdatagrid/component-renderer.png" route="group-data-grid-renderer"/>
+            <text message="group-data-grid-renderer.title" route="group-data-grid-renderer" component="h4"/>
+            <text message="group-data-grid-renderer.description"/>
+        </sample>
+        <sample>
+            <image src="icons/groupdatagrid/custom-column.png" route="group-data-grid-custom-column"/>
+            <text message="group-data-grid-custom-column.title" route="group-data-grid-custom-column" component="h4"/>
+            <text message="group-data-grid-custom-column.description"/>
+        </sample>
+        <sample>
+            <image src="icons/groupdatagrid/events.png" route="group-data-grid-events"/>
+            <text message="group-data-grid-events.title" route="group-data-grid-events" component="h4"/>
+            <text message="group-data-grid-events.description"/>
+        </sample>
+        <sample>
+            <image src="icons/groupdatagrid/styling.png" route="group-data-grid-styling"/>
+            <text message="group-data-grid-styling.title" route="group-data-grid-styling" component="h4"/>
+            <text message="group-data-grid-styling.description"/>
+        </sample>
+    </samples>
+</overview>
