@@ -545,7 +545,7 @@
                 </otherFiles>
             </item>
         </menu>
-        <menu id="spreadsheet" isVaadinCommercial="true" isNew="true">
+        <menu id="spreadsheet" isVaadinCommercial="true" isNew="true" isVisibleForProduction="false">
             <item id="spreadsheet-simple" splitEnabled="true"/>
             <item id="spreadsheet-advanced" splitEnabled="true">
                 <otherFiles>
@@ -702,7 +702,7 @@
                 </otherFiles>
             </item>
         </menu>
-        <menu id="board" isVaadinCommercial="true" isNew="true">
+        <menu id="board" isVaadinCommercial="true" isNew="true" isVisibleForProduction="false">
             <item id="board-simple"/>
             <item id="board-chart" splitEnabled="true">
                 <otherFiles>
