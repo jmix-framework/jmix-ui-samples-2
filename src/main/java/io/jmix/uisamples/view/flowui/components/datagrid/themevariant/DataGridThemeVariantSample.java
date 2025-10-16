@@ -19,7 +19,7 @@ public class DataGridThemeVariantSample extends StandardView {
     @ViewComponent
     protected JmixCheckboxGroup<GridVariant> gridSettingsCheckboxGroup;
     @ViewComponent
-    protected DataGrid<Customer> customersDataGrid;
+    protected DataGrid<Customer> ordersDataGrid;
 
     @Subscribe
     protected void onInit(InitEvent event) {
@@ -34,9 +34,9 @@ public class DataGridThemeVariantSample extends StandardView {
         }
 
         //clear
-        customersDataGrid.getElement().getThemeList().clear();
+        ordersDataGrid.getElement().getThemeList().clear();
 
-        event.getValue().forEach(customersDataGrid::addThemeVariants);
+        event.getValue().forEach(ordersDataGrid::addThemeVariants);
     }
 
     protected Map<GridVariant, String> getGridThemeVariantItemsMap() {
