@@ -4,9 +4,12 @@ import com.google.common.base.Joiner;
 import com.vaadin.flow.component.notification.Notification;
 import io.jmix.flowui.Notifications;
 import io.jmix.flowui.component.groupgrid.GroupListDataComponent;
-import io.jmix.flowui.view.*;
-import io.jmix.groupgridflowui.component.event.GroupDataGridGroupItemClickEvent;
-import io.jmix.groupgridflowui.component.event.GroupDataGridGroupingChangedEvent;
+import io.jmix.flowui.view.StandardView;
+import io.jmix.flowui.view.Subscribe;
+import io.jmix.flowui.view.ViewController;
+import io.jmix.flowui.view.ViewDescriptor;
+import io.jmix.groupgridflowui.component.event.GroupItemClickEvent;
+import io.jmix.groupgridflowui.component.event.GroupingChangedEvent;
 import io.jmix.groupgridflowui.kit.vaadin.grid.Grid;
 import io.jmix.uisamples.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +24,7 @@ public class GroupDataGridEventsSample extends StandardView {
     private Notifications notifications;
 
     @Subscribe("customersGroupDataGrid")
-    private void onGroupingChanged(GroupDataGridGroupingChangedEvent<Customer> event) {
+    private void onGroupingChanged(GroupingChangedEvent<Customer> event) {
         List<String> keys = event.getGroupingColumns().stream().map(Grid.Column::getKey).toList();
 
         notifications.create("Current grouping: %s".formatted(
@@ -49,7 +52,7 @@ public class GroupDataGridEventsSample extends StandardView {
     }
 
     @Subscribe("customersGroupDataGrid")
-    private void onGroupItemClick(GroupDataGridGroupItemClickEvent<Customer> event) {
+    private void onGroupItemClick(GroupItemClickEvent<Customer> event) {
         notifications.create("Clicked group: " + event.getGroupInfo())
                 .withPosition(Notification.Position.MIDDLE)
                 .show();

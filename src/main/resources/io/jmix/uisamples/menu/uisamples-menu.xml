@@ -412,6 +412,7 @@
                 </otherFiles>
             </item>
         </menu>
+        <item id="markdown" page="markdown" isNew="true" splitEnabled="true"/>
         <menu id="multi-select-combo-box">
             <item id="multi-select-combo-box-simple" page="multiSelectComboBox">
                 <otherFiles>
