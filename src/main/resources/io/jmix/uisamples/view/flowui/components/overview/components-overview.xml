@@ -73,6 +73,7 @@
             <image src="icons/components/listsAndTablesBackground.png" route="data-grid-simple"/>
             <text message="listsAndTables.title" route="data-grid-simple" component="h4"/>
             <tag text="dataGrid" route="data-grid-simple" classNames="overview-tag-font overview-tag-yellow"/>
+            <tag text="spreadsheet" route="spreadsheet-simple" classNames="overview-tag-font overview-tag-yellow"/>
             <tag text="listBox" route="list-box-simple" classNames="overview-tag-font overview-tag-yellow"/>
             <tag text="virtualList" route="virtual-list-simple" classNames="overview-tag-font overview-tag-yellow"/>
             <tag text="twinColumn" route="twin-column-simple" classNames="overview-tag-font overview-tag-yellow"/>
