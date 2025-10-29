@@ -1,8 +1,0 @@
-<view xmlns="http://jmix.io/schema/flowui/view"
-      xmlns:vcc="http://jmix.io/schema/vaadin-commercial-components/ui">
-    <layout>
-        <button id="downloadBtn" text="msg://downloadBtn.text" icon="DOWNLOAD"
-                themeNames="primary"/>
-        <vcc:spreadsheet id="spreadsheet" minHeight="30em"/>
-    </layout>
-</view>
