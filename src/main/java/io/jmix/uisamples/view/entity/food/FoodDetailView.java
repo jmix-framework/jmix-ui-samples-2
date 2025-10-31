@@ -3,7 +3,9 @@ package io.jmix.uisamples.view.entity.food;
 
 import com.vaadin.flow.component.avatar.Avatar;
 import com.vaadin.flow.component.html.H2;
-import com.vaadin.flow.server.StreamResource;
+import com.vaadin.flow.server.streams.DownloadHandler;
+import com.vaadin.flow.server.streams.DownloadResponse;
+import com.vaadin.flow.server.streams.InputStreamDownloadHandler;
 import io.jmix.flowui.component.SupportsTypedValue.TypedValueChangeEvent;
 import io.jmix.flowui.component.textfield.TypedTextField;
 import io.jmix.flowui.component.upload.FileUploadField;
@@ -52,8 +54,14 @@ public class FoodDetailView extends StandardDetailView<Food> {
         if (iconArray != null && iconArray.length > 0) {
             try {
                 String iconFileName = "%s.png".formatted(getEditedEntity().getTitle());
-                foodIcon.setImageResource(new StreamResource(iconFileName,
-                        () -> new ByteArrayInputStream(getEditedEntity().getIcon())));
+                InputStreamDownloadHandler handler = DownloadHandler.fromInputStream(event -> {
+                    byte[] icon = getEditedEntity().getIcon();
+                    ByteArrayInputStream inputStream = new ByteArrayInputStream(getEditedEntity().getIcon());
+
+                    return new DownloadResponse(inputStream, iconFileName, "image/png", icon.length);
+                });
+
+                foodIcon.setImageHandler(handler);
                 foodIconUpload.setValue(iconArray);
             } catch (RuntimeException e) {
                 throw new RuntimeException("Cannot init fields on food", e);

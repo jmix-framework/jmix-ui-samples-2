@@ -23,7 +23,9 @@ import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
@@ -41,6 +43,7 @@ import io.jmix.uisamples.config.UiSamplesMenuConfig;
 import io.jmix.uisamples.config.UiSamplesMenuItem;
 import io.jmix.uisamples.view.sys.sampleview.SampleView;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.Nullable;
 
@@ -142,6 +145,14 @@ public class MainView extends StandardMainView {
 
             menu.addMenuItem(menuItem);
 
+            if (item.isVaadinCommercial() && item.isNew()) {
+                appendSuffixLayout(menuItem);
+            }
+
+            if (item.isVaadinCommercial()) {
+                appendVaadinCommercialBadge(menuItem);
+            }
+
             if (item.isNew()) {
                 appendNewBadge(menuItem);
             }
@@ -174,10 +185,24 @@ public class MainView extends StandardMainView {
                 parentSideMenuItem.addChildItem(child);
             }
 
+            if (currentItem.isVaadinCommercial() && currentItem.isNew()) {
+                appendSuffixLayout(child);
+            }
+
+            if (currentItem.isVaadinCommercial()) {
+                appendVaadinCommercialBadge(child);
+            }
+
             if (currentItem.isNew()) {
                 appendNewBadge(child);
             }
         }
+    }
+
+    protected void appendSuffixLayout(ListMenu.MenuItem child) {
+        HorizontalLayout horizontalLayout = uiComponents.create(HorizontalLayout.class);
+        horizontalLayout.setPadding(false);
+        child.setSuffixComponent(horizontalLayout);
     }
 
     protected void appendNewBadge(ListMenu.MenuItem child) {
@@ -185,7 +210,31 @@ public class MainView extends StandardMainView {
         newBadge.setText(messageBundle.getMessage("newBadge.text"));
         newBadge.getElement().getThemeList().add("badge pill small");
 
-        child.setSuffixComponent(newBadge);
+        if (child.getSuffixComponent() != null && child.getSuffixComponent() instanceof HorizontalLayout suffixLayout) {
+            suffixLayout.add(newBadge);
+        } else {
+            child.setSuffixComponent(newBadge);
+        }
+    }
+
+    protected void appendVaadinCommercialBadge(ListMenu.MenuItem child) {
+        Span badgeText = uiComponents.create(Span.class);
+        badgeText.setText(messageBundle.getMessage("vaadinCommercialBadge.text"));
+
+        Icon icon = uiComponents.create(Icon.class);
+        icon.setIcon(VaadinIcon.DOLLAR);
+        icon.addClassName("badged-icon");
+
+        Span vaadinCommercialBadge = uiComponents.create(Span.class);
+        vaadinCommercialBadge.getElement().getThemeList().add("badge pill small paid");
+
+        vaadinCommercialBadge.add(badgeText, icon);
+
+        if (child.getSuffixComponent() != null && child.getSuffixComponent() instanceof HorizontalLayout suffixLayout) {
+            suffixLayout.add(vaadinCommercialBadge);
+        } else {
+            child.setSuffixComponent(vaadinCommercialBadge);
+        }
     }
 
     protected void initSearchField() {
@@ -255,7 +304,7 @@ public class MainView extends StandardMainView {
     }
 
     protected boolean matchSearchValue(JmixListMenu.MenuItem item, @Nullable String searchValue) {
-        return searchValue == null || StringUtils.containsIgnoreCase(item.getTitle(), searchValue);
+        return searchValue == null || Strings.CI.contains(item.getTitle(), searchValue);
     }
 
     @SuppressWarnings("ConstantConditions")
@@ -265,12 +314,11 @@ public class MainView extends StandardMainView {
             if (item.isMenu() && item instanceof ListMenu.MenuBarItem menuItem && menuItem.hasChildren()) {
                 if (!menuItem.isOpened()) {
                     menu.removeMenuItem(item);
-                } else if (!StringUtils.containsIgnoreCase(item.getTitle(), searchValue)
+                } else if (!Strings.CI.contains(item.getTitle(), searchValue)
                         || showNew && item.getSuffixComponent() == null) {
-                    ListMenu.MenuBarItem menuBarItem = (ListMenu.MenuBarItem) item;
-                    removeNotRequestedItems(menuBarItem.getChildItems(), searchValue);
+                    removeNotRequestedItems(menuItem.getChildItems(), searchValue);
                 }
-            } else if (!StringUtils.containsIgnoreCase(item.getTitle(), searchValue)
+            } else if (!Strings.CI.contains(item.getTitle(), searchValue)
                     || showNew && item.getSuffixComponent() == null) {
                 menu.removeMenuItem(item);
             }

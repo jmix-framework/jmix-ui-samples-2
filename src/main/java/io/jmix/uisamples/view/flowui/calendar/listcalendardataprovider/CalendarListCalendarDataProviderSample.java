@@ -48,14 +48,14 @@ public class CalendarListCalendarDataProviderSample extends StandardView {
         List<CalendarEvent> items = listDataProvider.getItems();
         if (!items.isEmpty()) {
             SimpleCalendarEvent calendarEvent = (SimpleCalendarEvent) items.get(items.size() - 1);
-            calendarEvent.setTitle("Updated event: " + RandomStringUtils.randomAlphabetic(5));
+            calendarEvent.setTitle("Updated event: " + RandomStringUtils.secure().nextAlphabetic(5));
             listDataProvider.updateItem(calendarEvent);
         }
     }
 
     private CalendarEvent createEvent() {
         return SimpleCalendarEvent.create()
-                .withTitle("Event: " + RandomStringUtils.randomAlphabetic(5))
+                .withTitle("Event: " + RandomStringUtils.secure().nextAlphabetic(5))
                 .withStartDateTime(LocalDate.now().withDayOfMonth(10), LocalTime.NOON)
                 .build();
     }

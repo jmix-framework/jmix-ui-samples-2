@@ -31,6 +31,6 @@ public class ValuePickerSimpleSample extends StandardView {
     }
 
     protected void generateValue(JmixValuePicker<String> valuePicker) {
-        valuePicker.setValue(RandomStringUtils.randomAlphabetic(5, 10));
+        valuePicker.setValue(RandomStringUtils.secure().nextAlphabetic(5, 10));
     }
 }

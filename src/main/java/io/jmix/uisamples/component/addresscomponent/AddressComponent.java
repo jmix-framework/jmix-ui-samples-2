@@ -1,9 +1,11 @@
 package io.jmix.uisamples.component.addresscomponent;
 
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Composite;
 import io.jmix.core.DataManager;
 import io.jmix.core.Sort;
 import io.jmix.flowui.UiComponents;
+import io.jmix.flowui.component.ComponentContainer;
 import io.jmix.flowui.component.combobox.EntityComboBox;
 import io.jmix.flowui.component.formlayout.JmixFormLayout;
 import io.jmix.flowui.component.textfield.TypedTextField;
@@ -15,9 +17,14 @@ import io.jmix.uisamples.entity.Address;
 import io.jmix.uisamples.entity.City;
 import io.jmix.uisamples.entity.Country;
 
+import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
-public class AddressComponent extends Composite<JmixFormLayout> {
+import static io.jmix.flowui.component.UiComponentUtils.sameId;
+
+public class AddressComponent extends Composite<JmixFormLayout> implements ComponentContainer {
 
     protected final DataManager dataManager;
     private final CollectionContainer<Country> countriesContainer;
@@ -80,5 +87,17 @@ public class AddressComponent extends Composite<JmixFormLayout> {
 
         loadCountries();
         loadCities();
+    }
+
+    @Override
+    public Optional<Component> findOwnComponent(String id) {
+        return getChildren()
+                .filter(component -> sameId(component, id))
+                .findFirst();
+    }
+
+    @Override
+    public Collection<Component> getOwnComponents() {
+        return getChildren().sequential().collect(Collectors.toList());
     }
 }

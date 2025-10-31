@@ -1,0 +1,35 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:groupg="http://jmix.io/schema/groupgrid/ui">
+    <data>
+        <collection id="customersDc"
+                    class="io.jmix.uisamples.entity.Customer"
+                    fetchPlan="_base">
+            <loader id="customersDl">
+                <query>
+                    <![CDATA[select e from Customer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <groupg:groupDataGrid id="customersGroupDataGrid"
+                              dataContainer="customersDc"
+                              width="100%"
+                              minHeight="20em">
+            <groupg:groupBy>
+                <groupg:columnRef key="grade"/>
+            </groupg:groupBy>
+            <groupg:columns>
+                <groupg:groupColumn key="group" header="msg://customersGroupDataGrid.group.header" resizable="true"/>
+                <groupg:column property="grade"/>
+                <groupg:column property="name"/>
+                <groupg:column property="lastName"/>
+                <groupg:column property="email"/>
+                <groupg:column property="age"/>
+            </groupg:columns>
+        </groupg:groupDataGrid>
+    </layout>
+</view>

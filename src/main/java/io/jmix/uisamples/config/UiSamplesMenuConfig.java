@@ -17,6 +17,7 @@
 package io.jmix.uisamples.config;
 
 import com.google.common.base.Strings;
+import com.vaadin.flow.server.VaadinService;
 import io.jmix.core.Messages;
 import io.jmix.core.Resources;
 import io.jmix.core.common.xmlparsing.Dom4jTools;
@@ -140,11 +141,16 @@ public class UiSamplesMenuConfig {
 
             if (StringUtils.isNotBlank(id)) {
                 if ("menu".equals(element.getName())) {
+                    if (isVisibleForProduction(element)) {
+                        continue;
+                    }
+
                     menuItem = new UiSamplesMenuItem(parentItem, id);
                     menuItem.setMenu(true);
 
                     loadString(element, "url", menuItem::setUrl);
                     loadBoolean(element, "isNew", menuItem::setNew);
+                    loadBoolean(element, "isVaadinCommercial", menuItem::setVaadinCommercial);
 
                     loadMenuItems(element, menuItem);
                 } else if ("item".equals(element.getName())) {
@@ -175,7 +181,12 @@ public class UiSamplesMenuConfig {
         return menuItem;
     }
 
+    @Nullable
     protected UiSamplesMenuItem parseItem(Element element, UiSamplesMenuItem parentItem, String id) {
+        if (isVisibleForProduction(element)) {
+            return null;
+        }
+
         UiSamplesMenuItem menuItem = new UiSamplesMenuItem(parentItem, id);
 
         loadString(element, "page", menuItem::setPage);
@@ -183,6 +194,7 @@ public class UiSamplesMenuConfig {
         loadString(element, "anchor", menuItem::setAnchor);
 
         loadBoolean(element, "isNew", menuItem::setNew);
+        loadBoolean(element, "isVaadinCommercial", menuItem::setVaadinCommercial);
         loadBoolean(element, "splitEnabled", menuItem::setSplitEnabled);
         loadBoolean(element, "defaultFiles", menuItem::setDefaultFiles);
 
@@ -331,5 +343,10 @@ public class UiSamplesMenuConfig {
     protected void loadBoolean(Element element, String attributeName, Consumer<Boolean> setter) {
         loadBoolean(element, attributeName)
                 .ifPresent(setter);
+    }
+
+    protected boolean isVisibleForProduction(Element element) {
+        return !loadBoolean(element, "isVisibleForProduction").orElse(true)
+                && VaadinService.getCurrent().getDeploymentConfiguration().isProductionMode();
     }
 }

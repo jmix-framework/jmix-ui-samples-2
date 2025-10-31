@@ -1,0 +1,22 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data readOnly="true">
+        <collection id="customerDc" class="io.jmix.uisamples.entity.Customer"
+                    fetchPlan="_base">
+            <loader id="customerDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from Customer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <split width="100%" height="100%">
+            <gridLayout id="gridLayout" itemsContainer="customerDc"
+                        width="100%" height="100%"/>
+            <div/>
+        </split>
+    </layout>
+</view>

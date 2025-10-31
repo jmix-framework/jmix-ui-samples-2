@@ -1,11 +1,13 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <data readOnly="true">
-        <collection id="customersDc"
-                    class="io.jmix.uisamples.entity.Customer"
-                    fetchPlan="_local">
-            <loader id="customersDl">
+        <collection id="ordersDc"
+                    class="io.jmix.uisamples.entity.Order">
+            <fetchPlan extends="_local">
+                <property name="customer" fetchPlan="_local"/>
+            </fetchPlan>
+            <loader id="ordersLoader">
                 <query>
-                    <![CDATA[select e from Customer e]]>
+                    <![CDATA[select e from uisamples_Order e order by e.date]]>
                 </query>
             </loader>
         </collection>
@@ -17,17 +19,17 @@
         <hbox classNames="buttons-panel">
             <checkboxGroup id="gridSettingsCheckboxGroup" label="ThemeVariants"/>
         </hbox>
-        <dataGrid id="customersDataGrid"
+        <dataGrid id="ordersDataGrid"
                   width="100%"
                   minHeight="20em"
-                  dataContainer="customersDc">
+                  dataContainer="ordersDc">
             <columns>
-                <column property="name"/>
-                <column property="lastName"/>
-                <column property="email"/>
-                <column property="age"/>
-                <column property="active"/>
-                <column property="grade"/>
+                <column property="customer"/>
+                <column property="customer.grade"/>
+                <column property="date"/>
+                <column property="amount"/>
+                <column property="description"/>
+                <column property="items"/>
             </columns>
         </dataGrid>
     </layout>

@@ -1,5 +1,5 @@
 
-This example demonstrates how to isolate entities when sending them  from a view to a custom service. For additional information, see the the [Working with Entities in UI]({docsBaseUrl}flow-ui/data/entities-in-ui.html) documentation section.
+This example demonstrates how to isolate entities when sending them from a view to a custom service. For additional information, see the [Working with Entities in UI]({docsBaseUrl}flow-ui/data/entities-in-ui.html) documentation section.
 
 The list and detail views in this example allow users to manage the `Contract` entity which has a `status` enumeration attribute with the `DRAFT`, `APPROVED`, `REJECTED` possible values. 
 

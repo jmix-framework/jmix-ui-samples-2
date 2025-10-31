@@ -60,7 +60,7 @@ public class VirtualListSimpleSample extends StandardView {
 
             JmixDetails infoDetails = uiComponents.create(JmixDetails.class);
             infoDetails.setSummaryText("Additional information");
-            infoDetails.setContent(additionalInfoLayout);
+            infoDetails.add(additionalInfoLayout);
 
             infoLayout.add(infoDetails, new Hr());
             return infoLayout;

@@ -1,5 +1,15 @@
 /* Define your styles here */
 
+html[theme~='dark'] {
+    --lumo-paid-color: hsl(258, 100%, 78%, 0.13);
+    --lumo-paid-text-color: hsl(264, 69%, 72%);
+}
+
+html {
+    --lumo-paid-color: hsl(258, 90%, 73%, 0.13);
+    --lumo-paid-text-color: hsl(264, 79%, 38%);
+}
+
 .jmix-search-field {
     margin: var(--lumo-space-wide-s);
 }
@@ -105,4 +115,9 @@ vaadin-app-layout::part(drawer) {
 
 .overview-resources-title-padding {
     padding-bottom: 0.35em;
+}
+
+[theme~='badge'][theme~='paid'] {
+    color: var(--lumo-paid-text-color);
+    background-color: var(--lumo-paid-color);
 }

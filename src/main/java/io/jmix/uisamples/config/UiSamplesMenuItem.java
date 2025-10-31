@@ -31,6 +31,7 @@ public class UiSamplesMenuItem {
     protected String page;
     protected String anchor;
     protected boolean isNew;
+    protected boolean isVaadinCommercial;
     protected boolean splitEnabled;
     protected boolean defaultFiles = true;
     protected List<String> otherFiles;
@@ -95,6 +96,14 @@ public class UiSamplesMenuItem {
 
     public void setNew(boolean aNew) {
         isNew = aNew;
+    }
+
+    public boolean isVaadinCommercial() {
+        return isVaadinCommercial;
+    }
+
+    public void setVaadinCommercial(boolean vaadinCommercial) {
+        isVaadinCommercial = vaadinCommercial;
     }
 
     public boolean isDefaultFiles() {

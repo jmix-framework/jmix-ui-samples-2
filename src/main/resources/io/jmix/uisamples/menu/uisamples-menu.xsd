@@ -77,6 +77,8 @@
         </xs:sequence>
         <xs:attribute name="id" type="xs:string" use="required"/>
         <xs:attribute name="isNew" type="xs:boolean"/>
+        <xs:attribute name="isVaadinCommercial" type="xs:boolean"/>
+        <xs:attribute name="isVisibleForProduction" type="xs:boolean" default="true"/>
         <xs:attribute name="url" type="xs:string"/>
     </xs:complexType>
 

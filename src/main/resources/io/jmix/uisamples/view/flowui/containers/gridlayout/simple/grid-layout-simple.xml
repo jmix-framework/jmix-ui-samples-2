@@ -1,0 +1,25 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <hbox padding="false">
+            <textField id="gapField" label="msg://gapField.label" placeholder="var(--lumo-space-s)"
+                       helperText="msg://gapField.helperText" value="var(--lumo-space-m)"/>
+            <textField id="columnMinWidthField" label="msg://columnMinWidthField.label"
+                       placeholder="19rem"
+                       helperText="msg://columnMinWidthField.helperText"
+                       value="18em"/>
+        </hbox>
+        <split width="100%" height="100%">
+            <gridLayout id="gridLayout" gap="var(--lumo-space-m)" columnMinWidth="18em" width="100%" height="100%">
+                <image width="100%" height="100%" resource="icons/jmix-icon.png"/>
+                <image width="100%" height="100%" resource="icons/jmix-icon.png"/>
+                <image width="100%" height="100%" resource="icons/jmix-icon.png"/>
+                <image width="100%" height="100%" resource="icons/jmix-icon.png"/>
+                <image width="100%" height="100%" resource="icons/jmix-icon.png"/>
+                <image width="100%" height="100%" resource="icons/jmix-icon.png"/>
+                <image width="100%" height="100%" resource="icons/jmix-icon.png"/>
+                <image width="100%" height="100%" resource="icons/jmix-icon.png"/>
+            </gridLayout>
+            <div/>
+        </split>
+    </layout>
+</view>

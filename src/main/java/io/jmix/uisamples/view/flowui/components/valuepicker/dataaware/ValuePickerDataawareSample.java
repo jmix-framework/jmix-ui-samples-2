@@ -52,6 +52,6 @@ public class ValuePickerDataawareSample extends StandardView {
     }
 
     protected String getRandomName() {
-        return names.get(RandomUtils.nextInt() % names.size());
+        return names.get(RandomUtils.secure().randomInt() % names.size());
     }
 }
