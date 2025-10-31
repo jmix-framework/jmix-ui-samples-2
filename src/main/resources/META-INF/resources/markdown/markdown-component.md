@@ -1,6 +1,6 @@
 # Markdown Sample
 
-This is a sample text that showcases the usage of Markdown component in Jmix.
+This is a sample text that showcases the usage of a Markdown component in Jmix.
 
 ## Formatting:
 Here is some formatting:
