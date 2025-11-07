@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-slim
+FROM amazoncorretto:17-alpine
 
 COPY build/libs/jmix-ui-samples-2.jar jmix-ui-samples-2.jar
 
