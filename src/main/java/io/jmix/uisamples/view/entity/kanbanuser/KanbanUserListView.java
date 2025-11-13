@@ -5,14 +5,17 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.data.renderer.Renderer;
-import com.vaadin.flow.server.StreamResource;
+import com.vaadin.flow.server.streams.DownloadHandler;
+import com.vaadin.flow.server.streams.DownloadResponse;
+import com.vaadin.flow.server.streams.InputStreamDownloadHandler;
 import io.jmix.core.FileRef;
 import io.jmix.core.FileStorageLocator;
 import io.jmix.flowui.UiComponents;
-import io.jmix.flowui.component.UiComponentUtils;
 import io.jmix.flowui.view.*;
 import io.jmix.uisamples.entity.KanbanUser;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.io.InputStream;
 
 @ViewController("KanbanUser.list")
 @ViewDescriptor("kanban-user-list-view.xml")
@@ -40,9 +43,13 @@ public class KanbanUserListView extends StandardListView<KanbanUser> {
         image.setWidth("30px");
         image.setHeight("30px");
 
-        StreamResource streamResource =
-                (StreamResource) UiComponentUtils.createResource(fileRef, fileStorageLocator);
-        image.setSrc(streamResource);
+        InputStreamDownloadHandler handler = DownloadHandler.fromInputStream(event -> {
+            InputStream inputStream = fileStorageLocator.getByName(fileRef.getStorageName()).openStream(fileRef);
+
+            return new DownloadResponse(inputStream, fileRef.getFileName(), fileRef.getContentType(), -1);
+        });
+
+        image.setSrc(handler);
         image.getStyle().set("object-fit", "contain");
 
         return image;
