@@ -15,7 +15,9 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.data.renderer.Renderer;
-import com.vaadin.flow.server.StreamResource;
+import com.vaadin.flow.server.streams.DownloadHandler;
+import com.vaadin.flow.server.streams.DownloadResponse;
+import com.vaadin.flow.server.streams.InputStreamDownloadHandler;
 import io.jmix.core.LoadContext;
 import io.jmix.core.Messages;
 import io.jmix.flowui.DialogWindows;
@@ -62,8 +64,15 @@ public class VirtualListInlineEditorSample extends StandardView {
             avatar.addThemeVariants(AvatarVariant.LUMO_XLARGE);
 
             if (item.getIcon() != null && item.getIcon().length > 0) {
-                String iconName = "%s.png".formatted(item.getTitle());
-                avatar.setImageResource(new StreamResource(iconName, () -> new ByteArrayInputStream(item.getIcon())));
+                String iconFileName = "%s.png".formatted(item.getTitle());
+                InputStreamDownloadHandler handler = DownloadHandler.fromInputStream(event -> {
+                    byte[] icon = item.getIcon();
+                    ByteArrayInputStream inputStream = new ByteArrayInputStream(item.getIcon());
+
+                    return new DownloadResponse(inputStream, iconFileName, "image/png", icon.length);
+                });
+
+                avatar.setImageHandler(handler);
             }
 
             VerticalLayout verticalLayout = new VerticalLayout();

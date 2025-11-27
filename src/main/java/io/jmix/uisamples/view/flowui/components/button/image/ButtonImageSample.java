@@ -2,13 +2,11 @@ package io.jmix.uisamples.view.flowui.components.button.image;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.server.StreamResource;
+import com.vaadin.flow.server.streams.DownloadHandler;
 import io.jmix.flowui.Notifications;
 import io.jmix.flowui.kit.component.button.JmixButton;
 import io.jmix.flowui.view.*;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.io.InputStream;
 
 @ViewController("button-image")
 @ViewDescriptor("button-image.xml")
@@ -24,14 +22,9 @@ public class ButtonImageSample extends StandardView {
 
     @Subscribe
     public void onInit(InitEvent event) {
-        StreamResource logoResource = new StreamResource("jmix-logo.png", this::getLogoResource);
-        Image logo = new Image(logoResource, "jmix-logo");
+        Image logo = new Image(DownloadHandler.forClassResource(getClass(), LOGO_SRC_PATH), "jmix-logo");
         logo.setWidth("100px");
         logoButton.setIcon(logo);
-    }
-
-    private InputStream getLogoResource() {
-        return getClass().getResourceAsStream(LOGO_SRC_PATH);
     }
 
     @Subscribe("logoButton")

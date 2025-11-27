@@ -2,7 +2,7 @@ package io.jmix.uisamples.view.flowui.cookbook.iframepdfdynamic;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.html.IFrame;
-import com.vaadin.flow.server.StreamResource;
+import com.vaadin.flow.server.streams.DownloadHandler;
 import io.jmix.core.Resources;
 import io.jmix.flowui.kit.component.button.JmixButton;
 import io.jmix.flowui.view.*;
@@ -25,15 +25,11 @@ public class IframePdfDynamicSample extends StandardView {
     @Subscribe
     public void onInit(InitEvent event) {
         // any other file can be provided in this way
-        StreamResource streamResource =
-                new StreamResource("tutorial.pdf", () -> resources.getResourceAsStream(TUTORIAL_PDF_PATH));
-        iframe.setSrc(streamResource);
+        iframe.setSrc(DownloadHandler.forClassResource(getClass(), TUTORIAL_PDF_PATH));
     }
 
     @Subscribe("newResourceBtn")
     public void onNewResourceBtnClick(ClickEvent<JmixButton> event) {
-        StreamResource streamResource =
-                new StreamResource("documentation.pdf", () -> resources.getResourceAsStream(DOCUMENTATION_PDF_PATH));
-        iframe.setSrc(streamResource);
+        iframe.setSrc(DownloadHandler.forClassResource(getClass(), DOCUMENTATION_PDF_PATH));
     }
 }

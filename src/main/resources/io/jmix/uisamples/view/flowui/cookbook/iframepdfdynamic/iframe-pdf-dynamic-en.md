@@ -4,9 +4,9 @@ component.
 To make displaying such resources available, you need to configure the `frame-ancestors` policy directive. See [
 `IframeCustomSecurity.java`]({currentPath}?tab=IframeCustomSecurity.java).
 
-Dynamic resources are loaded on the client-side using `StreamResource` objects.
+Dynamic resources are loaded on the client-side using the `DownloadHandler` objects.
 
-`StreamResource` provides dynamically generated data. Registration of the resource URI is automatically handled by
+`DownloadHandler` provides generated URI. Registration of the resource URI is automatically handled by
 components that explicitly support stream resources (including `IFrame`).\
 This way, the resource will be cleaned up when the component is removed from the view.
 

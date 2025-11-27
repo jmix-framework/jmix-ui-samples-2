@@ -26,7 +26,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 
 @Push
 @Theme(value = "jmix-ui-samples")
-@PWA(name = "Jmix UI Samples", shortName = "Jmix UI Samples")
+@PWA(name = "Jmix UI Samples", shortName = "Jmix UI Samples", offline = false)
 @SpringBootApplication
 public class UiSamplesApplication extends SpringBootServletInitializer implements AppShellConfigurator {
 

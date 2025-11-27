@@ -11,8 +11,8 @@
                    height="15em" width="15em"/>
         </vbox>
         <vbox padding="false" width="AUTO" classNames="items-center">
-            <h4 text="Stream resource"/>
-            <image id="imageStreamResource"
+            <h4 text="Programmatic resource"/>
+            <image id="imageProgrammaticResource"
                    height="15em" width="15em"/>
         </vbox>
     </layout>

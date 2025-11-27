@@ -12,7 +12,7 @@ import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.data.renderer.ComponentRenderer;
-import com.vaadin.flow.server.StreamResource;
+import com.vaadin.flow.server.streams.DownloadHandler;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import io.jmix.core.Messages;
 import io.jmix.flowui.UiComponents;
@@ -122,7 +122,7 @@ public class CardThemeVariantSample extends StandardView {
             case "Image" -> {
                 Image image = uiComponents.create(Image.class);
                 image.setSrc("icons/jmix-background.png");
-                image.getElement().setAttribute("width", "150") ;
+                image.getElement().setAttribute("width", "150");
                 yield image;
             }
             case "Icon" -> {
@@ -252,9 +252,8 @@ public class CardThemeVariantSample extends StandardView {
 
     private Component createAvatar() {
         Avatar avatar = uiComponents.create(Avatar.class);
-        StreamResource streamResource = new StreamResource("jmix-icon.png", () ->
-                getClass().getResourceAsStream("/META-INF/resources/icons/jmix-icon.png"));
-        avatar.setImageResource(streamResource);
+        avatar.setImageHandler(DownloadHandler.forClassResource(getClass(),
+                "/META-INF/resources/icons/jmix-icon.png"));
         return avatar;
     }
 
