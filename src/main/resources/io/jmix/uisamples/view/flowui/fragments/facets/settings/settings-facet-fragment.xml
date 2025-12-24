@@ -1,0 +1,37 @@
+<fragment xmlns="http://jmix.io/schema/flowui/fragment">
+    <data readOnly="true">
+        <collection id="customersDc"
+                    class="io.jmix.uisamples.entity.Customer"
+                    fetchPlan="_local">
+            <loader id="customersDl">
+                <query>
+                    <![CDATA[select e from Customer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <fragmentSettings auto="true"/>
+        <fragmentDataLoadCoordinator auto="true"/>
+    </facets>
+    <content>
+        <vbox padding="false">
+            <details id="details" summaryText="DataGrid details" opened="true" width="100%">
+                <dataGrid id="customersDataGrid"
+                          width="100%"
+                          minHeight="20em"
+                          columnReorderingAllowed="true"
+                          dataContainer="customersDc">
+                    <columns>
+                        <column property="name"/>
+                        <column property="lastName"/>
+                        <column property="email"/>
+                        <column property="age"/>
+                        <column property="active"/>
+                        <column property="grade"/>
+                    </columns>
+                </dataGrid>
+            </details>
+        </vbox>
+    </content>
+</fragment>

@@ -417,7 +417,7 @@
                 </otherFiles>
             </item>
         </menu>
-        <item id="markdown" page="markdown" isNew="true" splitEnabled="true"/>
+        <item id="markdown" page="markdown" splitEnabled="true"/>
         <menu id="multi-select-combo-box">
             <item id="multi-select-combo-box-simple" page="multiSelectComboBox">
                 <otherFiles>
@@ -689,7 +689,7 @@
             </item>
             <item id="details-theme-variant" page="details"/>
         </menu>
-        <menu id="card" isNew="true">
+        <menu id="card">
             <item id="card-simple" splitEnabled="true"/>
             <item id="card-header"/>
             <item id="card-theme-variant" splitEnabled="true">
@@ -715,9 +715,9 @@
                 </otherFiles>
             </item>
             <item id="form-layout-responsive-steps" page="formLayout" splitEnabled="true"/>
-            <item id="form-layout-auto-responsive" page="formLayout" splitEnabled="true" isNew="true"/>
+            <item id="form-layout-auto-responsive" page="formLayout" splitEnabled="true"/>
         </menu>
-        <menu id="grid-layout" isNew="true">
+        <menu id="grid-layout">
             <item id="grid-layout-simple" splitEnabled="true"/>
             <item id="grid-layout-dataaware" splitEnabled="true">
                 <otherFiles>
@@ -802,11 +802,42 @@
         </item>
         <item id="fragment-renderer" splitEnabled="true">
             <otherFiles>
-                <file name="io/jmix/uisamples/view/flowui/fragments/renderer/EmployeeInfoFragment.java"/>
                 <file name="io/jmix/uisamples/view/flowui/fragments/renderer/employee-info-fragment.xml"/>
+                <file name="io/jmix/uisamples/view/flowui/fragments/renderer/EmployeeInfoFragment.java"/>
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>
         </item>
+        <menu id="fragments-facets" isNew="true">
+            <item id="fragment-data-load-coordinator" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/fragments/facets/dataloadcoordinator/data-load-coordinator-fragment.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/fragments/facets/dataloadcoordinator/DataLoadCoordinatorFragment.java"/>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="fragment-timer-facet">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/fragments/facets/timer/timer-facet-fragment.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/fragments/facets/timer/TimerFacetFragment.java"/>
+                </otherFiles>
+            </item>
+            <item id="fragment-url-query-parameters" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/fragments/facets/urlqueryparameters/url-query-parameters-fragment.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/fragments/facets/urlqueryparameters/UrlQueryParametersFragment.java"/>
+                </otherFiles>
+                <urlQueryParameters>
+                    <parameter name="fragment_genericFilter_genericFilterCondition" value="property:age_greater_30"/>
+                </urlQueryParameters>
+            </item>
+            <item id="fragment-settings-facet" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/fragments/facets/settings/settings-facet-fragment.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/fragments/facets/settings/SettingsFacetFragment.java"/>
+                </otherFiles>
+            </item>
+        </menu>
     </menu>
 
     <menu id="facets-root" url="flow-ui/facets">
@@ -824,7 +855,7 @@
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>
             <urlQueryParameters>
-                <parameter name="genericFilterCondition" value="property:age_greater_30"/>
+                <parameter name="genericFilter_genericFilterCondition" value="property:age_greater_30"/>
             </urlQueryParameters>
         </item>
         <item id="settings-facet" splitEnabled="true">
@@ -1264,7 +1295,7 @@
             </item>
         </menu>
 
-        <menu id="group-data-grid-root" url="group-data-grid" isNew="true">
+        <menu id="group-data-grid-root" url="group-data-grid">
             <overview id="group-data-grid" location="groupdatagrid/overview/group-data-grid-overview.xml"/>
             <item id="group-data-grid-simple" splitEnabled="true">
                 <otherFiles>
