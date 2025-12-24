@@ -1,0 +1,6 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <layout>
+        <fragment id="fragment"
+                  class="io.jmix.uisamples.view.flowui.fragments.facets.timer.TimerFacetFragment"/>
+    </layout>
+</view>
