@@ -55,6 +55,11 @@
             <text message="board.title" route="board-simple" component="h4"/>
             <text message="board.description"/>
         </sample>
+        <sample>
+            <image src="icons/layouts/dashboard.png" route="dashboard-simple"/>
+            <text message="dashboard.title" route="dashboard-simple" component="h4"/>
+            <text message="dashboard.description"/>
+        </sample>
 
     </samples>
 </overview>

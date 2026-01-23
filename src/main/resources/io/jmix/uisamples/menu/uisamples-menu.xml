@@ -719,6 +719,19 @@
             <item id="vbox-simple" page="vbox"/>
             <item id="flex-layout-simple"/>
         </menu>
+        <menu id="dashboard" isVaadinCommercial="true" isNew="true">
+            <item id="dashboard-simple">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/dashboard-widget-content.css"/>
+                </otherFiles>
+            </item>
+            <item id="dashboard-advanced"/>
+            <item id="dashboard-theme-variant">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/dashboard-widget-content.css"/>
+                </otherFiles>
+            </item>
+        </menu>
         <menu id="form-layout">
             <item id="form-layout-simple" page="formLayout" splitEnabled="true"/>
             <item id="form-layout-dataaware" page="formLayout">

@@ -1,0 +1,23 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:dashb="http://jmix.io/schema/vaadin-dashboard/ui">
+    <layout>
+        <checkboxGroup id="dashboardThemeVariantCheckboxGroup" label="ThemeVariants"/>
+        <dashb:dashboard id="dashboard" width="100%" maximumColumnCount="3">
+            <dashb:dashboardWidget id="cars" title="Card">
+                <dashb:content>
+                    <div classNames="dashboard-widget-content"/>
+                </dashb:content>
+            </dashb:dashboardWidget>
+            <dashb:dashboardWidget id="motorcycles" title="Motorcycles">
+                <dashb:content>
+                    <div classNames="dashboard-widget-content"/>
+                </dashb:content>
+            </dashb:dashboardWidget>
+            <dashb:dashboardWidget id="bicycles" title="Bicycles">
+                <dashb:content>
+                    <div classNames="dashboard-widget-content"/>
+                </dashb:content>
+            </dashb:dashboardWidget>
+        </dashb:dashboard>
+    </layout>
+</view>

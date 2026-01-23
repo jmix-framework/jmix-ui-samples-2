@@ -1,0 +1,8 @@
+
+.dashboard-widget-content {
+    --vaadin-background-container-strong: var(--lumo-contrast-10pct);
+    --stripe-color: var(--vaadin-background-container-strong);
+
+    height: 100%;
+    background: repeating-linear-gradient(45deg, var(--stripe-color), var(--stripe-color) 10px, transparent 10px, transparent 20px) var(--stripe-color);
+}

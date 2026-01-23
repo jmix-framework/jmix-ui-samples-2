@@ -1,7 +1,7 @@
 <view xmlns="http://jmix.io/schema/flowui/view"
-      xmlns:vcc="http://jmix.io/schema/vaadin-commercial-components/ui">
+      xmlns:sprd="http://jmix.io/schema/vaadin-spreadsheet/ui">
     <layout>
-        <vcc:spreadsheet id="spreadsheet" minHeight="30em"
+        <sprd:spreadsheet id="spreadsheet" minHeight="30em"
                          defaultRowHeight="20"
                          rowBufferSize="600"/>
     </layout>

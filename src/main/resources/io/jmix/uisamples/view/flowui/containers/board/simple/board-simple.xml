@@ -1,9 +1,9 @@
 <view xmlns="http://jmix.io/schema/flowui/view"
-      xmlns:vcc="http://jmix.io/schema/vaadin-commercial-components/ui">
+      xmlns:board="http://jmix.io/schema/vaadin-board/ui">
     <layout>
-        <vcc:board id="board">
+        <board:board id="board">
             <split width="100%">
-                <vcc:boardRow>
+                <board:boardRow>
                     <vbox>
                         <span text="Span"/>
                     </vbox>
@@ -16,9 +16,9 @@
                     <vbox>
                         <button text="Button"/>
                     </vbox>
-                </vcc:boardRow>
+                </board:boardRow>
                 <div/>
             </split>
-        </vcc:board>
+        </board:board>
     </layout>
 </view>

@@ -1,5 +1,5 @@
 <view xmlns="http://jmix.io/schema/flowui/view"
-      xmlns:vcc="http://jmix.io/schema/vaadin-commercial-components/ui"
+      xmlns:board="http://jmix.io/schema/vaadin-board/ui"
       xmlns:charts="http://jmix.io/schema/charts/ui">
     <data readOnly="true">
         <collection id="transportDc"
@@ -16,8 +16,8 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
-        <vcc:board id="board" height="100%" minHeight="40em">
-            <vcc:boardRow>
+        <board:board id="board" height="100%" minHeight="40em">
+            <board:boardRow>
                 <hbox classNames="border-r border-b">
                     <vbox spacing="false" width="unset">
                         <span text="msg://carsSpan.label" classNames="text-secondary text-s font-medium"/>
@@ -49,8 +49,8 @@
                     </vbox>
                     <image resource="icons/layouts/board/dollar.png" height="10em" width="10em"/>
                 </hbox>
-            </vcc:boardRow>
-            <vcc:boardRow>
+            </board:boardRow>
+            <board:boardRow>
                 <vbox padding="false">
                     <charts:chart id="chart" width="100%" minHeight="30em">
                         <charts:tooltip trigger="AXIS">
@@ -95,7 +95,7 @@
                         </charts:series>
                     </charts:chart>
                 </vbox>
-            </vcc:boardRow>
-        </vcc:board>
+            </board:boardRow>
+        </board:board>
     </layout>
 </view>

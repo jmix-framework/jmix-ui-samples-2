@@ -1,0 +1,172 @@
+<view xmlns="http://jmix.io/schema/flowui/view"
+      xmlns:dashb="http://jmix.io/schema/vaadin-dashboard/ui"
+      xmlns:charts="http://jmix.io/schema/charts/ui">
+    <data readOnly="true">
+        <collection id="transportDc"
+                    class="io.jmix.uisamples.entity.TransportCount">
+            <fetchPlan extends="_local"/>
+            <loader id="transportDl" readOnly="true">
+                <query>
+                    <![CDATA[select e from TransportCount e order by e.year]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <dashb:dashboard id="dashboard" width="100%" maximumColumnCount="3">
+            <dashb:dashboardWidget id="sales" title="Sales" colspan="2" rowspan="2">
+                <dashb:content>
+                    <charts:chart id="salesChart" width="100%" minHeight="30em">
+                        <charts:tooltip trigger="AXIS">
+                            <charts:formatterFunction>
+                                <![CDATA[
+                        function (params) {
+                              var tar = params[1];
+
+                              return '<b>Year:</b> ' + tar.name + '<br/><hr/>' +
+                              '<b>Cars:</b> ' + tar.value.cars + '<br/>' +
+                              '<b>Motorcycles:</b> ' + tar.value.motorcycles + '<br/>' +
+                              '<b>Bicycles:</b> ' + tar.value.bicycles + '<br/>';
+                            }
+                            ]]>
+                            </charts:formatterFunction>
+                            <charts:axisPointer type="SHADOW"/>
+                        </charts:tooltip>
+                        <charts:legend/>
+
+                        <charts:xAxes>
+                            <charts:xAxis/>
+                        </charts:xAxes>
+                        <charts:yAxes>
+                            <charts:yAxis/>
+                        </charts:yAxes>
+
+                        <charts:dataSet>
+                            <charts:source dataContainer="transportDc"
+                                           categoryField="year" valueFields="cars motorcycles bicycles"/>
+                        </charts:dataSet>
+
+                        <charts:series>
+                            <charts:line name="Cars" stack="stack">
+                                <charts:areaStyle/>
+                            </charts:line>
+                            <charts:line name="Motorcycles" stack="stack">
+                                <charts:areaStyle/>
+                            </charts:line>
+                            <charts:line name="Bicycles" stack="stack">
+                                <charts:areaStyle/>
+                            </charts:line>
+                        </charts:series>
+                    </charts:chart>
+                </dashb:content>
+            </dashb:dashboardWidget>
+            <dashb:dashboardWidget id="plan" title="Plan" rowspan="2">
+                <dashb:content>
+                    <charts:chart id="planChart" height="100%"
+                                  width="100%" minHeight="30em">
+
+                        <charts:series>
+                            <charts:gauge id="gaugeSeries">
+                                <charts:axisTick show="false"/>
+
+                                <charts:axisLine>
+                                    <charts:lineStyle width="10">
+                                        <charts:colorPalette>
+                                            <charts:colorItem range="0.5" color="#E21D12"/>
+                                            <charts:colorItem range="0.8" color="#FFCC00"/>
+                                            <charts:colorItem range="1" color="#158443"/>
+                                        </charts:colorPalette>
+                                    </charts:lineStyle>
+                                </charts:axisLine>
+
+                                <charts:pointer>
+                                    <charts:itemStyle color="auto"/>
+                                </charts:pointer>
+
+                                <charts:splitLine distance="-30" length="30">
+                                    <charts:lineStyle color="WHITE" width="4"/>
+                                </charts:splitLine>
+
+                                <charts:axisLabel color="inherit" distance="-25" fontSize="15"/>
+
+                                <charts:detail valueAnimation="true" formatter="{value} %" color="inherit"/>
+                            </charts:gauge>
+                        </charts:series>
+                    </charts:chart>
+                </dashb:content>
+            </dashb:dashboardWidget>
+
+            <dashb:dashboardSection id="statistic" title="Statistic">
+                <dashb:dashboardWidget id="percentages" title="Percentages" rowspan="2">
+                    <dashb:content>
+                        <charts:chart id="percentagesChart" height="100%" width="100%"
+                                      minHeight="30em">
+
+                            <charts:xAxes>
+                                <charts:xAxis/>
+                            </charts:xAxes>
+                            <charts:yAxes>
+                                <charts:yAxis>
+                                    <charts:axisLabel formatter="{value} %"/>
+                                </charts:yAxis>
+                            </charts:yAxes>
+
+                            <charts:series>
+                                <charts:bar id="barSeries" name="Percentages"/>
+                            </charts:series>
+
+                            <charts:dataSet/>
+                        </charts:chart>
+                    </dashb:content>
+                </dashb:dashboardWidget>
+
+                <dashb:dashboardWidget id="cars" title="Cars">
+                    <dashb:content>
+                        <hbox padding="false" alignItems="CENTER" justifyContent="CENTER">
+                            <vbox spacing="false" width="unset">
+                                <span id="carsCount" classNames="text-xl"/>
+                                <span id="carsPercentage" themeNames="badge"/>
+                            </vbox>
+                            <image resource="icons/layouts/dashboard/car.png" height="10em" width="10em"/>
+                        </hbox>
+                    </dashb:content>
+                </dashb:dashboardWidget>
+                <dashb:dashboardWidget id="motorcycles" title="Motorcycles">
+                    <dashb:content>
+                        <hbox padding="false" alignItems="CENTER" justifyContent="CENTER">
+                            <vbox spacing="false" width="unset">
+                                <span id="motorcyclesCount" classNames="text-xl"/>
+                                <span id="motorcyclesPercentage" themeNames="badge"/>
+                            </vbox>
+                            <image resource="icons/layouts/dashboard/motorcycle.png" height="10em" width="10em"/>
+                        </hbox>
+                    </dashb:content>
+                </dashb:dashboardWidget>
+                <dashb:dashboardWidget id="bicycles" title="Bicycles">
+                    <dashb:content>
+                        <hbox padding="false" alignItems="CENTER" justifyContent="CENTER">
+                            <vbox spacing="false" width="unset">
+                                <span id="bicyclesCount" classNames="text-xl"/>
+                                <span id="bicyclesPercentage" themeNames="badge"/>
+                            </vbox>
+                            <image resource="icons/layouts/dashboard/bicycle.png" height="10em" width="10em"/>
+                        </hbox>
+                    </dashb:content>
+                </dashb:dashboardWidget>
+                <dashb:dashboardWidget id="total" title="Total">
+                    <dashb:content>
+                        <hbox padding="false" alignItems="CENTER" justifyContent="CENTER">
+                            <vbox spacing="false" width="unset">
+                                <span id="totalCount" classNames="text-xl"/>
+                            </vbox>
+                            <image resource="icons/layouts/dashboard/dollar.png" height="10em" width="10em"/>
+                        </hbox>
+                    </dashb:content>
+                </dashb:dashboardWidget>
+            </dashb:dashboardSection>
+        </dashb:dashboard>
+    </layout>
+</view>
