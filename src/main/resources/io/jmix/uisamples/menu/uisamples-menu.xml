@@ -24,10 +24,14 @@
             <item id="badge-simple"/>
             <item id="badge-icons">
                 <otherFiles>
-                    <file name="META-INF/resources/themes/lumo/badge-icons.css"/>
+                    <file name="META-INF/resources/themes/lumo/samples/components/badge-icons.css"/>
                 </otherFiles>
             </item>
-            <item id="badge-theme-variant" splitEnabled="true"/>
+            <item id="badge-theme-variant" splitEnabled="true">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/lumo/samples/components/badge-theme-variant.css"/>
+                </otherFiles>
+            </item>
         </menu>
         <menu id="big-decimal-field">
             <item id="big-decimal-field-simple" page="bigDecimalField"/>
@@ -152,7 +156,7 @@
             <item id="data-grid-part-name-generator" page="dataGrid" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
-                    <file name="META-INF/resources/themes/lumo/data-grid-part-name-generator.css"/>
+                    <file name="META-INF/resources/themes/lumo/samples/components/data-grid-part-name-generator.css"/>
                 </otherFiles>
             </item>
             <item id="data-grid-tooltip-generator" page="dataGrid" splitEnabled="true">
@@ -355,17 +359,17 @@
             <item id="html-component" page="html" splitEnabled="true">
                 <otherFiles>
                     <file name="META-INF/resources/html/html-component.html"/>
-                    <file name="META-INF/resources/themes/lumo/html-component.css"/>
+                    <file name="META-INF/resources/themes/lumo/samples/components/html-component.css"/>
                 </otherFiles>
             </item>
             <item id="html-declaratively" page="html" splitEnabled="true">
                 <otherFiles>
-                    <file name="META-INF/resources/themes/lumo/html-component.css"/>
+                    <file name="META-INF/resources/themes/lumo/samples/components/html-component.css"/>
                 </otherFiles>
             </item>
             <item id="html-programmatically" page="html" splitEnabled="true">
                 <otherFiles>
-                    <file name="META-INF/resources/themes/lumo/html-component.css"/>
+                    <file name="META-INF/resources/themes/lumo/samples/components/html-component.css"/>
                 </otherFiles>
             </item>
         </menu>
@@ -409,6 +413,7 @@
             <item id="list-box-custom-renderer" page="listBox">
                 <otherFiles>
                     <file name="io/jmix/uisamples/record/Simpson.java"/>
+                    <file name="META-INF/resources/themes/lumo/samples/components/list-box-custom-renderer.css"/>
                 </otherFiles>
             </item>
         </menu>
@@ -559,7 +564,11 @@
             <item id="tabs-states" page="tabs"/>
             <item id="tabs-icons" page="tabs"/>
             <item id="tabs-orientation" page="tabs"/>
-            <item id="tabs-theme-variant" page="tabs"/>
+            <item id="tabs-theme-variant" page="tabs">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/lumo/samples/components/tabs-theme-variant.css"/>
+                </otherFiles>
+            </item>
         </menu>
         <menu id="text-area">
             <item id="text-area-simple" page="textArea"/>
@@ -570,7 +579,7 @@
             </item>
             <item id="text-area-resizable" page="textArea">
                 <otherFiles>
-                    <file name="META-INF/resources/themes/lumo/text-area-resizable.css"/>
+                    <file name="META-INF/resources/themes/lumo/samples/components/text-area-resizable.css"/>
                 </otherFiles>
             </item>
             <item id="text-area-theme-variant" page="textArea" splitEnabled="true"/>
@@ -648,6 +657,7 @@
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                     <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                    <file name="META-INF/resources/themes/lumo/samples/components/virtual-list-simple.css"/>
                 </otherFiles>
             </item>
             <item id="virtual-list-inline-editor" splitEnabled="true">
@@ -686,10 +696,14 @@
         </menu>
         <menu id="card">
             <item id="card-simple" splitEnabled="true"/>
-            <item id="card-header"/>
+            <item id="card-header">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/lumo/samples/containers/card-header.css"/>
+                </otherFiles>
+            </item>
             <item id="card-theme-variant" splitEnabled="true">
                 <otherFiles>
-                    <file name="META-INF/resources/themes/lumo/card-theme-variant.css"/>
+                    <file name="META-INF/resources/themes/lumo/samples/containers/card-theme-variant.css"/>
                 </otherFiles>
             </item>
         </menu>
@@ -699,7 +713,11 @@
                 <item id="hbox-slots" page="hbox"/>
             </menu>
             <item id="vbox-simple" page="vbox"/>
-            <item id="flex-layout-simple"/>
+            <item id="flex-layout-simple">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/lumo/samples/containers/flex-layout-simple.css"/>
+                </otherFiles>
+            </item>
         </menu>
         <menu id="form-layout">
             <item id="form-layout-simple" page="formLayout" splitEnabled="true"/>
@@ -710,7 +728,11 @@
                 </otherFiles>
             </item>
             <item id="form-layout-responsive-steps" page="formLayout" splitEnabled="true"/>
-            <item id="form-layout-auto-responsive" page="formLayout" splitEnabled="true"/>
+            <item id="form-layout-auto-responsive" page="formLayout" splitEnabled="true">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/lumo/samples/containers/form-layout-auto-responsive.css"/>
+                </otherFiles>
+            </item>
         </menu>
         <menu id="grid-layout">
             <item id="grid-layout-simple" splitEnabled="true"/>
@@ -734,7 +756,11 @@
         <menu id="tabsheet">
             <item id="tabsheet-simple" page="tabSheet"/>
             <item id="tabsheet-icons" page="tabSheet"/>
-            <item id="tabsheet-badges" page="tabSheet"/>
+            <item id="tabsheet-badges" page="tabSheet">
+                <otherFiles>
+                    <file name="META-INF/resources/themes/lumo/samples/containers/tab-sheet-badges.css"/>
+                </otherFiles>
+            </item>
             <item id="tabsheet-lazy-tab" page="tabSheet" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/component/lazycomponent/LazyComponent.java"/>
@@ -1191,7 +1217,7 @@
                     <file name="io/jmix/uisamples/entity/Event.java"/>
                     <file name="io/jmix/uisamples/entity/BackgroundEvent.java"/>
                     <file name="io/jmix/uisamples/entity/WorkingShift.java"/>
-                    <file name="META-INF/resources/themes/lumo/calendar-event-overlap-function.css"/>
+                    <file name="META-INF/resources/themes/lumo/samples/calendar/calendar-event-overlap-function.css"/>
                 </otherFiles>
             </item>
             <item id="calendar-event-constraint" splitEnabled="true"
@@ -1217,7 +1243,7 @@
             <item id="calendar-class-names-generator" splitEnabled="true"
                   page="full-calendar-component" anchor="class-names-generators">
                 <otherFiles>
-                    <file name="META-INF/resources/themes/lumo/calendar-class-names-generator.css"/>
+                    <file name="META-INF/resources/themes/lumo/samples/calendar/calendar-class-names-generator.css"/>
                 </otherFiles>
             </item>
             <item id="calendar-event-styling" splitEnabled="true"
@@ -1330,7 +1356,7 @@
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                     <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
-                    <file name="META-INF/resources/themes/lumo/group-data-grid-styling.css"/>
+                    <file name="META-INF/resources/themes/lumo/samples/components/group-data-grid-styling.css"/>
                 </otherFiles>
             </item>
         </menu>
@@ -1540,7 +1566,7 @@
             <item id="copy-to-clipboard"/>
             <item id="custom-login" splitEnabled="true">
                 <otherFiles>
-                    <file name="META-INF/resources/themes/lumo/custom-login.css"/>
+                    <file name="META-INF/resources/themes/lumo/samples/components/custom-login.css"/>
                 </otherFiles>
             </item>
             <item id="iframe-pdf" splitEnabled="true">
@@ -1564,12 +1590,14 @@
                     <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/WizardDialog.java"/>
                     <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/wizard-dialog.xml"/>
                     <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/WizardStep.java"/>
+                    <file name="META-INF/resources/themes/lumo/samples/cookbook/wizard-dialog.css"/>
                     <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/WizardStepFragment.java"/>
                     <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/FirstStep.java"/>
                     <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/first-step.xml"/>
                     <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/SecondStep.java"/>
                     <file name="io/jmix/uisamples/component/addresscomponent/AddressComponent.java"/>
                     <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/ThirdStep.java"/>
+                    <file name="META-INF/resources/themes/lumo/samples/cookbook/third-step.css"/>
                     <file name="io/jmix/uisamples/view/flowui/cookbook/wizard/step/third-step.xml"/>
                     <file name="io/jmix/uisamples/entity/Employee.java"/>
                     <file name="io/jmix/uisamples/entity/Address.java"/>
