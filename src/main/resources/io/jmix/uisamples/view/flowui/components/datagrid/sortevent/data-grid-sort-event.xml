@@ -15,7 +15,7 @@
     <facets>
         <dataLoadCoordinator auto="true"/>
     </facets>
-    <layout>s
+    <layout>
         <dataGrid id="dataGrid" width="100%" minHeight="20em"
                   dataContainer="ordersDc">
             <columns>

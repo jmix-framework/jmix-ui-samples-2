@@ -139,7 +139,7 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="data-grid-sort-event" page="dataGrid" splitEnabled="true">
+            <item id="data-grid-sort-event" page="dataGrid" splitEnabled="true" isNew="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
