@@ -139,6 +139,11 @@
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
+            <item id="data-grid-sort-event" page="dataGrid" splitEnabled="true" isNew="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
             <item id="data-grid-multi-sort" page="dataGrid" anchor="multiple-sorting" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
