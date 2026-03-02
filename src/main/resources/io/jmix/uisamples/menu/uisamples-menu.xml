@@ -1240,7 +1240,7 @@
                 </otherFiles>
             </item>
             <item id="pivot-table-derived-properties" page="pivottable-component"
-                  anchor="derivedProperties">
+                  anchor="derivedProperties" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/TemperatureData.java"/>
                 </otherFiles>
@@ -1257,7 +1257,7 @@
                 </otherFiles>
             </item>
             <item id="pivot-table-color-function" page="pivottable-component"
-                  anchor="rendererOptions">
+                  anchor="rendererOptions" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/TemperatureData.java"/>
                 </otherFiles>
