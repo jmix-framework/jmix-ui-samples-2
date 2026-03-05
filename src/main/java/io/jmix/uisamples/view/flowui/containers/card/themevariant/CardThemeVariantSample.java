@@ -42,11 +42,10 @@ public class CardThemeVariantSample extends StandardView {
     @ViewComponent
     private JmixCheckboxGroup<String> themeGroup;
 
-    @ViewComponent
-    private MessageBundle messageBundle;
-
     @Autowired
     private UiComponents uiComponents;
+    @Autowired
+    private MessageBundle messageBundle;
     @Autowired
     private Messages messages;
 
