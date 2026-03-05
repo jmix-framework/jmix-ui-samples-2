@@ -1451,8 +1451,8 @@
             <item id="side-panel-layout-detail" splitEnabled="true" isNew="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
-                    <file name="io.jmix.uisamples.view.flowui.cookbook.sidepanellayoutdetail/CustomerDetailFragment.java"/>
-                    <file name="io.jmix.uisamples.view.flowui.cookbook.sidepanellayoutdetail/customer-detail-fragment.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/sidepanellayoutdetail/CustomerDetailFragment.java"/>
+                    <file name="io/jmix/uisamples/view/flowui/cookbook/sidepanellayoutdetail/customer-detail-fragment.xml"/>
                 </otherFiles>
             </item>
         </menu>
