@@ -732,7 +732,7 @@
             </item>
         </menu>
         <item id="scroller" page="scroller" splitEnabled="true"/>
-        <item id="side-panel-layout" splitEnabled="true" isNew="true">
+        <item id="side-panel-layout-simple" splitEnabled="true" isNew="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>

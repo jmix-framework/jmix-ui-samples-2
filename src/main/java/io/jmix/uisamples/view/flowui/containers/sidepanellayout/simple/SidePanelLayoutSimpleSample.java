@@ -1,4 +1,4 @@
-package io.jmix.uisamples.view.flowui.containers.sidepanellayout;
+package io.jmix.uisamples.view.flowui.containers.sidepanellayout.simple;
 
 import com.vaadin.flow.component.AbstractField.ComponentValueChangeEvent;
 import com.vaadin.flow.component.ClickEvent;
@@ -12,9 +12,9 @@ import io.jmix.flowui.model.InstanceContainer;
 import io.jmix.flowui.view.*;
 import io.jmix.uisamples.entity.Customer;
 
-@ViewController("side-panel-layout")
-@ViewDescriptor("side-panel-layout.xml")
-public class SidePanelLayoutSample extends StandardView {
+@ViewController("side-panel-layout-simple")
+@ViewDescriptor("side-panel-layout-simple.xml")
+public class SidePanelLayoutSimpleSample extends StandardView {
 
     @ViewComponent
     private JmixSelect<SidePanelPosition> positionSelect;
