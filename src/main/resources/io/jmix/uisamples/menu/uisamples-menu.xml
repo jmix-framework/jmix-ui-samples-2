@@ -732,11 +732,20 @@
             </item>
         </menu>
         <item id="scroller" page="scroller" splitEnabled="true"/>
-        <item id="side-panel-layout-simple" splitEnabled="true" isNew="true">
-            <otherFiles>
-                <file name="io/jmix/uisamples/entity/Customer.java"/>
-            </otherFiles>
-        </item>
+        <menu id="side-panel-layout" isNew="true">
+            <item id="side-panel-layout-simple" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="side-panel-layout-master-detail" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/containers/sidepanellayout/masterdetail/customer-master-detail-fragment.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/containers/sidepanellayout/masterdetail/CustomerMasterDetailFragment.java"/>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
         <menu id="split">
             <item id="split-simple" page="split"/>
             <item id="split-theme-variant" page="split"/>
@@ -1446,13 +1455,6 @@
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                     <file name="io/jmix/uisamples/entity/ReadOnlyCustomer.java"/>
-                </otherFiles>
-            </item>
-            <item id="side-panel-layout-detail" splitEnabled="true" isNew="true">
-                <otherFiles>
-                    <file name="io/jmix/uisamples/entity/Customer.java"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/sidepanellayoutdetail/CustomerDetailFragment.java"/>
-                    <file name="io/jmix/uisamples/view/flowui/cookbook/sidepanellayoutdetail/customer-detail-fragment.xml"/>
                 </otherFiles>
             </item>
         </menu>

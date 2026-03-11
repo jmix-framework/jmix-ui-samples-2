@@ -1,4 +1,4 @@
-package io.jmix.uisamples.view.flowui.cookbook.sidepanellayoutdetail;
+package io.jmix.uisamples.view.flowui.containers.sidepanellayout.masterdetail;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import io.jmix.flowui.Fragments;
@@ -13,9 +13,9 @@ import io.jmix.flowui.view.*;
 import io.jmix.uisamples.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 
-@ViewController("side-panel-layout-detail")
-@ViewDescriptor("side-panel-layout-detail.xml")
-public class SidePanelLayoutDetailSample extends StandardView {
+@ViewController("side-panel-layout-master-detail")
+@ViewDescriptor("side-panel-layout-master-detail.xml")
+public class SidePanelLayoutMasterDetailSample extends StandardView {
 
     @Autowired
     private Fragments fragments;
@@ -36,7 +36,7 @@ public class SidePanelLayoutDetailSample extends StandardView {
     public void onCustomersDataGridEdit(final ActionPerformedEvent event) {
         Customer item = customersDataGrid.getSingleSelectedItem();
 
-        CustomerDetailFragment editorFragment = createEditorFragment()
+        CustomerMasterDetailFragment editorFragment = createEditorFragment()
                 .withEditedItem(item)
                 .withSaveListener(saveEvent -> customersDc.replaceItem(saveEvent.getItem()));
 
@@ -46,7 +46,7 @@ public class SidePanelLayoutDetailSample extends StandardView {
 
     @Subscribe("customersDataGrid.create")
     public void onCustomersDataGridCreate(final ActionPerformedEvent event) {
-        CustomerDetailFragment editorFragment = createEditorFragment()
+        CustomerMasterDetailFragment editorFragment = createEditorFragment()
                 .withNewItem()
                 .withSaveListener(saveEvent -> customersDl.load());
 
@@ -56,7 +56,7 @@ public class SidePanelLayoutDetailSample extends StandardView {
 
     @Subscribe(id = "sidePanelLayout", subject = "addSidePanelAfterOpenListener")
     public void onSidePanelLayoutAfterOpened(SidePanelAfterOpenEvent event) {
-        CustomerDetailFragment fragment = (CustomerDetailFragment) sidePanelContent.getComponentAt(0);
+        CustomerMasterDetailFragment fragment = (CustomerMasterDetailFragment) sidePanelContent.getComponentAt(0);
         fragment.focusFirstField();
     }
 
@@ -65,8 +65,8 @@ public class SidePanelLayoutDetailSample extends StandardView {
         sidePanelContent.removeAll();
     }
 
-    private CustomerDetailFragment createEditorFragment() {
-        return fragments.create(this, CustomerDetailFragment.class)
+    private CustomerMasterDetailFragment createEditorFragment() {
+        return fragments.create(this, CustomerMasterDetailFragment.class)
                 .withSidePanelLayout(sidePanelLayout);
     }
 }

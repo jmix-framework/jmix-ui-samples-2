@@ -1,4 +1,4 @@
-package io.jmix.uisamples.view.flowui.cookbook.sidepanellayoutdetail;
+package io.jmix.uisamples.view.flowui.containers.sidepanellayout.masterdetail;
 
 import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.ComponentEvent;
@@ -20,8 +20,8 @@ import io.jmix.flowui.view.ViewValidation;
 import io.jmix.uisamples.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 
-@FragmentDescriptor("customer-detail-fragment.xml")
-public class CustomerDetailFragment extends Fragment<VerticalLayout> {
+@FragmentDescriptor("customer-master-detail-fragment.xml")
+public class CustomerMasterDetailFragment extends Fragment<VerticalLayout> {
 
     @Autowired
     private ViewValidation viewValidation;
@@ -33,22 +33,22 @@ public class CustomerDetailFragment extends Fragment<VerticalLayout> {
 
     private SidePanelLayout sidePanelLayout;
 
-    public CustomerDetailFragment withSidePanelLayout(SidePanelLayout sidePanelLayout) {
+    public CustomerMasterDetailFragment withSidePanelLayout(SidePanelLayout sidePanelLayout) {
         this.sidePanelLayout = sidePanelLayout;
         return this;
     }
 
-    public CustomerDetailFragment withNewItem() {
+    public CustomerMasterDetailFragment withNewItem() {
         customerDc.setItem(dataManager.create(Customer.class));
         return this;
     }
 
-    public CustomerDetailFragment withEditedItem(Customer customer) {
+    public CustomerMasterDetailFragment withEditedItem(Customer customer) {
         customerDc.setItem(dataManager.load(Id.of(customer)).one());
         return this;
     }
 
-    public CustomerDetailFragment withSaveListener(ComponentEventListener<SaveEvent> listener) {
+    public CustomerMasterDetailFragment withSaveListener(ComponentEventListener<SaveEvent> listener) {
         addListener(SaveEvent.class, listener);
         return this;
     }
@@ -87,11 +87,11 @@ public class CustomerDetailFragment extends Fragment<VerticalLayout> {
         sidePanelLayout.closeSidePanel();
     }
 
-    public static class SaveEvent extends ComponentEvent<CustomerDetailFragment> {
+    public static class SaveEvent extends ComponentEvent<CustomerMasterDetailFragment> {
 
         protected Customer item;
 
-        public SaveEvent(CustomerDetailFragment source,
+        public SaveEvent(CustomerMasterDetailFragment source,
                          boolean fromClient,
                          Customer item) {
             super(source, fromClient);

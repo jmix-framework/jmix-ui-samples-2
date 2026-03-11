@@ -23,8 +23,6 @@
                  classNames="overview-tag-font overview-tag-grey"/>
             <tag messagePrefix="uisamples-menu-config" message="read-only-customers" route="read-only-customers"
                  classNames="overview-tag-font overview-tag-grey"/>
-            <tag messagePrefix="uisamples-menu-config" message="side-panel-layout-detail" route="side-panel-layout-detail"
-                 classNames="overview-tag-font overview-tag-grey"/>
         </sample>
         <sample>
             <image src="icons/cookbook/cascadingDropdowns.png" route="composition-1-level"/>
