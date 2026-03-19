@@ -7,7 +7,7 @@
         <vbox id="root" width="100%" height="100%">
             <hbox width="100%" justifyContent="BETWEEN" alignItems="CENTER">
                 <h2 id="header" text="msg://header.text"/>
-                <button id="closeButton" icon="lumo:cross" themeNames="tertiary icon"/>
+                <button id="closeButton" icon="lumo:cross" themeNames="tertiary icon contrast"/>
             </hbox>
             <scroller width="100%" height="100%" scrollBarsDirection="VERTICAL" classNames="p-s">
                 <formLayout id="customerForm" dataContainer="customerDc"

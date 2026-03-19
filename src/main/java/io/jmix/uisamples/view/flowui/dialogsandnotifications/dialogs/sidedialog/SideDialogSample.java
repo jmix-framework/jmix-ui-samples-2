@@ -45,7 +45,7 @@ public class SideDialogSample extends StandardView {
         header.setJustifyContentMode(FlexComponent.JustifyContentMode.BETWEEN);
 
         Button closeButton = new Button(LumoIcon.CROSS.create(), event -> sideDialog.close());
-        closeButton.addThemeVariants(ButtonVariant.LUMO_TERTIARY, ButtonVariant.LUMO_ICON);
+        closeButton.addThemeVariants(ButtonVariant.LUMO_TERTIARY, ButtonVariant.LUMO_ICON, ButtonVariant.LUMO_CONTRAST);
         header.add(closeButton);
 
         return header;
