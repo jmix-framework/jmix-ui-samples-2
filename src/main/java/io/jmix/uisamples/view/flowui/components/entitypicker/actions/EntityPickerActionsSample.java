@@ -76,7 +76,7 @@ public class EntityPickerActionsSample extends StandardView {
 
     protected Action createEntityClearAction() {
         Action entityClearAction = actions.create(EntityClearAction.ID);
-        entityClearAction.setIcon(VaadinIcon.BAN.create());
+        entityClearAction.setIconComponent(VaadinIcon.BAN.create());
 
         return entityClearAction;
     }

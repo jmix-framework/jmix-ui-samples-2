@@ -26,6 +26,11 @@
             <text message="backgroundTaskDialog.description"/>
         </sample>
         <sample>
+            <image src="icons/dialogsandnotifications/sideDialog.png" route="side-dialog"/>
+            <text message="sideDialog.title" route="side-dialog" component="h4"/>
+            <text message="sideDialog.description"/>
+        </sample>
+        <sample>
             <image src="icons/dialogsandnotifications/notifications.png" route="notification-simple"/>
             <text message="notifications.title" route="notification-simple" component="h4"/>
             <text message="notifications.description"/>

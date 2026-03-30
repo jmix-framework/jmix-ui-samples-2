@@ -1,0 +1,15 @@
+<fragment xmlns="http://jmix.io/schema/flowui/fragment">
+    <facets>
+        <timer id="timer"
+               delay="3000"
+               autostart="false"
+               repeating="true"/>
+    </facets>
+    <content>
+        <vbox classNames="flex-row flex-wrap" alignItems="CENTER" padding="false">
+            <button id="timerStartBtn" text="Start" icon="PLAY" themeNames="primary"/>
+            <button id="timerStopBtn" text="Stop" icon="PAUSE" themeNames="primary error" enabled="false"/>
+            <span id="timerIndicator" text="Timer is ready to start" themeNames="badge contrast pill"/>
+        </vbox>
+    </content>
+</fragment>

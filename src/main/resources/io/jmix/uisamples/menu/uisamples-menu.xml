@@ -417,7 +417,7 @@
                 </otherFiles>
             </item>
         </menu>
-        <item id="markdown" page="markdown" isNew="true" splitEnabled="true"/>
+        <item id="markdown" page="markdown" splitEnabled="true"/>
         <menu id="multi-select-combo-box">
             <item id="multi-select-combo-box-simple" page="multiSelectComboBox">
                 <otherFiles>
@@ -517,12 +517,12 @@
             </item>
         </menu>
         <menu id="select">
-            <item id="select-simple">
+            <item id="select-simple" page="select">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
                 </otherFiles>
             </item>
-            <item id="select-dataaware">
+            <item id="select-dataaware" page="select" anchor="data-binding">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                     <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
@@ -552,8 +552,8 @@
             </item>
         </menu>
         <menu id="switch">
-            <item id="switch-simple"/>
-            <item id="switch-dataaware">
+            <item id="switch-simple" page="switch"/>
+            <item id="switch-dataaware" page="switch" anchor="_data_binding">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
@@ -615,19 +615,19 @@
             <item id="time-picker-theme-variant" page="timePicker"/>
         </menu>
         <menu id="twin-column">
-            <item id="twin-column-simple"/>
-            <item id="twin-column-dataaware">
+            <item id="twin-column-simple" page="twinColumn"/>
+            <item id="twin-column-dataaware" page="twinColumn" anchor="data-binding">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Product.java"/>
                     <file name="io/jmix/uisamples/entity/ProductTag.java"/>
                 </otherFiles>
             </item>
-            <item id="twin-column-custom-items" splitEnabled="true">
+            <item id="twin-column-custom-items" page="twinColumn" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
                 </otherFiles>
             </item>
-            <item id="twin-column-theme-variant"/>
+            <item id="twin-column-theme-variant" page="twinColumn" anchor="theme-variants"/>
         </menu>
         <menu id="value-picker">
             <item id="value-picker-simple" page="valuePicker"/>
@@ -649,13 +649,13 @@
             </item>
         </menu>
         <menu id="virtual-list">
-            <item id="virtual-list-simple" splitEnabled="true">
+            <item id="virtual-list-simple" page="virtualList" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                     <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
                 </otherFiles>
             </item>
-            <item id="virtual-list-inline-editor" splitEnabled="true">
+            <item id="virtual-list-inline-editor" page="virtualList" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Food.java"/>
                     <file name="io/jmix/uisamples/view/entity/food/FoodDetailView.java"/>
@@ -663,7 +663,7 @@
                     <file name="io/jmix/uisamples/bean/FoodPlaceholderDataGenerator.java"/>
                 </otherFiles>
             </item>
-            <item id="virtual-list-custom-items" splitEnabled="true">
+            <item id="virtual-list-custom-items" page="virtualList" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Day.java"/>
                 </otherFiles>
@@ -689,10 +689,10 @@
             </item>
             <item id="details-theme-variant" page="details"/>
         </menu>
-        <menu id="card" isNew="true">
-            <item id="card-simple" splitEnabled="true"/>
-            <item id="card-header"/>
-            <item id="card-theme-variant" splitEnabled="true">
+        <menu id="card">
+            <item id="card-simple" page="card" splitEnabled="true"/>
+            <item id="card-header" page="card" anchor="slot-header"/>
+            <item id="card-theme-variant" page="card" anchor="theme-variants" splitEnabled="true">
                 <otherFiles>
                     <file name="META-INF/resources/themes/card-theme-variant.css"/>
                 </otherFiles>
@@ -701,10 +701,10 @@
         <menu id="boxlayout">
             <menu id="hbox">
                 <item id="hbox-simple" page="hbox"/>
-                <item id="hbox-slots" page="hbox"/>
+                <item id="hbox-slots" page="hbox" anchor="aligning-individual"/>
             </menu>
             <item id="vbox-simple" page="vbox"/>
-            <item id="flex-layout-simple"/>
+            <item id="flex-layout-simple" page="flexLayout"/>
         </menu>
         <menu id="form-layout">
             <item id="form-layout-simple" page="formLayout" splitEnabled="true"/>
@@ -715,16 +715,16 @@
                 </otherFiles>
             </item>
             <item id="form-layout-responsive-steps" page="formLayout" splitEnabled="true"/>
-            <item id="form-layout-auto-responsive" page="formLayout" splitEnabled="true" isNew="true"/>
+            <item id="form-layout-auto-responsive" page="formLayout" anchor="auto-responsive-mode" splitEnabled="true"/>
         </menu>
-        <menu id="grid-layout" isNew="true">
-            <item id="grid-layout-simple" splitEnabled="true"/>
-            <item id="grid-layout-dataaware" splitEnabled="true">
+        <menu id="grid-layout">
+            <item id="grid-layout-simple" page="gridLayout" splitEnabled="true"/>
+            <item id="grid-layout-dataaware" page="gridLayout" anchor="data-binding" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="grid-layout-renderer" splitEnabled="true">
+            <item id="grid-layout-renderer" page="gridLayout" anchor="rendering-items" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                     <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
@@ -732,6 +732,20 @@
             </item>
         </menu>
         <item id="scroller" page="scroller" splitEnabled="true"/>
+        <menu id="side-panel-layout" isNew="true">
+            <item id="side-panel-layout-simple" page="sidePanelLayout" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="side-panel-layout-master-detail" page="sidePanelLayout" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/containers/sidepanellayout/masterdetail/customer-master-detail-fragment.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/containers/sidepanellayout/masterdetail/CustomerMasterDetailFragment.java"/>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+        </menu>
         <menu id="split">
             <item id="split-simple" page="split"/>
             <item id="split-theme-variant" page="split"/>
@@ -762,6 +776,7 @@
                 </otherFiles>
             </item>
             <item id="background-task-dialog" page="background-tasks" anchor="notes-and-tips"/>
+            <item id="side-dialog" page="dialogs" anchor="side-dialog" isNew="true"/>
         </menu>
         <menu id="notifications">
             <item id="notification-simple" page="notifications"/>
@@ -770,16 +785,16 @@
         </menu>
     </menu>
 
-    <menu id="fragments-root">
+    <menu id="fragments-root" url="flow-ui/fragments">
         <overview id="fragments"
                   location="fragments/overview/fragments-overview.xml"/>
-        <item id="fragment-simple">
+        <item id="fragment-simple" page="fragments">
             <otherFiles>
                 <file name="io/jmix/uisamples/view/flowui/fragments/simple/button-simple-fragment.xml"/>
                 <file name="io/jmix/uisamples/view/flowui/fragments/simple/ButtonSimpleFragment.java"/>
             </otherFiles>
         </item>
-        <item id="fragment-data" splitEnabled="true">
+        <item id="fragment-data" page="using-fragments" anchor="using-data-components" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/view/flowui/fragments/data/address-fragment.xml"/>
                 <file name="io/jmix/uisamples/view/flowui/fragments/data/AddressFragment.java"/>
@@ -788,25 +803,56 @@
                 <file name="io/jmix/uisamples/entity/City.java"/>
             </otherFiles>
         </item>
-        <item id="fragment-programmatically-defined">
+        <item id="fragment-programmatically-defined" page="using-fragments" anchor="programmatic-usage">
             <otherFiles>
                 <file name="io/jmix/uisamples/view/flowui/fragments/simple/button-simple-fragment.xml"/>
                 <file name="io/jmix/uisamples/view/flowui/fragments/simple/ButtonSimpleFragment.java"/>
             </otherFiles>
         </item>
-        <item id="fragment-events">
+        <item id="fragment-events" page="fragments" anchor="fragment-events">
             <otherFiles>
                 <file name="io/jmix/uisamples/view/flowui/fragments/events/events-fragment.xml"/>
                 <file name="io/jmix/uisamples/view/flowui/fragments/events/EventsFragment.java"/>
             </otherFiles>
         </item>
-        <item id="fragment-renderer" splitEnabled="true">
+        <item id="fragment-renderer" page="fragments" splitEnabled="true">
             <otherFiles>
-                <file name="io/jmix/uisamples/view/flowui/fragments/renderer/EmployeeInfoFragment.java"/>
                 <file name="io/jmix/uisamples/view/flowui/fragments/renderer/employee-info-fragment.xml"/>
+                <file name="io/jmix/uisamples/view/flowui/fragments/renderer/EmployeeInfoFragment.java"/>
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>
         </item>
+        <menu id="fragments-facets" isNew="true" url="flow-ui/fragments">
+            <item id="fragment-data-load-coordinator" page="facets-in-fragment" anchor="fragmentDataLoadCoordinator" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/fragments/facets/dataloadcoordinator/data-load-coordinator-fragment.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/fragments/facets/dataloadcoordinator/DataLoadCoordinatorFragment.java"/>
+                    <file name="io/jmix/uisamples/entity/Order.java"/>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="fragment-timer-facet" page="facets-in-fragment" anchor="timer">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/fragments/facets/timer/timer-facet-fragment.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/fragments/facets/timer/TimerFacetFragment.java"/>
+                </otherFiles>
+            </item>
+            <item id="fragment-url-query-parameters" page="facets-in-fragment" anchor="urlQueryParameters" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/fragments/facets/urlqueryparameters/url-query-parameters-fragment.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/fragments/facets/urlqueryparameters/UrlQueryParametersFragment.java"/>
+                </otherFiles>
+                <urlQueryParameters>
+                    <parameter name="fragment_genericFilter_genericFilterCondition" value="property:age_greater_30"/>
+                </urlQueryParameters>
+            </item>
+            <item id="fragment-settings-facet" page="facets-in-fragment" anchor="fragmentSettings" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/view/flowui/fragments/facets/settings/settings-facet-fragment.xml"/>
+                    <file name="io/jmix/uisamples/view/flowui/fragments/facets/settings/SettingsFacetFragment.java"/>
+                </otherFiles>
+            </item>
+        </menu>
     </menu>
 
     <menu id="facets-root" url="flow-ui/facets">
@@ -824,10 +870,10 @@
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>
             <urlQueryParameters>
-                <parameter name="genericFilterCondition" value="property:age_greater_30"/>
+                <parameter name="genericFilter_genericFilterCondition" value="property:age_greater_30"/>
             </urlQueryParameters>
         </item>
-        <item id="settings-facet" splitEnabled="true">
+        <item id="settings-facet" page="settings" splitEnabled="true">
             <otherFiles>
                 <file name="io/jmix/uisamples/entity/Customer.java"/>
             </otherFiles>
@@ -1264,43 +1310,43 @@
             </item>
         </menu>
 
-        <menu id="group-data-grid-root" url="group-data-grid" isNew="true">
+        <menu id="group-data-grid-root" url="groupdatagrid">
             <overview id="group-data-grid" location="groupdatagrid/overview/group-data-grid-overview.xml"/>
-            <item id="group-data-grid-simple" splitEnabled="true">
+            <item id="group-data-grid-simple" page="groupdatagrid-component" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                     <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
                 </otherFiles>
             </item>
-            <item id="group-data-grid-column-attributes" splitEnabled="true">
+            <item id="group-data-grid-column-attributes" page="groupdatagrid-component" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                     <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
                 </otherFiles>
             </item>
-            <item id="group-data-grid-formatter" splitEnabled="true">
+            <item id="group-data-grid-formatter" page="groupdatagrid-component" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                 </otherFiles>
             </item>
-            <item id="group-data-grid-renderer" splitEnabled="true">
-                <otherFiles>
-                    <file name="io/jmix/uisamples/entity/Customer.java"/>
-                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
-                </otherFiles>
-            </item>
-            <item id="group-data-grid-custom-column" splitEnabled="true">
-                <otherFiles>
-                    <file name="io/jmix/uisamples/entity/Customer.java"/>
-                </otherFiles>
-            </item>
-            <item id="group-data-grid-events" splitEnabled="true">
+            <item id="group-data-grid-renderer" page="groupdatagrid-component" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                     <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
                 </otherFiles>
             </item>
-            <item id="group-data-grid-styling" splitEnabled="true">
+            <item id="group-data-grid-custom-column" page="groupdatagrid-component" anchor="custom-grouping-column" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                </otherFiles>
+            </item>
+            <item id="group-data-grid-events" page="groupdatagrid-component" splitEnabled="true">
+                <otherFiles>
+                    <file name="io/jmix/uisamples/entity/Customer.java"/>
+                    <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>
+                </otherFiles>
+            </item>
+            <item id="group-data-grid-styling" page="groupdatagrid-component" anchor="Styling" splitEnabled="true">
                 <otherFiles>
                     <file name="io/jmix/uisamples/entity/Customer.java"/>
                     <file name="io/jmix/uisamples/entity/CustomerGrade.java"/>

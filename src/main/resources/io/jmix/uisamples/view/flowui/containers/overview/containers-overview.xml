@@ -50,5 +50,10 @@
             <text message="gridLayout.title" route="grid-layout-simple" component="h4"/>
             <text message="gridLayout.description"/>
         </sample>
+        <sample>
+            <image src="icons/layouts/sidePanelLayout.png" route="side-panel-layout-simple"/>
+            <text message="sidePanelLayout.title" route="side-panel-layout-simple" component="h4"/>
+            <text message="sidePanelLayout.description"/>
+        </sample>
     </samples>
 </overview>

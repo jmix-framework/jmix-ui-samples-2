@@ -1,0 +1,57 @@
+<view xmlns="http://jmix.io/schema/flowui/view">
+    <data>
+        <collection id="customersDc"
+                    class="io.jmix.uisamples.entity.Customer"
+                    fetchPlan="_local">
+            <loader id="customersDl">
+                <query>
+                    <![CDATA[select e from Customer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+    </facets>
+    <layout>
+        <hbox alignItems="CENTER">
+            <button id="toggleSidePanelButton" text="msg://toggleSidePanelButton.text"/>
+            <select id="positionSelect"/>
+            <checkbox id="overlayCheckbox" label="msg://overlayCheckbox.label" value="true"/>
+            <checkbox id="modalCheckbox" label="msg://modalCheckbox.label" value="true"/>
+        </hbox>
+        <sidePanelLayout id="sidePanelLayout" height="100%" width="100%" sidePanelVerticalMinSize="15em">
+            <dataGrid id="customersDataGrid"
+                      width="100%"
+                      minHeight="20em"
+                      dataContainer="customersDc">
+                <columns>
+                    <column property="name"/>
+                    <column property="lastName"/>
+                    <column property="email"/>
+                    <column property="age"/>
+                    <column property="active"/>
+                    <column property="grade"/>
+                </columns>
+            </dataGrid>
+            <vbox id="sidePanelBox" height="100%" width="100%">
+                <hbox width="100%" justifyContent="BETWEEN" alignItems="CENTER">
+                    <h2 id="header" text="msg://header.text"/>
+                    <sidePanelLayoutCloser/>
+                </hbox>
+                <scroller scrollBarsDirection="VERTICAL" width="100%">
+                    <formLayout autoResponsive="true" width="100%" expandFields="true" expandColumns="true">
+                        <formRow>
+                            <textField id="firstNameField" readOnly="true" datatype="string"/>
+                            <textField id="lastNameField" readOnly="true" datatype="string"/>
+                        </formRow>
+                        <formRow>
+                            <textField id="emailField" readOnly="true" colspan="2" datatype="string"/>
+                        </formRow>
+                    </formLayout>
+                </scroller>
+                <button id="sendEmailButton" text="msg://sendEmailButton.text"/>
+            </vbox>
+        </sidePanelLayout>
+    </layout>
+</view>

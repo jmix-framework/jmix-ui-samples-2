@@ -1,0 +1,56 @@
+<fragment xmlns="http://jmix.io/schema/flowui/fragment">
+    <data readOnly="true">
+        <collection id="ordersDc"
+                    class="io.jmix.uisamples.entity.Order">
+            <fetchPlan extends="_local">
+                <property name="customer" fetchPlan="_local"/>
+            </fetchPlan>
+            <loader id="ordersDl">
+                <query>
+                    <![CDATA[select e from uisamples_Order e order by e.date]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <facets>
+        <fragmentDataLoadCoordinator>
+            <refresh loader="ordersDl">
+                <onFragmentEvent type="Host.Ready"/>
+            </refresh>
+        </fragmentDataLoadCoordinator>
+    </facets>
+    <content>
+        <vbox padding="false">
+            <h4 text="CollectionContainer items count:"/>
+            <div classNames="flex flex-row flex-wrap gap-s">
+                <icon icon="COG"/>
+                <span text="onFragmentReady:"/>
+                <span id="onFragmentReadyItemCount"/>
+            </div>
+            <div classNames="flex flex-row flex-wrap gap-s">
+                <icon icon="HAMMER"/>
+                <span text="onHostInit:"/>
+                <span id="onHostInitItemCount"/>
+            </div>
+            <div classNames="flex flex-row flex-wrap gap-s">
+                <icon icon="BROWSER"/>
+                <span text="onHostBeforeShow:"/>
+                <span id="onHostBeforeShowItemCount"/>
+            </div>
+            <div classNames="flex flex-row flex-wrap gap-s">
+                <icon icon="CHECK"/>
+                <span text="onHostReady:"/>
+                <span id="onHostReadyItemCount"/>
+            </div>
+            <dataGrid id="dataGrid" width="100%" minHeight="20em"
+                      dataContainer="ordersDc">
+                <columns>
+                    <column property="date"/>
+                    <column property="customer"/>
+                    <column property="amount"/>
+                    <column property="description"/>
+                </columns>
+            </dataGrid>
+        </vbox>
+    </content>
+</fragment>
