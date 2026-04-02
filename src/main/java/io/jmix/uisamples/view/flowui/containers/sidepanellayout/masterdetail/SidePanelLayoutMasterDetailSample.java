@@ -56,6 +56,10 @@ public class SidePanelLayoutMasterDetailSample extends StandardView {
 
     @Subscribe(id = "sidePanelLayout", subject = "addSidePanelAfterOpenListener")
     public void onSidePanelLayoutAfterOpened(SidePanelAfterOpenEvent event) {
+        if (sidePanelContent.getComponentCount() == 0) {
+            return;
+        }
+
         CustomerMasterDetailFragment fragment = (CustomerMasterDetailFragment) sidePanelContent.getComponentAt(0);
         fragment.focusFirstField();
     }
