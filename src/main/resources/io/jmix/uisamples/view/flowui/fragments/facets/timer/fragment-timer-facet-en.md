@@ -14,5 +14,5 @@ Timers are defined using the `timer` element. It has the following attributes:
 
 To execute code on timer, subscribe to its `TimerActionEvent` in the fragment controller.
 
-See also <a href="/ui-samples/sample/delayed-data-load">the example</a> of how to use timer to delay a costly data
+See also <a href="/ui-samples-v2/sample/delayed-data-load">the example</a> of how to use timer to delay a costly data
 loading operation until the user has made the final choice of conditions.
