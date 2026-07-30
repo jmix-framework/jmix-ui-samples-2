@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::theme-variants[] sample-hide -->
         <details summaryText="Toolbar align variant" opened="true">
             <hbox wrap="true">
                 <markdownEditor label="Align start" themeNames="toolbar-align-start"
@@ -17,5 +18,6 @@
                                 helperText="Above helper text"/>
             </hbox>
         </details>
+        <!-- end::theme-variants[] sample-hide -->
     </layout>
 </view>

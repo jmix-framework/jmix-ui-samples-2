@@ -18,29 +18,36 @@ import java.util.List;
 @ViewDescriptor("value-picker-dataaware.xml")
 public class ValuePickerDataawareSample extends StandardView {
 
+    // tag::basics-container[] sample-hide
     @ViewComponent
     protected InstanceContainer<Customer> customerDc;
+    // end::basics-container[] sample-hide
     @ViewComponent
     protected Span spanValue;
 
+    // tag::basics-data[] sample-hide
     @Autowired
     protected Metadata metadata;
 
     protected List<String> names = List.of("Katherine", "John", "Andy", "Edward", "George",
             "Philipp", "Dora", "James", "Daniel", "Michael", "Claire", "Joan", "Peter", "Martin");
+    // end::basics-data[] sample-hide
 
+    // tag::basics-init[] sample-hide
     @Subscribe
     protected void onInit(InitEvent event) {
         Customer customer = metadata.create(Customer.class);
         customer.setName(getRandomName());
         customerDc.setItem(customer);
     }
+    // end::basics-init[] sample-hide
 
     @Subscribe("valuePicker")
     protected void onValuePickerValueChange(ComponentValueChangeEvent<JmixValuePicker<String>, String> event) {
         spanValue.setText(customerDc.getItem().getName());
     }
 
+    // tag::basics-actions[] sample-hide
     @Subscribe("valuePicker.generate")
     protected void onValuePickerGenerateActionPerformed(ActionPerformedEvent event) {
         customerDc.getItem().setName(getRandomName());
@@ -54,4 +61,5 @@ public class ValuePickerDataawareSample extends StandardView {
     protected String getRandomName() {
         return names.get(RandomUtils.secure().randomInt() % names.size());
     }
+    // end::basics-actions[] sample-hide
 }

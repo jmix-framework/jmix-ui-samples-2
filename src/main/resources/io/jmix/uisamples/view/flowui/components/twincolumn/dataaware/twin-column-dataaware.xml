@@ -1,4 +1,5 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
+    <!-- tag::data[] sample-hide -->
     <data readOnly="true">
         <instance id="productDc"
                   class="io.jmix.uisamples.entity.Product"
@@ -14,13 +15,18 @@
             </loader>
         </collection>
     </data>
+    <!-- end::data[] sample-hide -->
+    <!-- tag::facets[] sample-hide -->
     <facets>
         <dataLoadCoordinator auto="true"/>
     </facets>
+    <!-- end::facets[] sample-hide -->
     <layout>
+        <!-- tag::basics[] sample-hide -->
         <twinColumn id="twinColumn" label="Tags" itemsColumnLabel="Available tags"
                     selectedItemsColumnLabel="Selected tags" itemsContainer="productTagsDc"
                     dataContainer="productDc" property="tags"/>
+        <!-- end::basics[] sample-hide -->
         <hbox>
             <span text="Value in the container:"/>
             <span id="spanValue"/>

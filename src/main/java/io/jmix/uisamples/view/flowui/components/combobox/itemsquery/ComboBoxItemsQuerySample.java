@@ -15,6 +15,7 @@ import java.util.stream.Stream;
 @ViewDescriptor("combobox-items-query.xml")
 public class ComboBoxItemsQuerySample extends StandardView {
 
+    // tag::programmatic-fetch[] sample-hide
     @Autowired
     protected DataManager dataManager;
 
@@ -41,4 +42,5 @@ public class ComboBoxItemsQuerySample extends StandardView {
                 .skip(query.getOffset())
                 .limit(query.getLimit());
     }
+    // end::programmatic-fetch[] sample-hide
 }

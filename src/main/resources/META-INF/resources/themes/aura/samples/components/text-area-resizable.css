@@ -1,4 +1,4 @@
-
+/* tag::resizable[] sample-hide */
 .resizable-both {
     resize: both;
     overflow: auto;
@@ -16,3 +16,4 @@
     overflow: auto;
     padding-bottom: unset;
 }
+/* end::resizable[] sample-hide */

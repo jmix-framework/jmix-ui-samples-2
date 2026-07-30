@@ -14,6 +14,7 @@ import java.util.List;
 @ViewDescriptor("combobox-user-input.xml")
 public class ComboBoxUserInputSample extends StandardView {
 
+    // tag::custom-value[] sample-hide
     @ViewComponent
     protected JmixComboBox<String> comboBox;
 
@@ -37,4 +38,5 @@ public class ComboBoxUserInputSample extends StandardView {
 
         notifications.show(customValue + " added");
     }
+    // end::custom-value[] sample-hide
 }

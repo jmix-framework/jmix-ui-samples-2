@@ -13,6 +13,7 @@ import java.util.Map;
 @ViewDescriptor("twin-column-custom-items.xml")
 public class TwinColumnCustomItemsSample extends StandardView {
 
+    // tag::custom-items[] sample-hide
     @ViewComponent
     protected TwinColumn<Integer> twinColumnWithList;
     @ViewComponent
@@ -39,4 +40,5 @@ public class TwinColumnCustomItemsSample extends StandardView {
         itemsMap.put(7, "Seven");
         return itemsMap;
     }
+    // end::custom-items[] sample-hide
 }

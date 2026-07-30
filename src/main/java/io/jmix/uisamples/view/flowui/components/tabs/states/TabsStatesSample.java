@@ -10,9 +10,11 @@ import io.jmix.flowui.view.ViewDescriptor;
 @ViewDescriptor("tabs-states.xml")
 public class TabsStatesSample extends StandardView {
 
+    // tag::states[] sample-hide
     @Subscribe("tabs")
     protected void onTabsSelectChangeEvent(Tabs.SelectedChangeEvent event) {
         event.getPreviousTab().setLabel("Unselected");
         event.getSelectedTab().setLabel("Selected");
     }
+    // end::states[] sample-hide
 }

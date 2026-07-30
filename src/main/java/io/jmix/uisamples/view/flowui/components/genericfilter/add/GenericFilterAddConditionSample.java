@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("generic-filter-add-condition.xml")
 public class GenericFilterAddConditionSample extends StandardView {
 
+    // tag::basics[] sample-hide
     @ViewComponent
     protected GenericFilter genericFilter;
 
@@ -52,4 +53,5 @@ public class GenericFilterAddConditionSample extends StandardView {
 
         return agePropertyFilter;
     }
+    // end::basics[] sample-hide
 }

@@ -22,16 +22,19 @@ import java.util.stream.Collectors;
 @ViewDescriptor("data-grid-selection-mode.xml")
 public class DataGridSelectionModeSample extends StandardView {
 
+    // tag::selection-mode-fields[] sample-hide
     @ViewComponent
     protected JmixSelect<Grid.SelectionMode> selectionModeSelect;
     @ViewComponent
     protected DataGrid<Customer> customersDataGrid;
+    // end::selection-mode-fields[] sample-hide
 
     @Autowired
     protected Notifications notifications;
     @Autowired
     protected MetadataTools metadataTools;
 
+    // tag::selection-mode-handlers[] sample-hide
     @Subscribe
     protected void onInit(InitEvent event) {
         ComponentUtils.setItemsMap(selectionModeSelect, getSelectionModeItemsMap());
@@ -43,6 +46,7 @@ public class DataGridSelectionModeSample extends StandardView {
             ComponentValueChangeEvent<JmixSelect<Grid.SelectionMode>, Grid.SelectionMode> event) {
         customersDataGrid.setSelectionMode(event.getValue());
     }
+    // end::selection-mode-handlers[] sample-hide
 
     @Subscribe("customersDataGrid.greetAll")
     protected void onCustomersDataGridGreetAllActionPerformed(ActionPerformedEvent event) {
@@ -67,8 +71,10 @@ public class DataGridSelectionModeSample extends StandardView {
                 : "No selection");
     }
 
+    // tag::selection-mode-items[] sample-hide
     protected Map<Grid.SelectionMode, String> getSelectionModeItemsMap() {
         return Arrays.stream(Grid.SelectionMode.values())
                 .collect(Collectors.toMap(Function.identity(), mode -> mode.name().replace('_', ' ')));
     }
+    // end::selection-mode-items[] sample-hide
 }

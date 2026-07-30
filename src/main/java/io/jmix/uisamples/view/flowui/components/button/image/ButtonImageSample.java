@@ -12,20 +12,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("button-image.xml")
 public class ButtonImageSample extends StandardView {
 
+    // tag::image-button-constant[] sample-hide
     private static final String LOGO_SRC_PATH = "/META-INF/resources/icons/jmix-logo.png";
+    // end::image-button-constant[] sample-hide
 
     @Autowired
     private Notifications notifications;
 
+    // tag::image-button-field[] sample-hide
     @ViewComponent
     private JmixButton logoButton;
+    // end::image-button-field[] sample-hide
 
+    // tag::image-button-init[] sample-hide
     @Subscribe
     public void onInit(InitEvent event) {
         Image logo = new Image(DownloadHandler.forClassResource(getClass(), LOGO_SRC_PATH), "jmix-logo");
         logo.setWidth("100px");
         logoButton.setIcon(logo);
     }
+    // end::image-button-init[] sample-hide
 
     @Subscribe("logoButton")
     public void onLogoButtonClick(ClickEvent<JmixButton> event) {

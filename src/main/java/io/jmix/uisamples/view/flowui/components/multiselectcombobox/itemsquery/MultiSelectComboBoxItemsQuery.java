@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 @ViewDescriptor("multi-select-combo-box-items-query.xml")
 public class MultiSelectComboBoxItemsQuery extends StandardView {
 
+    // tag::items-fetch-callback[] sample-hide
     @Autowired
     protected DataManager dataManager;
 
@@ -34,4 +35,5 @@ public class MultiSelectComboBoxItemsQuery extends StandardView {
                 .skip(query.getOffset())
                 .limit(query.getLimit());
     }
+    // end::items-fetch-callback[] sample-hide
 }

@@ -4,7 +4,9 @@
             <checkbox id="reorderableCheckbox" label="Reorderable"/>
             <checkbox id="selectAllButtonsCheckbox" label="Select all buttons visible"/>
         </hbox>
+        <!-- tag::column-labels[] sample-hide -->
         <twinColumn id="twinColumn" label="Shopping list" itemsColumnLabel="Need to buy"
                     selectedItemsColumnLabel="Purchased"/>
+        <!-- end::column-labels[] sample-hide -->
     </layout>
 </view>

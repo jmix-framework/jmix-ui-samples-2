@@ -1,4 +1,5 @@
 
+/* tag::custom-login[] sample-hide */
 .custom-login {
     width: 100%;
     background-image: url("background.png");
@@ -18,3 +19,4 @@
 .custom-login vaadin-login-form-wrapper {
     background-image: none;
 }
+/* end::custom-login[] sample-hide */

@@ -9,6 +9,7 @@ import java.time.LocalTime;
 @ViewDescriptor("time-picker-custom-range.xml")
 public class TimePickerCustomRange extends StandardView {
 
+    // tag::time-range[] sample-hide
     @ViewComponent
     protected TypedTimePicker<LocalTime> timePicker;
 
@@ -17,4 +18,5 @@ public class TimePickerCustomRange extends StandardView {
         timePicker.setMin(LocalTime.of(8, 0));
         timePicker.setMax(LocalTime.of(17, 0));
     }
+    // end::time-range[] sample-hide
 }

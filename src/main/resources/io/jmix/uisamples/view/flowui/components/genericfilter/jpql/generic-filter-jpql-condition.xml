@@ -1,5 +1,7 @@
+<!-- tag::jpql-namespace[] sample-hide -->
 <view xmlns="http://jmix.io/schema/flowui/view"
       xmlns:c="http://jmix.io/schema/flowui/jpql-condition">
+<!-- end::jpql-namespace[] sample-hide -->
     <data>
         <collection id="ordersDc"
                     class="io.jmix.uisamples.entity.Order"
@@ -15,6 +17,7 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
+        <!-- tag::jpql-conditions[] sample-hide -->
         <genericFilter id="genericFilter" dataLoader="ordersDl">
             <properties include=".*"/>
             <configurations>
@@ -31,6 +34,7 @@
                 </configuration>
             </configurations>
         </genericFilter>
+        <!-- end::jpql-conditions[] sample-hide -->
         <dataGrid id="orderDataGrid"
                   dataContainer="ordersDc"
                   width="100%"

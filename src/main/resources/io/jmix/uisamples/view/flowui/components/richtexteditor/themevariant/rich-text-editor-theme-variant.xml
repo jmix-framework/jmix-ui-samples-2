@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::theme-variants[] sample-hide -->
         <hbox width="100%" wrap="true">
             <!-- theme-only:lumo -->
             <checkbox id="noBorderCheckbox" label="No border"/>
@@ -9,5 +10,6 @@
             <checkbox id="enabledCheckbox" label="Disabled"/>
         </hbox>
         <richTextEditor id="richTextEditor"/>
+        <!-- end::theme-variants[] sample-hide -->
     </layout>
 </view>

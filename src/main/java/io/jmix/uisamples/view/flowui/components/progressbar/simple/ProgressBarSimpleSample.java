@@ -19,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 @ViewDescriptor("progress-bar-simple.xml")
 public class ProgressBarSimpleSample extends StandardView {
 
+    // tag::progress-updates[] sample-hide
     protected static final int ITERATIONS = 20;
 
     @ViewComponent
@@ -84,4 +85,5 @@ public class ProgressBarSimpleSample extends StandardView {
             event.getSource().setIcon(VaadinIcon.REFRESH.create());
         }
     }
+    // end::progress-updates[] sample-hide
 }

@@ -1,4 +1,5 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
+    <!-- tag::data[] sample-hide -->
     <data>
         <collection id="productTagsDc"
                     class="io.jmix.uisamples.entity.ProductTag"
@@ -10,10 +11,13 @@
             </loader>
         </collection>
     </data>
+    <!-- end::data[] sample-hide -->
     <facets>
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
+        <!-- tag::item-label[] sample-hide -->
         <multiSelectComboBox id="multiSelectComboBox" label="Product tags" itemsContainer="productTagsDc"/>
+        <!-- end::item-label[] sample-hide -->
     </layout>
 </view>

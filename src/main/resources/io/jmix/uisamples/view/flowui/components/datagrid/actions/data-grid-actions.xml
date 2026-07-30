@@ -14,6 +14,7 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
+        <!-- tag::actions[] sample-hide -->
         <hbox id="buttonsPanel" width="100%" wrap="true">
             <button id="createBtn" action="customersDataGrid.create"/>
             <button id="editBtn" action="customersDataGrid.edit"/>
@@ -47,5 +48,6 @@
                 <column property="grade"/>
             </columns>
         </dataGrid>
+        <!-- end::actions[] sample-hide -->
     </layout>
 </view>

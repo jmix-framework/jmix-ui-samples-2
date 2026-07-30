@@ -7,6 +7,7 @@ import io.jmix.flowui.view.*;
 @ViewDescriptor("multi-select-combo-box-simple.xml")
 public class MultiSelectComboBoxSimpleSample extends StandardView {
 
+    // tag::basics[] sample-hide
     @ViewComponent
     protected JmixMultiSelectComboBox<String> multiSelectComboBox;
 
@@ -15,4 +16,5 @@ public class MultiSelectComboBoxSimpleSample extends StandardView {
         multiSelectComboBox.setItems("CSS", "HTML", "Java", "JavaScript", "JSON", "Kotlin", "XML");
         multiSelectComboBox.select("Java", "Kotlin");
     }
+    // end::basics[] sample-hide
 }

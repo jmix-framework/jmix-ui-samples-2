@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout classNames="horizontal-layout">
+        <!-- tag::basics[] sample-hide -->
         <multiValuePicker id="stringsValuePicker" label="Strings">
             <actions>
                 <action id="select" type="multi_value_select">
@@ -20,5 +21,6 @@
                 <action id="value_clear" type="value_clear"/>
             </actions>
         </multiValuePicker>
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

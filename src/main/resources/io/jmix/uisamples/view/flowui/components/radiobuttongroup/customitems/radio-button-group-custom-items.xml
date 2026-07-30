@@ -1,13 +1,19 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout classNames="horizontal-layout">
+        <!-- tag::items-list[] sample-hide -->
         <radioButtonGroup id="radioButtonGroupWithList"
                           label="Items List"
                           themeNames="vertical"/>
+        <!-- end::items-list[] sample-hide -->
+        <!-- tag::items-map[] sample-hide -->
         <radioButtonGroup id="radioButtonGroupWithMap"
                           label="Items Map"
                           themeNames="vertical"/>
+        <!-- end::items-map[] sample-hide -->
+        <!-- tag::items-enum[] sample-hide -->
         <radioButtonGroup id="radioButtonGroupWithEnum"
                           label="Items Enum"
                           themeNames="vertical"/>
+        <!-- end::items-enum[] sample-hide -->
     </layout>
 </view>

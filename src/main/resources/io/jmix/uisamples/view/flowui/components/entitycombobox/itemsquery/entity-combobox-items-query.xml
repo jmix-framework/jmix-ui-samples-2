@@ -1,4 +1,5 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
+    <!-- tag::items-query[] sample-hide -->
     <layout>
         <tabSheet id="tabSheet" width="100%">
             <tab id="declarativeTab" label="Declaratively">
@@ -30,4 +31,5 @@
             </tab>
         </tabSheet>
     </layout>
+    <!-- end::items-query[] sample-hide -->
 </view>

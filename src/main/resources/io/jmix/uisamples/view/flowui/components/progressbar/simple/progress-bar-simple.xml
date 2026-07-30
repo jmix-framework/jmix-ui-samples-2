@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::progress-updates[] sample-hide -->
         <hbox padding="false">
             <h4 text="ProgressBar with indicator"/>
             <button id="controlButton"
@@ -9,8 +10,13 @@
             <span id="labelSpan" text="Ready to start"/>
             <span id="percentSpan" text="0%"/>
         </hbox>
+        <!-- tag::basics[] sample-hide -->
         <progressBar id="progressBar" width="100%"/>
+        <!-- end::basics[] sample-hide -->
         <h4 text="Indeterminate ProgressBar"/>
+        <!-- tag::indeterminate[] sample-hide -->
         <progressBar indeterminate="true" width="100%"/>
+        <!-- end::indeterminate[] sample-hide -->
+        <!-- end::progress-updates[] sample-hide -->
     </layout>
 </view>

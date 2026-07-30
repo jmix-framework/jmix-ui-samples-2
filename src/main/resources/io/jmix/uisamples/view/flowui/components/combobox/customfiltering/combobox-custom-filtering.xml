@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout classNames="horizontal-layout">
+        <!-- tag::custom-filtering[] sample-hide -->
         <comboBox id="noFilterComboBox"
                   label="No filter"
                   placeholder="Start typing"/>
@@ -9,5 +10,6 @@
         <comboBox id="containsFilterComboBox"
                   label="'Contains' filter"
                   placeholder="Start typing"/>
+        <!-- end::custom-filtering[] sample-hide -->
     </layout>
 </view>

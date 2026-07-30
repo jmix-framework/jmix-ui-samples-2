@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::basics[] sample-hide -->
         <radioButtonGroup id="verticalRadioButtonGroup"
                        label="Vertical"
                        themeNames="vertical"
@@ -7,5 +8,6 @@
         <radioButtonGroup id="horizontalRadioButtonGroup"
                        label="Horizontal"
                        itemsEnum="io.jmix.uisamples.entity.CustomerGrade"/>
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

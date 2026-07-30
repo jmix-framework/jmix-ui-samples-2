@@ -16,6 +16,7 @@ import java.util.UUID;
 @ViewDescriptor("file-storage-upload-field.xml")
 public class FileStorageUploadFieldSample extends StandardView {
 
+    // tag::manual-upload[] sample-hide
     @ViewComponent
     private FileStorageUploadField fileStorageUploadField;
 
@@ -46,4 +47,5 @@ public class FileStorageUploadFieldSample extends StandardView {
             temporaryStorage.deleteFile(fileId);
         }
     }
+    // end::manual-upload[] sample-hide
 }

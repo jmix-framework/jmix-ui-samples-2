@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("generic-filter-group-condition.xml")
 public class GenericFilterGroupConditionSample extends StandardView {
 
+    // tag::group-conditions[] sample-hide
     @ViewComponent
     protected GenericFilter genericFilter;
 
@@ -124,4 +125,5 @@ public class GenericFilterGroupConditionSample extends StandardView {
 
         return agePropertyFilter;
     }
+    // end::group-conditions[] sample-hide
 }

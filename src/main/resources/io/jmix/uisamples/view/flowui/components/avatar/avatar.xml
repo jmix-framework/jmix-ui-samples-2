@@ -1,13 +1,16 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
         <details summaryText="Simple avatar" opened="true">
+            <!-- tag::basics[] sample-hide -->
             <hbox padding="false" wrap="true">
                 <avatar name="Homer Jay Simpson"/>
                 <avatar name="Homer Jay Simpson" abbreviation="HS"/>
                 <avatar id="avatarWithImage"/>
             </hbox>
+            <!-- end::basics[] sample-hide -->
         </details>
         <details summaryText="Theme variants" opened="true">
+            <!-- tag::theme-variants[] sample-hide -->
             <hbox padding="false" wrap="true">
                 <avatar abbreviation="XL" themeNames="xlarge"/>
                 <avatar abbreviation="L" themeNames="large"/>
@@ -15,6 +18,7 @@
                 <avatar abbreviation="S" themeNames="small"/>
                 <avatar abbreviation="XS" themeNames="xsmall"/>
             </hbox>
+            <!-- end::theme-variants[] sample-hide -->
         </details>
     </layout>
 </view>

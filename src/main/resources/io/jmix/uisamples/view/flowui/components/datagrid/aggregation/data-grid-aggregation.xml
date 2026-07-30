@@ -16,6 +16,7 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
+        <!-- tag::aggregation[] sample-hide -->
         <dataGrid id="ordersDataGrid"
                   width="100%"
                   minHeight="20em"
@@ -35,5 +36,6 @@
                 <column property="description"/>
             </columns>
         </dataGrid>
+        <!-- end::aggregation[] sample-hide -->
     </layout>
 </view>

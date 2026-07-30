@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::programmatic-columns[] sample-hide -->
         <hbox>
             <integerField id="columnCountField" placeholder="Number of columns" value="3">
                 <validators>
@@ -10,5 +11,6 @@
             <button id="createDataGridBtn" text="Create DataGrid"/>
         </hbox>
         <vbox id="box" padding="false"/>
+        <!-- end::programmatic-columns[] sample-hide -->
     </layout>
 </view>

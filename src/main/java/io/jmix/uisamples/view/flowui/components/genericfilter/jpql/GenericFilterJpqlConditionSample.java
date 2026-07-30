@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("generic-filter-jpql-condition.xml")
 public class GenericFilterJpqlConditionSample extends StandardView {
 
+    // tag::jpql-conditions[] sample-hide
     @ViewComponent
     protected GenericFilter genericFilter;
 
@@ -58,4 +59,5 @@ public class GenericFilterJpqlConditionSample extends StandardView {
 
         return jpqlFilter;
     }
+    // end::jpql-conditions[] sample-hide
 }

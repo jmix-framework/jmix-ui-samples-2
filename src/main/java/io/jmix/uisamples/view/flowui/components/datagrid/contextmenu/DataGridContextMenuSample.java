@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("data-grid-context-menu.xml")
 public class DataGridContextMenuSample extends StandardView {
 
+    // tag::context-menu[] sample-hide
     @ViewComponent
     protected DataGrid<Customer> customersDataGrid;
 
@@ -71,4 +72,5 @@ public class DataGridContextMenuSample extends StandardView {
                 </div>
                 """.formatted(metadataTools.getInstanceName(customer), customer.getAge(), customer.getEmail()));
     }
+    // end::context-menu[] sample-hide
 }

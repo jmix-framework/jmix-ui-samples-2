@@ -11,6 +11,7 @@ import io.jmix.flowui.view.*;
 @ViewDescriptor("icon-simple.xml")
 public class IconSimpleSample extends StandardView {
 
+    // tag::basics[] sample-hide
     @ViewComponent
     protected TypedTextField<String> field;
     @ViewComponent
@@ -23,4 +24,5 @@ public class IconSimpleSample extends StandardView {
         Icon icon = ComponentUtils.parseIcon("lumo:user");
         content.add(icon);
     }
+    // end::basics[] sample-hide
 }

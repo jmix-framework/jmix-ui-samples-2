@@ -9,8 +9,10 @@ import io.jmix.flowui.view.*;
 @ViewDescriptor("twin-column-simple.xml")
 public class TwinColumnSimpleSample extends StandardView {
 
+    // tag::twin-column-field[] sample-hide
     @ViewComponent
     protected TwinColumn<String> twinColumn;
+    // end::twin-column-field[] sample-hide
 
     @Subscribe
     public void onInit(InitEvent event) {
@@ -26,13 +28,17 @@ public class TwinColumnSimpleSample extends StandardView {
         );
     }
 
+    // tag::reorderable[] sample-hide
     @Subscribe("reorderableCheckbox")
     public void onReorderableCheckboxValueChange(ComponentValueChangeEvent<JmixCheckbox, Boolean> event) {
         twinColumn.setReorderable(event.getValue());
     }
+    // end::reorderable[] sample-hide
 
+    // tag::select-all-buttons[] sample-hide
     @Subscribe("selectAllButtonsCheckbox")
     public void onSelectAllButtonsCheckboxValueChange(ComponentValueChangeEvent<JmixCheckbox, Boolean> event) {
         twinColumn.setSelectAllButtonsVisible(event.getValue());
     }
+    // end::select-all-buttons[] sample-hide
 }

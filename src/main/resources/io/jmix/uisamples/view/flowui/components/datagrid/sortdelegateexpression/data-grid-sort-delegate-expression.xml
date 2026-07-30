@@ -19,6 +19,7 @@
         <div classNames="rounded-panel">
             <span text="msg://sampleDescription.text"/>
         </div>
+        <!-- tag::sort-builder-delegate[] sample-hide -->
         <simplePagination id="pagination"
                           dataLoader="ordersDl"
                           itemsPerPageDefaultValue="4"/>
@@ -32,5 +33,6 @@
                 <column property="amount"/>
             </columns>
         </dataGrid>
+        <!-- end::sort-builder-delegate[] sample-hide -->
     </layout>
 </view>

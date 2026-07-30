@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("number-field-dataaware.xml")
 public class NumberFieldDataawareSample extends StandardView {
 
+    // tag::data-binding[] sample-hide
     @ViewComponent
     protected InstanceContainer<Point> pointDc;
     @ViewComponent
@@ -32,4 +33,5 @@ public class NumberFieldDataawareSample extends StandardView {
     protected void onNumberFieldValueChange(ComponentValueChangeEvent<NumberField, Number> changeEvent) {
         spanValue.setText(String.valueOf(pointDc.getItem().getX()));
     }
+    // end::data-binding[] sample-hide
 }

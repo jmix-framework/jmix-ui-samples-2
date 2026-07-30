@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 @ViewDescriptor("twin-column-dataaware.xml")
 public class TwinColumnDataawareSample extends StandardView {
 
+    // tag::data-binding[] sample-hide
     @ViewComponent
     protected InstanceContainer<Product> productDc;
     @ViewComponent
@@ -45,4 +46,5 @@ public class TwinColumnDataawareSample extends StandardView {
                 .map(ProductTag::getInstanceName)
                 .collect(Collectors.joining(", "));
     }
+    // end::data-binding[] sample-hide
 }

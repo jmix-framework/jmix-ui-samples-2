@@ -1,5 +1,7 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::basics[] sample-hide -->
         <emailField id="emailField" label="EmailField"/>
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

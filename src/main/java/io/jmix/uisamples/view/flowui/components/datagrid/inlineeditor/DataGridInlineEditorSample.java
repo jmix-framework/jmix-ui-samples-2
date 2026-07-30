@@ -21,6 +21,7 @@ import java.util.Set;
 @ViewDescriptor("data-grid-inline-editor.xml")
 public class DataGridInlineEditorSample extends StandardView {
 
+    // tag::auto-save[] sample-hide
     @Autowired
     private DataManager dataManager;
     @Autowired
@@ -85,4 +86,5 @@ public class DataGridInlineEditorSample extends StandardView {
             customersDl.load();
         }
     }
+    // end::auto-save[] sample-hide
 }

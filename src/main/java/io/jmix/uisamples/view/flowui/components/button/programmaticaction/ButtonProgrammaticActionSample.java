@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("button-programmatic-action.xml")
 public class ButtonProgrammaticActionSample extends StandardView {
 
+    // tag::programmatic-action[] sample-hide
     @ViewComponent
     protected JmixButton buttonAction;
 
@@ -24,4 +25,5 @@ public class ButtonProgrammaticActionSample extends StandardView {
                         .withHandler(actionPerformedEvent -> notifications.show("Action performed"))
         );
     }
+    // end::programmatic-action[] sample-hide
 }

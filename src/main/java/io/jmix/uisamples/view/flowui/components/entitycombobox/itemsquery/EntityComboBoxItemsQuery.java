@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 @ViewDescriptor("entity-combobox-items-query.xml")
 public class EntityComboBoxItemsQuery extends StandardView {
 
+    // tag::programmatic-fetch[] sample-hide
     @Autowired
     protected DataManager dataManager;
 
@@ -34,4 +35,5 @@ public class EntityComboBoxItemsQuery extends StandardView {
                 .skip(query.getOffset())
                 .limit(query.getLimit());
     }
+    // end::programmatic-fetch[] sample-hide
 }

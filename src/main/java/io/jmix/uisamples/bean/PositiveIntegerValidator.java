@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 @Scope(BeanDefinition.SCOPE_PROTOTYPE)
 public class PositiveIntegerValidator extends AbstractValidator<Integer> {
 
+    // tag::validator[] sample-hide
     @Override
     public void accept(Integer value) {
         if (value != null) {
@@ -21,4 +22,5 @@ public class PositiveIntegerValidator extends AbstractValidator<Integer> {
             }
         }
     }
+    // end::validator[] sample-hide
 }

@@ -26,10 +26,12 @@ import java.util.List;
 @ViewDescriptor("tabs-theme-variant.xml")
 public class TabsThemeVariantSample extends StandardView {
 
+    // tag::theme-variant-fields[] sample-hide
     @ViewComponent
     private Tabs tabs;
     @ViewComponent
     private JmixCheckboxGroup<String> tabsSettingsCheckboxGroup;
+    // end::theme-variant-fields[] sample-hide
     @ViewComponent
     private HorizontalLayout controlButtonPlaceholder;
 
@@ -46,6 +48,7 @@ public class TabsThemeVariantSample extends StandardView {
         controlButtonPlaceholder.add(createRemoveTabButton(), createAddTabButton());
     }
 
+    // tag::theme-variant-handler[] sample-hide
     @Subscribe("tabsSettingsCheckboxGroup")
     public void onTabsSettingsCheckboxGroupValueChange(
             AbstractField.ComponentValueChangeEvent<JmixCheckboxGroup<String>, Collection<String>> event) {
@@ -63,6 +66,7 @@ public class TabsThemeVariantSample extends StandardView {
                 .map(String::toLowerCase)
                 .forEach(tabs::addThemeName);
     }
+    // end::theme-variant-handler[] sample-hide
 
     private Component createAddTabButton() {
         JmixButton button = uiComponents.create(JmixButton.class);

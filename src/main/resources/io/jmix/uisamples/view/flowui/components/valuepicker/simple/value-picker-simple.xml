@@ -1,11 +1,13 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout classNames="horizontal-layout">
+        <!-- tag::actions[] sample-hide -->
         <valuePicker id="valuePicker1" label="Random string">
             <actions>
                 <action id="generate" icon="REFRESH" description="Generate value"/>
                 <action id="value_clear" type="value_clear"/>
             </actions>
         </valuePicker>
+        <!-- end::actions[] sample-hide -->
         <valuePicker id="valuePicker2" label="Random string" helperText="With custom value"
                      allowCustomValue="true">
             <actions>

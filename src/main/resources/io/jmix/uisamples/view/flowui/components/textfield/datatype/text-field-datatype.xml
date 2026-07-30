@@ -1,10 +1,12 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout classNames="horizontal-layout">
+        <!-- tag::basics[] sample-hide -->
         <textField id="stringTextField" label="String"
                    datatype="string"/>
         <textField id="integerTextField" label="Integer"
                    datatype="int"/>
         <textField id="doubleTextField" label="Double"
                    datatype="double"/>
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

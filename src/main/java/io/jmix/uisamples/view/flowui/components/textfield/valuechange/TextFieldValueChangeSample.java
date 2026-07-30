@@ -20,6 +20,7 @@ import java.util.stream.Collectors;
 @ViewDescriptor("text-field-value-change.xml")
 public class TextFieldValueChangeSample extends StandardView {
 
+    // tag::value-change[] sample-hide
     @ViewComponent
     protected TypedTextField<String> valueChangeModeTextField;
     @ViewComponent
@@ -55,4 +56,5 @@ public class TextFieldValueChangeSample extends StandardView {
         return Arrays.stream(ValueChangeMode.values())
                 .collect(Collectors.toMap(Function.identity(), mode -> mode.name().replace('_', ' ')));
     }
+    // end::value-change[] sample-hide
 }

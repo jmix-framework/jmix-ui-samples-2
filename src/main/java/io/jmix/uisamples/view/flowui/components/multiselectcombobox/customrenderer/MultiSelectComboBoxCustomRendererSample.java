@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("multi-select-combo-box-custom-renderer.xml")
 public class MultiSelectComboBoxCustomRendererSample extends StandardView {
 
+    // tag::custom-renderer[] sample-hide
     @ViewComponent
     protected JmixMultiSelectComboBox<VaadinIcon> iconsMultiSelectComboBox;
 
@@ -36,4 +37,5 @@ public class MultiSelectComboBoxCustomRendererSample extends StandardView {
             return contentBox;
         });
     }
+    // end::custom-renderer[] sample-hide
 }

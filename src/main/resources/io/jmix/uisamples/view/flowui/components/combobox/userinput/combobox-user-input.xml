@@ -1,8 +1,10 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::custom-value[] sample-hide -->
         <comboBox id="comboBox"
                   label="Magic Box"
                   allowCustomValue="true"
                   helperText="Entered value will be added to the items"/>
+        <!-- end::custom-value[] sample-hide -->
     </layout>
 </view>

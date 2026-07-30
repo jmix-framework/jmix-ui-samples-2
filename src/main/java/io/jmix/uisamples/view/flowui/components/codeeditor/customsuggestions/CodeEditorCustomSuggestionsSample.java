@@ -17,6 +17,7 @@ import java.util.List;
 @ViewDescriptor("code-editor-custom-suggestions.xml")
 public class CodeEditorCustomSuggestionsSample extends StandardView {
 
+    // tag::custom-suggestions[] sample-hide
     @Autowired
     private DataManager dataManager;
 
@@ -33,4 +34,5 @@ public class CodeEditorCustomSuggestionsSample extends StandardView {
                 .fetchPlan(FetchPlan.INSTANCE_NAME)
                 .list();
     }
+    // end::custom-suggestions[] sample-hide
 }

@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("simple-pagination-after-refresh.xml")
 public class SimplePaginationAfterRefreshSample extends StandardView {
 
+    // tag::after-refresh[] sample-hide
     @Autowired
     protected Notifications notifications;
 
@@ -20,4 +21,5 @@ public class SimplePaginationAfterRefreshSample extends StandardView {
     protected void onSimplePaginationAfterRefresh(PaginationComponent.AfterRefreshEvent<SimplePagination> event) {
         notifications.show("After data refresh");
     }
+    // end::after-refresh[] sample-hide
 }

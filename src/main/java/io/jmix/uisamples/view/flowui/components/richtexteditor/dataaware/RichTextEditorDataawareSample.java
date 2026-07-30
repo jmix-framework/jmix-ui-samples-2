@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("rich-text-editor-dataaware.xml")
 public class RichTextEditorDataawareSample extends StandardView {
 
+    // tag::data-binding[] sample-hide
     @ViewComponent
     protected InstanceContainer<Order> orderDc;
     @ViewComponent
@@ -39,4 +40,5 @@ public class RichTextEditorDataawareSample extends StandardView {
     protected void onRichTextEditorValueChange(ComponentValueChangeEvent<RichTextEditor, String> changeEvent) {
         spanValue.setText(orderDc.getItem().getDescription());
     }
+    // end::data-binding[] sample-hide
 }

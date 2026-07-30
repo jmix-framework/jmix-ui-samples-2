@@ -22,8 +22,10 @@ public class CodeEditorModeThemeSample extends StandardView {
 
     protected static final String DEFAULT_FILE_PATH = "io/jmix/uisamples/codeeditorexample/";
 
+    // tag::editor-field[] sample-hide
     @ViewComponent
     protected CodeEditor codeEditor;
+    // end::editor-field[] sample-hide
 
     @ViewComponent
     protected JmixSelect<CodeEditorMode> modeComboBox;
@@ -39,18 +41,22 @@ public class CodeEditorModeThemeSample extends StandardView {
         ComponentUtils.setItemsMap(themeComboBox, getThemeItemsMap());
     }
 
+    // tag::mode-change[] sample-hide
     @Subscribe("modeComboBox")
     protected void onModeComboBoxValueChange(
             ComponentValueChangeEvent<JmixSelect<CodeEditorMode>, CodeEditorMode> event) {
         codeEditor.setMode(event.getValue());
         codeEditor.setValue(resources.getResourceAsString(DEFAULT_FILE_PATH + event.getValue()));
     }
+    // end::mode-change[] sample-hide
 
+    // tag::theme-change[] sample-hide
     @Subscribe("themeComboBox")
     protected void onThemeComboBoxValueChange(
             ComponentValueChangeEvent<JmixSelect<CodeEditorTheme>, CodeEditorTheme> event) {
         codeEditor.setTheme(event.getValue());
     }
+    // end::theme-change[] sample-hide
 
     protected Map<CodeEditorMode, String> getModeItemsMap() {
         LinkedHashMap<CodeEditorMode, String> map = new LinkedHashMap<>();

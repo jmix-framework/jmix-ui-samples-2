@@ -1,5 +1,7 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::programmatic-action[] sample-hide -->
         <button id="buttonAction"/>
+        <!-- end::programmatic-action[] sample-hide -->
     </layout>
 </view>

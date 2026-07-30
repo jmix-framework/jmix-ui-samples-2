@@ -1,4 +1,5 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
+    <!-- tag::items-container[] sample-hide -->
     <data>
         <collection id="productsDc"
                     class="io.jmix.uisamples.entity.Product"
@@ -16,4 +17,5 @@
     <layout>
         <listBox itemsContainer="productsDc"/>
     </layout>
+    <!-- end::items-container[] sample-hide -->
 </view>

@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::theme-variants[] sample-hide -->
         <details summaryText="Theme Variant" opened="true">
             <hbox wrap="true">
                 <textArea label="Standard TextArea"/>
@@ -15,5 +16,6 @@
                 <textArea label="Align-right TextArea" themeNames="align-right" placeholder="Placeholder"/>
             </hbox>
         </details>
+        <!-- end::theme-variants[] sample-hide -->
     </layout>
 </view>

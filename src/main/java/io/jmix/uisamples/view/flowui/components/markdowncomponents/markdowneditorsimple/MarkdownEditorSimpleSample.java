@@ -7,6 +7,7 @@ import io.jmix.flowui.view.*;
 @ViewDescriptor("markdown-editor-simple.xml")
 public class MarkdownEditorSimpleSample extends StandardView {
 
+    // tag::basics[] sample-hide
     @ViewComponent
     protected MarkdownEditor markdownEditor;
 
@@ -24,4 +25,5 @@ public class MarkdownEditorSimpleSample extends StandardView {
                 > Switch to the **Preview** tab to see the rendered result.
                 """);
     }
+    // end::basics[] sample-hide
 }

@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("select-dataaware.xml")
 public class SelectDataawareSample extends StandardView {
 
+    // tag::data-binding[] sample-hide
     @ViewComponent
     protected InstanceContainer<Customer> customerDc;
     @ViewComponent
@@ -34,4 +35,5 @@ public class SelectDataawareSample extends StandardView {
             ComponentValueChangeEvent<JmixSelect<CustomerGrade>, CustomerGrade> changeEvent) {
         spanValue.setText(customerDc.getItem().getGrade().name());
     }
+    // end::data-binding[] sample-hide
 }

@@ -1,5 +1,7 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::image-button[] sample-hide -->
         <button id="logoButton" themeNames="icon"/>
+        <!-- end::image-button[] sample-hide -->
     </layout>
 </view>

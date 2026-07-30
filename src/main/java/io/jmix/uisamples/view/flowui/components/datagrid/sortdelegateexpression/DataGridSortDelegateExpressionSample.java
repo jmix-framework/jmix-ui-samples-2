@@ -15,10 +15,12 @@ import java.util.List;
 @ViewDescriptor("data-grid-sort-delegate-expression.xml")
 public class DataGridSortDelegateExpressionSample extends StandardView {
 
+    // tag::sort-builder-delegate[] sample-hide
     @Install(to = "ordersDataGrid", subject = "sortBuilderDelegate")
     public DataGridSort ordersDataGridSortBuilderDelegate(DataGridSortContext<Order> context) {
         return DataGridSortBuilder.create(context)
                 .replaceSort("customer", List.of("{E}.customer.name", "{E}.customer.lastName"))
                 .build();
     }
+    // end::sort-builder-delegate[] sample-hide
 }

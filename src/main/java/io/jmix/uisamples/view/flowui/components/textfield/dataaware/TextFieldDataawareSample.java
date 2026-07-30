@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("text-field-dataaware.xml")
 public class TextFieldDataawareSample extends StandardView {
 
+    // tag::data-binding[] sample-hide
     @ViewComponent
     protected InstanceContainer<Customer> customerDc;
     @ViewComponent
@@ -32,4 +33,5 @@ public class TextFieldDataawareSample extends StandardView {
     protected void onTextFieldValueChange(TypedValueChangeEvent<TypedTextField<String>, String> changeEvent) {
         spanValue.setText(customerDc.getItem().getName());
     }
+    // end::data-binding[] sample-hide
 }

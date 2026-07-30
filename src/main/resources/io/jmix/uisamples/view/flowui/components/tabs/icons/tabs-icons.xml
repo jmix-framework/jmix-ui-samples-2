@@ -3,6 +3,7 @@
         <!-- theme-only:lumo -->
         <checkbox id="iconControlCheckbox" label="Icon on top"/>
         <!-- theme-only:lumo:end -->
+        <!-- tag::labels[] sample-hide -->
         <tabs id="tabs" width="100%">
             <tab id="profileTab">
                 <icon icon="USER"/>
@@ -17,5 +18,6 @@
                 <span text="Settings"/>
             </tab>
         </tabs>
+        <!-- end::labels[] sample-hide -->
     </layout>
 </view>

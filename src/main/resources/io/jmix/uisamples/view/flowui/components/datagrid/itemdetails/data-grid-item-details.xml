@@ -14,6 +14,7 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
+        <!-- tag::item-details[] sample-hide -->
         <dataGrid id="customersDataGrid"
                   width="100%"
                   minHeight="20em"
@@ -23,5 +24,6 @@
                 <column property="lastName"/>
             </columns>
         </dataGrid>
+        <!-- end::item-details[] sample-hide -->
     </layout>
 </view>

@@ -1,4 +1,5 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
+    <!-- tag::basics[] sample-hide -->
     <data>
         <collection id="customersDc"
                     class="io.jmix.uisamples.entity.Customer"
@@ -30,4 +31,5 @@
             </columns>
         </dataGrid>
     </layout>
+    <!-- end::basics[] sample-hide -->
 </view>

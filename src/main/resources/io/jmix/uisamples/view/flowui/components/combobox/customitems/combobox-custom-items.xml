@@ -1,26 +1,36 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <data>
+        <!-- tag::order-data[] sample-hide -->
         <instance id="orderDc"
                   class="io.jmix.uisamples.entity.Order"
                   fetchPlan="_local"/>
+        <!-- end::order-data[] sample-hide -->
+        <!-- tag::customer-data[] sample-hide -->
         <instance id="customerDc"
                   class="io.jmix.uisamples.entity.Customer"
                   fetchPlan="_local"/>
+        <!-- end::customer-data[] sample-hide -->
     </data>
     <layout classNames="horizontal-layout">
+        <!-- tag::items-list-field[] sample-hide -->
         <comboBox id="amountComboBox"
                   label="Items List"
                   dataContainer="orderDc"
                   property="amount"/>
+        <!-- end::items-list-field[] sample-hide -->
+        <!-- tag::items-map-field[] sample-hide -->
         <comboBox id="ageComboBox"
                   label="Items Map"
                   dataContainer="customerDc"
                   property="age"/>
+        <!-- end::items-map-field[] sample-hide -->
+        <!-- tag::items-enum[] sample-hide -->
         <comboBox id="gradeComboBox"
                   label="Items Enum"
                   dataContainer="customerDc"
                   itemsEnum="io.jmix.uisamples.entity.CustomerGrade"
                   property="grade"
                   placeholder="Select grade"/>
+        <!-- end::items-enum[] sample-hide -->
     </layout>
 </view>

@@ -14,6 +14,7 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
+        <!-- tag::multi-sort[] sample-hide -->
         <dataGrid id="customersDataGrid"
                   width="100%"
                   minHeight="20em"
@@ -29,5 +30,6 @@
                 <column property="grade"/>
             </columns>
         </dataGrid>
+        <!-- end::multi-sort[] sample-hide -->
     </layout>
 </view>

@@ -10,6 +10,7 @@ import java.util.List;
 @ViewDescriptor("list-box-simple.xml")
 public class ListBoxSimpleSample extends StandardView {
 
+    // tag::basics[] sample-hide
     @ViewComponent
     protected JmixListBox<String> listBox;
     @ViewComponent
@@ -26,4 +27,5 @@ public class ListBoxSimpleSample extends StandardView {
 
         listBox2.addComponents("Vaadin", new Hr());
     }
+    // end::basics[] sample-hide
 }

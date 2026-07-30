@@ -21,15 +21,19 @@ import java.util.Map;
 @ViewDescriptor("twin-column-theme-variant.xml")
 public class TwinColumnThemeVariantSample extends StandardView {
 
+    // tag::theme-variant-fields[] sample-hide
     @ViewComponent
     private JmixCheckboxGroup<TwinColumnVariant> twinColumnThemeCheckboxGroup;
     @ViewComponent
     private TwinColumn<Customer> customersTwinColumn;
+    // end::theme-variant-fields[] sample-hide
     // sample-hide:start
     @Autowired
     private ThemeManager themeManager;
     // sample-hide:end
 
+    // tag::theme-variant-handler[] sample-hide
+    // tag::theme-variant-events[] sample-hide
     @Subscribe
     public void onInit(InitEvent event) {
         ComponentUtils.setItemsMap(twinColumnThemeCheckboxGroup, getTwinColumnVariantItemsMap());
@@ -47,18 +51,26 @@ public class TwinColumnThemeVariantSample extends StandardView {
 
         event.getValue().forEach(customersTwinColumn::addThemeVariants);
     }
+    // end::theme-variant-events[] sample-hide
 
+    // tag::variant-map-start[] sample-hide
     private Map<TwinColumnVariant, String> getTwinColumnVariantItemsMap() {
         LinkedHashMap<TwinColumnVariant, String> map = new LinkedHashMap<>();
 
         map.put(TwinColumnVariant.NO_BORDER, "No border");
+    // end::variant-map-start[] sample-hide
         if (themeManager.getCurrentTheme() == AppTheme.LUMO) {            // sample-hide
             // theme-only:lumo
+        // tag::variant-map-lumo[] sample-hide
         map.put(TwinColumnVariant.LUMO_NO_ROW_BORDER, "No row borders");
         map.put(TwinColumnVariant.LUMO_CHECKMARKS, "Checkmarks");
+        // end::variant-map-lumo[] sample-hide
             // theme-only:lumo:end
         }                                                                // sample-hide
+        // tag::variant-map-end[] sample-hide
         map.put(TwinColumnVariant.NO_SPACE_BETWEEN_ACTIONS, "No space between actions");
         return map;
     }
+        // end::variant-map-end[] sample-hide
+    // end::theme-variant-handler[] sample-hide
 }

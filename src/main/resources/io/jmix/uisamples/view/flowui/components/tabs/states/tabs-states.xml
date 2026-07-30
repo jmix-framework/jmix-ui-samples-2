@@ -1,9 +1,11 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::states[] sample-hide -->
         <tabs id="tabs" width="100%">
             <tab id="tab1" label="Selected"/>
             <tab id="tab2" label="Unselected"/>
             <tab id="tab3" label="Disabled" enabled="false"/>
         </tabs>
+        <!-- end::states[] sample-hide -->
     </layout>
 </view>

@@ -1,7 +1,9 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::custom-items[] sample-hide -->
         <virtualList id="virtualList" width="15em"
                      itemsEnum="io.jmix.uisamples.entity.Day"
                      alignSelf="CENTER"/>
+        <!-- end::custom-items[] sample-hide -->
     </layout>
 </view>

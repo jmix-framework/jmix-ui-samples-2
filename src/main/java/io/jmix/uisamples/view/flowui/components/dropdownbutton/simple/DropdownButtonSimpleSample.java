@@ -12,12 +12,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("dropdown-button-simple.xml")
 public class DropdownButtonSimpleSample extends StandardView {
 
+    // tag::programmatic-item-field[] sample-hide
     @ViewComponent
     private DropdownButton dropdownButton3;
+    // end::programmatic-item-field[] sample-hide
 
     @Autowired
     private Notifications notifications;
 
+    // tag::programmatic-items[] sample-hide
     @Subscribe
     public void onInit(InitEvent event) {
         dropdownButton3.addItem(
@@ -34,6 +37,7 @@ public class DropdownButtonSimpleSample extends StandardView {
                         .withHandler(e -> saveAsPdf())
         );
     }
+    // end::programmatic-items[] sample-hide
 
     @Subscribe("dropdownButton1.docSaveItem")
     public void onDocSave1ActionPerformed(DropdownButtonItem.ClickEvent event) {

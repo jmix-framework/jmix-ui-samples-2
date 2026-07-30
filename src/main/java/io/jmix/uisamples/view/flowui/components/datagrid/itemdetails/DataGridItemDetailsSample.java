@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("data-grid-item-details.xml")
 public class DataGridItemDetailsSample extends StandardView {
 
+    // tag::item-details[] sample-hide
     @ViewComponent
     protected DataGrid<Customer> customersDataGrid;
 
@@ -27,4 +28,5 @@ public class DataGridItemDetailsSample extends StandardView {
     protected ComponentRenderer<FormLayout, Customer> createCustomerDetailsRenderer() {
         return new ComponentRenderer<>(detailsGenerator::createCustomerDetailsRenderer, detailsGenerator::setCustomer);
     }
+    // end::item-details[] sample-hide
 }

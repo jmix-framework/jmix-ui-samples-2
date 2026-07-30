@@ -21,10 +21,12 @@ import java.util.Map;
 @ViewDescriptor("data-grid-theme-variant.xml")
 public class DataGridThemeVariantSample extends StandardView {
 
+    // tag::theme-variant-fields[] sample-hide
     @ViewComponent
     private JmixCheckboxGroup<GridVariant> gridSettingsCheckboxGroup;
     @ViewComponent
     private DataGrid<Customer> ordersDataGrid;
+    // end::theme-variant-fields[] sample-hide
     // sample-hide:start
     @Autowired
     private ThemeManager themeManager;
@@ -35,6 +37,7 @@ public class DataGridThemeVariantSample extends StandardView {
         ComponentUtils.setItemsMap(gridSettingsCheckboxGroup, getGridThemeVariantItemsMap());
     }
 
+    // tag::theme-variant-handler[] sample-hide
     @Subscribe("gridSettingsCheckboxGroup")
     public void onGridSettingsCheckboxGroupValueChange(
             TypedValueChangeEvent<JmixCheckboxGroup<GridVariant>, Collection<GridVariant>> event) {
@@ -47,6 +50,7 @@ public class DataGridThemeVariantSample extends StandardView {
 
         event.getValue().forEach(ordersDataGrid::addThemeVariants);
     }
+    // end::theme-variant-handler[] sample-hide
 
     private Map<GridVariant, String> getGridThemeVariantItemsMap() {
         LinkedHashMap<GridVariant, String> map = new LinkedHashMap<>();

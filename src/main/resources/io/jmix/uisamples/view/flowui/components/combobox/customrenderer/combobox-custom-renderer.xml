@@ -1,7 +1,9 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::custom-renderer[] sample-hide -->
         <comboBox id="iconsComboBox"
                   label="Icons"
                   width="20em"/>
+        <!-- end::custom-renderer[] sample-hide -->
     </layout>
 </view>

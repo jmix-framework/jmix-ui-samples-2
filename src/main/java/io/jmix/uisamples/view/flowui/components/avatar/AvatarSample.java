@@ -10,16 +10,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("avatar.xml")
 public class AvatarSample extends StandardView {
 
+    // tag::image-handler-field[] sample-hide
     @ViewComponent
     protected Avatar avatarWithImage;
+    // end::image-handler-field[] sample-hide
 
     @Autowired
     protected Resources resources;
 
+    // tag::image-handler-method[] sample-hide
     @Subscribe
     protected void onInit(InitEvent event) {
         avatarWithImage.setImageHandler(
                 DownloadHandler.forClassResource(getClass(), "/META-INF/resources/icons/homer-simpson.png")
         );
     }
+    // end::image-handler-method[] sample-hide
 }

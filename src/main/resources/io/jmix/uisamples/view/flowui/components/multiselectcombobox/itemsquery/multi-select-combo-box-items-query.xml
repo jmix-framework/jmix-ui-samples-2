@@ -2,6 +2,7 @@
     <layout>
         <tabSheet id="tabSheet" width="100%">
             <tab id="declarativeTab" label="Declaratively">
+                <!-- tag::items-query[] sample-hide -->
                 <multiSelectComboBox id="declarativeMultiSelectComboBox" label="Customer"
                                 metaClass="Customer">
                     <itemsQuery class="io.jmix.uisamples.entity.Customer"
@@ -14,6 +15,7 @@
                         </query>
                     </itemsQuery>
                 </multiSelectComboBox>
+                <!-- end::items-query[] sample-hide -->
             </tab>
             <tab id="programmaticTab" label="Programmatic">
                 <multiSelectComboBox id="programmaticMultiSelectComboBox" label="Customer"

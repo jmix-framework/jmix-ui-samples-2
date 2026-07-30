@@ -19,10 +19,14 @@ import java.util.Map;
 @ViewDescriptor("combobox-custom-items.xml")
 public class ComboBoxCustomItemsSample extends StandardView {
 
+    // tag::items-map-field[] sample-hide
     @ViewComponent
     protected JmixComboBox<Integer> ageComboBox;
+    // end::items-map-field[] sample-hide
+    // tag::items-list-field[] sample-hide
     @ViewComponent
     protected JmixComboBox<BigDecimal> amountComboBox;
+    // end::items-list-field[] sample-hide
 
     @ViewComponent
     protected InstanceContainer<Customer> customerDc;
@@ -44,10 +48,15 @@ public class ComboBoxCustomItemsSample extends StandardView {
         Customer customer = metadata.create(Customer.class);
         customerDc.setItem(customer);
 
+        // tag::items-list-set[] sample-hide
         amountComboBox.setItems(getAmountItemsList());
+        // end::items-list-set[] sample-hide
+        // tag::items-map-set[] sample-hide
         ComponentUtils.setItemsMap(ageComboBox, getAgeItemsMap());
+        // end::items-map-set[] sample-hide
     }
 
+    // tag::items-list-source[] sample-hide
     protected List<BigDecimal> getAmountItemsList() {
         return List.of(
                 BigDecimal.valueOf(1000),
@@ -56,7 +65,9 @@ public class ComboBoxCustomItemsSample extends StandardView {
                 BigDecimal.valueOf(4000)
         );
     }
+    // end::items-list-source[] sample-hide
 
+    // tag::items-map-source[] sample-hide
     protected Map<Integer, String> getAgeItemsMap() {
         LinkedHashMap<Integer, String> map = new LinkedHashMap<>();
         map.put(20, "Twenty");
@@ -65,6 +76,7 @@ public class ComboBoxCustomItemsSample extends StandardView {
         map.put(50, "Fifty");
         return map;
     }
+    // end::items-map-source[] sample-hide
 
     @Subscribe(id = "orderDc", target = Target.DATA_CONTAINER)
     protected void onOrderDcItemPropertyChange(InstanceContainer.ItemPropertyChangeEvent<Order> event) {

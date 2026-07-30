@@ -1,5 +1,7 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
+    <!-- tag::custom-renderer[] sample-hide -->
     <layout classNames="list-box-custom-renderer">
         <listBox id="listBox"/>
     </layout>
+    <!-- end::custom-renderer[] sample-hide -->
 </view>

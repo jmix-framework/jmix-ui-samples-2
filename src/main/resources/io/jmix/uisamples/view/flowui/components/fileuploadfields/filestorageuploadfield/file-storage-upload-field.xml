@@ -1,4 +1,5 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
+<!-- tag::data-binding[] sample-hide -->
 <data>
     <instance id="documentDc" class="io.jmix.uisamples.entity.Document">
     </instance>
@@ -12,4 +13,5 @@
                             fileStoragePutMode="MANUAL"
     />
 </layout>
+<!-- end::data-binding[] sample-hide -->
 </view>

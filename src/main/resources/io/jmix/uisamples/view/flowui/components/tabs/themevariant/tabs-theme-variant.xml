@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout classNames="tabs-theme-variant">
+        <!-- tag::theme-variants[] sample-hide -->
         <hbox padding="false" wrap="true">
             <checkboxGroup id="tabsSettingsCheckboxGroup" label="Tabs themes" themeNames="horizontal"/>
             <vbox padding="false" width="AUTO" justifyContent="END" classNames="tabs-count-control-box">
@@ -21,5 +22,6 @@
             <tab id="tab10" label="Tab 10"/>
         </tabs>
         <span text="To make the scroll button appear, add or remove tabs using the corresponding buttons."/>
+        <!-- end::theme-variants[] sample-hide -->
     </layout>
 </view>

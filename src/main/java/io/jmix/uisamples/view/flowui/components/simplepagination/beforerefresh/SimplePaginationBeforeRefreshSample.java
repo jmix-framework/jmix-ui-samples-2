@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("simple-pagination-before-refresh.xml")
 public class SimplePaginationBeforeRefreshSample extends StandardView {
 
+    // tag::before-refresh[] sample-hide
     @Autowired
     protected Notifications notifications;
 
@@ -20,4 +21,5 @@ public class SimplePaginationBeforeRefreshSample extends StandardView {
     protected void onSimplePaginationBeforeRefresh(PaginationComponent.BeforeRefreshEvent<SimplePagination> event) {
         notifications.show("Before data refresh");
     }
+    // end::before-refresh[] sample-hide
 }

@@ -1,10 +1,12 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::basics[] sample-hide -->
         <upload id="upload"
                 dropAllowed="true"
                 maxFileSize="10000"
                 uploadHandlerType="IN_MEMORY"
                 maxFiles="3"
         />
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

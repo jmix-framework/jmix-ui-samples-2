@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout justifyContent="BETWEEN" classNames="horizontal-layout">
+        <!-- tag::theme-variants[] sample-hide -->
         <vbox width="AUTO" padding="false">
             <details summaryText="Size variant" opened="true">
                 <hbox wrap="true">
@@ -38,6 +39,7 @@
                 </hbox>
             </details>
         </vbox>
+        <!-- end::theme-variants[] sample-hide -->
         <details summaryText="Test ComboBox" opened="true" width="35%">
             <vbox padding="false">
                 <comboBox id="testComboBox" itemsEnum="io.jmix.uisamples.entity.CustomerGrade"/>

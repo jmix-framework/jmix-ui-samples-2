@@ -21,6 +21,7 @@ import java.util.Collection;
 @ViewDescriptor("data-grid-var-columns.xml")
 public class DataGridVariableColumnsSample extends StandardView {
 
+    // tag::programmatic-columns[] sample-hide
     @ViewComponent
     protected VerticalLayout box;
     @ViewComponent
@@ -89,4 +90,5 @@ public class DataGridVariableColumnsSample extends StandardView {
 
         return list;
     }
+    // end::programmatic-columns[] sample-hide
 }

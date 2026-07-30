@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 @ViewDescriptor("date-time-picker-custom-range.xml")
 public class DateTimePickerCustomRange extends StandardView {
 
+    // tag::dynamic-range[] sample-hide
     @ViewComponent
     protected TypedDateTimePicker<LocalDateTime> dateTimePicker;
 
@@ -17,4 +18,5 @@ public class DateTimePickerCustomRange extends StandardView {
         dateTimePicker.setMin(LocalDateTime.now().minusWeeks(1));
         dateTimePicker.setMax(LocalDateTime.now().plusWeeks(1));
     }
+    // end::dynamic-range[] sample-hide
 }

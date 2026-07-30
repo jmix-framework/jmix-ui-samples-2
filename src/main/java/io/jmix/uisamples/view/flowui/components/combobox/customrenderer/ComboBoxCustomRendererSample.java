@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("combobox-custom-renderer.xml")
 public class ComboBoxCustomRendererSample extends StandardView {
 
+    // tag::custom-renderer[] sample-hide
     @ViewComponent
     protected JmixComboBox<VaadinIcon> iconsComboBox;
 
@@ -37,4 +38,5 @@ public class ComboBoxCustomRendererSample extends StandardView {
             return contentBox;
         });
     }
+    // end::custom-renderer[] sample-hide
 }

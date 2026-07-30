@@ -14,6 +14,7 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
+        <!-- tag::selection-mode[] sample-hide -->
         <select id="selectionModeSelect" label="Selection mode"/>
         <hbox id="buttonsPanel" width="100%" wrap="true">
             <button id="greetAllBtn" action="customersDataGrid.greetAll"/>
@@ -36,5 +37,6 @@
                 <column property="grade"/>
             </columns>
         </dataGrid>
+        <!-- end::selection-mode[] sample-hide -->
     </layout>
 </view>

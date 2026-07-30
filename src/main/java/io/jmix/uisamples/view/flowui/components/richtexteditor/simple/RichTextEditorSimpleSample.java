@@ -7,6 +7,7 @@ import io.jmix.flowui.view.*;
 @ViewDescriptor("rich-text-editor-simple.xml")
 public class RichTextEditorSimpleSample extends StandardView {
 
+    // tag::html-input[] sample-hide
     @ViewComponent
     protected RichTextEditor richTextEditor;
 
@@ -32,4 +33,5 @@ public class RichTextEditorSimpleSample extends StandardView {
                 <blockquote>Blockquote</blockquote>
                 """);
     }
+    // end::html-input[] sample-hide
 }

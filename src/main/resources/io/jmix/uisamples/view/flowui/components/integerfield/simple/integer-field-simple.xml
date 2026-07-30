@@ -1,6 +1,8 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::basics[] sample-hide -->
         <integerField id="integerField" label="IntegerField"/>
+        <!-- end::basics[] sample-hide -->
         <integerField id="maxMinIntegerField" label="With max/min" max="100" min="10"
                       helperText="Max value is 100, min value is 10"/>
     </layout>

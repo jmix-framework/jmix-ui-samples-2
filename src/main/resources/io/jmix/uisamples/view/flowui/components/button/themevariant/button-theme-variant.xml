@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout justifyContent="BETWEEN" classNames="horizontal-layout">
+        <!-- tag::theme-variants[] sample-hide -->
         <vbox width="AUTO" padding="false">
             <details summaryText="Style variant" opened="true">
                 <hbox wrap="true">
@@ -31,6 +32,7 @@
                 </hbox>
             </details>
         </vbox>
+        <!-- end::theme-variants[] sample-hide -->
         <details summaryText="Test button" opened="true" width="35%">
             <vbox padding="false">
                 <button id="testButton"/>

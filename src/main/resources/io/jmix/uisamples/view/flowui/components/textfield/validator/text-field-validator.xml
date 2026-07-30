@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout classNames="horizontal-layout">
+        <!-- tag::validator[] sample-hide -->
         <textField id="integerTextField" label="Positive TextField"
                    helperText="Value must be positive"
                    datatype="int">
@@ -15,5 +16,6 @@
                 <doubleMax value="100.0" inclusive="true"/>
             </validators>
         </textField>
+        <!-- end::validator[] sample-hide -->
     </layout>
 </view>

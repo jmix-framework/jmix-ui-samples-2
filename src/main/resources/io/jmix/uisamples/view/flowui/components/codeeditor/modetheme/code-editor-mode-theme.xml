@@ -1,9 +1,11 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::mode-theme[] sample-hide -->
         <hbox width="100%" wrap="true">
             <select id="modeComboBox" label="Mode"/>
             <select id="themeComboBox" label="Theme"/>
         </hbox>
         <codeEditor id="codeEditor"/>
+        <!-- end::mode-theme[] sample-hide -->
     </layout>
 </view>

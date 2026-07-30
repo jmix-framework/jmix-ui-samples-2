@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("data-grid-actions.xml")
 public class DataGridActionsSample extends StandardView {
 
+    // tag::actions[] sample-hide
     @ViewComponent
     protected DataGrid<Customer> customersDataGrid;
 
@@ -28,4 +29,5 @@ public class DataGridActionsSample extends StandardView {
                         ? "Hello, " + metadataTools.getInstanceName(customer)
                         : "No selection");
     }
+    // end::actions[] sample-hide
 }

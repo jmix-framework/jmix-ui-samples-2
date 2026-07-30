@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout justifyContent="BETWEEN" classNames="horizontal-layout">
+        <!-- tag::value-change[] sample-hide -->
         <details summaryText="Default value change" opened="true" width="AUTO">
             <textField id="textField" placeholder="Start typing"/>
         </details>
@@ -9,5 +10,6 @@
                 <radioButtonGroup id="valueChangeModeRadioButtonGroup" label="ValueChangeMode"/>
             </vbox>
         </details>
+        <!-- end::value-change[] sample-hide -->
     </layout>
 </view>

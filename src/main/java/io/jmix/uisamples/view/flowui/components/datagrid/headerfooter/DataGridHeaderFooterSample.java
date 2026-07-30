@@ -24,6 +24,7 @@ import java.util.Collection;
 @ViewDescriptor("data-grid-header-footer.xml")
 public class DataGridHeaderFooterSample extends StandardView {
 
+    // tag::header-footer[] sample-hide
     @ViewComponent
     protected DataGrid<CountryGrowth> dataGrid;
 
@@ -104,4 +105,5 @@ public class DataGridHeaderFooterSample extends StandardView {
         }
         return average / items.size();
     }
+    // end::header-footer[] sample-hide
 }

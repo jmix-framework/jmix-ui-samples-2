@@ -24,6 +24,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("virtual-list-custom-items.xml")
 public class VirtualListCustomItemsSample extends StandardView {
 
+    // tag::custom-items[] sample-hide
     @Autowired
     protected UiComponents uiComponents;
     @Autowired
@@ -67,4 +68,5 @@ public class VirtualListCustomItemsSample extends StandardView {
         String message = String.format("You've clicked on %s!", StringUtils.capitalize(dayValue));
         notifications.show(message);
     }
+    // end::custom-items[] sample-hide
 }

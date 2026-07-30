@@ -25,22 +25,31 @@ import java.util.stream.Collectors;
 @ViewDescriptor("context-help-tooltip.xml")
 public class ContextHelpTooltipSample extends StandardView {
 
+    // tag::manual-field[] sample-hide
     @ViewComponent
     protected TypedTextField<String> manualTooltipField;
+    // end::manual-field[] sample-hide
     @ViewComponent
     protected TypedTextField<String> customTooltipField;
+    // tag::position-field[] sample-hide
     @ViewComponent
     protected JmixSelect<Tooltip.TooltipPosition> position;
+    // end::position-field[] sample-hide
 
+    // tag::ui-components[] sample-hide
     @Autowired
     protected UiComponents uiComponents;
+    // end::ui-components[] sample-hide
 
+    // tag::init[] sample-hide
     @Subscribe
     protected void onInit(InitEvent event) {
         initManualTooltip();
         initPositionItems();
     }
+    // end::init[] sample-hide
 
+    // tag::manual-init[] sample-hide
     protected void initManualTooltip() {
         JmixButton helperButton = createHelperButton();
         Tooltip tooltip = manualTooltipField.getTooltip();
@@ -48,12 +57,16 @@ public class ContextHelpTooltipSample extends StandardView {
 
         manualTooltipField.setSuffixComponent(helperButton);
     }
+    // end::manual-init[] sample-hide
 
+    // tag::position-init[] sample-hide
     protected void initPositionItems() {
         ComponentUtils.setItemsMap(position, getPositionItemsMap());
         position.setValue(Tooltip.TooltipPosition.TOP);
     }
+    // end::position-init[] sample-hide
 
+    // tag::focus-delay[] sample-hide
     @Subscribe("focusDelay")
     protected void onFocusDelayChange(ComponentValueChangeEvent<IntegerField, Integer> event) {
         Integer value = event.getValue();
@@ -64,7 +77,9 @@ public class ContextHelpTooltipSample extends StandardView {
             customTooltipField.getTooltip().setFocusDelay(0);
         }
     }
+    // end::focus-delay[] sample-hide
 
+    // tag::hide-delay[] sample-hide
     @Subscribe("hideDelay")
     protected void onHideDelayChange(ComponentValueChangeEvent<IntegerField, Integer> event) {
         Integer value = event.getValue();
@@ -75,7 +90,9 @@ public class ContextHelpTooltipSample extends StandardView {
             customTooltipField.getTooltip().setHideDelay(0);
         }
     }
+    // end::hide-delay[] sample-hide
 
+    // tag::hover-delay[] sample-hide
     @Subscribe("hoverDelay")
     protected void onHoverDelayChange(ComponentValueChangeEvent<IntegerField, Integer> event) {
         Integer value = event.getValue();
@@ -86,6 +103,7 @@ public class ContextHelpTooltipSample extends StandardView {
             customTooltipField.getTooltip().setHoverDelay(0);
         }
     }
+    // end::hover-delay[] sample-hide
 
     @Subscribe("manual")
     protected void onManualChange(ComponentValueChangeEvent<JmixCheckbox, Boolean> event) {
@@ -102,17 +120,20 @@ public class ContextHelpTooltipSample extends StandardView {
         }
     }
 
+    // tag::position-handler[] sample-hide
     @Subscribe("position")
     protected void onPositionChange(
             ComponentValueChangeEvent<JmixSelect<Tooltip.TooltipPosition>, Tooltip.TooltipPosition> event) {
         customTooltipField.getTooltip().setPosition(event.getValue());
     }
+    // end::position-handler[] sample-hide
 
     @Subscribe("text")
     protected void onTextChange(SupportsTypedValue.TypedValueChangeEvent<TypedTextField<String>, String> event) {
         customTooltipField.getTooltip().setText(event.getValue());
     }
 
+    // tag::helper-button[] sample-hide
     protected JmixButton createHelperButton() {
         JmixButton helperButton = uiComponents.create(JmixButton.class);
         helperButton.setIcon(VaadinIcon.QUESTION_CIRCLE.create());
@@ -121,9 +142,12 @@ public class ContextHelpTooltipSample extends StandardView {
 
         return helperButton;
     }
+    // end::helper-button[] sample-hide
 
+    // tag::position-items[] sample-hide
     protected Map<Tooltip.TooltipPosition, String> getPositionItemsMap() {
         return Arrays.stream(Tooltip.TooltipPosition.values())
                 .collect(Collectors.toMap(Function.identity(),mode -> mode.name().replace('_', ' ')));
     }
+    // end::position-items[] sample-hide
 }

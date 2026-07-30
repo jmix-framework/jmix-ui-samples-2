@@ -20,6 +20,7 @@
         </hbox>
         <tabSheet width="100%" height="100%">
             <tab id="nonBufferedTab" label="Non-buffered editor">
+                <!-- tag::non-buffered-editor[] sample-hide -->
                 <dataGrid id="customersDataGridNonBuffered"
                           width="100%"
                           height="100%"
@@ -38,8 +39,10 @@
                         </editorActionsColumn>
                     </columns>
                 </dataGrid>
+                <!-- end::non-buffered-editor[] sample-hide -->
             </tab>
             <tab id="bufferedTab" label="Buffered editor">
+                <!-- tag::buffered-editor[] sample-hide -->
                 <dataGrid id="customersDataGridBuffered"
                           width="100%"
                           height="100%"
@@ -60,6 +63,7 @@
                         </editorActionsColumn>
                     </columns>
                 </dataGrid>
+                <!-- end::buffered-editor[] sample-hide -->
             </tab>
         </tabSheet>
     </layout>

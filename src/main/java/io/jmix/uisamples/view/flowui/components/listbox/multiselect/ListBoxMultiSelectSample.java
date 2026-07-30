@@ -10,6 +10,7 @@ import java.util.List;
 @ViewDescriptor("list-box-multi-select.xml")
 public class ListBoxMultiSelectSample extends StandardView {
 
+    // tag::basics[] sample-hide
     @ViewComponent
     protected JmixListBox<String> listBox;
     @ViewComponent
@@ -24,4 +25,5 @@ public class ListBoxMultiSelectSample extends StandardView {
         listBox.setValue("Java");
         multiSelectListBox.select("Java", "Kotlin");
     }
+    // end::basics[] sample-hide
 }

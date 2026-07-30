@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout classNames="horizontal-layout">
+        <!-- tag::resizable[] sample-hide -->
         <textArea id="textArea" label="Standard TextArea"/>
         <textArea id="resizableBothTextArea" label="Resizeable TextArea"
                   classNames="resizable-both"
@@ -13,5 +14,6 @@
                   classNames="resizable-horizontal"
                   themeNames="helper-above-field"
                   helperText="Horizontal direction"/>
+        <!-- end::resizable[] sample-hide -->
     </layout>
 </view>

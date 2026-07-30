@@ -13,6 +13,7 @@ import java.util.List;
 @ViewDescriptor("list-box-custom-disabled.xml")
 public class ListBoxCustomDisabledSample extends StandardView {
 
+    // tag::disabled-items[] sample-hide
     @ViewComponent
     protected JmixListBox<Product> listBox;
 
@@ -40,4 +41,5 @@ public class ListBoxCustomDisabledSample extends StandardView {
                 new Product("Laptop", 0)
         );
     }
+    // end::disabled-items[] sample-hide
 }

@@ -38,18 +38,23 @@ import java.util.List;
 @ViewDescriptor("virtual-list-inline-editor.xml")
 public class VirtualListInlineEditorSample extends StandardView {
 
+    // tag::inline-editor-services[] sample-hide
     @Autowired
     private Messages messages;
     @Autowired
     private DialogWindows dialogWindows;
+    // end::inline-editor-services[] sample-hide
     @Autowired
     private FoodPlaceholderDataGenerator foodPlaceholderDataGenerator;
 
+    // tag::inline-editor-data[] sample-hide
     @ViewComponent
     private DataContext dataContext;
     @ViewComponent
     private CollectionContainer<Food> foodDc;
+    // end::inline-editor-data[] sample-hide
 
+    // tag::inline-editor-renderer[] sample-hide
     @Supply(to = "foodList", subject = "renderer")
     public Renderer<Food> foodListRenderer() {
         return new ComponentRenderer<>(item -> {
@@ -122,12 +127,14 @@ public class VirtualListInlineEditorSample extends StandardView {
             return rootCardLayout;
         });
     }
+    // end::inline-editor-renderer[] sample-hide
 
     @Install(to = "foodDl", target = Target.DATA_LOADER)
     public List<Food> foodDlLoadDelegate(final LoadContext<Food> loadContext) {
         return foodPlaceholderDataGenerator.getFoodSamplesList();
     }
 
+    // tag::inline-editor-add[] sample-hide
     @Subscribe(id = "addBtn", subject = "clickListener")
     public void onAddBtnClick(final ClickEvent<JmixButton> event) {
         dialogWindows.detail(this, Food.class)
@@ -140,4 +147,5 @@ public class VirtualListInlineEditorSample extends StandardView {
                 })
                 .open();
     }
+    // end::inline-editor-add[] sample-hide
 }

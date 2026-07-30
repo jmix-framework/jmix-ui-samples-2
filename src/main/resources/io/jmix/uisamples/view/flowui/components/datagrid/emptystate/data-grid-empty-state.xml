@@ -11,6 +11,7 @@
         </collection>
     </data>
     <layout>
+        <!-- tag::empty-state[] sample-hide -->
         <hbox id="buttonsPanel" width="100%" wrap="true">
             <button id="unloadBtn" action="customersDataGrid.unload"/>
         </hbox>
@@ -38,5 +39,6 @@
                 </vbox>
             </emptyStateComponent>
         </dataGrid>
+        <!-- end::empty-state[] sample-hide -->
     </layout>
 </view>

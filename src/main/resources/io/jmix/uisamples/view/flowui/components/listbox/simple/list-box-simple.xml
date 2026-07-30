@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout classNames="horizontal-layout">
+        <!-- tag::basics[] sample-hide -->
         <vbox width="AUTO">
             <h4 text="Simple ListBox"/>
             <listBox id="listBox"/>
@@ -8,5 +9,6 @@
             <h4 text="ListBox with separator"/>
             <listBox id="listBox2"/>
         </vbox>
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

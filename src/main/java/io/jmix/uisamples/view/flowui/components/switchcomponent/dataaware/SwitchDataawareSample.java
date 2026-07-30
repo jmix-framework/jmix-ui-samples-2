@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("switch-dataaware.xml")
 public class SwitchDataawareSample extends StandardView {
 
+    // tag::data-binding[] sample-hide
     @ViewComponent
     private InstanceContainer<Customer> customerDc;
     @ViewComponent
@@ -32,4 +33,5 @@ public class SwitchDataawareSample extends StandardView {
     private void onActiveSwitchValueChange(ComponentValueChangeEvent<Switch, Boolean> changeEvent) {
         spanValue.setText(customerDc.getItem().isActive().toString());
     }
+    // end::data-binding[] sample-hide
 }

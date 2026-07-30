@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("markdown-editor-dataaware.xml")
 public class MarkdownEditorDataawareSample extends StandardView {
 
+    // tag::data-binding[] sample-hide
     @ViewComponent
     protected InstanceContainer<Order> orderDc;
     @ViewComponent
@@ -40,4 +41,5 @@ public class MarkdownEditorDataawareSample extends StandardView {
     protected void onMarkdownEditorValueChange(ComponentValueChangeEvent<MarkdownEditor, String> changeEvent) {
         spanValue.setText(orderDc.getItem().getDescription());
     }
+    // end::data-binding[] sample-hide
 }

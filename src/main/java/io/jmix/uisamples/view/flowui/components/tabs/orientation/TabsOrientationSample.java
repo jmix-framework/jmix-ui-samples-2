@@ -9,6 +9,7 @@ import io.jmix.flowui.view.*;
 @ViewDescriptor("tabs-orientation.xml")
 public class TabsOrientationSample extends StandardView {
 
+    // tag::orientation[] sample-hide
     @ViewComponent
     protected Tabs tabs;
 
@@ -16,4 +17,5 @@ public class TabsOrientationSample extends StandardView {
     protected void onOrientationCheckboxValueChane(ComponentValueChangeEvent<JmixCheckbox, Boolean> event) {
         tabs.setOrientation(event.getValue() ? Tabs.Orientation.VERTICAL : Tabs.Orientation.HORIZONTAL);
     }
+    // end::orientation[] sample-hide
 }

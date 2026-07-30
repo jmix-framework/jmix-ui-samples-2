@@ -1,6 +1,8 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::basics[] sample-hide -->
         <datePicker id="datePicker" label="DatePicker" datatype="localDate"/>
+        <!-- end::basics[] sample-hide -->
         <button id="button" text="Show value" icon="CALENDAR"/>
     </layout>
 </view>

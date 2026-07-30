@@ -14,6 +14,7 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
+        <!-- tag::group-conditions[] sample-hide -->
         <genericFilter id="genericFilter" dataLoader="customersDl">
             <properties include=".*"/>
             <configurations>
@@ -29,6 +30,7 @@
                 </configuration>
             </configurations>
         </genericFilter>
+        <!-- end::group-conditions[] sample-hide -->
         <dataGrid id="customerDataGrid"
                   dataContainer="customersDc"
                   width="100%"

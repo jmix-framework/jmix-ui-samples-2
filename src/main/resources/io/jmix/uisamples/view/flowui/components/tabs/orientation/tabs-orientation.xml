@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::orientation[] sample-hide -->
         <checkbox id="orientationCheckbox" label="Vertical"/>
         <tabs id="tabs" width="100%">
             <tab id="profileTab">
@@ -15,5 +16,6 @@
                 <span text="Settings"/>
             </tab>
         </tabs>
+        <!-- end::orientation[] sample-hide -->
     </layout>
 </view>

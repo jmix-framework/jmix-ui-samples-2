@@ -2,6 +2,7 @@
     <layout>
         <tabSheet id="tabSheet" width="100%">
             <tab id="declarativeTab" label="Declaratively">
+                <!-- tag::declarative-fetch[] sample-hide -->
                 <comboBox id="declarativeComboBox" label="Customer">
                     <itemsQuery searchStringFormat="(?i)%${inputString}%"
                                 escapeValueForLike="true">
@@ -11,9 +12,12 @@
                         </query>
                     </itemsQuery>
                 </comboBox>
+                <!-- end::declarative-fetch[] sample-hide -->
             </tab>
             <tab id="programmaticTab" label="Programmatic">
+                <!-- tag::programmatic-field[] sample-hide -->
                 <comboBox id="programmaticComboBox" label="Customer"/>
+                <!-- end::programmatic-field[] sample-hide -->
             </tab>
         </tabSheet>
     </layout>

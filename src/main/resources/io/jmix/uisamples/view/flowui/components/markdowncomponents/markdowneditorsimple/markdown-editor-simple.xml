@@ -1,5 +1,7 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::basics[] sample-hide -->
         <markdownEditor id="markdownEditor" label="MarkdownEditor" helperText="Helper text"/>
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

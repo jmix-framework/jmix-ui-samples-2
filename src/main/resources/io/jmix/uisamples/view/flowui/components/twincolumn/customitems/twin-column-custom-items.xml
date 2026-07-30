@@ -1,10 +1,12 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout classNames="horizontal-layout">
+        <!-- tag::custom-items[] sample-hide -->
         <twinColumn id="twinColumnWithList"
                     label="Items List"/>
         <twinColumn id="twinColumnWithMap"
                     label="Items Map"/>
         <twinColumn id="twinColumnWithEnum"
                     label="Items Enum"/>
+        <!-- end::custom-items[] sample-hide -->
     </layout>
 </view>

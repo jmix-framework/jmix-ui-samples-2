@@ -1,5 +1,7 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::basics[] sample-hide -->
         <bigDecimalField id="bigDecimalField" label="BigDecimalField" width="15em"/>
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

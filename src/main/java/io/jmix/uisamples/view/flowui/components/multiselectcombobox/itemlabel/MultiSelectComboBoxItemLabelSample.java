@@ -10,8 +10,10 @@ import io.jmix.uisamples.entity.ProductTag;
 @ViewDescriptor("multi-select-combo-box-item-label.xml")
 public class MultiSelectComboBoxItemLabelSample extends StandardView {
 
+    // tag::item-label[] sample-hide
     @Install(to = "multiSelectComboBox", subject = "itemLabelGenerator")
     protected String multiSelectComboBoxItemLabelGenerator(ProductTag productTag) {
         return "#" + productTag.getName();
     }
+    // end::item-label[] sample-hide
 }

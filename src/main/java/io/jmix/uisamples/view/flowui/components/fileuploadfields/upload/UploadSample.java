@@ -15,8 +15,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("upload.xml")
 public class UploadSample extends StandardView {
 
+    // tag::notifications[] sample-hide
     @Autowired
     private Notifications notifications;
+    // end::notifications[] sample-hide
 
     @Subscribe("upload")
     public void onUploadSucceeded(final UploadSucceededEvent<byte[]> event) {
@@ -33,6 +35,7 @@ public class UploadSample extends StandardView {
                 .show();
     }
 
+    // tag::file-rejected[] sample-hide
     @Subscribe("upload")
     public void onUploadFileRejected(final FileRejectedEvent event) {
         notifications.create(event.getErrorMessage())
@@ -40,4 +43,5 @@ public class UploadSample extends StandardView {
                 .withDuration(5000)
                 .show();
     }
+    // end::file-rejected[] sample-hide
 }

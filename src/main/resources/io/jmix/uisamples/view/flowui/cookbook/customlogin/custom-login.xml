@@ -1,6 +1,7 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout padding="false" spacing="false">
         <hr/>
+        <!-- tag::custom-login[] sample-hide -->
         <div classNames="custom-login">
             <loginForm id="login"
                        rememberMeVisible="false"
@@ -14,7 +15,7 @@
                       forgotPassword="Forgot password"/>
             </loginForm>
         </div>
+        <!-- end::custom-login[] sample-hide -->
         <hr/>
     </layout>
 </view>
-

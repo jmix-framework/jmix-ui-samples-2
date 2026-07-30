@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout classNames="horizontal-layout">
+        <!-- tag::basics[] sample-hide -->
         <button id="helloButton"
                 text="Say hello!"
                 title="Click me!"/>
@@ -9,5 +10,6 @@
         <button id="saveButton2"
                 title="Save"
                 icon="ARCHIVE"/>
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

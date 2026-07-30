@@ -1,4 +1,5 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
+    <!-- tag::basics[] sample-hide -->
     <layout>
         <hbox id="content" padding="false" alignItems="CENTER" wrap="true">
             <button icon="CHECK" themeNames="icon"/>
@@ -6,4 +7,5 @@
             <textField id="field" placeholder="Field"/>
         </hbox>
     </layout>
+    <!-- end::basics[] sample-hide -->
 </view>

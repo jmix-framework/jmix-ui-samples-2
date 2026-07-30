@@ -1,6 +1,8 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::basics[] sample-hide -->
         <select itemsEnum="io.jmix.uisamples.entity.CustomerGrade"
                 emptySelectionAllowed="true" emptySelectionCaption="Empty"/>
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

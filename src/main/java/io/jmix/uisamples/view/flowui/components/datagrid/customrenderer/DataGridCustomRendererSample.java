@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("data-grid-custom-renderer.xml")
 public class DataGridCustomRendererSample extends StandardView {
 
+    // tag::component-renderer[] sample-hide
     @Autowired
     protected UiComponents uiComponents;
     @Autowired
@@ -60,4 +61,5 @@ public class DataGridCustomRendererSample extends StandardView {
             span.setText("No data");
         }
     }
+    // end::component-renderer[] sample-hide
 }

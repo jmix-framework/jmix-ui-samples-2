@@ -1,6 +1,8 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::step[] sample-hide -->
         <timePicker id="timePicker" label="TimePicker" datatype="localTime"
                     step="15m"/>
+        <!-- end::step[] sample-hide -->
     </layout>
 </view>

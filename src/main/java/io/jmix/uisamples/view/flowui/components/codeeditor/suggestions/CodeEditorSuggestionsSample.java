@@ -17,6 +17,7 @@ import java.util.Map;
 @ViewDescriptor("code-editor-suggestions.xml")
 public class CodeEditorSuggestionsSample extends StandardView {
 
+    // tag::default-suggestions[] sample-hide
     private static final String DEFAULT_FILE_PATH = "io/jmix/uisamples/codeeditorexample/";
 
     @ViewComponent
@@ -67,4 +68,5 @@ public class CodeEditorSuggestionsSample extends StandardView {
         map.put(CodeEditorMode.C_CPP, "C++");
         return map;
     }
+    // end::default-suggestions[] sample-hide
 }

@@ -1,6 +1,8 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::custom-suggestions[] sample-hide -->
         <codeEditor id="codeEditor" height="100%" minHeight="15em"
                     suggestOn="\."/>
+        <!-- end::custom-suggestions[] sample-hide -->
     </layout>
 </view>

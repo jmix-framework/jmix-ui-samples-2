@@ -20,6 +20,7 @@ import java.util.List;
 @ViewDescriptor("list-box-custom-renderer.xml")
 public class ListBoxCustomRendererSample extends StandardView {
 
+    // tag::custom-renderer[] sample-hide
     protected static final String PATH_PREFIX = "/META-INF/resources/icons/";
 
     @ViewComponent
@@ -71,4 +72,5 @@ public class ListBoxCustomRendererSample extends StandardView {
         String picture = simpson.picture();
         return DownloadHandler.forClassResource(getClass(), PATH_PREFIX + picture);
     }
+    // end::custom-renderer[] sample-hide
 }

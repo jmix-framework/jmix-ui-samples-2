@@ -14,6 +14,7 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
+        <!-- tag::design-time-configuration[] sample-hide -->
         <genericFilter id="genericFilter" dataLoader="customersDl">
             <properties include=".*"/>
             <configurations>
@@ -28,6 +29,7 @@
                 </configuration>
             </configurations>
         </genericFilter>
+        <!-- end::design-time-configuration[] sample-hide -->
         <dataGrid id="customersDataGrid"
                   dataContainer="customersDc"
                   width="100%"

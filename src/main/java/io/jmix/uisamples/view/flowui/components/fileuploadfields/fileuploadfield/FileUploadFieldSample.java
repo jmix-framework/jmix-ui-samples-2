@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("file-upload-field.xml")
 public class FileUploadFieldSample extends StandardView {
 
+    // tag::upload-succeeded[] sample-hide
     @Autowired
     private Notifications notifications;
 
@@ -20,4 +21,5 @@ public class FileUploadFieldSample extends StandardView {
                 .withThemeVariant(NotificationVariant.LUMO_PRIMARY)
                 .show();
     }
+    // end::upload-succeeded[] sample-hide
 }

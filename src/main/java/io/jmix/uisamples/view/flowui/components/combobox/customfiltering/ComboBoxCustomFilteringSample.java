@@ -10,6 +10,7 @@ import java.util.List;
 @ViewDescriptor("combobox-custom-filtering.xml")
 public class ComboBoxCustomFilteringSample extends StandardView {
 
+    // tag::custom-filtering[] sample-hide
     @ViewComponent
     protected JmixComboBox<String> noFilterComboBox;
     @ViewComponent
@@ -33,4 +34,5 @@ public class ComboBoxCustomFilteringSample extends StandardView {
     protected ComboBox.ItemFilter<String> getContainsFilter() {
         return (dayOfWeek, filterString) -> dayOfWeek.toLowerCase().contains(filterString.toLowerCase());
     }
+    // end::custom-filtering[] sample-hide
 }

@@ -9,6 +9,7 @@ import io.jmix.flowui.view.*;
 @ViewDescriptor("code-editor-simple.xml")
 public class CodeEditorSimpleSample extends StandardView {
 
+    // tag::basics[] sample-hide
     @ViewComponent
     protected CodeEditor codeEditor;
 
@@ -46,4 +47,5 @@ public class CodeEditorSimpleSample extends StandardView {
     protected void onTextWrapCheckboxValueChange(ComponentValueChangeEvent<JmixCheckbox, Boolean> event) {
         codeEditor.setTextWrap(event.getValue());
     }
+    // end::basics[] sample-hide
 }

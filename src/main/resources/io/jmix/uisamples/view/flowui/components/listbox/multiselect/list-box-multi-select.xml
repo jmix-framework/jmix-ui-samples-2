@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout classNames="horizontal-layout">
+        <!-- tag::basics[] sample-hide -->
         <vbox width="AUTO">
             <h4 text="Single-select ListBox"/>
             <listBox id="listBox"/>
@@ -8,5 +9,6 @@
             <h4 text="Multi-select ListBox"/>
             <multiSelectListBox id="multiSelectListBox"/>
         </vbox>
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

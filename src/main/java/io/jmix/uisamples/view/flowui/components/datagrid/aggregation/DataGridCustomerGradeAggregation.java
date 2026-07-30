@@ -13,6 +13,7 @@ import java.util.Collection;
  */
 public class DataGridCustomerGradeAggregation implements AggregationStrategy<CustomerGrade, String> {
 
+    // tag::aggregation[] sample-hide
     @Autowired
     public Messages messages;
 
@@ -46,4 +47,5 @@ public class DataGridCustomerGradeAggregation implements AggregationStrategy<Cus
     public Class<String> getResultClass() {
         return String.class;
     }
+    // end::aggregation[] sample-hide
 }

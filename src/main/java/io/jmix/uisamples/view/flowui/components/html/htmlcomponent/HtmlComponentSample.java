@@ -12,6 +12,7 @@ import java.io.InputStream;
 @ViewDescriptor("html-component.xml")
 public class HtmlComponentSample extends StandardView {
 
+    // tag::stream-resource[] sample-hide
     protected static final String SRC_PATH = "META-INF/resources/html/html-component.html";
 
     @ViewComponent
@@ -27,4 +28,5 @@ public class HtmlComponentSample extends StandardView {
         Html html = new Html(resourceAsStream);
         tabSheet.add("Programmatically added component", html);
     }
+    // end::stream-resource[] sample-hide
 }

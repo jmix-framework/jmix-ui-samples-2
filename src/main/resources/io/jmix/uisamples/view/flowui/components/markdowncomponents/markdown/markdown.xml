@@ -2,6 +2,7 @@
     <layout>
         <tabSheet id="tabSheet" width="100%">
             <tab id="declarativeTab" label="msg://declarativeTab.label">
+                <!-- tag::content-element[] sample-hide -->
                 <markdown>
                     <content>
                         <![CDATA[
@@ -39,6 +40,7 @@ Hyperlinks can be added using the `[text](link)` construction:
                         ]]>
                     </content>
                 </markdown>
+                <!-- end::content-element[] sample-hide -->
             </tab>
         </tabSheet>
     </layout>

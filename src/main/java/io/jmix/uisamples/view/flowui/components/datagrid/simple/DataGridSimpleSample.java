@@ -13,6 +13,7 @@ import java.util.Collections;
 @ViewDescriptor("data-grid-simple.xml")
 public class DataGridSimpleSample extends StandardView {
 
+    // tag::basics[] sample-hide
     @ViewComponent
     protected JmixCheckboxGroup<String> dataGridSettingsGroup;
     @ViewComponent
@@ -53,4 +54,5 @@ public class DataGridSimpleSample extends StandardView {
             case "Column reordering allowed" -> dataGrid.setColumnReorderingAllowed(true);
         }
     }
+    // end::basics[] sample-hide
 }

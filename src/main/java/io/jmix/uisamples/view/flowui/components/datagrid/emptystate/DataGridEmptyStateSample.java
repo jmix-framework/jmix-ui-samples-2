@@ -13,6 +13,7 @@ import io.jmix.uisamples.entity.Customer;
 @ViewDescriptor("data-grid-empty-state.xml")
 public class DataGridEmptyStateSample extends StandardView {
 
+    // tag::empty-state[] sample-hide
     @ViewComponent
     private CollectionContainer<Customer> customersDc;
     @ViewComponent
@@ -32,4 +33,5 @@ public class DataGridEmptyStateSample extends StandardView {
         customersDl.load();
         unloadAction.setEnabled(true);
     }
+    // end::empty-state[] sample-hide
 }

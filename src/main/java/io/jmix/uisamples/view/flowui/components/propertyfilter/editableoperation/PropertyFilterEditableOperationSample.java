@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("property-filter-editable-operation.xml")
 public class PropertyFilterEditableOperationSample extends StandardView {
 
+    // tag::operation-change-event[] sample-hide
     @Autowired
     protected Notifications notifications;
 
@@ -23,4 +24,5 @@ public class PropertyFilterEditableOperationSample extends StandardView {
                 .withPosition(Notification.Position.BOTTOM_END)
                 .show();
     }
+    // end::operation-change-event[] sample-hide
 }

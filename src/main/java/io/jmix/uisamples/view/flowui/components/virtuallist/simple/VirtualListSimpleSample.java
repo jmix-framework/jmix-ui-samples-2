@@ -26,6 +26,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("virtual-list-simple.xml")
 public class VirtualListSimpleSample extends StandardView {
 
+    // tag::renderer[] sample-hide
     @Autowired
     protected UiComponents uiComponents;
     @Autowired
@@ -95,4 +96,5 @@ public class VirtualListSimpleSample extends StandardView {
 
         return gradeSpan;
     }
+    // end::renderer[] sample-hide
 }

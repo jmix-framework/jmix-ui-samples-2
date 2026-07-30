@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 @ViewDescriptor("multi-select-combo-box-dataaware.xml")
 public class MultiSelectComboBoxDataawareSample extends StandardView {
 
+    // tag::data-binding[] sample-hide
     @ViewComponent
     protected InstanceContainer<Product> productDc;
     @ViewComponent
@@ -42,4 +43,5 @@ public class MultiSelectComboBoxDataawareSample extends StandardView {
                 .map(ProductTag::getInstanceName)
                 .collect(Collectors.joining(", "));
     }
+    // end::data-binding[] sample-hide
 }

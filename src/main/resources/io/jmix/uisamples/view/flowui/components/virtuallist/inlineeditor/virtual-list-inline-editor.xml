@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <view xmlns="http://jmix.io/schema/flowui/view"
       title="msg://virtualListInlineEditor.title">
+    <!-- tag::data[] sample-hide -->
     <data>
         <collection id="foodDc" class="io.jmix.uisamples.entity.Food">
             <loader id="foodDl"/>
         </collection>
     </data>
+    <!-- end::data[] sample-hide -->
     <facets>
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
+        <!-- tag::inline-editor[] sample-hide -->
         <hbox width="100%" padding="false" alignItems="CENTER">
             <h2 id="menusItemsTabTitle" text="msg://foodListTitle"/>
             <button id="addBtn"
@@ -20,5 +23,6 @@
         </hbox>
         <html id="foodDescription" content="msg://foodListDescription"/>
         <virtualList id="foodList" itemsContainer="foodDc" width="100%"/>
+        <!-- end::inline-editor[] sample-hide -->
     </layout>
 </view>

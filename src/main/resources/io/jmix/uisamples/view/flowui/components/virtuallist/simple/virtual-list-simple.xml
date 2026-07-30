@@ -1,4 +1,5 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
+    <!-- tag::data[] sample-hide -->
     <data readOnly="true">
         <collection id="customersDc"
                     class="io.jmix.uisamples.entity.Customer">
@@ -10,12 +11,17 @@
             </loader>
         </collection>
     </data>
+    <!-- end::data[] sample-hide -->
+    <!-- tag::facets[] sample-hide -->
     <facets>
         <dataLoadCoordinator auto="true"/>
     </facets>
+    <!-- end::facets[] sample-hide -->
     <layout alignItems="CENTER" classNames="virtual-list-simple">
+        <!-- tag::basics[] sample-hide -->
         <virtualList id="virtualList" width="30em"
                      itemsContainer="customersDc"
                      alignSelf="CENTER"/>
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

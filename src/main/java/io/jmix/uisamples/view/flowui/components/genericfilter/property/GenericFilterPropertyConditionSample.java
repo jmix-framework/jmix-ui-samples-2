@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("generic-filter-property-condition.xml")
 public class GenericFilterPropertyConditionSample extends StandardView {
 
+    // tag::property-conditions[] sample-hide
     @ViewComponent
     protected GenericFilter genericFilter;
 
@@ -76,4 +77,5 @@ public class GenericFilterPropertyConditionSample extends StandardView {
 
         return gradePropertyFilter;
     }
+    // end::property-conditions[] sample-hide
 }

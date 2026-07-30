@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("text-area-dataaware.xml")
 public class TextAreaDataawareSample extends StandardView {
 
+    // tag::data-binding[] sample-hide
     @ViewComponent
     protected InstanceContainer<Order> orderDc;
     @ViewComponent
@@ -32,4 +33,5 @@ public class TextAreaDataawareSample extends StandardView {
     protected void onTextAreaValueChange(ComponentValueChangeEvent<JmixTextArea, String> changeEvent) {
         spanValue.setText(orderDc.getItem().getDescription());
     }
+    // end::data-binding[] sample-hide
 }

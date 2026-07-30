@@ -14,6 +14,7 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
+        <!-- tag::component-renderer[] sample-hide -->
         <dataGrid id="customersDataGrid"
                   width="100%"
                   minHeight="20em"
@@ -27,5 +28,6 @@
                 <column property="grade"/>
             </columns>
         </dataGrid>
+        <!-- end::component-renderer[] sample-hide -->
     </layout>
 </view>

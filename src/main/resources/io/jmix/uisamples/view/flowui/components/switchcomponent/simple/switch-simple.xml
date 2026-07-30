@@ -1,5 +1,7 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::basics[] sample-hide -->
         <switch id="carField" label="I have a car"/>
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

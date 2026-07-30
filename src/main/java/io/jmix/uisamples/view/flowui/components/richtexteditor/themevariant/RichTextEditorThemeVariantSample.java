@@ -12,14 +12,17 @@ import io.jmix.flowui.view.*;
 @ViewDescriptor("rich-text-editor-theme-variant.xml")
 public class RichTextEditorThemeVariantSample extends StandardView {
 
+    // tag::theme-variant-field[] sample-hide
     @ViewComponent
     protected RichTextEditor richTextEditor;
+    // end::theme-variant-field[] sample-hide
 
     @Subscribe
     protected void onInit(InitEvent event) {
         richTextEditor.setValue("<p><strong>Bold</strong> <em>Italic</em> <u>Underline</u> <s>Strikethrough</s></p>");
     }
     // theme-only:lumo
+    // tag::theme-variant-handlers[] sample-hide
     @Subscribe("noBorderCheckbox")
     protected void onHighlightCheckboxValueChange(ComponentValueChangeEvent<JmixCheckbox, Boolean> event) {
         if (event.getValue()) {
@@ -37,6 +40,7 @@ public class RichTextEditorThemeVariantSample extends StandardView {
             richTextEditor.removeThemeVariants(RichTextEditorVariant.LUMO_COMPACT);
         }
     }
+    // end::theme-variant-handlers[] sample-hide
     // theme-only:lumo:end
 
     @Subscribe("readOnlyCheckbox")

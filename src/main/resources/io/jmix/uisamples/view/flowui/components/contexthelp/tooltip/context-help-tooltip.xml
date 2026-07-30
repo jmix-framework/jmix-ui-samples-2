@@ -2,12 +2,16 @@
     <layout>
         <details summaryText="Default tooltip" opened="true" width="AUTO">
             <hbox wrap="true">
+                <!-- tag::basics[] sample-hide -->
                 <textField label="Field with tooltip">
                     <tooltip text="Tooltip text"/>
                 </textField>
+                <!-- end::basics[] sample-hide -->
+                <!-- tag::manual[] sample-hide -->
                 <textField id="manualTooltipField" label="Manual tooltip">
                     <tooltip text="Tooltip text" manual="true" position="END_BOTTOM"/>
                 </textField>
+                <!-- end::manual[] sample-hide -->
             </hbox>
         </details>
         <details summaryText="Custom tooltip" opened="true" width="AUTO">
@@ -39,7 +43,9 @@
                         </validators>
                     </integerField>
                     <checkbox id="manual" label="Manual"/>
+                    <!-- tag::position[] sample-hide -->
                     <select id="position" label="Position"/>
+                    <!-- end::position[] sample-hide -->
                     <textField id="text" value="Tooltip text" label="Text"/>
                 </formLayout>
             </vbox>
