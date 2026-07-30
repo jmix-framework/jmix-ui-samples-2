@@ -6,6 +6,7 @@ import io.jmix.flowui.component.grid.DataGrid;
 import io.jmix.flowui.component.sidepanellayout.SidePanelLayout;
 import io.jmix.flowui.kit.action.ActionPerformedEvent;
 import io.jmix.flowui.kit.component.sidepanellayout.SidePanelAfterOpenEvent;
+import io.jmix.flowui.kit.component.sidepanellayout.SidePanelBeforeOpenEvent;
 import io.jmix.flowui.kit.component.sidepanellayout.SidePanelCloseEvent;
 import io.jmix.flowui.model.CollectionContainer;
 import io.jmix.flowui.model.CollectionLoader;
@@ -54,6 +55,11 @@ public class SidePanelLayoutMasterDetailSample extends StandardView {
         sidePanelLayout.openSidePanel();
     }
 
+    @Subscribe(id = "sidePanelLayout", subject = "addSidePanelBeforeOpenListener")
+    public void onSidePanelLayoutBeforeOpen(SidePanelBeforeOpenEvent event) {
+        setListActionsEnabled(false);
+    }
+
     @Subscribe(id = "sidePanelLayout", subject = "addSidePanelAfterOpenListener")
     public void onSidePanelLayoutAfterOpened(SidePanelAfterOpenEvent event) {
         if (sidePanelContent.getComponentCount() == 0) {
@@ -67,10 +73,16 @@ public class SidePanelLayoutMasterDetailSample extends StandardView {
     @Subscribe(id = "sidePanelLayout", subject = "addSidePanelCloseListener")
     public void onSidePanelLayoutClosed(SidePanelCloseEvent event) {
         sidePanelContent.removeAll();
+
+        setListActionsEnabled(true);
     }
 
     private CustomerMasterDetailFragment createEditorFragment() {
         return fragments.create(this, CustomerMasterDetailFragment.class)
                 .withSidePanelLayout(sidePanelLayout);
+    }
+
+    private void setListActionsEnabled(boolean enabled) {
+        customersDataGrid.getActions().forEach(action -> action.setEnabled(enabled));
     }
 }
