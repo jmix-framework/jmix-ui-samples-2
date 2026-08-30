@@ -2,6 +2,7 @@
     <layout>
         <tabSheet id="tabSheet" width="100%">
             <tab id="defaultTab" label="Default label position">
+                <!-- tag::basics[] sample-hide -->
                 <formLayout>
                     <textField label="TextField"/>
                     <dateTimePicker label="DateTimePicker"/>
@@ -11,6 +12,7 @@
                     <passwordField label="PasswordField"/>
                     <emailField label="EmailField"/>
                 </formLayout>
+                <!-- end::basics[] sample-hide -->
             </tab>
             <tab id="asideTab" label="Aside label position">
                 <formLayout labelsPosition="ASIDE">

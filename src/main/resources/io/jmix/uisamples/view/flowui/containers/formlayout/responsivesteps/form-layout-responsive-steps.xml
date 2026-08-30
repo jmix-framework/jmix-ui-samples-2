@@ -1,6 +1,7 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
         <split width="100%" themeNames="splitter-spacing" splitterPosition="66">
+            <!-- tag::responsive-steps[] sample-hide -->
             <formLayout>
                 <responsiveSteps>
                     <responsiveStep minWidth="0" columns="1" labelsPosition="TOP"/>
@@ -31,6 +32,7 @@
                     <emailField/>
                 </formItem>
             </formLayout>
+            <!-- end::responsive-steps[] sample-hide -->
             <formLayout>
                 <responsiveSteps>
                     <responsiveStep minWidth="0" columns="1"/>

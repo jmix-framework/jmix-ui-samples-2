@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("tabsheet-badges.xml")
 public class TabSheetBadgesSample extends StandardView {
 
+    // tag::badges[] sample-hide
     @ViewComponent
     protected JmixTabSheet tabSheet;
 
@@ -55,4 +56,5 @@ public class TabSheetBadgesSample extends StandardView {
         badge.addClassName("tab-badge");
         return badge;
     }
+    // end::badges[] sample-hide
 }

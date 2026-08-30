@@ -1,4 +1,5 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
+    <!-- tag::data-aware[] sample-hide -->
     <data>
         <collection id="customersDc"
                     class="io.jmix.uisamples.entity.Customer"
@@ -26,4 +27,5 @@
             <select property="grade"/>
         </formLayout>
     </layout>
+    <!-- end::data-aware[] sample-hide -->
 </view>

@@ -1,4 +1,5 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
+    <!-- tag::custom-header[] sample-hide -->
     <layout classNames="card-header">
         <card id="card" width="30em"
               themeNames="cover-media elevated outlined">
@@ -16,4 +17,5 @@
             </headerSuffix>
         </card>
     </layout>
+    <!-- end::custom-header[] sample-hide -->
 </view>

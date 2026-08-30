@@ -22,6 +22,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @ViewDescriptor("tabsheet-icons.xml")
 public class TabSheetIconsSample extends StandardView {
 
+    // tag::custom-labels[] sample-hide
     @ViewComponent
     protected JmixTabSheet tabSheet;
 
@@ -69,4 +70,5 @@ public class TabSheetIconsSample extends StandardView {
 
         return tab;
     }
+    // end::custom-labels[] sample-hide
 }

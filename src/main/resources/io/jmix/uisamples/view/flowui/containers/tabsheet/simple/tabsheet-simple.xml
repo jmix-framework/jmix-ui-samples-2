@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::basics[] sample-hide -->
         <tabSheet width="100%">
             <tab id="tab1" label="Tab 1">
                 <vbox>
@@ -16,5 +17,6 @@
                 </vbox>
             </tab>
         </tabSheet>
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

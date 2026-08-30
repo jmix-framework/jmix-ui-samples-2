@@ -1,10 +1,12 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::basics[] sample-hide -->
         <hbox alignItems="CENTER" wrap="true">
             <span text="Span"/>
             <textField placeholder="TextField"/>
             <button text="Button"/>
             <button text="Button"/>
         </hbox>
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

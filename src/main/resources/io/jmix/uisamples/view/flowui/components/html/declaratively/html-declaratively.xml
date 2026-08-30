@@ -1,16 +1,26 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout classNames="html-component">
+        <!-- tag::div-basics[] sample-hide -->
         <div>
+            <!-- tag::headings[] sample-hide -->
             <h1 text="HTML Tags Sample"/>
+            <!-- end::headings[] sample-hide -->
             <p text="This is a sample text that showcases the usage of different HTML tags."/>
+            <!-- end::div-basics[] sample-hide -->
+            <!-- tag::headings[] sample-hide -->
             <h2 text="Formatting Tags:"/>
+            <!-- end::headings[] sample-hide -->
             <p text="Here are some formatting tags:"/>
+            <!-- tag::div-basics[] sample-hide -->
             <unorderedList>
+                <!-- tag::span-basics[] sample-hide -->
                 <listItem>
                     <span classNames="text-semibold" text="Bold text: "/>
                     <span text="Use the &lt;b&gt; tag to make text "/>
                     <span classNames="text-semibold" text="bold."/>
                 </listItem>
+                <!-- end::span-basics[] sample-hide -->
+                <!-- end::div-basics[] sample-hide -->
                 <listItem>
                     <span classNames="font-italic" text="Italic text: "/>
                     <span text="Use the &lt;i&gt; tag to make text "/>
@@ -23,27 +33,39 @@
                     <span classNames="highlight" text="highlighted effect"/>
                     <span text=" to text."/>
                 </listItem>
+                <!-- tag::div-basics[] sample-hide -->
             </unorderedList>
+            <!-- end::div-basics[] sample-hide -->
 
+            <!-- tag::headings[] sample-hide -->
             <h2 text="Lists:"/>
+            <!-- end::headings[] sample-hide -->
             <p text="Here are some examples of lists:"/>
+            <!-- tag::headings[] sample-hide -->
             <h3 text="Ordered List:"/>
+            <!-- end::headings[] sample-hide -->
             <orderedList>
                 <listItem text="First item"/>
                 <listItem text="Second item"/>
                 <listItem text="Third item"/>
             </orderedList>
 
+            <!-- tag::headings[] sample-hide -->
             <h3 text="Unordered List:"/>
+            <!-- end::headings[] sample-hide -->
             <unorderedList>
                 <listItem text="Apples"/>
                 <listItem text="Oranges"/>
                 <listItem text="Bananas"/>
             </unorderedList>
 
+            <!-- tag::headings[] sample-hide -->
             <h2 text="Hyperlinks:"/>
+            <!-- end::headings[] sample-hide -->
+            <!-- tag::div-basics[] sample-hide -->
             <p text="Hyperlinks can be added using the &lt;a&gt; tag:"/>
             <anchor href="https://www.jmix.io" text="Visit jmix.io" target="BLANK"/>
         </div>
+        <!-- end::div-basics[] sample-hide -->
     </layout>
 </view>

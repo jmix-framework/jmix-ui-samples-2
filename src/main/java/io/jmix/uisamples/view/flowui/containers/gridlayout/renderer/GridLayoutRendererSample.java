@@ -27,6 +27,7 @@ import java.util.Objects;
 @ViewDescriptor("grid-layout-renderer.xml")
 public class GridLayoutRendererSample extends StandardView {
 
+    // tag::renderer[] sample-hide
     @Autowired
     private UiComponents uiComponents;
     @Autowired
@@ -113,4 +114,5 @@ public class GridLayoutRendererSample extends StandardView {
             case PREMIUM -> "primary";
         };
     }
+    // end::renderer[] sample-hide
 }

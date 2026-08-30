@@ -7,6 +7,7 @@
                 <button text="Button"/>
                 <button text="Button"/>
             </flexLayout>
+            <!-- tag::basics[] sample-hide -->
             <flexLayout alignItems="CENTER" flexDirection="ROW"
                         justifyContent="CENTER" flexWrap="WRAP"
                         classNames="flex-with-gap">
@@ -15,6 +16,7 @@
                 <button text="Button"/>
                 <button text="Button"/>
             </flexLayout>
+            <!-- end::basics[] sample-hide -->
         </split>
     </layout>
 </view>

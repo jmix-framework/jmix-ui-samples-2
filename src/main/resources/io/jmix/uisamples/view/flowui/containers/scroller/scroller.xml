@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout classNames="horizontal-layout">
+        <!-- tag::basics[] sample-hide -->
         <scroller width="25%" height="20em" scrollBarsDirection="VERTICAL">
             <vbox>
                 <h4 text="Vertical scrollbar"/>
@@ -10,6 +11,7 @@
                     <textField/>
                     <textField/>
                 </hbox>
+                <!-- end::basics[] sample-hide -->
                 <hbox>
                     <textField/>
                     <textField/>
@@ -66,8 +68,10 @@
                     <textField/>
                     <textField/>
                 </hbox>
+                <!-- tag::basics[] sample-hide -->
             </vbox>
         </scroller>
+        <!-- end::basics[] sample-hide -->
         <scroller width="25%" height="20em" scrollBarsDirection="HORIZONTAL">
             <vbox>
                 <h4 text="Horizontal scrollbar"/>

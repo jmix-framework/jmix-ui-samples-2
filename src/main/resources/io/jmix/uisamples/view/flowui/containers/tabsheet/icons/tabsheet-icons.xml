@@ -1,8 +1,10 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
+    <!-- tag::custom-labels[] sample-hide -->
     <layout>
         <!-- theme-only:lumo -->
         <checkbox id="iconControlCheckbox" label="Icon on top"/>
         <!-- theme-only:lumo:end -->
         <tabSheet id="tabSheet" width="100%"/>
     </layout>
+    <!-- end::custom-labels[] sample-hide -->
 </view>

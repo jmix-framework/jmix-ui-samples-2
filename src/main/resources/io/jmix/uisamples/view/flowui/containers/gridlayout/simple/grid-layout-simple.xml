@@ -9,6 +9,7 @@
                        value="18em"/>
         </hbox>
         <split width="100%" height="100%">
+            <!-- tag::basics[] sample-hide -->
             <gridLayout id="gridLayout" gap="var(--lumo-space-m)" columnMinWidth="18em" width="100%" height="100%">
                 <image width="100%" height="100%" resource="icons/jmix-icon.png"/>
                 <image width="100%" height="100%" resource="icons/jmix-icon.png"/>
@@ -19,6 +20,7 @@
                 <image width="100%" height="100%" resource="icons/jmix-icon.png"/>
                 <image width="100%" height="100%" resource="icons/jmix-icon.png"/>
             </gridLayout>
+            <!-- end::basics[] sample-hide -->
             <div/>
         </split>
     </layout>

@@ -14,7 +14,9 @@
         <dataLoadCoordinator auto="true"/>
     </facets>
     <layout>
+        <!-- tag::basics[] sample-hide -->
         <accordion id="mainAccordion" height="100%" width="100%">
+        <!-- end::basics[] sample-hide -->
             <accordionPanel summaryText="Panel with DataGrid">
                 <dataGrid id="customerDataGrid"
                           dataContainer="customersDc"
@@ -29,6 +31,7 @@
                     </columns>
                 </dataGrid>
             </accordionPanel>
+            <!-- tag::basics[] sample-hide -->
             <accordionPanel summaryText="Panel with FormLayout">
                 <formLayout>
                     <textField label="Field 1"/>
@@ -37,5 +40,6 @@
                 </formLayout>
             </accordionPanel>
         </accordion>
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

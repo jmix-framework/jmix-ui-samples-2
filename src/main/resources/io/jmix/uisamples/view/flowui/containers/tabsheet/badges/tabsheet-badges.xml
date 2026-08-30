@@ -1,5 +1,7 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
+    <!-- tag::badges[] sample-hide -->
     <layout classNames="tab-sheet-badges">
         <tabSheet id="tabSheet" width="100%"/>
     </layout>
+    <!-- end::badges[] sample-hide -->
 </view>

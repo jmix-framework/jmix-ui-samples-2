@@ -1,6 +1,7 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout classNames="form-layout-auto-responsive">
         <split height="100%" width="100%" splitterPosition="60">
+            <!-- tag::auto-responsive[] sample-hide -->
             <formLayout id="formLayout" width="100%" classNames="form-layout" autoResponsive="true">
                 <formRow>
                     <formItem label="msg://firstName.label">
@@ -36,6 +37,7 @@
                     </formItem>
                 </formRow>
             </formLayout>
+            <!-- end::auto-responsive[] sample-hide -->
 
             <formLayout id="managementLayout" autoResponsive="true" autoRows="true"
                         classNames="form-layout"

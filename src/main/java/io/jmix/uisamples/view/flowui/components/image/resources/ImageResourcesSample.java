@@ -8,6 +8,7 @@ import io.jmix.flowui.view.*;
 @ViewDescriptor("image-resources.xml")
 public class ImageResourcesSample extends StandardView {
 
+    // tag::resources[] sample-hide
     protected static final String SRC_PATH = "/META-INF/resources/icons/image-sample.svg";
 
     @ViewComponent
@@ -17,4 +18,5 @@ public class ImageResourcesSample extends StandardView {
     protected void onInit(InitEvent event) {
         imageProgrammaticResource.setSrc(DownloadHandler.forClassResource(getClass(), SRC_PATH));
     }
+    // end::resources[] sample-hide
 }

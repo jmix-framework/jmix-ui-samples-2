@@ -2,7 +2,9 @@
     <layout classNames="horizontal-layout">
         <vbox alignItems="CENTER" justifyContent="CENTER" padding="false" width="AUTO">
             <h4 text="Declaratively defined source"/>
+            <!-- tag::basics[] sample-hide -->
             <image resource="icons/jmix-icon.png" height="10em" width="10em"/>
+            <!-- end::basics[] sample-hide -->
         </vbox>
     </layout>
 </view>

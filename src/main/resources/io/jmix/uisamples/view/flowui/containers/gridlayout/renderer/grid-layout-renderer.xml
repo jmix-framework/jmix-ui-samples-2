@@ -1,4 +1,5 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
+    <!-- tag::renderer[] sample-hide -->
     <data readOnly="true">
         <collection id="customerDc" class="io.jmix.uisamples.entity.Customer"
                     fetchPlan="_base">
@@ -21,4 +22,5 @@
             <div/>
         </split>
     </layout>
+    <!-- end::renderer[] sample-hide -->
 </view>

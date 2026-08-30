@@ -1,6 +1,8 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
+    <!-- tag::static-pdf[] sample-hide -->
     <layout>
         <iframe width="100%" height="100%" css="border: unset;"
                 resource="pdf/tutorial.pdf"/>
     </layout>
+    <!-- end::static-pdf[] sample-hide -->
 </view>

@@ -28,6 +28,7 @@
                 </columns>
             </dataGrid>
         </details>
+        <!-- tag::basics[] sample-hide -->
         <details summaryText="Details with FormLayout" width="100%">
             <formLayout>
                 <textField label="Field 1"/>
@@ -35,5 +36,6 @@
                 <textField label="Field 3"/>
             </formLayout>
         </details>
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

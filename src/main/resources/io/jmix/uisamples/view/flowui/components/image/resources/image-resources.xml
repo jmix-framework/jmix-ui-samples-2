@@ -1,10 +1,13 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
+    <!-- tag::resources[] sample-hide -->
     <layout justifyContent="BETWEEN" classNames="horizontal-layout">
+        <!-- end::resources[] sample-hide -->
         <vbox padding="false" width="AUTO" alignItems="CENTER">
             <h4 text="Static resource"/>
             <image resource="icons/image-sample.svg"
                    height="15em" width="15em"/>
         </vbox>
+        <!-- tag::resources[] sample-hide -->
         <vbox padding="false" width="AUTO" alignItems="CENTER">
             <h4 text="URL resource"/>
             <image resource="https://www.jmix.io/uploads/framework_image_9efadbc372.svg"
@@ -16,4 +19,5 @@
                    height="15em" width="15em"/>
         </vbox>
     </layout>
+    <!-- end::resources[] sample-hide -->
 </view>

@@ -1,5 +1,6 @@
 <view xmlns="http://jmix.io/schema/flowui/view">
     <layout>
+        <!-- tag::basics[] sample-hide -->
         <card id="card" width="30em"
               themeNames="cover-media elevated outlined"
               title="msg://card.title" subtitle="msg://card.subtitle">
@@ -19,5 +20,6 @@
                         iconAfterText="true"/>
             </footer>
         </card>
+        <!-- end::basics[] sample-hide -->
     </layout>
 </view>

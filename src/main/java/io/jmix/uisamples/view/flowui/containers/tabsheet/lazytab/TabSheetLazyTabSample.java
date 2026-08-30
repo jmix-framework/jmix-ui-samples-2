@@ -17,6 +17,7 @@ import java.util.List;
 @ViewDescriptor("tabsheet-lazy-tab.xml")
 public class TabSheetLazyTabSample extends StandardView {
 
+    // tag::lazy-tabs[] sample-hide
     @ViewComponent
     protected JmixTabSheet tabSheet;
     @ViewComponent
@@ -65,4 +66,5 @@ public class TabSheetLazyTabSample extends StandardView {
 
         spanInfo.setText(sb.toString());
     }
+    // end::lazy-tabs[] sample-hide
 }
